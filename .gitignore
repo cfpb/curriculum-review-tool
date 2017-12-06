@@ -66,7 +66,5 @@ coverage.xml
 # Front-End #
 #############
 node_modules/
-bower_components/
-.grunt/
-src/vendor/
-dist/
+satellite/static/
+satellite/tests/unit_test_coverage/
