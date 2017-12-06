@@ -20,8 +20,8 @@ testing_extras = [
 
 
 setup(
-    name='satellite',
-    url='https://github.com/cfpb/satellite',
+    name='teachers_digital_platform',
+    url='https://github.com/cfpb/teachers-digital-platform',
     author='CFPB',
     author_email='tech@cfpb.gov',
     description='Skeletal satellite app for consumerfinance.gov',
