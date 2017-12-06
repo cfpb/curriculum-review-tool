@@ -1,6 +1,6 @@
 'use strict';
 
-const configLint = require( '../config' ).lint;
+const config = require( '../config' );
 const gulp = require( 'gulp' );
 const gulpEslint = require( 'gulp-eslint' );
 const gulpUtil = require( 'gulp-util' );
@@ -31,25 +31,19 @@ function _genericLint( src ) {
 }
 
 /**
- * Lints the gulpfile for errors.
- */
-gulp.task( 'lint:build', () => _genericLint( configLint.build ) );
-
-/**
  * Lints the test js files for errors.
  */
-gulp.task( 'lint:tests', () => _genericLint( configLint.test ) );
+gulp.task( 'lint:tests', () => _genericLint( config.test.tests ) );
 
 /**
  * Lints the source js files for errors.
  */
-gulp.task( 'lint:scripts', () => _genericLint( configLint.src ) );
+gulp.task( 'lint:scripts', () => _genericLint( config.lint.src ) );
 
 /**
  * Lints all the js files for errors
  */
 gulp.task( 'lint', [
-  'lint:build',
   'lint:tests',
   'lint:scripts'
 ] );
