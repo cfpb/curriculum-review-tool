@@ -67,3 +67,4 @@ coverage.xml
 #############
 node_modules/
 satellite/static/
+satellite/tests/unit_test_coverage/

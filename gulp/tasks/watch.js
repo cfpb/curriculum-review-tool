@@ -12,10 +12,7 @@ var browserSync = require( 'browser-sync' );
 
 var reload = browserSync.reload;
 
-gulp.task( 'watch', [ 'browserSync', 'scripts', 'styles', 'images', 'copy:files' ], function() {
-  gulp.watch( config.scripts.src, [ 'scripts', 'lint:scripts', reload ] );
+gulp.task( 'watch', [ 'browserSync', 'scripts', 'styles' ], function() {
+  gulp.watch( config.scripts.src, [ 'scripts', reload ] );
   gulp.watch( config.styles.cwd + '/**/*.less', [ 'styles', reload ] );
-  gulp.watch( config.images.src, [ 'images', reload ] );
-  gulp.watch( config.copy.files.src, [ 'copy:files', reload ] );
-  gulp.watch( config.templates.src, [ 'copy:files', reload ] );
 } );

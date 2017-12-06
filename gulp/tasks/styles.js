@@ -44,67 +44,9 @@ function stylesModern() {
     } ) );
 }
 
-/**
- * Process legacy CSS for IE9 only.
- * @returns {PassThrough} A source stream.
- */
-function stylesIE9() {
-  return gulp.src( configStyles.cwd + configStyles.src )
-    .pipe( gulpChanged( configStyles.dest, { extension: '.ie9.css' } ) )
-    .pipe( gulpLess( configStyles.settings ) )
-    .on( 'error', handleErrors )
-    .pipe( gulpPostcss( [
-      autoprefixer( { browsers: BROWSER_LIST.ONLY_IE_9 } )
-    ] ) )
-    .pipe( gulpRename( {
-      suffix:  '.ie9',
-      extname: '.css'
-    } ) )
-    .pipe( gulpBless( { cacheBuster: false, suffix: '.part' } ) )
-    .pipe( gulpCleanCss( {
-      compatibility: 'ie9',
-      inline: [ 'none' ]
-    } ) )
-    .pipe( gulp.dest( configStyles.dest ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
-}
-
-/**
- * Process legacy CSS for 8 only.
- * @returns {PassThrough} A source stream.
- */
-function stylesIE8() {
-  return gulp.src( configStyles.cwd + configStyles.src )
-    .pipe( gulpChanged( configStyles.dest, { extension: '.ie8.css' } ) )
-    .pipe( gulpLess( configStyles.settings ) )
-    .on( 'error', handleErrors )
-    .pipe( gulpPostcss( [
-      postcssUnmq( {
-        width: '75em'
-      } ),
-      autoprefixer( { browsers: BROWSER_LIST.ONLY_IE_8 } )
-    ] ) )
-    .pipe( gulpCleanCss( { compatibility: 'ie8' } ) )
-    .pipe( gulpRename( {
-      suffix:  '.ie8',
-      extname: '.css'
-    } ) )
-    .pipe( gulp.dest( configStyles.dest ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
-}
 
 gulp.task( 'styles:modern', stylesModern );
 
-gulp.task( 'styles:ie', [
-  'styles:stylesIE8',
-  'styles:stylesIE9'
-] );
-
 gulp.task( 'styles', [
-  'styles:modern',
-  'styles:ie'
+  'styles:modern'
 ] );

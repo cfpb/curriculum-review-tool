@@ -10,7 +10,7 @@ const loc = {
   src:  './satellite/',
   dist: './satellite/static/',
   lib:  './node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
-  test: './test'
+  test: './satellite/tests/'
 };
 
 module.exports = {

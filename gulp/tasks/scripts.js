@@ -20,7 +20,7 @@ const named = require( 'vinyl-named' );
 const webpack = require( 'webpack' );
 const webpackConfig = require( '../webpack-config.js' );
 const webpackStream = require( 'webpack-stream' );
-const configFile = require( '../config.js' ).legacy;
+const configFile = require( '../config.js' );
 
 /**
  * Standardize webpack workflow for handling script
