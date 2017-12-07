@@ -10,7 +10,7 @@ const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
 
 
 // Constants
-const COMMON_BUNDLE_NAME = 'common.js';
+const COMMON_BUNDLE_NAME = 'tdp.js';
 
 // Commmon webpack 'module' option used in each configuration.
 // Runs code through Babel and uses global supported browser list.
