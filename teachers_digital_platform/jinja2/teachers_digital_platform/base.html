@@ -27,7 +27,7 @@
 {% block css -%}
     {{ super() }}
 
-    <link rel="stylesheet" href="{{ static('css/tdp.css') }}">
+    <link rel="stylesheet" href="{{ static('tdp/css/tdp.css') }}">
 {%- endblock css %}
 
 
@@ -49,7 +49,7 @@
     {# Include site-wide JavaScript. #}
     <script src="{{ static('js/routes/common.js') }}"></script>
 
-    <script src="{{ static('js/routes/tdp.js') }}"></script>
+    <script src="{{ static('tdp/js/routes/tdp.js') }}"></script>
 <!--<![endif]-->
 
     <script>

@@ -10,6 +10,6 @@ var gulp = require( 'gulp' );
 var config = require( '../config' );
 
 gulp.task( 'watch', [ 'scripts', 'styles' ], function() {
-  gulp.watch( config.scripts.src, [ 'scripts' ] );
+  gulp.watch( config.scripts.src, [ 'scripts', 'test' ] );
   gulp.watch( config.styles.cwd + '/**/*.less', [ 'styles' ] );
 } );
