@@ -8,7 +8,7 @@ const globAll = require( 'glob-all' );
  */
 const loc = {
   src:  './teachers_digital_platform/',
-  dist: './teachers_digital_platform/static/',
+  dist: './teachers_digital_platform/static/tdp/',
   lib:  './node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
   test: './teachers_digital_platform/tests/'
 };
