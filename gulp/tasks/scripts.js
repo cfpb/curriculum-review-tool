@@ -10,13 +10,9 @@
 const browserSync = require( 'browser-sync' );
 const gulp = require( 'gulp' );
 const gulpChanged = require( 'gulp-changed' );
-const gulpConcat = require( 'gulp-concat' );
-const gulpModernizr = require( 'gulp-modernizr' );
-const gulpRename = require( 'gulp-rename' );
-const gulpReplace = require( 'gulp-replace' );
-const gulpUglify = require( 'gulp-uglify' );
 const handleErrors = require( '../utils/handle-errors' );
 const named = require( 'vinyl-named' );
+const debug = require( 'gulp-debug' );
 const webpack = require( 'webpack' );
 const webpackConfig = require( '../webpack-config.js' );
 const webpackStream = require( 'webpack-stream' );
@@ -32,6 +28,7 @@ const configFile = require( '../config.js' );
  */
 function _processScript( config, src, dest ) {
   return gulp.src( src )
+    .pipe( debug( {title: 'src:'} ) )
     .pipe( gulpChanged( dest ) )
     .pipe( named( function( file ) {
       return file.relative;

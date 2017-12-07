@@ -7,10 +7,10 @@ const globAll = require( 'glob-all' );
  * Set up file paths
  */
 const loc = {
-  src:  './satellite/',
-  dist: './satellite/static/',
+  src:  './teachers_digital_platform/',
+  dist: './teachers_digital_platform/static/',
   lib:  './node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
-  test: './satellite/tests/'
+  test: './teachers_digital_platform/tests/'
 };
 
 module.exports = {
