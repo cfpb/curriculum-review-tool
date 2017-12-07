@@ -51,7 +51,7 @@ module.exports = {
   },
   styles: {
     cwd:      loc.src + '/css',
-    src:      '/main.less',
+    src:      '/tdp.less',
     dest:     loc.dist + '/css',
     settings: {
       paths: globAll.sync( [

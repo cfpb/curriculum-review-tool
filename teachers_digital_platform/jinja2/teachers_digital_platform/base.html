@@ -27,7 +27,7 @@
 {% block css -%}
     {{ super() }}
 
-    {# insert link to app-specific CSS here #}
+    <link rel="stylesheet" href="{{ static('css/tdp.css') }}">
 {%- endblock css %}
 
 
