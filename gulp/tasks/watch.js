@@ -8,11 +8,8 @@
 
 var gulp = require( 'gulp' );
 var config = require( '../config' );
-var browserSync = require( 'browser-sync' );
 
-var reload = browserSync.reload;
-
-gulp.task( 'watch', [ 'browserSync', 'scripts', 'styles' ], function() {
-  gulp.watch( config.scripts.src, [ 'scripts', reload ] );
-  gulp.watch( config.styles.cwd + '/**/*.less', [ 'styles', reload ] );
+gulp.task( 'watch', [ 'scripts', 'styles' ], function() {
+  gulp.watch( config.scripts.src, [ 'scripts' ] );
+  gulp.watch( config.styles.cwd + '/**/*.less', [ 'styles' ] );
 } );
