@@ -66,5 +66,5 @@ coverage.xml
 # Front-End #
 #############
 node_modules/
-satellite/static/
-satellite/tests/unit_test_coverage/
+teachers_digital_platform/static/
+teachers_digital_platform/unit_test_coverage/
