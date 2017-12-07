@@ -7,6 +7,9 @@ install:
 script:
 - tox
 - python setup.py bdist_wheel
+- nvm install 8 && nvm use 8
+- npm install
+- npm test
 deploy:
   provider: releases
   api_key:

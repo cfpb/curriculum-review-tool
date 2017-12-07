@@ -65,7 +65,7 @@ const commonConf = {
     filename: '[name]'
   },
   plugins: [
-    COMMON_UGLIFY_CONFIG
+    // COMMON_UGLIFY_CONFIG
   ]
 };
 
@@ -77,7 +77,7 @@ const modernConf = {
   },
   plugins: [
     COMMON_CHUNK_CONFIG,
-    COMMON_UGLIFY_CONFIG
+    // COMMON_UGLIFY_CONFIG
   ]
 };
 

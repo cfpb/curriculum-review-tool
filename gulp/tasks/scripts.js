@@ -28,17 +28,8 @@ const configFile = require( '../config.js' );
  */
 function _processScript( config, src, dest ) {
   return gulp.src( src )
-    .pipe( debug( {title: 'src:'} ) )
-    .pipe( gulpChanged( dest ) )
-    .pipe( named( function( file ) {
-      return file.relative;
-    } ) )
     .pipe( webpackStream( config, webpack ) )
-    .on( 'error', handleErrors )
-    .pipe( gulp.dest( configFile.scripts.dest ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
+    .pipe( gulp.dest( configFile.scripts.dest ) );
 }
 
 /**
@@ -48,7 +39,7 @@ function _processScript( config, src, dest ) {
  */
 function scriptsModern() {
   return _processScript( webpackConfig.modernConf,
-                         configFile.scripts.src, configFile.scripts.dest );
+                         configFile.scripts.entrypoint, configFile.scripts.dest );
 }
 
 gulp.task( 'scripts:modern', scriptsModern );

@@ -2,12 +2,16 @@
 var chai = require('chai');
 var expect = require('chai').expect;
 
-var module = require( '../../js/module1.js' );
+var loanCalculator = require( '../../js/module1.js' );
 
-describe( 'Some module that does somthing', function() {
+describe( 'Loan calculator helps users calculate loan data', function() {
 
   it( 'should not throw any errors on init', function() {
-    expect( () => module.init() ).to.not.throw();
+    expect( () => loanCalculator.init() ).to.not.throw();
+  });
+
+  it( 'should calculate a loan\'s monthly payment', function() {
+    expect( loanCalculator.getMonthlyPayment( 180000, 4.25, 360, 60 ) ).to.equal( 885.4918039430557 );
   });
 
 });
