@@ -34,12 +34,16 @@ module.exports = {
       ' *  A public domain work of the Consumer Financial Protection Bureau\n' +
       ' */\n',
   lint: {
-    src: [
+    js: [
       loc.src + '/js/**/*.js'
     ],
-    gulp: [
+    build: [
       'gulpfile.js',
       'gulp/**/*.js'
+    ],
+    css: [
+      loc.src + '/css/**/*.less',
+      loc.src + '/css/**/*.css'
     ]
   },
   test: {
@@ -64,7 +68,7 @@ module.exports = {
   scripts: {
     entrypoint: loc.src + '/js/index.js',
     src: [
-      loc.src + '/js/**/*.js',
+      loc.src + '/js/**/*.js'
     ],
     dest: loc.dist + '/js/',
     name: 'main.js'

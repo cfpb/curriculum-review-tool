@@ -76,8 +76,8 @@ const modernConf = {
     filename: '[name]'
   },
   plugins: [
-    COMMON_CHUNK_CONFIG,
-    // COMMON_UGLIFY_CONFIG
+    // COMMON_UGLIFY_CONFIG,
+    COMMON_CHUNK_CONFIG
   ]
 };
 
