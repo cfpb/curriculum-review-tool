@@ -34,8 +34,17 @@
 {# BODY items #}
 
 {% block header %}
-    <header class="o-header" role="banner" data-js-hook="state_atomic_init">
-        <div class="o-header_content js">
+    <header class="o-header" role="banner">
+        <div class="m-global-eyebrow m-global-eyebrow__horizontal">
+            <div class="wrapper wrapper__match-content">
+                <div class="m-global-eyebrow_tagline">
+                    An official website of the
+                    <span class="m-global-eyebrow_tagline-usa">United States Government</span>
+                </div>
+                &nbsp;
+            </div>
+        </div>
+        <div class="o-header_content">
             <div class="wrapper wrapper__match-content">
                 <a class="o-header_logo" href="/">
                     <img class="o-header_logo-img" src="/static/img/logo_237x50.png" srcset="/static/img/logo_161x34.png 161w,
@@ -75,14 +84,42 @@
         <h2>Basic Information</h2>
         <p>Fill out your basic information before beginning the review.</p>
         <p><em>If you’ve completed a curriculum review and would like to clear the inputted information, please click clear.</em></p>
+        <form>
+            <p class="m-form-field m-form-field__text">
+                <label class="a-label a-label__heading" for="tdp-crt_title">
+                    Title of curriculum
+                </label>
+                <input class="a-text-input"
+                        type="text"
+                        id="tdp-crt_title">
+            </p>
+            <p class="m-form-field m-form-field__text">
+                <label class="a-label a-label__heading" for="tdp-crt_pubdate">
+                    Date of publication
+                </label>
+                <input class="a-text-input"
+                        type="text"
+                        id="tdp-crt_pubdate">
+            </p>
+            <p class="m-form-field m-form-field__select">
+                <label class="a-label a-label__heading" for="tdp-crt_grade">
+                    Grade range
+                </label>
+                <div class="a-select">
+                    <select id="tdp-crt_grade">
+                        <option value="">Select grade range</option>
+                        <option value="">Elementary School</option>
+                        <option value="">Middle School</option>
+                        <option value="">High School</option>
+                    </select>
+                </div>
+            </p>
+            <button class="a-btn">
+                Begin Review
+            </button>
+        </form>
     </div>
 
-
-    <div class="m-call-to-action">
-        <a class="a-btn a-btn__full-on-xs a-btn__super" href="#">
-            Begin Review
-        </a>
-    </div>
 {% endblock content_main %}
 
 
