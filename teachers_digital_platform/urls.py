@@ -7,4 +7,8 @@ urlpatterns = [
         TemplateView.as_view(template_name='teachers_digital_platform/base.html'),
         name='teachers_digital_platform_base'
     ),
+    url(
+        r'prototypes/crt/start/',
+        TemplateView.as_view(template_name='teachers_digital_platform/prototypes/crt-start.html')
+    ),
 ]
