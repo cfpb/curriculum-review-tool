@@ -39,7 +39,7 @@ gulp.task( 'lint:build', () => _genericLintJS( config.lint.build ) );
 /**
  * Lints the test js files for errors.
  */
-gulp.task( 'lint:tests', () => _genericLintJS( config.test.tests ) );
+gulp.task( 'lint:tests', () => _genericLintJS( config.lint.tests ) );
 
 /**
  * Lints the source js files for errors.

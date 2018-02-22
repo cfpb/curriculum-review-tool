@@ -41,6 +41,9 @@ module.exports = {
       'gulpfile.js',
       'gulp/**/*.js'
     ],
+    tests: [
+      loc.test + '/js/**/*.js'
+    ],
     css: [
       loc.src + '/css/**/*.less',
       loc.src + '/css/**/*.css'
