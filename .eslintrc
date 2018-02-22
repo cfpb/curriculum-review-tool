@@ -1,3 +1,8 @@
+# Do not look up into parent directories.
+# Prevents ESLint version conflicts when cloned into
+# cfgov-refresh's develop-apps folder.
+root: true
+
 # Enable ecmascript 6 features.
 ecmaFeatures:
   arrowFunctions: false
