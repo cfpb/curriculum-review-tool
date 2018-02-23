@@ -1,0 +1,130 @@
+{% extends 'crt-base.html' %}
+
+{% block content_main scoped %}
+    <h1>Curriculum Review</h1>
+    <p>Middle School Example Curriculum</p>
+    <p>
+        <a href="#">
+            Content<br>
+            Covers core knowledge and skills in content standards<br>
+            6 criteria<br>
+            Est. time 30 min.
+        </a>
+    </p>
+    <p>
+        <a href="#">
+            Utility<br>
+            Supports effective teaching<br>
+            7 criteria<br>
+            Est. time 30 min.
+        </a>
+    </p>
+    <p>
+        <a href="#">
+            Quality<br>
+            Accurate and well presented<br>
+            5 criteria<br>
+            Est. time 30 min.
+        </a>
+    </p>
+    <p>
+        <a href="#">
+            Efficacy<br>
+            Improves financial knowledge, skills, or behaviors<br>
+            3 criteria<br>
+            Est. time 30 min.
+        </a>
+    </p>
+    <div class="m-notification m-notification__visible">
+        {# {% include 'icons/error-round.svg' %} #}
+        <div class="m-notification_content">
+            <div class="h4 m-notification_message">Your work is not saved.<br>Please generate a summary at the end of each dimension or the final summary report if you would like to keep your results.</div>
+        </div>
+    </div>
+    <div class="block">
+        <h2>Content: Summary</h2>
+        <p>Instructions: Review the answers that you have inputted and download a summary report at the bottom of this page.</p>
+        <p>Completed: February 1, 2018</p>
+        <p>Middle School Example Curriculum</p>
+        <p>Date of publication: May 1, 2016</p>
+        <p>Grade range: Middle School</p>
+    </div>
+    <div class="block">
+        <h3>Criteria Summary</h3>
+        <p>Criterion 1: Name of this criterion <a href="#">Edit responses</a></p>
+        <p>The curriculum addresses grade-level appropriate topics for saving and investing.</p>
+        <h4>Total number of components:</h4>
+        <p><a href="#">3</a> Yes <a href="#">1</a> No</p>
+        <h4>Exceeds</h4>
+        <p>All 4 components were addressed</p>
+        <h4>Meets</h4>
+        <p>3 components were addressed</p>
+        <p class="m-form-field m-form-field__textarea">
+            <label class="a-label a-label__heading" for="test_1">
+                My notes
+            </label>
+            <textarea class="a-text-input" id="test_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</textarea>
+        </p>
+    </div>
+    <div class="block">
+        <h3>Criteria Summary</h3>
+        <p>Criterion 2: Name of this criterion <a href="#">Edit responses</a></p>
+        <p>The curriculum addresses grade-level appropriate topics for saving and investing.</p>
+        <h4>Total number of components:</h4>
+        <p><a href="#">2</a> Yes <a href="#">0</a> No</p>
+        <h4>Exceeds</h4>
+        <p>Both of the components were addressed</p>
+        <h4>Meets</h4>
+        <p>1 component was addressed</p>
+        <h4>Does not meet</h4>
+        <p>0 components were addressed</p>
+        <h4>Does not meet</h4>
+        <p>Less than 3 components were addressed</p>
+        <p class="m-form-field m-form-field__textarea">
+            <label class="a-label a-label__heading" for="test_2">
+                My notes
+            </label>
+            <textarea class="a-text-input" id="test_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</textarea>
+        </p>
+    </div>
+    <div class="block">
+        <h3>Overall score: Middle School Content</h3>
+        <p>How does this curriculum meet the content criteria?</p>
+        <h4>Strong Content</h4>
+        <p>All 6 criteria were met, and at least one was exceeded</p>
+        <h4>Moderate Content</h4>
+        <p>All 6 criteria were met</p>
+        <h4>Limited Content</h4>
+        <p>At least one of the criteria was not met</p>
+        <h4>Assets</h4>
+        <p class="m-form-field m-form-field__textarea">
+            <label class="a-label a-label__heading" for="test_3">
+                List the assets for curriculum content <em>(Optional)</em>
+            </label>
+            <textarea class="a-text-input" id="test_3"></textarea>
+        </p>
+        <h4>Gaps</h4>
+        <p class="m-form-field m-form-field__textarea">
+            <label class="a-label a-label__heading" for="test_4">
+                List the gaps for curriculum content <em>(Optional)</em>
+            </label>
+            <textarea class="a-text-input" id="test_4"></textarea>
+        </p>
+        <h4>Overall notes</h4>
+        <p class="m-form-field m-form-field__textarea">
+            <label class="a-label a-label__heading" for="test_5">
+                Write your notes for the content overall <em>(Optional)</em>
+            </label>
+            <textarea class="a-text-input" id="test_5"></textarea>
+        </p>
+        <p class="m-form-field m-form-field__text">
+            <label class="a-label a-label__heading" for="test_6">
+                Name of Reviewer
+            </label>
+            <input class="a-text-input" type="text" id="test_6">
+        </p>
+        <button class="a-btn">
+            Download Content Summary
+        </button>
+    </div>
+{% endblock content_main %}
