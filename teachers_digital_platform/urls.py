@@ -15,4 +15,8 @@ urlpatterns = [
         r'prototypes/crt-survey/',
         TemplateView.as_view(template_name='teachers_digital_platform/prototypes/crt-survey.html')
     ),
+    url(
+        r'prototypes/crt-summary/',
+        TemplateView.as_view(template_name='teachers_digital_platform/prototypes/crt-summary.html')
+    ),
 ]
