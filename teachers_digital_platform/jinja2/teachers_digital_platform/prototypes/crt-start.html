@@ -1,15 +1,102 @@
-{% extends 'crt-base.html' %}
+{% extends 'layout-2-1-bleedbar.html' %}
+
+
+{# HEAD items #}
+
+{% block title -%}
+    Curriculum Review Tool | Consumer Financial Protection Bureau
+{%- endblock title %}
+
+{% block desc -%}
+    Our vision is a consumer finance marketplace that works for American consumers, responsible providers, and the economy as a whole.
+{%- endblock desc %}
+
+{% block og_image -%}
+    <meta property="og:image" content="{{ meta_image_url }}">
+    <meta property="twitter:image" content="{{ meta_image_url }}">
+    {# Optional property if you want to use Twitter's large card format
+       https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image
+    <meta name="twitter:card" content="summary_large_image">
+    #}
+{%- endblock og_image %}
+
+{% block og_desc -%}
+    {{ self.desc() }}
+{%- endblock og_desc %}
+
+{% block css -%}
+    {{ super() }}
+
+    <link rel="stylesheet" href="{{ static('tdp/css/tdp.css') }}">
+{%- endblock css %}
+
+
+{# BODY items #}
+
+{% block header %}
+    <header class="o-header" role="banner">
+        <div class="m-global-eyebrow m-global-eyebrow__horizontal">
+            <div class="wrapper wrapper__match-content">
+                <div class="m-global-eyebrow_tagline">
+                    An official website of the
+                    <span class="m-global-eyebrow_tagline-usa">United States Government</span>
+                </div>
+                &nbsp;
+            </div>
+        </div>
+        <div class="o-header_content">
+            <div class="wrapper wrapper__match-content">
+                <a class="o-header_logo" href="/">
+                    <img class="o-header_logo-img" src="/static/img/logo_237x50.png" srcset="/static/img/logo_161x34.png 161w,
+                                /static/img/logo_161x34%402x.png 322w,
+                                /static/img/logo_161x34%403x.png 483w,
+                                /static/img/logo_161x34%404x.png 644w,
+                                /static/img/logo_237x50.png 237w,
+                                /static/img/logo_237x50%402x.png 474w" sizes="(max-width: 900px) 161px,
+                                237px" alt="Consumer Financial Protection Bureau">
+                </a>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block hero -%}
+{% endblock %}
+
+{% block pre_content %}
+{% endblock %}
 
 {% block content_main scoped %}
-    <h1>Curriculum Review</h1>
-    <h2>Getting Started</h2>
-    <p>The materials you will need to conduct the review include the following:</p>
-    <ul>
-        <li>Scope and sequence</li>
-        <li>Lesson plans for each lesson, with objectives, activities, supporting materials (such as handout masters), and directions for teachers</li>
-        <li>Student assessments</li>
-        <li>Guidance for teachers, such as suggestions for tailoring lessons, additional resources, and glossaries</li>
-    </ul>
+    <div class="block block__flush-top">
+        <h1>Before you begin your review</h1>
+        <div class="lead-paragraph">
+            <p>Transition sentence here. Lorem ipsum dolor sit amet consecteteur adipiscing elit.</p>
+        </div>
+        <ul>
+            <li>Assemble a review team</li>
+            <li>Gather all materials for each curriculum including:
+                <ul>
+                    <li>Scope and sequence</li>
+                    <li>Lesson plans</li>
+                    <li>Student assessments</li>
+                    <li>Guidance for teachers</li>
+                </ul>
+            </li>
+            <li>Collect studies and other evidence of the curriculum’s impact</li>
+        </ul>
+        <h2 class="h4">Need help getting started?</h2>
+        <p>Download our
+            <a class="a-link
+                      a-link__icon
+                      a-link__no-wrap"
+                href="#">
+                    <span class="a-link_text">curriculum review checklist</span>
+                    {# {% include icons/download.svg %} #}
+            </a>.
+        </p>
+    </div>
+
+
     <div class="block">
         <div class="m-notification m-notification__visible">
             {# {% include 'icons/error-round.svg' %} #}
@@ -58,3 +145,35 @@
         </form>
     </div>
 {% endblock content_main %}
+
+{% block content_sidebar_modifiers -%}
+    o-sidebar-content
+{%- endblock %}
+
+{% block content_sidebar scoped -%}
+    <div class="block block__flush-top">
+        <h2>About us</h2>
+        <p>We’re the Consumer Financial Protection Bureau (CFPB), a U.S. government agency that makes sure banks, lenders, and other financial companies treat you fairly.</p>
+        <p><a href="#">Learn how the CFPB can help you</a></p>
+    </div>
+    <div class="block">
+        <header class="m-slug-header">
+            <h2 class="a-heading">
+                PDF of curriculum review
+            </h2>
+        </header>
+        <p>Want to download or print a blank copy of the review?</p>
+        <p>
+            <a class="a-link
+                      a-link__icon
+                      a-link__no-wrap"
+                href="#">
+                    <span class="a-link_text">Download a copy of the financial education curriculum review</span>
+                    {# {% include icons/download.svg %} #}
+            </a>
+        </p>
+    </div>
+{%- endblock %}
+
+{% block javascript scoped -%}
+{%- endblock javascript %}
