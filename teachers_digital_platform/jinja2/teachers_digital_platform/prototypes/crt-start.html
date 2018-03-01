@@ -87,8 +87,7 @@
         <h2 class="h4">Need help getting started?</h2>
         <p>Download our
             <a class="a-link
-                      a-link__icon
-                      a-link__no-wrap"
+                      a-link__icon"
                 href="#">
                     <span class="a-link_text">curriculum review checklist</span>
                     {# {% include icons/download.svg %} #}
@@ -96,52 +95,83 @@
         </p>
     </div>
 
-
-    <div class="block">
-        <div class="m-notification m-notification__visible">
-            {# {% include 'icons/error-round.svg' %} #}
-            <div class="m-notification_content">
-                <div class="h4 m-notification_message">You will not be able to save your work.<br>Please download a summary at the end of each dimension or the final summary report if you would like to save your results.</div>
-            </div>
+    <div class="o-well">
+        <div class="u-mb30">
+            <h2>Curriculum information</h2>
+            <p>Enter the information for the curriculum you’re reviewing.</p>
         </div>
-    </div>
-    <div class="block">
-        <h2>Basic Information</h2>
-        <p>Fill out your basic information before beginning the review.</p>
-        <p><em>If you’ve completed a curriculum review and would like to clear the inputted information, please click clear.</em></p>
-        <form>
-            <p class="m-form-field m-form-field__text">
-                <label class="a-label a-label__heading" for="tdp-crt_title">
-                    Title of curriculum
-                </label>
-                <input class="a-text-input"
-                        type="text"
-                        id="tdp-crt_title">
-            </p>
-            <p class="m-form-field m-form-field__text">
-                <label class="a-label a-label__heading" for="tdp-crt_pubdate">
-                    Date of publication
-                </label>
-                <input class="a-text-input"
-                        type="text"
-                        id="tdp-crt_pubdate">
-            </p>
-            <p class="m-form-field m-form-field__select">
-                <label class="a-label a-label__heading" for="tdp-crt_grade">
-                    Grade range
-                </label>
-                <div class="a-select">
-                    <select id="tdp-crt_grade">
-                        <option value="">Select grade range</option>
-                        <option value="">Elementary School</option>
-                        <option value="">Middle School</option>
-                        <option value="">High School</option>
-                    </select>
+        <form class="o-form">
+            <div class="o-form_group">
+                <ul class="content-l m-list m-list__unstyled">
+                    <li class="content-l_col content-l_col-1-2">
+                        <div class="m-form-field
+                                    m-form-field__text">
+                            <label class="a-label
+                                          a-label__heading"
+                                    for="tdp-crt_title">
+                                Curriculum title
+                            </label>
+                            <input class="a-text-input
+                                          a-text-input__full"
+                                    type="text"
+                                    id="tdp-crt_title">
+                        </div>
+                    </li>
+                    <li class="content-l_col content-l_col-1-2">
+                        <div class="m-form-field
+                                    m-form-field__text">
+                            <label class="a-label
+                                          a-label__heading"
+                                    for="tdp-crt_pubdate">
+                                Date of publication
+                                <small class="a-label_helper">(optional)</small>
+                            </label>
+                            <input class="a-text-input
+                                          a-text-input__full"
+                                    type="text"
+                                    id="tdp-crt_pubdate">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="o-form_group">
+                <div class="m-form-field
+                            m-form-field__select">
+                    <label class="a-label
+                                  a-label__heading"
+                           for="tdp-crt_grade">
+                        Grade range
+                    </label>
+                    <div class="a-select">
+                        <select id="tdp-crt_grade">
+                            <option value="">Select grade range</option>
+                            <option value="">Elementary School</option>
+                            <option value="">Middle School</option>
+                            <option value="">High School</option>
+                        </select>
+                    </div>
                 </div>
-            </p>
-            <button class="a-btn">
-                Begin Review
-            </button>
+            </div>
+            <div class="o-form_group">
+                <div class="m-notification
+                            m-notification__visible
+                            m-notification__warning">
+                    {# {% include 'icons/error-round.svg' %} #}
+                    <span class="m-notification_icon cf-icon"></span>
+                    <div class="m-notification_content">
+                        <div class="hm-notification_message">
+                            <h3 class="h4">Limitations around saving your work</h3>
+                            <p>If you plan to complete this review over multiple sessions, we recommend downloading a summary after each completed section. Learn more about <a href="#">how to save your work.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-btn-group">
+                <button class="a-btn" type="submit" disabled>
+                    Begin Review
+                </button>
+                <button href="#" class="a-btn a-btn__link">Start over with a new review</button>
+            </div>
         </form>
     </div>
 {% endblock content_main %}
@@ -165,8 +195,7 @@
         <p>Want to download or print a blank copy of the review?</p>
         <p>
             <a class="a-link
-                      a-link__icon
-                      a-link__no-wrap"
+                      a-link__icon"
                 href="#">
                     <span class="a-link_text">Download a copy of the financial education curriculum review</span>
                     {# {% include icons/download.svg %} #}
