@@ -161,7 +161,7 @@
                     <div class="m-notification_content">
                         <div class="hm-notification_message">
                             <h3 class="h4">Limitations around saving your work</h3>
-                            <p>If you plan to complete this review over multiple sessions, we recommend downloading a summary after each completed section. Learn more about <a href="#">how to save your work.</a></p>
+                            <p>If you plan to complete this review over multiple sessions, we recommend downloading a summary after each completed section. Learn more about <a href="#modal-dialog">how to save your work.</a></p>
                         </div>
                     </div>
                 </div>
@@ -205,10 +205,40 @@
 {%- endblock %}
 
 {% block javascript scoped -%}
+    <div class="o-modal"
+        id="modal-dialog"
+        aria-hidden="true"
+        role="alertdialog"
+        aria-labelledby="example-modal-title"
+        aria-describedby="example-modal-desc">
+        <div class="o-modal_backdrop"></div>
+        <div class="o-modal_container">
+        <form class="o-modal_content">
+            <div class="o-modal_body">
+                <button class="o-modal_close a-btn a-btn__link">
+                    Close
+                    <span class="cf-icon cf-icon-delete-round"></span>
+                </button>
+                <h1 id="example-modal-title">Saving your work</h1>
+                <div id="example-modal-desc">
+                    <p>This tool uses cookies to temporarily save your work. To load answers you’ve already completed, use the same computer and browser, and don't clear your cookies.</p>
+                    <p>To save a permanent copy of your work, please download a summary of each dimension as you complete it. You can download an overall summary of findings after completing any dimension as well.</p>
+                    <p>You can only work on a single curriculum at a time.</p>
+                </div>
+            </div>
+            <div class="o-modal_footer">
+                <button class="a-btn">Close</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
     <!-- This script is for demo purposes only. -->
     <script>
         var gradeRange = document.getElementById('tdp-crt_grade');
         var button = document.querySelector('button[type="submit"]');
+        var modalLink = document.querySelector('a[href="#modal-window"]');
+        var modalWindow = document.getElementById('modal-window');
 
         document.addEventListener('DOMContentLoaded', function () {
             gradeRange.onchange=enableButton;
@@ -216,6 +246,14 @@
 
         function enableButton(event) {
             button.removeAttribute('disabled');
+        }
+
+        document.addEventListener('click', function (e) {
+            e.preventDefault();2
+            modalLink.onchange=openModalWindow;
+        }, false);
+
+        function openModalWindow(event) {
         }
     </script>
 {%- endblock javascript %}
