@@ -205,4 +205,17 @@
 {%- endblock %}
 
 {% block javascript scoped -%}
+    <!-- This script is for demo purposes only. -->
+    <script>
+        var gradeRange = document.getElementById('tdp-crt_grade');
+        var button = document.querySelector('button[type="submit"]');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            gradeRange.onchange=enableButton;
+        }, false);
+
+        function enableButton(event) {
+            button.removeAttribute('disabled');
+        }
+    </script>
 {%- endblock javascript %}
