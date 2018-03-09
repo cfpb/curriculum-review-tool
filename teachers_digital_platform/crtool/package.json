@@ -1,0 +1,19 @@
+{
+  "name": "tdp-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-persist": "^5.9.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && mv build/static/**/main*.js ../static/tdp/js/crtool.react.js", 
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

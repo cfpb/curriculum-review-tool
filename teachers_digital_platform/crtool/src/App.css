@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.header-footer-format {
+  text-align: center;
+}
+
+html,body{
+  height: 100%
+}
+
+#holder{
+  min-height: 100%;
+  position:relative;
+}
+
+#footer{
+  height: 100px; 
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0; 
+}
+
+.DistinctiveBoxFormat {
+  text-align: left;
+}
+
+.CriterionPageTextFormat {
+  text-align: left;
+}
+
+.Distinctive {
+	float: left;
+	width: 250px;
+	height: 140px;
+	margin: 0.5em;
+	border: 1px solid black;
+	padding: 0.5em;
+}
+
+.DistinctivesBlock:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.SurveyPage {
+  margin-top: 30px;
+}
+
+.a-text-input {
+  width: 400px;
+}
