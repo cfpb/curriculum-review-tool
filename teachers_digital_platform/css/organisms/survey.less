@@ -1,0 +1,89 @@
+// Survey question organism.
+
+@bp-survey-columns: 1000px;
+
+.o-survey {
+    border-bottom: 1px solid @gray-20;
+    margin-bottom: unit( 30px / @base-font-size-px, em);
+    padding-bottom: unit( 30px / @base-font-size-px, em);
+    padding-left: unit( 50px / @base-font-size-px, em);
+    position: relative;
+
+    .respond-to-min(@bp-survey-columns, {
+        clear: both;
+        max-width: unit( 1200px / @base-font-size-px, em);
+        padding-left: 0;
+    });
+}
+
+.o-survey_number {
+    left: 0;
+    position: absolute;
+
+    .respond-to-min(@bp-survey-columns, {
+        .grid_column(1, 12);
+        left: auto;
+        position: initial;
+    });
+}
+
+.o-survey_indicator {
+    margin-bottom: unit( 15px / @base-font-size-px, em);
+
+    .respond-to-min(@bp-survey-columns, {
+        .grid_column(3, 12);
+        margin-bottom: 0;
+    });
+}
+
+.o-survey_components {
+    .respond-to-min(@bp-survey-columns, {
+        .grid_column(8, 12);
+    });
+}
+
+.o-survey_component {
+    .respond-to-min(@bp-survey-columns, {
+        display: flex;
+        justify-content: space-between;
+    });
+
+    & + & {
+        border-top: 1px solid @gray-10;
+        margin-top: unit( 30px / @base-font-size-px, em);
+        padding-top: unit( 30px / @base-font-size-px, em);
+    }
+}
+
+.o-survey_question {
+    margin-bottom: unit( 15px / @base-font-size-px, em);
+
+    .respond-to-min(@bp-survey-columns, {
+        flex-basis: 50%;
+        margin-bottom: 0;
+        margin-right: unit( 15px / @base-font-size-px, em);
+    });
+}
+
+.o-survey_question-helper {
+    color: @gray;
+    margin-top: unit( -5px / @base-font-size-px, em);
+}
+
+.o-survey_answer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: unit( -2px / @base-font-size-px, em);
+    margin-right: unit( -2px / @base-font-size-px, em);
+    max-width: unit( 670px / @base-font-size-px, em);
+
+    .respond-to-min(@bp-survey-columns, {
+        flex-basis: 50%;
+    });
+
+    > * {
+        flex-grow: 1;
+        margin-left: unit( 2px / @base-font-size-px, em);
+        margin-right: unit( 2px / @base-font-size-px, em);
+    }
+}
