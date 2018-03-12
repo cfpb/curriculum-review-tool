@@ -66,7 +66,12 @@ module.exports = {
         loc.lib + 'cf-*/src'
       ] ),
       compress: true
-    }
+    },
+    otherBuildTriggerFiles: [
+      loc.src + '/css/**/*.less',
+      loc.lib,
+      './gulp/**/*.js'
+    ]
   },
   scripts: {
     entrypoint: loc.src + '/js/index.js',
