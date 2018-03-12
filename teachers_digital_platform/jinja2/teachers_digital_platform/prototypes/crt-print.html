@@ -1,0 +1,52 @@
+{% extends 'crt-base.html' %}
+
+{% block content_main scoped %}
+    <div class="block block__flush-top block__padded-bottom block__border-bottom u-hide-on-print">    
+        <h1>Print or save</h1>
+        <h2>1. Instructions for how to print or save it as a PDF</h2>
+        <h3>Windows users</h3>
+        <ul>
+            <li>An instruction</li>
+        </ul>
+        <h3>Mac users</h3>
+        <ul>
+            <li>Another instruction</li>
+        </ul>
+        <h2>2. When you're finished, close this window to return to the review.</h2>
+    </div>
+    <div class="block block__flush-top block__flush-bottom">
+        <h1>Final Summary</h1>
+        <h3>This summary shows the scores for all four dimensions.</h3>
+        <p><strong>Some text:</strong> Head Start, Financial Literacy, Curriculum</p>
+        <p><strong>Grade range:</strong> Middle School</p>
+        <p><strong>Date completed:</strong> February 1, 2018</p>
+        <p><strong>Date of publication:</strong> May 1, 2018</p>
+    </div>
+    <div class="block block__padded-top block__border-top">
+        <h2>Content score</h2>
+        <p>How the curriculum meets the criteria for content:</p>
+        <div class="m-form-field m-form-field__radio u-mb20">
+            <input class="a-radio" type="radio" name="radio_1" id="test_1" disabled>
+            <label class="a-label" for="test_1">
+                <strong>Strong confidence</strong>
+                All 5 criteria ...
+            </label>
+        </div>
+        <div class="m-form-field m-form-field__radio u-mb20">
+            <input class="a-radio" type="radio" name="radio_2" id="test_2" checked disabled>
+            <label class="a-label" for="test_2">
+                <strong>Strong confidence</strong>
+                All 5 criteria ...
+            </label>
+        </div>
+        <div class="m-form-field m-form-field__radio u-mb20">
+            <input class="a-radio" type="radio" name="radio_3" id="test_3" disabled>
+            <label class="a-label" for="test_3">
+                <strong>Strong confidence</strong>
+                All 5 criteria ...
+            </label>
+        </div>
+        <h4>Assets <span class="a-optional-copy">[optional]</span></h4>
+    </div>
+
+{% endblock content_main %}

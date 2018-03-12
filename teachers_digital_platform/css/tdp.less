@@ -26,3 +26,13 @@
 // Project specific Less goes here or you can break it up into discrete files.
 //
 // @import "my-other-module.less"
+
+.u-hide-on-print {
+    @media print {
+        display: none !important;
+    }
+}
+
+.a-optional-copy {
+    color: @gray;
+}
