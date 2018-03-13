@@ -3,24 +3,34 @@
 {% block content_main scoped %}
     <div class="block block__flush-top block__padded-bottom block__border-bottom u-hide-on-print">    
         <h1>Print or save</h1>
-        <h2>1. Instructions for how to print or save it as a PDF</h2>
-        <h3>Windows users</h3>
+        <h2>1. Print this summary or save as a PDF.</h2>
+        <h2>2. When you're finished, close this window and return to the review.</h2>
+        <h3>To save as a PDF:</h3>
+        <p><strong>Windows users:</strong></p>
         <ul>
-            <li>An instruction</li>
+            <li>Open the print menu by pressing Ctrl+P.</li>
+            <li>Under the "Printer" drop-down menu, select "Microsoft Print to PDF" or "Save as PDF." (The exact wording may vary by
+                browser.)</li>
+            <li>Click "Print."</li>
+            <li>When prompted, choose where you want to save the file.</li>
+            <li>If you're on an older version of Windows that does not have the built-in Microsoft Print to PDF printer, the Google
+                Chrome browser provides its own "Save as PDF" option.</li>
         </ul>
-        <h3>Mac users</h3>
+        <p><strong>Mac users:</strong></p>
         <ul>
-            <li>Another instruction</li>
+            <li>Open the print menu by pressing Command+P.</li>
+            <li>From the PDF drop-down menu (in the lower-left corner), choose "Save as PDF." (In Chrome you may be able to skip
+                this step and select “Open PDF in Preview.”)</li>
+            <li>When prompted, choose where you want to save the file.</li>
         </ul>
-        <h2>2. When you're finished, close this window to return to the review.</h2>
+        <p><em>These instructions won't be included in your file.</em></p>
     </div>
     <div class="block block__flush-top block__flush-bottom">
-        <h1>Final Summary</h1>
-        <h3>This summary shows the scores for all four dimensions.</h3>
-        <p><strong>Some text:</strong> Head Start, Financial Literacy, Curriculum</p>
+        <h1>Summary of Findings</h1>
+        <p><strong>Curriculum title:</strong> Head Start Financial Literacy Curriculum</p>
         <p><strong>Grade range:</strong> Middle School</p>
         <p><strong>Date completed:</strong> February 1, 2018</p>
-        <p><strong>Date of publication:</strong> May 1, 2018</p>
+        <p><strong>Date of publication:</strong> May 1, 2016</p>
     </div>
     <div class="block block__padded-top block__border-top">
         <h2>Content score</h2>
@@ -29,24 +39,37 @@
             <input class="a-radio" type="radio" name="radio_1" id="test_1" disabled>
             <label class="a-label" for="test_1">
                 <strong>Strong confidence</strong>
-                All 5 criteria ...
+                All 5 criteria were met, and at least one was exceeded
             </label>
         </div>
         <div class="m-form-field m-form-field__radio u-mb20">
             <input class="a-radio" type="radio" name="radio_2" id="test_2" checked disabled>
             <label class="a-label" for="test_2">
                 <strong>Strong confidence</strong>
-                All 5 criteria ...
+                All 5 criteria were met
             </label>
         </div>
         <div class="m-form-field m-form-field__radio u-mb20">
             <input class="a-radio" type="radio" name="radio_3" id="test_3" disabled>
             <label class="a-label" for="test_3">
                 <strong>Strong confidence</strong>
-                All 5 criteria ...
+                At least one of the criteria was not met
             </label>
         </div>
-        <h4>Assets <span class="a-optional-copy">[optional]</span></h4>
+        <h4>Assets <span class="a-optional-copy">(optional)</span></h4>
+        <p><em>No information provided</em></p>
+
+        <h4>Gaps <span class="a-optional-copy">(optional)</span></h4>
+        <p>These are the notes I previously entered. I can no longer edit these notes, which is why
+there’s not a text field box around me.</p>
+
+        <h4>Overall notes <span class="a-optional-copy">(optional)</span></h4>
+        <p>These are the notes I previously entered. I can no longer edit these notes, which is why
+there’s not a text field box around me.</p>
+    </div>
+    <div class="block block__padded-top block__border-top">
+        <h2>Utility score</h2>
+        <p><em>Dimension not reviewed</em></p>
     </div>
 
 {% endblock content_main %}
