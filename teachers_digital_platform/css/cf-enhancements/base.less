@@ -1,0 +1,68 @@
+
+.heading-1( @fs: @size-i ) {
+    @font-size: @fs;
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
+    letter-spacing: initial;
+    line-height: 1.25;
+    text-shadow: initial;
+    text-transform: initial;
+}
+
+.heading-2( @fs: @size-ii ) {
+    @font-size: @fs;
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
+    letter-spacing: initial;
+    line-height: 1.25;
+    text-shadow: initial;
+    text-transform: initial;
+}
+
+.heading-3( @fs: @size-iii )  {
+    @font-size: @fs;
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: normal;
+    letter-spacing: initial;
+    line-height: 1.25;
+    text-shadow: initial;
+    text-transform: initial;
+}
+
+.heading-4( @fs: @size-iv )  {
+    @font-size: @fs;
+
+    margin-bottom: unit( 15px / @font-size, em );
+    font-size: unit( @font-size / @base-font-size-px, em );
+    font-weight: 500;
+    letter-spacing: initial;
+    line-height: 1.25;
+    text-shadow: initial;
+    text-transform: initial;
+}
+
+h1,
+.h1 {
+    .heading-1();
+}
+
+h2,
+.h2 {
+    .heading-2();
+}
+
+h3,
+.h3 {
+    .heading-3();
+}
+
+h4,
+.h4 {
+    .heading-4();
+}
