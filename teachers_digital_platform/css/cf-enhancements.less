@@ -8,3 +8,15 @@
 // Whenever building enhancements or changes to existing CF components, write them here
 // to work out the details before contributing them back to a Capital Framework component
 //
+
+.u-hide-on-print {
+    @media print {
+        display: none !important;
+    }
+}
+
+.u-page-break-before {
+    @media print {
+        footer {page-break-before: always;}
+    }
+}
