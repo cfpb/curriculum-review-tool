@@ -1,7 +1,11 @@
 {% extends 'crt-base.html' %}
 
 {% block content_main scoped %}
-    <div class="block block__flush-top block__padded-bottom block__border-bottom u-hide-on-print">    
+    <div class="block 
+                block__flush-top
+                block__padded-bottom
+                block__border-bottom
+                u-hide-on-print">    
         <h1>Print or save</h1>
         <h2>1. Print this summary or save as a PDF.</h2>
         <h2>2. When you're finished, close this window and return to the review.</h2>
@@ -25,35 +29,34 @@
         </ul>
         <p><em>These instructions won't be included in your file.</em></p>
     </div>
-    <div class="block block__flush-top block__flush-bottom">
-        <h1>Summary of Findings</h1>
+    <div class="block
+                block__flush-top
+                block__flush-bottom">
+        <h2 class="h1">Summary of Findings</h1>
         <p><strong>Curriculum title:</strong> Head Start Financial Literacy Curriculum</p>
         <p><strong>Grade range:</strong> Middle School</p>
         <p><strong>Date completed:</strong> February 1, 2018</p>
         <p><strong>Date of publication:</strong> May 1, 2016</p>
     </div>
-    <div class="block block__padded-top block__border-top block__flush-bottom">
-        <h3 class="a-heading a-heading__icon">
-            
-            Content score
-        </h3>
+    <div class="block block__padded-top block__border-top block__flush-bottom u-disable-form-elements">
+        <h3 class="a-heading a-heading__icon">{# include icons/approved-round.svg #}Content score</h3>
         <p>How the curriculum meets the criteria for content:</p>
         <div class="m-form-field m-form-field__radio u-mb30">
-            <input class="a-radio" type="radio" name="radio_1" id="test_1" disabled>
+            <input class="a-radio" type="radio" name="radio_1" id="test_1">
             <label class="a-label" for="test_1">
                 <strong>Strong confidence</strong>
                 All 5 criteria were met, and at least one was exceeded
             </label>
         </div>
         <div class="m-form-field m-form-field__radio u-mb30">
-            <input class="a-radio" type="radio" name="radio_2" id="test_2" checked disabled>
+            <input class="a-radio" type="radio" name="radio_2" id="test_2" checked>
             <label class="a-label" for="test_2">
                 <strong>Strong confidence</strong>
                 All 5 criteria were met
             </label>
         </div>
         <div class="m-form-field m-form-field__radio u-mb30">
-            <input class="a-radio" type="radio" name="radio_3" id="test_3" disabled>
+            <input class="a-radio" type="radio" name="radio_3" id="test_3">
             <label class="a-label" for="test_3">
                 <strong>Strong confidence</strong>
                 At least one of the criteria was not met
@@ -69,15 +72,14 @@
         <p>These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>
     </div>
     <div class="block block__padded-top block__border-top block__flush-bottom">
-        <h3 class="a-heading a-heading__icon">
-            
-            Utility score
-        </h3>
+        <h3 class="a-heading a-heading__icon">{# include icons/approved-round.svg #}Utility score</h3>
         <p><em>Dimension not reviewed</em></p>
     </div>
     <div class="block block__padded-top block__border-top">
         <h2>Key takeaways <span class="u-fc-gray">(optional)</span></h2>
         <p>These are my final thoughts that I entered on the final summary page. I am no longer editable now that I’m on the print page. To save on ink, I’ve dropped by gray highlight box. I’m thoughtful.</p>
     </div>
+
+
 
 {% endblock content_main %}

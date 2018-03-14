@@ -35,3 +35,26 @@
 .u-fc-gray {
     color: @gray;
 }
+
+.u-disable-form-elements input,
+.u-disable-form-elements label {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.u-disable-form-elements .a-label:before,
+.u-disable-form-elements .a-label.focus:before,
+.u-disable-form-elements .a-label.hover:before {
+    background: @gray-10;
+    border-color: @gray-60;
+}
+
+.u-disable-form-elements .a-radio:checked+.a-label:before {
+    background: black;
+}
+
+.u-disable-form-elements .a-text-input {
+    border-color: transparent;
+    outline: none;
+    resize: none;
+}
