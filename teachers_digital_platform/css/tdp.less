@@ -27,6 +27,27 @@
 //
 // @import "my-other-module.less"
 
+
+//
+// Hide section on printed pages
+//
+
+.u-hide-on-print {
+    @media print {
+        display: none !important;
+    }
+}
+
+//
+// Add page break before on printed pages
+//
+
+.u-page-break-before {
+    @media print {
+        footer {page-break-before: always;}
+    }
+}
+
 //
 // Font color utility
 //
@@ -36,14 +57,13 @@
 }
 
 //
-// Disabling form elements on print pages
+// Disable form elements on print pages
 //
 
 .u-disable-form-elements {}
 
 .u-disable-form-elements input,
 .u-disable-form-elements label {
-    cursor: not-allowed;
     pointer-events: none;
 }
 
@@ -62,4 +82,11 @@
     border-color: transparent;
     outline: none;
     resize: none;
+}
+
+.u-disable-form-elements .a-text-input:disabled {
+    background-color: @white;
+    border: none;
+    color: inherit;
+    cursor: inherit;
 }
