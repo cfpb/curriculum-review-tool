@@ -24,70 +24,67 @@
 @import 'cf-enhancements.less';
 
 // Project specific Less goes here or you can break it up into discrete files.
-//
-// @import "my-other-module.less"
+@import "organisms/survey.less";
+@import "utilities/fc.less";
 
+// Hide these sections on printed pages
 
-//
-// Hide section on printed pages
-//
-
-.u-hide-on-print {
-    @media print {
-        display: none !important;
-    }
+@media print {
+    .o-header, .o-footer, .u-hide-on-print { display: none !important; }
 }
 
-//
 // Add page break before on printed pages
-//
 
 .u-page-break-before {
     @media print {
-        footer {page-break-before: always;}
+        page-break-before: always;
     }
 }
 
-//
-// Disable form elements on print pages
-//
+// Alter/disable elements on print pages
 
-.u-disable-form-elements input,
-.u-disable-form-elements label {
-    pointer-events: none;
-}
-
-.u-disable-form-elements .a-label:before,
-.u-disable-form-elements .a-label.focus:before,
-.u-disable-form-elements .a-label.hover:before {
-    background: @gray-10;
-    border-color: @gray-60;
-}
-
-.u-disable-form-elements .a-radio:checked+.a-label {
+.u-alter-elements-on-print .m-notification {
     background: transparent;
-}
-
-.u-disable-form-elements .a-radio:checked+.a-label:before {
-    background: @black;
-}
-
-.u-disable-form-elements .a-label_helper__block {
-    display: none;
-}
-
-.u-disable-form-elements .a-text-input {
-    border-color: transparent;
-    outline: none;
+    border: none;
     padding: 0;
 }
 
-.u-disable-form-elements .a-text-input:disabled {
-    background-color: @white;
-    border: none;
-    color: inherit;
-    cursor: inherit;
+.u-alter-elements-on-print input,
+.u-alter-elements-on-print label,
+.u-alter-elements-on-print textarea {
+    pointer-events: none;
 }
 
-@import "organisms/survey.less";
-@import "utilities/fc.less";
+.u-alter-elements-on-print .m-form-field__radio .a-label:before,
+.u-alter-elements-on-print .m-form-field__radio .a-label.focus:before,
+.u-alter-elements-on-print .m-form-field__radio .a-label.hover:before {
+    background-color: @gray-10;
+    border-color: @gray-60;
+}
+
+.u-alter-elements-on-print .m-form-field__radio .a-radio+.a-label,
+.u-alter-elements-on-print .m-form-field__radio .a-radio:checked+.a-label {
+    background-color: transparent;
+}
+
+.u-alter-elements-on-print .m-form-field__radio .a-radio:checked+.a-label:before {
+    background-color: @black;
+    @media print {
+        // Need to add a dot image and absolutely position it
+    }
+
+}
+
+.u-alter-elements-on-print .a-label_helper__block {
+    display: none;
+}
+
+.u-alter-elements-on-print .a-text-input {
+    background-color: @white;
+    border-color: transparent;
+    color: inherit;
+    cursor: inherit;
+    outline: none;
+    padding: 0;
+    resize: none;
+}
