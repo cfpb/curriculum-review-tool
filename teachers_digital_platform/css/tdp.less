@@ -52,8 +52,6 @@
 // Disable form elements on print pages
 //
 
-.u-disable-form-elements {}
-
 .u-disable-form-elements input,
 .u-disable-form-elements label {
     pointer-events: none;
@@ -66,14 +64,22 @@
     border-color: @gray-60;
 }
 
+.u-disable-form-elements .a-radio:checked+.a-label {
+    background: transparent;
+}
+
 .u-disable-form-elements .a-radio:checked+.a-label:before {
-    background: black;
+    background: @black;
+}
+
+.u-disable-form-elements .a-label_helper__block {
+    display: none;
 }
 
 .u-disable-form-elements .a-text-input {
     border-color: transparent;
     outline: none;
-    resize: none;
+    padding: 0;
 }
 
 .u-disable-form-elements .a-text-input:disabled {
