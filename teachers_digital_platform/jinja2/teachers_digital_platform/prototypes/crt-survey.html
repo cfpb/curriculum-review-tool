@@ -1,46 +1,59 @@
 {% extends 'crt-base.html' %}
 
 {% block content_main scoped %}
-    <div class="block block__flush-top">
-        <h1>Curriculum Review</h1>
-        <p>Middle School Example Curriculum</p>
-        <p>Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.</p>
-        <p>
-            <a href="#">
-                Content<br>
-                Covers core knowledge and skills in content standards<br>
-                6 criteria<br>
-                Est. time 30 min.
-            </a>
-        </p>
-        <p>
-            <a href="#">
-                Utility<br>
-                Supports effective teaching<br>
-                7 criteria<br>
-                Est. time 30 min.
-            </a>
-        </p>
-        <p>
-            <a href="#">
-                Quality<br>
-                Accurate and well presented<br>
-                5 criteria<br>
-                Est. time 30 min.
-            </a>
-        </p>
-        <p>
-            <a href="#">
-                Efficacy<br>
-                Improves financial knowledge, skills, or behaviors<br>
-                3 criteria<br>
-                Est. time 30 min.
-            </a>
-        </p>
-    </div>
     <div class="block
                 block__flush-top
                 block__flush-bottom">
+        <div class="l-survey-top">
+            <a href="#">Can I save my work?</a>
+        </div>
+        <div class="h5 u-mb30">You’re reviewing</div>
+        <h1>Head Start Financial Literacy Curriculum</h1>
+        <p class="lead-paragraph">
+            Select any dimension to start your review. We recommend starting with Content and moving to Utility, Quality, and Efficacy, but you can complete the four dimensions in any order.
+        </p>
+        <p>You can complete all dimensions in one sitting or over the course of many sessions. You’ll be able to print or save a summary for each dimension as you finish it, and then print or save a final summary for the overall review.</p>
+        <ul class="o-dimension-selection-bar">
+            <li class="o-dimension-section-bar_dimension">
+                <a href="#" class="o-dimension-section-bar_selector">
+                    <span class="o-dimension-section-bar_selector-title">Content</span>
+                    <span class="o-dimension-section-bar_selector-text">Covers core knowledge and skills in national standards</span>
+                </a>
+                <ul class="o-dimension-section-bar_dimension-details">
+                    <li class="h6">6 criteria</li><li class="h6">30 minutes</li>
+                </ul>
+            </li>
+            <li class="o-dimension-section-bar_dimension">
+                <a href="#" class="o-dimension-section-bar_selector">
+                    <span class="o-dimension-section-bar_selector-title">Utility</span>
+                    <span class="o-dimension-section-bar_selector-text">Supports effective teaching</span>
+                </a>
+                <ul class="o-dimension-section-bar_dimension-details">
+                    <li class="h6">5 criteria</li><li class="h6">30 minutes</li>
+                </ul>
+            </li>
+            <li class="o-dimension-section-bar_dimension">
+                <a href="#" class="o-dimension-section-bar_selector">
+                    <span class="o-dimension-section-bar_selector-title">Quality</span>
+                    <span class="o-dimension-section-bar_selector-text">Presents clear, accurate, objective information</span>
+                </a>
+                <ul class="o-dimension-section-bar_dimension-details">
+                    <li class="h6">4 criteria</li><li class="h6">30 minutes</li>
+                </ul>
+            </li>
+            <li class="o-dimension-section-bar_dimension">
+                <a href="#" class="o-dimension-section-bar_selector">
+                    <span class="o-dimension-section-bar_selector-title">Efficacy</span>
+                    <span class="o-dimension-section-bar_selector-text">Has validated impact on knowledge, skills, or behaviors</span>
+                </a>
+                <ul class="o-dimension-section-bar_dimension-details">
+                    <li class="h6">1 to 3 criteria</li><li class="h6">30 minutes</li>
+                </ul>
+            </li>
+        </ul>
+        <hr class="hr
+                    u-mb45
+                    u-mt30">
         <h2 class="h1">{# {% include icons/document-round.svg %} #}Content</h2>
         <p class="lead-paragraph">
             This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards.
