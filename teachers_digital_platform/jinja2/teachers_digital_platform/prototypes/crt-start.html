@@ -237,23 +237,38 @@
     <script>
         var gradeRange = document.getElementById('tdp-crt_grade');
         var button = document.querySelector('button[type="submit"]');
-        var modalLink = document.querySelector('a[href="#modal-window"]');
-        var modalWindow = document.getElementById('modal-window');
+        var modalOpenLinks = document.querySelectorAll('a[href="#modal-dialog"]');
+        var modalCloseLinks = document.querySelectorAll('.o-modal_close, .o-modal_footer > .a-btn');
+        var modalWindow = document.getElementById('modal-dialog');
 
         document.addEventListener('DOMContentLoaded', function () {
-            gradeRange.onchange=enableButton;
+            gradeRange.onchange = enableButton;
         }, false);
 
         function enableButton(event) {
             button.removeAttribute('disabled');
         }
 
-        document.addEventListener('click', function (e) {
-            e.preventDefault();2
-            modalLink.onchange=openModalWindow;
-        }, false);
+        modalOpenLinks.forEach( function (openLink) {
+            openLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                openModalWindow();
+            }, false);
+        });
+
+        modalCloseLinks.forEach( function (closeLink) {
+            closeLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeModalWindow();
+            }, false);
+        });
 
         function openModalWindow(event) {
+            modalWindow.classList.add('o-modal__visible');
+        }
+
+        function closeModalWindow(event) {
+            modalWindow.classList.remove('o-modal__visible');
         }
     </script>
 {%- endblock javascript %}
