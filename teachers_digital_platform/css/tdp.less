@@ -41,50 +41,24 @@
     }
 }
 
-// Alter/disable elements on print pages
+// textarea output for printing
 
-.u-alter-elements-on-print .m-notification {
-    background: transparent;
-    border: none;
-    padding: 0;
+.print-fields__textarea {
+    max-width: unit( 670px / @base-font-size-px, em );
 }
 
-.u-alter-elements-on-print input,
-.u-alter-elements-on-print label,
-.u-alter-elements-on-print textarea {
-    pointer-events: none;
+.print-field__radio .a-label {
+    display: inline-grid;
+    grid-template-columns: 1.875em auto;
+    vertical-align: top;
 }
 
-.u-alter-elements-on-print .m-form-field__radio .a-label:before,
-.u-alter-elements-on-print .m-form-field__radio .a-label.focus:before,
-.u-alter-elements-on-print .m-form-field__radio .a-label.hover:before {
-    background-color: @gray-10;
-    border-color: @gray-60;
-}
-
-.u-alter-elements-on-print .m-form-field__radio .a-radio+.a-label,
-.u-alter-elements-on-print .m-form-field__radio .a-radio:checked+.a-label {
-    background-color: transparent;
-}
-
-.u-alter-elements-on-print .m-form-field__radio .a-radio:checked+.a-label:before {
-    background-color: @black;
-    @media print {
-        // Need to add a dot image and absolutely position it
-    }
-
-}
-
-.u-alter-elements-on-print .a-label_helper__block {
-    display: none;
-}
-
-.u-alter-elements-on-print .a-text-input {
-    background-color: @white;
-    border-color: transparent;
-    color: inherit;
-    cursor: inherit;
-    outline: none;
-    padding: 0;
-    resize: none;
+.print-field__radio svg.radio {
+    display: inline-block;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 1.125em;
+    width: 1.125em;
+    margin-right: 10px;
+    vertical-align: top;
 }

@@ -65,7 +65,7 @@
         <p><strong>Date completed:</strong> February 1, 2018</p>
         <p><strong>Date of publication:</strong> May 1, 2016</p>
     </div>
-    <div class="block block__padded-top block__border-top block__flush-bottom u-alter-elements-on-print">
+    <div class="block block__padded-top block__border-top block__flush-bottom">
         <h3 class="a-heading a-heading__icon">{# include icons/approved-round.svg #}Content score</h3>
         <p>How the curriculum meets the criteria for content:</p>
         <div class="m-form-field m-form-field__radio u-mb30">
@@ -75,83 +75,53 @@
                 All 5 criteria were met, and at least one was exceeded
             </label>
         </div>
-        <div class="m-form-field m-form-field__radio u-mb30">
-            <input class="a-radio" type="radio" name="radio_2" id="test_2" checked>
-            <label class="a-label" for="test_2">
+        <div class="print-field__radio u-mb30">
+            <div class="a-label">
+                <svg class="icon-radio icon-radio--checked" height="24" width="24"><circle cx="10" cy="10" r="10" fill="#00000" /></svg>
                 <strong>Moderate content</strong>
                 All 5 criteria were met
-            </label>
+            </div>
         </div>
-        <div class="m-form-field m-form-field__radio u-mb30">
-            <input class="a-radio" type="radio" name="radio_3" id="test_3">
-            <label class="a-label" for="test_3">
+        <div class="print-field__radio u-mb30">
+            <div class="a-label">
+                <svg class="icon-radio" height="24" width="24"><circle cx="10" cy="10" r="9" stroke="#919395" stroke-width="1" fill="#e7e8e9" /></svg>
                 <strong>Limited content</strong>
                 At least one of the criteria was not met
-            </label>
+            </div>
         </div>
-        <div class="m-form-field m-form-field__textarea u-mb30">
-            <label class="a-label a-label__heading" for="crt-notes-1">
-                Assets 
-                <small class="a-label_helper">(optional)</small>
-                <small class="a-label_helper a-label_helper__block">
-                    Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
-                </small>
-            </label>
-            <p><em>No information provided</em></p>
-        </div>
-        <div class="m-form-field m-form-field__textarea u-mb30">
-            <label class="a-label a-label__heading" for="crt-notes-2">
-                Gaps 
-                <small class="a-label_helper">(optional)</small>
-                <small class="a-label_helper a-label_helper__block">
-                    Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
-                </small>
-            </label>
-            <textarea class="a-text-input
-                            a-text-input__full"
-                            id="crt-notes-2"
-                            rows="2">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</textarea>
-        </div>               
-        <div class="m-form-field m-form-field__textarea u-mb30">
-            <label class="a-label a-label__heading" for="crt-notes-3">
-                Overall notes 
-                <small class="a-label_helper">(optional)</small>
-                <small class="a-label_helper a-label_helper__block">
-                    Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
-                </small>
-            </label>
-            <textarea class="a-text-input
-                            a-text-input__full"
-                        id="crt-notes-3"
-                        rows="2">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</textarea>
-        </div>
+        <h4>
+            Assets 
+            <small class="a-label_helper">(optional)</small>
+        </h4>
+        <p class="print-fields__textarea"><em>No information provided</em></p>
+        <h4>
+            Gaps 
+            <small class="a-label_helper">(optional)</small>
+        </h4>
+        <p class="print-fields__textarea">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>     
+        <h4>
+            Overall notes 
+            <small class="a-label_helper">(optional)</small>
+        </h4>
+        <p class="print-fields__textarea">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>
     </div>
     <div class="block block__padded-top block__border-top block__flush-bottom">
         <h3 class="a-heading a-heading__icon">{# include icons/approved-round.svg #}Utility score</h3>
-        <p><em>Dimension not reviewed</em></p>
+        <p class="print-fields__textarea"><em>Dimension not reviewed</em></p>
     </div>
     <div class="block
-                block__padded-top 
                 block__border-top
-                block__flush-bottom
-                u-alter-elements-on-print">
-        <div class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading h2" for="crt-notes-4">
-                Key takeaways 
-                <small class="a-label_helper">(optional)</small>
-            </label>
-            <textarea class="a-text-input
-                            a-text-input__full"
-                        id="crt-notes-4"
-                        rows="3">These are my final thoughts that I entered on the final summary page. I am no longer editable now that I’m on the print page. To save on ink, I’ve dropped by gray highlight box. I’m thoughtful.</textarea>
-        </div>
+                block__padded-top 
+                block__border-bottom
+                block__padded-bottom">
+        <h2>
+            Key takeaways 
+            <small class="a-label_helper">(optional)</small>
+        </h2>
+        <p class="print-fields__textarea">These are my final thoughts that I entered on the final summary page. I am no longer editable now that I’m on the print page. To save on ink, I’ve dropped by gray highlight box. I’m thoughtful.</p>
     </div>
-    <hr class="hr
-                u-mb30
-                u-hide-on-print">
     <div class="block
                 block__flush-bottom
-                u-alter-elements-on-print
                 u-page-break-before">
         <h2 class="h1">{# {% include icons/document-round.svg %} #}Content</h2>
         <p class="lead-paragraph">
@@ -174,7 +144,7 @@
                     u-mb30
                     u-mt30">
     </div>
-    <div class="block block__flush-top u-alter-elements-on-print">
+    <div class="block block__flush-top">
         <h3 class="h2">{# {% include icons/approved-round.svg %} #}Criterion 1: Earning, income, and careers</h3>
         <p class="lead-paragraph">
             Does the curriculum address grade-level appropriate topics for saving and investing?
@@ -310,19 +280,11 @@
                 </div>
             </li>
         </oll>
-        <div class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading" for="crt-notes-1">
-                My notes
-                <small class="a-label_helper">(optional)</small>
-                <small class="a-label_helper a-label_helper__block">
-                        Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
-                </small>
-            </label>
-            <textarea class="a-text-input
-                            a-text-input__full"
-                        id="crt-notes-1"
-                        rows="6"></textarea>
-        </div>
+        <h4>
+            My notes
+            <small class="a-label_helper">(optional)</small>
+        </h4>
+        <p class="print-fields__textarea">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>
     </div>
 
 
