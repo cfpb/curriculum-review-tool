@@ -29,15 +29,92 @@
 
 .o-dimension-section-bar_selector {
     .a-btn();
+    border: 2px solid @btn-bg;
     flex-grow: 1;
-    padding: unit( 15px / @base-font-size-px, em );
+    padding: unit( 13px / @base-font-size-px, em );
     text-align: left;
     width: 100%;
+
+    &:focus,
+    &:hover {
+        border-color: @btn-bg-hover;
+    }
+
+    &:active {
+        border-color: @btn-bg-active;
+    }
+
+    &.is-active {
+        background-color: #d6e8fa;
+        border-color: #0072ce;
+        color: @text;
+
+        .o-dimension-section-bar_selector-status {
+            color: @gray;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: @btn-bg-hover;
+            border-color: @btn-bg-hover;
+            color: @btn-text;
+
+            .o-dimension-section-bar_selector-status {
+                color: @btn-text;
+            }
+        }
+
+        &:active {
+            background-color: #d6e8fa;
+            border-color: #0072ce;
+            color: @text;
+
+            .o-dimension-section-bar_selector-status {
+                color: @gray;
+            }
+        }
+    }
+
+    &.is-complete {
+        background-color: @white;
+        border-color: @green;
+        color: @text;
+
+        .o-dimension-section-bar_selector-status {
+            color: @gray;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: @btn-bg-hover;
+            border-color: @btn-bg-hover;
+            color: @btn-text;
+
+            .o-dimension-section-bar_selector-status {
+                color: @btn-text;
+            }
+        }
+
+        &:active {
+            background-color: @green-20;
+            border-color: @green;
+            color: @text;
+
+            .o-dimension-section-bar_selector-status {
+                color: @gray;
+            }
+        }
+    }
 }
 
 .o-dimension-section-bar_selector-title {
     .heading-4();
     display: block;
+}
+
+.o-dimension-section-bar_selector-status {
+    font-size: unit( @base-font-size-px / @size-iv, em );
+    font-style: italic;
 }
 
 .o-dimension-section-bar_selector-text {
