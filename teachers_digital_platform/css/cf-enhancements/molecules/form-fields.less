@@ -5,3 +5,23 @@
 .m-form-field__textarea {
     max-width: unit( 670px / @base-font-size-px, em );
 }
+
+.m-form-field__display {
+    display: inline-grid;
+    grid-template-columns: 1.875em auto;
+    vertical-align: top;
+
+    > svg {
+        display: inline-block;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 1.125em;
+        width: 1.125em;
+        margin-right: 10px;
+    }
+}
+
+.m-form-field__radio-icon  {
+    overflow: visible !important;
+    vertical-align: top;
+}

@@ -28,40 +28,8 @@
 @import "utilities/fc.less";
 
 // Hide these sections on printed pages
-
-
 .o-header, .o-footer, .u-hide-on-print { 
     @media print {
         display: none !important; 
     }
-}
-
-// output classes for printing
-
-.print-fields__textarea {
-    max-width: unit( 670px / @base-font-size-px, em );
-}
-
-.print-field__radio .a-label {
-    display: inline-grid;
-    grid-template-columns: 1.875em auto;
-    vertical-align: top;
-}
-
-.print-field__radio svg.icon-radio  {
-    display: inline-block;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    height: 1.125em;
-    width: 1.125em;
-    margin-right: 10px;
-    overflow: visible;
-    vertical-align: top;
-}
-
-.print-field__lg-target .a-label {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 15px;
 }
