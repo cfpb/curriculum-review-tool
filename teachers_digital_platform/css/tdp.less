@@ -29,15 +29,10 @@
 
 // Hide these sections on printed pages
 
-@media print {
-    .o-header, .o-footer, .u-hide-on-print { display: none !important; }
-}
 
-// Add page break before on printed pages
-
-.u-page-break-before {
+.o-header, .o-footer, .u-hide-on-print { 
     @media print {
-        page-break-before: always;
+        display: none !important; 
     }
 }
 
