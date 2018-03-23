@@ -2,26 +2,50 @@
 // Form fields
 //
 
+.m-form-field {
+    @media print {
+        break-inside: avoid;
+    }
+}
+
 .m-form-field__textarea {
     max-width: unit( 670px / @base-font-size-px, em );
 }
 
-.m-form-field__display {
-    display: inline-grid;
-    grid-template-columns: 1.875em auto;
-    vertical-align: top;
+.m-form-field__display.m-form-field__radio {
+    .a-label {
+        cursor: initial;
 
-    > svg {
-        display: inline-block;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        height: 1.125em;
-        width: 1.125em;
-        margin-right: 10px;
+        &::before {
+            display: none;
+        }
     }
 }
 
-.m-form-field__radio-icon  {
-    overflow: visible !important;
-    vertical-align: top;
+.m-form-field_radio-icon  {
+    display: inline-block;
+    position: relative;
+    height: unit( 21px / @base-font-size-px, em );
+    width: unit( 21px / @base-font-size-px, em );
+
+    &.is-active {
+        .m-form-field_radio-icon-fill {
+            fill: @pacific;
+
+            @media print {
+                fill: #000;
+            }
+        }
+    }
+}
+
+.m-form-field_radio-icon-stroke {
+    fill: none;
+    stroke: @gray-60;
+    stroke-width: 1px;
+}
+
+.m-form-field_radio-icon-fill {
+    fill: none;
+    stroke: none;
 }
