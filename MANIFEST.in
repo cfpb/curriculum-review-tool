@@ -1,0 +1,2 @@
+include CHANGELOG.md README.md INSTALL.md LICENSE
+recursive-include teachers_digital_platform *.py *.html *.js
