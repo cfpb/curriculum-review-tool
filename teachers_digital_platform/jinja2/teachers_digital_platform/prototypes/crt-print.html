@@ -28,11 +28,11 @@
 {% endblock header %}
 
 {% block content_main scoped %}
-    <div class="block 
+    <div class="block
                 block__flush-top
                 block__padded-bottom
                 block__border-bottom
-                u-hide-on-print">    
+                u-hide-on-print">
         <h1>Print or save</h1>
         <h2>1. Print this summary or save as a PDF.</h2>
         <h2>2. When you're finished, close this window and return to the review.</h2>
@@ -98,17 +98,17 @@
             </li>
         </ul>
         <h4 class="a-label">
-            Assets 
+            Assets
             <small class="a-label_helper">(optional)</small>
         </h4>
         <p class="m-form-field__textarea"><em>No information provided</em></p>
         <h4>
-            Gaps 
+            Gaps
             <small class="a-label_helper">(optional)</small>
         </h4>
-        <p class="m-form-field__textarea">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>     
+        <p class="m-form-field__textarea">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>
         <h4>
-            Overall notes 
+            Overall notes
             <small class="a-label_helper">(optional)</small>
         </h4>
         <p class="m-form-field__textareaa">These are the notes I previously entered. I can no longer edit these notes, which is why there’s not a text field box around me.</p>
@@ -119,11 +119,11 @@
     </div>
     <div class="block
                 block__border-top
-                block__padded-top 
+                block__padded-top
                 block__border-bottom
                 block__padded-bottom">
         <h2>
-            Key takeaways 
+            Key takeaways
             <small class="a-label_helper">(optional)</small>
         </h2>
         <p class="m-form-field__textarea">These are my final thoughts that I entered on the final summary page. I am no longer editable now that I’m on the print page. To save on ink, I’ve dropped by gray highlight box. I’m thoughtful.</p>
@@ -301,3 +301,10 @@
 
 
 {% endblock content_main %}
+
+{% block footer %}
+    <div class="u-hide-on-print">
+        {% import 'organisms/footer.html' as o_footer with context %}
+        {{ o_footer.render() }}
+    </div>
+{% endblock footer %}
