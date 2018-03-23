@@ -2,9 +2,6 @@
    Teachers Digital Platform
    ========================================================================== */
 
-// This is your project's main Less file.
-// Project-specific Less rules go after the imports.
-
 // Import Capital Frmework by reference so that variables and mixins are
 // available, but the whole output doesn't duplicate what we're already getting
 // from cfgov-refresh.
@@ -29,10 +26,4 @@
 @import "organisms/survey.less";
 @import "utilities/center.less";
 @import "utilities/fc.less";
-
-// Hide these sections on printed pages
-.o-header, .o-footer, .u-hide-on-print {
-    @media print {
-        display: none !important;
-    }
-}
+@import "utilities/hide-on-print.less";
