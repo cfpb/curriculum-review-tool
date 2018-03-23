@@ -30,6 +30,15 @@ setup(
     version_format='{tag}.dev{commitcount}+{gitsha}',
     include_package_data=True,
     packages=find_packages(),
+    package_data={
+        'teachers_digital_platform': [
+            'jinja2/teachers_digital_platform/*',
+            'jinja2/teachers_digital_platform/prototypes/*',
+            'static/tdp/css/*',
+            'static/tdp/js/*',
+            'static/tdp/fonts/*',
+        ],
+    },
     install_requires=install_requires,
     extras_require={
         'testing': testing_extras,
