@@ -24,12 +24,15 @@
 @import 'cf-enhancements.less';
 
 // Project specific Less goes here or you can break it up into discrete files.
+@import "layout/survey-top.less";
+@import "organisms/dimension-selection-bar.less";
 @import "organisms/survey.less";
+@import "utilities/center.less";
 @import "utilities/fc.less";
 
 // Hide these sections on printed pages
-.o-header, .o-footer, .u-hide-on-print { 
+.o-header, .o-footer, .u-hide-on-print {
     @media print {
-        display: none !important; 
+        display: none !important;
     }
 }
