@@ -1,6 +1,7 @@
 // Survey question organism.
 
 @bp-survey-columns: 1000px;
+@bp-survey-columns: 800px;
 
 li.o-survey {
     border-bottom: 1px solid @gray-20;
@@ -14,6 +15,12 @@ li.o-survey {
         clear: both;
         padding-left: 0;
     });
+
+    @media print {
+        break-inside: avoid;
+        clear: both;
+        padding-left: 0;
+    }
 }
 
 .o-survey_number {
@@ -25,6 +32,12 @@ li.o-survey {
         left: auto;
         position: initial;
     });
+
+    @media print {
+        .grid_column(1, 12);
+        left: auto;
+        position: initial;
+    }
 }
 
 .o-survey_indicator {
@@ -34,12 +47,21 @@ li.o-survey {
         .grid_column(3, 12);
         margin-bottom: 0;
     });
+
+    @media print {
+        .grid_column(3, 12);
+        margin-bottom: 0;
+    }
 }
 
 .o-survey_components {
     .respond-to-min(@bp-survey-columns, {
         .grid_column(8, 12);
     });
+
+    @media print {
+        .grid_column(8, 12);
+    }
 }
 
 .o-survey_component {
@@ -47,6 +69,11 @@ li.o-survey {
         display: flex;
         justify-content: space-between;
     });
+
+    @media print {
+        display: flex;
+        justify-content: space-between;
+    }
 
     & + & {
         border-top: 1px solid @gray-10;
@@ -63,6 +90,12 @@ li.o-survey {
         margin-bottom: 0;
         margin-right: unit( 15px / @base-font-size-px, em );
     });
+
+    @media print {
+        flex-basis: 50%;
+        margin-bottom: 0;
+        margin-right: unit( 15px / @base-font-size-px, em );
+    }
 }
 
 .o-survey_question-helper {
@@ -82,6 +115,10 @@ li.o-survey {
     .respond-to-min(@bp-survey-columns, {
         flex-basis: 50%;
     });
+
+    @media print {
+        flex-basis: 50%;
+    }
 
     > * {
         flex-grow: 1;
