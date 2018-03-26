@@ -2,9 +2,6 @@
    Teachers Digital Platform
    ========================================================================== */
 
-// This is your project's main Less file.
-// Project-specific Less rules go after the imports.
-
 // Import Capital Frmework by reference so that variables and mixins are
 // available, but the whole output doesn't duplicate what we're already getting
 // from cfgov-refresh.
@@ -24,11 +21,10 @@
 @import 'cf-enhancements.less';
 
 // Project specific Less goes here or you can break it up into discrete files.
-//
-// @import "my-other-module.less"
-
 @import "layout/survey-top.less";
 @import "organisms/dimension-selection-bar.less";
 @import "organisms/survey.less";
 @import "utilities/center.less";
 @import "utilities/fc.less";
+@import "utilities/hide-on-print.less";
+@import "utilities/page-break-before.less";

@@ -2,6 +2,51 @@
 // Form fields
 //
 
+.m-form-field {
+    @media print {
+        break-inside: avoid;
+    }
+}
+
 .m-form-field__textarea {
     max-width: unit( 670px / @base-font-size-px, em );
+}
+
+.m-form-field__display.m-form-field__radio {
+    .a-label {
+        background-color: transparent;
+        cursor: initial;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.m-form-field_radio-icon  {
+    display: inline-block;
+    position: relative;
+    height: unit( 21px / @base-font-size-px, em );
+    width: unit( 21px / @base-font-size-px, em );
+
+    &.is-active {
+        .m-form-field_radio-icon-fill {
+            fill: @pacific;
+
+            @media print {
+                fill: #000;
+            }
+        }
+    }
+}
+
+.m-form-field_radio-icon-stroke {
+    fill: none;
+    stroke: @gray-60;
+    stroke-width: 1px;
+}
+
+.m-form-field_radio-icon-fill {
+    fill: none;
+    stroke: none;
 }
