@@ -6,10 +6,10 @@ install:
 - pip install tox-travis
 script:
 - tox
-- python setup.py bdist_wheel
 - nvm install 8 && nvm use 8
 - npm install
 - npm test
+- python setup.py bdist_wheel
 deploy:
   provider: releases
   api_key:
