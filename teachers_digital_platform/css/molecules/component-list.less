@@ -1,0 +1,18 @@
+//
+// Component list
+//
+
+.m-component-list {
+    display: flex;
+    list-style: none;
+    margin-bottom: unit( 30px / @base-font-size-px, em );
+    padding: 0;
+
+    > li {
+        margin: 0 unit( 30px / @base-font-size-px, em ) 0 0;
+    }
+
+    &:last-child {
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+    }
+}

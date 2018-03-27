@@ -1,130 +1,375 @@
 {% extends 'crt-base.html' %}
 
 {% block content_main scoped %}
-    <h1>Curriculum Review</h1>
-    <p>Middle School Example Curriculum</p>
-    <p>
-        <a href="#">
-            Content<br>
-            Covers core knowledge and skills in content standards<br>
-            6 criteria<br>
-            Est. time 30 min.
-        </a>
+    <div class="l-survey-top"><a href="#">Can I save my work?</a></div>
+    <h2 class="h4">You’re Reviewing: <b>Head Start Financial Literacy Curriculum</b></h2>
+    <ul class="o-dimension-selection-bar">
+        <li class="o-dimension-section-bar_dimension">
+            <a href="#" class="o-dimension-section-bar_selector is-complete">
+                <span class="o-dimension-section-bar_selector-title">
+                    Content
+                    <span class="o-dimension-section-bar_selector-status">complete</span>
+                </span>
+                <span class="o-dimension-section-bar_selector-text">Covers core knowledge and skills in national standards</span>
+            </a>
+            <ul class="o-dimension-section-bar_dimension-details">
+                <li class="h6">6 criteria</li><li class="h6">30 minutes</li>
+            </ul>
+        </li>
+        <li class="o-dimension-section-bar_dimension">
+            <a href="#" class="o-dimension-section-bar_selector is-active">
+                <span class="o-dimension-section-bar_selector-title">
+                    Utility
+                    <span class="o-dimension-section-bar_selector-status">in progress</span>
+                </span>
+                <span class="o-dimension-section-bar_selector-text">Supports effective teaching</span>
+            </a>
+            <ul class="o-dimension-section-bar_dimension-details">
+                <li class="h6">5 criteria</li><li class="h6">30 minutes</li>
+            </ul>
+        </li>
+        <li class="o-dimension-section-bar_dimension">
+            <a href="#" class="o-dimension-section-bar_selector">
+                <span class="o-dimension-section-bar_selector-title">
+                    Quality
+                    <span class="o-dimension-section-bar_selector-status">in progress</span>
+                </span>
+                <span class="o-dimension-section-bar_selector-text">Presents clear, accurate, objective information</span>
+            </a>
+            <ul class="o-dimension-section-bar_dimension-details">
+                <li class="h6">4 criteria</li><li class="h6">30 minutes</li>
+            </ul>
+        </li>
+        <li class="o-dimension-section-bar_dimension">
+            <a href="#" class="o-dimension-section-bar_selector">
+                <span class="o-dimension-section-bar_selector-title">Efficacy</span>
+                <span class="o-dimension-section-bar_selector-text">Has validated impact on knowledge, skills, or behaviors</span>
+            </a>
+            <ul class="o-dimension-section-bar_dimension-details">
+                <li class="h6">1 to 3 criteria</li><li class="h6">30 minutes</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="u-center">
+        <button class="a-btn
+                        a-btn__super">Final Summary</button>
+    </div>
+    <hr class="hr
+                u-mb45
+                u-mt30">
+    <h1>{# {% include icons/document-round.svg %} #}Content summary</h1>
+    <p class="lead-paragraph">
+        Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
     </p>
-    <p>
-        <a href="#">
-            Utility<br>
-            Supports effective teaching<br>
-            7 criteria<br>
-            Est. time 30 min.
-        </a>
+    <p class="lead-paragraph">
+            Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
     </p>
-    <p>
-        <a href="#">
-            Quality<br>
-            Accurate and well presented<br>
-            5 criteria<br>
-            Est. time 30 min.
-        </a>
-    </p>
-    <p>
-        <a href="#">
-            Efficacy<br>
-            Improves financial knowledge, skills, or behaviors<br>
-            3 criteria<br>
-            Est. time 30 min.
-        </a>
-    </p>
-    <div class="m-notification m-notification__visible">
+    <div class="m-notification
+                m-notification__visible
+                m-notification__warning
+                u-mt30
+                u-mb30">
         {# {% include 'icons/error-round.svg' %} #}
+        <span class="m-notification_icon cf-icon"></span>
         <div class="m-notification_content">
-            <div class="h4 m-notification_message">Your work is not saved.<br>Please generate a summary at the end of each dimension or the final summary report if you would like to keep your results.</div>
+            <div class="hm-notification_message">
+                <h3 class="h4">Limitations around saving your work</h3>
+                <p>To save a permanent copy of your results, please print the summary or save it as a PDF.</a></p>
+            </div>
         </div>
     </div>
-    <div class="block">
-        <h2>Content: Summary</h2>
-        <p>Instructions: Review the answers that you have inputted and download a summary report at the bottom of this page.</p>
-        <p>Completed: February 1, 2018</p>
-        <p>Middle School Example Curriculum</p>
-        <p>Date of publication: May 1, 2016</p>
-        <p>Grade range: Middle School</p>
+    <button class="a-btn">
+        Print or save summary
+    </button>
+    <hr class="hr
+                u-mb45
+                u-mt30">
+    <h2>Curriculum information</h2>
+    <p><strong>Curriculum title:</strong> Head Start Financial Literacy Curriculum</p>
+    <p><strong>Grade range:</strong> Middle School</p>
+    <p><strong>Date completed:</strong> February 1, 2018</p>
+    <p><strong>Date of publication:</strong> May 1, 2016</p>
+    <hr class="hr
+                u-mb45
+                u-mt30">
+    <div class="l-survey-top"><a href="#">View or edit responses</a></div>
+    <h3>Criterion 1: Earning, income, and careers</h3>
+    <p class="u-mb30">The curriculum addresses grade-level appropriate topics for earning, income, and careers.</p>
+    <div class="m-curriculum-status">
+        <ul class="m-list__unstyled
+                    u-mb0">
+            <li class="u-mb30">
+                <div class="m-form-field
+                            m-form-field__radio
+                            m-form-field__display">
+                    <div class="a-label">
+                        <svg class="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                            <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                            <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                        </svg>
+                        <div>
+                            <div><strong>Exceeds</strong></div>
+                            5 or more components were addressed
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="u-mb30">
+                <div class="m-form-field
+                            m-form-field__radio
+                            m-form-field__display">
+                    <div class="a-label">
+                        <svg class="m-form-field_radio-icon" viewBox="0 0 22 22">
+                            <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                            <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                        </svg>
+                        <div>
+                            <div><strong>Meets</strong></div>
+                            4 components were addressed
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="u-mb30">
+                <div class="m-form-field
+                            m-form-field__radio
+                            m-form-field__display">
+                    <div class="a-label">
+                        <svg class="m-form-field_radio-icon" viewBox="0 0 22 22">
+                            <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                            <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                        </svg>
+                        <div>
+                            <div><strong>Does not meet</strong></div>
+                            Less than 4 components were addressed
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="m-curriculum-status_components">
+            <p><b>Total number of components</b></p>
+            <ul class="m-component-list">
+                <li><b>5</b> Yes</li>
+                <li><b>0</b> No</li>
+            </ul>
+        </div>
     </div>
-    <div class="block">
-        <h3>Criteria Summary</h3>
-        <p>Criterion 1: Name of this criterion <a href="#">Edit responses</a></p>
-        <p>The curriculum addresses grade-level appropriate topics for saving and investing.</p>
-        <h4>Total number of components:</h4>
-        <p><a href="#">3</a> Yes <a href="#">1</a> No</p>
-        <h4>Exceeds</h4>
-        <p>All 4 components were addressed</p>
-        <h4>Meets</h4>
-        <p>3 components were addressed</p>
-        <p class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading" for="test_1">
-                My notes
-            </label>
-            <textarea class="a-text-input" id="test_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</textarea>
-        </p>
+    <div class="m-form-field m-form-field__textarea">
+        <label class="a-label a-label__heading" for="crt-notes-1">
+            My notes
+            <small class="a-label_helper">(optional)</small>
+            <small class="a-label_helper a-label_helper__block">
+                    Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+            </small>
+        </label>
+        <textarea class="a-text-input
+                        a-text-input__full"
+                    id="crt-notes-1"
+                    rows="6">These are my notes. They are good notes. I entered them earlier and they auto populated here. Oops, I made a spelling mistake. No problem. Edit me here and I’ll auto-update everywhere!</textarea>
     </div>
-    <div class="block">
-        <h3>Criteria Summary</h3>
-        <p>Criterion 2: Name of this criterion <a href="#">Edit responses</a></p>
-        <p>The curriculum addresses grade-level appropriate topics for saving and investing.</p>
-        <h4>Total number of components:</h4>
-        <p><a href="#">2</a> Yes <a href="#">0</a> No</p>
-        <h4>Exceeds</h4>
-        <p>Both of the components were addressed</p>
-        <h4>Meets</h4>
-        <p>1 component was addressed</p>
-        <h4>Does not meet</h4>
-        <p>0 components were addressed</p>
-        <h4>Does not meet</h4>
-        <p>Less than 3 components were addressed</p>
-        <p class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading" for="test_2">
-                My notes
-            </label>
-            <textarea class="a-text-input" id="test_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</textarea>
-        </p>
+    <hr class="hr
+                u-mb45
+                u-mt30">
+    <div class="l-survey-top"><a href="#">View or edit responses</a></div>
+    <h3>Criterion 2: Differentiated instruction for diverse populations</h3>
+    <p class="u-mb30">Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education, status, and English language proficiency.</p>
+    <div class="m-curriculum-status">
+    <ul class="m-list__unstyled
+            u-mb0">
+        <li class="u-mb30">
+            <div class="m-form-field
+                        m-form-field__radio
+                        m-form-field__display">
+                <div class="a-label">
+                    <svg class="m-form-field_radio-icon" viewBox="0 0 22 22">
+                        <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                        <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                    </svg>
+                    <div>
+                        <div><strong>Exceeds</strong></div>
+                        All essential components scored “yes”<br>
+                        At least one beneficial component scored “yes”
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="u-mb30">
+            <div class="m-form-field
+                        m-form-field__radio
+                        m-form-field__display">
+                <div class="a-label">
+                    <svg class="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                        <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                        <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                    </svg>
+                    <div>
+                        <div><strong>Meets</strong></div>
+                        All essential components scored “yes”<br>
+                        None of the beneficial components scored “yes”
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="u-mb30">
+            <div class="m-form-field
+                        m-form-field__radio
+                        m-form-field__display">
+                <div class="a-label">
+                    <svg class="m-form-field_radio-icon" viewBox="0 0 22 22">
+                        <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                        <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                    </svg>
+                    <div>
+                        <div><strong>Does not meet</strong></div>
+                        One or more essential components scored “no”
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="m-curriculum-status_components">
+    <p><b>Total number of essential components</b></p>
+    <ul class="m-component-list">
+        <li><b>5</b> Yes</li>
+        <li><b>0</b> No</li>
+    </ul>
+    <p><b>Total number of beneficial components</b></p>
+    <ul class="m-component-list">
+        <li><b>0</b> Yes</li>
+        <li><b>2</b> No</li>
+    </ul>
     </div>
-    <div class="block">
-        <h3>Overall score: Middle School Content</h3>
-        <p>How does this curriculum meet the content criteria?</p>
-        <h4>Strong Content</h4>
-        <p>All 6 criteria were met, and at least one was exceeded</p>
-        <h4>Moderate Content</h4>
-        <p>All 6 criteria were met</p>
-        <h4>Limited Content</h4>
-        <p>At least one of the criteria was not met</p>
-        <h4>Assets</h4>
-        <p class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading" for="test_3">
-                List the assets for curriculum content <em>(Optional)</em>
-            </label>
-            <textarea class="a-text-input" id="test_3"></textarea>
+    </div>
+    <div class="m-form-field m-form-field__textarea">
+    <label class="a-label a-label__heading" for="crt-notes-1">
+    My notes
+    <small class="a-label_helper">(optional)</small>
+    <small class="a-label_helper a-label_helper__block">
+            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+    </small>
+    </label>
+    <textarea class="a-text-input
+                a-text-input__full"
+            id="crt-notes-1"
+            rows="6">These are my notes. They are good notes. I entered them earlier and they auto populated here. Oops, I made a spelling mistake. No problem. Edit me here and I’ll auto-update everywhere!</textarea>
+    </div>
+    <hr class="hr
+                u-mb45
+                u-mt30">
+    <div class="o-well
+                u-mb30">
+        <h2>Content overall score</h2>
+        <p class="lead-paragraph">
+            How this curriculum meets the criteria for content:
         </p>
-        <h4>Gaps</h4>
-        <p class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading" for="test_4">
-                List the gaps for curriculum content <em>(Optional)</em>
+        <ul class="m-list__unstyled">
+            <li class="u-mb30">
+                <div class="m-form-field
+                            m-form-field__radio
+                            m-form-field__display">
+                    <div class="a-label">
+                        <svg class="m-form-field_radio-icon" viewBox="0 0 22 22">
+                            <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                            <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                        </svg>
+                        <div>
+                            <div><strong>Strong content</strong></div>
+                            All 5 criteria were met, and at least one was exceeded
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="u-mb30">
+                <div class="m-form-field
+                            m-form-field__radio
+                            m-form-field__display">
+                    <div class="a-label">
+                        <svg class="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                            <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                            <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                        </svg>
+                        <div>
+                            <div><strong>Moderate content</strong></div>
+                            All 5 criteria were met
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="u-mb30">
+                <div class="m-form-field
+                            m-form-field__radio
+                            m-form-field__display">
+                    <div class="a-label">
+                        <svg class="m-form-field_radio-icon" viewBox="0 0 22 22">
+                            <circle cx="11" cy="11" r="10" class="m-form-field_radio-icon-stroke"></circle>
+                            <circle cx="11" cy="11" r="7" class="m-form-field_radio-icon-fill"></circle>
+                        </svg>
+                        <div>
+                            <div><strong>Limited content</strong></div>
+                            At least one of the criteria was not met
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <hr class="hr
+                    u-mb45
+                    u-mt30">
+        <div class="m-form-field
+                    m-form-field__textarea
+                    u-mb30">
+            <label class="a-label a-label__heading" for="tdp-crt_assets">
+                Assets
+                <small class="a-label_helper">(optional)</small>
+                <small class="a-label_helper a-label_helper__block">
+                    List the assets for curriculum content
+                </small>
             </label>
-            <textarea class="a-text-input" id="test_4"></textarea>
-        </p>
-        <h4>Overall notes</h4>
-        <p class="m-form-field m-form-field__textarea">
-            <label class="a-label a-label__heading" for="test_5">
-                Write your notes for the content overall <em>(Optional)</em>
+            <textarea class="a-text-input
+                                a-text-input__full"
+                        id="tdp-crt_assets"
+                        rows="6"></textarea>
+        </div>
+        <div class="m-form-field
+                    m-form-field__textarea
+                    u-mb30">
+            <label class="a-label a-label__heading" for="tdp-crt_gaps">
+                Gaps
+                <small class="a-label_helper">(optional)</small>
+                <small class="a-label_helper a-label_helper__block">
+                    List the gaps for curriculum content
+                </small>
             </label>
-            <textarea class="a-text-input" id="test_5"></textarea>
-        </p>
-        <p class="m-form-field m-form-field__text">
-            <label class="a-label a-label__heading" for="test_6">
-                Name of Reviewer
+            <textarea class="a-text-input
+                                a-text-input__full"
+                        id="tdp-crt_gaps"
+                        rows="6"></textarea>
+        </div>
+        <div class="m-form-field
+                    m-form-field__textarea
+                    u-mb30">
+            <label class="a-label a-label__heading" for="tdp-crt_notes">
+                Overall notes
+                <small class="a-label_helper">(optional)</small>
+                <small class="a-label_helper a-label_helper__block">
+                    Add any final thoughts about the overall content. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+                </small>
             </label>
-            <input class="a-text-input" type="text" id="test_6">
-        </p>
+            <textarea class="a-text-input
+                                a-text-input__full"
+                        id="tdp-crt_notes"
+                        rows="6"></textarea>
+        </div>
+    </div>
+    <div class="m-btn-group
+                m-btn-group__wide">
         <button class="a-btn">
-            Download Content Summary
+            Print or save summary
+        </button>
+        <button class="a-btn
+                        a-btn__link">
+            Start over with a new review
         </button>
     </div>
 {% endblock content_main %}
