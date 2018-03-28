@@ -1,0 +1,20 @@
+//
+// Curriculum status
+//
+
+@bp-curriculum-columns: 600px;
+
+.m-curriculum-status {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > :first-child {
+        margin-right: unit( 60px / @base-font-size-px, em );
+    }
+}
+
+.m-curriculum-status_components {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
