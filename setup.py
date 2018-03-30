@@ -24,7 +24,7 @@ setup(
     url='https://github.com/cfpb/teachers-digital-platform',
     author='CFPB',
     author_email='tech@cfpb.gov',
-    description='Skeletal satellite app for consumerfinance.gov',
+    description='Teachers digital platform',
     long_description=long_description,
     license='CC0',
     version_format='{tag}.dev{commitcount}+{gitsha}',
@@ -57,5 +57,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
     ],
-    setup_requires=['setuptools-git-version==1.0.3']
+    setup_requires=['setuptools-git-version==1.0.3'],
+    frontend_build_script='setup.sh'
 )
