@@ -35,7 +35,6 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     this.setState({criterionAnswers: {} });
     this.setState({criterionNotes: {} });
-    // localStorage.clear();
   }
 
   changeCriterionNotes(distinctive, key, val) {
