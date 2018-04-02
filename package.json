@@ -9,9 +9,9 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "test": "gulp test && cd teachers_digital_platform/crtool && npm run tests",
+    "test": "gulp test",
     "watch": "gulp watch",
-    "postinstall": "cd teachers_digital_platform/crtool && npm run build"
+    "postinstall": "cd teachers_digital_platform/crtool && npm install"
   },
   "repository": {
     "type": "git",
