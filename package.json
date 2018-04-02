@@ -68,6 +68,7 @@
     "gulp-postcss": "7.0.0",
     "gulp-rename": "1.2.2",
     "gulp-replace": "0.6.1",
+    "gulp-run": "^1.7.1",
     "gulp-sourcemaps": "2.6.1",
     "gulp-stylelint": "5.0.0",
     "gulp-uglify": "3.0.0",
