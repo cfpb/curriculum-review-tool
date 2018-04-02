@@ -41,6 +41,10 @@ Thumbs.db
 ##################
 *.swp
 
+# vscode files #
+##################
+*.vscode
+
 # Python #
 ##########
 *.pyc
