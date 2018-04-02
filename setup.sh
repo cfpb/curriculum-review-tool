@@ -39,6 +39,11 @@ clean() {
 
 # Install project dependencies.
 install() {
+  cd teachers_digital_platform/crtool
+  echo 'Installing CRTOOL React dependencies'
+  npm install -d --loglevel warn
+
+  cd ../..
   echo 'Installing front-end dependencies…'
   npm install -d --loglevel warn
 }
