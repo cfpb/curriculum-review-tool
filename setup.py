@@ -8,12 +8,6 @@ except (IOError, ImportError):
     long_description = open('README.md', 'r').read()
 
 
-install_requires = [
-    'Django>=1.8,<1.12',
-    'wagtail>=1.8,<1.11',
-]
-
-
 testing_extras = [
     'mock>=2.0.0',
     'coverage>=3.7.0',
@@ -40,7 +34,6 @@ setup(
             'static/tdp/fonts/*',
         ],
     },
-    install_requires=install_requires,
     extras_require={
         'testing': testing_extras,
     },
