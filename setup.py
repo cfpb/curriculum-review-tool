@@ -1,4 +1,3 @@
-import os
 from setuptools import find_packages, setup
 
 try:
@@ -6,6 +5,12 @@ try:
     long_description = pypandoc.convert('README.md', 'rst')
 except (IOError, ImportError):
     long_description = open('README.md', 'r').read()
+
+
+install_requires = [
+    'Django>=1.8,<1.12',
+    'wagtail>=1.8,<1.11',
+]
 
 
 testing_extras = [
@@ -34,6 +39,7 @@ setup(
             'static/tdp/fonts/*',
         ],
     },
+    install_requires=install_requires,
     extras_require={
         'testing': testing_extras,
     },
@@ -51,6 +57,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
     ],
-    setup_requires=['cfgov-setup==1.2', 'setuptools-git-version==1.0.3'],
+    setup_requires=['setuptools-git-version==1.0.3'],
     frontend_build_script='setup.sh'
 )
