@@ -57,6 +57,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
     ],
-    setup_requires=['cfgov-setup==1.2', 'setuptools-git-version==1.0.3'],
     frontend_build_script='setup.sh'
+    setup_requires=['cfgov_setup==1.2', 'setuptools-git-version==1.0.3']
 )
