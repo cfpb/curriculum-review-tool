@@ -41,6 +41,10 @@ Thumbs.db
 ##################
 *.swp
 
+# vscode files #
+##################
+*.vscode
+
 # Python #
 ##########
 *.pyc
@@ -68,3 +72,4 @@ coverage.xml
 node_modules/
 teachers_digital_platform/static/*
 teachers_digital_platform/tests/unit_test_coverage/
+teachers_digital_platform/crtool/build/*

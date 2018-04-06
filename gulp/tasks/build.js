@@ -6,6 +6,7 @@ gulp.task( 'build',
   [
     'styles',
     'scripts',
-    'copy'
+    'copy',
+    'crtool'
   ]
 );

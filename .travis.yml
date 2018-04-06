@@ -5,9 +5,10 @@ python:
 install:
 - pip install tox-travis
 script:
-- tox
 - nvm install 8 && nvm use 8
+- npm install -g gulp-cli
 - npm install
+- tox
 - npm test
 - python setup.py bdist_wheel
 deploy:
