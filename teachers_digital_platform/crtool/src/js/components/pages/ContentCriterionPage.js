@@ -339,11 +339,11 @@ export default class ContentCriterionPage extends React.Component {
                         block__border-top">
                 <div className="m-btn-group
                             m-btn-group__wide">
-                    <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
+                    <button className="a-btn" id="crt-content-handle-summary" onClick={(e) => {this.handleSummaryButtonClick()}} >
                         Continue to summary
                     </button>
                     <button className="a-btn
-                                    a-btn__link" onClick={(e) => {this.clearLocalStorage()}} >
+                                    a-btn__link" id="crt-content-start-over" onClick={(e) => {this.clearLocalStorage()}} >
                         Start over with a new review
                     </button>
                 </div>

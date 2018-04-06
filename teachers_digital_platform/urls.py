@@ -27,4 +27,8 @@ urlpatterns = [
         r'prototypes/crt-survey-react/',
         TemplateView.as_view(template_name='teachers_digital_platform/prototypes/crt-survey-react.html')
     ),
+    url(
+        r'start-test',
+        TemplateView.as_view(template_name='teachers_digital_platform/prototypes/crt-start-react.html')       
+    ),
 ]

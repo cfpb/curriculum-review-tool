@@ -15,6 +15,10 @@ export default class CustomerReviewToolComponent extends React.Component {
       utilityInProgress: localStorage.getItem(C.UTILITY_STATUS),
       efficacyInProgress: localStorage.getItem(C.EFFICACY_STATUS),
 
+      curriculumTitle: localStorage.getItem("curriculumTitle"),
+      publicationDate: localStorage.getItem("publicationDate"),
+      gradeRange: localStorage.getItem("gradeRange"),
+
       criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
       criterionNotes: JSON.parse(localStorage.getItem("criterionNotes")) || {}
     };
@@ -139,6 +143,12 @@ export default class CustomerReviewToolComponent extends React.Component {
     return (
       <div className="block block__flush-top">
         <h1>Curriculum Review</h1>
+        <div>
+          DEBUG Values: 
+          <p>Curriculum Title: {this.state.curriculumTitle} </p> 
+          <p>Publication Date: {this.state.publicationDate} </p> 
+          <p>Grade Range: {this.state.gradeRange} </p> 
+        </div>
         <p>Middle School Example Curriculum</p>
         <p>Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.</p>
         

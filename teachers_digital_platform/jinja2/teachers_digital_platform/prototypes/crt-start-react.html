@@ -1,0 +1,285 @@
+{% extends 'layout-2-1-bleedbar.html' %}
+
+
+{# HEAD items #}
+
+{% block title -%}
+    Curriculum Review Tool | Consumer Financial Protection Bureau
+{%- endblock title %}
+
+{% block desc -%}
+    Our vision is a consumer finance marketplace that works for American consumers, responsible providers, and the economy as a whole.
+{%- endblock desc %}
+
+{% block og_image -%}
+    <meta property="og:image" content="{{ meta_image_url }}">
+    <meta property="twitter:image" content="{{ meta_image_url }}">
+    {# Optional property if you want to use Twitter's large card format
+       https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image
+    <meta name="twitter:card" content="summary_large_image">
+    #}
+{%- endblock og_image %}
+
+{% block og_desc -%}
+    {{ self.desc() }}
+{%- endblock og_desc %}
+
+{% block css -%}
+    {{ super() }}
+
+    <link rel="stylesheet" href="{{ static('tdp/css/tdp.css') }}">
+{%- endblock css %}
+
+
+{# BODY items #}
+
+{% block header %}
+    <header class="o-header" role="banner">
+        <div class="m-global-eyebrow m-global-eyebrow__horizontal">
+            <div class="wrapper wrapper__match-content">
+                <div class="m-global-eyebrow_tagline">
+                    An official website of the
+                    <span class="m-global-eyebrow_tagline-usa">United States Government</span>
+                </div>
+                &nbsp;
+            </div>
+        </div>
+        <div class="o-header_content">
+            <div class="wrapper wrapper__match-content">
+                <a class="o-header_logo" href="/">
+                    <img class="o-header_logo-img" src="/static/img/logo_237x50.png" srcset="/static/img/logo_161x34.png 161w,
+                                /static/img/logo_161x34%402x.png 322w,
+                                /static/img/logo_161x34%403x.png 483w,
+                                /static/img/logo_161x34%404x.png 644w,
+                                /static/img/logo_237x50.png 237w,
+                                /static/img/logo_237x50%402x.png 474w" sizes="(max-width: 900px) 161px,
+                                237px" alt="Consumer Financial Protection Bureau">
+                </a>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block hero -%}
+{% endblock %}
+
+{% block pre_content %}
+{% endblock %}
+
+{% block content_main scoped %}
+    <div class="block block__flush-top">
+        <h1>Before you begin your review</h1>
+        <div class="lead-paragraph">
+            <p>Transition sentence here. Lorem ipsum dolor sit amet consecteteur adipiscing elit.</p>
+        </div>
+        <ul>
+            <li>Assemble a review team</li>
+            <li>Gather all materials for each curriculum including:
+                <ul>
+                    <li>Scope and sequence</li>
+                    <li>Lesson plans</li>
+                    <li>Student assessments</li>
+                    <li>Guidance for teachers</li>
+                </ul>
+            </li>
+            <li>Collect studies and other evidence of the curriculum’s impact</li>
+        </ul>
+        <h2 class="h4">Need help getting started?</h2>
+        <p>Download our
+            <a class="a-link
+                      a-link__icon"
+                href="#">
+                    <span class="a-link_text">curriculum review checklist</span>
+                    {# {% include icons/download.svg %} #}
+            </a>.
+        </p>
+    </div>
+
+    <div class="o-well">
+        <div class="u-mb30">
+            <h2>Curriculum information</h2>
+            <p>Enter the information for the curriculum you’re reviewing.</p>
+        </div>
+        <form class="o-form">
+            <div class="o-form_group">
+                <ul class="content-l m-list m-list__unstyled">
+                    <li class="content-l_col content-l_col-1-2">
+                        <div class="m-form-field
+                                    m-form-field__text">
+                            <label class="a-label
+                                          a-label__heading"
+                                    for="tdp-crt_title">
+                                Curriculum title
+                            </label>
+                            <input class="a-text-input
+                                          a-text-input__full"
+                                    type="text"
+                                    id="tdp-crt_title">
+                        </div>
+                    </li>
+                    <li class="content-l_col content-l_col-1-2">
+                        <div class="m-form-field
+                                    m-form-field__text">
+                            <label class="a-label
+                                          a-label__heading"
+                                    for="tdp-crt_pubdate">
+                                Date of publication
+                                <small class="a-label_helper">(optional)</small>
+                            </label>
+                            <input class="a-text-input
+                                          a-text-input__full"
+                                    type="text"
+                                    id="tdp-crt_pubdate">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="o-form_group">
+                <div class="m-form-field
+                            m-form-field__select">
+                    <label class="a-label
+                                  a-label__heading"
+                           for="tdp-crt_grade">
+                        Grade range
+                    </label>
+                    <div class="a-select">
+                        <select id="tdp-crt_grade">
+                            <option value="">Select grade range</option>
+                            <option value="Elementary School">Elementary School</option>
+                            <option value="Middle School">Middle School</option>
+                            <option value="High School">High School</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="o-form_group">
+                <div class="m-notification
+                            m-notification__visible
+                            m-notification__warning">
+                    {# {% include 'icons/error-round.svg' %} #}
+                    <span class="m-notification_icon cf-icon"></span>
+                    <div class="m-notification_content">
+                        <div class="hm-notification_message">
+                            <h3 class="h4">Limitations around saving your work</h3>
+                            <p>If you plan to complete this review over multiple sessions, we recommend downloading a summary after each completed section. Learn more about <a href="#modal-dialog">how to save your work.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-btn-group">
+                <button id="begin-btn" class="a-btn" type="submit" onclick="beginReviewButtonClick();" formaction="http://localhost:8000/tdp/prototypes/crt-survey-react/"/>
+                    Begin Review
+                </button>
+                <button href="#" class="a-btn a-btn__link">Start over with a new review</button>
+            </div>
+        </form>
+    </div>
+{% endblock content_main %}
+
+{% block content_sidebar_modifiers -%}
+    o-sidebar-content
+{%- endblock %}
+
+{% block content_sidebar scoped -%}
+    <div class="block block__flush-top">
+        <h2>About us</h2>
+        <p>We’re the Consumer Financial Protection Bureau (CFPB), a U.S. government agency that makes sure banks, lenders, and other financial companies treat you fairly.</p>
+        <p><a href="#">Learn how the CFPB can help you</a></p>
+    </div>
+    <div class="block">
+        <header class="m-slug-header">
+            <h2 class="a-heading">
+                PDF of curriculum review
+            </h2>
+        </header>
+        <p>Want to download or print a blank copy of the review?</p>
+        <p>
+            <a class="a-link
+                      a-link__icon"
+                href="#">
+                    <span class="a-link_text">Download a copy of the financial education curriculum review</span>
+                    {# {% include icons/download.svg %} #}
+            </a>
+        </p>
+    </div>
+{%- endblock %}
+
+{% block javascript scoped -%}
+    <div class="o-modal"
+        id="modal-dialog"
+        aria-hidden="true"
+        role="alertdialog"
+        aria-labelledby="example-modal-title"
+        aria-describedby="example-modal-desc">
+        <div class="o-modal_backdrop"></div>
+        <div class="o-modal_container">
+        <form class="o-modal_content">
+            <div class="o-modal_body">
+                <button class="o-modal_close a-btn a-btn__link">
+                    Close
+                    <span class="cf-icon cf-icon-delete-round"></span>
+                </button>
+                <h1 id="example-modal-title">Saving your work</h1>
+                <div id="example-modal-desc">
+                    <p>This tool uses cookies to temporarily save your work. To load answers you’ve already completed, use the same computer and browser, and don't clear your cookies.</p>
+                    <p>To save a permanent copy of your work, please download a summary of each dimension as you complete it. You can download an overall summary of findings after completing any dimension as well.</p>
+                    <p>You can only work on a single curriculum at a time.</p>
+                </div>
+            </div>
+            <div class="o-modal_footer">
+                <button class="a-btn">Close</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <!-- This script is for demo purposes only. -->
+    <script>
+        var gradeRange = document.getElementById('tdp-crt_grade');
+        var button = document.querySelector('button[type="submit"]');
+        var modalOpenLinks = document.querySelectorAll('a[href="#modal-dialog"]');
+        var modalCloseLinks = document.querySelectorAll('.o-modal_close, .o-modal_footer > .a-btn');
+        var modalWindow = document.getElementById('modal-dialog');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            gradeRange.onchange = enableButton;
+        }, false);
+
+        function enableButton(event) {
+            button.removeAttribute('disabled');
+        }
+
+        modalOpenLinks.forEach( function (openLink) {
+            openLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                openModalWindow();
+            }, false);
+        });
+
+        modalCloseLinks.forEach( function (closeLink) {
+            closeLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeModalWindow();
+            }, false);
+        });
+
+        function openModalWindow(event) {
+            modalWindow.classList.add('o-modal__visible');
+        }
+
+        function closeModalWindow(event) {
+            modalWindow.classList.remove('o-modal__visible');
+        }
+
+        function beginReviewButtonClick() {
+            let curriculumTitle = document.getElementById('tdp-crt_title').value;
+            localStorage.setItem('curriculumTitle', curriculumTitle);
+
+            let publicationDate = document.getElementById('tdp-crt_pubdate').value;
+            localStorage.setItem('publicationDate', publicationDate);
+
+            let gradeRange = document.getElementById('tdp-crt_grade').value;
+            localStorage.setItem('gradeRange', gradeRange);
+        }
+    </script>
+{%- endblock javascript %}
