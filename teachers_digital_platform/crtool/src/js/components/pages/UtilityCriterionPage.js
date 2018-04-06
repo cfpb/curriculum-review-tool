@@ -5,29 +5,19 @@ import C from "../../constants.js"
 export default class UtilityCriterionPage extends React.Component {
     changeUtilityRadio(key, checkedValue) {
         this.props.changeCriterionAnswer(C.UTILITY_DISTINCTIVE, key, checkedValue);
-        this.checkDistinctiveIsComplete();
     }   
 
     changeUtilityNotes(key, textValue) {        
         this.props.changeCriterionNotes(C.UTILITY_DISTINCTIVE, key, textValue);
-        this.checkDistinctiveIsComplete();
     }  
 
-    utilityClearLocalstorage() {
-        this.props.clearLocalstorage();
+    clearLocalStorage() {
+        this.props.clearLocalStorage();
     }
 
-    checkDistinctiveIsComplete() {
-        if (this.props.criterionNotes['utility-crt-notes-1'] !== undefined & 
-            this.props.criterionNotes['utility-crt-notes-2'] !== undefined &
-            this.props.criterionAnswers['utility-crt-quesion-1.1'] !== undefined &
-            this.props.criterionAnswers['utility-crt-quesion-1.2'] !== undefined &
-            this.props.criterionAnswers['utility-crt-quesion-1.3'] !== undefined &
-            this.props.criterionAnswers['utility-crt-quesion-1.4'] !== undefined &
-            this.props.criterionAnswers['utility-crt-quesion-2.1'] !== undefined &
-            this.props.criterionAnswers['utility-crt-quesion-2.2'] !== undefined) {
-                this.props.setDistinctiveComplete(C.UTILITY_DISTINCTIVE);
-        }
+    handleSummaryButtonClick() {
+        this.props.setDistinctiveComplete(C.UTILITY_DISTINCTIVE);
+        //TODO: navigate to Content Summary Page
     }
 
     render() {
@@ -322,11 +312,11 @@ export default class UtilityCriterionPage extends React.Component {
                         block__border-top">
                 <div className="m-btn-group
                             m-btn-group__wide">
-                    <button className="a-btn">
+                    <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                         Continue to summary
                     </button>
                     <button className="a-btn
-                                    a-btn__link" onClick={(e) => {this.utilityClearLocalstorage()}} >
+                                    a-btn__link" onClick={(e) => {this.clearLocalStorage()}} >
                         Start over with a new review
                     </button>
                 </div>

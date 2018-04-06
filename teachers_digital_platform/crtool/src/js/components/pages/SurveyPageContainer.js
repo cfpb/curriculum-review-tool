@@ -18,7 +18,7 @@ export default class SurveyPageContainer extends React.Component {
                         criterionNotes={this.props.criterionNotes}
                         changeCriterionAnswer={this.props.changeCriterionAnswer}
                         changeCriterionNotes={this.props.changeCriterionNotes}
-                        clearLocalstorage={this.props.clearLocalstorage} 
+                        clearLocalStorage={this.props.clearLocalStorage} 
                         setDistinctiveComplete={this.props.setDistinctiveComplete} />
                 </div>
             );
@@ -30,7 +30,7 @@ export default class SurveyPageContainer extends React.Component {
                         criterionNotes={this.props.criterionNotes}
                         changeCriterionAnswer={this.props.changeCriterionAnswer}
                         changeCriterionNotes={this.props.changeCriterionNotes}
-                        clearLocalstorage={this.props.clearLocalstorage} 
+                        clearLocalStorage={this.props.clearLocalStorage} 
                         setDistinctiveComplete={this.props.setDistinctiveComplete} />
                 </div>
             );
@@ -42,7 +42,7 @@ export default class SurveyPageContainer extends React.Component {
                         criterionNotes={this.props.criterionNotes}
                         changeCriterionAnswer={this.props.changeCriterionAnswer}
                         changeCriterionNotes={this.props.changeCriterionNotes}
-                        clearLocalstorage={this.props.clearLocalstorage}
+                        clearLocalStorage={this.props.clearLocalStorage}
                         setDistinctiveComplete={this.props.setDistinctiveComplete} />
                 </div>
             );
@@ -54,7 +54,7 @@ export default class SurveyPageContainer extends React.Component {
                         criterionNotes={this.props.criterionNotes}
                         changeCriterionAnswer={this.props.changeCriterionAnswer}
                         changeCriterionNotes={this.props.changeCriterionNotes}
-                        clearLocalstorage={this.props.clearLocalstorage}
+                        clearLocalStorage={this.props.clearLocalStorage}
                         setDistinctiveComplete={this.props.setDistinctiveComplete} />
                 </div>
             );

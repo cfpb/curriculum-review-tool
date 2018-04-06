@@ -19,7 +19,7 @@ root:~$ npm run build
 
 ## Running Unit Tests for REACT CRTool
 ```console
-root:~$ npm run tests
+root:~$ npm tests
 ``` 
 
 ## Viewing the code in the Main site:
