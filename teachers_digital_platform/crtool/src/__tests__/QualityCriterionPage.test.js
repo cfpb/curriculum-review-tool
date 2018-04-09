@@ -1,40 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/constants';
-import ContentCriterionPage from '../js/components/pages/ContentCriterionPage';
+import QualityCriterionPage from '../js/components/pages/QualityCriterionPage';
 import renderer from 'react-test-renderer';
 
     let result;
-    const contentProps = {
-        currentPage:"ContentCriterionPage",
+    const qualityProps = {
+        currentPage:"QualityCriterionPage",
         criterionAnswers: {},
         criterionNotes:{},
-        changeCriterionAnswer: _changeContentRadio.bind(this),
-        changeCriterionNotes:_changeContentNotes.bind(this),
+        changeQualitynAnswer: _changeQualityRadio.bind(this),
+        changeQualityNotes:_changeQualityNotes.bind(this),
         clearLocalStorage:_clearLocalStorage.bind(this), 
         setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     }
 
     beforeAll(() => {
         result = renderer.create(
-                <ContentCriterionPage {...contentProps}/>,
+                <QualityCriterionPage {...qualityProps}/>,
               );
       });
       
-      afterAll(() => {
+    afterAll(() => {
         result.unmount();
       });
 
-      test ('Content Criterion Page uses state to populate values', () => {
+    test ('Quality Criterion Page uses state to populate values', () => {
         let tree = result.toJSON();
         expect(tree).toMatchSnapshot();
       });
   
-    function _changeContentRadio (key, checkedValue) {
+    function _changeQualityRadio (key, checkedValue) {
 
     }
 
-    function _changeContentNotes (key, textValue) {
+    function _changeQualityNotes (key, textValue) {
 
     }
 

@@ -1,40 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/constants';
-import ContentCriterionPage from '../js/components/pages/ContentCriterionPage';
+import EfficacyCriterionPage from '../js/components/pages/EfficacyCriterionPage';
 import renderer from 'react-test-renderer';
 
     let result;
-    const contentProps = {
-        currentPage:"ContentCriterionPage",
+    const efficacyProps = {
+        currentPage:"EfficacyCriterionPage",
         criterionAnswers: {},
         criterionNotes:{},
-        changeCriterionAnswer: _changeContentRadio.bind(this),
-        changeCriterionNotes:_changeContentNotes.bind(this),
+        changeEfficacyAnswer: _changeEfficacyRadio.bind(this),
+        changeEfficacyNotes:_changeEfficacyNotes.bind(this),
         clearLocalStorage:_clearLocalStorage.bind(this), 
         setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     }
 
     beforeAll(() => {
         result = renderer.create(
-                <ContentCriterionPage {...contentProps}/>,
+                <EfficacyCriterionPage {...efficacyProps}/>,
               );
       });
       
-      afterAll(() => {
+    afterAll(() => {
         result.unmount();
       });
 
-      test ('Content Criterion Page uses state to populate values', () => {
+    test ('Efficacy Criterion Page uses state to populate values', () => {
         let tree = result.toJSON();
         expect(tree).toMatchSnapshot();
       });
   
-    function _changeContentRadio (key, checkedValue) {
+    function _changeEfficacyRadio (key, checkedValue) {
 
     }
 
-    function _changeContentNotes (key, textValue) {
+    function _changeEfficacyNotes (key, textValue) {
 
     }
 
