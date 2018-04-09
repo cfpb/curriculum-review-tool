@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DistinctiveButton uses state to populate values 1`] = `
+exports[`DistinctiveButton correctly invokes onClick 1`] = `
 <button
   onClick={[Function]}
 >
@@ -28,7 +28,7 @@ exports[`DistinctiveButton uses state to populate values 1`] = `
 </button>
 `;
 
-exports[`DistinctiveButton uses state to populate values 2`] = `
+exports[`DistinctiveButton uses state to populate values 1`] = `
 <button
   onClick={[Function]}
 >

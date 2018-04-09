@@ -153,7 +153,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         <p>Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.</p>
         
         <div className="DistinctivesBlock" >
-          {distinctiveProps.map(distinctiveProps => <DistinctiveButton {...distinctiveProps}/>)}
+          {distinctiveProps.map(function (distinctiveProps, i) {<DistinctiveButton key={i} {...distinctiveProps}/>})}
         </div>
         <div >
           <SurveyPageContainer className="SurveyPage" 

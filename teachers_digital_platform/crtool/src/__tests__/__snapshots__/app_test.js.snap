@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="block block__flush-top"
+  >
+    <h1>
+      Curriculum Review
+    </h1>
+    <div>
+      DEBUG Values:
+      <p>
+        Curriculum Title: 
+         
+      </p>
+      <p>
+        Publication Date: 
+         
+      </p>
+      <p>
+        Grade Range: 
+         
+      </p>
+    </div>
+    <p>
+      Middle School Example Curriculum
+    </p>
+    <p>
+      Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.
+    </p>
+    <div
+      className="DistinctivesBlock"
+    />
+    <div>
+      <div>
+        <h1 />
+        <div
+          className="block"
+        >
+          <h2>
+            Content for elementary school
+          </h2>
+          <p>
+            Curriculum content refers to the knowledge and skills covered by the curriculum. The content dimension is based on our analysis of existing national and select state financial education standards. An indicator is a concrete, detailed specification for each criteria. A component is an operational rule to help reviewers determine whether the curriculum meets each indicator. Some are essential and some are beneficial.
+          </p>
+          <h3>
+            Instructions
+          </h3>
+          <p>
+            Read through the scope and sequence of the curriculum, skim the lesson plans, and answer the following questions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
