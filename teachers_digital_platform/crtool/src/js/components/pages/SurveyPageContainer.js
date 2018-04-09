@@ -19,6 +19,9 @@ export default class SurveyPageContainer extends React.Component {
             changeCriterionNotes:this.props.changeCriterionNotes,
             clearLocalStorage:this.props.clearLocalStorage, 
             setDistinctiveComplete:this.props.setDistinctiveComplete, 
+            curriculumTitle:this.props.curriculumTitle,
+            publicationDate:this.props.publicationDate,
+            gradeRange:this.props.gradeRange,
           };
 
         if (this.props.currentPage === C.CONTENT_DISTINCTIVE) {
@@ -46,7 +49,7 @@ export default class SurveyPageContainer extends React.Component {
                 </div>
             );
         } else {
-            return (<StartCriterionPage currentPage={this.props.currentPage} />);
+            return (<StartCriterionPage  {...pageProps} />);
         }
     }
 }

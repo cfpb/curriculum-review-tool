@@ -10,21 +10,6 @@ exports[`renders without crashing 1`] = `
     <h1>
       Curriculum Review
     </h1>
-    <div>
-      DEBUG Values:
-      <p>
-        Curriculum Title: 
-         
-      </p>
-      <p>
-        Publication Date: 
-         
-      </p>
-      <p>
-        Grade Range: 
-         
-      </p>
-    </div>
     <p>
       Middle School Example Curriculum
     </p>
@@ -33,7 +18,104 @@ exports[`renders without crashing 1`] = `
     </p>
     <div
       className="DistinctivesBlock"
-    />
+    >
+      <button
+        onClick={[Function]}
+      >
+        <div
+          className="Distinctive"
+        >
+          <div
+            className="DistinctiveBoxFormat"
+          >
+            <h4>
+              Content
+               
+            </h4>
+            <p>
+              Covers core knowledge and skills in content standards
+              <br />
+              <br />
+              6 criteria
+              <br />
+              Est. time 30 min
+            </p>
+          </div>
+        </div>
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        <div
+          className="Distinctive"
+        >
+          <div
+            className="DistinctiveBoxFormat"
+          >
+            <h4>
+              Utility
+               
+            </h4>
+            <p>
+              Supports effective teaching
+              <br />
+              <br />
+              7 criteria
+              <br />
+              Est. time 30 min
+            </p>
+          </div>
+        </div>
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        <div
+          className="Distinctive"
+        >
+          <div
+            className="DistinctiveBoxFormat"
+          >
+            <h4>
+              Quality
+               
+            </h4>
+            <p>
+              Accurate and well presented
+              <br />
+              <br />
+              5 criteria
+              <br />
+              Est. time 30 min
+            </p>
+          </div>
+        </div>
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        <div
+          className="Distinctive"
+        >
+          <div
+            className="DistinctiveBoxFormat"
+          >
+            <h4>
+              Efficacy
+               
+            </h4>
+            <p>
+              Improves financial knowledge, skills, or behaviors
+              <br />
+              <br />
+              3 criteria
+              <br />
+              Est. time 30 min
+            </p>
+          </div>
+        </div>
+      </button>
+    </div>
     <div>
       <div>
         <h1 />
@@ -52,6 +134,21 @@ exports[`renders without crashing 1`] = `
           <p>
             Read through the scope and sequence of the curriculum, skim the lesson plans, and answer the following questions.
           </p>
+          <div>
+            DEBUG Values:
+            <p>
+              Curriculum Title: 
+               
+            </p>
+            <p>
+              Publication Date: 
+               
+            </p>
+            <p>
+              Grade Range: 
+               
+            </p>
+          </div>
         </div>
       </div>
     </div>

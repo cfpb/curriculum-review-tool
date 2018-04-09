@@ -17,25 +17,23 @@ import renderer from 'react-test-renderer';
 
     beforeAll(() => {
         result = renderer.create(
-                <ContentCriterionPage {...contentProps}/>,
-              );
+            <ContentCriterionPage {...contentProps}/>,
+          );
       });
       
-      afterAll(() => {
+    afterAll(() => {
         result.unmount();
-      });
+    });
 
-      test ('Content Criterion Page uses state to populate values', () => {
-        let tree = result.toJSON();
-        expect(tree).toMatchSnapshot();
-      });
+    test ('Content Criterion Page uses state to populate values', () => {
+      let tree = result.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   
     function _changeContentRadio (key, checkedValue) {
-
     }
 
     function _changeContentNotes (key, textValue) {
-
     }
 
     let LocalStorageClearedValue = false;
@@ -44,7 +42,6 @@ import renderer from 'react-test-renderer';
     }
 
     function _handleSummaryButtonClick () {
-
     }
 
     

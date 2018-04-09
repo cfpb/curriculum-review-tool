@@ -33,8 +33,8 @@ afterAll(() => {
 });
 
 test('DistinctiveButton uses state to populate values', () => {
-    let tree = result.toJSON();
-    expect(tree).toMatchSnapshot();
+  let tree = result.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('DistinctiveButton correctly invokes onClick', () => {

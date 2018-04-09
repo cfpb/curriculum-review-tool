@@ -143,21 +143,19 @@ export default class CustomerReviewToolComponent extends React.Component {
     return (
       <div className="block block__flush-top">
         <h1>Curriculum Review</h1>
-        <div>
-          DEBUG Values: 
-          <p>Curriculum Title: {this.state.curriculumTitle} </p> 
-          <p>Publication Date: {this.state.publicationDate} </p> 
-          <p>Grade Range: {this.state.gradeRange} </p> 
-        </div>
         <p>Middle School Example Curriculum</p>
         <p>Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.</p>
         
         <div className="DistinctivesBlock" >
-          {distinctiveProps.map(function (distinctiveProps, i) {<DistinctiveButton key={i} {...distinctiveProps}/>})}
+          {distinctiveProps.map((distinctiveProps, i) => <DistinctiveButton key={i} {...distinctiveProps}/>)}
         </div>
         <div >
           <SurveyPageContainer className="SurveyPage" 
             currentPage={this.state.currentPage} 
+
+            curriculumTitle={this.state.curriculumTitle}
+            publicationDate={this.state.publicationDate}
+            gradeRange={this.state.gradeRange}
 
             criterionAnswers={this.state.criterionAnswers}
             criterionNotes={this.state.criterionNotes}
