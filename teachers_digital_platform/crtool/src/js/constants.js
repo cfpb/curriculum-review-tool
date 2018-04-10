@@ -22,6 +22,7 @@ const C = {
   STATUS_COMPLETE: "Complete",
 
   START_DISTINCTIVE: "START",
+  START_PAGE_RELATIVE_URL: "/tdp/crt-start/",
 };
 
 export default C;

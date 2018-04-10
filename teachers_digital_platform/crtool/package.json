@@ -10,7 +10,8 @@
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
-    "redux-persist": "^5.9.1"
+    "redux-persist": "^5.9.1",
+    "resolve-url": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,7 +31,8 @@
   },
   "babel": {
     "presets": [
-      "env", "react"
+      "env",
+      "react"
     ]
   }
 }

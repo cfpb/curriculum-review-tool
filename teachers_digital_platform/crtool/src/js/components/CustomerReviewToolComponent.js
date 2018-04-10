@@ -1,4 +1,5 @@
 import React from "react";
+import resolveUrl from "resolve-url";
 
 import C from "../constants"; 
 import DistinctiveButton from "./distinctives/DistinctiveButton";
@@ -35,6 +36,9 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     this.setState({criterionAnswers: {} });
     this.setState({criterionNotes: {} });
+    
+    let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
+    window.location = startPage;
   }
 
   changeCriterionNotes(distinctive, key, val) {
