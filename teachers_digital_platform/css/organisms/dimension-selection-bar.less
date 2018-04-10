@@ -102,11 +102,19 @@
             color: @gray;
         }
 
+        .a-icon {
+            color: @green;
+        }
+
         &:focus,
         &:hover {
             background-color: @btn-bg-hover;
             border-color: @btn-bg-hover;
             color: @btn-text;
+
+            .a-icon {
+                color: inherit;
+            }
 
             .o-dimension-section-bar_selector-status {
                 color: @btn-text;
