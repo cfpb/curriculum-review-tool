@@ -9,7 +9,7 @@ export default class CustomerReviewToolComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentPage: localStorage.getItem(C.START_DISTINCTIVE),
+      currentPage: localStorage.getItem(C.START_PAGE),
 
       contentInProgress: localStorage.getItem(C.CONTENT_STATUS),
       qualityInProgress: localStorage.getItem(C.QUALITY_STATUS),
@@ -27,12 +27,12 @@ export default class CustomerReviewToolComponent extends React.Component {
 
   clearLocalStorage() {
     localStorage.clear();
-    this.distinctiveClicked(C.START_DISTINCTIVE);
+    this.distinctiveClicked(C.START_PAGE);
 
-    this.setDistinctiveStatus(C.CONTENT_DISTINCTIVE, C.STATUS_IN_START);
-    this.setDistinctiveStatus(C.UTILITY_DISTINCTIVE, C.STATUS_IN_START);
-    this.setDistinctiveStatus(C.QUALITY_DISTINCTIVE, C.STATUS_IN_START);
-    this.setDistinctiveStatus(C.EFFICACY_DISTINCTIVE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.CONTENT_PAGE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.UTILITY_PAGE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.QUALITY_PAGE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.EFFICACY_PAGE, C.STATUS_IN_START);
 
     this.setState({criterionAnswers: {} });
     this.setState({criterionNotes: {} });
@@ -77,19 +77,19 @@ export default class CustomerReviewToolComponent extends React.Component {
 
   setDistinctiveStatus(changedDistinctive, distinctiveStatus) {
     switch(changedDistinctive) {
-      case C.CONTENT_DISTINCTIVE:
+      case C.CONTENT_PAGE:
         localStorage.setItem(C.CONTENT_STATUS, distinctiveStatus);
         this.setState({contentInProgress: distinctiveStatus});
         break;
-      case C.UTILITY_DISTINCTIVE:
+      case C.UTILITY_PAGE:
         localStorage.setItem(C.UTILITY_STATUS, distinctiveStatus);
         this.setState({utilityInProgress: distinctiveStatus});
         break;
-      case C.QUALITY_DISTINCTIVE:
+      case C.QUALITY_PAGE:
         localStorage.setItem(C.QUALITY_STATUS, distinctiveStatus);
         this.setState({qualityInProgress: distinctiveStatus});
         break;
-      case C.EFFICACY_DISTINCTIVE:
+      case C.EFFICACY_PAGE:
         localStorage.setItem(C.EFFICACY_STATUS, distinctiveStatus);
         this.setState({efficacyInProgress: distinctiveStatus});
         break;
@@ -99,7 +99,7 @@ export default class CustomerReviewToolComponent extends React.Component {
   }
 
   distinctiveClicked(clickedDistinctive) {
-    localStorage.setItem(C.START_DISTINCTIVE, clickedDistinctive);
+    localStorage.setItem(C.START_PAGE, clickedDistinctive);
     this.setState({currentPage: clickedDistinctive});
   }
 
@@ -111,7 +111,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         criteria:"6 criteria",
         estimatedtime:"Est. time 30 min",
         description:"Covers core knowledge and skills in content standards",
-        distinctive:C.CONTENT_DISTINCTIVE,
+        distinctive:C.CONTENT_PAGE,
         inProgress:this.state.contentInProgress,
         distinctiveClicked:this.distinctiveClicked.bind(this),
       },
@@ -120,7 +120,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         criteria:"7 criteria",
         estimatedtime:"Est. time 30 min",
         description:"Supports effective teaching",
-        distinctive:C.UTILITY_DISTINCTIVE,
+        distinctive:C.UTILITY_PAGE,
         inProgress:this.state.utilityInProgress,
         distinctiveClicked:this.distinctiveClicked.bind(this),
       },
@@ -129,7 +129,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         criteria:"5 criteria",
         estimatedtime:"Est. time 30 min",
         description:"Accurate and well presented",
-        distinctive:C.QUALITY_DISTINCTIVE,
+        distinctive:C.QUALITY_PAGE,
         inProgress:this.state.qualityInProgress,
         distinctiveClicked:this.distinctiveClicked.bind(this),
       },
@@ -138,7 +138,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         criteria:"3 criteria",
         estimatedtime:"Est. time 30 min",
         description:"Improves financial knowledge, skills, or behaviors",
-        distinctive:C.EFFICACY_DISTINCTIVE,
+        distinctive:C.EFFICACY_PAGE,
         inProgress:this.state.efficacyInProgress,
         distinctiveClicked:this.distinctiveClicked.bind(this),
       }

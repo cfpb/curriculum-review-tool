@@ -10,7 +10,6 @@ import StartCriterionPage from "./StartCriterionPage";
 export default class SurveyPageContainer extends React.Component {
 
     render() {
-
         const pageProps = {
             currentPage:this.props.currentPage,
             criterionAnswers:this.props.criterionAnswers,
@@ -24,30 +23,14 @@ export default class SurveyPageContainer extends React.Component {
             gradeRange:this.props.gradeRange,
           };
 
-        if (this.props.currentPage === C.CONTENT_DISTINCTIVE) {
-            return (
-                <div>
-                    <ContentCriterionPage {...pageProps} />
-                </div>
-            );
-        } else if (this.props.currentPage === C.UTILITY_DISTINCTIVE) {
-            return (
-                <div>
-                    <UtilityCriterionPage {...pageProps} />
-                </div>
-            );
-        } else if (this.props.currentPage === C.QUALITY_DISTINCTIVE) {
-            return (
-                <div>
-                    <QualityCriterionPage {...pageProps} />
-                </div>
-            );
-        } else if (this.props.currentPage === C.EFFICACY_DISTINCTIVE) {
-            return (
-                <div>
-                    <EfficacyCriterionPage {...pageProps} />
-                </div>
-            );
+        if (this.props.currentPage === C.CONTENT_PAGE) {
+            return (<ContentCriterionPage {...pageProps} />);
+        } else if (this.props.currentPage === C.UTILITY_PAGE) {
+            return (<UtilityCriterionPage {...pageProps} /> );
+        } else if (this.props.currentPage === C.QUALITY_PAGE) {
+            return (<QualityCriterionPage {...pageProps} />);
+        } else if (this.props.currentPage === C.EFFICACY_PAGE) {
+            return (<EfficacyCriterionPage {...pageProps} />);
         } else {
             return (<StartCriterionPage  {...pageProps} />);
         }

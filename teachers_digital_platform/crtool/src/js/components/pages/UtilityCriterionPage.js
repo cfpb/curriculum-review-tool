@@ -4,11 +4,11 @@ import C from "../../constants.js"
 
 export default class UtilityCriterionPage extends React.Component {
     changeUtilityRadio(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.UTILITY_DISTINCTIVE, key, checkedValue);
+        this.props.changeCriterionAnswer(C.UTILITY_PAGE, key, checkedValue);
     }   
 
     changeUtilityNotes(key, textValue) {        
-        this.props.changeCriterionNotes(C.UTILITY_DISTINCTIVE, key, textValue);
+        this.props.changeCriterionNotes(C.UTILITY_PAGE, key, textValue);
     }  
 
     clearLocalStorage() {
@@ -16,7 +16,7 @@ export default class UtilityCriterionPage extends React.Component {
     }
 
     handleSummaryButtonClick() {
-        this.props.setDistinctiveComplete(C.UTILITY_DISTINCTIVE);
+        this.props.setDistinctiveComplete(C.UTILITY_PAGE);
         //TODO: navigate to Content Summary Page
     }
 

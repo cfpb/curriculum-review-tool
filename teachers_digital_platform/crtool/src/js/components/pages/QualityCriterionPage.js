@@ -4,11 +4,11 @@ import C from "../../constants.js"
 
 export default class QualityCriterionPage extends React.Component {
     changeQualityRadio(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.QUALITY_DISTINCTIVE, key, checkedValue);
+        this.props.changeCriterionAnswer(C.QUALITY_PAGE, key, checkedValue);
     }   
 
     changeQualityNotes(key, textValue) {        
-        this.props.changeCriterionNotes(C.QUALITY_DISTINCTIVE, key, textValue);
+        this.props.changeCriterionNotes(C.QUALITY_PAGE, key, textValue);
     }  
 
     clearLocalStorage() {
@@ -16,7 +16,7 @@ export default class QualityCriterionPage extends React.Component {
     }
 
     handleSummaryButtonClick() {
-        this.props.setDistinctiveComplete(C.QUALITY_DISTINCTIVE);
+        this.props.setDistinctiveComplete(C.QUALITY_PAGE);
         //TODO: navigate to Quality Summary Page
     }
 
