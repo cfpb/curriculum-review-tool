@@ -19,6 +19,7 @@ gulp.task( 'crtool',
   [
     'crtool:chdir-down',
     'crtool:build',
-    'crtool:chdir-up'
+    'crtool:chdir-up',
+    'test'
   ]
 );
