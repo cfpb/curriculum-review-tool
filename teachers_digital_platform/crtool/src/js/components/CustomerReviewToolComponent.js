@@ -123,6 +123,7 @@ export default class CustomerReviewToolComponent extends React.Component {
        
         <DistinctiveMenuBar 
             distinctiveClicked={this.distinctiveClicked.bind(this)}
+            currentPage={this.state.currentPage}
             contentInProgress={this.state.contentInProgress}
             utilityInProgress={this.state.utilityInProgress}
             qualityInProgress={this.state.qualityInProgress}
@@ -147,6 +148,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
         <DistinctiveMenuBar 
             distinctiveClicked={this.distinctiveClicked.bind(this)}
+            currentPage={this.state.currentPage}
             contentInProgress={this.state.contentInProgress}
             utilityInProgress={this.state.utilityInProgress}
             qualityInProgress={this.state.qualityInProgress}

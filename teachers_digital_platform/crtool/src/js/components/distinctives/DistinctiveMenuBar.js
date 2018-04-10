@@ -14,24 +14,28 @@ export default class DistinctiveMenuBar extends React.Component {
         {
           title:"Content",
           distinctive:C.CONTENT_PAGE,
+          currentPage:this.props.currentPage,
           inProgress:this.props.contentInProgress,
           distinctiveClicked:this.props.distinctiveClicked.bind(this),
         },
         {
           title:"Utility",
           distinctive:C.UTILITY_PAGE,
+          currentPage:this.props.currentPage,
           inProgress:this.props.utilityInProgress,
           distinctiveClicked:this.props.distinctiveClicked.bind(this),
         },
         {
           title:"Quality",
           distinctive:C.QUALITY_PAGE,
+          currentPage:this.props.currentPage,
           inProgress:this.props.qualityInProgress,
           distinctiveClicked:this.props.distinctiveClicked.bind(this),
         },
         {
           title:"Efficacy",
           distinctive:C.EFFICACY_PAGE,
+          currentPage:this.props.currentPage,
           inProgress:this.props.efficacyInProgress,
           distinctiveClicked:this.props.distinctiveClicked.bind(this),
         }
@@ -48,9 +52,6 @@ export default class DistinctiveMenuBar extends React.Component {
             <div className="u-center">
                 <button className="a-btn a-btn__super">Final Summary</button>
             </div>
-            <hr className="hr
-                        u-mb30
-                        u-mt30" />
         </div>
     );
   }

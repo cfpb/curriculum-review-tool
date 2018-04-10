@@ -13,9 +13,11 @@ export default class DistinctiveButton extends React.Component {
     if (this.props.inProgress === C.STATUS_COMPLETE) {
       statusClassName += "is-complete"
     }
-    else if (this.props.inProgress === C.STATUS_IN_PROGRESS) {
+    else if (this.props.currentPage === this.props.distinctive) {
       statusClassName += "is-active"
     }
+
+    alert(this.props.currentPage + " : " + this.props.distinctive);
 
     return (
       <li className="o-dimension-section-bar_dimension">
