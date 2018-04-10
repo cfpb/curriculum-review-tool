@@ -73,7 +73,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
   handleSummaryButtonClick() {
     this.setDistinctiveComplete(this.state.currentPage);
-    alert("summary button clicked: " + this.state.currentPage);
+    alert("Comming Soon - Navigate to Summary for : " + this.state.currentPage);
     //TODO: navigate to Content Summary Page
   }
 
@@ -115,7 +115,7 @@ export default class CustomerReviewToolComponent extends React.Component {
       <div>
        <div className="l-survey-top"><a href="#">Can I save my work?</a></div>
        <div className="h5 u-mb30">You’re reviewing</div>
-       <h1>Head Start Financial Literacy Curriculum</h1>
+       <h1>{this.state.curriculumTitle}</h1>
        <p className="lead-paragraph">
            Select any dimension to start your review. We recommend starting with Content and moving to Utility, Quality, and Efficacy, but you can complete the four dimensions in any order.
        </p>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/constants';
-import ContentCriterionPage from '../js/components/pages/ContentCriterionPage';
+import ContentCriterionPage from '../js/components/pages/content/ContentElementaryCriterionPage';
 import renderer from 'react-test-renderer';
 
     let result;

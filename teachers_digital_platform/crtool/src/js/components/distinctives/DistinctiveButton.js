@@ -9,15 +9,13 @@ export default class DistinctiveButton extends React.Component {
 
   render() {
 
-    let statusClassName = "o-dimension-section-bar_selector ";
+    let statusClassName = "o-dimension-section-bar_selector " + this.props.distinctive;
     if (this.props.inProgress === C.STATUS_COMPLETE) {
-      statusClassName += "is-complete"
+      statusClassName += " is-complete"
     }
     else if (this.props.currentPage === this.props.distinctive) {
-      statusClassName += "is-active"
+      statusClassName += " is-active"
     }
-
-    alert(this.props.currentPage + " : " + this.props.distinctive);
 
     return (
       <li className="o-dimension-section-bar_dimension">
@@ -27,10 +25,10 @@ export default class DistinctiveButton extends React.Component {
                 &nbsp;{this.props.title}
                 <span className="o-dimension-section-bar_selector-status">&nbsp;{this.props.inProgress}</span>
             </span>
-            <span className="o-dimension-section-bar_selector-text">Covers core knowledge and skills in national standards</span>
+            <span className="o-dimension-section-bar_selector-text">{this.props.description}</span>
         </a>
         <ul className="o-dimension-section-bar_dimension-details">
-            <li className="h6">6 criteria</li><li className="h6">30 minutes</li>
+            <li className="h6">{this.props.criterionText}</li><li className="h6">{this.props.estimateText}</li>
         </ul>
     </li>
     );

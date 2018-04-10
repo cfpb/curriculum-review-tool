@@ -23,6 +23,10 @@ const C = {
   STATUS_COMPLETE: "Complete",
 
   START_PAGE_RELATIVE_URL: "/tdp/crt-start/",
+
+  GRADE_ELEMENTARY: "Elementary School",
+  GRADE_MIDDLE: "Middle School",
+  GRADE_HIGH: "Middle School",
 };
 
 export default C;

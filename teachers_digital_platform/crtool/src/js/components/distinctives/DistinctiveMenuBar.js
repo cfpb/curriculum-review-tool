@@ -13,6 +13,9 @@ export default class DistinctiveMenuBar extends React.Component {
     const distinctiveProps = [
         {
           title:"Content",
+          criterionText:"6 criteria",
+          estimateText:"30 minutes",
+          description:"Covers core knowledge and skills in national standards",
           distinctive:C.CONTENT_PAGE,
           currentPage:this.props.currentPage,
           inProgress:this.props.contentInProgress,
@@ -20,6 +23,9 @@ export default class DistinctiveMenuBar extends React.Component {
         },
         {
           title:"Utility",
+          criterionText:"5 criteria",
+          estimateText:"30 minutes",
+          description:"Supports effective teaching",
           distinctive:C.UTILITY_PAGE,
           currentPage:this.props.currentPage,
           inProgress:this.props.utilityInProgress,
@@ -27,6 +33,9 @@ export default class DistinctiveMenuBar extends React.Component {
         },
         {
           title:"Quality",
+          criterionText:"4 criteria",
+          estimateText:"30 minutes",
+          description:"Presents clear, accurate, objective information",
           distinctive:C.QUALITY_PAGE,
           currentPage:this.props.currentPage,
           inProgress:this.props.qualityInProgress,
@@ -34,6 +43,9 @@ export default class DistinctiveMenuBar extends React.Component {
         },
         {
           title:"Efficacy",
+          criterionText:"1 to 3 criteria",
+          estimateText:"30 minutes",
+          description:"Has validated impact on knowledge, skills, or behaviors",
           distinctive:C.EFFICACY_PAGE,
           currentPage:this.props.currentPage,
           inProgress:this.props.efficacyInProgress,

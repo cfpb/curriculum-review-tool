@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../constants.js"
+import C from "../../constants"
 
 export default class EfficacyCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -345,7 +345,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 </h3>
             </div>
             <div className="l-survey-top"><a href="#">Can I save my work?</a></div>
-                <h2 className="h4">You’re Reviewing: <b>Head Start Financial Literacy Curriculum</b></h2>
+                <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </div>
         );
     }
