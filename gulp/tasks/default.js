@@ -5,7 +5,7 @@ const gulp = require( 'gulp' );
 gulp.task( 'default',
   [
     'lint',
-    'test:unit',
+    'test',
     'build'
   ]
 );

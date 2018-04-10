@@ -2,7 +2,7 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../constants"; 
-import DistinctiveButton from "./distinctives/DistinctiveButton";
+import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 
 export default class CustomerReviewToolComponent extends React.Component {
@@ -71,6 +71,12 @@ export default class CustomerReviewToolComponent extends React.Component {
     this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS)
   }
 
+  handleSummaryButtonClick() {
+    this.setDistinctiveComplete(this.state.currentPage);
+    alert("summary button clicked: " + this.state.currentPage);
+    //TODO: navigate to Content Summary Page
+  }
+
   setDistinctiveComplete(changedDistinctive) {
     this.setDistinctiveStatus(changedDistinctive, C.STATUS_COMPLETE)
   }
@@ -105,54 +111,23 @@ export default class CustomerReviewToolComponent extends React.Component {
 
   render() {
 
-    const distinctiveProps = [
-      {
-        title:"Content",
-        criteria:"6 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Covers core knowledge and skills in content standards",
-        distinctive:C.CONTENT_PAGE,
-        inProgress:this.state.contentInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      },
-      {
-        title:"Utility",
-        criteria:"7 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Supports effective teaching",
-        distinctive:C.UTILITY_PAGE,
-        inProgress:this.state.utilityInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      },
-      {
-        title:"Quality",
-        criteria:"5 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Accurate and well presented",
-        distinctive:C.QUALITY_PAGE,
-        inProgress:this.state.qualityInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      },
-      {
-        title:"Efficacy",
-        criteria:"3 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Improves financial knowledge, skills, or behaviors",
-        distinctive:C.EFFICACY_PAGE,
-        inProgress:this.state.efficacyInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      }
-    ]
-
     return (
-      <div className="block block__flush-top">
-        <h1>Curriculum Review</h1>
-        <p>Middle School Example Curriculum</p>
-        <p>Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.</p>
-        
-        <div className="DistinctivesBlock" >
-          {distinctiveProps.map((distinctiveProps, i) => <DistinctiveButton key={i} {...distinctiveProps}/>)}
-        </div>
+      <div>
+       <div className="l-survey-top"><a href="#">Can I save my work?</a></div>
+       <div className="h5 u-mb30">You’re reviewing</div>
+       <h1>Head Start Financial Literacy Curriculum</h1>
+       <p className="lead-paragraph">
+           Select any dimension to start your review. We recommend starting with Content and moving to Utility, Quality, and Efficacy, but you can complete the four dimensions in any order.
+       </p>
+       <p>You can complete all dimensions in one sitting or over the course of many sessions. You’ll be able to print or save a summary for each dimension as you finish it, and then print or save a final summary for the overall review.</p>
+       
+        <DistinctiveMenuBar 
+            distinctiveClicked={this.distinctiveClicked.bind(this)}
+            contentInProgress={this.state.contentInProgress}
+            utilityInProgress={this.state.utilityInProgress}
+            qualityInProgress={this.state.qualityInProgress}
+            efficacyInProgress={this.state.efficacyInProgress} />
+
         <div >
           <SurveyPageContainer className="SurveyPage" 
             currentPage={this.state.currentPage} 
@@ -168,6 +143,29 @@ export default class CustomerReviewToolComponent extends React.Component {
             clearLocalStorage={this.clearLocalStorage.bind(this)}
             setDistinctiveComplete={this.setDistinctiveComplete.bind(this)}
              />
+        </div>
+
+        <DistinctiveMenuBar 
+            distinctiveClicked={this.distinctiveClicked.bind(this)}
+            contentInProgress={this.state.contentInProgress}
+            utilityInProgress={this.state.utilityInProgress}
+            qualityInProgress={this.state.qualityInProgress}
+            efficacyInProgress={this.state.efficacyInProgress} />
+
+        <div className="block
+                    block__flush-bottom
+                    block__padded-top
+                    block__border-top">
+            <div className="m-btn-group
+                        m-btn-group__wide">
+                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
+                    Continue to summary
+                </button>
+                <button className="a-btn
+                                a-btn__link" onClick={(e) => {this.clearLocalStorage()}} >
+                    Start over with a new review
+                </button>
+            </div>
         </div>
       </div>
     );
