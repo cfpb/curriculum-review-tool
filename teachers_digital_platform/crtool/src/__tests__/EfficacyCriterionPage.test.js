@@ -31,11 +31,9 @@ test ('Efficacy Criterion Page uses state to populate values', () => {
 });
 
 function _changeEfficacyRadio (key, checkedValue) {
-
 }
 
 function _changeEfficacyNotes (key, textValue) {
-
 }
 
 let LocalStorageClearedValue = false;
@@ -44,13 +42,4 @@ function _clearLocalStorage () {
 }
 
 function _handleSummaryButtonClick () {
-
 }
-
-    
-    // let startButton = result.refs["crt-content-start-over"];
-
-    // let tree = result.toJSON();
-    // expect(tree).toMatchSnapshot();
-    // tree.find("crt-content-start-over").onClick();
-    // expect(LocalStorageClearedValue).toBe(true);
