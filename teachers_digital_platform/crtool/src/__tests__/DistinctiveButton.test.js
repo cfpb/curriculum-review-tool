@@ -30,14 +30,14 @@ afterAll(() => {
 });
 
 test('Anchor tag with class name exists', () => {
-  expect(wrapper.find('a.o-dimension-section-bar_selector').length).toBe(1);
+  expect(wrapper.find('button.o-dimension-section-bar_selector').length).toBe(1);
 });
 
 it('DistinctiveButton onHandleClick correctly invokes distinctiveClicked(name)', () => {
   const onButtonClick = sinon.spy();
   const wrapper = shallow(<DistinctiveButton handleOnClick={onButtonClick} {...distinctiveProps} />);
   
-  wrapper.find('a').simulate('click');
+  wrapper.find('button').simulate('click');
 
   expect("some distinctive value").toBe(distinctiveAnchorClickedValue);
   console.log("local value: " + distinctiveAnchorClickedValue);

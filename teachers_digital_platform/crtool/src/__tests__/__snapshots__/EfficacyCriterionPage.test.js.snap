@@ -759,11 +759,11 @@ exports[`Efficacy Criterion Page uses state to populate values 1`] = `
   <div
     className="l-survey-top"
   >
-    <a
-      href="#"
+    <button
+      type="button"
     >
       Can I save my work?
-    </a>
+    </button>
   </div>
   <h2
     className="h4"

@@ -8,11 +8,11 @@ exports[`renders without crashing 1`] = `
     <div
       className="l-survey-top"
     >
-      <a
-        href="#"
+      <button
+        type="button"
       >
         Can I save my work?
-      </a>
+      </button>
     </div>
     <div
       className="h5 u-mb30"
@@ -38,10 +38,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector CONTENT"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -80,7 +80,7 @@ exports[`renders without crashing 1`] = `
               >
                 Covers core knowledge and skills in national standards
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -99,10 +99,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector UTILITY"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -141,7 +141,7 @@ exports[`renders without crashing 1`] = `
               >
                 Supports effective teaching
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -160,10 +160,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector QUALITY"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -202,7 +202,7 @@ exports[`renders without crashing 1`] = `
               >
                 Presents clear, accurate, objective information
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -221,10 +221,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector EFFICACY"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -263,7 +263,7 @@ exports[`renders without crashing 1`] = `
               >
                 Has validated impact on knowledge, skills, or behaviors
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -342,10 +342,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector CONTENT"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -384,7 +384,7 @@ exports[`renders without crashing 1`] = `
               >
                 Covers core knowledge and skills in national standards
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -403,10 +403,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector UTILITY"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -445,7 +445,7 @@ exports[`renders without crashing 1`] = `
               >
                 Supports effective teaching
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -464,10 +464,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector QUALITY"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -506,7 +506,7 @@ exports[`renders without crashing 1`] = `
               >
                 Presents clear, accurate, objective information
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >
@@ -525,10 +525,10 @@ exports[`renders without crashing 1`] = `
           <li
             className="o-dimension-section-bar_dimension"
           >
-            <a
+            <button
               className="o-dimension-section-bar_selector EFFICACY"
-              href="#"
               onClick={[Function]}
+              type="button"
             >
               <span
                 className="o-dimension-section-bar_selector-title"
@@ -567,7 +567,7 @@ exports[`renders without crashing 1`] = `
               >
                 Has validated impact on knowledge, skills, or behaviors
               </span>
-            </a>
+            </button>
             <ul
               className="o-dimension-section-bar_dimension-details"
             >

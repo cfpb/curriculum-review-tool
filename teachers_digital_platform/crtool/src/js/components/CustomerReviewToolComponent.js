@@ -113,7 +113,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     return (
       <div>
-       <div className="l-survey-top"><a href="#">Can I save my work?</a></div>
+       <div className="l-survey-top"><button type="button">Can I save my work?</button></div>
        <div className="h5 u-mb30">You’re reviewing</div>
        <h1>{this.state.curriculumTitle}</h1>
        <p className="lead-paragraph">

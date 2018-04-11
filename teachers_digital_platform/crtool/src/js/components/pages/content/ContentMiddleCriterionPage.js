@@ -345,7 +345,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     </button>
                 </h3>
             </div>
-            <div className="l-survey-top"><a href="#">Can I save my work?</a></div>
+            <div className="l-survey-top"><button type="button">Can I save my work?</button></div>
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </div>
         );
