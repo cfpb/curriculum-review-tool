@@ -1,19 +1,24 @@
 import React from "react";
+import resolveUrl from "resolve-url";
 
 import C from "../constants"; 
-import DistinctiveButton from "./distinctives/DistinctiveButton";
+import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 
 export default class CustomerReviewToolComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentPage: localStorage.getItem(C.START_DISTINCTIVE),
+      currentPage: localStorage.getItem(C.START_PAGE),
 
       contentInProgress: localStorage.getItem(C.CONTENT_STATUS),
       qualityInProgress: localStorage.getItem(C.QUALITY_STATUS),
       utilityInProgress: localStorage.getItem(C.UTILITY_STATUS),
       efficacyInProgress: localStorage.getItem(C.EFFICACY_STATUS),
+
+      curriculumTitle: localStorage.getItem("curriculumTitle"),
+      publicationDate: localStorage.getItem("publicationDate"),
+      gradeRange: localStorage.getItem("gradeRange"),
 
       criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
       criterionNotes: JSON.parse(localStorage.getItem("criterionNotes")) || {}
@@ -22,15 +27,18 @@ export default class CustomerReviewToolComponent extends React.Component {
 
   clearLocalStorage() {
     localStorage.clear();
-    this.distinctiveClicked(C.START_DISTINCTIVE);
+    this.distinctiveClicked(C.START_PAGE);
 
-    this.setDistinctiveStatus(C.CONTENT_DISTINCTIVE, C.STATUS_IN_START);
-    this.setDistinctiveStatus(C.UTILITY_DISTINCTIVE, C.STATUS_IN_START);
-    this.setDistinctiveStatus(C.QUALITY_DISTINCTIVE, C.STATUS_IN_START);
-    this.setDistinctiveStatus(C.EFFICACY_DISTINCTIVE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.CONTENT_PAGE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.UTILITY_PAGE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.QUALITY_PAGE, C.STATUS_IN_START);
+    this.setDistinctiveStatus(C.EFFICACY_PAGE, C.STATUS_IN_START);
 
     this.setState({criterionAnswers: {} });
     this.setState({criterionNotes: {} });
+    
+    let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
+    window.location = startPage;
   }
 
   changeCriterionNotes(distinctive, key, val) {
@@ -63,25 +71,31 @@ export default class CustomerReviewToolComponent extends React.Component {
     this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS)
   }
 
+  handleSummaryButtonClick() {
+    this.setDistinctiveComplete(this.state.currentPage);
+    alert("Comming Soon - Navigate to Summary for : " + this.state.currentPage);
+    //TODO: navigate to Content Summary Page
+  }
+
   setDistinctiveComplete(changedDistinctive) {
     this.setDistinctiveStatus(changedDistinctive, C.STATUS_COMPLETE)
   }
 
   setDistinctiveStatus(changedDistinctive, distinctiveStatus) {
     switch(changedDistinctive) {
-      case C.CONTENT_DISTINCTIVE:
+      case C.CONTENT_PAGE:
         localStorage.setItem(C.CONTENT_STATUS, distinctiveStatus);
         this.setState({contentInProgress: distinctiveStatus});
         break;
-      case C.UTILITY_DISTINCTIVE:
+      case C.UTILITY_PAGE:
         localStorage.setItem(C.UTILITY_STATUS, distinctiveStatus);
         this.setState({utilityInProgress: distinctiveStatus});
         break;
-      case C.QUALITY_DISTINCTIVE:
+      case C.QUALITY_PAGE:
         localStorage.setItem(C.QUALITY_STATUS, distinctiveStatus);
         this.setState({qualityInProgress: distinctiveStatus});
         break;
-      case C.EFFICACY_DISTINCTIVE:
+      case C.EFFICACY_PAGE:
         localStorage.setItem(C.EFFICACY_STATUS, distinctiveStatus);
         this.setState({efficacyInProgress: distinctiveStatus});
         break;
@@ -91,63 +105,37 @@ export default class CustomerReviewToolComponent extends React.Component {
   }
 
   distinctiveClicked(clickedDistinctive) {
-    localStorage.setItem(C.START_DISTINCTIVE, clickedDistinctive);
+    localStorage.setItem(C.START_PAGE, clickedDistinctive);
     this.setState({currentPage: clickedDistinctive});
   }
 
   render() {
 
-    const distinctiveProps = [
-      {
-        title:"Content",
-        criteria:"6 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Covers core knowledge and skills in content standards",
-        distinctive:C.CONTENT_DISTINCTIVE,
-        inProgress:this.state.contentInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      },
-      {
-        title:"Utility",
-        criteria:"7 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Supports effective teaching",
-        distinctive:C.UTILITY_DISTINCTIVE,
-        inProgress:this.state.utilityInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      },
-      {
-        title:"Quality",
-        criteria:"5 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Accurate and well presented",
-        distinctive:C.QUALITY_DISTINCTIVE,
-        inProgress:this.state.qualityInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      },
-      {
-        title:"Efficacy",
-        criteria:"3 criteria",
-        estimatedtime:"Est. time 30 min",
-        description:"Improves financial knowledge, skills, or behaviors",
-        distinctive:C.EFFICACY_DISTINCTIVE,
-        inProgress:this.state.efficacyInProgress,
-        distinctiveClicked:this.distinctiveClicked.bind(this),
-      }
-    ]
-
     return (
-      <div className="block block__flush-top">
-        <h1>Curriculum Review</h1>
-        <p>Middle School Example Curriculum</p>
-        <p>Start the review by selecting a dimension. You do not need to complete all dimensions in one sitting. You’ll be able to download a dimension report for each dimension as well as a summary report at the end.</p>
-        
-        <div className="DistinctivesBlock" >
-          {distinctiveProps.map(distinctiveProps => <DistinctiveButton {...distinctiveProps}/>)}
-        </div>
+      <div>
+       <div className="l-survey-top"><button type="button">Can I save my work?</button></div>
+       <div className="h5 u-mb30">You’re reviewing</div>
+       <h1>{this.state.curriculumTitle}</h1>
+       <p className="lead-paragraph">
+           Select any dimension to start your review. We recommend starting with Content and moving to Utility, Quality, and Efficacy, but you can complete the four dimensions in any order.
+       </p>
+       <p>You can complete all dimensions in one sitting or over the course of many sessions. You’ll be able to print or save a summary for each dimension as you finish it, and then print or save a final summary for the overall review.</p>
+       
+        <DistinctiveMenuBar 
+            distinctiveClicked={this.distinctiveClicked.bind(this)}
+            currentPage={this.state.currentPage}
+            contentInProgress={this.state.contentInProgress}
+            utilityInProgress={this.state.utilityInProgress}
+            qualityInProgress={this.state.qualityInProgress}
+            efficacyInProgress={this.state.efficacyInProgress} />
+
         <div >
           <SurveyPageContainer className="SurveyPage" 
             currentPage={this.state.currentPage} 
+
+            curriculumTitle={this.state.curriculumTitle}
+            publicationDate={this.state.publicationDate}
+            gradeRange={this.state.gradeRange}
 
             criterionAnswers={this.state.criterionAnswers}
             criterionNotes={this.state.criterionNotes}
@@ -156,6 +144,30 @@ export default class CustomerReviewToolComponent extends React.Component {
             clearLocalStorage={this.clearLocalStorage.bind(this)}
             setDistinctiveComplete={this.setDistinctiveComplete.bind(this)}
              />
+        </div>
+
+        <DistinctiveMenuBar 
+            distinctiveClicked={this.distinctiveClicked.bind(this)}
+            currentPage={this.state.currentPage}
+            contentInProgress={this.state.contentInProgress}
+            utilityInProgress={this.state.utilityInProgress}
+            qualityInProgress={this.state.qualityInProgress}
+            efficacyInProgress={this.state.efficacyInProgress} />
+
+        <div className="block
+                    block__flush-bottom
+                    block__padded-top
+                    block__border-top">
+            <div className="m-btn-group
+                        m-btn-group__wide">
+                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
+                    Continue to summary
+                </button>
+                <button className="a-btn
+                                a-btn__link" onClick={(e) => {this.clearLocalStorage()}} >
+                    Start over with a new review
+                </button>
+            </div>
         </div>
       </div>
     );

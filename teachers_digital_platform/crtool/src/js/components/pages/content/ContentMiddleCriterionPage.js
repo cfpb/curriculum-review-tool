@@ -1,14 +1,14 @@
 import React from "react";
 
-import C from "../../constants"
+import C from "../../../constants"
 
-export default class EfficacyCriterionPage extends React.Component {
+export default class ContentMiddleCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.EFFICACY_PAGE, key, checkedValue);
+        this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
     }   
 
     changeCriterionNotes(key, textValue) {        
-        this.props.changeCriterionNotes(C.EFFICACY_PAGE, key, textValue);
+        this.props.changeCriterionNotes(C.CONTENT_PAGE, key, textValue);
     }  
 
     clearLocalStorage() {
@@ -16,22 +16,23 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     handleSummaryButtonClick() {
-        this.props.setDistinctiveComplete(C.EFFICACY_PAGE);
-        //TODO: navigate to Efficacy Summary Page
+        this.props.setDistinctiveComplete(C.CONTENT_PAGE);
+        //TODO: navigate to Content Summary Page
     }
 
     render() {
         return (
-            <div>
+          <div>
+            <h1>MIDDLE: {this.props.gradeRange}</h1>
             <hr className="hr
                         u-mb45
                         u-mt30" />
             <h2 className="h1">
                 <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M379.9 493.6c-.7 0-1.5 0-2.2-.1-.7 0-1.5-.1-2.2-.2s-1.5-.2-2.2-.3c-.7-.1-1.5-.2-2.2-.4-.7-.1-1.4-.3-2.2-.5l-2.1-.6c-.7-.2-1.4-.4-2.1-.7-.7-.2-1.4-.5-2.1-.8s-1.3-.6-2-.9-1.3-.6-2-1c-.6-.3-1.3-.7-1.9-1.1s-1.3-.8-1.9-1.2c-.6-.4-1.2-.8-1.8-1.3-.6-.4-1.2-.9-1.8-1.4-.6-.5-1.1-.9-1.7-1.4-.5-.5-1.1-1-1.6-1.5s-1-1.1-1.5-1.6-1-1.1-1.4-1.7c-.5-.6-.9-1.2-1.4-1.7-.4-.6-.9-1.2-1.3-1.8-.4-.6-.8-1.2-1.2-1.9-.4-.6-.7-1.3-1.1-1.9-.3-.6-.7-1.3-1-2s-.6-1.3-.9-2-.5-1.4-.8-2c-.2-.7-.5-1.4-.7-2.1l-.6-2.1c-.2-.7-.3-1.4-.5-2.2-.1-.7-.3-1.4-.4-2.2-.1-.7-.2-1.5-.3-2.2-.1-.7-.1-1.5-.2-2.2 0-.7-.1-1.5-.1-2.2s0-1.5.1-2.2c0-.7.1-1.5.2-2.2s.2-1.5.3-2.2c.1-.7.2-1.4.4-2.2.2-.7.3-1.4.5-2.1l.6-2.1c.2-.7.5-1.4.7-2.1s.5-1.4.8-2.1.6-1.4.9-2c.3-.7.7-1.3 1-2 .3-.6.7-1.3 1.1-1.9s.8-1.3 1.2-1.9c.4-.6.8-1.2 1.3-1.8.4-.6.9-1.2 1.4-1.7.5-.6 1-1.1 1.4-1.7.5-.5 1-1.1 1.5-1.6s1.1-1 1.6-1.5 1.1-1 1.7-1.4c.6-.5 1.2-.9 1.8-1.4.6-.4 1.2-.9 1.8-1.3.6-.4 1.2-.8 1.9-1.2.6-.4 1.3-.7 1.9-1.1.6-.3 1.3-.7 2-1s1.3-.6 2-.9 1.4-.5 2.1-.8c.7-.2 1.4-.5 2.1-.7l2.1-.6c.7-.2 1.4-.3 2.2-.5.7-.1 1.5-.3 2.2-.4s1.5-.2 2.2-.3c.7-.1 1.5-.1 2.2-.2 1.5-.1 3-.1 4.4 0 .7 0 1.5.1 2.2.2s1.5.2 2.2.3c.7.1 1.5.2 2.2.4.7.1 1.4.3 2.2.5l2.1.6c.7.2 1.4.5 2.1.7s1.4.5 2 .8c.7.3 1.4.6 2 .9.7.3 1.3.6 2 1 .6.3 1.3.7 1.9 1.1s1.2.8 1.9 1.2c.6.4 1.2.8 1.8 1.3.6.4 1.2.9 1.8 1.4.6.5 1.1 1 1.7 1.4.5.5 1.1 1 1.6 1.5s1 1.1 1.5 1.6 1 1.1 1.5 1.7.9 1.1 1.4 1.7c.4.6.9 1.2 1.3 1.8.4.6.8 1.2 1.2 1.9.4.6.7 1.3 1.1 1.9.3.6.7 1.3 1 2s.6 1.3.9 2 .5 1.4.8 2.1c.2.7.5 1.4.7 2.1l.6 2.1c.2.7.3 1.4.5 2.1.1.7.3 1.5.4 2.2s.2 1.5.3 2.2c.1.7.1 1.5.2 2.2 0 .7.1 1.5.1 2.2s0 1.5-.1 2.2c0 .7-.1 1.5-.2 2.2s-.2 1.5-.3 2.2c-.1.7-.2 1.5-.4 2.2-.1.7-.3 1.4-.5 2.2l-.6 2.1c-.2.7-.4 1.4-.7 2.1-.2.7-.5 1.4-.8 2-.3.7-.6 1.4-.9 2-.3.7-.6 1.3-1 2-.3.7-.7 1.3-1.1 1.9s-.8 1.3-1.2 1.9c-.4.6-.8 1.2-1.3 1.8-.4.6-.9 1.2-1.4 1.7-.5.6-1 1.1-1.5 1.7s-1 1.1-1.5 1.6-1.1 1-1.6 1.5-1.1 1-1.7 1.4c-.6.5-1.2.9-1.8 1.4-.6.4-1.2.9-1.8 1.3-.6.4-1.2.8-1.9 1.2-.6.4-1.3.7-1.9 1.1-.7.3-1.3.7-2 1s-1.3.6-2 .9-1.4.5-2 .8c-.7.2-1.4.5-2.1.7l-2.1.6c-.7.2-1.4.3-2.2.5-.7.1-1.5.3-2.2.4s-1.5.2-2.2.3c-.7.1-1.5.1-2.2.2-.7.1-1.5.1-2.2.1zM331.6 681.2h329.3v40H331.6z"/><circle cx="380.1" cy="448.8" r="45.2"/><path d="M331.6 782.8h329.3v40H331.6zM331.6 579.5h329.3v40H331.6z"/><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm230.8 794.5c0 11-9 20-20 20H290.3c-11 0-20-9-20-20V312.4c0-11 9-20 20-20l239.2.2v166.3c0 16.8 13.8 30.6 30.6 30.6h171.3l-.6 410.2zm.6-456.5H575.8V292.7l155.5 150.1v.4h.1z"/></svg></span>
-                &nbsp;Efficacy
+                &nbsp;Content
             </h2>
             <p className="lead-paragraph">
-                This dimension assesses whether the curriculum efficacy helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards.
+                This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards.
             </p>
             <h3 className="h2">Instructions</h3>
             <ul>
@@ -81,8 +82,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_1a" type="radio" name="crt-question-1" value="1" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.1"] === 'yes'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.1', 'yes')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.1"] === 'yes'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.1', 'yes')}} />
                                         <label className="a-label" htmlFor="crt-question_1a">
                                             Yes
                                         </label>
@@ -91,8 +92,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_1b" type="radio" name="crt-question-1" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.1"] === 'no'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.1', 'no')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.1"] === 'no'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.1', 'no')}} />
                                         <label className="a-label" htmlFor="crt-question_1b">
                                             No
                                         </label>
@@ -109,8 +110,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_2a" type="radio" name="crt-question-2" value="1" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.2"] === 'yes'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.2', 'yes')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.2"] === 'yes'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.2', 'yes')}} />
                                         <label className="a-label" htmlFor="crt-question_2a">
                                             Yes
                                         </label>
@@ -119,8 +120,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_2b" type="radio" name="crt-question-2" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.2"] === 'no'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.2', 'no')}}/>
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.2"] === 'no'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.2', 'no')}}/>
                                         <label className="a-label" htmlFor="crt-question_2b">
                                             No
                                         </label>
@@ -148,8 +149,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_3a" type="radio" name="crt-question-3" value="1" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.3"] === 'yes'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.3', 'yes')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.3"] === 'yes'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.3', 'yes')}} />
                                         <label className="a-label" htmlFor="crt-question_3a">
                                             Yes
                                         </label>
@@ -158,8 +159,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_3b" type="radio" name="crt-question-3" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.3"] === 'no'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.3', 'no')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.3"] === 'no'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.3', 'no')}} />
                                         <label className="a-label" htmlFor="crt-question_3b">
                                             No
                                         </label>
@@ -187,8 +188,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_4a" type="radio" name="crt-question-4" value="1" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4"] === 'yes'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4', 'yes')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.4"] === 'yes'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.4', 'yes')}} />
                                         <label className="a-label" htmlFor="crt-question_4a">
                                             Yes
                                         </label>
@@ -197,8 +198,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_4b" type="radio" name="crt-question-4" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4"] === 'no'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4', 'no')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.4"] === 'no'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.4', 'no')}} />
                                         <label className="a-label" htmlFor="crt-question_4b">
                                             No
                                         </label>
@@ -220,8 +221,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                     a-text-input__full"
                                 id="crt-notes-1"
                                 rows="6"
-                                value={this.props.criterionNotes['efficacy-crt-notes-1']} 
-                                onChange={e=>this.changeCriterionNotes('efficacy-crt-notes-1', e.target.value)} >
+                                value={this.props.criterionNotes['content-middle-crt-notes-1']} 
+                                onChange={e=>this.changeCriterionNotes('content-middle-crt-notes-1', e.target.value)} >
                     </textarea>
                 </div>
             </div>
@@ -250,8 +251,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_5a" type="radio" name="crt-question-5" value="1" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.5"] === 'yes'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.5', 'yes')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.5"] === 'yes'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.5', 'yes')}} />
                                         <label className="a-label" htmlFor="crt-question_5a">
                                             Yes
                                         </label>
@@ -260,8 +261,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_5b" type="radio" name="crt-question-5" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.5"] === 'no'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.5', 'no')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.5"] === 'no'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.5', 'no')}} />
                                         <label className="a-label" htmlFor="crt-question_5b">
                                             No
                                         </label>
@@ -270,8 +271,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_5c" type="radio" name="crt-question-5" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.5"] === 'na'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.5', 'na')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.5"] === 'na'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.5', 'na')}} />
                                         <label className="a-label" htmlFor="crt-question_5c">
                                             N/A
                                         </label>
@@ -299,8 +300,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_6a" type="radio" name="crt-question-6" value="1" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.6"] === 'yes'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.6', 'yes')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.6"] === 'yes'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.6', 'yes')}} />
                                         <label className="a-label" htmlFor="crt-question_6a">
                                             Yes
                                         </label>
@@ -309,8 +310,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
                                         <input className="a-radio" id="crt-question_6b" type="radio" name="crt-question-6" value="0" 
-                                            checked={this.props.criterionAnswers["efficacy-crt-quesion-1.6"] === 'no'}
-                                            onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.6', 'no')}} />
+                                            checked={this.props.criterionAnswers["content-high-crt-quesion-1.6"] === 'no'}
+                                            onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.6', 'no')}} />
                                         <label className="a-label" htmlFor="crt-question_6b">
                                             No
                                         </label>
@@ -330,8 +331,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                     u-mw670"
                                 id="crt-notes-2"
                                 rows="6"
-                                value={this.props.criterionNotes['efficacy-crt-notes-2']} 
-                                onChange={e=>this.changeCriterionNotes('efficacy-crt-notes-2', e.target.value)} >
+                                value={this.props.criterionNotes['content-middle-crt-notes-2']} 
+                                onChange={e=>this.changeCriterionNotes('content-middle-crt-notes-2', e.target.value)} >
                     </textarea>
                 </div>
             </div>

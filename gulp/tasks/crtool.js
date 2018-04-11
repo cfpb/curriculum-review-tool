@@ -1,24 +1,25 @@
 'use strict';
 
 const gulp = require( 'gulp' );
-const run = require('gulp-run');
+const run = require( 'gulp-run' );
 
 gulp.task( 'crtool:chdir-down', () => {
-  process.chdir('teachers_digital_platform/crtool');
+  process.chdir( 'teachers_digital_platform/crtool' );
 } );
 
 gulp.task( 'crtool:build', () => {
-  return run('npm run build').exec();
+  return run( 'npm run build' ).exec();
 } );
 
 gulp.task( 'crtool:chdir-up', () => {
-  process.chdir('../..');
+  process.chdir( '../..' );
 } );
 
 gulp.task( 'crtool',
   [
     'crtool:chdir-down',
     'crtool:build',
-    'crtool:chdir-up'
+    'crtool:chdir-up',
+    'test'
   ]
 );
