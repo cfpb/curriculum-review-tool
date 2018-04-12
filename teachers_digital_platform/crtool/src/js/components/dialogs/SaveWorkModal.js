@@ -1,6 +1,34 @@
 import React from "react";
 
 export default class SaveWorkModal extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.setWrapperRef = this.setWrapperRef.bind(this);
+      this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+    componentDidMount() {
+      document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    /** Set the wrapper ref */
+    setWrapperRef(node) {
+    this.wrapperRef = node;
+    }
+
+    /** Alert if clicked on outside of element */
+    handleClickOutside(event) {
+      if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        alert('You clicked outside of me!');
+        let saveWorkModalDialog = document.getElementById('save-work-modal-dialog');
+        saveWorkModalDialog.classList.remove('o-modal__visible');
+      }
+    }
 
     openSaveWorkModalDialog() {
         let saveWorkModalDialog = document.getElementById('save-work-modal-dialog');
@@ -16,8 +44,6 @@ export default class SaveWorkModal extends React.Component {
         return (
             <div className="l-survey-top">
                 <button type="button" onClick={(e) => {this.openSaveWorkModalDialog()}}>Can I save my work?</button>
-
-
                 <div className="o-modal"
                     id="save-work-modal-dialog"
                     aria-hidden="true"
