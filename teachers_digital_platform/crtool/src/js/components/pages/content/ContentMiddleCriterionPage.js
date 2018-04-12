@@ -339,8 +339,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                 id="crt-notes-2"
                                 rows="6"
                                 ref="content-middle-crt-notes-2"
-                                value={this.props.criterionNotes['content-middle-crt-notes-2']} 
-                                onChange={e=>this.changeCriterionNotes('content-middle-crt-notes-2', e.target.value)} >
+                                value={this.props.criterionAnswers['content-middle-crt-notes-2']} 
+                                onChange={e=>this.changeCriterionAnswer('content-middle-crt-notes-2', e.target.value)} >
                     </textarea>
                 </div>
             </div>
