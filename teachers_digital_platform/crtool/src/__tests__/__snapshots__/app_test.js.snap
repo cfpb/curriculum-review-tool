@@ -18,29 +18,29 @@ exports[`renders without crashing 1`] = `
         aria-describedby="example-modal-desc"
         aria-hidden="true"
         aria-labelledby="example-modal-title"
-        class="o-modal"
+        className="o-modal"
         id="save-work-modal-dialog"
         role="alertdialog"
       >
         <div
-          class="o-modal_backdrop"
+          className="o-modal_backdrop"
         />
         <div
-          class="o-modal_container"
+          className="o-modal_container"
         >
           <form
-            class="o-modal_content"
+            className="o-modal_content"
           >
             <div
-              class="o-modal_body"
+              className="o-modal_body"
             >
               <button
-                class="o-modal_close a-btn a-btn__link"
+                className="o-modal_close a-btn a-btn__link"
                 onClick={[Function]}
               >
                 Close
                 <span
-                  class="cf-icon cf-icon-delete-round"
+                  className="cf-icon cf-icon-delete-round"
                 />
               </button>
               <h1
@@ -63,10 +63,10 @@ exports[`renders without crashing 1`] = `
               </div>
             </div>
             <div
-              class="o-modal_footer"
+              className="o-modal_footer"
             >
               <button
-                class="a-btn"
+                className="a-btn"
                 onClick={[Function]}
               >
                 Close
@@ -76,20 +76,10 @@ exports[`renders without crashing 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="h5 u-mb30"
-    >
-      You’re reviewing
-    </div>
-    <h1 />
-    <p
-      className="lead-paragraph"
-    >
-      Select any dimension to start your review. We recommend starting with Content and moving to Utility, Quality, and Efficacy, but you can complete the four dimensions in any order.
-    </p>
-    <p>
-      You can complete all dimensions in one sitting or over the course of many sessions. You’ll be able to print or save a summary for each dimension as you finish it, and then print or save a final summary for the overall review.
-    </p>
+    <h1>
+      You’re reviewing: 
+    </h1>
+    <span />
     <div>
       <div
         className="DistinctivesBlock"
@@ -355,44 +345,7 @@ exports[`renders without crashing 1`] = `
       </div>
     </div>
     <div>
-      <div>
-        <h1 />
-        <div
-          className="block"
-        >
-          <h2>
-            Content for elementary school
-          </h2>
-          <p>
-            Curriculum content refers to the knowledge and skills covered by the curriculum. The content dimension is based on our analysis of existing national and select state financial education standards. An indicator is a concrete, detailed specification for each criteria. A component is an operational rule to help reviewers determine whether the curriculum meets each indicator. Some are essential and some are beneficial.
-          </p>
-          <h3>
-            Instructions
-          </h3>
-          <p>
-            Read through the scope and sequence of the curriculum, skim the lesson plans, and answer the following questions.
-          </p>
-          <br />
-          <br />
-          <div>
-            <h2>
-              DEBUG Values: 
-            </h2>
-            <h3>
-              Curriculum Title: 
-               
-            </h3>
-            <h3>
-              Publication Date: 
-               
-            </h3>
-            <h3>
-              Grade Range: 
-               
-            </h3>
-          </div>
-        </div>
-      </div>
+      <div />
     </div>
     <div
       className="block block__flush-bottom block__padded-top block__border-top"
@@ -402,10 +355,11 @@ exports[`renders without crashing 1`] = `
       >
         <button
           className="a-btn"
-          onClick={[Function]}
+          disabled={true}
         >
           Continue to summary
         </button>
+           
         <span>
           <button
             className="a-btn a-btn__link"
@@ -417,32 +371,32 @@ exports[`renders without crashing 1`] = `
             aria-describedby="modal-desc-start-over"
             aria-hidden="true"
             aria-labelledby="modal-title-start-over"
-            class="o-modal"
+            className="o-modal"
             id="modal-dialog-start-over"
             role="alertdialog"
           >
             <div
-              class="o-modal_backdrop"
+              className="o-modal_backdrop"
             />
             <div
-              class="o-modal_container"
+              className="o-modal_container"
             >
               <form
-                class="o-modal_content"
+                className="o-modal_content"
               >
                 <div
-                  class="o-modal_body"
+                  className="o-modal_body"
                 >
                   <button
-                    class="o-modal_close a-btn a-btn__link"
+                    className="o-modal_close a-btn a-btn__link"
                     onClick={[Function]}
                   >
                     Close
                     <span
-                      class="a-icon a-icon__large"
+                      className="a-icon a-icon__large"
                     >
                       <svg
-                        class="cf-icon-svg"
+                        className="cf-icon-svg"
                         viewBox="0 0 1000 1200"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -466,20 +420,20 @@ exports[`renders without crashing 1`] = `
                   </div>
                 </div>
                 <div
-                  class="o-modal_footer"
+                  className="o-modal_footer"
                 >
                   <div
-                    class="m-btn-group"
+                    className="m-btn-group"
                   >
                     <button
-                      class="a-btn"
-                      formaction="../../tdp/crt-start/"
+                      className="a-btn"
+                      formAction="../../tdp/crt-start/"
                       onClick={[Function]}
                     >
                       Yes
                     </button>
                     <button
-                      class="a-btn"
+                      className="a-btn"
                       onClick={[Function]}
                     >
                       No, return to current review

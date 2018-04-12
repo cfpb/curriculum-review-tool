@@ -12,6 +12,7 @@ const contentProps = {
     changeCriterionAnswer: _changeContentRadio.bind(this),
     changeCriterionNotes:_changeContentNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
+    initializeAnswerObjects:(() => { }),
 }
 
 beforeAll(() => {

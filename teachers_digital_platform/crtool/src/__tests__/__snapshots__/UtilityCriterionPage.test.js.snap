@@ -197,7 +197,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-1"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -216,7 +216,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-1"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -255,7 +255,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-2"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -274,7 +274,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-2"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -342,7 +342,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-3"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -361,7 +361,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-3"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -429,7 +429,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-4"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -448,7 +448,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-4"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -561,7 +561,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-5"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -580,7 +580,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-5"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -599,7 +599,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-5"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="na"
                 />
                 <label
                   className="a-label"
@@ -667,7 +667,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-6"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -686,7 +686,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-6"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -769,29 +769,29 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
       aria-describedby="example-modal-desc"
       aria-hidden="true"
       aria-labelledby="example-modal-title"
-      class="o-modal"
+      className="o-modal"
       id="save-work-modal-dialog"
       role="alertdialog"
     >
       <div
-        class="o-modal_backdrop"
+        className="o-modal_backdrop"
       />
       <div
-        class="o-modal_container"
+        className="o-modal_container"
       >
         <form
-          class="o-modal_content"
+          className="o-modal_content"
         >
           <div
-            class="o-modal_body"
+            className="o-modal_body"
           >
             <button
-              class="o-modal_close a-btn a-btn__link"
+              className="o-modal_close a-btn a-btn__link"
               onClick={[Function]}
             >
               Close
               <span
-                class="cf-icon cf-icon-delete-round"
+                className="cf-icon cf-icon-delete-round"
               />
             </button>
             <h1
@@ -814,10 +814,10 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
             </div>
           </div>
           <div
-            class="o-modal_footer"
+            className="o-modal_footer"
           >
             <button
-              class="a-btn"
+              className="a-btn"
               onClick={[Function]}
             >
               Close

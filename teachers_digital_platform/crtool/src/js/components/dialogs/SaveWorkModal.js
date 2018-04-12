@@ -19,19 +19,19 @@ export default class SaveWorkModal extends React.Component {
                 <button type="button" onClick={(e) => {this.openSaveWorkModalDialog()}}>Can I save my work?</button>
 
 
-                <div class="o-modal"
+                <div className="o-modal"
                     id="save-work-modal-dialog"
                     aria-hidden="true"
                     role="alertdialog"
                     aria-labelledby="example-modal-title"
                     aria-describedby="example-modal-desc">
-                    <div class="o-modal_backdrop"></div>
-                    <div class="o-modal_container">
-                    <form class="o-modal_content">
-                        <div class="o-modal_body">
-                            <button class="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>
+                    <div className="o-modal_backdrop"></div>
+                    <div className="o-modal_container">
+                    <form className="o-modal_content">
+                        <div className="o-modal_body">
+                            <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>
                                 Close
-                                <span class="cf-icon cf-icon-delete-round"></span>
+                                <span className="cf-icon cf-icon-delete-round"></span>
                             </button>
                             <h1 id="example-modal-title">Saving your work</h1>
                             <div id="example-modal-desc">
@@ -40,8 +40,8 @@ export default class SaveWorkModal extends React.Component {
                                 <p>You can only work on a single curriculum at a time.</p>
                             </div>
                         </div>
-                        <div class="o-modal_footer">
-                            <button class="a-btn" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>Close</button>
+                        <div className="o-modal_footer">
+                            <button className="a-btn" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>Close</button>
                         </div>
                     </form>
                     </div>

@@ -12,6 +12,7 @@ const qualityProps = {
     changeQualitynAnswer: _changeQualityRadio.bind(this),
     changeQualityNotes:_changeQualityNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
+    initializeAnswerObjects:(() => { }),
 }
 
 beforeAll(() => {

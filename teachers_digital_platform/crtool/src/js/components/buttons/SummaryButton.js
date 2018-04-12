@@ -10,7 +10,7 @@ export default class SummaryButton extends React.Component {
 
     render() {
         if (this.props.currentPage === C.CONTENT_PAGE &&
-            this.props.criterionCompletionStatuses[C.CONTENT_PAGE] === "complete") {
+            this.props.contentSummaryButton === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to content summary
@@ -18,7 +18,7 @@ export default class SummaryButton extends React.Component {
             );
         }
         else if (this.props.currentPage === C.UTILITY_PAGE &&
-                 this.props.criterionCompletionStatuses[C.UTILITY_PAGE] === "complete") {
+                 this.props.utilitySummaryButton === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to utility summary
@@ -26,7 +26,7 @@ export default class SummaryButton extends React.Component {
             );
         }
         else if (this.props.currentPage === C.QUALITY_PAGE &&
-                 this.props.criterionCompletionStatuses[C.QUALITY_PAGE] === "complete") {
+                 this.props.qualitySummaryButton === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to quality summary
@@ -34,7 +34,7 @@ export default class SummaryButton extends React.Component {
             );
         }
         else if (this.props.currentPage === C.EFFICACY_PAGE &&
-                 this.props.criterionCompletionStatuses[C.EFFICACY_PAGE] === "complete") {
+                 this.props.efficacySummaryButton === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to quality summary

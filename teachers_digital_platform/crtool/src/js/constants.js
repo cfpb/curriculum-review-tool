@@ -23,6 +23,12 @@ const C = {
   QUALITY_CRITERION_IS_COMPLETE: "quality_is_complete",
   EFFICACY_CRITERION_IS_COMPLETE: "efficacy_is_complete",
 
+
+  CONTENT_SUMMARY_BUTTON_ENABLED: "content_summary_enabled",
+  QUALITY_SUMMARY_BUTTON_ENABLED: "quality_summary_enabled",
+  UTILITY_SUMMARY_BUTTON_ENABLED: "utility_summary_enabled",
+  EFFICACY_SUMMARY_BUTTON_ENABLED: "efficacy_summary_enabled",
+
   STATUS_IN_START: "",
   STATUS_IN_PROGRESS: "In Progress...",
   STATUS_COMPLETE: "Complete",

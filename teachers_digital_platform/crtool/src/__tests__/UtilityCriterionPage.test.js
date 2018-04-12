@@ -12,6 +12,7 @@ const utilityProps = {
     changeUtilityAnswer: _changeUtilityRadio.bind(this),
     changeUtilityNotes:_changeUtilityNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
+    initializeAnswerObjects:(() => { }),
 }
 
 beforeAll(() => {

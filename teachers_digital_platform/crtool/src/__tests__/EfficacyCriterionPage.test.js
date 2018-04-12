@@ -12,6 +12,7 @@ const efficacyProps = {
     changeEfficacyAnswer: _changeEfficacyRadio.bind(this),
     changeEfficacyNotes:_changeEfficacyNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
+    initializeAnswerObjects:(() => { }),
 }
 
 beforeAll(() => {

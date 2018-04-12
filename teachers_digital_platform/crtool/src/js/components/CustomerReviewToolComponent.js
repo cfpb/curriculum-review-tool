@@ -20,12 +20,16 @@ export default class CustomerReviewToolComponent extends React.Component {
       utilityInProgress: localStorage.getItem(C.UTILITY_STATUS),
       efficacyInProgress: localStorage.getItem(C.EFFICACY_STATUS),
 
+      contentSummaryButton: localStorage.getItem(C.CONTENT_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+      qualitySummaryButton: localStorage.getItem(C.QUALITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+      utilitySummaryButton: localStorage.getItem(C.UTILITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+      efficacySummaryButton: localStorage.getItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+
       curriculumTitle: localStorage.getItem("curriculumTitle"),
       publicationDate: localStorage.getItem("publicationDate"),
       gradeRange: localStorage.getItem("gradeRange"),
 
       criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
-      criterionNotes: JSON.parse(localStorage.getItem("criterionNotes")) || {},
       criterionCompletionStatuses: JSON.parse(localStorage.getItem("criterionCompletionStatus")) || {},
     };
   }
@@ -40,37 +44,62 @@ export default class CustomerReviewToolComponent extends React.Component {
     this.setDistinctiveStatus(C.EFFICACY_PAGE, C.STATUS_IN_START);
 
     this.setState({criterionAnswers: {} });
-    this.setState({criterionNotes: {} });
     this.setState({criterionCompletionStatuses: {} });
     
     let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
     window.location = startPage;
   }
 
-  changeCriterionNotes(distinctive, key, val) {
-    this.setCriterionNotesState(key, val);
-    this.setDistinctiveInProgress(distinctive);
+  distinctiveIsComplete(alteredCriterionObjects, changedDistinctive) {
+    // Check all values that start with distinctive name
+    for (var key in alteredCriterionObjects) {
+      if (key.startsWith(changedDistinctive.toLowerCase()) && alteredCriterionObjects[key] === "") {
+        return false;
+      }
+    }
+
+    return true;
   }
 
-  setCriterionNotesState(key, val) {
-    let alteredCriterionNotes =  this.state.criterionNotes
-    alteredCriterionNotes[key] = val;
-    
-    localStorage.setItem("criterionNotes", JSON.stringify(alteredCriterionNotes));
-    this.setState({criterionNotes: alteredCriterionNotes})
+  initializeAnswerObjects(fields) {
+    let alteredCriterionObjects =  this.state.criterionAnswers
+    for (const key in fields) {
+      if (alteredCriterionObjects[key] === undefined) {
+        alteredCriterionObjects[key] = "";
+      }
+    }
+
+    this.saveCriterionAnswers(alteredCriterionObjects);
   }
 
   changeCriterionAnswer(distinctive, key, val) {
-    this.setCriterionAnswersState(key, val);
-    this.setDistinctiveInProgress(distinctive);
+    let alteredCriterionObjects =  this.state.criterionAnswers
+    alteredCriterionObjects[key] = val;
+
+    alteredCriterionObjects = this.setCriterionAnswersState(alteredCriterionObjects);
+    this.calculateDistinctiveCompletion(alteredCriterionObjects, distinctive);
+  }
+
+  calculateDistinctiveCompletion(alteredCriterionObjects, changedDistinctive) {
+    if (this.distinctiveIsComplete(alteredCriterionObjects, changedDistinctive)) {
+      this.setSummaryButtonEnabled(changedDistinctive, C.STATUS_COMPLETE);
+    }
+    else {
+      this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS);
+    }
   }
 
   setCriterionAnswersState(key, val) {
     let alteredCriterionAnswers =  this.state.criterionAnswers
     alteredCriterionAnswers[key] = val;
     
+    this.saveCriterionAnswers(alteredCriterionAnswers);
+    return alteredCriterionAnswers;
+  }
+
+  saveCriterionAnswers(alteredCriterionAnswers) {
     localStorage.setItem("criterionAnswers", JSON.stringify(alteredCriterionAnswers));
-    this.setState({criterionAnswers: alteredCriterionAnswers})
+    this.setState({criterionAnswers: alteredCriterionAnswers});
   }
 
   changeCriterionCompletionStatuses(distinctive, key, val) {
@@ -79,25 +108,40 @@ export default class CustomerReviewToolComponent extends React.Component {
   }
 
   setCriterionCompletionStatuses(key, val) {
-    let alteredCriterionAnswers =  this.state.criterionAnswers
-    alteredCriterionAnswers[key] = val;
+    let alteredData =  this.state.criterionCompletionStatuses
+    alteredData[key] = val;
     
-    localStorage.setItem("criterionAnswers", JSON.stringify(alteredCriterionAnswers));
-    this.setState({criterionAnswers: alteredCriterionAnswers})
-  }
-
-  setDistinctiveInProgress(changedDistinctive) {
-    this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS)
+    localStorage.setItem("criterionCompletionStatus", JSON.stringify(alteredData));
+    this.setState({criterionCompletionStatus: alteredData})
   }
 
   handleSummaryButtonClick() {
-    this.setDistinctiveComplete(this.state.currentPage);
+    this.setDistinctiveStatus(this.state.currentPage, C.STATUS_COMPLETE);
     alert("Comming Soon - Navigate to Summary for : " + this.state.currentPage);
     //TODO: navigate to Content Summary Page
   }
 
-  setDistinctiveComplete(changedDistinctive) {
-    this.setDistinctiveStatus(changedDistinctive, C.STATUS_COMPLETE)
+  setSummaryButtonEnabled(changedDistinctive, distinctiveStatus) {
+    switch(changedDistinctive) {
+      case C.CONTENT_PAGE:
+        localStorage.setItem(C.CONTENT_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
+        this.setState({contentSummaryButton: distinctiveStatus});
+        break;
+      case C.UTILITY_PAGE:
+        localStorage.setItem(C.UTILITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
+        this.setState({utilitySummaryButton: distinctiveStatus});
+        break;
+      case C.QUALITY_PAGE:
+        localStorage.setItem(C.QUALITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
+        this.setState({qualitySummaryButton: distinctiveStatus});
+        break;
+      case C.EFFICACY_PAGE:
+        localStorage.setItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
+        this.setState({efficacyInSummaryButton: distinctiveStatus});
+        break;
+      default:
+        break;
+    }
   }
 
   setDistinctiveStatus(changedDistinctive, distinctiveStatus) {
@@ -154,11 +198,9 @@ export default class CustomerReviewToolComponent extends React.Component {
             gradeRange={this.state.gradeRange}
 
             criterionAnswers={this.state.criterionAnswers}
-            criterionNotes={this.state.criterionNotes}
             changeCriterionAnswer={this.changeCriterionAnswer.bind(this)}
-            changeCriterionNotes={this.changeCriterionNotes.bind(this)}
             clearLocalStorage={this.clearLocalStorage.bind(this)}
-            setDistinctiveComplete={this.setDistinctiveComplete.bind(this)}
+            initializeAnswerObjects={this.initializeAnswerObjects.bind(this)}
              />
         </div>
 
@@ -168,8 +210,12 @@ export default class CustomerReviewToolComponent extends React.Component {
                     block__border-top">
             <div className="m-btn-group
                         m-btn-group__wide">
-                <SummaryButton handleSummaryButtonClick={this.handleSummaryButtonClick.bind(this)} 
+                <SummaryButton handleSummaryButtonClick={this.handleSummaryButtonClick.bind(this)}
                                currentPage={this.state.currentPage}
+                               contentSummaryButton={this.state.contentSummaryButton}
+                               utilitySummaryButton={this.state.utilitySummaryButton}
+                               qualitySummaryButton={this.state.qualitySummaryButton}
+                               efficacySummaryButton={this.state.efficacySummaryButton} 
                                criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
                 &nbsp;&nbsp;&nbsp;
                 <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
