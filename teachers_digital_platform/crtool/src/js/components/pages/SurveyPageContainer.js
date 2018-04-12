@@ -15,14 +15,12 @@ export default class SurveyPageContainer extends React.Component {
         const pageProps = {
             currentPage:this.props.currentPage,
             criterionAnswers:this.props.criterionAnswers,
-            criterionNotes:this.props.criterionNotes,
             changeCriterionAnswer:this.props.changeCriterionAnswer,
-            changeCriterionNotes:this.props.changeCriterionNotes,
-            clearLocalStorage:this.props.clearLocalStorage, 
             setDistinctiveComplete:this.props.setDistinctiveComplete, 
             curriculumTitle:this.props.curriculumTitle,
             publicationDate:this.props.publicationDate,
             gradeRange:this.props.gradeRange,
+            initializeAnswerObjects:this.props.initializeAnswerObjects,
           };
 
         if (this.props.currentPage === C.CONTENT_PAGE) {

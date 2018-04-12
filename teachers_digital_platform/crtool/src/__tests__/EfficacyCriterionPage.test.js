@@ -11,8 +11,8 @@ const efficacyProps = {
     criterionNotes:{},
     changeEfficacyAnswer: _changeEfficacyRadio.bind(this),
     changeEfficacyNotes:_changeEfficacyNotes.bind(this),
-    clearLocalStorage:_clearLocalStorage.bind(this), 
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
+    initializeAnswerObjects:(() => { }),
 }
 
 beforeAll(() => {
@@ -36,10 +36,6 @@ function _changeEfficacyRadio (key, checkedValue) {
 function _changeEfficacyNotes (key, textValue) {
 }
 
-let LocalStorageClearedValue = false;
-function _clearLocalStorage () {
-  LocalStorageClearedValue = true;
-}
 
 function _handleSummaryButtonClick () {
 }

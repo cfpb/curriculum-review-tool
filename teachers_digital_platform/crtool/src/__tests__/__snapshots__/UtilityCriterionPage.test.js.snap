@@ -197,7 +197,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-1"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -216,7 +216,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-1"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -255,7 +255,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-2"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -274,7 +274,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-2"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -342,7 +342,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-3"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -361,7 +361,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-3"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -429,7 +429,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-4"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -448,7 +448,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-4"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -561,7 +561,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-5"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -580,7 +580,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-5"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -599,7 +599,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-5"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="na"
                 />
                 <label
                   className="a-label"
@@ -667,7 +667,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-6"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="yes"
                 />
                 <label
                   className="a-label"
@@ -686,7 +686,7 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
                   name="crt-question-6"
                   onChange={[Function]}
                   type="radio"
-                  value="0"
+                  value="no"
                 />
                 <label
                   className="a-label"
@@ -760,10 +760,72 @@ exports[`Utility Criterion Page uses state to populate values 1`] = `
     className="l-survey-top"
   >
     <button
+      onClick={[Function]}
       type="button"
     >
       Can I save my work?
     </button>
+    <div
+      aria-describedby="example-modal-desc"
+      aria-hidden="true"
+      aria-labelledby="example-modal-title"
+      className="o-modal"
+      id="save-work-modal-dialog"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                className="cf-icon cf-icon-delete-round"
+              />
+            </button>
+            <h1
+              id="example-modal-title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="example-modal-desc"
+            >
+              <p>
+                This tool uses cookies to temporarily save your work. To load answers you’ve already completed, use the same computer and browser, and don't clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please download a summary of each dimension as you complete it. You can download an overall summary of findings after completing any dimension as well.
+              </p>
+              <p>
+                You can only work on a single curriculum at a time.
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
   <h2
     className="h4"
