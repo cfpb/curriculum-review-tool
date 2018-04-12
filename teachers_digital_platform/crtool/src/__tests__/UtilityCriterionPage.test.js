@@ -11,7 +11,6 @@ const utilityProps = {
     criterionNotes:{},
     changeUtilityAnswer: _changeUtilityRadio.bind(this),
     changeUtilityNotes:_changeUtilityNotes.bind(this),
-    clearLocalStorage:_clearLocalStorage.bind(this), 
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
 }
 
@@ -34,11 +33,6 @@ function _changeUtilityRadio (key, checkedValue) {
 }
 
 function _changeUtilityNotes (key, textValue) {
-}
-
-let LocalStorageClearedValue = false;
-function _clearLocalStorage () {
-    LocalStorageClearedValue = true;
 }
 
 function _handleSummaryButtonClick () {

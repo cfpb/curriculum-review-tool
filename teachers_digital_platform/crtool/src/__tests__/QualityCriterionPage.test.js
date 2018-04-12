@@ -11,7 +11,6 @@ const qualityProps = {
     criterionNotes:{},
     changeQualitynAnswer: _changeQualityRadio.bind(this),
     changeQualityNotes:_changeQualityNotes.bind(this),
-    clearLocalStorage:_clearLocalStorage.bind(this), 
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
 }
 
@@ -34,11 +33,6 @@ function _changeQualityRadio (key, checkedValue) {
 }
 
 function _changeQualityNotes (key, textValue) {
-}
-
-let LocalStorageClearedValue = false;
-function _clearLocalStorage () {
-    LocalStorageClearedValue = true;
 }
 
 function _handleSummaryButtonClick () {

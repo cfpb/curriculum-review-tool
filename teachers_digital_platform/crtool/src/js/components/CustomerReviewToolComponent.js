@@ -2,6 +2,7 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../constants"; 
+import SaveWorkModal from "./SaveWorkModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 
@@ -113,7 +114,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     return (
       <div>
-       <div className="l-survey-top"><button type="button">Can I save my work?</button></div>
+       <SaveWorkModal />
        <div className="h5 u-mb30">You’re reviewing</div>
        <h1>{this.state.curriculumTitle}</h1>
        <p className="lead-paragraph">

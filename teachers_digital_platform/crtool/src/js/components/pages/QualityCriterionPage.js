@@ -1,6 +1,7 @@
 import React from "react";
 
-import C from "../../constants"
+import C from "../../constants";
+import SaveWorkModal from "../SaveWorkModal";
 
 export default class QualityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -10,15 +11,6 @@ export default class QualityCriterionPage extends React.Component {
     changeCriterionNotes(key, textValue) {        
         this.props.changeCriterionNotes(C.QUALITY_PAGE, key, textValue);
     }  
-
-    clearLocalStorage() {
-        this.props.clearLocalStorage();
-    }
-
-    handleSummaryButtonClick() {
-        this.props.setDistinctiveComplete(C.QUALITY_PAGE);
-        //TODO: navigate to Quality Summary Page
-    }
 
     render() {
         return (
@@ -344,8 +336,8 @@ export default class QualityCriterionPage extends React.Component {
                     </button>
                 </h3>
             </div>
-            <div className="l-survey-top"><button type="button">Can I save my work?</button></div>
-                <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
+            <SaveWorkModal />
+            <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </div>
         );
     }

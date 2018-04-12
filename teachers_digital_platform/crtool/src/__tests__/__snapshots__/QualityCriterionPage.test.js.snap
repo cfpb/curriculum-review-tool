@@ -760,10 +760,72 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
     className="l-survey-top"
   >
     <button
+      onClick={[Function]}
       type="button"
     >
       Can I save my work?
     </button>
+    <div
+      aria-describedby="example-modal-desc"
+      aria-hidden="true"
+      aria-labelledby="example-modal-title"
+      class="o-modal"
+      id="save-work-modal-dialog"
+      role="alertdialog"
+    >
+      <div
+        class="o-modal_backdrop"
+      />
+      <div
+        class="o-modal_container"
+      >
+        <form
+          class="o-modal_content"
+        >
+          <div
+            class="o-modal_body"
+          >
+            <button
+              class="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                class="cf-icon cf-icon-delete-round"
+              />
+            </button>
+            <h1
+              id="example-modal-title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="example-modal-desc"
+            >
+              <p>
+                This tool uses cookies to temporarily save your work. To load answers you’ve already completed, use the same computer and browser, and don't clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please download a summary of each dimension as you complete it. You can download an overall summary of findings after completing any dimension as well.
+              </p>
+              <p>
+                You can only work on a single curriculum at a time.
+              </p>
+            </div>
+          </div>
+          <div
+            class="o-modal_footer"
+          >
+            <button
+              class="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
   <h2
     className="h4"

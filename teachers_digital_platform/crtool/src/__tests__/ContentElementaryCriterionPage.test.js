@@ -11,7 +11,6 @@ const contentProps = {
     criterionNotes:{},
     changeCriterionAnswer: _changeContentRadio.bind(this),
     changeCriterionNotes:_changeContentNotes.bind(this),
-    clearLocalStorage:_clearLocalStorage.bind(this), 
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
 }
 
@@ -34,11 +33,6 @@ function _changeContentRadio (key, checkedValue) {
 }
 
 function _changeContentNotes (key, textValue) {
-}
-
-let LocalStorageClearedValue = false;
-function _clearLocalStorage () {
-    LocalStorageClearedValue = true;
 }
     
 function _handleSummaryButtonClick () {

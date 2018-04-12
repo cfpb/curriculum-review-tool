@@ -18,7 +18,6 @@ export default class SurveyPageContainer extends React.Component {
             criterionNotes:this.props.criterionNotes,
             changeCriterionAnswer:this.props.changeCriterionAnswer,
             changeCriterionNotes:this.props.changeCriterionNotes,
-            clearLocalStorage:this.props.clearLocalStorage, 
             setDistinctiveComplete:this.props.setDistinctiveComplete, 
             curriculumTitle:this.props.curriculumTitle,
             publicationDate:this.props.publicationDate,
