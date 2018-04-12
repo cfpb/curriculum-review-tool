@@ -334,15 +334,7 @@ exports[`renders without crashing 1`] = `
         </ul>
       </div>
       <br />
-      <div
-        className="u-center"
-      >
-        <button
-          className="a-btn a-btn__super"
-        >
-          Final Summary
-        </button>
-      </div>
+      <span />
     </div>
     <div>
       <div />

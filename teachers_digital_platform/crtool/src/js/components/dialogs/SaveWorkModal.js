@@ -4,7 +4,6 @@ export default class SaveWorkModal extends React.Component {
 
     openSaveWorkModalDialog() {
         let saveWorkModalDialog = document.getElementById('save-work-modal-dialog');
-        console.log(saveWorkModalDialog);
         saveWorkModalDialog.classList.add('o-modal__visible');
     }
 
