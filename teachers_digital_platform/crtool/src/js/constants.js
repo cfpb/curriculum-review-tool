@@ -22,7 +22,7 @@ const C = {
   STATUS_IN_PROGRESS: "In Progress...",
   STATUS_COMPLETE: "Complete",
 
-  START_PAGE_RELATIVE_URL: "/tdp/crt-start/",
+  START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
 
   GRADE_ELEMENTARY: "Elementary School",
   GRADE_MIDDLE: "Middle School",

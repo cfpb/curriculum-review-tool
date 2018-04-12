@@ -1,7 +1,7 @@
 import React from "react";
 
 import C from "../../../constants";
-import SaveWorkModal from "../../SaveWorkModal";
+import SaveWorkModal from "../../dialogs/SaveWorkModal";
 
 export default class ContentHighCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {

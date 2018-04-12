@@ -2,7 +2,8 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../constants"; 
-import SaveWorkModal from "./SaveWorkModal";
+import SaveWorkModal from "./dialogs/SaveWorkModal";
+import StartOverModal from "./dialogs/StartOverModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 
@@ -164,10 +165,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to summary
                 </button>
-                <button className="a-btn
-                                a-btn__link" onClick={(e) => {this.clearLocalStorage()}} >
-                    Start over with a new review
-                </button>
+                <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
             </div>
         </div>
       </div>
