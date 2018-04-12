@@ -113,7 +113,8 @@
                             <input class="a-text-input
                                           a-text-input__full"
                                     type="text"
-                                    id="tdp-crt_title">
+                                    id="tdp-crt_title"
+                                    onchange="onValuesChanged();">
                         </div>
                     </li>
                     <li class="content-l_col content-l_col-1-2">
@@ -142,11 +143,8 @@
                         Grade range
                     </label>
                     <div class="a-select">
-                        <select id="tdp-crt_grade">
+                        <select id="tdp-crt_grade" onchange="onValuesChanged();">
                             <option value="">Select grade range</option>
-                            <option value="Elementary School">Elementary School</option>
-                            <option value="Middle School">Middle School</option>
-                            <option value="High School">High School</option>
                         </select>
                     </div>
                 </div>
@@ -165,10 +163,10 @@
                 </div>
             </div>
             <div class="m-btn-group">
-                <button class="a-btn" type="submit" onclick="beginReviewButtonClick();" formaction="tdp/crt-survey/">
+                <button id="tdp-crt-begin-review-btn" class="a-btn" type="submit" onclick="beginReviewButtonClick();" formaction="../../tdp/crt-survey">
                     Begin Review
                 </button>
-                <button href="#" class="a-btn a-btn__link">Start over with a new review</button>
+                <button href="#" class="a-btn a-btn__link" onclick="clearLocalStorage();">Start over with a new review</button>
             </div>
         </form>
     </div>
@@ -233,19 +231,9 @@
 
     <!-- This script is for demo purposes only. -->
     <script>
-        var gradeRange = document.getElementById('tdp-crt_grade');
-        var button = document.querySelector('button[type="submit"]');
         var modalOpenLinks = document.querySelectorAll('a[href="#modal-dialog"]');
         var modalCloseLinks = document.querySelectorAll('.o-modal_close, .o-modal_footer > .a-btn');
         var modalWindow = document.getElementById('modal-dialog');
-
-        document.addEventListener('DOMContentLoaded', function () {
-            gradeRange.onchange = enableButton;
-        }, false);
-
-        function enableButton(event) {
-            button.removeAttribute('disabled');
-        }
 
         modalOpenLinks.forEach( function (openLink) {
             openLink.addEventListener('click', function (e) {
@@ -269,10 +257,74 @@
             modalWindow.classList.remove('o-modal__visible');
         }
         
-        // Actual retrieving & storing of values into localstorage (not demo)
-        document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle');
-        document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate');
-        document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange');
+    </script>
+
+    <script>
+        /**
+         * NOT DEMO JavaScript
+         *
+         * The below code manages the enabling/disabling of the submit button
+         * Also manages the saving and setting of the Title, Date, & Grade Range
+         */
+        const elementarySchool = "Elementary School";
+        const middleSchool = "Middle School";
+        const highSchool = "High School";
+
+        var gradeRange = document.getElementById('tdp-crt_grade');
+
+        // Call to get things initialized
+        setInitialFormValues();
+
+        /* 
+         * Set the values based on localStorage 
+         */
+        function setInitialFormValues() {
+            addOptionToGrade(elementarySchool);
+            addOptionToGrade(middleSchool);
+            addOptionToGrade(highSchool);
+            addOptionToGrade("test");
+
+            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle');
+            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate');
+            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange');
+
+            setBeginReviewButtonEnabling();
+        }
+        
+        /*
+         * Method for adding a single option to the existing gradeRange DOM element
+         */
+        function addOptionToGrade(optionText) {
+            var option = document.createElement( 'option' );
+            option.value = option.text = optionText;
+            gradeRange.add( option );
+        }
+
+        /* 
+         * Add this function to any required field so we can monitor changed values
+         */
+        function onValuesChanged(value) {
+            setBeginReviewButtonEnabling();
+        }
+
+        /* 
+         * Method to manage enabling or dissabling begin button based on form values 
+         */
+        function setBeginReviewButtonEnabling() {
+            var selectedGradeValue = gradeRange.value;
+
+            //check required fields have values
+            var isValidGradeSelected = selectedGradeValue === elementarySchool || 
+                                       selectedGradeValue === middleSchool || 
+                                       selectedGradeValue === highSchool;
+            var isEnabled = isValidGradeSelected && document.getElementById('tdp-crt_title').value;
+
+            document.getElementById('tdp-crt-begin-review-btn').disabled = !isEnabled;
+        }
+
+        /* 
+         * Method that actually saves values (Title, Date, & Grad Range) 
+         */
         function beginReviewButtonClick() {
             let curriculumTitle = document.getElementById('tdp-crt_title').value;
             localStorage.setItem('curriculumTitle', curriculumTitle);
@@ -282,6 +334,13 @@
 
             let gradeRange = document.getElementById('tdp-crt_grade').value;
             localStorage.setItem('gradeRange', gradeRange);
+        }
+
+        /* 
+         * User has choosen to clear all values and start over
+         */
+        function clearLocalStorage() {
+            localStorage.clear();
         }
     </script>
 {%- endblock javascript %}
