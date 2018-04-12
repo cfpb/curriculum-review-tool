@@ -89,47 +89,50 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_selector CONTENT"
+        className="o-dimension-section-bar_button CONTENT"
         onClick={[Function]}
-        type="button"
       >
-        <span
-          className="o-dimension-section-bar_selector-title"
+        <div
+          class="o-dimension-section-bar_selector"
         >
           <span
-            className="a-icon a-icon__large"
+            className="o-dimension-section-bar_selector-title"
           >
-            <svg
-              className="cf-icon-svg"
-              viewBox="0 0 651.7 1200"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              className="a-icon a-icon__large"
             >
-              <path
-                d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
-              />
-              <path
-                d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
-              />
-              <circle
-                cx="194"
-                cy="382.3"
-                r="60"
-              />
-            </svg>
-          </span>
-           
-          Content
-          <span
-            className="o-dimension-section-bar_selector-status"
-          >
+              <svg
+                className="cf-icon-svg"
+                viewBox="0 0 651.7 1200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
+                />
+                <path
+                  d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
+                />
+                <circle
+                  cx="194"
+                  cy="382.3"
+                  r="60"
+                />
+              </svg>
+            </span>
              
+            Content
+            <span
+              className="o-dimension-section-bar_selector-status"
+            >
+               
+            </span>
           </span>
-        </span>
-        <span
-          className="o-dimension-section-bar_selector-text"
-        >
-          Covers core knowledge and skills in national standards
-        </span>
+          <span
+            className="o-dimension-section-bar_selector-text"
+          >
+            Covers core knowledge and skills in national standards
+          </span>
+        </div>
       </button>
       <ul
         className="o-dimension-section-bar_dimension-details"
@@ -150,47 +153,50 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_selector UTILITY"
+        className="o-dimension-section-bar_button UTILITY"
         onClick={[Function]}
-        type="button"
       >
-        <span
-          className="o-dimension-section-bar_selector-title"
+        <div
+          class="o-dimension-section-bar_selector"
         >
           <span
-            className="a-icon a-icon__large"
+            className="o-dimension-section-bar_selector-title"
           >
-            <svg
-              className="cf-icon-svg"
-              viewBox="0 0 651.7 1200"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              className="a-icon a-icon__large"
             >
-              <path
-                d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
-              />
-              <path
-                d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
-              />
-              <circle
-                cx="194"
-                cy="382.3"
-                r="60"
-              />
-            </svg>
-          </span>
-           
-          Utility
-          <span
-            className="o-dimension-section-bar_selector-status"
-          >
+              <svg
+                className="cf-icon-svg"
+                viewBox="0 0 651.7 1200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
+                />
+                <path
+                  d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
+                />
+                <circle
+                  cx="194"
+                  cy="382.3"
+                  r="60"
+                />
+              </svg>
+            </span>
              
+            Utility
+            <span
+              className="o-dimension-section-bar_selector-status"
+            >
+               
+            </span>
           </span>
-        </span>
-        <span
-          className="o-dimension-section-bar_selector-text"
-        >
-          Supports effective teaching
-        </span>
+          <span
+            className="o-dimension-section-bar_selector-text"
+          >
+            Supports effective teaching
+          </span>
+        </div>
       </button>
       <ul
         className="o-dimension-section-bar_dimension-details"
@@ -211,47 +217,50 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_selector QUALITY"
+        className="o-dimension-section-bar_button QUALITY"
         onClick={[Function]}
-        type="button"
       >
-        <span
-          className="o-dimension-section-bar_selector-title"
+        <div
+          class="o-dimension-section-bar_selector"
         >
           <span
-            className="a-icon a-icon__large"
+            className="o-dimension-section-bar_selector-title"
           >
-            <svg
-              className="cf-icon-svg"
-              viewBox="0 0 651.7 1200"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              className="a-icon a-icon__large"
             >
-              <path
-                d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
-              />
-              <path
-                d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
-              />
-              <circle
-                cx="194"
-                cy="382.3"
-                r="60"
-              />
-            </svg>
-          </span>
-           
-          Quality
-          <span
-            className="o-dimension-section-bar_selector-status"
-          >
+              <svg
+                className="cf-icon-svg"
+                viewBox="0 0 651.7 1200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
+                />
+                <path
+                  d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
+                />
+                <circle
+                  cx="194"
+                  cy="382.3"
+                  r="60"
+                />
+              </svg>
+            </span>
              
+            Quality
+            <span
+              className="o-dimension-section-bar_selector-status"
+            >
+               
+            </span>
           </span>
-        </span>
-        <span
-          className="o-dimension-section-bar_selector-text"
-        >
-          Presents clear, accurate, and objective information
-        </span>
+          <span
+            className="o-dimension-section-bar_selector-text"
+          >
+            Presents clear, accurate, and objective information
+          </span>
+        </div>
       </button>
       <ul
         className="o-dimension-section-bar_dimension-details"
@@ -272,47 +281,50 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_selector EFFICACY"
+        className="o-dimension-section-bar_button EFFICACY"
         onClick={[Function]}
-        type="button"
       >
-        <span
-          className="o-dimension-section-bar_selector-title"
+        <div
+          class="o-dimension-section-bar_selector"
         >
           <span
-            className="a-icon a-icon__large"
+            className="o-dimension-section-bar_selector-title"
           >
-            <svg
-              className="cf-icon-svg"
-              viewBox="0 0 651.7 1200"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              className="a-icon a-icon__large"
             >
-              <path
-                d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
-              />
-              <path
-                d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
-              />
-              <circle
-                cx="194"
-                cy="382.3"
-                r="60"
-              />
-            </svg>
-          </span>
-           
-          Efficacy
-          <span
-            className="o-dimension-section-bar_selector-status"
-          >
+              <svg
+                className="cf-icon-svg"
+                viewBox="0 0 651.7 1200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"
+                />
+                <path
+                  d="M123.8 768.6h394.8v50H123.8zM123.8 644h394.8v50H123.8zM123.8 519.5h394.8v50H123.8z"
+                />
+                <circle
+                  cx="194"
+                  cy="382.3"
+                  r="60"
+                />
+              </svg>
+            </span>
              
+            Efficacy
+            <span
+              className="o-dimension-section-bar_selector-status"
+            >
+               
+            </span>
           </span>
-        </span>
-        <span
-          className="o-dimension-section-bar_selector-text"
-        >
-          Has validated impact on knowledge, skills, or behaviors
-        </span>
+          <span
+            className="o-dimension-section-bar_selector-text"
+          >
+            Has validated impact on knowledge, skills, or behaviors
+          </span>
+        </div>
       </button>
       <ul
         className="o-dimension-section-bar_dimension-details"
