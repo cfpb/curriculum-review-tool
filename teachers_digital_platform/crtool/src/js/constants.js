@@ -18,6 +18,11 @@ const C = {
   QUALITY_STATUS: "quality_status",
   EFFICACY_STATUS: "efficacy_status",
 
+  CONTENT_CRITERION_IS_COMPLETE: "content_is_complete",
+  UTILITY_CRITERION_IS_COMPLETE: "utility_is_complete",
+  QUALITY_CRITERION_IS_COMPLETE: "quality_is_complete",
+  EFFICACY_CRITERION_IS_COMPLETE: "efficacy_is_complete",
+
   STATUS_IN_START: "",
   STATUS_IN_PROGRESS: "In Progress...",
   STATUS_COMPLETE: "Complete",

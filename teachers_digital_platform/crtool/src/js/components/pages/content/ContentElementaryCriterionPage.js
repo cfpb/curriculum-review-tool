@@ -15,7 +15,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
     render() {
         return (
           <div>
-            <h1>MIDDLE: {this.props.gradeRange}</h1>
             <hr className="hr
                         u-mb45
                         u-mt30" />

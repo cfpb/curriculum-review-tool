@@ -2,10 +2,12 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../constants"; 
+import SummaryButton from "./buttons/SummaryButton";
 import SaveWorkModal from "./dialogs/SaveWorkModal";
 import StartOverModal from "./dialogs/StartOverModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
+import PageInstructionsComponent from "./PageInstructionsComponent";
 
 export default class CustomerReviewToolComponent extends React.Component {
   constructor() {
@@ -23,7 +25,8 @@ export default class CustomerReviewToolComponent extends React.Component {
       gradeRange: localStorage.getItem("gradeRange"),
 
       criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
-      criterionNotes: JSON.parse(localStorage.getItem("criterionNotes")) || {}
+      criterionNotes: JSON.parse(localStorage.getItem("criterionNotes")) || {},
+      criterionCompletionStatuses: JSON.parse(localStorage.getItem("criterionCompletionStatus")) || {},
     };
   }
 
@@ -38,6 +41,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     this.setState({criterionAnswers: {} });
     this.setState({criterionNotes: {} });
+    this.setState({criterionCompletionStatuses: {} });
     
     let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
     window.location = startPage;
@@ -62,6 +66,19 @@ export default class CustomerReviewToolComponent extends React.Component {
   }
 
   setCriterionAnswersState(key, val) {
+    let alteredCriterionAnswers =  this.state.criterionAnswers
+    alteredCriterionAnswers[key] = val;
+    
+    localStorage.setItem("criterionAnswers", JSON.stringify(alteredCriterionAnswers));
+    this.setState({criterionAnswers: alteredCriterionAnswers})
+  }
+
+  changeCriterionCompletionStatuses(distinctive, key, val) {
+    this.setCriterionCompletionStatuses(key, val);
+    //TODO: Calculate distinctive status [in progress, complete]
+  }
+
+  setCriterionCompletionStatuses(key, val) {
     let alteredCriterionAnswers =  this.state.criterionAnswers
     alteredCriterionAnswers[key] = val;
     
@@ -115,14 +132,11 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     return (
       <div>
-       <SaveWorkModal />
-       <div className="h5 u-mb30">You’re reviewing</div>
-       <h1>{this.state.curriculumTitle}</h1>
-       <p className="lead-paragraph">
-           Select any dimension to start your review. We recommend starting with Content and moving to Utility, Quality, and Efficacy, but you can complete the four dimensions in any order.
-       </p>
-       <p>You can complete all dimensions in one sitting or over the course of many sessions. You’ll be able to print or save a summary for each dimension as you finish it, and then print or save a final summary for the overall review.</p>
-       
+        <SaveWorkModal />
+        <h1>You’re reviewing: {this.state.curriculumTitle}</h1>
+        
+        <PageInstructionsComponent currentPage={this.state.currentPage} />
+
         <DistinctiveMenuBar 
             distinctiveClicked={this.distinctiveClicked.bind(this)}
             currentPage={this.state.currentPage}
@@ -148,23 +162,16 @@ export default class CustomerReviewToolComponent extends React.Component {
              />
         </div>
 
-        <DistinctiveMenuBar 
-            distinctiveClicked={this.distinctiveClicked.bind(this)}
-            currentPage={this.state.currentPage}
-            contentInProgress={this.state.contentInProgress}
-            utilityInProgress={this.state.utilityInProgress}
-            qualityInProgress={this.state.qualityInProgress}
-            efficacyInProgress={this.state.efficacyInProgress} />
-
         <div className="block
                     block__flush-bottom
                     block__padded-top
                     block__border-top">
             <div className="m-btn-group
                         m-btn-group__wide">
-                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to summary
-                </button>
+                <SummaryButton handleSummaryButtonClick={this.handleSummaryButtonClick.bind(this)} 
+                               currentPage={this.state.currentPage}
+                               criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
+                &nbsp;&nbsp;&nbsp;
                 <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
             </div>
         </div>
