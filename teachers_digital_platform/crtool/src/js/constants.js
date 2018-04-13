@@ -39,12 +39,6 @@ const C = {
   GRADE_ELEMENTARY: "Elementary School",
   GRADE_MIDDLE: "Middle School",
   GRADE_HIGH: "Middle School",
-
-  SVG_CHECK_ROUND: "SVG_CHECK_ROUND",
-  SVG_CREDIT_REPORT: "SVG_CREDIT_REPORT",
-  SVG_DOCUMENT: "SVG_DOCUMENT",
-  SVG_SETTINGS: "SVG_SETTINGS",
-  SVG_STAR: "SVG_STAR",
 };
 
 export default C;
