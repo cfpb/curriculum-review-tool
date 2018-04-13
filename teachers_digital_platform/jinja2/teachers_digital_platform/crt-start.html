@@ -70,11 +70,10 @@
     <div class="block block__flush-top">
         <h1>Before you begin your review</h1>
         <div class="lead-paragraph">
-            <p>Transition sentence here. Lorem ipsum dolor sit amet consecteteur adipiscing elit.</p>
+            <p>It’s helpful to do a few things before starting the curriculum review.</p>
         </div>
-        <ul>
-            <li>Assemble a review team</li>
-            <li>Gather all materials for each curriculum including:
+        <ol>
+            <li>Gather all materials for the curriculum including:
                 <ul>
                     <li>Scope and sequence</li>
                     <li>Lesson plans</li>
@@ -83,13 +82,16 @@
                 </ul>
             </li>
             <li>Collect studies and other evidence of the curriculum’s impact</li>
-        </ul>
-        <h2 class="h4">Need help getting started?</h2>
-        <p>Download our
+            <li>When possible, assemble a team to review the curriculum together</li>
+            <li>Set aside up to two to three hours to complete an entire curriculum review or plan to do one dimension at a time</li>
+        </ol>
+        <h2 class="h4">Not sure how to get ready for your curriculum review?</h2>
+        <p>
             <a class="a-link
                       a-link__icon-after-text"
-                href="#">
-                    <span class="a-link_text">curriculum review checklist</span>
+                target="_blank"
+                      href="#">
+                    <span class="a-link_text">Download our curriculum review checklist</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"/><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"/></svg></a>.
         </p>
     </div>
@@ -157,46 +159,18 @@
                     <div class="m-notification_content">
                         <div class="m-notification_message">
                             <h3 class="h4">Limitations around saving your work</h3>
-                            <p>If you plan to complete this review over multiple sessions, we recommend downloading a summary after each completed section. Learn more about <a href="#modal-dialog">how to save your work.</a></p>
+                            <p>After you finish each dimension, we recommend you print the summary or save it as a PDF. Learn more about <a href="#modal-dialog">how to save your work.</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="m-btn-group">
                 <button id="tdp-crt-begin-review-btn" class="a-btn" type="submit" onclick="beginReviewButtonClick();" formaction="../../tdp/crt-survey">
-                    Begin Review
+                    Start review
                 </button>
                 <button class="a-btn a-btn__link" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
             </div>
         </form>
-    </div>
-    <div class="o-modal"
-        id="modal-dialog-start-over"
-        aria-hidden="true"
-        role="alertdialog"
-        aria-labelledby="modal-title-start-over"
-        aria-describedby="modal-desc-start-over">
-        <div class="o-modal_backdrop"></div>
-        <div class="o-modal_container">
-        <form class="o-modal_content">
-            <div class="o-modal_body">
-                <button class="o-modal_close a-btn a-btn__link" onclick="closeNewReviewModalWindow();return false;">
-                    Close
-                    <span class="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"/></svg></span>
-                </button>
-                <h1 id="modal-title-start-over">Starting over</h1>
-                <div id="modal-desc-start-over">
-                    <p>Starting a new review will erase your answers for all dimensions. Are you sure you want to start a new review?</p>
-                </div>
-            </div>
-            <div class="o-modal_footer">
-                <div class="m-btn-group">
-                    <button class="a-btn" onclick="clearLocalStorage(); return false;">Yes</button>
-                    <button class="a-btn" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
-                </div>
-            </div>
-        </form>
-        </div>
     </div>
 {% endblock content_main %}
 
@@ -208,27 +182,68 @@
     <div class="block block__flush-top">
         <h2>About us</h2>
         <p>We’re the Consumer Financial Protection Bureau (CFPB), a U.S. government agency that makes sure banks, lenders, and other financial companies treat you fairly.</p>
-        <p><a href="#">Learn how the CFPB can help you</a></p>
+        <p><a href="https://www.consumerfinance.gov/about-us/the-bureau/">Learn how the CFPB can help you</a></p>
     </div>
     <div class="block">
         <header class="m-slug-header">
             <h2 class="a-heading">
-                PDF of curriculum review
+                PDF version of curriculum review tool
             </h2>
         </header>
         <p>Want to download or print a blank copy of the review?</p>
         <p>
             <a class="a-link
-                      a-link__icon"
-                href="#">
-                    <span class="a-link_text">Download a copy of the financial education curriculum review</span>
-                    {# {% include icons/download.svg %} #}
-            </a>
+                        a-link__icon-after-text"
+                target="_blank"
+                        href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financial-education-curriculum-review.pdf">
+                    <span class="a-link_text">Download the curriculum review</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"/><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"/></svg></a>.
         </p>
+    </div>
+    <div class="block">
+        <header class="m-slug-header">
+            <h2 class="a-heading">
+                Helpful terms to know
+            </h2>
+        </header>
+        <p><strong>Curriculum:</strong> A complete set of materials for teaching a focused subject area that includes learning objectives, teaching methods, assignments, handouts and teaching supports, and sequence of instruction</p>
+        <p><strong>Dimension:</strong> A key aspect (content, utility, quality, and efficacy) of a financial education curriculum to be evaluated</p>
+        <p><strong>Criteria:</strong> Important features or content areas of the curriculum</p>
+        <p><strong>Indicator:</strong> Specific elements or characteristics of a curriculum related to an evaluation criterion</p>
+        <p><strong>Components:</strong> Statements or questions that help you determine if the curriculum meets an indicator</p>
     </div>
 {%- endblock %}
 
 {% block javascript scoped -%}
+    <div class="o-modal"
+        id="modal-dialog-start-over"
+        aria-hidden="true"
+        role="alertdialog"
+        aria-labelledby="modal-title-start-over"
+        aria-describedby="modal-desc-start-over">
+        <div class="o-modal_backdrop"></div>
+        <div class="o-modal_container">
+            <form class="o-modal_content">
+                <div class="o-modal_body">
+                    <button class="o-modal_close a-btn a-btn__link" onclick="closeNewReviewModalWindow();return false;">
+                        Close
+                        <span class="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"/></svg></span>
+                    </button>
+                    <h1 id="modal-title-start-over">Starting over</h1>
+                    <div id="modal-desc-start-over">
+                        <p>Starting a new review will erase your answers for all dimensions. Are you sure you want to start a new review?</p>
+                    </div>
+                </div>
+                <div class="o-modal_footer">
+                    <div class="m-btn-group">
+                        <button class="a-btn" onclick="clearLocalStorage(); return false;">Yes</button>
+                        <button class="a-btn a-btn__link" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="o-modal"
         id="modal-dialog"
         aria-hidden="true"
@@ -241,13 +256,13 @@
             <div class="o-modal_body">
                 <button class="o-modal_close a-btn a-btn__link">
                     Close
-                    <span class="cf-icon cf-icon-delete-round"></span>
+                    <span class="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"/></svg></span>
                 </button>
                 <h1 id="example-modal-title">Saving your work</h1>
                 <div id="example-modal-desc">
-                    <p>This tool uses cookies to temporarily save your work. To load answers you’ve already completed, use the same computer and browser, and don't clear your cookies.</p>
-                    <p>To save a permanent copy of your work, please download a summary of each dimension as you complete it. You can download an overall summary of findings after completing any dimension as well.</p>
-                    <p>You can only work on a single curriculum at a time.</p>
+                    <p>This tool uses cookies to <strong>temporarily</strong> save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don't clear your cookies.</p>
+                    <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank">save the summary as a PDF</a>.</p>
+                    <p>You can only work on a single curriculum at a time</p>
                 </div>
             </div>
             <div class="o-modal_footer">
@@ -257,8 +272,12 @@
         </div>
     </div>
 
-    <!-- This script is for demo purposes only. -->
     <script>
+        /**
+         * This script is for demo purposes only.
+         *
+         * TODO: Remove this when the CFPB Modal JS is added.
+         */
         var modalOpenLinks = document.querySelectorAll('a[href="#modal-dialog"]');
         var modalCloseLinks = document.querySelectorAll('.o-modal_close, .o-modal_footer > .a-btn');
         var modalWindow = document.getElementById('modal-dialog');
@@ -303,8 +322,8 @@
         // Call to get things initialized
         setInitialFormValues();
 
-        /* 
-         * Set the values based on localStorage 
+        /*
+         * Set the values based on localStorage
          */
         function setInitialFormValues() {
             addOptionToGrade(elementarySchool);
@@ -317,7 +336,7 @@
 
             setBeginReviewButtonEnabling();
         }
-        
+
         /*
          * Method for adding a single option to the existing gradeRange DOM element
          */
@@ -327,30 +346,30 @@
             gradeRange.add( option );
         }
 
-        /* 
+        /*
          * Add this function to any required field so we can monitor changed values
          */
         function onValuesChanged(value) {
             setBeginReviewButtonEnabling();
         }
 
-        /* 
-         * Method to manage enabling or dissabling begin button based on form values 
+        /*
+         * Method to manage enabling or dissabling begin button based on form values
          */
         function setBeginReviewButtonEnabling() {
             var selectedGradeValue = gradeRange.value;
 
             //check required fields have values
-            var isValidGradeSelected = selectedGradeValue === elementarySchool || 
-                                       selectedGradeValue === middleSchool || 
+            var isValidGradeSelected = selectedGradeValue === elementarySchool ||
+                                       selectedGradeValue === middleSchool ||
                                        selectedGradeValue === highSchool;
             var isEnabled = isValidGradeSelected && document.getElementById('tdp-crt_title').value;
 
             document.getElementById('tdp-crt-begin-review-btn').disabled = !isEnabled;
         }
 
-        /* 
-         * Method that actually saves values (Title, Date, & Grad Range) 
+        /*
+         * Method that actually saves values (Title, Date, & Grad Range)
          */
         function beginReviewButtonClick() {
             let curriculumTitle = document.getElementById('tdp-crt_title').value;
@@ -363,7 +382,7 @@
             localStorage.setItem('gradeRange', gradeRange);
         }
 
-        /* 
+        /*
          * User has choosen to clear all values and start over
          */
         function clearLocalStorage() {
