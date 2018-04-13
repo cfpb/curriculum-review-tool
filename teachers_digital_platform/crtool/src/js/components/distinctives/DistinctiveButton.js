@@ -28,7 +28,7 @@ export default class DistinctiveButton extends React.Component {
                         <span className="o-dimension-section-bar_selector-title">
                             <span className="a-icon a-icon__large" dangerouslySetInnerHTML={createIcon(this.props.icon)}></span>
                             &nbsp;{this.props.title}
-                            <span className="o-dimension-section-bar_selector-status">&nbsp;{this.props.inProgress}</span>
+                            &nbsp;<span className="o-dimension-section-bar_selector-status">{this.props.inProgress}</span>
                         </span>
                         <span className="o-dimension-section-bar_selector-text">{this.props.description}</span>
                     </div>
