@@ -82,8 +82,8 @@ export default class ContentHighCriterionPage extends React.Component {
                                             </label>
                                         </div>
                                         <div className="m-form-field
-                                                    m-form-field__radio
-                                                    m-form-field__lg-target">
+                                                        m-form-field__radio
+                                                        m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
                                                 id="content-high-crt-quesion-1.1b"
                                                 name="content-high-crt-quesion-1.1"
