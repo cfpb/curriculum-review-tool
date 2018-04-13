@@ -108,11 +108,10 @@ exports[`renders without crashing 1`] = `
             />
              
             Content
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
@@ -159,11 +158,10 @@ exports[`renders without crashing 1`] = `
             />
              
             Utility
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
@@ -210,11 +208,10 @@ exports[`renders without crashing 1`] = `
             />
              
             Quality
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
@@ -261,11 +258,10 @@ exports[`renders without crashing 1`] = `
             />
              
             Efficacy
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
