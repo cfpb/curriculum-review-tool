@@ -30,8 +30,8 @@ const C = {
   EFFICACY_SUMMARY_BUTTON_ENABLED: "efficacy_summary_enabled",
 
   STATUS_IN_START: "",
-  STATUS_IN_PROGRESS: "In Progress...",
-  STATUS_COMPLETE: "Complete",
+  STATUS_IN_PROGRESS: "in progress",
+  STATUS_COMPLETE: "complete",
 
   START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
 
