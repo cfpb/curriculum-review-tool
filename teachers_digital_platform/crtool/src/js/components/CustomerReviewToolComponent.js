@@ -57,7 +57,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         return false;
       }
     }
-
     return true;
   }
 
@@ -115,10 +114,12 @@ export default class CustomerReviewToolComponent extends React.Component {
     this.setState({criterionCompletionStatus: alteredData})
   }
 
+  handleFinalSummaryButtonClick() {
+    this.distinctiveClicked(C.FINAL_SUMMARY_PAGE);
+  }
+
   handleSummaryButtonClick() {
     this.setDistinctiveStatus(this.state.currentPage, C.STATUS_COMPLETE);
-    alert("Comming Soon - Navigate to Summary for : " + this.state.currentPage);
-    //TODO: navigate to Content Summary Page
   }
 
   setSummaryButtonEnabled(changedDistinctive, distinctiveStatus) {
@@ -137,7 +138,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         break;
       case C.EFFICACY_PAGE:
         localStorage.setItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-        this.setState({efficacyInSummaryButton: distinctiveStatus});
+        this.setState({efficacySummaryButton: distinctiveStatus});
         break;
       default:
         break;
@@ -188,13 +189,26 @@ export default class CustomerReviewToolComponent extends React.Component {
                     contentInProgress={this.state.contentInProgress}
                     utilityInProgress={this.state.utilityInProgress}
                     qualityInProgress={this.state.qualityInProgress}
-                    efficacyInProgress={this.state.efficacyInProgress} />
+                    efficacyInProgress={this.state.efficacyInProgress}
+
+                    handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
+                    contentSummaryButton={this.state.contentSummaryButton}
+                    utilitySummaryButton={this.state.utilitySummaryButton}
+                    qualitySummaryButton={this.state.qualitySummaryButton}
+                    efficacySummaryButton={this.state.efficacySummaryButton} />
 
                 <SurveyPageContainer className="SurveyPage"
                     currentPage={this.state.currentPage}
+
                     curriculumTitle={this.state.curriculumTitle}
                     publicationDate={this.state.publicationDate}
                     gradeRange={this.state.gradeRange}
+
+                    contentInProgress={this.state.contentInProgress}
+                    utilityInProgress={this.state.utilityInProgress}
+                    qualityInProgress={this.state.qualityInProgress}
+                    efficacyInProgress={this.state.efficacyInProgress}
+
                     criterionAnswers={this.state.criterionAnswers}
                     changeCriterionAnswer={this.changeCriterionAnswer.bind(this)}
                     clearLocalStorage={this.clearLocalStorage.bind(this)}
@@ -214,8 +228,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                             efficacySummaryButton={this.state.efficacySummaryButton}
                             criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
 
-                        <StartOverModal
-                            clearLocalStorage={this.clearLocalStorage.bind(this)} />
+                        <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
                     </div>
                 </div>
             </React.Fragment>

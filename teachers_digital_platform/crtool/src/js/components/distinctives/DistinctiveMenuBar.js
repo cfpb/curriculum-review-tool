@@ -2,14 +2,18 @@ import React from "react";
 
 import C from "../../constants.js"
 import DistinctiveButton from "../distinctives/DistinctiveButton";
+import FinalSummaryButton from "../buttons/FinalSummaryButton";
 
 export default class DistinctiveMenuBar extends React.Component {
     distinctiveClicked() {
         this.props.distinctiveClicked(this.props.distinctive);
     }
 
-    render() {
+    handleFinalSummaryButtonClick() {
+        this.props.handleFinalSummaryButtonClick();
+    }
 
+    render() {
         const distinctiveProps = [
             {
                 title: "Content",
@@ -62,9 +66,11 @@ export default class DistinctiveMenuBar extends React.Component {
                 <ul className="o-dimension-selection-bar">
                     {distinctiveProps.map((distinctiveProps, i) => <DistinctiveButton key={i} {...distinctiveProps}/>)}
                 </ul>
-                <div className="u-center">
-                    <button className="a-btn a-btn__super">Final Summary</button>
-                </div>
+                <FinalSummaryButton handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
+                    contentInProgress={this.props.contentInProgress}
+                    utilityInProgress={this.props.utilityInProgress}
+                    qualityInProgress={this.props.qualityInProgress}
+                    efficacyInProgress={this.props.efficacyInProgress} />
             </React.Fragment>
         );
     }
