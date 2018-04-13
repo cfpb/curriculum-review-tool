@@ -42,11 +42,16 @@ export default class SummaryButton extends React.Component {
             );
         }
         else {
-            return (
-                <button className="a-btn" disabled >
-                    Continue to summary
-                </button>
-            );
+            if (this.props.currentPage === C.FINAL_SUMMARY_PAGE) {
+                return (<span />);
+            }
+            else {
+                return (
+                    <button className="a-btn" disabled >
+                        Continue to summary
+                    </button>
+                );
+            }
         }
     }
 }

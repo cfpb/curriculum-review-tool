@@ -1,10 +1,38 @@
 import React from "react";
 
 export default class SaveWorkModal extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.setWrapperRef = this.setWrapperRef.bind(this);
+      this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+    componentDidMount() {
+      document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    /** Set the wrapper ref */
+    setWrapperRef(node) {
+    this.wrapperRef = node;
+    }
+
+    /** Alert if clicked on outside of element */
+    handleClickOutside(event) {
+      if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        let saveWorkModalDialog = document.getElementById('save-work-modal-dialog');
+        if (saveWorkModalDialog.classList.contains('o-modal__visible')) {
+          saveWorkModalDialog.classList.remove('o-modal__visible');
+        }
+      }
+    }
 
     openSaveWorkModalDialog() {
         let saveWorkModalDialog = document.getElementById('save-work-modal-dialog');
-        console.log(saveWorkModalDialog);
         saveWorkModalDialog.classList.add('o-modal__visible');
     }
 
@@ -17,8 +45,6 @@ export default class SaveWorkModal extends React.Component {
         return (
             <div className="l-survey-top">
                 <button type="button" onClick={(e) => {this.openSaveWorkModalDialog()}}>Can I save my work?</button>
-
-
                 <div className="o-modal"
                     id="save-work-modal-dialog"
                     aria-hidden="true"
@@ -28,6 +54,7 @@ export default class SaveWorkModal extends React.Component {
                     <div className="o-modal_backdrop"></div>
                     <div className="o-modal_container">
                     <form className="o-modal_content">
+                      <span ref={this.setWrapperRef}>
                         <div className="o-modal_body">
                             <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>
                                 Close
@@ -43,6 +70,7 @@ export default class SaveWorkModal extends React.Component {
                         <div className="o-modal_footer">
                             <button className="a-btn" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>Close</button>
                         </div>
+                      </span>
                     </form>
                     </div>
                 </div>
