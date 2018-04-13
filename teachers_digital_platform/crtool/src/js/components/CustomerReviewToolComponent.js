@@ -1,7 +1,7 @@
 import React from "react";
 import resolveUrl from "resolve-url";
 
-import C from "../constants"; 
+import C from "../constants";
 import SummaryButton from "./buttons/SummaryButton";
 import SaveWorkModal from "./dialogs/SaveWorkModal";
 import StartOverModal from "./dialogs/StartOverModal";
@@ -45,7 +45,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     this.setState({criterionAnswers: {} });
     this.setState({criterionCompletionStatuses: {} });
-    
+
     let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
     window.location = startPage;
   }
@@ -91,7 +91,7 @@ export default class CustomerReviewToolComponent extends React.Component {
   setCriterionAnswersState(key, val) {
     let alteredCriterionAnswers =  this.state.criterionAnswers
     alteredCriterionAnswers[key] = val;
-    
+
     this.saveCriterionAnswers(alteredCriterionAnswers);
     return alteredCriterionAnswers;
   }
@@ -109,7 +109,7 @@ export default class CustomerReviewToolComponent extends React.Component {
   setCriterionCompletionStatuses(key, val) {
     let alteredData =  this.state.criterionCompletionStatuses
     alteredData[key] = val;
-    
+
     localStorage.setItem("criterionCompletionStatus", JSON.stringify(alteredData));
     this.setState({criterionCompletionStatus: alteredData})
   }
@@ -173,67 +173,65 @@ export default class CustomerReviewToolComponent extends React.Component {
     this.setState({currentPage: clickedDistinctive});
   }
 
-  render() {
+    render() {
+        return (
+            <React.Fragment>
+                <SaveWorkModal />
+                <div class="h5 u-mb30">You’re reviewing</div>
+                <h1>{this.state.curriculumTitle}</h1>
 
-    return (
-      <div>
-        <SaveWorkModal />
-        <h1>You’re reviewing: {this.state.curriculumTitle}</h1>
-        
-        <PageInstructionsComponent currentPage={this.state.currentPage} />
+                <PageInstructionsComponent
+                    currentPage={this.state.currentPage} />
 
-        <DistinctiveMenuBar 
-            distinctiveClicked={this.distinctiveClicked.bind(this)}
-            currentPage={this.state.currentPage}
-            contentInProgress={this.state.contentInProgress}
-            utilityInProgress={this.state.utilityInProgress}
-            qualityInProgress={this.state.qualityInProgress}
-            efficacyInProgress={this.state.efficacyInProgress} 
-            
-            handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
-            contentSummaryButton={this.state.contentSummaryButton}
-            utilitySummaryButton={this.state.utilitySummaryButton}
-            qualitySummaryButton={this.state.qualitySummaryButton}
-            efficacySummaryButton={this.state.efficacySummaryButton} />
+                <DistinctiveMenuBar
+                    distinctiveClicked={this.distinctiveClicked.bind(this)}
+                    currentPage={this.state.currentPage}
+                    contentInProgress={this.state.contentInProgress}
+                    utilityInProgress={this.state.utilityInProgress}
+                    qualityInProgress={this.state.qualityInProgress}
+                    efficacyInProgress={this.state.efficacyInProgress}
 
-        <div >
-          <SurveyPageContainer className="SurveyPage" 
-            currentPage={this.state.currentPage} 
+                    handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
+                    contentSummaryButton={this.state.contentSummaryButton}
+                    utilitySummaryButton={this.state.utilitySummaryButton}
+                    qualitySummaryButton={this.state.qualitySummaryButton}
+                    efficacySummaryButton={this.state.efficacySummaryButton} />
 
-            curriculumTitle={this.state.curriculumTitle}
-            publicationDate={this.state.publicationDate}
-            gradeRange={this.state.gradeRange}
+                <SurveyPageContainer className="SurveyPage"
+                    currentPage={this.state.currentPage}
 
-            contentInProgress={this.state.contentInProgress}
-            utilityInProgress={this.state.utilityInProgress}
-            qualityInProgress={this.state.qualityInProgress}
-            efficacyInProgress={this.state.efficacyInProgress} 
+                    curriculumTitle={this.state.curriculumTitle}
+                    publicationDate={this.state.publicationDate}
+                    gradeRange={this.state.gradeRange}
 
-            criterionAnswers={this.state.criterionAnswers}
-            changeCriterionAnswer={this.changeCriterionAnswer.bind(this)}
-            clearLocalStorage={this.clearLocalStorage.bind(this)}
-            initializeAnswerObjects={this.initializeAnswerObjects.bind(this)}
-             />
-        </div>
+                    contentInProgress={this.state.contentInProgress}
+                    utilityInProgress={this.state.utilityInProgress}
+                    qualityInProgress={this.state.qualityInProgress}
+                    efficacyInProgress={this.state.efficacyInProgress}
 
-        <div className="block
-                    block__flush-bottom
-                    block__padded-top
-                    block__border-top">
-            <div className="m-btn-group
-                        m-btn-group__wide">
-                <SummaryButton handleSummaryButtonClick={this.handleSummaryButtonClick.bind(this)}
-                               currentPage={this.state.currentPage}
-                               contentSummaryButton={this.state.contentSummaryButton}
-                               utilitySummaryButton={this.state.utilitySummaryButton}
-                               qualitySummaryButton={this.state.qualitySummaryButton}
-                               efficacySummaryButton={this.state.efficacySummaryButton} 
-                               criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
-                &nbsp;&nbsp;&nbsp;
-                <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
-            </div>
-        </div>
-      </div>
-    );
-  }
+                    criterionAnswers={this.state.criterionAnswers}
+                    changeCriterionAnswer={this.changeCriterionAnswer.bind(this)}
+                    clearLocalStorage={this.clearLocalStorage.bind(this)}
+                    initializeAnswerObjects={this.initializeAnswerObjects.bind(this)} />
+
+                <div className="block
+                                block__flush-bottom
+                                block__padded-top
+                                block__border-top">
+                    <div className="m-btn-group
+                                    m-btn-group__wide">
+                        <SummaryButton handleSummaryButtonClick={this.handleSummaryButtonClick.bind(this)}
+                            currentPage={this.state.currentPage}
+                            contentSummaryButton={this.state.contentSummaryButton}
+                            utilitySummaryButton={this.state.utilitySummaryButton}
+                            qualitySummaryButton={this.state.qualitySummaryButton}
+                            efficacySummaryButton={this.state.efficacySummaryButton}
+                            criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
+
+                        <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
+                    </div>
+                </div>
+            </React.Fragment>
+        );
+    }
 }

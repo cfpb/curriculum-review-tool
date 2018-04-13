@@ -14,7 +14,7 @@ const C = {
   FINAL_SUMMARY_PAGE: "FINAL_SUMMARY_PAGE",
   START_PAGE: "START",
 
-  CONTENT_STATUS: "content_status", 
+  CONTENT_STATUS: "content_status",
   UTILITY_STATUS: "utility_status",
   QUALITY_STATUS: "quality_status",
   EFFICACY_STATUS: "efficacy_status",
@@ -31,8 +31,8 @@ const C = {
   EFFICACY_SUMMARY_BUTTON_ENABLED: "efficacy_summary_enabled",
 
   STATUS_IN_START: "",
-  STATUS_IN_PROGRESS: "In Progress...",
-  STATUS_COMPLETE: "Complete",
+  STATUS_IN_PROGRESS: "in progress",
+  STATUS_COMPLETE: "complete",
 
   START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
 
