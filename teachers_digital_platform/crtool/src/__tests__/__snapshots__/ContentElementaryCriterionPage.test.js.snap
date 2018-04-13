@@ -1631,7 +1631,7 @@ Array [
     className="l-survey-top"
   >
     <button
-      class="a-btn a-btn__link"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       Can I save my work?
@@ -1663,10 +1663,10 @@ Array [
               >
                 Close  
                 <span
-                  class="a-icon a-icon__large"
+                  className="a-icon a-icon__large"
                 >
                   <svg
-                    class="cf-icon-svg"
+                    className="cf-icon-svg"
                     viewBox="0 0 1000 1200"
                     xmlns="http://www.w3.org/2000/svg"
                   >
