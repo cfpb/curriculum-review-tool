@@ -13,7 +13,7 @@ export default class PageInstructionsComponent extends React.Component {
             );
         }
         else {
-            return (<span></span>);
+            return (null);
         }
     }
 }
