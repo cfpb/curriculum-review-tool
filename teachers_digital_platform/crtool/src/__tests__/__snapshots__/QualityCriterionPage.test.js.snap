@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Quality Criterion Page uses state to populate values 1`] = `
-<div>
+Array [
   <hr
     className="hr u-mb45 u-mt30"
-  />
+  />,
   <h2
     className="h1"
   >
@@ -33,40 +33,33 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
       </svg>
     </span>
      Quality
-  </h2>
+  </h2>,
   <p
     className="lead-paragraph"
   >
-    This dimension assesses whether the curriculum quality helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards.
-  </p>
+    The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. 
+    <a
+      href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn more about how the review was developed
+    </a>
+    .
+  </p>,
   <h3
     className="h2"
   >
     Instructions
-  </h3>
+  </h3>,
   <ul>
     <li>
-      Read through the scope and sequence of the curriculum.
+      Read the lessons plans and supporting material for the curriculum.
     </li>
     <li>
-      Skim the lesson plans.
+      Answer each of the following questions.
     </li>
-    <li>
-      Select 
-      <b>
-        <em>
-          yes
-        </em>
-      </b>
-       for the components that are addressed, and 
-      <b>
-        <em>
-          no
-        </em>
-      </b>
-       for those that are not.
-    </li>
-  </ul>
+  </ul>,
   <div
     className="m-notification m-notification__visible u-mb30 u-mt30"
   >
@@ -104,40 +97,22 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
         </p>
       </div>
     </div>
-  </div>
+  </div>,
   <hr
     className="hr u-mb30 u-mt30"
-  />
+  />,
   <div
     className="block block__flush-top"
   >
     <h3
       className="h2"
     >
-      <span
-        className="a-icon a-icon__large a-icon__green"
-      >
-        <svg
-          className="cf-icon-svg"
-          viewBox="0 0 1000 1200"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm259 284.2L481.4 870.3c-8.2 14.1-22.7 23.4-39 24.8-1.4.1-2.9.2-4.3.2-14.8 0-28.9-6.6-38.4-18L244.4 690.9c-17.9-21-15.4-52.6 5.7-70.5 21-17.9 52.6-15.4 70.5 5.7.2.3.5.5.7.8l109.4 131.4 241.8-418.8c13.6-24 44.2-32.4 68.2-18.8 24 13.6 32.4 44.2 18.8 68.2l-.5.5z"
-          />
-        </svg>
-      </span>
-      Criterion 1: Completed criterion 
-      <span
-        className="u-fc-gray"
-      >
-        (complete)
-      </span>
+      Criterion 1: Accessibility
     </h3>
     <p
       className="lead-paragraph"
     >
-      Does the curriculum address grade-level appropriate topics for saving and investing?
+      Are curriculum materials physically accessible to teachers and students in a typical school setting?
     </p>
     <ol
       className="m-list__unstyled"
@@ -163,7 +138,7 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
             Indicator
           </h5>
           <p>
-            People save for the future, and might have different goals for saving and make different choices about how to save.
+            Web-based materials can be accessed using typical school technology and software; links are viewable and work. Paper-based materials are available for a moderate and clearly stated price.
           </p>
         </div>
         <div
@@ -181,8 +156,31 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
               className="o-survey_question"
             >
               <p>
-                One can save money in various ways, including home in a piggy bank or at a commercial union, or savings and loan institution.
+                If there are 
+                <strong>
+                  paper-based materials:
+                </strong>
               </p>
+              <p>
+                Are paper-based materials available at no cost or for a clearly stated price?
+              </p>
+              <div
+                className="m-form-field m-form-field__text"
+              >
+                <label
+                  className="a-label a-label__heading"
+                  for="quality-crt-text-1.1.1"
+                >
+                  Cost of materials per student: $
+                </label>
+                <input
+                  className="a-text-input a-text-input__full"
+                  id="quality-crt-text-1.1.1"
+                  onChange={[Function]}
+                  type="text"
+                  value={undefined}
+                />
+              </div>
             </div>
             <div
               className="o-survey_answer"
@@ -193,15 +191,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_1a"
-                  name="crt-question-1"
+                  id="quality-crt-question-1.1.1a"
+                  name="quality-crt-question-1.1.1"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_1a"
+                  htmlFor="quality-crt-question-1.1.1a"
                 >
                   Yes
                 </label>
@@ -212,17 +210,36 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_1b"
-                  name="crt-question-1"
+                  id="quality-crt-question-1.1.1b"
+                  name="quality-crt-question-1.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_1b"
+                  htmlFor="quality-crt-question-1.1.1b"
                 >
                   No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.1.1c"
+                  name="quality-crt-question-1.1.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.1.1c"
+                >
+                  N/A
                 </label>
               </div>
             </div>
@@ -234,12 +251,14 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
               className="o-survey_question"
             >
               <p>
-                Saving helps individuals act on future opportunities, meet short-term and long-term goals, and address financial emergencies.
+                If there are 
+                <strong>
+                  links
+                </strong>
+                :
               </p>
-              <p
-                className="o-survey_question-helper"
-              >
-                Beneficial, but not essential.
+              <p>
+                Do the links take the user to the appropriate, live website?
               </p>
             </div>
             <div
@@ -251,15 +270,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_2a"
-                  name="crt-question-2"
+                  id="quality-crt-question-1.1.2a"
+                  name="quality-crt-question-1.1.2"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_2a"
+                  htmlFor="quality-crt-question-1.1.2a"
                 >
                   Yes
                 </label>
@@ -270,17 +289,136 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_2b"
-                  name="crt-question-2"
+                  id="quality-crt-question-1.1.2b"
+                  name="quality-crt-question-1.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_2b"
+                  htmlFor="quality-crt-question-1.1.2b"
                 >
                   No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.1.2c"
+                  name="quality-crt-question-1.1.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.1.2c"
+                >
+                  N/A
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                If there are 
+                <strong>
+                  web-based materials:
+                </strong>
+              </p>
+              <p>
+                Can web-based material be accessed without purchasing specialized software?
+              </p>
+              <p
+                className="o-survey_question-helper"
+              >
+                Beneficial, but not essential.
+              </p>
+              <div
+                className="m-form-field m-form-field__text"
+              >
+                <label
+                  className="a-label a-label__heading"
+                  for="quality-crt-text-1.1.3"
+                >
+                  Specialized software
+                </label>
+                <input
+                  className="a-text-input a-text-input__full"
+                  id="quality-crt-text-1.1.3"
+                  onChange={[Function]}
+                  type="text"
+                  value={undefined}
+                />
+              </div>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.1.3a"
+                  name="quality-crt-question-1.1.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.1.3a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.1.3b"
+                  name="quality-crt-question-1.1.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.1.3b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.1.3c"
+                  name="quality-crt-question-1.1.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.1.3c"
+                >
+                  N/A
                 </label>
               </div>
             </div>
@@ -308,7 +446,7 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
             Indicator
           </h5>
           <p>
-            Compound interest affects the value of savings.
+            Copyright limitations on use are minimal and clearly stated.
           </p>
         </div>
         <div
@@ -326,7 +464,11 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
               className="o-survey_question"
             >
               <p>
-                Saving money in a bank or credit union allows the money to earn interest.
+                If there are limitations on use, are 
+                <strong>
+                  limitations clearly specified
+                </strong>
+                ? (e.g., materials are copyrighted or must be purchased)
               </p>
             </div>
             <div
@@ -338,15 +480,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_3a"
-                  name="crt-question-3"
+                  id="quality-crt-question-1.2.1a"
+                  name="quality-crt-question-1.2.1"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_3a"
+                  htmlFor="quality-crt-question-1.2.1a"
                 >
                   Yes
                 </label>
@@ -357,15 +499,87 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_3b"
-                  name="crt-question-3"
+                  id="quality-crt-question-1.2.1b"
+                  name="quality-crt-question-1.2.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_3b"
+                  htmlFor="quality-crt-question-1.2.1b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.2.1c"
+                  name="quality-crt-question-1.2.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.2.1c"
+                >
+                  N/A
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the materials free from limitations on use that might interfere with delivery in a classroom setting?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.2.2a"
+                  name="quality-crt-question-1.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.2.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.2.2b"
+                  name="quality-crt-question-1.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.2.2b"
                 >
                   No
                 </label>
@@ -395,7 +609,7 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
             Indicator
           </h5>
           <p>
-            Investments involve purchase of financial assets to increase wealth.
+            Materials are available in alternate languages and include special needs formats (e.g., Braille).
           </p>
         </div>
         <div
@@ -413,7 +627,176 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
               className="o-survey_question"
             >
               <p>
-                The goal of savings is to set aside income for future spending, whereas the goal of investing is to increase wealth over time.
+                Do the materials include any special needs formats? (e.g., Braille)
+              </p>
+              <div
+                className="m-form-field m-form-field__text"
+              >
+                <label
+                  className="a-label a-label__heading"
+                  for="quality-crt-text-1.3.1"
+                >
+                  Special needs formats include:
+                </label>
+                <input
+                  className="a-text-input a-text-input__full"
+                  id="quality-crt-text-1.3.1"
+                  onChange={[Function]}
+                  type="text"
+                  value={undefined}
+                />
+              </div>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.3.1a"
+                  name="quality-crt-question-1.3.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.3.1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.3.1b"
+                  name="quality-crt-question-1.3.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.3.1b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.3.1c"
+                  name="quality-crt-question-1.3.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.3.1c"
+                >
+                  N/A
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the materials available in languages other than English?
+              </p>
+              <p
+                className="o-survey_question-helper"
+              >
+                Beneficial, but not essential.
+              </p>
+              <div
+                className="m-form-field m-form-field__text"
+              >
+                <label
+                  className="a-label a-label__heading"
+                  for="quality-crt-text-1.3.2"
+                >
+                  Languages included:
+                </label>
+                <input
+                  className="a-text-input a-text-input__full"
+                  id="quality-crt-text-1.3.2"
+                  onChange={[Function]}
+                  type="text"
+                  value={undefined}
+                />
+              </div>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.3.2a"
+                  name="quality-crt-question-1.3.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.3.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-1.3.2b"
+                  name="quality-crt-question-1.3.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-1.3.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Written materials and physical products are durable and reusable or easy to replace.
+              </p>
+              <p
+                className="o-survey_question-helper"
+              >
+                Beneficial, but not essential.
               </p>
             </div>
             <div
@@ -425,15 +808,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_4a"
-                  name="crt-question-4"
+                  id="quality-crt-question-1.3.3a"
+                  name="quality-crt-question-1.3.3"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_4a"
+                  htmlFor="quality-crt-question-1.3.3a"
                 >
                   Yes
                 </label>
@@ -444,15 +827,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_4b"
-                  name="crt-question-4"
+                  id="quality-crt-question-1.3.3b"
+                  name="quality-crt-question-1.3.3"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_4b"
+                  htmlFor="quality-crt-question-1.3.3b"
                 >
                   No
                 </label>
@@ -467,9 +850,9 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="crt-notes-1"
+        htmlFor="quality-crt-notes-1"
       >
-        My notes
+        My notes  
         <small
           className="a-label_helper"
         >
@@ -483,25 +866,25 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="crt-notes-1"
+        id="quality-crt-notes-1"
         onChange={[Function]}
         rows="6"
         value={undefined}
       />
     </div>
-  </div>
+  </div>,
   <div
     className="block block__flush-top"
   >
     <h3
       className="h2"
     >
-      Criterion 2: In progress criterion
+      Criterion 2: Accuracy and timeliness
     </h3>
     <p
       className="lead-paragraph"
     >
-      Does the curriculum address grade-level appropriate topics for earning, income, and careers?
+      Are curriculum materials current and free of error?
     </p>
     <ol
       className="m-list__unstyled"
@@ -527,7 +910,7 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
             Indicator
           </h5>
           <p>
-            Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.
+            Materials are revised regularly and the date of publication or revision is clearly stated.
           </p>
         </div>
         <div
@@ -545,7 +928,11 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
               className="o-survey_question"
             >
               <p>
-                Income is money earned from employment and investments.
+                Have some or all of the materials been published or updated within the 
+                <strong>
+                  last three years
+                </strong>
+                ?
               </p>
             </div>
             <div
@@ -557,15 +944,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_5a"
-                  name="crt-question-5"
+                  id="quality-crt-question-2.1a"
+                  name="quality-crt-question-2.1"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_5a"
+                  htmlFor="quality-crt-question-2.1a"
                 >
                   Yes
                 </label>
@@ -576,36 +963,17 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_5b"
-                  name="crt-question-5"
+                  id="quality-crt-question-2.1b"
+                  name="quality-crt-question-2.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_5b"
+                  htmlFor="quality-crt-question-2.1b"
                 >
                   No
-                </label>
-              </div>
-              <div
-                className="m-form-field m-form-field__radio m-form-field__lg-target"
-              >
-                <input
-                  checked={false}
-                  className="a-radio"
-                  id="crt-question_5c"
-                  name="crt-question-5"
-                  onChange={[Function]}
-                  type="radio"
-                  value="0"
-                />
-                <label
-                  className="a-label"
-                  htmlFor="crt-question_5c"
-                >
-                  N/A
                 </label>
               </div>
             </div>
@@ -633,7 +1001,7 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
             Indicator
           </h5>
           <p>
-            People can change their income by acquiring more education, work experience, and skills.
+            Materials do not contain factual errors or internal inconsistencies.
           </p>
         </div>
         <div
@@ -651,7 +1019,7 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
               className="o-survey_question"
             >
               <p>
-                Various jobs and careers provide different levels of income and require different kinds of skills.
+                Are the materials free of factual errors?
               </p>
             </div>
             <div
@@ -663,15 +1031,15 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_6a"
-                  name="crt-question-6"
+                  id="quality-crt-question-2.2.1a"
+                  name="quality-crt-question-2.2.1"
                   onChange={[Function]}
                   type="radio"
-                  value="1"
+                  value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_6a"
+                  htmlFor="quality-crt-question-2.2.1a"
                 >
                   Yes
                 </label>
@@ -682,15 +1050,155 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 <input
                   checked={false}
                   className="a-radio"
-                  id="crt-question_6b"
-                  name="crt-question-6"
+                  id="quality-crt-question-2.2.1b"
+                  name="quality-crt-question-2.2.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="crt-question_6b"
+                  htmlFor="quality-crt-question-2.2.1b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the materials internally consistent such that none of the material contradicts another part of the material?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-2.2.2a"
+                  name="quality-crt-question-2.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-2.2.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-2.2.2b"
+                  name="quality-crt-question-2.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-2.2.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            2.3
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            Materials do not contain errors.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the materials free of spelling, punctuation, formatting, grammatical, and layout errors?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-2.3a"
+                  name="quality-crt-question-2.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-2.3a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-2.3b"
+                  name="quality-crt-question-2.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-2.3b"
                 >
                   No
                 </label>
@@ -705,72 +1213,1148 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="crt-notes-2"
+        htmlFor="quality-crt-notes-2"
       >
-        My notes 
+        My notes  
         <small
           className="a-label_helper"
         >
           (optional)
         </small>
-      </label>
-      <p
-        className="u-mb15"
-      >
-        <small>
+        <small
+          className="a-label_helper a-label_helper__block"
+        >
           Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
         </small>
-      </p>
+      </label>
       <textarea
-        className="a-text-input a-text-input__full u-mw670"
-        id="crt-notes-2"
+        className="a-text-input a-text-input__full"
+        id="quality-crt-notes-2"
         onChange={[Function]}
         rows="6"
         value={undefined}
       />
     </div>
-  </div>
+  </div>,
   <div
     className="block block__flush-top"
   >
     <h3
       className="h2"
     >
-      <button
-        className="a-btn a-btn__heading"
-      >
-        <span
-          className="a-icon a-icon__large"
-        >
-          <svg
-            className="cf-icon-svg"
-            viewBox="0 0 1000 1200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm263.1 550.7H549.6v213.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V655.9H236c-27.6 0-50-22.4-50-50s22.4-50 50-50h213.6V342.3c0-27.6 22.4-50 50-50s50 22.4 50 50v213.6h213.6c27.6 0 50 22.4 50 50s-22.5 50-50.1 50z"
-            />
-          </svg>
-        </span>
-        Criterion 3: Unopened criterion
-      </button>
+      Criterion 3: Objectivity
     </h3>
-  </div>
+    <p
+      className="lead-paragraph"
+    >
+      Are the curriculum materials objective?
+    </p>
+    <ol
+      className="m-list__unstyled"
+    >
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            3.1
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            Materials differentiate between fact and interpretation, and discuss differing viewpoints.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are interpretations or opinions clearly identified as such, rather than presented as facts?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.1.1a"
+                  name="quality-crt-question-3.1.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.1.1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.1.1b"
+                  name="quality-crt-question-3.1.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.1.1b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Do the materials often present differing viewpoints? (e.g., preferences for modes of savings)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.1.2a"
+                  name="quality-crt-question-3.1.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.1.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.1.2b"
+                  name="quality-crt-question-3.1.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.1.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            3.2
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            Materials show diversity. Text, illustrations, and activities are culturally sensitive.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Do the materials reﬂect diversity in areas such as age, race/ethnicity, gender, and household income?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.2.1a"
+                  name="quality-crt-question-3.2.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.2.1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.2.1b"
+                  name="quality-crt-question-3.2.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.2.1b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Is the content culturally sensitive? (e.g., examples are culturally relevant, free from stereotypes and derogatory terms)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.2.2a"
+                  name="quality-crt-question-3.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.2.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.2.2b"
+                  name="quality-crt-question-3.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.2.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            3.3
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            Materials do not promote branded products, and do explicitly identify funders and authors.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the authors and funders of development and dissemination clearly disclosed?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.3.1a"
+                  name="quality-crt-question-3.3.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.3.1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.3.1b"
+                  name="quality-crt-question-3.3.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.3.1b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Do the materials abstain from promoting particular branded products or specific financial service providers? (e.g., free of slogans, logos, and statements promoting specific branded products or providers)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.3.2a"
+                  name="quality-crt-question-3.3.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.3.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.3.2b"
+                  name="quality-crt-question-3.3.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.3.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the authors’ credentials presented, and do the credentials demonstrate financial education expertise?
+              </p>
+              <p
+                className="o-survey_question-helper"
+              >
+                Beneficial, but not essential.
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.3.3a"
+                  name="quality-crt-question-3.3.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.3.3a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-3.3.3b"
+                  name="quality-crt-question-3.3.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-3.3.3b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div
+      className="m-form-field m-form-field__textarea"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="quality-crt-notes-3"
+      >
+        My notes  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+        <small
+          className="a-label_helper a-label_helper__block"
+        >
+          Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+        </small>
+      </label>
+      <textarea
+        className="a-text-input a-text-input__full"
+        id="quality-crt-notes-3"
+        onChange={[Function]}
+        rows="6"
+        value={undefined}
+      />
+    </div>
+  </div>,
+  <div
+    className="block block__flush-top"
+  >
+    <h3
+      className="h2"
+    >
+      Criterion 4: Visual appearance
+    </h3>
+    <p
+      className="lead-paragraph"
+    >
+      Is the visual appearance of the student materials conducive to learning?
+    </p>
+    <ol
+      className="m-list__unstyled"
+    >
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            4.1
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            The design supports learning rather than distracts.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are the visuals 
+                <strong>
+                  informative
+                </strong>
+                 and 
+                <strong>
+                  related to the text
+                </strong>
+                ?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.1a"
+                  name="quality-crt-question-4.1.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.1b"
+                  name="quality-crt-question-4.1.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.1b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Do the visuals focus on 
+                <strong>
+                  core concepts
+                </strong>
+                ? (e.g., not prioritizing unimportant information because it is easier to display)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.2a"
+                  name="quality-crt-question-4.1.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.2b"
+                  name="quality-crt-question-4.1.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are visual displays clearly 
+                <strong>
+                  labeled
+                </strong>
+                 and in 
+                <strong>
+                  close proximity to related text
+                </strong>
+                ?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.3a"
+                  name="quality-crt-question-4.1.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.3a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.3b"
+                  name="quality-crt-question-4.1.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.3b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Is the content organized 
+                <strong>
+                  logically
+                </strong>
+                 and 
+                <strong>
+                  consistently
+                </strong>
+                ?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.4a"
+                  name="quality-crt-question-4.1.4"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.4a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.1.4b"
+                  name="quality-crt-question-4.1.4"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.1.4b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            4.2
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            The formatting is clear and easy to read.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Is the text 
+                <strong>
+                  easy to read
+                </strong>
+                ? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.1a"
+                  name="quality-crt-question-4.2.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.1b"
+                  name="quality-crt-question-4.2.1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.1b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are web-based materials organized in 
+                <strong>
+                  logical
+                </strong>
+                 and manageable sections?
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.2a"
+                  name="quality-crt-question-4.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.2b"
+                  name="quality-crt-question-4.2.2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.2b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Is the web-based presentation 
+                <strong>
+                  readable
+                </strong>
+                ? (e.g., maximum of 60 characters per line, use of full screen)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.3a"
+                  name="quality-crt-question-4.2.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.3a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.3b"
+                  name="quality-crt-question-4.2.3"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.3b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              className="o-survey_question"
+            >
+              <p>
+                Are web-based materials 
+                <strong>
+                  easy to navigate
+                </strong>
+                ? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.4a"
+                  name="quality-crt-question-4.2.4"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.4a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="quality-crt-question-4.2.4b"
+                  name="quality-crt-question-4.2.4"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="quality-crt-question-4.2.4b"
+                >
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div
+      className="m-form-field m-form-field__textarea"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="quality-crt-notes-4"
+      >
+        My notes  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+        <small
+          className="a-label_helper a-label_helper__block"
+        >
+          Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+        </small>
+      </label>
+      <textarea
+        className="a-text-input a-text-input__full"
+        id="quality-crt-notes-4"
+        onChange={[Function]}
+        rows="6"
+        value={undefined}
+      />
+    </div>
+  </div>,
   <div
     className="l-survey-top"
   >
     <button
+      className="a-btn a-btn__link"
       onClick={[Function]}
-      type="button"
     >
       Can I save my work?
     </button>
     <div
-      aria-describedby="example-modal-desc"
+      aria-describedby="modal-save-work_desc"
       aria-hidden="true"
-      aria-labelledby="example-modal-title"
+      aria-labelledby="modal-save-work_title"
       className="o-modal"
-      id="save-work-modal-dialog"
+      id="modal-save-work"
       role="alertdialog"
     >
       <div
@@ -790,27 +2374,49 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
                 className="o-modal_close a-btn a-btn__link"
                 onClick={[Function]}
               >
-                Close
+                Close  
                 <span
-                  className="cf-icon cf-icon-delete-round"
-                />
+                  className="a-icon a-icon__large"
+                >
+                  <svg
+                    className="cf-icon-svg"
+                    viewBox="0 0 1000 1200"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                    />
+                  </svg>
+                </span>
               </button>
               <h1
-                id="example-modal-title"
+                id="modal-save-work_title"
               >
                 Saving your work
               </h1>
               <div
-                id="example-modal-desc"
+                id="modal-save-work_desc"
               >
                 <p>
-                  This tool uses cookies to temporarily save your work. To load answers you’ve already completed, use the same computer and browser, and don't clear your cookies.
+                  This tool uses cookies to 
+                  <strong>
+                    temporarily
+                  </strong>
+                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
                 </p>
                 <p>
-                  To save a permanent copy of your work, please download a summary of each dimension as you complete it. You can download an overall summary of findings after completing any dimension as well.
+                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                  <a
+                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    save the summary as a PDF
+                  </a>
+                  .
                 </p>
                 <p>
-                  You can only work on a single curriculum at a time.
+                  You can only work on a single curriculum at a time
                 </p>
               </div>
             </div>
@@ -828,12 +2434,12 @@ exports[`Quality Criterion Page uses state to populate values 1`] = `
         </form>
       </div>
     </div>
-  </div>
+  </div>,
   <h2
     className="h4"
   >
     You’re Reviewing: 
     <b />
-  </h2>
-</div>
+  </h2>,
+]
 `;
