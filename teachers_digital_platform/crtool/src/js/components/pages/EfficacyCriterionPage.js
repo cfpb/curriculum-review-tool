@@ -921,7 +921,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
                                         <p>Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?</p>
-                                        BENEFICIAL
+                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
                                     </div>
                                     <div className="o-survey_answer">
                                         <div className="m-form-field
