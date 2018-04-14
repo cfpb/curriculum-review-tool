@@ -63,16 +63,17 @@ export default class QualityCriterionPage extends React.Component {
                                 <h5 className="h3">Component</h5>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>If there are <strong>paper-based materials</strong>:</p>
+                                        <p>If there are <strong>paper-based materials:</strong></p>
                                         <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
-                                        <div className="m-form-field
-                                                        m-form-field__text">
-                                            <label className="a-label a-label__heading"
-                                                htmlFor="quality-crt-text-1.1">
+                                        <div className="m-form-field m-form-field__text">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-1.1.1">
                                                 Cost of materials per student: $
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.1" />
+                                                id="quality-crt-text-1.1.1"
+                                                ref="quality-crt-text-1.1.1"
+                                                value={this.props.criterionAnswers['equality-crt-text-1.1.1']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.1.1', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -80,13 +81,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1a"
-                                                name="quality-crt-question-1.1"
-                                                ref="quality-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1', 'yes')}} />
+                                                id="quality-crt-question-1.1.1a"
+                                                name="quality-crt-question-1.1.1"
+                                                ref="quality-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1a">
+                                                htmlFor="quality-crt-question-1.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -94,13 +95,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1b"
-                                                name="quality-crt-question-1.1"
-                                                ref="quality-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1', 'no')}} />
+                                                id="quality-crt-question-1.1.1b"
+                                                name="quality-crt-question-1.1.1"
+                                                ref="quality-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1b">
+                                                htmlFor="quality-crt-question-1.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -108,13 +109,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1c"
-                                                name="quality-crt-question-1.1"
-                                                ref="quality-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1', 'na')}} />
+                                                id="quality-crt-question-1.1.1c"
+                                                name="quality-crt-question-1.1.1"
+                                                ref="quality-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.1', 'na')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1c">
+                                                htmlFor="quality-crt-question-1.1.1c">
                                                 N/A
                                             </label>
                                         </div>
@@ -130,13 +131,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2a"
-                                                name="quality-crt-question-1.2"
-                                                ref="quality-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2', 'yes')}} />
+                                                id="quality-crt-question-1.1.2a"
+                                                name="quality-crt-question-1.1.2"
+                                                ref="quality-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2a">
+                                                htmlFor="quality-crt-question-1.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -144,13 +145,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2b"
-                                                name="quality-crt-question-1.2"
-                                                ref="quality-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2', 'no')}} />
+                                                id="quality-crt-question-1.1.2b"
+                                                name="quality-crt-question-1.1.2"
+                                                ref="quality-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2b">
+                                                htmlFor="quality-crt-question-1.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -158,13 +159,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2c"
-                                                name="quality-crt-question-1.2"
-                                                ref="quality-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2', 'na')}} />
+                                                id="quality-crt-question-1.1.2c"
+                                                name="quality-crt-question-1.1.2"
+                                                ref="quality-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.2', 'na')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2c">
+                                                htmlFor="quality-crt-question-1.1.2c">
                                                 N/A
                                             </label>
                                         </div>
@@ -175,14 +176,15 @@ export default class QualityCriterionPage extends React.Component {
                                         <p>If there are <strong>web-based materials:</strong></p>
                                         <p>Can web-based material be accessed without purchasing specialized software?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field
-                                                        m-form-field__text">
-                                            <label className="a-label a-label__heading"
-                                                htmlFor="quality-crt-text-1.2">
+                                        <div className="m-form-field m-form-field__text">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-1.1.3">
                                                 Specialized software
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.2" />
+                                                id="quality-crt-text-1.1.3"
+                                                ref="quality-crt-text-1.1.3"
+                                                value={this.props.criterionAnswers['equality-crt-text-1.1.3']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.1.3', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -190,13 +192,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3a"
-                                                name="quality-crt-question-1.3"
-                                                ref="quality-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3', 'yes')}} />
+                                                id="quality-crt-question-1.1.3a"
+                                                name="quality-crt-question-1.1.3"
+                                                ref="quality-crt-question-1.1.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3a">
+                                                htmlFor="quality-crt-question-1.1.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -204,13 +206,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3b"
-                                                name="quality-crt-question-1.3"
-                                                ref="quality-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3', 'no')}} />
+                                                id="quality-crt-question-1.1.3b"
+                                                name="quality-crt-question-1.1.3"
+                                                ref="quality-crt-question-1.1.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3b">
+                                                htmlFor="quality-crt-question-1.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -218,13 +220,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3c"
-                                                name="quality-crt-question-1.3"
-                                                ref="quality-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3', 'na')}} />
+                                                id="quality-crt-question-1.1.3c"
+                                                name="quality-crt-question-1.1.3"
+                                                ref="quality-crt-question-1.1.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.3"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.3', 'na')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3c">
+                                                htmlFor="quality-crt-question-1.1.3c">
                                                 N/A
                                             </label>
                                         </div>
@@ -251,13 +253,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.4a"
-                                                name="quality-crt-question-1.4"
-                                                ref="quality-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.4', 'yes')}} />
+                                                id="quality-crt-question-1.2.1a"
+                                                name="quality-crt-question-1.2.1"
+                                                ref="quality-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.4a">
+                                                htmlFor="quality-crt-question-1.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -265,13 +267,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.4b"
-                                                name="quality-crt-question-1.4"
-                                                ref="quality-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.4', 'no')}} />
+                                                id="quality-crt-question-1.2.1b"
+                                                name="quality-crt-question-1.2.1"
+                                                ref="quality-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.4b">
+                                                htmlFor="quality-crt-question-1.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -279,13 +281,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.4c"
-                                                name="quality-crt-question-1.4"
-                                                ref="quality-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.4"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.4', 'na')}} />
+                                                id="quality-crt-question-1.2.1c"
+                                                name="quality-crt-question-1.2.1"
+                                                ref="quality-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.1', 'na')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.4c">
+                                                htmlFor="quality-crt-question-1.2.1c">
                                                 N/A
                                             </label>
                                         </div>
@@ -300,13 +302,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.5a"
-                                                name="quality-crt-question-1.5"
-                                                ref="quality-crt-question-1.5"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.5', 'yes')}} />
+                                                id="quality-crt-question-1.2.2a"
+                                                name="quality-crt-question-1.2.2"
+                                                ref="quality-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.5a">
+                                                htmlFor="quality-crt-question-1.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -314,13 +316,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.5b"
-                                                name="quality-crt-question-1.5"
-                                                ref="quality-crt-question-1.5"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.5', 'no')}} />
+                                                id="quality-crt-question-1.2.2b"
+                                                name="quality-crt-question-1.2.2"
+                                                ref="quality-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.5b">
+                                                htmlFor="quality-crt-question-1.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -341,14 +343,15 @@ export default class QualityCriterionPage extends React.Component {
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
                                         <p>Do the materials include any special needs formats? (e.g., Braille)</p>
-                                        <div className="m-form-field
-                                                        m-form-field__text">
-                                            <label className="a-label a-label__heading"
-                                                htmlFor="quality-crt-text-1.3">
+                                        <div className="m-form-field m-form-field__text">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-1.3.1">
                                                 Special needs formats include:
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.3" />
+                                                id="quality-crt-text-1.3.1"
+                                                ref="quality-crt-text-1.3.1"
+                                                value={this.props.criterionAnswers['equality-crt-text-1.3.1']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.3.1', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -356,13 +359,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.6a"
-                                                name="quality-crt-question-1.6"
-                                                ref="quality-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.6', 'yes')}} />
+                                                id="quality-crt-question-1.3.1a"
+                                                name="quality-crt-question-1.3.1"
+                                                ref="quality-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.6a">
+                                                htmlFor="quality-crt-question-1.3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -370,13 +373,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.6b"
-                                                name="quality-crt-question-1.6"
-                                                ref="quality-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.6', 'no')}} />
+                                                id="quality-crt-question-1.3.1b"
+                                                name="quality-crt-question-1.3.1"
+                                                ref="quality-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.6b">
+                                                htmlFor="quality-crt-question-1.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -384,13 +387,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.6c"
-                                                name="quality-crt-question-1.6"
-                                                ref="quality-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.6"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.6', 'na')}} />
+                                                id="quality-crt-question-1.3.1c"
+                                                name="quality-crt-question-1.3.1"
+                                                ref="quality-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.1', 'na')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.6c">
+                                                htmlFor="quality-crt-question-1.3.1c">
                                                 N/A
                                             </label>
                                         </div>
@@ -400,14 +403,15 @@ export default class QualityCriterionPage extends React.Component {
                                     <div className="o-survey_question">
                                         <p>Are the materials available in languages other than English?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field
-                                                        m-form-field__text">
-                                            <label className="a-label a-label__heading"
-                                                htmlFor="quality-crt-text-1.4">
+                                        <div className="m-form-field m-form-field__text">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-1.3.2">
                                                 Languages included:
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.4" />
+                                                id="quality-crt-text-1.3.2"
+                                                ref="quality-crt-text-1.3.2"
+                                                value={this.props.criterionAnswers['equality-crt-text-1.3.2']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.3.2', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -415,13 +419,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.7a"
-                                                name="quality-crt-question-1.7"
-                                                ref="quality-crt-question-1.7"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.7"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.7', 'yes')}} />
+                                                id="quality-crt-question-1.3.2a"
+                                                name="quality-crt-question-1.3.2"
+                                                ref="quality-crt-question-1.3.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.7a">
+                                                htmlFor="quality-crt-question-1.3.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -429,13 +433,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.7b"
-                                                name="quality-crt-question-1.7"
-                                                ref="quality-crt-question-1.7"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.7"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.7', 'no')}} />
+                                                id="quality-crt-question-1.3.2b"
+                                                name="quality-crt-question-1.3.2"
+                                                ref="quality-crt-question-1.3.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.7b">
+                                                htmlFor="quality-crt-question-1.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -451,13 +455,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.8a"
-                                                name="quality-crt-question-1.8"
-                                                ref="quality-crt-question-1.8"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.8"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.8', 'yes')}} />
+                                                id="quality-crt-question-1.3.3a"
+                                                name="quality-crt-question-1.3.3"
+                                                ref="quality-crt-question-1.3.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.8a">
+                                                htmlFor="quality-crt-question-1.3.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -465,13 +469,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.8b"
-                                                name="quality-crt-question-1.8"
-                                                ref="quality-crt-question-1.8"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.8"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.8', 'no')}} />
+                                                id="quality-crt-question-1.3.3b"
+                                                name="quality-crt-question-1.3.3"
+                                                ref="quality-crt-question-1.3.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.8b">
+                                                htmlFor="quality-crt-question-1.3.3b">
                                                 No
                                             </label>
                                         </div>
@@ -522,13 +526,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.9a"
-                                                name="quality-crt-question-1.9"
-                                                ref="quality-crt-question-1.9"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.9"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.9', 'yes')}} />
+                                                id="quality-crt-question-2.1a"
+                                                name="quality-crt-question-2.1"
+                                                ref="quality-crt-question-2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.9a">
+                                                htmlFor="quality-crt-question-2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -536,13 +540,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.9b"
-                                                name="quality-crt-question-1.9"
-                                                ref="quality-crt-question-1.9"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.9"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.9', 'no')}} />
+                                                id="quality-crt-question-2.1b"
+                                                name="quality-crt-question-2.1"
+                                                ref="quality-crt-question-2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.9b">
+                                                htmlFor="quality-crt-question-2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -569,13 +573,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.10a"
-                                                name="quality-crt-question-1.10"
-                                                ref="quality-crt-question-1.10"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.10"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.10', 'yes')}} />
+                                                id="quality-crt-question-2.2.1a"
+                                                name="quality-crt-question-2.2.1"
+                                                ref="quality-crt-question-2.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.10a">
+                                                htmlFor="quality-crt-question-2.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -583,13 +587,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.10b"
-                                                name="quality-crt-question-1.10"
-                                                ref="quality-crt-question-1.10"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.10"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.10', 'no')}} />
+                                                id="quality-crt-question-2.2.1b"
+                                                name="quality-crt-question-2.2.1"
+                                                ref="quality-crt-question-2.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.10b">
+                                                htmlFor="quality-crt-question-2.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -604,13 +608,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.11a"
-                                                name="quality-crt-question-1.11"
-                                                ref="quality-crt-question-1.11"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.11"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.11', 'yes')}} />
+                                                id="quality-crt-question-2.2.2a"
+                                                name="quality-crt-question-2.2.2"
+                                                ref="quality-crt-question-2.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.11a">
+                                                htmlFor="quality-crt-question-2.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -618,13 +622,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.11b"
-                                                name="quality-crt-question-1.11"
-                                                ref="quality-crt-question-1.11"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.11"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.11', 'no')}} />
+                                                id="quality-crt-question-2.2.2b"
+                                                name="quality-crt-question-2.2.2"
+                                                ref="quality-crt-question-2.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.11b">
+                                                htmlFor="quality-crt-question-2.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -651,13 +655,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.12a"
-                                                name="quality-crt-question-1.12"
-                                                ref="quality-crt-question-1.12"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.12"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.12', 'yes')}} />
+                                                id="quality-crt-question-2.3a"
+                                                name="quality-crt-question-2.3"
+                                                ref="quality-crt-question-2.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.12a">
+                                                htmlFor="quality-crt-question-2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -665,13 +669,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.12b"
-                                                name="quality-crt-question-1.12"
-                                                ref="quality-crt-question-1.12"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.12"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.12', 'no')}} />
+                                                id="quality-crt-question-2.3b"
+                                                name="quality-crt-question-2.3"
+                                                ref="quality-crt-question-2.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.12b">
+                                                htmlFor="quality-crt-question-2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -722,13 +726,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.13a"
-                                                name="quality-crt-question-1.13"
-                                                ref="quality-crt-question-1.13"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.13"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.13', 'yes')}} />
+                                                id="quality-crt-question-3.1.1a"
+                                                name="quality-crt-question-3.1.1"
+                                                ref="quality-crt-question-3.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.13a">
+                                                htmlFor="quality-crt-question-3.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -736,13 +740,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.13b"
-                                                name="quality-crt-question-1.13"
-                                                ref="quality-crt-question-1.13"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.13"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.13', 'no')}} />
+                                                id="quality-crt-question-3.1.1b"
+                                                name="quality-crt-question-3.1.1"
+                                                ref="quality-crt-question-3.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.13b">
+                                                htmlFor="quality-crt-question-3.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -757,13 +761,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.14a"
-                                                name="quality-crt-question-1.14"
-                                                ref="quality-crt-question-1.14"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.14"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.14', 'yes')}} />
+                                                id="quality-crt-question-3.1.2a"
+                                                name="quality-crt-question-3.1.2"
+                                                ref="quality-crt-question-3.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.14a">
+                                                htmlFor="quality-crt-question-3.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -771,13 +775,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.14b"
-                                                name="quality-crt-question-1.14"
-                                                ref="quality-crt-question-1.14"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.14"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.14', 'no')}} />
+                                                id="quality-crt-question-3.1.2b"
+                                                name="quality-crt-question-3.1.2"
+                                                ref="quality-crt-question-3.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.14b">
+                                                htmlFor="quality-crt-question-3.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -804,13 +808,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.15a"
-                                                name="quality-crt-question-1.15"
-                                                ref="quality-crt-question-1.15"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.15"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.15', 'yes')}} />
+                                                id="quality-crt-question-3.2.1a"
+                                                name="quality-crt-question-3.2.1"
+                                                ref="quality-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.15a">
+                                                htmlFor="quality-crt-question-3.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -818,13 +822,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.15b"
-                                                name="quality-crt-question-1.15"
-                                                ref="quality-crt-question-1.15"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.15"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.15', 'no')}} />
+                                                id="quality-crt-question-3.2.1b"
+                                                name="quality-crt-question-3.2.1"
+                                                ref="quality-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.15b">
+                                                htmlFor="quality-crt-question-3.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -839,13 +843,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.16a"
-                                                name="quality-crt-question-1.16"
-                                                ref="quality-crt-question-1.16"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.16"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.16', 'yes')}} />
+                                                id="quality-crt-question-3.2.2a"
+                                                name="quality-crt-question-3.2.2"
+                                                ref="quality-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.16a">
+                                                htmlFor="quality-crt-question-3.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -853,13 +857,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.16b"
-                                                name="quality-crt-question-1.16"
-                                                ref="quality-crt-question-1.16"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.16"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.16', 'no')}} />
+                                                id="quality-crt-question-3.2.2b"
+                                                name="quality-crt-question-3.2.2"
+                                                ref="quality-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.16b">
+                                                htmlFor="quality-crt-question-3.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -886,13 +890,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.17a"
-                                                name="quality-crt-question-1.17"
-                                                ref="quality-crt-question-1.17"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.17"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.17', 'yes')}} />
+                                                id="quality-crt-question-3.3.1a"
+                                                name="quality-crt-question-3.3.1"
+                                                ref="quality-crt-question-3.3.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.17a">
+                                                htmlFor="quality-crt-question-3.3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -900,13 +904,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.17b"
-                                                name="quality-crt-question-1.17"
-                                                ref="quality-crt-question-1.17"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.17"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.17', 'no')}} />
+                                                id="quality-crt-question-3.3.1b"
+                                                name="quality-crt-question-3.3.1"
+                                                ref="quality-crt-question-3.3.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.17b">
+                                                htmlFor="quality-crt-question-3.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -921,13 +925,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.18a"
-                                                name="quality-crt-question-1.18"
-                                                ref="quality-crt-question-1.18"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.18"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.18', 'yes')}} />
+                                                id="quality-crt-question-3.3.2a"
+                                                name="quality-crt-question-3.3.2"
+                                                ref="quality-crt-question-3.3.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.18a">
+                                                htmlFor="quality-crt-question-3.3.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -935,13 +939,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.18b"
-                                                name="quality-crt-question-1.18"
-                                                ref="quality-crt-question-1.18"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.18"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.18', 'no')}} />
+                                                id="quality-crt-question-3.3.2b"
+                                                name="quality-crt-question-3.3.2"
+                                                ref="quality-crt-question-3.3.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.18b">
+                                                htmlFor="quality-crt-question-3.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -957,13 +961,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.19a"
-                                                name="quality-crt-question-1.19"
-                                                ref="quality-crt-question-1.19"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.19"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.19', 'yes')}} />
+                                                id="quality-crt-question-3.3.3a"
+                                                name="quality-crt-question-3.3.3"
+                                                ref="quality-crt-question-3.3.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.19a">
+                                                htmlFor="quality-crt-question-3.3.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -971,13 +975,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.19b"
-                                                name="quality-crt-question-1.19"
-                                                ref="quality-crt-question-1.19"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.19"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.19', 'no')}} />
+                                                id="quality-crt-question-3.3.3b"
+                                                name="quality-crt-question-3.3.3"
+                                                ref="quality-crt-question-3.3.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.19b">
+                                                htmlFor="quality-crt-question-3.3.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1028,13 +1032,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.20a"
-                                                name="quality-crt-question-1.20"
-                                                ref="quality-crt-question-1.20"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.20"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.20', 'yes')}} />
+                                                id="quality-crt-question-4.1.1a"
+                                                name="quality-crt-question-4.1.1"
+                                                ref="quality-crt-question-4.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.20a">
+                                                htmlFor="quality-crt-question-4.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1042,13 +1046,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.20b"
-                                                name="quality-crt-question-1.20"
-                                                ref="quality-crt-question-1.20"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.20"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.20', 'no')}} />
+                                                id="quality-crt-question-4.1.1b"
+                                                name="quality-crt-question-4.1.1"
+                                                ref="quality-crt-question-4.1.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.20b">
+                                                htmlFor="quality-crt-question-4.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1063,13 +1067,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.21a"
-                                                name="quality-crt-question-1.21"
-                                                ref="quality-crt-question-1.21"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.21"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.21', 'yes')}} />
+                                                id="quality-crt-question-4.1.2a"
+                                                name="quality-crt-question-4.1.2"
+                                                ref="quality-crt-question-4.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.21a">
+                                                htmlFor="quality-crt-question-4.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1077,13 +1081,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.21b"
-                                                name="quality-crt-question-1.21"
-                                                ref="quality-crt-question-1.21"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.21"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.21', 'no')}} />
+                                                id="quality-crt-question-4.1.2b"
+                                                name="quality-crt-question-4.1.2"
+                                                ref="quality-crt-question-4.1.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.21b">
+                                                htmlFor="quality-crt-question-4.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1098,13 +1102,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.22a"
-                                                name="quality-crt-question-1.22"
-                                                ref="quality-crt-question-1.22"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.22"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.22', 'yes')}} />
+                                                id="quality-crt-question-4.1.3a"
+                                                name="quality-crt-question-4.1.3"
+                                                ref="quality-crt-question-4.1.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.22a">
+                                                htmlFor="quality-crt-question-4.1.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1112,13 +1116,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.22b"
-                                                name="quality-crt-question-1.22"
-                                                ref="quality-crt-question-1.22"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.22"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.22', 'no')}} />
+                                                id="quality-crt-question-4.1.3b"
+                                                name="quality-crt-question-4.1.3"
+                                                ref="quality-crt-question-4.1.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.22b">
+                                                htmlFor="quality-crt-question-4.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1133,13 +1137,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.23a"
-                                                name="quality-crt-question-1.23"
-                                                ref="quality-crt-question-1.23"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.23"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.23', 'yes')}} />
+                                                id="quality-crt-question-4.1.4a"
+                                                name="quality-crt-question-4.1.4"
+                                                ref="quality-crt-question-4.1.4"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.23a">
+                                                htmlFor="quality-crt-question-4.1.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1147,13 +1151,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.23b"
-                                                name="quality-crt-question-1.23"
-                                                ref="quality-crt-question-1.23"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.23"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.23', 'no')}} />
+                                                id="quality-crt-question-4.1.4b"
+                                                name="quality-crt-question-4.1.4"
+                                                ref="quality-crt-question-4.1.4"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.23b">
+                                                htmlFor="quality-crt-question-4.1.4b">
                                                 No
                                             </label>
                                         </div>
@@ -1180,13 +1184,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.24a"
-                                                name="quality-crt-question-1.24"
-                                                ref="quality-crt-question-1.24"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.24"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.24', 'yes')}} />
+                                                id="quality-crt-question-4.2.1a"
+                                                name="quality-crt-question-4.2.1"
+                                                ref="quality-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.24a">
+                                                htmlFor="quality-crt-question-4.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1194,13 +1198,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.24b"
-                                                name="quality-crt-question-1.24"
-                                                ref="quality-crt-question-1.24"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.24"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.24', 'no')}} />
+                                                id="quality-crt-question-4.2.1b"
+                                                name="quality-crt-question-4.2.1"
+                                                ref="quality-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.24b">
+                                                htmlFor="quality-crt-question-4.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1215,13 +1219,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.25a"
-                                                name="quality-crt-question-1.25"
-                                                ref="quality-crt-question-1.25"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.25"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.25', 'yes')}} />
+                                                id="quality-crt-question-4.2.2a"
+                                                name="quality-crt-question-4.2.2"
+                                                ref="quality-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.25a">
+                                                htmlFor="quality-crt-question-4.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1229,13 +1233,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.25b"
-                                                name="quality-crt-question-1.25"
-                                                ref="quality-crt-question-1.25"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.25"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.25', 'no')}} />
+                                                id="quality-crt-question-4.2.2b"
+                                                name="quality-crt-question-4.2.2"
+                                                ref="quality-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.25b">
+                                                htmlFor="quality-crt-question-4.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1250,13 +1254,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.26a"
-                                                name="quality-crt-question-1.26"
-                                                ref="quality-crt-question-1.26"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.26"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.26', 'yes')}} />
+                                                id="quality-crt-question-4.2.3a"
+                                                name="quality-crt-question-4.2.3"
+                                                ref="quality-crt-question-4.2.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.26a">
+                                                htmlFor="quality-crt-question-4.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1264,13 +1268,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.26b"
-                                                name="quality-crt-question-1.26"
-                                                ref="quality-crt-question-1.26"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.26"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.26', 'no')}} />
+                                                id="quality-crt-question-4.2.3b"
+                                                name="quality-crt-question-4.2.3"
+                                                ref="quality-crt-question-4.2.3"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.26b">
+                                                htmlFor="quality-crt-question-4.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1285,13 +1289,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.27a"
-                                                name="quality-crt-question-1.27"
-                                                ref="quality-crt-question-1.27"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.27"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.27', 'yes')}} />
+                                                id="quality-crt-question-4.2.4a"
+                                                name="quality-crt-question-4.2.4"
+                                                ref="quality-crt-question-4.2.4"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.27a">
+                                                htmlFor="quality-crt-question-4.2.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1299,13 +1303,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.27b"
-                                                name="quality-crt-question-1.27"
-                                                ref="quality-crt-question-1.27"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.27"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.27', 'no')}} />
+                                                id="quality-crt-question-4.2.4b"
+                                                name="quality-crt-question-4.2.4"
+                                                ref="quality-crt-question-4.2.4"
+                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.27b">
+                                                htmlFor="quality-crt-question-4.2.4b">
                                                 No
                                             </label>
                                         </div>
