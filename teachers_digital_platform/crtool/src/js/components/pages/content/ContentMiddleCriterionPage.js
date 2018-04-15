@@ -1385,7 +1385,9 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <SaveWorkModal />
+                <div className="l-survey-top">
+                    <SaveWorkModal />
+                </div>
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
         );

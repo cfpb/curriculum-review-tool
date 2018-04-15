@@ -6,7 +6,7 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 export default class UtilityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
         this.props.changeCriterionAnswer(C.UTILITY_PAGE, key, checkedValue);
-    }   
+    }
 
     componentDidMount() {
         var myObjects = this.refs;
@@ -73,7 +73,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_1a" type="radio" name="crt-question-1" value="yes" 
+                                        <input className="a-radio" id="crt-question_1a" type="radio" name="crt-question-1" value="yes"
                                             ref="utility-crt-quesion-1.1"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.1"] === 'yes'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.1', 'yes')}} />
@@ -84,7 +84,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_1b" type="radio" name="crt-question-1" value="no" 
+                                        <input className="a-radio" id="crt-question_1b" type="radio" name="crt-question-1" value="no"
                                             ref="utility-crt-quesion-1.1"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.1"] === 'no'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.1', 'no')}} />
@@ -103,7 +103,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_2a" type="radio" name="crt-question-2" value="yes" 
+                                        <input className="a-radio" id="crt-question_2a" type="radio" name="crt-question-2" value="yes"
                                             ref="utility-crt-quesion-1.2"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.2"] === 'yes'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.2', 'yes')}} />
@@ -114,7 +114,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_2b" type="radio" name="crt-question-2" value="no" 
+                                        <input className="a-radio" id="crt-question_2b" type="radio" name="crt-question-2" value="no"
                                             ref="utility-crt-quesion-1.2"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.2"] === 'no'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.2', 'no')}}/>
@@ -144,7 +144,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_3a" type="radio" name="crt-question-3" value="yes" 
+                                        <input className="a-radio" id="crt-question_3a" type="radio" name="crt-question-3" value="yes"
                                             ref="utility-crt-quesion-1.3"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.3"] === 'yes'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.3', 'yes')}} />
@@ -155,7 +155,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_3b" type="radio" name="crt-question-3" value="no" 
+                                        <input className="a-radio" id="crt-question_3b" type="radio" name="crt-question-3" value="no"
                                             ref="utility-crt-quesion-1.3"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.3"] === 'no'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.3', 'no')}} />
@@ -185,7 +185,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_4a" type="radio" name="crt-question-4" value="yes" 
+                                        <input className="a-radio" id="crt-question_4a" type="radio" name="crt-question-4" value="yes"
                                             ref="utility-crt-quesion-1.4"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.4"] === 'yes'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.4', 'yes')}} />
@@ -196,7 +196,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_4b" type="radio" name="crt-question-4" value="no" 
+                                        <input className="a-radio" id="crt-question_4b" type="radio" name="crt-question-4" value="no"
                                             ref="utility-crt-quesion-1.4"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.4"] === 'no'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.4', 'no')}} />
@@ -222,7 +222,7 @@ export default class UtilityCriterionPage extends React.Component {
                                 id="crt-notes-1"
                                 rows="6"
                                 ref="utility-crt-notes-1"
-                                value={this.props.criterionAnswers['utility-crt-notes-1']} 
+                                value={this.props.criterionAnswers['utility-crt-notes-1']}
                                 onChange={e=>this.changeCriterionAnswer('utility-crt-notes-1', e.target.value)} >
                     </textarea>
                 </div>
@@ -251,7 +251,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_5a" type="radio" name="crt-question-5" value="yes" 
+                                        <input className="a-radio" id="crt-question_5a" type="radio" name="crt-question-5" value="yes"
                                             ref="utility-crt-quesion-1.5"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.5"] === 'yes'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.5', 'yes')}} />
@@ -262,7 +262,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_5b" type="radio" name="crt-question-5" value="no" 
+                                        <input className="a-radio" id="crt-question_5b" type="radio" name="crt-question-5" value="no"
                                             ref="utility-crt-quesion-1.5"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.5"] === 'no'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.5', 'no')}} />
@@ -273,7 +273,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_5c" type="radio" name="crt-question-5" value="na" 
+                                        <input className="a-radio" id="crt-question_5c" type="radio" name="crt-question-5" value="na"
                                             ref="utility-crt-quesion-1.5"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.5"] === 'na'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.5', 'na')}} />
@@ -303,7 +303,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_6a" type="radio" name="crt-question-6" value="yes" 
+                                        <input className="a-radio" id="crt-question_6a" type="radio" name="crt-question-6" value="yes"
                                             ref="utility-crt-quesion-1.6"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.6"] === 'yes'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.6', 'yes')}} />
@@ -314,7 +314,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     <div className="m-form-field
                                                 m-form-field__radio
                                                 m-form-field__lg-target">
-                                        <input className="a-radio" id="crt-question_6b" type="radio" name="crt-question-6" value="no" 
+                                        <input className="a-radio" id="crt-question_6b" type="radio" name="crt-question-6" value="no"
                                             ref="utility-crt-quesion-1.6"
                                             checked={this.props.criterionAnswers["utility-crt-quesion-1.6"] === 'no'}
                                             onChange={() => {this.changeCriterionAnswer('utility-crt-quesion-1.6', 'no')}} />
@@ -338,7 +338,7 @@ export default class UtilityCriterionPage extends React.Component {
                                 id="crt-notes-2"
                                 rows="6"
                                 ref="utility-crt-notes-2"
-                                value={this.props.criterionAnswers['utility-crt-notes-2']} 
+                                value={this.props.criterionAnswers['utility-crt-notes-2']}
                                 onChange={e=>this.changeCriterionAnswer('utility-crt-notes-2', e.target.value)} >
                     </textarea>
                 </div>
@@ -352,7 +352,9 @@ export default class UtilityCriterionPage extends React.Component {
                     </button>
                 </h3>
             </div>
-            <SaveWorkModal />
+            <div className="l-survey-top">
+                <SaveWorkModal />
+            </div>
             <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </div>
         );
