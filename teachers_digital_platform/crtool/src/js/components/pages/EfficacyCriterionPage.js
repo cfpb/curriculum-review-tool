@@ -1,6 +1,7 @@
 import React from "react";
 
 import C from "../../constants";
+import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 
 export default class EfficacyCriterionPage extends React.Component {
@@ -57,6 +58,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-quesion-1"]} />
                         Criterion 1: Strength of study (inclusion criteria)
                     </h3>
                     <p className="lead-paragraph">
@@ -702,6 +704,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 </div>
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-quesion-2"]} />
                         Criterion 2: Saving and investing
                     </h3>
                     <p className="lead-paragraph">
@@ -827,6 +830,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 </div>
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-quesion-3"]} />
                         Criterion 3: Impact
                     </h3>
                     <p className="lead-paragraph">

@@ -1,6 +1,7 @@
 import React from "react";
 
 import C from "../../constants";
+import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 
 export default class UtilityCriterionPage extends React.Component {
@@ -42,7 +43,10 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 1: Materials to support cognitive development</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]} />
+                        Criterion 1: Materials to support cognitive development
+                    </h3>
                     <p className="lead-paragraph">
                         Do the materials provide instructional suggestions designed to support the cognitive development of students’ financial capability?
                     </p>
@@ -464,7 +468,10 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 2: Differentiated instruction for diverse populations</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]} />
+                        Criterion 2: Differentiated instruction for diverse populations
+                    </h3>
                     <p className="lead-paragraph">
                         Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.
                     </p>
@@ -1320,7 +1327,10 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 3: Quality materials for lesson planning</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]} />
+                        Criterion 3: Quality materials for lesson planning
+                    </h3>
                     <p className="lead-paragraph">
                         Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?
                     </p>
@@ -1901,7 +1911,10 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 4: Materials to assess mastery</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]} />
+                        Criterion 4: Materials to assess mastery
+                    </h3>
                     <p className="lead-paragraph">
                         Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?
                     </p>
@@ -2421,7 +2434,10 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 5: Instructional supports</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]} />
+                        Criterion 5: Instructional supports
+                    </h3>
                     <p className="lead-paragraph">
                         Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?
                     </p>
