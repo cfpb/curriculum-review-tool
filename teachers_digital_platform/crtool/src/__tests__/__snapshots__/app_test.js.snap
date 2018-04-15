@@ -15,7 +15,7 @@ exports[`renders without crashing 1`] = `
         className="a-icon a-icon__large"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -66,6 +66,7 @@ exports[`renders without crashing 1`] = `
               </span>
             </button>
             <h1
+              className="h4"
               id="modal-save-work_title"
             >
               Saving your work
@@ -419,6 +420,7 @@ exports[`renders without crashing 1`] = `
                 </span>
               </button>
               <h1
+                className="h4"
                 id="modal-start-over_title"
               >
                 Starting over
