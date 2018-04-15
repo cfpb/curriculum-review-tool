@@ -1,6 +1,7 @@
 import React from "react";
 
 import C from "../../../constants";
+import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 
 export default class ContentHighCriterionPage extends React.Component {
@@ -41,7 +42,10 @@ export default class ContentHighCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 1: Earning, income, and careers</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-1"]} />
+                        Criterion 1: Earning, income, and careers
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for earning, income, and careers?
                     </p>
@@ -299,7 +303,10 @@ export default class ContentHighCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 2: Saving and investing</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-2"]} />
+                        Criterion 2: Saving and investing
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
                     </p>
@@ -686,7 +693,10 @@ export default class ContentHighCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 3: Spending</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-3"]} />
+                        Criterion 3: Spending
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for spending?
                     </p>
@@ -875,6 +885,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 </div>
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-4"]} />
                         Criterion 4: Borrowing and credit
                     </h3>
                     <p className="lead-paragraph">
@@ -1287,6 +1298,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 </div>
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-5"]} />
                         Criterion 5: Managing financial risk
                     </h3>
                     <p className="lead-paragraph">
@@ -1594,6 +1606,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 </div>
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-6"]} />
                         Criterion 6: Financial responsibility and money management
                     </h3>
                     <p className="lead-paragraph">

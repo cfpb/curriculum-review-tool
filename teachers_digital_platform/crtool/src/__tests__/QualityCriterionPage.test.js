@@ -13,6 +13,7 @@ const qualityProps = {
     changeQualityNotes:_changeQualityNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),
+    criterionCompletionStatuses:(() => {}),
 }
 
 beforeAll(() => {

@@ -26,6 +26,7 @@ export default class SurveyPageContainer extends React.Component {
             publicationDate:this.props.publicationDate,
             gradeRange:this.props.gradeRange,
             initializeAnswerObjects:this.props.initializeAnswerObjects,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
           };
         
         if (this.props.currentPage === C.CONTENT_PAGE) {
