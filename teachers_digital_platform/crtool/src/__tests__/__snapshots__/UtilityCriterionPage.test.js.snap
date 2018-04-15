@@ -823,7 +823,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-notes-1"
+        htmlFor="utility-crt-notes-optional-1"
       >
         My notes  
         <small
@@ -839,7 +839,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="utility-crt-notes-1"
+        id="utility-crt-notes-optional-1"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -2298,7 +2298,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-notes-2"
+        htmlFor="utility-crt-notes-optional-2"
       >
         My notes  
         <small
@@ -2314,7 +2314,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="utility-crt-notes-2"
+        id="utility-crt-notes-optional-2"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -3332,7 +3332,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-notes-3"
+        htmlFor="utility-crt-notes-optional-3"
       >
         My notes  
         <small
@@ -3348,7 +3348,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="utility-crt-notes-3"
+        id="utility-crt-notes-optional-3"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -4273,7 +4273,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-notes-4"
+        htmlFor="utility-crt-notes-optional-4"
       >
         My notes  
         <small
@@ -4289,7 +4289,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="utility-crt-notes-4"
+        id="utility-crt-notes-optional-4"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -4712,7 +4712,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-notes-5"
+        htmlFor="utility-crt-notes-optional-5"
       >
         My notes  
         <small
@@ -4728,7 +4728,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="utility-crt-notes-5"
+        id="utility-crt-notes-optional-5"
         onChange={[Function]}
         rows="6"
         value={undefined}

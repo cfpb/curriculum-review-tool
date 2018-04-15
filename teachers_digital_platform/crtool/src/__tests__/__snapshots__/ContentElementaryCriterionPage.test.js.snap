@@ -183,15 +183,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.1a"
-                  name="content-elementary-crt-quesion-1.1"
+                  id="content-elementary-crt-question-1.1a"
+                  name="content-elementary-crt-question-1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.1a"
+                  htmlFor="content-elementary-crt-question-1.1a"
                 >
                   Yes
                 </label>
@@ -202,15 +202,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.1b"
-                  name="content-elementary-crt-quesion-1.1"
+                  id="content-elementary-crt-question-1.1b"
+                  name="content-elementary-crt-question-1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.1b"
+                  htmlFor="content-elementary-crt-question-1.1b"
                 >
                   No
                 </label>
@@ -270,15 +270,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.2a"
-                  name="content-elementary-crt-quesion-1.2"
+                  id="content-elementary-crt-question-1.2a"
+                  name="content-elementary-crt-question-1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.2a"
+                  htmlFor="content-elementary-crt-question-1.2a"
                 >
                   Yes
                 </label>
@@ -289,15 +289,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.2b"
-                  name="content-elementary-crt-quesion-1.2"
+                  id="content-elementary-crt-question-1.2b"
+                  name="content-elementary-crt-question-1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.2b"
+                  htmlFor="content-elementary-crt-question-1.2b"
                 >
                   No
                 </label>
@@ -312,7 +312,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="content-elementary-crt-notes-1"
+        htmlFor="content-elementary-crt-notes-optional-1"
       >
         My notes  
         <small
@@ -328,7 +328,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="content-elementary-crt-notes-1"
+        id="content-elementary-crt-notes-optional-1"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -671,7 +671,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="content-elementary-crt-notes-2"
+        htmlFor="content-elementary-crt-notes-optional-2"
       >
         My notes  
         <small
@@ -687,7 +687,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="content-elementary-crt-notes-2"
+        id="content-elementary-crt-notes-optional-2"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -1102,7 +1102,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="content-elementary-crt-notes-3"
+        htmlFor="content-elementary-crt-notes-optional-3"
       >
         My notes  
         <small
@@ -1118,7 +1118,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="content-elementary-crt-notes-3"
+        id="content-elementary-crt-notes-optional-3"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -1287,7 +1287,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="crt-notes-4"
+        htmlFor="crt-notes-optional-4"
       >
         My notes  
         <small
@@ -1303,7 +1303,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="content-elementary-crt-notes-4"
+        id="content-elementary-crt-notes-optional-4"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -1472,7 +1472,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="content-elementary-crt-notes-5"
+        htmlFor="content-elementary-crt-notes-optional-5"
       >
         My notes  
         <small
@@ -1488,7 +1488,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="content-elementary-crt-notes-5"
+        id="content-elementary-crt-notes-optional-5"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -1604,7 +1604,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="content-elementary-crt-notes-6"
+        htmlFor="content-elementary-crt-notes-optional-6"
       >
         My notes  
         <small
@@ -1620,7 +1620,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="content-elementary-crt-notes-6"
+        id="content-elementary-crt-notes-optional-6"
         onChange={[Function]}
         rows="6"
         value={undefined}

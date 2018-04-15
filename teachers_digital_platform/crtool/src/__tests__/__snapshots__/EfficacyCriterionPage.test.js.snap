@@ -1217,7 +1217,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="efficacy-crt-notes-1"
+        htmlFor="efficacy-crt-notes-optional-1"
       >
         My notes  
         <small
@@ -1233,7 +1233,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
-        id="efficacy-crt-notes-1"
+        id="efficacy-crt-notes-optional-1"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -1639,7 +1639,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="efficacy-crt-notes-2"
+        htmlFor="efficacy-crt-notes-optional-2"
       >
         My notes  
         <small
@@ -1655,7 +1655,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="efficacy-crt-notes-2"
+        id="efficacy-crt-notes-optional-2"
         onChange={[Function]}
         rows="6"
         value={undefined}
@@ -1925,7 +1925,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="efficacy-crt-notes-3"
+        htmlFor="efficacy-crt-notes-optional-3"
       >
         My notes  
         <small
@@ -1941,7 +1941,7 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        id="efficacy-crt-notes-3"
+        id="efficacy-crt-notes-optional-3"
         onChange={[Function]}
         rows="6"
         value={undefined}
