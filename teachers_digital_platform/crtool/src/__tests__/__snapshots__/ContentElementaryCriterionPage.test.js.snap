@@ -32,7 +32,7 @@ Array [
         />
       </svg>
     </span>
-      Content
+     Content
   </h2>,
   <p
     className="lead-paragraph"

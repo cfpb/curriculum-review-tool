@@ -31,16 +31,12 @@ export default class UtilityCriterionPage extends React.Component {
                     <li>Read lessons plans and supporting materials for the curriculum.</li>
                     <li>Answer each of the following questions.</li>
                 </ul>
-                <div className="m-notification
-                                m-notification__visible
+                <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
-                            <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                        </div>
-                    </div>
+                    <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
+                    <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <SaveWorkModal />
                 </div>
                 <hr className="hr
                                 u-mb30
