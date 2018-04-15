@@ -224,7 +224,6 @@
         <div class="o-modal_backdrop"></div>
         <div class="o-modal_container">
             <form class="o-modal_content">
-              <span id="modal-start-over-click-outside">
                 <div class="o-modal_body">
                     <button class="o-modal_close a-btn a-btn__link" onclick="closeNewReviewModalWindow();return false;">
                         Close
@@ -241,7 +240,6 @@
                         <button class="a-btn a-btn__link" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
                     </div>
                 </div>
-              </span>
             </form>
         </div>
     </div>
@@ -255,7 +253,6 @@
         <div class="o-modal_backdrop"></div>
         <div class="o-modal_container">
             <form class="o-modal_content">
-                <span id="modal-save-work-click-outside">
                 <div class="o-modal_body">
                     <button class="o-modal_close a-btn a-btn__link"  onclick="closeSaveWorkModalWindow(); return false;">
                         Close
@@ -271,7 +268,6 @@
                 <div class="o-modal_footer">
                     <button class="a-btn" onclick="closeSaveWorkModalWindow(); return false;">Close</button>
                 </div>
-                </span>
             </form>
         </div>
     </div>
@@ -406,7 +402,7 @@
          * Method to close New Review daialog if click outside
          */
         function newReviewOutsideClickListener(event) {
-            const startOverModal = document.getElementById("modal-start-over-click-outside");
+            const startOverModal = document.querySelector("#modal-start-over .o-modal_content");
             if (!openingNewReviewModal && !startOverModal.contains(event.target)) {
               closeNewReviewModalWindow();
             }
@@ -421,7 +417,7 @@
          * Method to close Save Work daialog if click outside
          */
         function saveWorkOutsideClickListener(event) {
-            const startOverModal = document.getElementById("modal-save-work-click-outside");
+            const startOverModal = document.querySelector("#modal-save-work .o-modal_content");
             if (!openingSaveWorkModal && !startOverModal.contains(event.target)) {
               closeSaveWorkModalWindow();
             }

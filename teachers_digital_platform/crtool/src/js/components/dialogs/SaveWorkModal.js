@@ -55,8 +55,7 @@ export default class SaveWorkModal extends React.Component {
                     aria-describedby="modal-save-work_desc">
                     <div className="o-modal_backdrop"></div>
                     <div className="o-modal_container">
-                        <form className="o-modal_content">
-                            <span ref={this.setWrapperRef}>
+                        <form className="o-modal_content" ref={this.setWrapperRef}>
                             <div className="o-modal_body">
                                 <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>
                                     Close
@@ -72,7 +71,6 @@ export default class SaveWorkModal extends React.Component {
                             <div className="o-modal_footer">
                                 <button className="a-btn" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>Close</button>
                             </div>
-                            </span>
                         </form>
                     </div>
                 </div>
