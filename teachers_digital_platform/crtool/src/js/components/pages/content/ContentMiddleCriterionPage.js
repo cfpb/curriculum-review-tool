@@ -32,16 +32,12 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     <li>Skim the lesson plans, student materials, and assessments.</li>
                     <li>Select <b><em>yes</em></b> for the components that are addressed, and <b><em>no</em></b> for those that are not.</li>
                 </ul>
-                <div className="m-notification
-                                m-notification__visible
+                <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
-                            <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                        </div>
-                    </div>
+                    <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
+                    <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <SaveWorkModal />
                 </div>
                 <hr className="hr
                                 u-mb30
