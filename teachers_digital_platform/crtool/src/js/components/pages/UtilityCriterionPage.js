@@ -2661,24 +2661,26 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                         </li>
                     </ol>
-                <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading" htmlFor="utility-crt-notes-5">
-                        My notes
-                        &nbsp;<small className="a-label_helper">(optional)</small>
-                        <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
-                        </small>
-                    </label>
-                    <textarea className="a-text-input a-text-input__full"
-                                rows="6"
-                                id="utility-crt-notes-5"
-                                ref="utility-crt-notes-5"
-                                value={this.props.criterionAnswers['utility-crt-notes-5']}
-                                onChange={e=>this.changeCriterionAnswer('utility-crt-notes-5', e.target.value)} >
-                    </textarea>
+                    <div className="m-form-field m-form-field__textarea">
+                        <label className="a-label a-label__heading" htmlFor="utility-crt-notes-5">
+                            My notes
+                            &nbsp;<small className="a-label_helper">(optional)</small>
+                            <small className="a-label_helper a-label_helper__block">
+                                Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            </small>
+                        </label>
+                        <textarea className="a-text-input a-text-input__full"
+                                    rows="6"
+                                    id="utility-crt-notes-5"
+                                    ref="utility-crt-notes-5"
+                                    value={this.props.criterionAnswers['utility-crt-notes-5']}
+                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-5', e.target.value)} >
+                        </textarea>
+                    </div>
                 </div>
+                <div className="l-survey-top">
+                    <SaveWorkModal />
                 </div>
-                <SaveWorkModal />
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
         );
