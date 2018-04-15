@@ -6,7 +6,7 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 export default class UtilityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
         this.props.changeCriterionAnswer(C.UTILITY_PAGE, key, checkedValue);
-    }   
+    }
 
     componentDidMount() {
         var myObjects = this.refs;
@@ -17,14 +17,14 @@ export default class UtilityCriterionPage extends React.Component {
         return (
             <React.Fragment>
                 <hr className="hr
-                            u-mb45
-                            u-mt30" />
+                                u-mb45
+                                u-mt30" />
                 <h2 className="h1">
-                    <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M379.9 493.6c-.7 0-1.5 0-2.2-.1-.7 0-1.5-.1-2.2-.2s-1.5-.2-2.2-.3c-.7-.1-1.5-.2-2.2-.4-.7-.1-1.4-.3-2.2-.5l-2.1-.6c-.7-.2-1.4-.4-2.1-.7-.7-.2-1.4-.5-2.1-.8s-1.3-.6-2-.9-1.3-.6-2-1c-.6-.3-1.3-.7-1.9-1.1s-1.3-.8-1.9-1.2c-.6-.4-1.2-.8-1.8-1.3-.6-.4-1.2-.9-1.8-1.4-.6-.5-1.1-.9-1.7-1.4-.5-.5-1.1-1-1.6-1.5s-1-1.1-1.5-1.6-1-1.1-1.4-1.7c-.5-.6-.9-1.2-1.4-1.7-.4-.6-.9-1.2-1.3-1.8-.4-.6-.8-1.2-1.2-1.9-.4-.6-.7-1.3-1.1-1.9-.3-.6-.7-1.3-1-2s-.6-1.3-.9-2-.5-1.4-.8-2c-.2-.7-.5-1.4-.7-2.1l-.6-2.1c-.2-.7-.3-1.4-.5-2.2-.1-.7-.3-1.4-.4-2.2-.1-.7-.2-1.5-.3-2.2-.1-.7-.1-1.5-.2-2.2 0-.7-.1-1.5-.1-2.2s0-1.5.1-2.2c0-.7.1-1.5.2-2.2s.2-1.5.3-2.2c.1-.7.2-1.4.4-2.2.2-.7.3-1.4.5-2.1l.6-2.1c.2-.7.5-1.4.7-2.1s.5-1.4.8-2.1.6-1.4.9-2c.3-.7.7-1.3 1-2 .3-.6.7-1.3 1.1-1.9s.8-1.3 1.2-1.9c.4-.6.8-1.2 1.3-1.8.4-.6.9-1.2 1.4-1.7.5-.6 1-1.1 1.4-1.7.5-.5 1-1.1 1.5-1.6s1.1-1 1.6-1.5 1.1-1 1.7-1.4c.6-.5 1.2-.9 1.8-1.4.6-.4 1.2-.9 1.8-1.3.6-.4 1.2-.8 1.9-1.2.6-.4 1.3-.7 1.9-1.1.6-.3 1.3-.7 2-1s1.3-.6 2-.9 1.4-.5 2.1-.8c.7-.2 1.4-.5 2.1-.7l2.1-.6c.7-.2 1.4-.3 2.2-.5.7-.1 1.5-.3 2.2-.4s1.5-.2 2.2-.3c.7-.1 1.5-.1 2.2-.2 1.5-.1 3-.1 4.4 0 .7 0 1.5.1 2.2.2s1.5.2 2.2.3c.7.1 1.5.2 2.2.4.7.1 1.4.3 2.2.5l2.1.6c.7.2 1.4.5 2.1.7s1.4.5 2 .8c.7.3 1.4.6 2 .9.7.3 1.3.6 2 1 .6.3 1.3.7 1.9 1.1s1.2.8 1.9 1.2c.6.4 1.2.8 1.8 1.3.6.4 1.2.9 1.8 1.4.6.5 1.1 1 1.7 1.4.5.5 1.1 1 1.6 1.5s1 1.1 1.5 1.6 1 1.1 1.5 1.7.9 1.1 1.4 1.7c.4.6.9 1.2 1.3 1.8.4.6.8 1.2 1.2 1.9.4.6.7 1.3 1.1 1.9.3.6.7 1.3 1 2s.6 1.3.9 2 .5 1.4.8 2.1c.2.7.5 1.4.7 2.1l.6 2.1c.2.7.3 1.4.5 2.1.1.7.3 1.5.4 2.2s.2 1.5.3 2.2c.1.7.1 1.5.2 2.2 0 .7.1 1.5.1 2.2s0 1.5-.1 2.2c0 .7-.1 1.5-.2 2.2s-.2 1.5-.3 2.2c-.1.7-.2 1.5-.4 2.2-.1.7-.3 1.4-.5 2.2l-.6 2.1c-.2.7-.4 1.4-.7 2.1-.2.7-.5 1.4-.8 2-.3.7-.6 1.4-.9 2-.3.7-.6 1.3-1 2-.3.7-.7 1.3-1.1 1.9s-.8 1.3-1.2 1.9c-.4.6-.8 1.2-1.3 1.8-.4.6-.9 1.2-1.4 1.7-.5.6-1 1.1-1.5 1.7s-1 1.1-1.5 1.6-1.1 1-1.6 1.5-1.1 1-1.7 1.4c-.6.5-1.2.9-1.8 1.4-.6.4-1.2.9-1.8 1.3-.6.4-1.2.8-1.9 1.2-.6.4-1.3.7-1.9 1.1-.7.3-1.3.7-2 1s-1.3.6-2 .9-1.4.5-2 .8c-.7.2-1.4.5-2.1.7l-2.1.6c-.7.2-1.4.3-2.2.5-.7.1-1.5.3-2.2.4s-1.5.2-2.2.3c-.7.1-1.5.1-2.2.2-.7.1-1.5.1-2.2.1zM331.6 681.2h329.3v40H331.6z"/><circle cx="380.1" cy="448.8" r="45.2"/><path d="M331.6 782.8h329.3v40H331.6zM331.6 579.5h329.3v40H331.6z"/><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm230.8 794.5c0 11-9 20-20 20H290.3c-11 0-20-9-20-20V312.4c0-11 9-20 20-20l239.2.2v166.3c0 16.8 13.8 30.6 30.6 30.6h171.3l-.6 410.2zm.6-456.5H575.8V292.7l155.5 150.1v.4h.1z"/></svg></span>
+                    <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm353.1 537.2c0 11-8.9 21.5-19.7 23.4l-60.1 10.4c-1.1.2-2.1.3-3.2.3-6.5 24.9-16.4 48.8-29.5 71 .8.8 1.5 1.6 2.1 2.5l35.2 49.8c6.3 9 5.2 22.7-2.6 30.5l-51.2 51.2c-7.8 7.8-21.5 9-30.5 2.6l-49.8-35.2c-.9-.6-1.7-1.3-2.5-2.1-22.2 13.1-46.1 23-71 29.5 0 1.1-.1 2.1-.3 3.2l-10.4 60.1c-1.9 10.8-12.4 19.7-23.4 19.7h-72.4c-11 0-21.5-8.9-23.4-19.7L430 879.5c-.2-1.1-.3-2.1-.3-3.2-24.9-6.5-48.8-16.4-71-29.5-.8.8-1.6 1.5-2.5 2.1l-49.9 35.2c-9 6.3-22.7 5.2-30.5-2.6l-51.2-51.2c-7.8-7.8-9-21.5-2.6-30.5l35.2-49.8c.6-.9 1.3-1.7 2.1-2.5-13.1-22.2-23-46.1-29.4-71-1.1 0-2.1-.1-3.2-.3l-60.1-10.4c-10.8-1.9-19.7-12.4-19.7-23.4V570c0-11 8.9-21.5 19.7-23.4l60.1-10.4c1.1-.2 2.2-.2 3.2-.2 6.5-24.9 16.4-48.8 29.5-71-.8-.8-1.5-1.6-2.1-2.5l-35.2-49.9c-6.3-9-5.2-22.7 2.6-30.5l51.1-51.2c7.8-7.8 21.5-9 30.5-2.6l49.9 35.2c.9.6 1.7 1.3 2.5 2.1 22.2-13.1 46.1-23 71-29.5 0-1.1.1-2.1.2-3.2l10.4-60.1c1.9-10.8 12.4-19.7 23.4-19.7h72.4c11 0 21.5 8.9 23.4 19.7L570 333c.2 1.1.3 2.1.3 3.2 24.9 6.5 48.8 16.4 71 29.5.8-.8 1.6-1.5 2.5-2.1l49.8-35.2c9-6.3 22.7-5.2 30.5 2.6l51.2 51.2c7.8 7.8 9 21.5 2.6 30.5l-35.2 49.8c-.6.9-1.3 1.7-2.1 2.5 13 22.2 22.9 46.1 29.4 71 1.1 0 2.1.1 3.2.3l60.1 10.4c10.9 1.8 19.8 12.3 19.8 23.3v72.4z"/><circle cx="500" cy="606.2" r="120.2"/></svg></span>
                     &nbsp;Utility
                 </h2>
                 <p className="lead-paragraph">
-                The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
+                    The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
                 </p>
                 <h3 className="h2">Instructions</h3>
                 <ul>
@@ -32,9 +32,9 @@ export default class UtilityCriterionPage extends React.Component {
                     <li>Answer each of the following questions.</li>
                 </ul>
                 <div className="m-notification
-                            m-notification__visible
-                            u-mb30
-                            u-mt30">
+                                m-notification__visible
+                                u-mb30
+                                u-mt30">
                     <div className="m-notification_content">
                         <div className="m-notification_message">
                             <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
@@ -43,8 +43,8 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <hr className="hr
-                            u-mb30
-                            u-mt30" />
+                                u-mb30
+                                u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">Criterion 1: Materials to support cognitive development</h3>
                     <p className="lead-paragraph">
@@ -69,28 +69,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.1a"
-                                                name="utility-crt-question-1.1"
-                                                ref="utility-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.1a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.1.1a"
+                                                name="utility-crt-question-1.1.1"
+                                                ref="utility-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.1.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.1b"
-                                                name="utility-crt-question-1.1"
-                                                ref="utility-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.1b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.1.1b"
+                                                name="utility-crt-question-1.1.1"
+                                                ref="utility-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -104,28 +104,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.2a"
-                                                name="utility-crt-question-1.2"
-                                                ref="utility-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.2a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.1.2a"
+                                                name="utility-crt-question-1.1.2"
+                                                ref="utility-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.1.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.2b"
-                                                name="utility-crt-question-1.2"
-                                                ref="utility-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.2b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.1.2b"
+                                                name="utility-crt-question-1.1.2"
+                                                ref="utility-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -139,28 +139,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.3a"
-                                                name="utility-crt-question-1.3"
-                                                ref="utility-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.3a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.1.3a"
+                                                name="utility-crt-question-1.1.3"
+                                                ref="utility-crt-question-1.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.1.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.3b"
-                                                name="utility-crt-question-1.3"
-                                                ref="utility-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.3b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.1.3b"
+                                                name="utility-crt-question-1.1.3"
+                                                ref="utility-crt-question-1.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -186,28 +186,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.4a"
-                                                name="utility-crt-question-1.4"
-                                                ref="utility-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.4', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.4a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.2.1a"
+                                                name="utility-crt-question-1.2.1"
+                                                ref="utility-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.4b"
-                                                name="utility-crt-question-1.4"
-                                                ref="utility-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.4', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.4b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.2.1b"
+                                                name="utility-crt-question-1.2.1"
+                                                ref="utility-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -221,28 +221,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.5a"
-                                                name="utility-crt-question-1.5"
-                                                ref="utility-crt-question-1.5"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.5', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.5a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.2.2a"
+                                                name="utility-crt-question-1.2.2"
+                                                ref="utility-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.5b"
-                                                name="utility-crt-question-1.5"
-                                                ref="utility-crt-question-1.5"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.5', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.5b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.2.2b"
+                                                name="utility-crt-question-1.2.2"
+                                                ref="utility-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -256,28 +256,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.6a"
-                                                name="utility-crt-question-1.6"
-                                                ref="utility-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.6', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.6a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.2.3a"
+                                                name="utility-crt-question-1.2.3"
+                                                ref="utility-crt-question-1.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.6b"
-                                                name="utility-crt-question-1.6"
-                                                ref="utility-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.6', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.6b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.2.3b"
+                                                name="utility-crt-question-1.2.3"
+                                                ref="utility-crt-question-1.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -291,28 +291,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.7a"
-                                                name="utility-crt-question-1.7"
-                                                ref="utility-crt-question-1.7"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.7"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.7', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.7a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.2.4a"
+                                                name="utility-crt-question-1.2.4"
+                                                ref="utility-crt-question-1.2.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.7b"
-                                                name="utility-crt-question-1.7"
-                                                ref="utility-crt-question-1.7"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.7"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.7', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.7b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.2.4b"
+                                                name="utility-crt-question-1.2.4"
+                                                ref="utility-crt-question-1.2.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.2.4b">
                                                 No
                                             </label>
                                         </div>
@@ -338,28 +338,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.8a"
-                                                name="utility-crt-question-1.8"
-                                                ref="utility-crt-question-1.8"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.8"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.8', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.8a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.3.1a"
+                                                name="utility-crt-question-1.3.1"
+                                                ref="utility-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.3.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.8b"
-                                                name="utility-crt-question-1.8"
-                                                ref="utility-crt-question-1.8"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.8"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.8', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.8b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.3.1b"
+                                                name="utility-crt-question-1.3.1"
+                                                ref="utility-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -373,28 +373,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.9a"
-                                                name="utility-crt-question-1.9"
-                                                ref="utility-crt-question-1.9"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.9"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.9', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.9a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.3.2a"
+                                                name="utility-crt-question-1.3.2"
+                                                ref="utility-crt-question-1.3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.3.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.9b"
-                                                name="utility-crt-question-1.9"
-                                                ref="utility-crt-question-1.9"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.9"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.9', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.9b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.3.2b"
+                                                name="utility-crt-question-1.3.2"
+                                                ref="utility-crt-question-1.3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -420,28 +420,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.10a"
-                                                name="utility-crt-question-1.10"
-                                                ref="utility-crt-question-1.10"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.10"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.10', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.10a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-1.4a"
+                                                name="utility-crt-question-1.4"
+                                                ref="utility-crt-question-1.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.10b"
-                                                name="utility-crt-question-1.10"
-                                                ref="utility-crt-question-1.10"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.10"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.10', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.10b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-1.4b"
+                                                name="utility-crt-question-1.4"
+                                                ref="utility-crt-question-1.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-1.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-1.4b">
                                                 No
                                             </label>
                                         </div>
@@ -491,28 +491,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.11a"
-                                                name="utility-crt-question-1.11"
-                                                ref="utility-crt-question-1.11"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.11"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.11', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.11a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.1a"
+                                                name="utility-crt-question-2.1.1"
+                                                ref="utility-crt-question-2.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.11b"
-                                                name="utility-crt-question-1.11"
-                                                ref="utility-crt-question-1.11"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.11"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.11', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.11b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.1b"
+                                                name="utility-crt-question-2.1.1"
+                                                ref="utility-crt-question-2.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -526,28 +526,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.12a"
-                                                name="utility-crt-question-1.12"
-                                                ref="utility-crt-question-1.12"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.12"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.12', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.12a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.2a"
+                                                name="utility-crt-question-2.1.2"
+                                                ref="utility-crt-question-2.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.12b"
-                                                name="utility-crt-question-1.12"
-                                                ref="utility-crt-question-1.12"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.12"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.12', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.12b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.2b"
+                                                name="utility-crt-question-2.1.2"
+                                                ref="utility-crt-question-2.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -561,28 +561,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.13a"
-                                                name="utility-crt-question-1.13"
-                                                ref="utility-crt-question-1.13"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.13"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.13', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.13a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.3a"
+                                                name="utility-crt-question-2.1.3"
+                                                ref="utility-crt-question-2.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.13b"
-                                                name="utility-crt-question-1.13"
-                                                ref="utility-crt-question-1.13"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.13"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.13', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.13b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.3b"
+                                                name="utility-crt-question-2.1.3"
+                                                ref="utility-crt-question-2.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -596,28 +596,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.14a"
-                                                name="utility-crt-question-1.14"
-                                                ref="utility-crt-question-1.14"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.14"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.14', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.14a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.4a"
+                                                name="utility-crt-question-2.1.4"
+                                                ref="utility-crt-question-2.1.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.14b"
-                                                name="utility-crt-question-1.14"
-                                                ref="utility-crt-question-1.14"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.14"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.14', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.14b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.4b"
+                                                name="utility-crt-question-2.1.4"
+                                                ref="utility-crt-question-2.1.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.4b">
                                                 No
                                             </label>
                                         </div>
@@ -631,28 +631,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.15a"
-                                                name="utility-crt-question-1.15"
-                                                ref="utility-crt-question-1.15"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.15"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.15', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.15a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.5a"
+                                                name="utility-crt-question-2.1.5"
+                                                ref="utility-crt-question-2.1.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.5', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.5a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.15b"
-                                                name="utility-crt-question-1.15"
-                                                ref="utility-crt-question-1.15"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.15"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.15', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.15b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.5b"
+                                                name="utility-crt-question-2.1.5"
+                                                ref="utility-crt-question-2.1.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.5', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.5b">
                                                 No
                                             </label>
                                         </div>
@@ -666,28 +666,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.16a"
-                                                name="utility-crt-question-1.16"
-                                                ref="utility-crt-question-1.16"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.16"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.16', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.16a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.6a"
+                                                name="utility-crt-question-2.1.6"
+                                                ref="utility-crt-question-2.1.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.6"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.6', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.6a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.16b"
-                                                name="utility-crt-question-1.16"
-                                                ref="utility-crt-question-1.16"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.16"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.16', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.16b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.6b"
+                                                name="utility-crt-question-2.1.6"
+                                                ref="utility-crt-question-2.1.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.6"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.6', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.6b">
                                                 No
                                             </label>
                                         </div>
@@ -702,28 +702,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.17a"
-                                                name="utility-crt-question-1.17"
-                                                ref="utility-crt-question-1.17"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.17"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.17', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.17a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.7a"
+                                                name="utility-crt-question-2.1.7"
+                                                ref="utility-crt-question-2.1.7"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.7"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.7', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.7a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.17b"
-                                                name="utility-crt-question-1.17"
-                                                ref="utility-crt-question-1.17"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.17"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.17', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.17b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.7b"
+                                                name="utility-crt-question-2.1.7"
+                                                ref="utility-crt-question-2.1.7"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.7"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.7', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.7b">
                                                 No
                                             </label>
                                         </div>
@@ -738,28 +738,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.18a"
-                                                name="utility-crt-question-1.18"
-                                                ref="utility-crt-question-1.18"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.18"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.18', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.18a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.8a"
+                                                name="utility-crt-question-2.1.8"
+                                                ref="utility-crt-question-2.1.8"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.8"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.8', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.8a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.18b"
-                                                name="utility-crt-question-1.18"
-                                                ref="utility-crt-question-1.18"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.18"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.18', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.18b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.8b"
+                                                name="utility-crt-question-2.1.8"
+                                                ref="utility-crt-question-2.1.8"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.8"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.8', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.8b">
                                                 No
                                             </label>
                                         </div>
@@ -774,28 +774,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.19a"
-                                                name="utility-crt-question-1.19"
-                                                ref="utility-crt-question-1.19"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.19"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.19', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.19a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.9a"
+                                                name="utility-crt-question-2.1.9"
+                                                ref="utility-crt-question-2.1.9"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.9"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.9', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.9a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.19b"
-                                                name="utility-crt-question-1.19"
-                                                ref="utility-crt-question-1.19"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.19"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.19', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.19b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.9b"
+                                                name="utility-crt-question-2.1.9"
+                                                ref="utility-crt-question-2.1.9"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.9"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.9', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.9b">
                                                 No
                                             </label>
                                         </div>
@@ -809,28 +809,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.20a"
-                                                name="utility-crt-question-1.20"
-                                                ref="utility-crt-question-1.20"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.20"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.20', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.20a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.1.10a"
+                                                name="utility-crt-question-2.1.10"
+                                                ref="utility-crt-question-2.1.10"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.10"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.10', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.10a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.20b"
-                                                name="utility-crt-question-1.20"
-                                                ref="utility-crt-question-1.20"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.20"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.20', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.20b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.1.10b"
+                                                name="utility-crt-question-2.1.10"
+                                                ref="utility-crt-question-2.1.10"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.1.10"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.10', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.1.10b">
                                                 No
                                             </label>
                                         </div>
@@ -856,28 +856,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.21a"
-                                                name="utility-crt-question-1.21"
-                                                ref="utility-crt-question-1.21"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.21"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.21', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.21a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.2.1a"
+                                                name="utility-crt-question-2.2.1"
+                                                ref="utility-crt-question-2.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.2.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.21b"
-                                                name="utility-crt-question-1.21"
-                                                ref="utility-crt-question-1.21"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.21"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.21', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.21b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.2.1b"
+                                                name="utility-crt-question-2.2.1"
+                                                ref="utility-crt-question-2.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -891,28 +891,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.22a"
-                                                name="utility-crt-question-1.22"
-                                                ref="utility-crt-question-1.22"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.22"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.22', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.22a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.2.2a"
+                                                name="utility-crt-question-2.2.2"
+                                                ref="utility-crt-question-2.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.2.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.22b"
-                                                name="utility-crt-question-1.22"
-                                                ref="utility-crt-question-1.22"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.22"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.22', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.22b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.2.2b"
+                                                name="utility-crt-question-2.2.2"
+                                                ref="utility-crt-question-2.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -927,28 +927,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.23a"
-                                                name="utility-crt-question-1.23"
-                                                ref="utility-crt-question-1.23"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.23"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.23', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.23a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.2.3a"
+                                                name="utility-crt-question-2.2.3"
+                                                ref="utility-crt-question-2.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.2.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.23b"
-                                                name="utility-crt-question-1.23"
-                                                ref="utility-crt-question-1.23"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.23"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.23', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.23b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.2.3b"
+                                                name="utility-crt-question-2.2.3"
+                                                ref="utility-crt-question-2.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -974,28 +974,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.24a"
-                                                name="utility-crt-question-1.24"
-                                                ref="utility-crt-question-1.24"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.24"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.24', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.24a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.3.1a"
+                                                name="utility-crt-question-2.3.1"
+                                                ref="utility-crt-question-2.3.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.24b"
-                                                name="utility-crt-question-1.24"
-                                                ref="utility-crt-question-1.24"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.24"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.24', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.24b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.1b"
+                                                name="utility-crt-question-2.3.1"
+                                                ref="utility-crt-question-2.3.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1009,28 +1009,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.25a"
-                                                name="utility-crt-question-1.25"
-                                                ref="utility-crt-question-1.25"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.25"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.25', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.25a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.3.2a"
+                                                name="utility-crt-question-2.3.2"
+                                                ref="utility-crt-question-2.3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.25b"
-                                                name="utility-crt-question-1.25"
-                                                ref="utility-crt-question-1.25"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.25"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.25', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.25b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.2b"
+                                                name="utility-crt-question-2.3.2"
+                                                ref="utility-crt-question-2.3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1045,28 +1045,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.26a"
-                                                name="utility-crt-question-1.26"
-                                                ref="utility-crt-question-1.26"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.26"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.26', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.26a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.3.3a"
+                                                name="utility-crt-question-2.3.3"
+                                                ref="utility-crt-question-2.3.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.26b"
-                                                name="utility-crt-question-1.26"
-                                                ref="utility-crt-question-1.26"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.26"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.26', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.26b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.3b"
+                                                name="utility-crt-question-2.3.3"
+                                                ref="utility-crt-question-2.3.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1081,28 +1081,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.27a"
-                                                name="utility-crt-question-1.27"
-                                                ref="utility-crt-question-1.27"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.27"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.27', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.27a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.3.4a"
+                                                name="utility-crt-question-2.3.4"
+                                                ref="utility-crt-question-2.3.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.27b"
-                                                name="utility-crt-question-1.27"
-                                                ref="utility-crt-question-1.27"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.27"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.27', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.27b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.4b"
+                                                name="utility-crt-question-2.3.4"
+                                                ref="utility-crt-question-2.3.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.4b">
                                                 No
                                             </label>
                                         </div>
@@ -1117,28 +1117,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.28a"
-                                                name="utility-crt-question-1.28"
-                                                ref="utility-crt-question-1.28"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.28"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.28', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.28a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.3.5a"
+                                                name="utility-crt-question-2.3.5"
+                                                ref="utility-crt-question-2.3.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.5', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.5a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.28b"
-                                                name="utility-crt-question-1.28"
-                                                ref="utility-crt-question-1.28"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.28"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.28', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.28b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.5b"
+                                                name="utility-crt-question-2.3.5"
+                                                ref="utility-crt-question-2.3.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.5', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.5b">
                                                 No
                                             </label>
                                         </div>
@@ -1153,42 +1153,42 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.29a"
-                                                name="utility-crt-question-1.29"
-                                                ref="utility-crt-question-1.29"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.29"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.29', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.29a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.3.6a"
+                                                name="utility-crt-question-2.3.6"
+                                                ref="utility-crt-question-2.3.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.6"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.6', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.6a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.29b"
-                                                name="utility-crt-question-1.29"
-                                                ref="utility-crt-question-1.29"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.29"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.29', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.29b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.6b"
+                                                name="utility-crt-question-2.3.6"
+                                                ref="utility-crt-question-2.3.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.6"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.6', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.6b">
                                                 No
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.29c"
-                                                name="utility-crt-question-1.29"
-                                                ref="utility-crt-question-1.29"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.29"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.29', 'na')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.29c">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.3.6c"
+                                                name="utility-crt-question-2.3.6"
+                                                ref="utility-crt-question-2.3.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.3.6"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.6', 'na')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.3.6c">
                                                 N/A
                                             </label>
                                         </div>
@@ -1215,42 +1215,42 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.30a"
-                                                name="utility-crt-question-1.30"
-                                                ref="utility-crt-question-1.30"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.30"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.30', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.30a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.4a"
+                                                name="utility-crt-question-2.4"
+                                                ref="utility-crt-question-2.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.30b"
-                                                name="utility-crt-question-1.30"
-                                                ref="utility-crt-question-1.30"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.30"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.30', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.30b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.4b"
+                                                name="utility-crt-question-2.4"
+                                                ref="utility-crt-question-2.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.4b">
                                                 No
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.30c"
-                                                name="utility-crt-question-1.30"
-                                                ref="utility-crt-question-1.30"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.30"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.30', 'na')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.30c">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.4c"
+                                                name="utility-crt-question-2.4"
+                                                ref="utility-crt-question-2.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.4"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.4', 'na')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.4c">
                                                 N/A
                                             </label>
                                         </div>
@@ -1276,28 +1276,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.31a"
-                                                name="utility-crt-question-1.31"
-                                                ref="utility-crt-question-1.31"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.31"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.31', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.31a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-2.5a"
+                                                name="utility-crt-question-2.5"
+                                                ref="utility-crt-question-2.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.5', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.5a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.31b"
-                                                name="utility-crt-question-1.31"
-                                                ref="utility-crt-question-1.31"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.31"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.31', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.31b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-2.5b"
+                                                name="utility-crt-question-2.5"
+                                                ref="utility-crt-question-2.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-2.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.5', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-2.5b">
                                                 No
                                             </label>
                                         </div>
@@ -1347,28 +1347,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.32a"
-                                                name="utility-crt-question-1.32"
-                                                ref="utility-crt-question-1.32"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.32"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.32', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.32a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.1a"
+                                                name="utility-crt-question-3.1.1"
+                                                ref="utility-crt-question-3.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.32b"
-                                                name="utility-crt-question-1.32"
-                                                ref="utility-crt-question-1.32"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.32"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.32', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.32b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.1b"
+                                                name="utility-crt-question-3.1.1"
+                                                ref="utility-crt-question-3.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1391,28 +1391,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.33a"
-                                                name="utility-crt-question-1.33"
-                                                ref="utility-crt-question-1.33"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.33"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.33', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.33a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.2a"
+                                                name="utility-crt-question-3.1.2"
+                                                ref="utility-crt-question-3.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.33b"
-                                                name="utility-crt-question-1.33"
-                                                ref="utility-crt-question-1.33"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.33"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.33', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.33b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.2b"
+                                                name="utility-crt-question-3.1.2"
+                                                ref="utility-crt-question-3.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1426,28 +1426,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.34a"
-                                                name="utility-crt-question-1.34"
-                                                ref="utility-crt-question-1.34"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.34"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.34', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.34a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.3a"
+                                                name="utility-crt-question-3.1.3"
+                                                ref="utility-crt-question-3.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.34b"
-                                                name="utility-crt-question-1.34"
-                                                ref="utility-crt-question-1.34"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.34"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.34', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.34b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.3b"
+                                                name="utility-crt-question-3.1.3"
+                                                ref="utility-crt-question-3.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1461,28 +1461,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.35a"
-                                                name="utility-crt-question-1.35"
-                                                ref="utility-crt-question-1.35"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.35"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.35', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.35a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.4a"
+                                                name="utility-crt-question-3.1.4"
+                                                ref="utility-crt-question-3.1.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.35b"
-                                                name="utility-crt-question-1.35"
-                                                ref="utility-crt-question-1.35"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.35"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.35', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.35b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.4b"
+                                                name="utility-crt-question-3.1.4"
+                                                ref="utility-crt-question-3.1.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.4b">
                                                 No
                                             </label>
                                         </div>
@@ -1496,28 +1496,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.36a"
-                                                name="utility-crt-question-1.36"
-                                                ref="utility-crt-question-1.36"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.36"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.36', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.36a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.5a"
+                                                name="utility-crt-question-3.1.5"
+                                                ref="utility-crt-question-3.1.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.5', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.5a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.36b"
-                                                name="utility-crt-question-1.36"
-                                                ref="utility-crt-question-1.36"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.36"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.36', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.36b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.5b"
+                                                name="utility-crt-question-3.1.5"
+                                                ref="utility-crt-question-3.1.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.5', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.5b">
                                                 No
                                             </label>
                                         </div>
@@ -1531,28 +1531,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.37a"
-                                                name="utility-crt-question-1.37"
-                                                ref="utility-crt-question-1.37"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.37"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.37', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.37a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.6a"
+                                                name="utility-crt-question-3.1.6"
+                                                ref="utility-crt-question-3.1.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.6"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.6', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.6a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.37b"
-                                                name="utility-crt-question-1.37"
-                                                ref="utility-crt-question-1.37"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.37"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.37', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.37b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.6b"
+                                                name="utility-crt-question-3.1.6"
+                                                ref="utility-crt-question-3.1.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.6"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.6', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.6b">
                                                 No
                                             </label>
                                         </div>
@@ -1567,28 +1567,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.38a"
-                                                name="utility-crt-question-1.38"
-                                                ref="utility-crt-question-1.38"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.38"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.38', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.38a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.1.7a"
+                                                name="utility-crt-question-3.1.7"
+                                                ref="utility-crt-question-3.1.7"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.7"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.7', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.7a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.38b"
-                                                name="utility-crt-question-1.38"
-                                                ref="utility-crt-question-1.38"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.38"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.38', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.38b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.1.7b"
+                                                name="utility-crt-question-3.1.7"
+                                                ref="utility-crt-question-3.1.7"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.1.7"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.7', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.1.7b">
                                                 No
                                             </label>
                                         </div>
@@ -1614,28 +1614,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.39a"
-                                                name="utility-crt-question-1.39"
-                                                ref="utility-crt-question-1.39"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.39"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.39', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.39a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.2a"
+                                                name="utility-crt-question-3.2"
+                                                ref="utility-crt-question-3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.39b"
-                                                name="utility-crt-question-1.39"
-                                                ref="utility-crt-question-1.39"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.39"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.39', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.39b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.2b"
+                                                name="utility-crt-question-3.2"
+                                                ref="utility-crt-question-3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1661,28 +1661,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.40a"
-                                                name="utility-crt-question-1.40"
-                                                ref="utility-crt-question-1.40"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.40"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.40', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.40a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.3.1a"
+                                                name="utility-crt-question-3.3.1"
+                                                ref="utility-crt-question-3.3.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.40b"
-                                                name="utility-crt-question-1.40"
-                                                ref="utility-crt-question-1.40"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.40"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.40', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.40b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.3.1b"
+                                                name="utility-crt-question-3.3.1"
+                                                ref="utility-crt-question-3.3.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1697,28 +1697,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.41a"
-                                                name="utility-crt-question-1.41"
-                                                ref="utility-crt-question-1.41"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.41"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.41', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.41a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.3.2a"
+                                                name="utility-crt-question-3.3.2"
+                                                ref="utility-crt-question-3.3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.41b"
-                                                name="utility-crt-question-1.41"
-                                                ref="utility-crt-question-1.41"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.41"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.41', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.41b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.3.2b"
+                                                name="utility-crt-question-3.3.2"
+                                                ref="utility-crt-question-3.3.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1733,42 +1733,42 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.42a"
-                                                name="utility-crt-question-1.42"
-                                                ref="utility-crt-question-1.42"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.42"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.42', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.42a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.3.3a"
+                                                name="utility-crt-question-3.3.3"
+                                                ref="utility-crt-question-3.3.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.42b"
-                                                name="utility-crt-question-1.42"
-                                                ref="utility-crt-question-1.42"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.42"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.42', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.42b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.3.3b"
+                                                name="utility-crt-question-3.3.3"
+                                                ref="utility-crt-question-3.3.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.3b">
                                                 No
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.42c"
-                                                name="utility-crt-question-1.42"
-                                                ref="utility-crt-question-1.42"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.42"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.42', 'na')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.42c">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.3.3c"
+                                                name="utility-crt-question-3.3.3"
+                                                ref="utility-crt-question-3.3.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.3.3"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.3', 'na')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.3.3c">
                                                 N/A
                                             </label>
                                         </div>
@@ -1795,28 +1795,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.43a"
-                                                name="utility-crt-question-1.43"
-                                                ref="utility-crt-question-1.43"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.43"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.43', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.43a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.4a"
+                                                name="utility-crt-question-3.4"
+                                                ref="utility-crt-question-3.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.4', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.4a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.43b"
-                                                name="utility-crt-question-1.43"
-                                                ref="utility-crt-question-1.43"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.43"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.43', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.43b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.4b"
+                                                name="utility-crt-question-3.4"
+                                                ref="utility-crt-question-3.4"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.4', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.4b">
                                                 No
                                             </label>
                                         </div>
@@ -1843,42 +1843,42 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.44a"
-                                                name="utility-crt-question-1.44"
-                                                ref="utility-crt-question-1.44"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.44"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.44', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.44a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-3.5a"
+                                                name="utility-crt-question-3.5"
+                                                ref="utility-crt-question-3.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.5', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.5a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.44b"
-                                                name="utility-crt-question-1.44"
-                                                ref="utility-crt-question-1.44"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.44"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.44', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.44b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.5b"
+                                                name="utility-crt-question-3.5"
+                                                ref="utility-crt-question-3.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.5', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.5b">
                                                 No
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.44c"
-                                                name="utility-crt-question-1.44"
-                                                ref="utility-crt-question-1.44"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.44"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.44', 'na')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.44c">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-3.5c"
+                                                name="utility-crt-question-3.5"
+                                                ref="utility-crt-question-3.5"
+                                                checked={this.props.criterionAnswers["utility-crt-question-3.5"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.5', 'na')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-3.5c">
                                                 N/A
                                             </label>
                                         </div>
@@ -1928,28 +1928,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.45a"
-                                                name="utility-crt-question-1.45"
-                                                ref="utility-crt-question-1.45"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.45"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.45', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.45a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.1.1a"
+                                                name="utility-crt-question-4.1.1"
+                                                ref="utility-crt-question-4.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.1.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.45b"
-                                                name="utility-crt-question-1.45"
-                                                ref="utility-crt-question-1.45"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.45"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.45', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.45b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.1.1b"
+                                                name="utility-crt-question-4.1.1"
+                                                ref="utility-crt-question-4.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1963,28 +1963,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.46a"
-                                                name="utility-crt-question-1.46"
-                                                ref="utility-crt-question-1.46"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.46"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.46', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.46a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.1.2a"
+                                                name="utility-crt-question-4.1.2"
+                                                ref="utility-crt-question-4.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.1.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.46b"
-                                                name="utility-crt-question-1.46"
-                                                ref="utility-crt-question-1.46"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.46"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.46', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.46b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.1.2b"
+                                                name="utility-crt-question-4.1.2"
+                                                ref="utility-crt-question-4.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1999,28 +1999,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.47a"
-                                                name="utility-crt-question-1.47"
-                                                ref="utility-crt-question-1.47"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.47"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.47', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.47a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.1.3a"
+                                                name="utility-crt-question-4.1.3"
+                                                ref="utility-crt-question-4.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.1.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.47b"
-                                                name="utility-crt-question-1.47"
-                                                ref="utility-crt-question-1.47"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.47"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.47', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.47b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.1.3b"
+                                                name="utility-crt-question-4.1.3"
+                                                ref="utility-crt-question-4.1.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -2046,28 +2046,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.48a"
-                                                name="utility-crt-question-1.48"
-                                                ref="utility-crt-question-1.48"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.48"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.48', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.48a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.2.1a"
+                                                name="utility-crt-question-4.2.1"
+                                                ref="utility-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.2.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.48b"
-                                                name="utility-crt-question-1.48"
-                                                ref="utility-crt-question-1.48"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.48"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.48', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.48b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.2.1b"
+                                                name="utility-crt-question-4.2.1"
+                                                ref="utility-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -2081,28 +2081,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.49a"
-                                                name="utility-crt-question-1.49"
-                                                ref="utility-crt-question-1.49"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.49"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.49', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.49a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.2.2a"
+                                                name="utility-crt-question-4.2.2"
+                                                ref="utility-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.2.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.49b"
-                                                name="utility-crt-question-1.49"
-                                                ref="utility-crt-question-1.49"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.49"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.49', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.49b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.2.2b"
+                                                name="utility-crt-question-4.2.2"
+                                                ref="utility-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -2129,28 +2129,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.50a"
-                                                name="utility-crt-question-1.50"
-                                                ref="utility-crt-question-1.50"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.50"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.50', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.50a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.3a"
+                                                name="utility-crt-question-4.3"
+                                                ref="utility-crt-question-4.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.50b"
-                                                name="utility-crt-question-1.50"
-                                                ref="utility-crt-question-1.50"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.50"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.50', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.50b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.3b"
+                                                name="utility-crt-question-4.3"
+                                                ref="utility-crt-question-4.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.3b">
                                                 No
                                             </label>
                                         </div>
@@ -2176,32 +2176,34 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.51a"
-                                                name="utility-crt-question-1.51"
-                                                ref="utility-crt-question-1.51"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.51"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.51', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.51a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.4.1a"
+                                                name="utility-crt-question-4.4.1"
+                                                ref="utility-crt-question-4.4.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.4.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.4.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.51b"
-                                                name="utility-crt-question-1.51"
-                                                ref="utility-crt-question-1.51"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.51"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.51', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.51b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.4.1b"
+                                                name="utility-crt-question-4.4.1"
+                                                ref="utility-crt-question-4.4.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.4.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.4.1b">
                                                 No
                                             </label>
                                         </div>
                                     </div>
+                                </div>
+                                <div className="o-survey_component">
                                     <div className="o-survey_question">
                                         <p>Are assessments based on information that can be directly observed?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
@@ -2210,28 +2212,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.52a"
-                                                name="utility-crt-question-1.52"
-                                                ref="utility-crt-question-1.52"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.52"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.52', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.52a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.4.2a"
+                                                name="utility-crt-question-4.4.2"
+                                                ref="utility-crt-question-4.4.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.4.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.4.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.52b"
-                                                name="utility-crt-question-1.52"
-                                                ref="utility-crt-question-1.52"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.52"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.52', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.52b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.4.2b"
+                                                name="utility-crt-question-4.4.2"
+                                                ref="utility-crt-question-4.4.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.4.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.4.2b">
                                                 No
                                             </label>
                                         </div>
@@ -2257,28 +2259,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.53a"
-                                                name="utility-crt-question-1.53"
-                                                ref="utility-crt-question-1.53"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.53"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.53', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.53a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.5.1a"
+                                                name="utility-crt-question-4.5.1"
+                                                ref="utility-crt-question-4.5.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.5.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.5.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.53b"
-                                                name="utility-crt-question-1.53"
-                                                ref="utility-crt-question-1.53"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.53"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.53', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.53b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.5.1b"
+                                                name="utility-crt-question-4.5.1"
+                                                ref="utility-crt-question-4.5.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.5.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.5.1b">
                                                 No
                                             </label>
                                         </div>
@@ -2292,28 +2294,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.54a"
-                                                name="utility-crt-question-1.54"
-                                                ref="utility-crt-question-1.54"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.54"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.54', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.54a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.5.2a"
+                                                name="utility-crt-question-4.5.2"
+                                                ref="utility-crt-question-4.5.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.5.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.5.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.54b"
-                                                name="utility-crt-question-1.54"
-                                                ref="utility-crt-question-1.54"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.54"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.54', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.54b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.5.2b"
+                                                name="utility-crt-question-4.5.2"
+                                                ref="utility-crt-question-4.5.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.5.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.5.2b">
                                                 No
                                             </label>
                                         </div>
@@ -2328,28 +2330,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.55a"
-                                                name="utility-crt-question-1.55"
-                                                ref="utility-crt-question-1.55"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.55"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.55', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.55a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.5.3a"
+                                                name="utility-crt-question-4.5.3"
+                                                ref="utility-crt-question-4.5.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.5.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.5.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.55b"
-                                                name="utility-crt-question-1.55"
-                                                ref="utility-crt-question-1.55"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.55"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.55', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.55b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.5.3b"
+                                                name="utility-crt-question-4.5.3"
+                                                ref="utility-crt-question-4.5.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.5.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.5.3b">
                                                 No
                                             </label>
                                         </div>
@@ -2375,28 +2377,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.56a"
-                                                name="utility-crt-question-1.56"
-                                                ref="utility-crt-question-1.56"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.56"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.56', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.56a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-4.6a"
+                                                name="utility-crt-question-4.6"
+                                                ref="utility-crt-question-4.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.6"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.6', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.6a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.56b"
-                                                name="utility-crt-question-1.56"
-                                                ref="utility-crt-question-1.56"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.56"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.56', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.56b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-4.6b"
+                                                name="utility-crt-question-4.6"
+                                                ref="utility-crt-question-4.6"
+                                                checked={this.props.criterionAnswers["utility-crt-question-4.6"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.6', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-4.6b">
                                                 No
                                             </label>
                                         </div>
@@ -2446,28 +2448,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.57a"
-                                                name="utility-crt-question-1.57"
-                                                ref="utility-crt-question-1.57"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.57"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.57', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.57a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-5.1.1a"
+                                                name="utility-crt-question-5.1.1"
+                                                ref="utility-crt-question-5.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.1.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.57b"
-                                                name="utility-crt-question-1.57"
-                                                ref="utility-crt-question-1.57"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.57"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.57', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.57b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.1.1b"
+                                                name="utility-crt-question-5.1.1"
+                                                ref="utility-crt-question-5.1.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -2482,42 +2484,42 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.58a"
-                                                name="utility-crt-question-1.58"
-                                                ref="utility-crt-question-1.58"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.58"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.58', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.58a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-5.1.2a"
+                                                name="utility-crt-question-5.1.2"
+                                                ref="utility-crt-question-5.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.1.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.58b"
-                                                name="utility-crt-question-1.58"
-                                                ref="utility-crt-question-1.58"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.58"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.58', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.58b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.1.2b"
+                                                name="utility-crt-question-5.1.2"
+                                                ref="utility-crt-question-5.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.1.2b">
                                                 No
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.58c"
-                                                name="utility-crt-question-1.58"
-                                                ref="utility-crt-question-1.58"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.58"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.58', 'na')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.58c">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.1.2c"
+                                                name="utility-crt-question-5.1.2"
+                                                ref="utility-crt-question-5.1.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.1.2"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.2', 'na')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.1.2c">
                                                 N/A
                                             </label>
                                         </div>
@@ -2543,28 +2545,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.59a"
-                                                name="utility-crt-question-1.59"
-                                                ref="utility-crt-question-1.59"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.59"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.59', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.59a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-5.2.1a"
+                                                name="utility-crt-question-5.2.1"
+                                                ref="utility-crt-question-5.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.1', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.1a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.59b"
-                                                name="utility-crt-question-1.59"
-                                                ref="utility-crt-question-1.59"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.59"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.59', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.59b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.2.1b"
+                                                name="utility-crt-question-5.2.1"
+                                                ref="utility-crt-question-5.2.1"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.1', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -2579,28 +2581,28 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.60a"
-                                                name="utility-crt-question-1.60"
-                                                ref="utility-crt-question-1.60"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.60"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.60', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.60a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-5.2.2a"
+                                                name="utility-crt-question-5.2.2"
+                                                ref="utility-crt-question-5.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.2', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.2a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.60b"
-                                                name="utility-crt-question-1.60"
-                                                ref="utility-crt-question-1.60"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.60"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.60', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.60b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.2.2b"
+                                                name="utility-crt-question-5.2.2"
+                                                ref="utility-crt-question-5.2.2"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.2', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -2615,42 +2617,42 @@ export default class UtilityCriterionPage extends React.Component {
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1" 
-                                                id="utility-crt-question-1.61a"
-                                                name="utility-crt-question-1.61"
-                                                ref="utility-crt-question-1.61"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.61"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.61', 'yes')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.61a">
+                                            <input className="a-radio" type="radio" value="1"
+                                                id="utility-crt-question-5.2.3a"
+                                                name="utility-crt-question-5.2.3"
+                                                ref="utility-crt-question-5.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.3', 'yes')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.3a">
                                                 Yes
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.61b"
-                                                name="utility-crt-question-1.61"
-                                                ref="utility-crt-question-1.61"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.61"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.61', 'no')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.61b">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.2.3b"
+                                                name="utility-crt-question-5.2.3"
+                                                ref="utility-crt-question-5.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.3', 'no')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.3b">
                                                 No
                                             </label>
                                         </div>
                                         <div className="m-form-field
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0" 
-                                                id="utility-crt-question-1.61c"
-                                                name="utility-crt-question-1.61"
-                                                ref="utility-crt-question-1.61"
-                                                checked={this.props.criterionAnswers["utility-crt-question-1.61"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.61', 'na')}} />
-                                            <label className="a-label" 
-                                                htmlFor="utility-crt-question-1.61c">
+                                            <input className="a-radio" type="radio" value="0"
+                                                id="utility-crt-question-5.2.3c"
+                                                name="utility-crt-question-5.2.3"
+                                                ref="utility-crt-question-5.2.3"
+                                                checked={this.props.criterionAnswers["utility-crt-question-5.2.3"] === 'na'}
+                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.3', 'na')}} />
+                                            <label className="a-label"
+                                                htmlFor="utility-crt-question-5.2.3c">
                                                 N/A
                                             </label>
                                         </div>
