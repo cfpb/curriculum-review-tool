@@ -688,7 +688,17 @@ export default class EfficacyCriterionPage extends React.Component {
                             <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm263.1 550.7H549.6v213.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V655.9H236c-27.6 0-50-22.4-50-50s22.4-50 50-50h213.6V342.3c0-27.6 22.4-50 50-50s50 22.4 50 50v213.6h213.6c27.6 0 50 22.4 50 50s-22.5 50-50.1 50z"/></svg></span>
                         </button>
                     </div>
-                    <button className="a-btn">I’m done adding studies</button>
+                    <button className="a-btn u-mb30">I’m done adding studies</button>
+                    <div class="m-notification
+                            m-notification__visible
+                            m-notification__success">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm259 284.2L481.4 870.3c-8.2 14.1-22.7 23.4-39 24.8-1.4.1-2.9.2-4.3.2-14.8 0-28.9-6.6-38.4-18L244.4 690.9c-17.9-21-15.4-52.6 5.7-70.5 21-17.9 52.6-15.4 70.5 5.7.2.3.5.5.7.8l109.4 131.4 241.8-418.8c13.6-24 44.2-32.4 68.2-18.8 24 13.6 32.4 44.2 18.8 68.2l-.5.5z"/></svg>
+                        <div class="m-notification_content">
+                            <div class="m-notification_message">
+                                <p>You don’t need to complete Criteria 2 or 3 and can move on to the efficacy summary.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="block block__flush-top">
                     <h3 className="h2">
