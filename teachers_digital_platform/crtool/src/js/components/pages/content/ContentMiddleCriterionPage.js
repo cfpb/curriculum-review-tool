@@ -114,13 +114,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.2a"
-                                                name="content-middle-crt-question-1.2"
-                                                ref="content-middle-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.2', 'yes')}} />
+                                                id="content-middle-crt-question-1.2.1a"
+                                                name="content-middle-crt-question-1.2.1"
+                                                ref="content-middle-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.2a">
+                                                htmlFor="content-middle-crt-question-1.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -128,13 +128,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.2b"
-                                                name="content-middle-crt-question-1.2"
-                                                ref="content-middle-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.2', 'no')}} />
+                                                id="content-middle-crt-question-1.2.1b"
+                                                name="content-middle-crt-question-1.2.1"
+                                                ref="content-middle-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.2b">
+                                                htmlFor="content-middle-crt-question-1.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -149,13 +149,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.3a"
-                                                name="content-middle-crt-question-1.3"
-                                                ref="content-middle-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.3', 'yes')}} />
+                                                id="content-middle-crt-question-1.2.2a"
+                                                name="content-middle-crt-question-1.2.2"
+                                                ref="content-middle-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.3a">
+                                                htmlFor="content-middle-crt-question-1.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -163,13 +163,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.3b"
-                                                name="content-middle-crt-question-1.3"
-                                                ref="content-middle-crt-question-1.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.3', 'no')}} />
+                                                id="content-middle-crt-question-1.2.2b"
+                                                name="content-middle-crt-question-1.2.2"
+                                                ref="content-middle-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.3b">
+                                                htmlFor="content-middle-crt-question-1.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -220,13 +220,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.4a"
-                                                name="content-middle-crt-question-1.4"
-                                                ref="content-middle-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.4', 'yes')}} />
+                                                id="content-middle-crt-question-2.1.1a"
+                                                name="content-middle-crt-question-2.1.1"
+                                                ref="content-middle-crt-question-2.1.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.4a">
+                                                htmlFor="content-middle-crt-question-2.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -234,13 +234,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.4b"
-                                                name="content-middle-crt-question-1.4"
-                                                ref="content-middle-crt-question-1.4"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.4', 'no')}} />
+                                                id="content-middle-crt-question-2.1.1b"
+                                                name="content-middle-crt-question-2.1.1"
+                                                ref="content-middle-crt-question-2.1.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.4b">
+                                                htmlFor="content-middle-crt-question-2.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -255,13 +255,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.5a"
-                                                name="content-middle-crt-question-1.5"
-                                                ref="content-middle-crt-question-1.5"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.5', 'yes')}} />
+                                                id="content-middle-crt-question-2.1.2a"
+                                                name="content-middle-crt-question-2.1.2"
+                                                ref="content-middle-crt-question-2.1.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.5a">
+                                                htmlFor="content-middle-crt-question-2.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -269,13 +269,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.5b"
-                                                name="content-middle-crt-question-1.5"
-                                                ref="content-middle-crt-question-1.5"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.5', 'no')}} />
+                                                id="content-middle-crt-question-2.1.2b"
+                                                name="content-middle-crt-question-2.1.2"
+                                                ref="content-middle-crt-question-2.1.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.5b">
+                                                htmlFor="content-middle-crt-question-2.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -302,13 +302,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.6a"
-                                                name="content-middle-crt-question-1.6"
-                                                ref="content-middle-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.6', 'yes')}} />
+                                                id="content-middle-crt-question-2.2.1a"
+                                                name="content-middle-crt-question-2.2.1"
+                                                ref="content-middle-crt-question-2.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.6a">
+                                                htmlFor="content-middle-crt-question-2.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -316,13 +316,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.6b"
-                                                name="content-middle-crt-question-1.6"
-                                                ref="content-middle-crt-question-1.6"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.6', 'no')}} />
+                                                id="content-middle-crt-question-2.2.1b"
+                                                name="content-middle-crt-question-2.2.1"
+                                                ref="content-middle-crt-question-2.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.6b">
+                                                htmlFor="content-middle-crt-question-2.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -337,13 +337,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.7a"
-                                                name="content-middle-crt-question-1.7"
-                                                ref="content-middle-crt-question-1.7"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.7"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.7', 'yes')}} />
+                                                id="content-middle-crt-question-2.2.2a"
+                                                name="content-middle-crt-question-2.2.2"
+                                                ref="content-middle-crt-question-2.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.7a">
+                                                htmlFor="content-middle-crt-question-2.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -351,13 +351,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio"  value="0"
-                                                id="content-middle-crt-question-1.7b"
-                                                name="content-middle-crt-question-1.7"
-                                                ref="content-middle-crt-question-1.7"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.7"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.7', 'no')}} />
+                                                id="content-middle-crt-question-2.2.2b"
+                                                name="content-middle-crt-question-2.2.2"
+                                                ref="content-middle-crt-question-2.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.7b">
+                                                htmlFor="content-middle-crt-question-2.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -384,13 +384,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.8a"
-                                                name="content-middle-crt-question-1.8"
-                                                ref="content-middle-crt-question-1.8"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.8"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.8', 'yes')}} />
+                                                id="content-middle-crt-question-2.3.1a"
+                                                name="content-middle-crt-question-2.3.1"
+                                                ref="content-middle-crt-question-2.3.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.8a">
+                                                htmlFor="content-middle-crt-question-2.3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -398,13 +398,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.8b"
-                                                name="content-middle-crt-question-1.8"
-                                                ref="content-middle-crt-question-1.8"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.8"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.8', 'no')}} />
+                                                id="content-middle-crt-question-2.3.1b"
+                                                name="content-middle-crt-question-2.3.1"
+                                                ref="content-middle-crt-question-2.3.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.8b">
+                                                htmlFor="content-middle-crt-question-2.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -419,13 +419,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.9a"
-                                                name="content-middle-crt-question-1.9"
-                                                ref="content-middle-crt-question-1.9"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.9"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.9', 'yes')}} />
+                                                id="content-middle-crt-question-2.3.2a"
+                                                name="content-middle-crt-question-2.3.2"
+                                                ref="content-middle-crt-question-2.3.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.3.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.9a">
+                                                htmlFor="content-middle-crt-question-2.3.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -433,13 +433,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.9b"
-                                                name="content-middle-crt-question-1.9"
-                                                ref="content-middle-crt-question-1.9"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.9"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.9', 'no')}} />
+                                                id="content-middle-crt-question-2.3.2b"
+                                                name="content-middle-crt-question-2.3.2"
+                                                ref="content-middle-crt-question-2.3.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.3.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.9b">
+                                                htmlFor="content-middle-crt-question-2.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -466,13 +466,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.10a"
-                                                name="content-middle-crt-question-1.10"
-                                                ref="content-middle-crt-question-1.10"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.10"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.10', 'yes')}} />
+                                                id="content-middle-crt-question-2.4.1a"
+                                                name="content-middle-crt-question-2.4.1"
+                                                ref="content-middle-crt-question-2.4.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.4.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.10a">
+                                                htmlFor="content-middle-crt-question-2.4.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -480,13 +480,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.10b"
-                                                name="content-middle-crt-question-1.10"
-                                                ref="content-middle-crt-question-1.10"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.10"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.10', 'no')}} />
+                                                id="content-middle-crt-question-2.4.1b"
+                                                name="content-middle-crt-question-2.4.1"
+                                                ref="content-middle-crt-question-2.4.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.4.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.10b">
+                                                htmlFor="content-middle-crt-question-2.4.1b">
                                                 No
                                             </label>
                                         </div>
@@ -501,13 +501,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.11a"
-                                                name="content-middle-crt-question-1.11"
-                                                ref="content-middle-crt-question-1.11"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.11"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.11', 'yes')}} />
+                                                id="content-middle-crt-question-2.4.2a"
+                                                name="content-middle-crt-question-2.4.2"
+                                                ref="content-middle-crt-question-2.4.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.4.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.11a">
+                                                htmlFor="content-middle-crt-question-2.4.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -515,13 +515,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.11b"
-                                                name="content-middle-crt-question-1.11"
-                                                ref="content-middle-crt-question-1.11"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.11"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.11', 'no')}} />
+                                                id="content-middle-crt-question-2.4.2b"
+                                                name="content-middle-crt-question-2.4.2"
+                                                ref="content-middle-crt-question-2.4.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-2.4.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.11b">
+                                                htmlFor="content-middle-crt-question-2.4.2b">
                                                 No
                                             </label>
                                         </div>
@@ -572,13 +572,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.12a"
-                                                name="content-middle-crt-question-1.12"
-                                                ref="content-middle-crt-question-1.12"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.12"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.12', 'yes')}} />
+                                                id="content-middle-crt-question-3.1a"
+                                                name="content-middle-crt-question-3.1"
+                                                ref="content-middle-crt-question-3.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.12a">
+                                                htmlFor="content-middle-crt-question-3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -586,13 +586,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.12b"
-                                                name="content-middle-crt-question-1.12"
-                                                ref="content-middle-crt-question-1.12"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.12"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.12', 'no')}} />
+                                                id="content-middle-crt-question-3.1b"
+                                                name="content-middle-crt-question-3.1"
+                                                ref="content-middle-crt-question-3.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.12b">
+                                                htmlFor="content-middle-crt-question-3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -619,13 +619,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.13a"
-                                                name="content-middle-crt-question-1.13"
-                                                ref="content-middle-crt-question-1.13"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.13"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.13', 'yes')}} />
+                                                id="content-middle-crt-question-3.2.1a"
+                                                name="content-middle-crt-question-3.2.1"
+                                                ref="content-middle-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.13a">
+                                                htmlFor="content-middle-crt-question-3.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -633,13 +633,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.13b"
-                                                name="content-middle-crt-question-1.13"
-                                                ref="content-middle-crt-question-1.13"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.13"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.13', 'no')}} />
+                                                id="content-middle-crt-question-3.2.1b"
+                                                name="content-middle-crt-question-3.2.1"
+                                                ref="content-middle-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.13b">
+                                                htmlFor="content-middle-crt-question-3.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -654,13 +654,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.14a"
-                                                name="content-middle-crt-question-1.14"
-                                                ref="content-middle-crt-question-1.14"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.14"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.14', 'yes')}} />
+                                                id="content-middle-crt-question-3.2.2a"
+                                                name="content-middle-crt-question-3.2.2"
+                                                ref="content-middle-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.14a">
+                                                htmlFor="content-middle-crt-question-3.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -668,13 +668,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.14b"
-                                                name="content-middle-crt-question-1.14"
-                                                ref="content-middle-crt-question-1.14"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.14"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.14', 'no')}} />
+                                                id="content-middle-crt-question-3.2.2b"
+                                                name="content-middle-crt-question-3.2.2"
+                                                ref="content-middle-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.14b">
+                                                htmlFor="content-middle-crt-question-3.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -689,13 +689,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.15a"
-                                                name="content-middle-crt-question-1.15"
-                                                ref="content-middle-crt-question-1.15"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.15"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.15', 'yes')}} />
+                                                id="content-middle-crt-question-3.2.3a"
+                                                name="content-middle-crt-question-3.2.3"
+                                                ref="content-middle-crt-question-3.2.3"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.15a">
+                                                htmlFor="content-middle-crt-question-3.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -703,13 +703,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.15b"
-                                                name="content-middle-crt-question-1.15"
-                                                ref="content-middle-crt-question-1.15"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.15"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.15', 'no')}} />
+                                                id="content-middle-crt-question-3.2.3b"
+                                                name="content-middle-crt-question-3.2.3"
+                                                ref="content-middle-crt-question-3.2.3"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.15b">
+                                                htmlFor="content-middle-crt-question-3.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -724,13 +724,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.16a"
-                                                name="content-middle-crt-question-1.16"
-                                                ref="content-middle-crt-question-1.16"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.16"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.16', 'yes')}} />
+                                                id="content-middle-crt-question-3.2.4a"
+                                                name="content-middle-crt-question-3.2.4"
+                                                ref="content-middle-crt-question-3.2.4"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.16a">
+                                                htmlFor="content-middle-crt-question-3.2.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -738,13 +738,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.16b"
-                                                name="content-middle-crt-question-1.16"
-                                                ref="content-middle-crt-question-1.16"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.16"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.16', 'no')}} />
+                                                id="content-middle-crt-question-3.2.4b"
+                                                name="content-middle-crt-question-3.2.4"
+                                                ref="content-middle-crt-question-3.2.4"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-3.2.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.16b">
+                                                htmlFor="content-middle-crt-question-3.2.4b">
                                                 No
                                             </label>
                                         </div>
@@ -795,13 +795,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.17a"
-                                                name="content-middle-crt-question-1.17"
-                                                ref="content-middle-crt-question-1.17"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.17"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.17', 'yes')}} />
+                                                id="content-middle-crt-question-4.1a"
+                                                name="content-middle-crt-question-4.1"
+                                                ref="content-middle-crt-question-4.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.17a">
+                                                htmlFor="content-middle-crt-question-4.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -809,13 +809,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.17b"
-                                                name="content-middle-crt-question-1.17"
-                                                ref="content-middle-crt-question-1.17"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.17"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.17', 'no')}} />
+                                                id="content-middle-crt-question-4.1b"
+                                                name="content-middle-crt-question-4.1"
+                                                ref="content-middle-crt-question-4.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.17b">
+                                                htmlFor="content-middle-crt-question-4.1b">
                                                 No
                                             </label>
                                         </div>
@@ -842,13 +842,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.18a"
-                                                name="content-middle-crt-question-1.18"
-                                                ref="content-middle-crt-question-1.18"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.18"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.18', 'yes')}} />
+                                                id="content-middle-crt-question-4.2.1a"
+                                                name="content-middle-crt-question-4.2.1"
+                                                ref="content-middle-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.18a">
+                                                htmlFor="content-middle-crt-question-4.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -856,13 +856,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.18b"
-                                                name="content-middle-crt-question-1.18"
-                                                ref="content-middle-crt-question-1.18"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.18"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.18', 'no')}} />
+                                                id="content-middle-crt-question-4.2.1b"
+                                                name="content-middle-crt-question-4.2.1"
+                                                ref="content-middle-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.18b">
+                                                htmlFor="content-middle-crt-question-4.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -877,13 +877,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.19a"
-                                                name="content-middle-crt-question-1.19"
-                                                ref="content-middle-crt-question-1.19"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.19"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.19', 'yes')}} />
+                                                id="content-middle-crt-question-4.2.2a"
+                                                name="content-middle-crt-question-4.2.2"
+                                                ref="content-middle-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.19a">
+                                                htmlFor="content-middle-crt-question-4.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -891,13 +891,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.19b"
-                                                name="content-middle-crt-question-1.19"
-                                                ref="content-middle-crt-question-1.19"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.19"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.19', 'no')}} />
+                                                id="content-middle-crt-question-4.2.2b"
+                                                name="content-middle-crt-question-4.2.2"
+                                                ref="content-middle-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.19b">
+                                                htmlFor="content-middle-crt-question-4.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -912,13 +912,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.20a"
-                                                name="content-middle-crt-question-1.20"
-                                                ref="content-middle-crt-question-1.20"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.20"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.20', 'yes')}} />
+                                                id="content-middle-crt-question-4.2.3a"
+                                                name="content-middle-crt-question-4.2.3"
+                                                ref="content-middle-crt-question-4.2.3"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.20a">
+                                                htmlFor="content-middle-crt-question-4.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -926,13 +926,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.20b"
-                                                name="content-middle-crt-question-1.20"
-                                                ref="content-middle-crt-question-1.20"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.20"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.20', 'no')}} />
+                                                id="content-middle-crt-question-4.2.3b"
+                                                name="content-middle-crt-question-4.2.3"
+                                                ref="content-middle-crt-question-4.2.3"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.20b">
+                                                htmlFor="content-middle-crt-question-4.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -947,13 +947,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.21a"
-                                                name="content-middle-crt-question-1.21"
-                                                ref="content-middle-crt-question-1.21"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.21"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.21', 'yes')}} />
+                                                id="content-middle-crt-question-4.2.4a"
+                                                name="content-middle-crt-question-4.2.4"
+                                                ref="content-middle-crt-question-4.2.4"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.21a">
+                                                htmlFor="content-middle-crt-question-4.2.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -961,13 +961,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.21b"
-                                                name="content-middle-crt-question-1.21"
-                                                ref="content-middle-crt-question-1.21"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.21"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.21', 'no')}} />
+                                                id="content-middle-crt-question-4.2.4b"
+                                                name="content-middle-crt-question-4.2.4"
+                                                ref="content-middle-crt-question-4.2.4"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.2.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.21b">
+                                                htmlFor="content-middle-crt-question-4.2.4b">
                                                 No
                                             </label>
                                         </div>
@@ -994,13 +994,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.22a"
-                                                name="content-middle-crt-question-1.22"
-                                                ref="content-middle-crt-question-1.22"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.22"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.22', 'yes')}} />
+                                                id="content-middle-crt-question-4.3.1a"
+                                                name="content-middle-crt-question-4.3.1"
+                                                ref="content-middle-crt-question-4.3.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.22a">
+                                                htmlFor="content-middle-crt-question-4.3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1008,13 +1008,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.22b"
-                                                name="content-middle-crt-question-1.22"
-                                                ref="content-middle-crt-question-1.22"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.22"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.22', 'no')}} />
+                                                id="content-middle-crt-question-4.3.1b"
+                                                name="content-middle-crt-question-4.3.1"
+                                                ref="content-middle-crt-question-4.3.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.22b">
+                                                htmlFor="content-middle-crt-question-4.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1029,13 +1029,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.23a"
-                                                name="content-middle-crt-question-1.23"
-                                                ref="content-middle-crt-question-1.23"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.23"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.23', 'yes')}} />
+                                                id="content-middle-crt-question-4.3.2a"
+                                                name="content-middle-crt-question-4.3.2"
+                                                ref="content-middle-crt-question-4.3.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.3.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.23a">
+                                                htmlFor="content-middle-crt-question-4.3.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1043,13 +1043,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.23b"
-                                                name="content-middle-crt-question-1.23"
-                                                ref="content-middle-crt-question-1.23"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.23"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.23', 'no')}} />
+                                                id="content-middle-crt-question-4.3.2b"
+                                                name="content-middle-crt-question-4.3.2"
+                                                ref="content-middle-crt-question-4.3.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-4.3.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.23b">
+                                                htmlFor="content-middle-crt-question-4.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1100,13 +1100,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.24a"
-                                                name="content-middle-crt-question-1.24"
-                                                ref="content-middle-crt-question-1.24"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.24"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.24', 'yes')}} />
+                                                id="content-middle-crt-question-5.1a"
+                                                name="content-middle-crt-question-5.1"
+                                                ref="content-middle-crt-question-5.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.24a">
+                                                htmlFor="content-middle-crt-question-5.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1114,13 +1114,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.24b"
-                                                name="content-middle-crt-question-1.24"
-                                                ref="content-middle-crt-question-1.24"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.24"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.24', 'no')}} />
+                                                id="content-middle-crt-question-5.1b"
+                                                name="content-middle-crt-question-5.1"
+                                                ref="content-middle-crt-question-5.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.24b">
+                                                htmlFor="content-middle-crt-question-5.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1147,13 +1147,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.25a"
-                                                name="content-middle-crt-question-1.25"
-                                                ref="content-middle-crt-question-1.25"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.25"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.25', 'yes')}} />
+                                                id="content-middle-crt-question-5.2.1a"
+                                                name="content-middle-crt-question-5.2.1"
+                                                ref="content-middle-crt-question-5.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.25a">
+                                                htmlFor="content-middle-crt-question-5.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1161,13 +1161,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.25b"
-                                                name="content-middle-crt-question-1.25"
-                                                ref="content-middle-crt-question-1.25"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.25"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.25', 'no')}} />
+                                                id="content-middle-crt-question-5.2.1b"
+                                                name="content-middle-crt-question-5.2.1"
+                                                ref="content-middle-crt-question-5.2.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.25b">
+                                                htmlFor="content-middle-crt-question-5.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1182,13 +1182,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.26a"
-                                                name="content-middle-crt-question-1.26"
-                                                ref="content-middle-crt-question-1.26"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.26"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.26', 'yes')}} />
+                                                id="content-middle-crt-question-5.2.2a"
+                                                name="content-middle-crt-question-5.2.2"
+                                                ref="content-middle-crt-question-5.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.26a">
+                                                htmlFor="content-middle-crt-question-5.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1196,13 +1196,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.26b"
-                                                name="content-middle-crt-question-1.26"
-                                                ref="content-middle-crt-question-1.26"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.26"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.26', 'no')}} />
+                                                id="content-middle-crt-question-5.2.2b"
+                                                name="content-middle-crt-question-5.2.2"
+                                                ref="content-middle-crt-question-5.2.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.26b">
+                                                htmlFor="content-middle-crt-question-5.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1229,13 +1229,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.27a"
-                                                name="content-middle-crt-question-1.27"
-                                                ref="content-middle-crt-question-1.27"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.27"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.27', 'yes')}} />
+                                                id="content-middle-crt-question-5.3a"
+                                                name="content-middle-crt-question-5.3"
+                                                ref="content-middle-crt-question-5.3"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.22a">
+                                                htmlFor="content-middle-crt-question-5.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1243,13 +1243,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.27b"
-                                                name="content-middle-crt-question-1.27"
-                                                ref="content-middle-crt-question-1.27"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.27"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.27', 'no')}} />
+                                                id="content-middle-crt-question-5.3b"
+                                                name="content-middle-crt-question-5.3"
+                                                ref="content-middle-crt-question-5.3"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-5.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.27b">
+                                                htmlFor="content-middle-crt-question-5.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1300,13 +1300,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.28a"
-                                                name="content-middle-crt-question-1.28"
-                                                ref="content-middle-crt-question-1.28"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.28"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.28', 'yes')}} />
+                                                id="content-middle-crt-question-6.1.1a"
+                                                name="content-middle-crt-question-6.1.1"
+                                                ref="content-middle-crt-question-6.1.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-6.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.28a">
+                                                htmlFor="content-middle-crt-question-6.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1314,13 +1314,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.28b"
-                                                name="content-middle-crt-question-1.28"
-                                                ref="content-middle-crt-question-1.28"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.28"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.28', 'no')}} />
+                                                id="content-middle-crt-question-6.1.1b"
+                                                name="content-middle-crt-question-6.1.1"
+                                                ref="content-middle-crt-question-6.1.1"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-6.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.28b">
+                                                htmlFor="content-middle-crt-question-6.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1335,13 +1335,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.29a"
-                                                name="content-middle-crt-question-1.29"
-                                                ref="content-middle-crt-question-1.29"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.29"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.29', 'yes')}} />
+                                                id="content-middle-crt-question-6.1.2a"
+                                                name="content-middle-crt-question-6.1.2"
+                                                ref="content-middle-crt-question-6.1.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-6.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.29a">
+                                                htmlFor="content-middle-crt-question-6.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1349,13 +1349,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.29b"
-                                                name="content-middle-crt-question-1.29"
-                                                ref="content-middle-crt-question-1.29"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.29"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-1.29', 'no')}} />
+                                                id="content-middle-crt-question-6.1.2b"
+                                                name="content-middle-crt-question-6.1.2"
+                                                ref="content-middle-crt-question-6.1.2"
+                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-middle-crt-question-6.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.29b">
+                                                htmlFor="content-middle-crt-question-6.1.2b">
                                                 No
                                             </label>
                                         </div>

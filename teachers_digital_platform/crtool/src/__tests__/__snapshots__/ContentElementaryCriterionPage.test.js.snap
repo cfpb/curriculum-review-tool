@@ -394,15 +394,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.3a"
-                  name="content-elementary-crt-quesion-1.3"
+                  id="content-elementary-crt-question-2.1.1a"
+                  name="content-elementary-crt-question-2.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.3a"
+                  htmlFor="content-elementary-crt-question-2.1.1a"
                 >
                   Yes
                 </label>
@@ -413,15 +413,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.3b"
-                  name="content-elementary-crt-quesion-1.3"
+                  id="content-elementary-crt-question-2.1.1b"
+                  name="content-elementary-crt-question-2.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.3b"
+                  htmlFor="content-elementary-crt-question-2.1.1b"
                 >
                   No
                 </label>
@@ -447,15 +447,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.4a"
-                  name="content-elementary-crt-quesion-1.4"
+                  id="content-elementary-crt-question-2.1.2a"
+                  name="content-elementary-crt-question-2.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.4a"
+                  htmlFor="content-elementary-crt-question-2.1.2a"
                 >
                   Yes
                 </label>
@@ -466,15 +466,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.4b"
-                  name="content-elementary-crt-quesion-1.4"
+                  id="content-elementary-crt-question-2.1.2b"
+                  name="content-elementary-crt-question-2.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.4b"
+                  htmlFor="content-elementary-crt-question-2.1.2b"
                 >
                   No
                 </label>
@@ -534,15 +534,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.5a"
-                  name="content-elementary-crt-quesion-1.5"
+                  id="content-elementary-crt-question-2.2a"
+                  name="content-elementary-crt-question-2.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.5a"
+                  htmlFor="content-elementary-crt-question-2.2a"
                 >
                   Yes
                 </label>
@@ -553,15 +553,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.5b"
-                  name="content-elementary-crt-quesion-1.5"
+                  id="content-elementary-crt-question-2.2b"
+                  name="content-elementary-crt-question-2.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.5b"
+                  htmlFor="content-elementary-crt-question-2.2b"
                 >
                   No
                 </label>
@@ -621,15 +621,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.6a"
-                  name="content-elementary-crt-quesion-1.6"
+                  id="content-elementary-crt-question-2.3a"
+                  name="content-elementary-crt-question-2.3"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.6a"
+                  htmlFor="content-elementary-crt-question-2.3a"
                 >
                   Yes
                 </label>
@@ -640,15 +640,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.6b"
-                  name="content-elementary-crt-quesion-1.6"
+                  id="content-elementary-crt-question-2.3b"
+                  name="content-elementary-crt-question-2.3"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.6b"
+                  htmlFor="content-elementary-crt-question-2.3b"
                 >
                   No
                 </label>
@@ -753,15 +753,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.7a"
-                  name="content-elementary-crt-quesion-1.7"
+                  id="content-elementary-crt-question-3.1.1a"
+                  name="content-elementary-crt-question-3.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.7a"
+                  htmlFor="content-elementary-crt-question-3.1.1a"
                 >
                   Yes
                 </label>
@@ -772,15 +772,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.7b"
-                  name="content-elementary-crt-quesion-1.7"
+                  id="content-elementary-crt-question-3.1.1b"
+                  name="content-elementary-crt-question-3.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.7b"
+                  htmlFor="content-elementary-crt-question-3.1.1b"
                 >
                   No
                 </label>
@@ -806,15 +806,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.8a"
-                  name="content-elementary-crt-quesion-1.8"
+                  id="content-elementary-crt-question-3.1.2a"
+                  name="content-elementary-crt-question-3.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.8a"
+                  htmlFor="content-elementary-crt-question-3.1.2a"
                 >
                   Yes
                 </label>
@@ -825,15 +825,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.8b"
-                  name="content-elementary-crt-quesion-1.8"
+                  id="content-elementary-crt-question-3.1.2b"
+                  name="content-elementary-crt-question-3.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.8b"
+                  htmlFor="content-elementary-crt-question-3.1.2b"
                 >
                   No
                 </label>
@@ -893,15 +893,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.9a"
-                  name="content-elementary-crt-quesion-1.9"
+                  id="content-elementary-crt-question-3.2.1a"
+                  name="content-elementary-crt-question-3.2.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.9a"
+                  htmlFor="content-elementary-crt-question-3.2.1a"
                 >
                   Yes
                 </label>
@@ -912,15 +912,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.9b"
-                  name="content-elementary-crt-quesion-1.9"
+                  id="content-elementary-crt-question-3.2.1b"
+                  name="content-elementary-crt-question-3.2.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.9b"
+                  htmlFor="content-elementary-crt-question-3.2.1b"
                 >
                   No
                 </label>
@@ -946,15 +946,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.10a"
-                  name="content-elementary-crt-quesion-1.10"
+                  id="content-elementary-crt-question-3.2.2a"
+                  name="content-elementary-crt-question-3.2.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.10a"
+                  htmlFor="content-elementary-crt-question-3.2.2a"
                 >
                   Yes
                 </label>
@@ -965,15 +965,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.10b"
-                  name="content-elementary-crt-quesion-1.10"
+                  id="content-elementary-crt-question-3.2.2b"
+                  name="content-elementary-crt-question-3.2.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.10b"
+                  htmlFor="content-elementary-crt-question-3.2.2b"
                 >
                   No
                 </label>
@@ -999,15 +999,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.11a"
-                  name="content-elementary-crt-quesion-1.11"
+                  id="content-elementary-crt-question-3.2.3a"
+                  name="content-elementary-crt-question-3.2.3"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.11a"
+                  htmlFor="content-elementary-crt-question-3.2.3a"
                 >
                   Yes
                 </label>
@@ -1018,15 +1018,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.11b"
-                  name="content-elementary-crt-quesion-1.11"
+                  id="content-elementary-crt-question-3.2.3b"
+                  name="content-elementary-crt-question-3.2.3"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.11b"
+                  htmlFor="content-elementary-crt-question-3.2.3b"
                 >
                   No
                 </label>
@@ -1052,15 +1052,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.12a"
-                  name="content-elementary-crt-quesion-1.12"
+                  id="content-elementary-crt-question-3.2.4a"
+                  name="content-elementary-crt-question-3.2.4"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.12a"
+                  htmlFor="content-elementary-crt-question-3.2.4a"
                 >
                   Yes
                 </label>
@@ -1071,15 +1071,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.12b"
-                  name="content-elementary-crt-quesion-1.12"
+                  id="content-elementary-crt-question-3.2.4b"
+                  name="content-elementary-crt-question-3.2.4"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.12b"
+                  htmlFor="content-elementary-crt-question-3.2.4b"
                 >
                   No
                 </label>
@@ -1184,15 +1184,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.13a"
-                  name="content-elementary-crt-quesion-1.13"
+                  id="content-elementary-crt-question-4.1.1a"
+                  name="content-elementary-crt-question-4.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.13a"
+                  htmlFor="content-elementary-crt-question-4.1.1a"
                 >
                   Yes
                 </label>
@@ -1203,15 +1203,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.13b"
-                  name="content-elementary-crt-quesion-1.13"
+                  id="content-elementary-crt-question-4.1.1b"
+                  name="content-elementary-crt-question-4.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.13b"
+                  htmlFor="content-elementary-crt-question-4.1.1b"
                 >
                   No
                 </label>
@@ -1237,15 +1237,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.14a"
-                  name="content-elementary-crt-quesion-1.14"
+                  id="content-elementary-crt-question-4.1.2a"
+                  name="content-elementary-crt-question-4.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.14a"
+                  htmlFor="content-elementary-crt-question-4.1.2a"
                 >
                   Yes
                 </label>
@@ -1256,15 +1256,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.14b"
-                  name="content-elementary-crt-quesion-1.14"
+                  id="content-elementary-crt-question-4.1.2b"
+                  name="content-elementary-crt-question-4.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.14b"
+                  htmlFor="content-elementary-crt-question-4.1.2b"
                 >
                   No
                 </label>
@@ -1369,15 +1369,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.15a"
-                  name="content-elementary-crt-quesion-1.15"
+                  id="content-elementary-crt-question-5.1.1a"
+                  name="content-elementary-crt-question-5.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.15a"
+                  htmlFor="content-elementary-crt-question-5.1.1a"
                 >
                   Yes
                 </label>
@@ -1388,15 +1388,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.15b"
-                  name="content-elementary-crt-quesion-1.15"
+                  id="content-elementary-crt-question-5.1.1b"
+                  name="content-elementary-crt-question-5.1.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.15b"
+                  htmlFor="content-elementary-crt-question-5.1.1b"
                 >
                   No
                 </label>
@@ -1422,15 +1422,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.16a"
-                  name="content-elementary-crt-quesion-1.16"
+                  id="content-elementary-crt-question-5.1.2a"
+                  name="content-elementary-crt-question-5.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.16a"
+                  htmlFor="content-elementary-crt-question-5.1.2a"
                 >
                   Yes
                 </label>
@@ -1441,15 +1441,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.16b"
-                  name="content-elementary-crt-quesion-1.16"
+                  id="content-elementary-crt-question-5.1.2b"
+                  name="content-elementary-crt-question-5.1.2"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.16b"
+                  htmlFor="content-elementary-crt-question-5.1.2b"
                 >
                   No
                 </label>
@@ -1554,15 +1554,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.17a"
-                  name="content-elementary-crt-quesion-1.17"
+                  id="content-elementary-crt-question-6.1a"
+                  name="content-elementary-crt-question-6.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.17a"
+                  htmlFor="content-elementary-crt-question-6.1a"
                 >
                   Yes
                 </label>
@@ -1573,15 +1573,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="content-elementary-crt-quesion-1.17b"
-                  name="content-elementary-crt-quesion-1.17"
+                  id="content-elementary-crt-question-6.1b"
+                  name="content-elementary-crt-question-6.1"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="content-elementary-crt-quesion-1.17b"
+                  htmlFor="content-elementary-crt-question-6.1b"
                 >
                   No
                 </label>
@@ -1658,71 +1658,69 @@ Array [
         <form
           className="o-modal_content"
         >
-          <span>
-            <div
-              className="o-modal_body"
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
             >
-              <button
-                className="o-modal_close a-btn a-btn__link"
-                onClick={[Function]}
+              Close  
+              <span
+                className="a-icon a-icon__large"
               >
-                Close  
-                <span
-                  className="a-icon a-icon__large"
+                <svg
+                  className="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    className="cf-icon-svg"
-                    viewBox="0 0 1000 1200"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <h1
-                id="modal-save-work_title"
-              >
-                Saving your work
-              </h1>
-              <div
-                id="modal-save-work_desc"
-              >
-                <p>
-                  This tool uses cookies to 
-                  <strong>
-                    temporarily
-                  </strong>
-                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
-                </p>
-                <p>
-                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
-                  <a
-                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    save the summary as a PDF
-                  </a>
-                  .
-                </p>
-                <p>
-                  You can only work on a single curriculum at a time
-                </p>
-              </div>
-            </div>
-            <div
-              className="o-modal_footer"
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              id="modal-save-work_title"
             >
-              <button
-                className="a-btn"
-                onClick={[Function]}
-              >
-                Close
-              </button>
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
             </div>
-          </span>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
         </form>
       </div>
     </div>

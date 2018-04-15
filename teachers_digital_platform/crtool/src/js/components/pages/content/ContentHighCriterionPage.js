@@ -114,13 +114,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.2a"
-                                                name="content-high-crt-quesion-1.2"
-                                                ref="content-high-crt-quesion-1.2"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.2', 'yes')}} />
+                                                id="content-high-crt-question-1.2.1a"
+                                                name="content-high-crt-question-1.2.1"
+                                                ref="content-high-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.2a">
+                                                htmlFor="content-high-crt-question-1.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -128,13 +128,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.2b"
-                                                name="content-high-crt-quesion-1.2"
-                                                ref="content-high-crt-quesion-1.2"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.2', 'no')}} />
+                                                id="content-high-crt-question-1.2.1b"
+                                                name="content-high-crt-question-1.2.1"
+                                                ref="content-high-crt-question-1.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.2b">
+                                                htmlFor="content-high-crt-question-1.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -149,13 +149,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.3a"
-                                                name="content-high-crt-quesion-1.3"
-                                                ref="content-high-crt-quesion-1.3"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.3', 'yes')}} />
+                                                id="content-high-crt-question-1.2.2a"
+                                                name="content-high-crt-question-1.2.2"
+                                                ref="content-high-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.3a">
+                                                htmlFor="content-high-crt-question-1.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -163,13 +163,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.3b"
-                                                name="content-high-crt-quesion-1.3"
-                                                ref="content-high-crt-quesion-1.3"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.3', 'no')}} />
+                                                id="content-high-crt-question-1.2.2b"
+                                                name="content-high-crt-question-1.2.2"
+                                                ref="content-high-crt-question-1.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.3b">
+                                                htmlFor="content-high-crt-question-1.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -184,13 +184,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.4a"
-                                                name="content-high-crt-quesion-1.4"
-                                                ref="content-high-crt-quesion-1.4"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.4', 'yes')}} />
+                                                id="content-high-crt-question-1.2.3a"
+                                                name="content-high-crt-question-1.2.3"
+                                                ref="content-high-crt-question-1.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.4a">
+                                                htmlFor="content-high-crt-question-1.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -198,13 +198,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.4b"
-                                                name="content-high-crt-quesion-1.4"
-                                                ref="content-high-crt-quesion-1.4"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.4', 'no')}} />
+                                                id="content-high-crt-question-1.2.3b"
+                                                name="content-high-crt-question-1.2.3"
+                                                ref="content-high-crt-question-1.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.4b">
+                                                htmlFor="content-high-crt-question-1.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -219,13 +219,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.5a"
-                                                name="content-high-crt-quesion-1.5"
-                                                ref="content-high-crt-quesion-1.5"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.5', 'yes')}} />
+                                                id="content-high-crt-question-1.2.4a"
+                                                name="content-high-crt-question-1.2.4"
+                                                ref="content-high-crt-question-1.2.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.5a">
+                                                htmlFor="content-high-crt-question-1.2.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -233,13 +233,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.5b"
-                                                name="content-high-crt-quesion-1.5"
-                                                ref="content-high-crt-quesion-1.5"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.5', 'no')}} />
+                                                id="content-high-crt-question-1.2.4b"
+                                                name="content-high-crt-question-1.2.4"
+                                                ref="content-high-crt-question-1.2.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.5b">
+                                                htmlFor="content-high-crt-question-1.2.4b">
                                                 No
                                             </label>
                                         </div>
@@ -254,13 +254,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.6a"
-                                                name="content-high-crt-quesion-1.6"
-                                                ref="content-high-crt-quesion-1.6"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.6', 'yes')}} />
+                                                id="content-high-crt-question-1.2.5a"
+                                                name="content-high-crt-question-1.2.5"
+                                                ref="content-high-crt-question-1.2.5"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.5', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.6a">
+                                                htmlFor="content-high-crt-question-1.2.5a">
                                                 Yes
                                             </label>
                                         </div>
@@ -268,13 +268,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.6b"
-                                                name="content-high-crt-quesion-1.6"
-                                                ref="content-high-crt-quesion-1.6"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.6', 'no')}} />
+                                                id="content-high-crt-question-1.2.5b"
+                                                name="content-high-crt-question-1.2.5"
+                                                ref="content-high-crt-question-1.2.5"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.2.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.5', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.6b">
+                                                htmlFor="content-high-crt-question-1.2.5b">
                                                 No
                                             </label>
                                         </div>
@@ -325,13 +325,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.7a"
-                                                name="content-high-crt-quesion-1.7"
-                                                ref="content-high-crt-quesion-1.7"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.7"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.7', 'yes')}} />
+                                                id="content-high-crt-question-2.1.1a"
+                                                name="content-high-crt-question-2.1.1"
+                                                ref="content-high-crt-question-2.1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.7a">
+                                                htmlFor="content-high-crt-question-2.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -339,13 +339,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.7b"
-                                                name="content-high-crt-quesion-1.7"
-                                                ref="content-high-crt-quesion-1.7"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.7"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.7', 'no')}} />
+                                                id="content-high-crt-question-2.1.1b"
+                                                name="content-high-crt-question-2.1.1"
+                                                ref="content-high-crt-question-2.1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.7b">
+                                                htmlFor="content-high-crt-question-2.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -360,13 +360,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.8a"
-                                                name="content-high-crt-quesion-1.8"
-                                                ref="content-high-crt-quesion-1.8"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.8"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.8', 'yes')}} />
+                                                id="content-high-crt-question-2.1.2a"
+                                                name="content-high-crt-question-2.1.2"
+                                                ref="content-high-crt-question-2.1.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.8a">
+                                                htmlFor="content-high-crt-question-2.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -374,13 +374,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.8b"
-                                                name="content-high-crt-quesion-1.8"
-                                                ref="content-high-crt-quesion-1.8"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.8"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.8', 'no')}} />
+                                                id="content-high-crt-question-2.1.2b"
+                                                name="content-high-crt-question-2.1.2"
+                                                ref="content-high-crt-question-2.1.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.8b">
+                                                htmlFor="content-high-crt-question-2.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -395,13 +395,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.9a"
-                                                name="content-high-crt-quesion-1.9"
-                                                ref="content-high-crt-quesion-1.9"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.9"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.9', 'yes')}} />
+                                                id="content-high-crt-question-2.1.3a"
+                                                name="content-high-crt-question-2.1.3"
+                                                ref="content-high-crt-question-2.1.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.9a">
+                                                htmlFor="content-high-crt-question-2.1.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -409,13 +409,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.9b"
-                                                name="content-high-crt-quesion-1.9"
-                                                ref="content-high-crt-quesion-1.9"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.9"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.9', 'no')}} />
+                                                id="content-high-crt-question-2.1.3b"
+                                                name="content-high-crt-question-2.1.3"
+                                                ref="content-high-crt-question-2.1.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.9b">
+                                                htmlFor="content-high-crt-question-2.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -430,13 +430,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.10a"
-                                                name="content-high-crt-quesion-1.10"
-                                                ref="content-high-crt-quesion-1.10"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.10"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.10', 'yes')}} />
+                                                id="content-high-crt-question-2.1.4a"
+                                                name="content-high-crt-question-2.1.4"
+                                                ref="content-high-crt-question-2.1.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.10a">
+                                                htmlFor="content-high-crt-question-2.1.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -444,13 +444,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.10b"
-                                                name="content-high-crt-quesion-1.10"
-                                                ref="content-high-crt-quesion-1.10"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.10"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.10', 'no')}} />
+                                                id="content-high-crt-question-2.1.4b"
+                                                name="content-high-crt-question-2.1.4"
+                                                ref="content-high-crt-question-2.1.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.10b">
+                                                htmlFor="content-high-crt-question-2.1.4b">
                                                 No
                                             </label>
                                         </div>
@@ -465,13 +465,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.11a"
-                                                name="content-high-crt-quesion-1.11"
-                                                ref="content-high-crt-quesion-1.11"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.11"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.11', 'yes')}} />
+                                                id="content-high-crt-question-2.1.5a"
+                                                name="content-high-crt-question-2.1.5"
+                                                ref="content-high-crt-question-2.1.5"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.5', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.11a">
+                                                htmlFor="content-high-crt-question-2.1.5a">
                                                 Yes
                                             </label>
                                         </div>
@@ -479,13 +479,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.11b"
-                                                name="content-high-crt-quesion-1.11"
-                                                ref="content-high-crt-quesion-1.11"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.11"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.11', 'no')}} />
+                                                id="content-high-crt-question-2.1.5b"
+                                                name="content-high-crt-question-2.1.5"
+                                                ref="content-high-crt-question-2.1.5"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.1.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.5', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.11b">
+                                                htmlFor="content-high-crt-question-2.1.5b">
                                                 No
                                             </label>
                                         </div>
@@ -512,13 +512,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.12a"
-                                                name="content-high-crt-quesion-1.12"
-                                                ref="content-high-crt-quesion-1.12"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.12"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.12', 'yes')}} />
+                                                id="content-high-crt-question-2.2a"
+                                                name="content-high-crt-question-2.2"
+                                                ref="content-high-crt-question-2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.12a">
+                                                htmlFor="content-high-crt-question-2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -526,13 +526,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.12b"
-                                                name="content-high-crt-quesion-1.12"
-                                                ref="content-high-crt-quesion-1.12"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.12"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.12', 'no')}} />
+                                                id="content-high-crt-question-2.2b"
+                                                name="content-high-crt-question-2.2"
+                                                ref="content-high-crt-question-2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.12b">
+                                                htmlFor="content-high-crt-question-2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -559,13 +559,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.13a"
-                                                name="content-high-crt-quesion-1.13"
-                                                ref="content-high-crt-quesion-1.13"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.13"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.13', 'yes')}} />
+                                                id="content-high-crt-question-2.3a"
+                                                name="content-high-crt-question-2.3"
+                                                ref="content-high-crt-question-2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.13a">
+                                                htmlFor="content-high-crt-question-2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -573,13 +573,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.13b"
-                                                name="content-high-crt-quesion-1.13"
-                                                ref="content-high-crt-quesion-1.13"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.13"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.13', 'no')}} />
+                                                id="content-high-crt-question-2.3b"
+                                                name="content-high-crt-question-2.3"
+                                                ref="content-high-crt-question-2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.13b">
+                                                htmlFor="content-high-crt-question-2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -606,13 +606,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.14a"
-                                                name="content-high-crt-quesion-1.14"
-                                                ref="content-high-crt-quesion-1.14"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.14"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.14', 'yes')}} />
+                                                id="content-high-crt-question-2.4.1a"
+                                                name="content-high-crt-question-2.4.1"
+                                                ref="content-high-crt-question-2.4.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.4.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.14a">
+                                                htmlFor="content-high-crt-question-2.4.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -620,13 +620,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.14b"
-                                                name="content-high-crt-quesion-1.14"
-                                                ref="content-high-crt-quesion-1.14"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.14"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.14', 'no')}} />
+                                                id="content-high-crt-question-2.4.1b"
+                                                name="content-high-crt-question-2.4.1"
+                                                ref="content-high-crt-question-2.4.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.4.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.14b">
+                                                htmlFor="content-high-crt-question-2.4.1b">
                                                 No
                                             </label>
                                         </div>
@@ -641,13 +641,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.15a"
-                                                name="content-high-crt-quesion-1.15"
-                                                ref="content-high-crt-quesion-1.15"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.15"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.15', 'yes')}} />
+                                                id="content-high-crt-question-2.4.2a"
+                                                name="content-high-crt-question-2.4.2"
+                                                ref="content-high-crt-question-2.4.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.4.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.15a">
+                                                htmlFor="content-high-crt-question-2.4.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -655,13 +655,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.15b"
-                                                name="content-high-crt-quesion-1.15"
-                                                ref="content-high-crt-quesion-1.15"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.15"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.15', 'no')}} />
+                                                id="content-high-crt-question-2.4.2b"
+                                                name="content-high-crt-question-2.4.2"
+                                                ref="content-high-crt-question-2.4.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-2.4.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.15b">
+                                                htmlFor="content-high-crt-question-2.4.2b">
                                                 No
                                             </label>
                                         </div>
@@ -712,13 +712,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.16a"
-                                                name="content-high-crt-quesion-1.16"
-                                                ref="content-high-crt-quesion-1.16"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.16"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.16', 'yes')}} />
+                                                id="content-high-crt-question-3.1a"
+                                                name="content-high-crt-question-3.1"
+                                                ref="content-high-crt-question-3.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.16a">
+                                                htmlFor="content-high-crt-question-3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -726,13 +726,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.16b"
-                                                name="content-high-crt-quesion-1.16"
-                                                ref="content-high-crt-quesion-1.16"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.16"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.16', 'no')}} />
+                                                id="content-high-crt-question-3.1b"
+                                                name="content-high-crt-question-3.1"
+                                                ref="content-high-crt-question-3.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.16b">
+                                                htmlFor="content-high-crt-question-3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -759,13 +759,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.17a"
-                                                name="content-high-crt-quesion-1.17"
-                                                ref="content-high-crt-quesion-1.17"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.17"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.17', 'yes')}} />
+                                                id="content-high-crt-question-3.2.1a"
+                                                name="content-high-crt-question-3.2.1"
+                                                ref="content-high-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.17a">
+                                                htmlFor="content-high-crt-question-3.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -773,13 +773,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.17b"
-                                                name="content-high-crt-quesion-1.17"
-                                                ref="content-high-crt-quesion-1.17"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.17"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.17', 'no')}} />
+                                                id="content-high-crt-question-3.2.1b"
+                                                name="content-high-crt-question-3.2.1"
+                                                ref="content-high-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.17b">
+                                                htmlFor="content-high-crt-question-3.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -794,13 +794,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.18a"
-                                                name="content-high-crt-quesion-1.18"
-                                                ref="content-high-crt-quesion-1.18"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.18"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.18', 'yes')}} />
+                                                id="content-high-crt-question-3.2.2a"
+                                                name="content-high-crt-question-3.2.2"
+                                                ref="content-high-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.18a">
+                                                htmlFor="content-high-crt-question-3.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -808,13 +808,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.18b"
-                                                name="content-high-crt-quesion-1.18"
-                                                ref="content-high-crt-quesion-1.18"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.18"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.18', 'no')}} />
+                                                id="content-high-crt-question-3.2.2b"
+                                                name="content-high-crt-question-3.2.2"
+                                                ref="content-high-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.18b">
+                                                htmlFor="content-high-crt-question-3.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -829,13 +829,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.19a"
-                                                name="content-high-crt-quesion-1.19"
-                                                ref="content-high-crt-quesion-1.19"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.19"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.19', 'yes')}} />
+                                                id="content-high-crt-question-3.2.3a"
+                                                name="content-high-crt-question-3.2.3"
+                                                ref="content-high-crt-question-3.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.19a">
+                                                htmlFor="content-high-crt-question-3.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -843,13 +843,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.19b"
-                                                name="content-high-crt-quesion-1.19"
-                                                ref="content-high-crt-quesion-1.19"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.19"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.19', 'no')}} />
+                                                id="content-high-crt-question-3.2.3b"
+                                                name="content-high-crt-question-3.2.3"
+                                                ref="content-high-crt-question-3.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-3.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.19b">
+                                                htmlFor="content-high-crt-question-3.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -902,13 +902,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.20a"
-                                                name="content-high-crt-quesion-1.20"
-                                                ref="content-high-crt-quesion-1.20"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.20"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.20', 'yes')}} />
+                                                id="content-high-crt-question-4.1a"
+                                                name="content-high-crt-question-4.1"
+                                                ref="content-high-crt-question-4.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.20a">
+                                                htmlFor="content-high-crt-question-4.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -916,13 +916,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.20b"
-                                                name="content-high-crt-quesion-1.20"
-                                                ref="content-high-crt-quesion-1.20"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.20"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.20', 'no')}} />
+                                                id="content-high-crt-question-4.1b"
+                                                name="content-high-crt-question-4.1"
+                                                ref="content-high-crt-question-4.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.20b">
+                                                htmlFor="content-high-crt-question-4.1b">
                                                 No
                                             </label>
                                         </div>
@@ -949,13 +949,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.21a"
-                                                name="content-high-crt-quesion-1.21"
-                                                ref="content-high-crt-quesion-1.21"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.21"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.21', 'yes')}} />
+                                                id="content-high-crt-question-4.2.1a"
+                                                name="content-high-crt-question-4.2.1"
+                                                ref="content-high-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.21a">
+                                                htmlFor="content-high-crt-question-4.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -963,13 +963,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.21b"
-                                                name="content-high-crt-quesion-1.21"
-                                                ref="content-high-crt-quesion-1.21"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.21"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.21', 'no')}} />
+                                                id="content-high-crt-question-4.2.1b"
+                                                name="content-high-crt-question-4.2.1"
+                                                ref="content-high-crt-question-4.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.21b">
+                                                htmlFor="content-high-crt-question-4.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -984,13 +984,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.22a"
-                                                name="content-high-crt-quesion-1.22"
-                                                ref="content-high-crt-quesion-1.22"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.22"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.22', 'yes')}} />
+                                                id="content-high-crt-question-4.2.2a"
+                                                name="content-high-crt-question-4.2.2"
+                                                ref="content-high-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.22a">
+                                                htmlFor="content-high-crt-question-4.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -998,13 +998,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.22b"
-                                                name="content-high-crt-quesion-1.22"
-                                                ref="content-high-crt-quesion-1.22"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.22"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.22', 'no')}} />
+                                                id="content-high-crt-question-4.2.2b"
+                                                name="content-high-crt-question-4.2.2"
+                                                ref="content-high-crt-question-4.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.22b">
+                                                htmlFor="content-high-crt-question-4.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1019,13 +1019,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.23a"
-                                                name="content-high-crt-quesion-1.23"
-                                                ref="content-high-crt-quesion-1.23"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.23"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.23', 'yes')}} />
+                                                id="content-high-crt-question-4.2.3a"
+                                                name="content-high-crt-question-4.2.3"
+                                                ref="content-high-crt-question-4.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.23a">
+                                                htmlFor="content-high-crt-question-4.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1033,13 +1033,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.23b"
-                                                name="content-high-crt-quesion-1.23"
-                                                ref="content-high-crt-quesion-1.23"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.23"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.23', 'no')}} />
+                                                id="content-high-crt-question-4.2.3b"
+                                                name="content-high-crt-question-4.2.3"
+                                                ref="content-high-crt-question-4.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.23b">
+                                                htmlFor="content-high-crt-question-4.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1054,13 +1054,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.24a"
-                                                name="content-high-crt-quesion-1.24"
-                                                ref="content-high-crt-quesion-1.24"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.24"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.24', 'yes')}} />
+                                                id="content-high-crt-question-4.2.4a"
+                                                name="content-high-crt-question-4.2.4"
+                                                ref="content-high-crt-question-4.2.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.24a">
+                                                htmlFor="content-high-crt-question-4.2.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1068,13 +1068,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.24b"
-                                                name="content-high-crt-quesion-1.24"
-                                                ref="content-high-crt-quesion-1.24"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.24"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.24', 'no')}} />
+                                                id="content-high-crt-question-4.2.4b"
+                                                name="content-high-crt-question-4.2.4"
+                                                ref="content-high-crt-question-4.2.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.2.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.24b">
+                                                htmlFor="content-high-crt-question-4.2.4b">
                                                 No
                                             </label>
                                         </div>
@@ -1101,13 +1101,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.25a"
-                                                name="content-high-crt-quesion-1.25"
-                                                ref="content-high-crt-quesion-1.25"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.25"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.25', 'yes')}} />
+                                                id="content-high-crt-question-4.3.1a"
+                                                name="content-high-crt-question-4.3.1"
+                                                ref="content-high-crt-question-4.3.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.25a">
+                                                htmlFor="content-high-crt-question-4.3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1115,13 +1115,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.25b"
-                                                name="content-high-crt-quesion-1.25"
-                                                ref="content-high-crt-quesion-1.25"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.25"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.25', 'no')}} />
+                                                id="content-high-crt-question-4.3.1b"
+                                                name="content-high-crt-question-4.3.1"
+                                                ref="content-high-crt-question-4.3.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.25b">
+                                                htmlFor="content-high-crt-question-4.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1136,13 +1136,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.26a"
-                                                name="content-high-crt-quesion-1.26"
-                                                ref="content-high-crt-quesion-1.26"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.26"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.26', 'yes')}} />
+                                                id="content-high-crt-question-4.3.2a"
+                                                name="content-high-crt-question-4.3.2"
+                                                ref="content-high-crt-question-4.3.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.26a">
+                                                htmlFor="content-high-crt-question-4.3.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1150,13 +1150,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.26b"
-                                                name="content-high-crt-quesion-1.26"
-                                                ref="content-high-crt-quesion-1.26"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.26"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.26', 'no')}} />
+                                                id="content-high-crt-question-4.3.2b"
+                                                name="content-high-crt-question-4.3.2"
+                                                ref="content-high-crt-question-4.3.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.26b">
+                                                htmlFor="content-high-crt-question-4.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1171,13 +1171,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.27a"
-                                                name="content-high-crt-quesion-1.27"
-                                                ref="content-high-crt-quesion-1.27"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.27"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.27', 'yes')}} />
+                                                id="content-high-crt-question-4.3.3a"
+                                                name="content-high-crt-question-4.3.3"
+                                                ref="content-high-crt-question-4.3.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.27a">
+                                                htmlFor="content-high-crt-question-4.3.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1185,13 +1185,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.27b"
-                                                name="content-high-crt-quesion-1.27"
-                                                ref="content-high-crt-quesion-1.27"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.27"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.27', 'no')}} />
+                                                id="content-high-crt-question-4.3.3b"
+                                                name="content-high-crt-question-4.3.3"
+                                                ref="content-high-crt-question-4.3.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.27b">
+                                                htmlFor="content-high-crt-question-4.3.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1206,13 +1206,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.28a"
-                                                name="content-high-crt-quesion-1.28"
-                                                ref="content-high-crt-quesion-1.28"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.28"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.28', 'yes')}} />
+                                                id="content-high-crt-question-4.3.4a"
+                                                name="content-high-crt-question-4.3.4"
+                                                ref="content-high-crt-question-4.3.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.28a">
+                                                htmlFor="content-high-crt-question-4.3.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1220,13 +1220,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.28b"
-                                                name="content-high-crt-quesion-1.28"
-                                                ref="content-high-crt-quesion-1.28"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.28"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.28', 'no')}} />
+                                                id="content-high-crt-question-4.3.4b"
+                                                name="content-high-crt-question-4.3.4"
+                                                ref="content-high-crt-question-4.3.4"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.28b">
+                                                htmlFor="content-high-crt-question-4.3.4b">
                                                 No
                                             </label>
                                         </div>
@@ -1241,13 +1241,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.29a"
-                                                name="content-high-crt-quesion-1.29"
-                                                ref="content-high-crt-quesion-1.29"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.29"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.29', 'yes')}} />
+                                                id="content-high-crt-question-4.3.5a"
+                                                name="content-high-crt-question-4.3.5"
+                                                ref="content-high-crt-question-4.3.5"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.5', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.29a">
+                                                htmlFor="content-high-crt-question-4.3.5a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1255,13 +1255,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.29b"
-                                                name="content-high-crt-quesion-1.29"
-                                                ref="content-high-crt-quesion-1.29"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.29"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.29', 'no')}} />
+                                                id="content-high-crt-question-4.3.5b"
+                                                name="content-high-crt-question-4.3.5"
+                                                ref="content-high-crt-question-4.3.5"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-4.3.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.5', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.29b">
+                                                htmlFor="content-high-crt-question-4.3.5b">
                                                 No
                                             </label>
                                         </div>
@@ -1314,13 +1314,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.30a"
-                                                name="content-high-crt-quesion-1.30"
-                                                ref="content-high-crt-quesion-1.30"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.30"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.30', 'yes')}} />
+                                                id="content-high-crt-question-5.1.1a"
+                                                name="content-high-crt-question-5.1.1"
+                                                ref="content-high-crt-question-5.1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.30a">
+                                                htmlFor="content-high-crt-question-5.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1328,13 +1328,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.30b"
-                                                name="content-high-crt-quesion-1.30"
-                                                ref="content-high-crt-quesion-1.30"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.30"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.30', 'no')}} />
+                                                id="content-high-crt-question-5.1.1b"
+                                                name="content-high-crt-question-5.1.1"
+                                                ref="content-high-crt-question-5.1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.30b">
+                                                htmlFor="content-high-crt-question-5.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1349,13 +1349,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.31a"
-                                                name="content-high-crt-quesion-1.31"
-                                                ref="content-high-crt-quesion-1.31"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.31"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.31', 'yes')}} />
+                                                id="content-high-crt-question-5.1.2a"
+                                                name="content-high-crt-question-5.1.2"
+                                                ref="content-high-crt-question-5.1.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.31a">
+                                                htmlFor="content-high-crt-question-5.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1363,13 +1363,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.31b"
-                                                name="content-high-crt-quesion-1.31"
-                                                ref="content-high-crt-quesion-1.31"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.31"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.31', 'no')}} />
+                                                id="content-high-crt-question-5.1.2b"
+                                                name="content-high-crt-question-5.1.2"
+                                                ref="content-high-crt-question-5.1.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.31b">
+                                                htmlFor="content-high-crt-question-5.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1384,13 +1384,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.32a"
-                                                name="content-high-crt-quesion-1.32"
-                                                ref="content-high-crt-quesion-1.32"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.32"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.32', 'yes')}} />
+                                                id="content-high-crt-question-5.1.3a"
+                                                name="content-high-crt-question-5.1.3"
+                                                ref="content-high-crt-question-5.1.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.1.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.32a">
+                                                htmlFor="content-high-crt-question-5.1.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1398,13 +1398,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.32b"
-                                                name="content-high-crt-quesion-1.32"
-                                                ref="content-high-crt-quesion-1.32"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.32"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.32', 'no')}} />
+                                                id="content-high-crt-question-5.1.3b"
+                                                name="content-high-crt-question-5.1.3"
+                                                ref="content-high-crt-question-5.1.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.1.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.32b">
+                                                htmlFor="content-high-crt-question-5.1.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1431,13 +1431,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.33a"
-                                                name="content-high-crt-quesion-1.33"
-                                                ref="content-high-crt-quesion-1.33"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.33"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.33', 'yes')}} />
+                                                id="content-high-crt-question-5.2.1a"
+                                                name="content-high-crt-question-5.2.1"
+                                                ref="content-high-crt-question-5.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.33a">
+                                                htmlFor="content-high-crt-question-5.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1445,13 +1445,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.33b"
-                                                name="content-high-crt-quesion-1.33"
-                                                ref="content-high-crt-quesion-1.33"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.33"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.33', 'no')}} />
+                                                id="content-high-crt-question-5.2.1b"
+                                                name="content-high-crt-question-5.2.1"
+                                                ref="content-high-crt-question-5.2.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.33b">
+                                                htmlFor="content-high-crt-question-5.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1466,13 +1466,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.34a"
-                                                name="content-high-crt-quesion-1.34"
-                                                ref="content-high-crt-quesion-1.34"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.34"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.34', 'yes')}} />
+                                                id="content-high-crt-question-5.2.2a"
+                                                name="content-high-crt-question-5.2.2"
+                                                ref="content-high-crt-question-5.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.34a">
+                                                htmlFor="content-high-crt-question-5.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1480,13 +1480,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.34b"
-                                                name="content-high-crt-quesion-1.34"
-                                                ref="content-high-crt-quesion-1.34"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.34"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.34', 'no')}} />
+                                                id="content-high-crt-question-5.2.2b"
+                                                name="content-high-crt-question-5.2.2"
+                                                ref="content-high-crt-question-5.2.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.34b">
+                                                htmlFor="content-high-crt-question-5.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1501,13 +1501,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.35a"
-                                                name="content-high-crt-quesion-1.35"
-                                                ref="content-high-crt-quesion-1.35"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.35"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.35', 'yes')}} />
+                                                id="content-high-crt-question-5.2.3a"
+                                                name="content-high-crt-question-5.2.3"
+                                                ref="content-high-crt-question-5.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.2.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.35a">
+                                                htmlFor="content-high-crt-question-5.2.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1515,13 +1515,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.35b"
-                                                name="content-high-crt-quesion-1.35"
-                                                ref="content-high-crt-quesion-1.35"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.35"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.35', 'no')}} />
+                                                id="content-high-crt-question-5.2.3b"
+                                                name="content-high-crt-question-5.2.3"
+                                                ref="content-high-crt-question-5.2.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.2.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.35b">
+                                                htmlFor="content-high-crt-question-5.2.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1548,13 +1548,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.36a"
-                                                name="content-high-crt-quesion-1.36"
-                                                ref="content-high-crt-quesion-1.36"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.36"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.36', 'yes')}} />
+                                                id="content-high-crt-question-5.3a"
+                                                name="content-high-crt-question-5.3"
+                                                ref="content-high-crt-question-5.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.36a">
+                                                htmlFor="content-high-crt-question-5.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1562,13 +1562,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.36b"
-                                                name="content-high-crt-quesion-1.36"
-                                                ref="content-high-crt-quesion-1.36"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.36"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.36', 'no')}} />
+                                                id="content-high-crt-question-5.3b"
+                                                name="content-high-crt-question-5.3"
+                                                ref="content-high-crt-question-5.3"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-5.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.36b">
+                                                htmlFor="content-high-crt-question-5.3b">
                                                 No
                                             </label>
                                         </div>
@@ -1621,13 +1621,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.37a"
-                                                name="content-high-crt-quesion-1.37"
-                                                ref="content-high-crt-quesion-1.37"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.37"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.37', 'yes')}} />
+                                                id="content-high-crt-question-6.1.1a"
+                                                name="content-high-crt-question-6.1.1"
+                                                ref="content-high-crt-question-6.1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-6.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.37a">
+                                                htmlFor="content-high-crt-question-6.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1635,13 +1635,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.37b"
-                                                name="content-high-crt-quesion-1.37"
-                                                ref="content-high-crt-quesion-1.37"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.37"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.37', 'no')}} />
+                                                id="content-high-crt-question-6.1.1b"
+                                                name="content-high-crt-question-6.1.1"
+                                                ref="content-high-crt-question-6.1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-6.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.37b">
+                                                htmlFor="content-high-crt-question-6.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -1656,13 +1656,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.38a"
-                                                name="content-high-crt-quesion-1.38"
-                                                ref="content-high-crt-quesion-1.38"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.38"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.38', 'yes')}} />
+                                                id="content-high-crt-question-6.1.2a"
+                                                name="content-high-crt-question-6.1.2"
+                                                ref="content-high-crt-question-6.1.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-6.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.38a">
+                                                htmlFor="content-high-crt-question-6.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1670,13 +1670,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.38b"
-                                                name="content-high-crt-quesion-1.38"
-                                                ref="content-high-crt-quesion-1.38"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.38"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.38', 'no')}} />
+                                                id="content-high-crt-question-6.1.2b"
+                                                name="content-high-crt-question-6.1.2"
+                                                ref="content-high-crt-question-6.1.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-6.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.38b">
+                                                htmlFor="content-high-crt-question-6.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -1703,13 +1703,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.39a"
-                                                name="content-high-crt-quesion-1.39"
-                                                ref="content-high-crt-quesion-1.39"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.39"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.39', 'yes')}} />
+                                                id="content-high-crt-question-6.2a"
+                                                name="content-high-crt-question-6.2"
+                                                ref="content-high-crt-question-6.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-6.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.39a">
+                                                htmlFor="content-high-crt-question-6.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -1717,13 +1717,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.39b"
-                                                name="content-high-crt-quesion-1.39"
-                                                ref="content-high-crt-quesion-1.39"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.39"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.39', 'no')}} />
+                                                id="content-high-crt-question-6.2b"
+                                                name="content-high-crt-question-6.2"
+                                                ref="content-high-crt-question-6.2"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-6.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.39b">
+                                                htmlFor="content-high-crt-question-6.2b">
                                                 No
                                             </label>
                                         </div>
