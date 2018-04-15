@@ -402,6 +402,9 @@
             document.removeEventListener('click', saveWorkOutsideClickListener);
         }
         
+        /*
+         * Method to close New Review daialog if click outside
+         */
         function newReviewOutsideClickListener(event) {
             const startOverModal = document.getElementById("modal-start-over-click-outside");
             if (!openingNewReviewModal && !startOverModal.contains(event.target)) {
@@ -414,6 +417,9 @@
             }
         }
 
+        /*
+         * Method to close Save Work daialog if click outside
+         */
         function saveWorkOutsideClickListener(event) {
             const startOverModal = document.getElementById("modal-save-work-click-outside");
             if (!openingSaveWorkModal && !startOverModal.contains(event.target)) {
