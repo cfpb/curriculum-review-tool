@@ -623,7 +623,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-1">
+                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-1">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -632,10 +632,10 @@ export default class EfficacyCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full u-mb30"
                                     rows="6"
-                                    id="efficacy-crt-notes-1"
-                                    ref="efficacy-crt-notes-1"
-                                    value={this.props.criterionAnswers['efficacy-crt-notes-1']}
-                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-1', e.target.value)} >
+                                    id="efficacy-crt-notes-optional-1"
+                                    ref="efficacy-crt-notes-optional-1"
+                                    value={this.props.criterionAnswers['efficacy-crt-notes-optional-1']}
+                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                     <h4 className="h2">Score for [study name]</h4>
@@ -814,7 +814,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-2">
+                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-2">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -823,10 +823,10 @@ export default class EfficacyCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="efficacy-crt-notes-2"
-                                    ref="efficacy-crt-notes-2"
-                                    value={this.props.criterionAnswers['efficacy-crt-notes-2']}
-                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-2', e.target.value)} >
+                                    id="efficacy-crt-notes-optional-2"
+                                    ref="efficacy-crt-notes-optional-2"
+                                    value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
+                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -973,7 +973,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-3">
+                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-3">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -982,10 +982,10 @@ export default class EfficacyCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="efficacy-crt-notes-3"
-                                    ref="efficacy-crt-notes-3"
-                                    value={this.props.criterionAnswers['efficacy-crt-notes-3']}
-                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-3', e.target.value)} >
+                                    id="efficacy-crt-notes-optional-3"
+                                    ref="efficacy-crt-notes-optional-3"
+                                    value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
+                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

@@ -34,6 +34,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         };
     }
 
+    /*
+     * Remove all values frmo localStorage.
+     * Used for starting a new review
+     */
     clearLocalStorage() {
         localStorage.clear();
         this.distinctiveClicked(C.START_PAGE);
@@ -50,14 +54,30 @@ export default class CustomerReviewToolComponent extends React.Component {
         window.location = startPage;
     }
 
+    /*
+     * Verify the criteria for completion of a distinctive has been met
+     */
     distinctiveIsComplete(alteredCriterionObjects, changedDistinctive) {
-        // Check all values that start with distinctive name
         for (var key in alteredCriterionObjects) {
-            if (key.startsWith(changedDistinctive.toLowerCase()) && alteredCriterionObjects[key] === "") {
+            if (this.isCriterionInDistinctive(key, changedDistinctive) && 
+                this.isRequiredCriterion(key) &&
+                this.isCriterionValueEmpty(key, alteredCriterionObjects)) {
                 return false;
             }
         }
         return true;
+    }
+
+    isCriterionValueEmpty(key, alteredCriterionObjects) {
+        return alteredCriterionObjects[key] === "" || alteredCriterionObjects === undefined;
+    }
+
+    isRequiredCriterion(key) {
+        return !key.includes("optional");
+    }
+
+    isCriterionInDistinctive(key, changedDistinctive) {
+        return key.startsWith(changedDistinctive.toLowerCase());
     }
 
     initializeAnswerObjects(fields) {
@@ -71,6 +91,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.saveCriterionAnswers(alteredCriterionObjects);
     }
 
+    /*
+     * The value of a criterion has changed we need to update localStorage 
+     * and update any other states in the application
+     */
     changeCriterionAnswer(distinctive, key, val) {
         let alteredCriterionObjects =  this.state.criterionAnswers
         alteredCriterionObjects[key] = val;
@@ -88,6 +112,9 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
+    /*
+     * Manage state for specified criterion
+     */
     setCriterionAnswersState(key, val) {
         let alteredCriterionAnswers =  this.state.criterionAnswers
         alteredCriterionAnswers[key] = val;
@@ -96,16 +123,18 @@ export default class CustomerReviewToolComponent extends React.Component {
         return alteredCriterionAnswers;
     }
 
+    /*
+     * Set state values for all criterion values
+     */
     saveCriterionAnswers(alteredCriterionAnswers) {
         localStorage.setItem("criterionAnswers", JSON.stringify(alteredCriterionAnswers));
         this.setState({criterionAnswers: alteredCriterionAnswers});
     }
 
-    changeCriterionCompletionStatuses(distinctive, key, val) {
-        this.setCriterionCompletionStatuses(key, val);
-        //TODO: Calculate distinctive status [in progress, complete]
-    }
-
+    //TODO: Implement the the calculation that determins the criterionStatus
+    // then invoke this method to save it.
+    // possible statuses: STATUS_CIRIT_NOT_STARTED, STATUS_CIRIT_STARTED, STATUS_CIRIT_COMPLETE
+    // The above statuses can be used to know if it has been expanded or completed
     setCriterionCompletionStatuses(key, val) {
         let alteredData =  this.state.criterionCompletionStatuses
         alteredData[key] = val;
@@ -122,6 +151,9 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setDistinctiveStatus(this.state.currentPage, C.STATUS_COMPLETE);
     }
 
+    /*
+     * Set the current criterion Summary Button status
+     */
     setSummaryButtonEnabled(changedDistinctive, distinctiveStatus) {
         switch(changedDistinctive) {
         case C.CONTENT_PAGE:
@@ -145,6 +177,9 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
+    /*
+     * Set the current Distinctive button status
+     */
     setDistinctiveStatus(changedDistinctive, distinctiveStatus) {
         switch(changedDistinctive) {
         case C.CONTENT_PAGE:
@@ -168,6 +203,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
+    /*
+     * Track the current Distinctive
+     * Allows us to always load the last distinctive worked on
+     */
     distinctiveClicked(clickedDistinctive) {
         localStorage.setItem(C.START_PAGE, clickedDistinctive);
         this.setState({currentPage: clickedDistinctive});
