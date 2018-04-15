@@ -71,13 +71,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-elementary-crt-quesion-1.1a"
-                                                name="content-elementary-crt-quesion-1.1"
-                                                ref="content-elementary-crt-quesion-1.1"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-quesion-1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-quesion-1.1', 'yes')}} />
+                                                id="content-elementary-crt-question-1.1a"
+                                                name="content-elementary-crt-question-1.1"
+                                                ref="content-elementary-crt-question-1.1"
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.1a"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1a', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-elementary-crt-quesion-1.1a">
+                                                htmlFor="content-elementary-crt-question-1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -85,13 +85,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                     m-form-field__radio
                                                     m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-elementary-crt-quesion-1.1b"
-                                                name="content-elementary-crt-quesion-1.1"
-                                                ref="content-elementary-crt-quesion-1.1"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-quesion-1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-quesion-1.1', 'no')}} />
+                                                id="content-elementary-crt-question-1.1b"
+                                                name="content-elementary-crt-question-1.1"
+                                                ref="content-elementary-crt-question-1.1"
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.1b"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1b', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-elementary-crt-quesion-1.1b">
+                                                htmlFor="content-elementary-crt-question-1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -118,13 +118,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-elementary-crt-quesion-1.2a"
-                                                name="content-elementary-crt-quesion-1.2"
-                                                ref="content-elementary-crt-quesion-1.2"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-quesion-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-quesion-1.2', 'yes')}} />
+                                                id="content-elementary-crt-question-1.2a"
+                                                name="content-elementary-crt-question-1.2"
+                                                ref="content-elementary-crt-question-1.2"
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.2a"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2a', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-elementary-crt-quesion-1.2a">
+                                                htmlFor="content-elementary-crt-question-1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -132,13 +132,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-elementary-crt-quesion-1.2b"
-                                                name="content-elementary-crt-quesion-1.2"
-                                                ref="content-elementary-crt-quesion-1.2"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-quesion-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-quesion-1.2', 'no')}} />
+                                                id="content-elementary-crt-question-1.2b"
+                                                name="content-elementary-crt-question-1.2"
+                                                ref="content-elementary-crt-question-1.2"
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.2b"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2b', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-elementary-crt-quesion-1.2b">
+                                                htmlFor="content-elementary-crt-question-1.2b">
                                                 No
                                             </label>
                                         </div>
