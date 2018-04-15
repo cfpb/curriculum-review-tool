@@ -31,16 +31,12 @@ export default class UtilityCriterionPage extends React.Component {
                     <li>Read lessons plans and supporting materials for the curriculum.</li>
                     <li>Answer each of the following questions.</li>
                 </ul>
-                <div className="m-notification
-                                m-notification__visible
+                <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
-                            <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                        </div>
-                    </div>
+                    <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
+                    <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <SaveWorkModal />
                 </div>
                 <hr className="hr
                                 u-mb30
@@ -2661,24 +2657,26 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                         </li>
                     </ol>
-                <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading" htmlFor="utility-crt-notes-optional-5">
-                        My notes
-                        &nbsp;<small className="a-label_helper">(optional)</small>
-                        <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
-                        </small>
-                    </label>
-                    <textarea className="a-text-input a-text-input__full"
-                                rows="6"
-                                id="utility-crt-notes-optional-5"
-                                ref="utility-crt-notes-optional-5"
-                                value={this.props.criterionAnswers['utility-crt-notes-optional-5']}
-                                onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-5', e.target.value)} >
-                    </textarea>
+                    <div className="m-form-field m-form-field__textarea">
+                        <label className="a-label a-label__heading" htmlFor="utility-crt-notes-optional-5">
+                            My notes
+                            &nbsp;<small className="a-label_helper">(optional)</small>
+                            <small className="a-label_helper a-label_helper__block">
+                                Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            </small>
+                        </label>
+                        <textarea className="a-text-input a-text-input__full"
+                                    rows="6"
+                                    id="utility-crt-notes-optional-5"
+                                    ref="utility-crt-notes-optional-5"
+                                    value={this.props.criterionAnswers['utility-crt-notes-optional-5']}
+                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-5', e.target.value)} >
+                        </textarea>
+                    </div>
                 </div>
+                <div className="l-survey-top">
+                    <SaveWorkModal />
                 </div>
-                <SaveWorkModal />
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
         );

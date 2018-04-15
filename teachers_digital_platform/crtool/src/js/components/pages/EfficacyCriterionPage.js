@@ -20,8 +20,8 @@ export default class EfficacyCriterionPage extends React.Component {
                             u-mb45
                             u-mt30" />
                 <h2 className="h1">
-                    <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M409.2 723.3c-12.5-14.7-34.6-16.5-49.3-3.9-14.5 12.3-16.4 34-4.4 48.7L443.6 874c6.6 8 16.5 12.6 26.9 12.6 1 0 2 0 3-.1 11.4-1 21.6-7.5 27.3-17.4l157.7-273.2c9.6-16.8 3.7-38.2-13.1-47.7-16.6-9.5-37.8-3.8-47.5 12.7L465.3 790.7l-56.1-67.4z"/><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm71.8 165.2h1.5l176.9 170.8H571.8V270.4zm179 222.1v405.2c0 22.1-17.9 40-40 40H290.3c-22.1 0-40-17.9-40-40V310.4c0-22.1 17.9-40 40-40h235.2v186.5c0 16.9 13.7 30.5 30.6 30.6h194.7v5z"/></svg></span>&nbsp;
-                    Efficacy
+                    <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M409.2 723.3c-12.5-14.7-34.6-16.5-49.3-3.9-14.5 12.3-16.4 34-4.4 48.7L443.6 874c6.6 8 16.5 12.6 26.9 12.6 1 0 2 0 3-.1 11.4-1 21.6-7.5 27.3-17.4l157.7-273.2c9.6-16.8 3.7-38.2-13.1-47.7-16.6-9.5-37.8-3.8-47.5 12.7L465.3 790.7l-56.1-67.4z"/><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm71.8 165.2h1.5l176.9 170.8H571.8V270.4zm179 222.1v405.2c0 22.1-17.9 40-40 40H290.3c-22.1 0-40-17.9-40-40V310.4c0-22.1 17.9-40 40-40h235.2v186.5c0 16.9 13.7 30.5 30.6 30.6h194.7v5z"/></svg></span>
+                    &nbsp;Efficacy
                 </h2>
                 <p className="lead-paragraph">
                     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
@@ -45,17 +45,12 @@ export default class EfficacyCriterionPage extends React.Component {
                     </li>
                     <li>Complete Criteria 2 and 3 using all strong studies.</li>
                 </ul>
-                <div className="m-notification
-                                m-notification__visible
+                <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
-                            <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                            <SaveWorkModal />
-                        </div>
-                    </div>
+                    <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
+                    <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <SaveWorkModal />
                 </div>
                 <hr className="hr
                                 u-mb30
@@ -989,7 +984,9 @@ export default class EfficacyCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <SaveWorkModal />
+                <div className="l-survey-top">
+                    <SaveWorkModal />
+                </div>
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
         );

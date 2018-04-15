@@ -10,12 +10,14 @@ export default class UtilitySummaryPage extends React.Component {
 
     render() {
         return (
-            <div>                
-            <SaveWorkModal />
-            
+            <div>
+                <div className="l-survey-top">
+                    <SaveWorkModal />
+                </div>
+
             <p>This is Utility Summary!</p>
                 <h1>{this.props.currentPage} Summary page coming soon!</h1>
-        
+
                 <h3>{this.props.curriculumTitle}</h3>
                 <h3>{this.props.publicationDate}</h3>
                 <h3>{this.props.gradeRange}</h3>
