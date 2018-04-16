@@ -4,7 +4,9 @@ import C from "../../constants";
 import ContentElementaryCriterionPage from "./content/ContentElementaryCriterionPage";
 import ContentMiddleCriterionPage from "./content/ContentMiddleCriterionPage";
 import ContentHighCriterionPage from "./content/ContentHighCriterionPage";
-import ContentSummaryPage from "./content/ContentSummaryPage";
+import ContentElementarySummaryPage from "./content/ContentElementarySummaryPage";
+import ContentHighSummaryPage from "./content/ContentHighSummaryPage";
+import ContentMiddleSummaryPage from "./content/ContentMiddleSummaryPage";
 import UtilityCriterionPage from "./UtilityCriterionPage";
 import UtilitySummaryPage from "./UtilitySummaryPage";
 import QualityCriterionPage from "./QualityCriterionPage";
@@ -33,7 +35,13 @@ export default class SurveyPageContainer extends React.Component {
         if (this.props.currentPage === C.CONTENT_PAGE) {
 
             if (this.props.contentInProgress === C.STATUS_COMPLETE) {
-                return (<ContentSummaryPage {...pageProps} />);
+                if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
+                    return (<ContentElementarySummaryPage {...pageProps} />);
+                } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
+                    return (<ContentMiddleSummaryPage {...pageProps} />);
+                } else {
+                    return (<ContentHighSummaryPage {...pageProps} />);
+                }
             } else {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
                     return (<ContentElementaryCriterionPage {...pageProps} />);
