@@ -21,6 +21,12 @@ export default class UtilityCriterionPage extends React.Component {
     }
 
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -477,11 +483,10 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="utility-crt-question-2"
-                    criterionText="Criterion 2: Differentiated instruction for diverse populations" >
+                    criterionText="Criterion 2: Differentiated instruction for diverse populations"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]} />
@@ -1342,10 +1347,9 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="utility-crt-question-3"
-                    criterionText="Criterion 3: Quality materials for lesson planning" >
+                    criterionText="Criterion 3: Quality materials for lesson planning" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]} />
@@ -1930,11 +1934,10 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="utility-crt-question-4"
-                    criterionText="Criterion 4: Materials to assess mastery" >
+                    criterionText="Criterion 4: Materials to assess mastery"
+                    {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]} />
@@ -2459,10 +2462,9 @@ export default class UtilityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="utility-crt-question-5"
-                    criterionText="Criterion 5: Instructional supports" >
+                    criterionText="Criterion 5: Instructional supports"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]} />

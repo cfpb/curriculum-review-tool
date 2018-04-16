@@ -14,6 +14,7 @@ const qualityProps = {
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
+    setCriterionStatusToInStart:(() => {}),
 }
 
 beforeAll(() => {

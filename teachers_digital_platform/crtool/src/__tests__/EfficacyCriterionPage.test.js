@@ -15,6 +15,7 @@ const efficacyProps = {
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
     criterionScores:(() => {}),
+    setCriterionStatusToInStart:(() => {}),
 }
 
 beforeAll(() => {

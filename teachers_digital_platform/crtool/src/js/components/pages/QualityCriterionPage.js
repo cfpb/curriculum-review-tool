@@ -21,6 +21,12 @@ export default class QualityCriterionPage extends React.Component {
     }
 
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -511,11 +517,10 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="quality-crt-question-2"
-                    criterionText="Criterion 2: Accuracy and timeliness" >
+                    criterionText="Criterion 2: Accuracy and timeliness" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]} />
@@ -719,11 +724,10 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="quality-crt-question-3"
-                    criterionText="Criterion 3: Objectivity" >
+                    criterionText="Criterion 3: Objectivity" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]} />
@@ -1034,10 +1038,9 @@ export default class QualityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="quality-crt-question-4"
-                    criterionText="Criterion 4: Visual appearance" >
+                    criterionText="Criterion 4: Visual appearance" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]} />

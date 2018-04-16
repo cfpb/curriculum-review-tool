@@ -31,6 +31,12 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -722,12 +728,11 @@ export default class EfficacyCriterionPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
-                    hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-question-1")} >
+                    hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-question-1")}
+                    {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]} />
@@ -855,10 +860,9 @@ export default class EfficacyCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="efficacy-crt-question-3"
-                    criterionText="Criterion 3: Impact" >
+                    criterionText="Criterion 3: Impact" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]} />

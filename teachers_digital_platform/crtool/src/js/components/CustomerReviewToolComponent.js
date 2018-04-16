@@ -104,8 +104,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     getCriterionGroupName(currentCriterion) {
-        if (currentCriterion.includes("."))
-        {
+        if (currentCriterion.includes(".")){
             return (currentCriterion.substring(0, currentCriterion.lastIndexOf(".")));
         }
 
@@ -116,13 +115,23 @@ export default class CustomerReviewToolComponent extends React.Component {
      * Verify all the criteria for a whole distinctive has been met
      */
     isDistinctiveComplete(alteredCriterionObjects, changedDistinctive) {
-        for (var key in alteredCriterionObjects) {
-            if (this.isCriterionInDistinctive(key, changedDistinctive) && 
-                this.isRequiredCriterion(key) &&
-                this.isCriterionValueEmpty(key, alteredCriterionObjects)) {
-                return false;
+
+        console.log("changedDistinctive: " + changedDistinctive);
+        for (var statusKey in this.state.criterionCompletionStatuses) {
+            if (this.isCriterionInDistinctive(statusKey, changedDistinctive) &&
+                this.state.criterionCompletionStatuses[statusKey] !== C.ICON_CHECK) {
+                    return false;
             }
         }
+
+        for (var criterionKey in alteredCriterionObjects) {
+            if (this.isCriterionInDistinctive(criterionKey, changedDistinctive) && 
+                this.isRequiredCriterion(criterionKey) &&
+                this.isCriterionValueEmpty(criterionKey, alteredCriterionObjects)) {
+                    return false;
+            }
+        }
+
         return true;
     }
 
@@ -190,6 +199,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     setCriterionStatusToInProgress(criterionKey) {
         this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_PROGRESS);
+    }
+
+    setCriterionStatusToInStart(criterionKey) {
+        this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_START);
     }
 
     calculateDistinctiveCompletion(alteredCriterionObjects, changedDistinctive) {
@@ -344,6 +357,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses, 
 
+            setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
             changeCriterionAnswer:this.changeCriterionAnswer.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),

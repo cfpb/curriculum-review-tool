@@ -12,6 +12,10 @@ export default class CriterionLinkWrapper extends React.Component {
         this.props.setCriterionStatusToInProgress(criterionKey);
     }
 
+    componentWillMount() {
+        this.props.setCriterionStatusToInStart(this.props.criterionKey);
+    }
+
     renderCriterionTitle() {
         if (this.props.hideCriterion) {
             return (null);

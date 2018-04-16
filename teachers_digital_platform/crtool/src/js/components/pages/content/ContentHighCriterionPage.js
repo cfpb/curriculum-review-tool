@@ -21,6 +21,12 @@ export default class ContentHighCriterionPage extends React.Component {
     }
 
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -309,10 +315,9 @@ export default class ContentHighCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="content-high-crt-question-2"
-                    criterionText="Criterion 2: Saving and investing" >
+                    criterionText="Criterion 2: Saving and investing"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-2"]} />
@@ -703,11 +708,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-3"
-                    criterionText="Criterion 3: Spending" >
+                    criterionText="Criterion 3: Spending"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-3"]} />
@@ -899,11 +903,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-4"
-                    criterionText="Criterion 4: Borrowing and credit" >
+                    criterionText="Criterion 4: Borrowing and credit" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-4"]} />
@@ -1317,11 +1320,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-5"
-                    criterionText="Criterion 5: Managing financial risk" >
+                    criterionText="Criterion 5: Managing financial risk" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-5"]} />
@@ -1631,10 +1633,9 @@ export default class ContentHighCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper 
-                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
-                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="content-high-crt-question-6"
-                    criterionText="Criterion 6: Financial responsibility and money management" >
+                    criterionText="Criterion 6: Financial responsibility and money management"
+                    {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-6"]} />
