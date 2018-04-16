@@ -49,7 +49,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-1"]} />
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-1"]} />
                         Criterion 1: Earning, income, and careers
                     </h3>
                     <p className="lead-paragraph">
@@ -75,13 +75,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.1a"
-                                                name="content-high-crt-quesion-1.1"
-                                                ref="content-high-crt-quesion-1.1"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.1', 'yes')}} />
+                                                id="content-high-crt-question-1.1a"
+                                                name="content-high-crt-question-1.1"
+                                                ref="content-high-crt-question-1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.1a">
+                                                htmlFor="content-high-crt-question-1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -89,13 +89,13 @@ export default class ContentHighCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="content-high-crt-quesion-1.1b"
-                                                name="content-high-crt-quesion-1.1"
-                                                ref="content-high-crt-quesion-1.1"
-                                                checked={this.props.criterionAnswers["content-high-crt-quesion-1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-quesion-1.1', 'no')}} />
+                                                id="content-high-crt-question-1.1b"
+                                                name="content-high-crt-question-1.1"
+                                                ref="content-high-crt-question-1.1"
+                                                checked={this.props.criterionAnswers["content-high-crt-question-1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="content-high-crt-quesion-1.1b">
+                                                htmlFor="content-high-crt-question-1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -311,11 +311,11 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
-                    criterionKey="content-high-crt-quesion-2"
+                    criterionKey="content-high-crt-question-2"
                     criterionText="Criterion 2: Saving and investing" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-2"]} />
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-2"]} />
                         Criterion 2: Saving and investing
                     </h3>
                     <p className="lead-paragraph">
@@ -706,11 +706,11 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
-                    criterionKey="content-high-crt-quesion-3"
+                    criterionKey="content-high-crt-question-3"
                     criterionText="Criterion 3: Spending" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-3"]} />
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-3"]} />
                         Criterion 3: Spending
                     </h3>
                     <p className="lead-paragraph">
@@ -902,11 +902,11 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
-                    criterionKey="content-high-crt-quesion-4"
+                    criterionKey="content-high-crt-question-4"
                     criterionText="Criterion 4: Borrowing and credit" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-4"]} />
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-4"]} />
                         Criterion 4: Borrowing and credit
                     </h3>
                     <p className="lead-paragraph">
@@ -1320,11 +1320,11 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
-                    criterionKey="content-high-crt-quesion-5"
+                    criterionKey="content-high-crt-question-5"
                     criterionText="Criterion 5: Managing financial risk" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-5"]} />
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-5"]} />
                         Criterion 5: Managing financial risk
                     </h3>
                     <p className="lead-paragraph">
@@ -1633,11 +1633,11 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
-                    criterionKey="content-high-crt-quesion-6"
+                    criterionKey="content-high-crt-question-6"
                     criterionText="Criterion 6: Financial responsibility and money management" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-6"]} />
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-6"]} />
                         Criterion 6: Financial responsibility and money management
                     </h3>
                     <p className="lead-paragraph">
