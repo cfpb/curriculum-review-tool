@@ -66,14 +66,14 @@ export default class QualityCriterionPage extends React.Component {
                                         <p>If there are <strong>paper-based materials:</strong></p>
                                         <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
                                         <div className="m-form-field m-form-field__text">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-1.1.1">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.1">
                                                 Cost of materials per student: $
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.1.1"
-                                                ref="quality-crt-text-1.1.1"
-                                                value={this.props.criterionAnswers['equality-crt-text-1.1.1']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.1.1', e.target.value)} />
+                                                id="quality-crt-text-optional-1.1.1"
+                                                ref="quality-crt-text-optional-1.1.1"
+                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.1.1']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.1', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -177,14 +177,14 @@ export default class QualityCriterionPage extends React.Component {
                                         <p>Can web-based material be accessed without purchasing specialized software?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
                                         <div className="m-form-field m-form-field__text">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-1.1.3">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.3">
                                                 Specialized software
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.1.3"
-                                                ref="quality-crt-text-1.1.3"
-                                                value={this.props.criterionAnswers['equality-crt-text-1.1.3']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.1.3', e.target.value)} />
+                                                id="quality-crt-text-optional-1.1.3"
+                                                ref="quality-crt-text-optional-1.1.3"
+                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.1.3']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.3', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -344,14 +344,14 @@ export default class QualityCriterionPage extends React.Component {
                                     <div className="o-survey_question">
                                         <p>Do the materials include any special needs formats? (e.g., Braille)</p>
                                         <div className="m-form-field m-form-field__text">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-1.3.1">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.1">
                                                 Special needs formats include:
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.3.1"
-                                                ref="quality-crt-text-1.3.1"
-                                                value={this.props.criterionAnswers['equality-crt-text-1.3.1']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.3.1', e.target.value)} />
+                                                id="quality-crt-text-optional-1.3.1"
+                                                ref="quality-crt-text-optional-1.3.1"
+                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.3.1']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.1', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -404,14 +404,14 @@ export default class QualityCriterionPage extends React.Component {
                                         <p>Are the materials available in languages other than English?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
                                         <div className="m-form-field m-form-field__text">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-1.3.2">
+                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.2">
                                                 Languages included:
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-1.3.2"
-                                                ref="quality-crt-text-1.3.2"
-                                                value={this.props.criterionAnswers['equality-crt-text-1.3.2']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-1.3.2', e.target.value)} />
+                                                id="quality-crt-text-optional-1.3.2"
+                                                ref="quality-crt-text-optional-1.3.2"
+                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.3.2']}
+                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.2', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -485,7 +485,7 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-1">
+                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-optional-1">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -494,10 +494,10 @@ export default class QualityCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="quality-crt-notes-1"
-                                    ref="quality-crt-notes-1"
-                                    value={this.props.criterionAnswers['quality-crt-notes-1']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-1', e.target.value)} >
+                                    id="quality-crt-notes-optional-1"
+                                    ref="quality-crt-notes-optional-1"
+                                    value={this.props.criterionAnswers['quality-crt-notes-optional-1']}
+                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -685,7 +685,7 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-2">
+                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-optional-2">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -694,10 +694,10 @@ export default class QualityCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="quality-crt-notes-2"
-                                    ref="quality-crt-notes-2"
-                                    value={this.props.criterionAnswers['quality-crt-notes-2']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-2', e.target.value)} >
+                                    id="quality-crt-notes-optional-2"
+                                    ref="quality-crt-notes-optional-2"
+                                    value={this.props.criterionAnswers['quality-crt-notes-optional-2']}
+                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -991,7 +991,7 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-3">
+                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-optional-3">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -1000,10 +1000,10 @@ export default class QualityCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="quality-crt-notes-3"
-                                    ref="quality-crt-notes-3"
-                                    value={this.props.criterionAnswers['quality-crt-notes-3']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-3', e.target.value)} >
+                                    id="quality-crt-notes-optional-3"
+                                    ref="quality-crt-notes-optional-3"
+                                    value={this.props.criterionAnswers['quality-crt-notes-optional-3']}
+                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1319,7 +1319,7 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-4">
+                        <label className="a-label a-label__heading" htmlFor="quality-crt-notes-optional-4">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -1328,10 +1328,10 @@ export default class QualityCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="quality-crt-notes-4"
-                                    ref="quality-crt-notes-4"
-                                    value={this.props.criterionAnswers['quality-crt-notes-4']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-4', e.target.value)} >
+                                    id="quality-crt-notes-optional-4"
+                                    ref="quality-crt-notes-optional-4"
+                                    value={this.props.criterionAnswers['quality-crt-notes-optional-4']}
+                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

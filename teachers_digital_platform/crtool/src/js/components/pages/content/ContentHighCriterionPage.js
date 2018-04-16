@@ -282,7 +282,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-1">
+                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-optional-1">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -291,10 +291,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-high-crt-notes-1"
-                                    ref="content-high-crt-notes-1"
-                                    value={this.props.criterionAnswers['content-high-crt-notes-1']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-1', e.target.value)} >
+                                    id="content-high-crt-notes-optional-1"
+                                    ref="content-high-crt-notes-optional-1"
+                                    value={this.props.criterionAnswers['content-high-crt-notes-optional-1']}
+                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -669,7 +669,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-2">
+                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-optional-2">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -678,10 +678,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-high-crt-notes-2"
-                                    ref="content-high-crt-notes-2"
-                                    value={this.props.criterionAnswers['content-high-crt-notes-2']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-2', e.target.value)} >
+                                    id="content-high-crt-notes-optional-2"
+                                    ref="content-high-crt-notes-optional-2"
+                                    value={this.props.criterionAnswers['content-high-crt-notes-optional-2']}
+                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -857,7 +857,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-3">
+                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-optional-3">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -866,10 +866,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-high-crt-notes-3"
-                                    ref="content-high-crt-notes-3"
-                                    value={this.props.criterionAnswers['content-high-crt-notes-3']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-3', e.target.value)} >
+                                    id="content-high-crt-notes-optional-3"
+                                    ref="content-high-crt-notes-optional-3"
+                                    value={this.props.criterionAnswers['content-high-crt-notes-optional-3']}
+                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1269,7 +1269,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="crt-notes-4">
+                        <label className="a-label a-label__heading" htmlFor="crt-notes-optional-4">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -1278,10 +1278,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-high-crt-notes-4"
-                                    ref="content-high-crt-notes-4"
-                                    value={this.props.criterionAnswers['content-high-crt-notes-4']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-4', e.target.value)} >
+                                    id="content-high-crt-notes-optional-4"
+                                    ref="content-high-crt-notes-optional-4"
+                                    value={this.props.criterionAnswers['content-high-crt-notes-optional-4']}
+                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1576,7 +1576,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-5">
+                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-optional-5">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -1585,10 +1585,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-high-crt-notes-5"
-                                    ref="content-high-crt-notes-5"
-                                    value={this.props.criterionAnswers['content-high-crt-notes-5']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-5', e.target.value)} >
+                                    id="content-high-crt-notes-optional-5"
+                                    ref="content-high-crt-notes-optional-5"
+                                    value={this.props.criterionAnswers['content-high-crt-notes-optional-5']}
+                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1731,7 +1731,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-6">
+                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-optional-6">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -1740,10 +1740,10 @@ export default class ContentHighCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-high-crt-notes-6"
-                                    ref="content-high-crt-notes-6"
-                                    value={this.props.criterionAnswers['content-high-crt-notes-6']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-6', e.target.value)} >
+                                    id="content-high-crt-notes-optional-6"
+                                    ref="content-high-crt-notes-optional-6"
+                                    value={this.props.criterionAnswers['content-high-crt-notes-optional-6']}
+                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-6', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
