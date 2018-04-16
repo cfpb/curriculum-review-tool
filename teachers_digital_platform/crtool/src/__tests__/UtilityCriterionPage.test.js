@@ -13,6 +13,7 @@ const utilityProps = {
     changeUtilityNotes:_changeUtilityNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),
+    criterionCompletionStatuses:(() => {}),
 }
 
 beforeAll(() => {

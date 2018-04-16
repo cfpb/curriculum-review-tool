@@ -1,6 +1,7 @@
 import React from "react";
 
 import C from "../../constants";
+import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 
 export default class QualityCriterionPage extends React.Component {
@@ -42,7 +43,10 @@ export default class QualityCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 1: Accessibility</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-1"]} />
+                        Criterion 1: Accessibility
+                    </h3>
                     <p className="lead-paragraph">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
                     </p>
@@ -498,7 +502,10 @@ export default class QualityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 2: Accuracy and timeliness</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]} />
+                        Criterion 2: Accuracy and timeliness
+                    </h3>
                     <p className="lead-paragraph">
                         Are curriculum materials current and free of error?
                     </p>
@@ -698,7 +705,10 @@ export default class QualityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 3: Objectivity</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]} />
+                        Criterion 3: Objectivity
+                    </h3>
                     <p className="lead-paragraph">
                         Are the curriculum materials objective?
                     </p>
@@ -1004,7 +1014,10 @@ export default class QualityCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 4: Visual appearance</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]} />
+                        Criterion 4: Visual appearance
+                    </h3>
                     <p className="lead-paragraph">
                         Is the visual appearance of the student materials conducive to learning?
                     </p>

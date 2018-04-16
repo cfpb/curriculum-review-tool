@@ -54,10 +54,32 @@ export default class CustomerReviewToolComponent extends React.Component {
         window.location = startPage;
     }
 
+    isCriterionValueEmpty(key, alteredCriterionObjects) {
+        return alteredCriterionObjects[key] === "" || alteredCriterionObjects === undefined;
+    }
+
+    isKeyInCriterion(key, currentCriterion) {
+        return key.startsWith(currentCriterion.toLowerCase());
+    }
+
     /*
-     * Verify the criteria for completion of a distinctive has been met
+     * Verify all the criteria for a single criterion has been met
      */
-    distinctiveIsComplete(alteredCriterionObjects, changedDistinctive) {
+    isCriterionComplete(alteredCriterionObjects, currentCriterion) {
+        for (var key in alteredCriterionObjects) {
+            if (this.isKeyInCriterion(key, currentCriterion) && 
+                this.isRequiredCriterion(key) &&
+                this.isCriterionValueEmpty(key, alteredCriterionObjects)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*
+     * Verify all the criteria for a whole distinctive has been met
+     */
+    isDistinctiveComplete(alteredCriterionObjects, changedDistinctive) {
         for (var key in alteredCriterionObjects) {
             if (this.isCriterionInDistinctive(key, changedDistinctive) && 
                 this.isRequiredCriterion(key) &&
@@ -68,27 +90,30 @@ export default class CustomerReviewToolComponent extends React.Component {
         return true;
     }
 
-    isCriterionValueEmpty(key, alteredCriterionObjects) {
-        return alteredCriterionObjects[key] === "" || alteredCriterionObjects === undefined;
+    isCriterionInDistinctive(key, changedDistinctive) {
+        return key.startsWith(changedDistinctive.toLowerCase());
     }
 
     isRequiredCriterion(key) {
         return !key.includes("optional");
     }
 
-    isCriterionInDistinctive(key, changedDistinctive) {
-        return key.startsWith(changedDistinctive.toLowerCase());
-    }
-
     initializeAnswerObjects(fields) {
-        let alteredCriterionObjects =  this.state.criterionAnswers
+        let alteredCriterionObjects =  this.state.criterionAnswers;
+        let alteredCriterionStatuses =  this.state.criterionCompletionStatuses;
         for (const key in fields) {
-        if (alteredCriterionObjects[key] === undefined) {
-            alteredCriterionObjects[key] = "";
-        }
+            if (alteredCriterionObjects[key] === undefined) {
+                alteredCriterionObjects[key] = "";
+            }
+
+            let currentCriterion = key.substring(0, key.indexOf("."));
+            if (alteredCriterionStatuses[currentCriterion] === undefined) {
+                alteredCriterionStatuses[currentCriterion] = "";
+            }
         }
 
         this.saveCriterionAnswers(alteredCriterionObjects);
+        this.saveCriterionCompletionStatuses(alteredCriterionStatuses);
     }
 
     /*
@@ -100,11 +125,25 @@ export default class CustomerReviewToolComponent extends React.Component {
         alteredCriterionObjects[key] = val;
 
         alteredCriterionObjects = this.setCriterionAnswersState(alteredCriterionObjects);
+
+        this.calculateCriterionCompletion(alteredCriterionObjects, distinctive, key);
         this.calculateDistinctiveCompletion(alteredCriterionObjects, distinctive);
     }
 
+    calculateCriterionCompletion(alteredCriterionObjects, changedDistinctive, key) {
+        let currentCriterion = key.substring(0, key.indexOf("."));
+
+        if (this.isCriterionComplete(alteredCriterionObjects, currentCriterion)) {
+            // Use the ICON Check so we can just pass that down and now have to add logic later
+            this.setCriterionCompletionStatuses(currentCriterion, C.ICON_CHECK);
+        }
+        else {
+            this.setCriterionCompletionStatuses(currentCriterion, C.STATUS_IN_PROGRESS);
+        }
+    }
+
     calculateDistinctiveCompletion(alteredCriterionObjects, changedDistinctive) {
-        if (this.distinctiveIsComplete(alteredCriterionObjects, changedDistinctive)) {
+        if (this.isDistinctiveComplete(alteredCriterionObjects, changedDistinctive)) {
             this.setSummaryButtonEnabled(changedDistinctive, C.STATUS_COMPLETE);
         }
         else {
@@ -131,13 +170,21 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setState({criterionAnswers: alteredCriterionAnswers});
     }
 
-    //TODO: Implement the the calculation that determins the criterionStatus
-    // then invoke this method to save it.
-    // possible statuses: STATUS_CIRIT_NOT_STARTED, STATUS_CIRIT_STARTED, STATUS_CIRIT_COMPLETE
-    // The above statuses can be used to know if it has been expanded or completed
-    setCriterionCompletionStatuses(key, val) {
+    /*
+     * Set state values for all criterion completion statuses
+     */
+    saveCriterionCompletionStatuses(alteredCriterionCompletionStatues) {
+        localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredCriterionCompletionStatues));
+        this.setState({criterionCompletionStatuses: alteredCriterionCompletionStatues});
+    }
+
+    /*
+     * Save the Completion Status of each criterion.  This will allow
+     * Ease of work flow when loading pages based on Criterion status
+     */
+    setCriterionCompletionStatuses(criterion, status) {
         let alteredData =  this.state.criterionCompletionStatuses
-        alteredData[key] = val;
+        alteredData[criterion] = status;
 
         localStorage.setItem("criterionCompletionStatus", JSON.stringify(alteredData));
         this.setState({criterionCompletionStatus: alteredData})
@@ -253,7 +300,8 @@ export default class CustomerReviewToolComponent extends React.Component {
                     criterionAnswers={this.state.criterionAnswers}
                     changeCriterionAnswer={this.changeCriterionAnswer.bind(this)}
                     clearLocalStorage={this.clearLocalStorage.bind(this)}
-                    initializeAnswerObjects={this.initializeAnswerObjects.bind(this)} />
+                    initializeAnswerObjects={this.initializeAnswerObjects.bind(this)}
+                    criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
 
                 <div className="block
                                 block__flush-bottom
@@ -266,8 +314,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                             contentSummaryButton={this.state.contentSummaryButton}
                             utilitySummaryButton={this.state.utilitySummaryButton}
                             qualitySummaryButton={this.state.qualitySummaryButton}
-                            efficacySummaryButton={this.state.efficacySummaryButton}
-                            criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
+                            efficacySummaryButton={this.state.efficacySummaryButton} />
 
                         <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
                     </div>
