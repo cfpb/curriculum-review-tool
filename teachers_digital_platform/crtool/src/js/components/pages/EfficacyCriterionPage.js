@@ -673,7 +673,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                             <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                             <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                         </svg>
-                                        <div>
+                                        <div className="m-form-field_radio-text is-active">
                                             <div><strong>The study is strong.</strong></div>
                                             All essential components were met.
                                         </div>
@@ -689,7 +689,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                             <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                             <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                         </svg>
-                                        <div>
+                                        <div className="m-form-field_radio-text">
                                             <div><strong>The study is not strong.</strong></div>
                                             Not all essential components were met.
                                         </div>
