@@ -73,7 +73,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -90,7 +90,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -107,7 +107,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -161,7 +161,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”
                                     </div>
@@ -177,7 +177,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -226,7 +226,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -243,7 +243,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -260,7 +260,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -314,7 +314,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”
                                     </div>
@@ -330,7 +330,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -365,13 +365,6 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-
-
-
-
-
-
-
                 <div className="o-well u-mb30">
                     <h2>
                         <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm329.9 449.4l-68.7 63.5-69.3 64.1 27.5 138.5 9.1 45.9c10.1 50.9-18.7 71.9-64 46.5l-164.1-91.8-164.1 91.8c-45.3 25.4-74.1 4.4-64-46.5l9.1-45.9 9.1-45.9 18.4-92.6-69.3-64.1-34.4-31.8-34.4-31.8c-38.1-35.3-27.1-69.1 24.4-75.2l93-11 93.8-11.1L441.3 329l19.6-42.5c21.8-47.2 57.4-47.2 79.1 0l19.6 42.5 59.2 128.2 93.8 11.1 93 11c51.4 6.2 62.4 40.1 24.3 75.3z"/></svg></span>
@@ -390,7 +383,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Strong utility</strong></div>
                                         All 4 criteria were met, and at least one was exceeded
                                     </div>
@@ -406,7 +399,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Moderate utility</strong></div>
                                         All 4 criteria were met
                                     </div>
@@ -422,7 +415,7 @@ export default class QualitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Limited utility</strong></div>
                                         At least one of the criteria was not met
                                     </div>
