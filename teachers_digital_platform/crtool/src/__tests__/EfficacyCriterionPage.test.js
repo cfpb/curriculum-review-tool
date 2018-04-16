@@ -13,6 +13,9 @@ const efficacyProps = {
     changeEfficacyNotes:_changeEfficacyNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),
+    criterionCompletionStatuses:(() => {}),
+    criterionScores:(() => {}),
+    setCriterionStatusToInStart:(() => {}),
 }
 
 beforeAll(() => {

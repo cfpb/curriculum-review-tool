@@ -1,19 +1,42 @@
 import React from "react";
 
 import C from "../../constants";
+import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class EfficacyCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.EFFICACY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
 
+    shouldHideAdditonalCriterion(currentCriterion) {
+        if (this.props.criterionScores[currentCriterion] !== undefined &&
+            this.props.criterionScores[currentCriterion].all_yes) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -61,6 +84,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-1"]} />
                         Criterion 1: Strength of study (inclusion criteria)
                     </h3>
                     <p className="lead-paragraph">
@@ -107,13 +131,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.1.1a"
-                                                name="efficacy-crt-quesion-1.1.1"
-                                                ref="efficacy-crt-quesion-1.1.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.1.1', 'yes')}} />
+                                                id="efficacy-crt-question-1.1.1a"
+                                                name="efficacy-crt-question-1.1.1"
+                                                ref="efficacy-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.1.1a">
+                                                htmlFor="efficacy-crt-question-1.1.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -121,13 +145,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.1.1b"
-                                                name="efficacy-crt-quesion-1.1.1"
-                                                ref="efficacy-crt-quesion-1.1.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.1.1', 'no')}} />
+                                                id="efficacy-crt-question-1.1.1b"
+                                                name="efficacy-crt-question-1.1.1"
+                                                ref="efficacy-crt-question-1.1.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.1.1b">
+                                                htmlFor="efficacy-crt-question-1.1.1b">
                                                 No
                                             </label>
                                         </div>
@@ -143,13 +167,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.1.2a"
-                                                name="efficacy-crt-quesion-1.1.2"
-                                                ref="efficacy-crt-quesion-1.1.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.1.2', 'yes')}} />
+                                                id="efficacy-crt-question-1.1.2a"
+                                                name="efficacy-crt-question-1.1.2"
+                                                ref="efficacy-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.1.2a">
+                                                htmlFor="efficacy-crt-question-1.1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -157,13 +181,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.1.2b"
-                                                name="efficacy-crt-quesion-1.1.2"
-                                                ref="efficacy-crt-quesion-1.1.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.1.2', 'no')}} />
+                                                id="efficacy-crt-question-1.1.2b"
+                                                name="efficacy-crt-question-1.1.2"
+                                                ref="efficacy-crt-question-1.1.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.1.2b">
+                                                htmlFor="efficacy-crt-question-1.1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -190,13 +214,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.2a"
-                                                name="efficacy-crt-quesion-1.2"
-                                                ref="efficacy-crt-quesion-1.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.2', 'yes')}} />
+                                                id="efficacy-crt-question-1.2a"
+                                                name="efficacy-crt-question-1.2"
+                                                ref="efficacy-crt-question-1.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.2a">
+                                                htmlFor="efficacy-crt-question-1.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -204,13 +228,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.2b"
-                                                name="efficacy-crt-quesion-1.2"
-                                                ref="efficacy-crt-quesion-1.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.2', 'no')}} />
+                                                id="efficacy-crt-question-1.2b"
+                                                name="efficacy-crt-question-1.2"
+                                                ref="efficacy-crt-question-1.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.2b">
+                                                htmlFor="efficacy-crt-question-1.2b">
                                                 No
                                             </label>
                                         </div>
@@ -238,13 +262,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.3.1a"
-                                                name="efficacy-crt-quesion-1.3.1"
-                                                ref="efficacy-crt-quesion-1.3.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.3.1', 'yes')}} />
+                                                id="efficacy-crt-question-1.3.1a"
+                                                name="efficacy-crt-question-1.3.1"
+                                                ref="efficacy-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.3.1a">
+                                                htmlFor="efficacy-crt-question-1.3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -252,13 +276,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.3.1b"
-                                                name="efficacy-crt-quesion-1.3.1"
-                                                ref="efficacy-crt-quesion-1.3.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.3.1', 'no')}} />
+                                                id="efficacy-crt-question-1.3.1b"
+                                                name="efficacy-crt-question-1.3.1"
+                                                ref="efficacy-crt-question-1.3.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.3.1b">
+                                                htmlFor="efficacy-crt-question-1.3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -274,13 +298,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.3.2a"
-                                                name="efficacy-crt-quesion-1.3.2"
-                                                ref="efficacy-crt-quesion-1.3.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.3.2', 'yes')}} />
+                                                id="efficacy-crt-question-1.3.2a"
+                                                name="efficacy-crt-question-1.3.2"
+                                                ref="efficacy-crt-question-1.3.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.3.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.3.2a">
+                                                htmlFor="efficacy-crt-question-1.3.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -288,13 +312,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.3.2b"
-                                                name="efficacy-crt-quesion-1.3.2"
-                                                ref="efficacy-crt-quesion-1.3.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.3.2', 'no')}} />
+                                                id="efficacy-crt-question-1.3.2b"
+                                                name="efficacy-crt-question-1.3.2"
+                                                ref="efficacy-crt-question-1.3.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.3.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.3.2b">
+                                                htmlFor="efficacy-crt-question-1.3.2b">
                                                 No
                                             </label>
                                         </div>
@@ -321,13 +345,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.1a"
-                                                name="efficacy-crt-quesion-1.4.1"
-                                                ref="efficacy-crt-quesion-1.4.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.1', 'yes')}} />
+                                                id="efficacy-crt-question-1.4.1a"
+                                                name="efficacy-crt-question-1.4.1"
+                                                ref="efficacy-crt-question-1.4.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.1a">
+                                                htmlFor="efficacy-crt-question-1.4.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -335,13 +359,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.1b"
-                                                name="efficacy-crt-quesion-1.4.1"
-                                                ref="efficacy-crt-quesion-1.4.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.1', 'no')}} />
+                                                id="efficacy-crt-question-1.4.1b"
+                                                name="efficacy-crt-question-1.4.1"
+                                                ref="efficacy-crt-question-1.4.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.1b">
+                                                htmlFor="efficacy-crt-question-1.4.1b">
                                                 No
                                             </label>
                                         </div>
@@ -356,13 +380,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.2a"
-                                                name="efficacy-crt-quesion-1.4.2"
-                                                ref="efficacy-crt-quesion-1.4.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.2', 'yes')}} />
+                                                id="efficacy-crt-question-1.4.2a"
+                                                name="efficacy-crt-question-1.4.2"
+                                                ref="efficacy-crt-question-1.4.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.2a">
+                                                htmlFor="efficacy-crt-question-1.4.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -370,13 +394,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.2b"
-                                                name="efficacy-crt-quesion-1.4.2"
-                                                ref="efficacy-crt-quesion-1.4.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.2', 'no')}} />
+                                                id="efficacy-crt-question-1.4.2b"
+                                                name="efficacy-crt-question-1.4.2"
+                                                ref="efficacy-crt-question-1.4.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.2b">
+                                                htmlFor="efficacy-crt-question-1.4.2b">
                                                 No
                                             </label>
                                         </div>
@@ -391,13 +415,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.3a"
-                                                name="efficacy-crt-quesion-1.4.3"
-                                                ref="efficacy-crt-quesion-1.4.3"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.3', 'yes')}} />
+                                                id="efficacy-crt-question-1.4.3a"
+                                                name="efficacy-crt-question-1.4.3"
+                                                ref="efficacy-crt-question-1.4.3"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.3"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.3', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.3a">
+                                                htmlFor="efficacy-crt-question-1.4.3a">
                                                 Yes
                                             </label>
                                         </div>
@@ -405,13 +429,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.3b"
-                                                name="efficacy-crt-quesion-1.4.3"
-                                                ref="efficacy-crt-quesion-1.4.3"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.3', 'no')}} />
+                                                id="efficacy-crt-question-1.4.3b"
+                                                name="efficacy-crt-question-1.4.3"
+                                                ref="efficacy-crt-question-1.4.3"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.3"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.3', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.3b">
+                                                htmlFor="efficacy-crt-question-1.4.3b">
                                                 No
                                             </label>
                                         </div>
@@ -426,13 +450,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.4a"
-                                                name="efficacy-crt-quesion-1.4.4"
-                                                ref="efficacy-crt-quesion-1.4.4"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.4', 'yes')}} />
+                                                id="efficacy-crt-question-1.4.4a"
+                                                name="efficacy-crt-question-1.4.4"
+                                                ref="efficacy-crt-question-1.4.4"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.4"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.4', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.4a">
+                                                htmlFor="efficacy-crt-question-1.4.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -440,13 +464,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.4b"
-                                                name="efficacy-crt-quesion-1.4.4"
-                                                ref="efficacy-crt-quesion-1.4.4"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.4', 'no')}} />
+                                                id="efficacy-crt-question-1.4.4b"
+                                                name="efficacy-crt-question-1.4.4"
+                                                ref="efficacy-crt-question-1.4.4"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.4"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.4', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.4b">
+                                                htmlFor="efficacy-crt-question-1.4.4b">
                                                 No
                                             </label>
                                         </div>
@@ -462,13 +486,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.5a"
-                                                name="efficacy-crt-quesion-1.4.5"
-                                                ref="efficacy-crt-quesion-1.4.5"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.5', 'yes')}} />
+                                                id="efficacy-crt-question-1.4.5a"
+                                                name="efficacy-crt-question-1.4.5"
+                                                ref="efficacy-crt-question-1.4.5"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.5', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.5a">
+                                                htmlFor="efficacy-crt-question-1.4.5a">
                                                 Yes
                                             </label>
                                         </div>
@@ -476,13 +500,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.5b"
-                                                name="efficacy-crt-quesion-1.4.5"
-                                                ref="efficacy-crt-quesion-1.4.5"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.5', 'no')}} />
+                                                id="efficacy-crt-question-1.4.5b"
+                                                name="efficacy-crt-question-1.4.5"
+                                                ref="efficacy-crt-question-1.4.5"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.5', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.5b">
+                                                htmlFor="efficacy-crt-question-1.4.5b">
                                                 No
                                             </label>
                                         </div>
@@ -498,13 +522,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.6a"
-                                                name="efficacy-crt-quesion-1.4.6"
-                                                ref="efficacy-crt-quesion-1.4.6"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.6', 'yes')}} />
+                                                id="efficacy-crt-question-1.4.6a"
+                                                name="efficacy-crt-question-1.4.6"
+                                                ref="efficacy-crt-question-1.4.6"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.6"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.6', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.6a">
+                                                htmlFor="efficacy-crt-question-1.4.6a">
                                                 Yes
                                             </label>
                                         </div>
@@ -512,13 +536,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.4.6b"
-                                                name="efficacy-crt-quesion-1.4.6"
-                                                ref="efficacy-crt-quesion-1.4.6"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.4.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.4.6', 'no')}} />
+                                                id="efficacy-crt-question-1.4.6b"
+                                                name="efficacy-crt-question-1.4.6"
+                                                ref="efficacy-crt-question-1.4.6"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.4.6"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.6', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.4.6b">
+                                                htmlFor="efficacy-crt-question-1.4.6b">
                                                 No
                                             </label>
                                         </div>
@@ -545,13 +569,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.5a"
-                                                name="efficacy-crt-quesion-1.5"
-                                                ref="efficacy-crt-quesion-1.5"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.5', 'yes')}} />
+                                                id="efficacy-crt-question-1.5a"
+                                                name="efficacy-crt-question-1.5"
+                                                ref="efficacy-crt-question-1.5"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.5"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.5', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.5a">
+                                                htmlFor="efficacy-crt-question-1.5a">
                                                 Yes
                                             </label>
                                         </div>
@@ -559,13 +583,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.5b"
-                                                name="efficacy-crt-quesion-1.5"
-                                                ref="efficacy-crt-quesion-1.5"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.5', 'no')}} />
+                                                id="efficacy-crt-question-1.5b"
+                                                name="efficacy-crt-question-1.5"
+                                                ref="efficacy-crt-question-1.5"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.5"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.5', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.5b">
+                                                htmlFor="efficacy-crt-question-1.5b">
                                                 No
                                             </label>
                                         </div>
@@ -592,13 +616,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.6a"
-                                                name="efficacy-crt-quesion-1.6"
-                                                ref="efficacy-crt-quesion-1.6"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.6', 'yes')}} />
+                                                id="efficacy-crt-question-1.6a"
+                                                name="efficacy-crt-question-1.6"
+                                                ref="efficacy-crt-question-1.6"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.6"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.6', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.6a">
+                                                htmlFor="efficacy-crt-question-1.6a">
                                                 Yes
                                             </label>
                                         </div>
@@ -606,13 +630,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-1.6b"
-                                                name="efficacy-crt-quesion-1.6"
-                                                ref="efficacy-crt-quesion-1.6"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-1.6', 'no')}} />
+                                                id="efficacy-crt-question-1.6b"
+                                                name="efficacy-crt-question-1.6"
+                                                ref="efficacy-crt-question-1.6"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-1.6"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.6', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-1.6b">
+                                                htmlFor="efficacy-crt-question-1.6b">
                                                 No
                                             </label>
                                         </div>
@@ -704,8 +728,14 @@ export default class EfficacyCriterionPage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="efficacy-crt-question-2"
+                    criterionText="Criterion 2: Saving and investing"
+                    hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-question-1")}
+                    {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]} />
                         Criterion 2: Saving and investing
                     </h3>
                     <p className="lead-paragraph">
@@ -735,13 +765,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-2.1a"
-                                                name="efficacy-crt-quesion-2.1"
-                                                ref="efficacy-crt-quesion-2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-2.1', 'yes')}} />
+                                                id="efficacy-crt-question-2.1a"
+                                                name="efficacy-crt-question-2.1"
+                                                ref="efficacy-crt-question-2.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-2.1a">
+                                                htmlFor="efficacy-crt-question-2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -749,13 +779,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-2.1b"
-                                                name="efficacy-crt-quesion-2.1"
-                                                ref="efficacy-crt-quesion-2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-2.1', 'no')}} />
+                                                id="efficacy-crt-question-2.1b"
+                                                name="efficacy-crt-question-2.1"
+                                                ref="efficacy-crt-question-2.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-2.1b">
+                                                htmlFor="efficacy-crt-question-2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -783,13 +813,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-2.2a"
-                                                name="efficacy-crt-quesion-2.2"
-                                                ref="efficacy-crt-quesion-2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-2.2', 'yes')}} />
+                                                id="efficacy-crt-question-2.2a"
+                                                name="efficacy-crt-question-2.2"
+                                                ref="efficacy-crt-question-2.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-2.2a">
+                                                htmlFor="efficacy-crt-question-2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -797,13 +827,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-2.2b"
-                                                name="efficacy-crt-quesion-2.2"
-                                                ref="efficacy-crt-quesion-2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-2.2', 'no')}} />
+                                                id="efficacy-crt-question-2.2b"
+                                                name="efficacy-crt-question-2.2"
+                                                ref="efficacy-crt-question-2.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-2.2b">
+                                                htmlFor="efficacy-crt-question-2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -829,8 +859,13 @@ export default class EfficacyCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    criterionKey="efficacy-crt-question-3"
+                    criterionText="Criterion 3: Impact" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]} />
                         Criterion 3: Impact
                     </h3>
                     <p className="lead-paragraph">
@@ -859,13 +894,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-3.1a"
-                                                name="efficacy-crt-quesion-3.1"
-                                                ref="efficacy-crt-quesion-3.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-3.1', 'yes')}} />
+                                                id="efficacy-crt-question-3.1a"
+                                                name="efficacy-crt-question-3.1"
+                                                ref="efficacy-crt-question-3.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-3.1a">
+                                                htmlFor="efficacy-crt-question-3.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -873,13 +908,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-3.1b"
-                                                name="efficacy-crt-quesion-3.1"
-                                                ref="efficacy-crt-quesion-3.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-3.1', 'no')}} />
+                                                id="efficacy-crt-question-3.1b"
+                                                name="efficacy-crt-question-3.1"
+                                                ref="efficacy-crt-question-3.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-3.1b">
+                                                htmlFor="efficacy-crt-question-3.1b">
                                                 No
                                             </label>
                                         </div>
@@ -906,13 +941,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-3.2.1a"
-                                                name="efficacy-crt-quesion-3.2.1"
-                                                ref="efficacy-crt-quesion-3.2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-3.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-3.2.1', 'yes')}} />
+                                                id="efficacy-crt-question-3.2.1a"
+                                                name="efficacy-crt-question-3.2.1"
+                                                ref="efficacy-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-3.2.1a">
+                                                htmlFor="efficacy-crt-question-3.2.1a">
                                                 Yes
                                             </label>
                                         </div>
@@ -920,13 +955,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-3.2.1b"
-                                                name="efficacy-crt-quesion-3.2.1"
-                                                ref="efficacy-crt-quesion-3.2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-3.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-3.2.1', 'no')}} />
+                                                id="efficacy-crt-question-3.2.1b"
+                                                name="efficacy-crt-question-3.2.1"
+                                                ref="efficacy-crt-question-3.2.1"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-3.2.1b">
+                                                htmlFor="efficacy-crt-question-3.2.1b">
                                                 No
                                             </label>
                                         </div>
@@ -942,13 +977,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-3.2.2a"
-                                                name="efficacy-crt-quesion-3.2.2"
-                                                ref="efficacy-crt-quesion-3.2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-3.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-3.2.2', 'yes')}} />
+                                                id="efficacy-crt-question-3.2.2a"
+                                                name="efficacy-crt-question-3.2.2"
+                                                ref="efficacy-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-3.2.2a">
+                                                htmlFor="efficacy-crt-question-3.2.2a">
                                                 Yes
                                             </label>
                                         </div>
@@ -956,13 +991,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-quesion-3.2.2b"
-                                                name="efficacy-crt-quesion-3.2.2"
-                                                ref="efficacy-crt-quesion-3.2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-quesion-3.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-quesion-3.2.2', 'no')}} />
+                                                id="efficacy-crt-question-3.2.2b"
+                                                name="efficacy-crt-question-3.2.2"
+                                                ref="efficacy-crt-question-3.2.2"
+                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="efficacy-crt-quesion-3.2.2b">
+                                                htmlFor="efficacy-crt-question-3.2.2b">
                                                 No
                                             </label>
                                         </div>
@@ -988,6 +1023,8 @@ export default class EfficacyCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"

@@ -3,7 +3,7 @@ import React from "react";
 import C from "../../../constants";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 
-export default class ContentSummaryPage extends React.Component {
+export default class ContentHighSummaryPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
         this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
     }

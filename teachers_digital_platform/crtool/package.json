@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --debug && mkdir -p ../static/tdp/js && mv build/static/**/main*.js ../static/tdp/js/crtool.react.js",
+    "build": "react-scripts build --debug && mkdir -p ../static/tdp/js && mv build/static/**/main*.js ../static/tdp/js/crtool.react.js && mv build/static/js/main*.map ../static/tdp/js/",
     "test": "jest",
     "eject": "react-scripts eject"
   },

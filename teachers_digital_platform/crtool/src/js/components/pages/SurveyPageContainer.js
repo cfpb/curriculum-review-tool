@@ -4,14 +4,15 @@ import C from "../../constants";
 import ContentElementaryCriterionPage from "./content/ContentElementaryCriterionPage";
 import ContentMiddleCriterionPage from "./content/ContentMiddleCriterionPage";
 import ContentHighCriterionPage from "./content/ContentHighCriterionPage";
-import ContentSummaryPage from "./content/ContentSummaryPage";
+import ContentElementarySummaryPage from "./content/ContentElementarySummaryPage";
+import ContentHighSummaryPage from "./content/ContentHighSummaryPage";
+import ContentMiddleSummaryPage from "./content/ContentMiddleSummaryPage";
 import UtilityCriterionPage from "./UtilityCriterionPage";
 import UtilitySummaryPage from "./UtilitySummaryPage";
 import QualityCriterionPage from "./QualityCriterionPage";
 import QualitySummaryPage from "./QualitySummaryPage";
 import EfficacyCriterionPage from "./EfficacyCriterionPage";
 import EfficacySummaryPage from "./EfficacySummaryPage";
-import FinalSummaryPage from "./FinalSummaryPage";
 import StartCriterionPage from "./StartCriterionPage";
 
 export default class SurveyPageContainer extends React.Component {
@@ -19,6 +20,7 @@ export default class SurveyPageContainer extends React.Component {
     render() {
         const pageProps = {
             currentPage:this.props.currentPage,
+            criterionScores:this.props.criterionScores,
             criterionAnswers:this.props.criterionAnswers,
             changeCriterionAnswer:this.props.changeCriterionAnswer,
             setDistinctiveComplete:this.props.setDistinctiveComplete, 
@@ -26,12 +28,21 @@ export default class SurveyPageContainer extends React.Component {
             publicationDate:this.props.publicationDate,
             gradeRange:this.props.gradeRange,
             initializeAnswerObjects:this.props.initializeAnswerObjects,
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
           };
         
         if (this.props.currentPage === C.CONTENT_PAGE) {
 
             if (this.props.contentInProgress === C.STATUS_COMPLETE) {
-                return (<ContentSummaryPage {...pageProps} />);
+                if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
+                    return (<ContentElementarySummaryPage {...pageProps} />);
+                } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
+                    return (<ContentMiddleSummaryPage {...pageProps} />);
+                } else {
+                    return (<ContentHighSummaryPage {...pageProps} />);
+                }
             } else {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
                     return (<ContentElementaryCriterionPage {...pageProps} />);
@@ -66,8 +77,6 @@ export default class SurveyPageContainer extends React.Component {
                 return (<EfficacyCriterionPage {...pageProps} />);
             }
 
-        }  else if (this.props.currentPage === C.FINAL_SUMMARY_PAGE) {
-            return (<FinalSummaryPage {...pageProps} />);
         } else {
             return (<StartCriterionPage  {...pageProps} />);
         }

@@ -1,19 +1,32 @@
 import React from "react";
 
 import C from "../../constants";
+import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class QualityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.QUALITY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
 
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -46,7 +59,10 @@ export default class QualityCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 1: Accessibility</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-1"]} />
+                        Criterion 1: Accessibility
+                    </h3>
                     <p className="lead-paragraph">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
                     </p>
@@ -72,7 +88,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.1.1"
                                                 ref="quality-crt-text-optional-1.1.1"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.1.1']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.1', e.target.value)} />
                                         </div>
                                     </div>
@@ -183,7 +199,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.1.3"
                                                 ref="quality-crt-text-optional-1.1.3"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.1.3']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.3', e.target.value)} />
                                         </div>
                                     </div>
@@ -350,7 +366,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.3.1"
                                                 ref="quality-crt-text-optional-1.3.1"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.3.1']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.1', e.target.value)} />
                                         </div>
                                     </div>
@@ -410,7 +426,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.3.2"
                                                 ref="quality-crt-text-optional-1.3.2"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.3.2']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.2', e.target.value)} />
                                         </div>
                                     </div>
@@ -501,8 +517,15 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="quality-crt-question-2"
+                    criterionText="Criterion 2: Accuracy and timeliness" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 2: Accuracy and timeliness</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]} />
+                        Criterion 2: Accuracy and timeliness
+                    </h3>
                     <p className="lead-paragraph">
                         Are curriculum materials current and free of error?
                     </p>
@@ -701,8 +724,15 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="quality-crt-question-3"
+                    criterionText="Criterion 3: Objectivity" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 3: Objectivity</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]} />
+                        Criterion 3: Objectivity
+                    </h3>
                     <p className="lead-paragraph">
                         Are the curriculum materials objective?
                     </p>
@@ -1007,8 +1037,15 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    criterionKey="quality-crt-question-4"
+                    criterionText="Criterion 4: Visual appearance" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 4: Visual appearance</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]} />
+                        Criterion 4: Visual appearance
+                    </h3>
                     <p className="lead-paragraph">
                         Is the visual appearance of the student materials conducive to learning?
                     </p>
@@ -1335,6 +1372,9 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"

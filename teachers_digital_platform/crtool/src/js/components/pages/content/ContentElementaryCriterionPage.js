@@ -1,19 +1,32 @@
 import React from "react";
 
 import C from "../../../constants";
+import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentElementaryCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
 
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
+
         return (
             <React.Fragment>
                 <hr className="hr
@@ -41,7 +54,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 1: Earning, income, and careers</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-1"]} />
+                        Criterion 1: Earning, income, and careers
+                        </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for earning, income, and careers?
                     </p>
@@ -68,8 +84,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 id="content-elementary-crt-question-1.1a"
                                                 name="content-elementary-crt-question-1.1"
                                                 ref="content-elementary-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.1a"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1a', 'yes')}} />
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.1"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.1a">
                                                 Yes
@@ -82,8 +98,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 id="content-elementary-crt-question-1.1b"
                                                 name="content-elementary-crt-question-1.1"
                                                 ref="content-elementary-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.1b"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1b', 'no')}} />
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.1"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.1b">
                                                 No
@@ -115,8 +131,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 id="content-elementary-crt-question-1.2a"
                                                 name="content-elementary-crt-question-1.2"
                                                 ref="content-elementary-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.2a"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2a', 'yes')}} />
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.2"] === 'yes'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.2a">
                                                 Yes
@@ -129,8 +145,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 id="content-elementary-crt-question-1.2b"
                                                 name="content-elementary-crt-question-1.2"
                                                 ref="content-elementary-crt-question-1.2"
-                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.2b"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2b', 'no')}} />
+                                                checked={this.props.criterionAnswers["content-elementary-crt-question-1.2"] === 'no'}
+                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.2b">
                                                 No
@@ -158,8 +174,15 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    criterionKey="content-elementary-crt-question-2"
+                    criterionText="Criterion 2: Saving and investing"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 2: Saving and investing</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-2"]} />
+                        Criterion 2: Saving and investing
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
                     </p>
@@ -358,8 +381,15 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    criterionKey="content-elementary-crt-question-3"
+                    criterionText="Criterion 3: Spending"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 3: Spending</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-3"]} />
+                        Criterion 3: Spending
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for spending?
                     </p>
@@ -616,8 +646,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="content-elementary-crt-question-4"
+                    criterionText="Criterion 4: Borrowing and credit"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-4"]} />
                         Criterion 4: Borrowing and credit
                     </h3>
                     <p className="lead-paragraph">
@@ -724,8 +759,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    criterionKey="content-elementary-crt-question-5"
+                    criterionText="Criterion 5: Managing financial risk"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-5"]} />
                         Criterion 5: Managing financial risk
                     </h3>
                     <p className="lead-paragraph">
@@ -832,8 +872,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    criterionKey="content-elementary-crt-question-6"
+                    criterionText="Criterion 6: Financial responsibility and money management"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-6"]} />
                         Criterion 6: Financial responsibility and money management
                     </h3>
                     <p className="lead-paragraph">
@@ -905,6 +950,11 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"
@@ -913,5 +963,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
         );
+        
     }
 }

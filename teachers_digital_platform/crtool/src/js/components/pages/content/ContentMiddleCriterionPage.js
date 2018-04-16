@@ -1,19 +1,31 @@
 import React from "react";
 
 import C from "../../../constants";
+import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentMiddleCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
-
+    
     render() {
+        const criterionLinkWrapperProps = {
+            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
+            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+        };
         return (
             <React.Fragment>
                 <hr className="hr
@@ -41,7 +53,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 1: Earning, income, and careers</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-middle-crt-question-1"]} />
+                        Criterion 1: Earning, income, and careers
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
                     </p>
@@ -193,8 +208,15 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="content-middle-crt-question-2"
+                    criterionText="Criterion 2: Saving and investing" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 2: Saving and Investing</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-middle-crt-question-2"]} />
+                        Criterion 2: Saving and Investing
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
                     </p>
@@ -545,8 +567,15 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="content-middle-crt-question-3"
+                    criterionText="Criterion 3: Spending"
+                    {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 3: Spending</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-middle-crt-question-3"]} />
+                        Criterion 3: Spending
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for spending?
                     </p>
@@ -768,8 +797,15 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="content-middle-crt-question-4"
+                    criterionText="Criterion 4: Borrowing and credit" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 4: Borrowing and credit</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-middle-crt-question-4"]} />
+                        Criterion 4: Borrowing and credit
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for borrowing and credit?
                     </p>
@@ -1073,8 +1109,15 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="content-middle-crt-question-5"
+                    criterionText="Criterion 5: Borrowing and credit"
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 5: Borrowing and credit</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-middle-crt-question-5"]} />
+                        Criterion 5: Borrowing and credit
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
                     </p>
@@ -1273,8 +1316,15 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper
+                    criterionKey="content-middle-crt-question-6"
+                    criterionText="Criterion 6: Financial responsibility and money management" 
+                    {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">Criterion 6: Financial responsibility and money management</h3>
+                    <h3 className="h2">
+                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-middle-crt-question-6"]} />
+                        Criterion 6: Financial responsibility and money management
+                    </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?
                     </p>
@@ -1379,6 +1429,11 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"

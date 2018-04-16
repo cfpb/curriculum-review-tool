@@ -13,6 +13,8 @@ const contentProps = {
     changeCriterionNotes:_changeContentNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),
+    criterionCompletionStatuses:(() => {}),
+    setCriterionStatusToInStart:(() => {}),
 }
 
 beforeAll(() => {

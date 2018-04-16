@@ -37,13 +37,13 @@ export default class SummaryButton extends React.Component {
                  this.props.efficacySummaryButton === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to quality summary
+                    Continue to efficacy summary
                 </button>
             );
         }
         else {
             if (this.props.currentPage === C.FINAL_SUMMARY_PAGE) {
-                return (<span />);
+                return (null);
             }
             else {
                 return (

@@ -1,5 +1,6 @@
 import React from "react";
 
+import C from "../../constants";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class SaveWorkModal extends React.Component {
@@ -48,7 +49,7 @@ export default class SaveWorkModal extends React.Component {
     render() {
         let currentIcon = "";
         if (this.props.hasIcon === "true") {
-            currentIcon = "question-round"
+            currentIcon = C.ICON_QUESTION;
         }
 
         return (
