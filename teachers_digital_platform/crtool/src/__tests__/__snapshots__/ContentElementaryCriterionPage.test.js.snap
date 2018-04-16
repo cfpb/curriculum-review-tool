@@ -75,36 +75,102 @@ Array [
        for those that are not.
     </li>
   </ul>,
-  <div
-    className="o-well u-mb30 u-mt30"
-  >
-    <h4>
-      This dimension has 
-      <em>
-        essential
-      </em>
-       and 
-      <em>
-        beneficial
-      </em>
-       components.
-    </h4>
-    <p>
-      <b>
-        <em>
-          Essential components
-        </em>
-      </b>
-       have been shown to positively impact student learning.
-      <br />
-      <b>
-        <em>
-          Beneficial components
-        </em>
-      </b>
-       hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
-    </p>
-  </div>,
+  <p>
+    <button
+      className="a-btn a-btn__link"
+      onClick={[Function]}
+    >
+      <span
+        className="a-icon a-icon__large"
+      />
+       
+      How can I save my work?
+    </button>
+    <div
+      aria-describedby="modal-save-work_desc"
+      aria-hidden="true"
+      aria-labelledby="modal-save-work_title"
+      className="o-modal"
+      id="modal-save-work"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close  
+              <span
+                className="a-icon a-icon__large"
+              >
+                <svg
+                  className="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              className="h4"
+              id="modal-save-work_title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p>,
   <hr
     className="hr u-mb30 u-mt30"
   />,
@@ -1630,7 +1696,7 @@ Array [
         className="a-icon a-icon__large"
       >
         <svg
-          className="cf-icon-svg"
+          class="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -1639,7 +1705,8 @@ Array [
           />
         </svg>
       </span>
-        Can I save my work?
+       
+      Can I save my work?
     </button>
     <div
       aria-describedby="modal-save-work_desc"

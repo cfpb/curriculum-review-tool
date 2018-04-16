@@ -15,7 +15,7 @@ exports[`renders without crashing 1`] = `
         className="a-icon a-icon__large"
       >
         <svg
-          className="cf-icon-svg"
+          class="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -24,7 +24,8 @@ exports[`renders without crashing 1`] = `
           />
         </svg>
       </span>
-        Can I save my work?
+       
+      Can I save my work?
     </button>
     <div
       aria-describedby="modal-save-work_desc"
