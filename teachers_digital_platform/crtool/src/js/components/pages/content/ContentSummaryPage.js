@@ -55,7 +55,7 @@ export default class ContentSummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                    <a href="#">View or edit responses</a>
+                    <button class="a-btn a-btn__link">View or edit responses</button>
                 </div>
                 <h3>Criterion 1: Earning, income, and careers</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for earning, income, and careers.</p>
