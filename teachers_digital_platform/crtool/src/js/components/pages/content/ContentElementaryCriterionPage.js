@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../../constants";
 import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentElementaryCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -13,6 +14,26 @@ export default class ContentElementaryCriterionPage extends React.Component {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
+
+    // handleCriterionTitleClick(criterionKey) {
+    //     this.props.setCriterionStatusToInProgress(criterionKey);
+    // }
+
+    // renderCriterionTitle(criterionKey, criterionText) {
+    //     if (this.props.criterionCompletionStatuses !== undefined &&
+    //         this.props.criterionCompletionStatuses[criterionKey] !== undefined &&
+    //         this.props.criterionCompletionStatuses[criterionKey] === C.STATUS_IN_PROGRESS) {
+            
+    //         return (<span>{criterionText}</span>);
+    //     }
+    //     else {
+    //         return(
+    //             <button className="a-btn" onClick={(e) => {this.handleCriterionTitleClick(criterionKey)}} >
+    //                 {criterionText}
+    //             </button>
+    //         );
+    //     }
+    // }
 
     render() {
         return (
@@ -162,6 +183,11 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-elementary-crt-question-2"
+                    criterionText="Criterion 2: Saving and investing" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-2"]} />
@@ -365,6 +391,12 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-elementary-crt-question-3"
+                    criterionText="Criterion 3: Spending" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-3"]} />
@@ -626,6 +658,12 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-elementary-crt-question-4"
+                    criterionText="Criterion 4: Borrowing and credit" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-4"]} />
@@ -735,6 +773,12 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-elementary-crt-question-5"
+                    criterionText="Criterion 5: Managing financial risk" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-5"]} />
@@ -844,6 +888,12 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-elementary-crt-question-6"
+                    criterionText="Criterion 6: Financial responsibility and money management" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-elementary-crt-question-6"]} />
@@ -918,6 +968,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"

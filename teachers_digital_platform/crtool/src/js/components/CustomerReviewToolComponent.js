@@ -133,15 +133,19 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     calculateCriterionCompletion(alteredCriterionObjects, changedDistinctive, key) {
-        let currentCriterion = key.substring(0, key.indexOf("."));
+        let criterionKey = key.substring(0, key.indexOf("."));
 
-        if (this.isCriterionComplete(alteredCriterionObjects, currentCriterion)) {
+        if (this.isCriterionComplete(alteredCriterionObjects, criterionKey)) {
             // Use the ICON Check so we can just pass that down and now have to add logic later
-            this.setCriterionCompletionStatuses(currentCriterion, C.ICON_CHECK);
+            this.setCriterionCompletionStatuses(criterionKey, C.ICON_CHECK);
         }
         else {
-            this.setCriterionCompletionStatuses(currentCriterion, C.STATUS_IN_PROGRESS);
+            this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_PROGRESS);
         }
+    }
+
+    setCriterionStatusToInProgress(criterionKey) {
+        this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_PROGRESS);
     }
 
     calculateDistinctiveCompletion(alteredCriterionObjects, changedDistinctive) {
@@ -280,6 +284,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
+            setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
         };
 
         const dimensionMenuProps = {

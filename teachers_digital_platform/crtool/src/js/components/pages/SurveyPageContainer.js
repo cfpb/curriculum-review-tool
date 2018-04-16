@@ -26,6 +26,7 @@ export default class SurveyPageContainer extends React.Component {
             gradeRange:this.props.gradeRange,
             initializeAnswerObjects:this.props.initializeAnswerObjects,
             criterionCompletionStatuses:this.props.criterionCompletionStatuses,
+            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
           };
         
         if (this.props.currentPage === C.CONTENT_PAGE) {

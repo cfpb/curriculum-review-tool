@@ -361,7 +361,6 @@ exports[`renders without crashing 1`] = `
       </ul>
     </li>
   </ul>
-  <span />
   <div />
   <div
     className="block block__flush-bottom block__padded-top block__border-top"

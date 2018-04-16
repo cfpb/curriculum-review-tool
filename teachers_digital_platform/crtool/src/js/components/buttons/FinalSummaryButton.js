@@ -19,7 +19,7 @@ export default class FinalSummaryButton extends React.Component {
                     </div>
                 );
         } else {
-            return (<span />)
+            return (null);
         }
     }
 }

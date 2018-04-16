@@ -43,7 +43,7 @@ export default class SummaryButton extends React.Component {
         }
         else {
             if (this.props.currentPage === C.FINAL_SUMMARY_PAGE) {
-                return (<span />);
+                return (null);
             }
             else {
                 return (
