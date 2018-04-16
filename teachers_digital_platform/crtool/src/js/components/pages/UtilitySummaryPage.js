@@ -73,7 +73,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -90,7 +90,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -107,7 +107,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -161,7 +161,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”
                                     </div>
@@ -177,7 +177,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -226,7 +226,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -243,7 +243,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -260,7 +260,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -314,7 +314,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”
                                     </div>
@@ -330,7 +330,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -379,7 +379,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”
                                     </div>
@@ -395,7 +395,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -448,7 +448,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Strong utility</strong></div>
                                         All 4 criteria were met, and at least one was exceeded
                                     </div>
@@ -464,7 +464,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Moderate utility</strong></div>
                                         All 4 criteria were met
                                     </div>
@@ -480,7 +480,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div>
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Limited utility</strong></div>
                                         At least one of the criteria was not met
                                     </div>
