@@ -56,7 +56,7 @@ export default class QualitySummaryPage extends React.Component {
                 <div className="l-survey-top">
                     <button class="a-btn a-btn__link">View or edit responses</button>
                 </div>
-                <h3>Criterion 1: Accessibility</h3>
+                <h3 className="h2">Criterion 1: Accessibility</h3>
                 <p className="u-mb30">Curriculum materials are physically accessible to teachers and students in a typical school setting.</p>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
@@ -144,7 +144,7 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h3>Criterion 2: Accuracy and timeliness</h3>
+                <h3 className="h2">Criterion 2: Accuracy and timeliness</h3>
                 <p className="u-mb30">Curriculum materials are current and free of errors.</p>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
@@ -209,7 +209,7 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h3>Criterion 3: Objectivity</h3>
+                <h3 className="h2">Criterion 3: Objectivity</h3>
                 <p className="u-mb30">Curriculum materials are objective.</p>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
@@ -297,7 +297,7 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h3>Criterion 4: Visual appearance </h3>
+                <h3 className="h2">Criterion 4: Visual appearance </h3>
                 <p className="u-mb30">The visual appearance of the student materials is conducive to learning.</p>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
