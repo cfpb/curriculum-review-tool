@@ -32,12 +32,11 @@ export default class ContentElementaryCriterionPage extends React.Component {
                     <li>Skim the lesson plans, student materials, and assessments.</li>
                     <li>Select <b><em>yes</em></b> for the components that are addressed, and <b><em>no</em></b> for those that are not.</li>
                 </ul>
-                <div className="o-well
-                                u-mb30
-                                u-mt30">
-                    <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
-                    <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                </div>
+                <p>
+                    <SaveWorkModal
+                        buttonText="How can I save my work?"
+                        hasIcon="false" />
+                </p>
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
@@ -907,7 +906,9 @@ export default class ContentElementaryCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="l-survey-top">
-                    <SaveWorkModal />
+                    <SaveWorkModal
+                        buttonText="Can I save my work?"
+                        hasIcon="true" />
                 </div>
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
