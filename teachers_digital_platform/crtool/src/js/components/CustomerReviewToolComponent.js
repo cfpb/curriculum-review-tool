@@ -8,6 +8,8 @@ import StartOverModal from "./dialogs/StartOverModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
+import FinalSummaryPage from "./pages/FinalSummaryPage";
+import FinalPringPage from "./pages/FinalPrintPage";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -260,68 +262,84 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     render() {
-        return (
-            <React.Fragment>
-                <div className="l-survey-top">
-                  <SaveWorkModal
-                        buttonText="Can I save my work?"
-                        hasIcon="true" />
-                </div>
-                <div class="h5 u-mb30">You’re reviewing</div>
-                <h1>{this.state.curriculumTitle}</h1>
+        const applicationProps = {
+            currentPage:this.state.currentPage,
+            curriculumTitle:this.state.curriculumTitle,
+            publicationDate:this.state.publicationDate,
+            gradeRange:this.state.gradeRange,
 
-                <PageInstructionsComponent
-                    currentPage={this.state.currentPage} />
+            contentInProgress:this.state.contentInProgress,
+            utilityInProgress:this.state.utilityInProgress,
+            qualityInProgress:this.state.qualityInProgress,
+            efficacyInProgress:this.state.efficacyInProgress,
 
-                <DistinctiveMenuBar
-                    distinctiveClicked={this.distinctiveClicked.bind(this)}
-                    currentPage={this.state.currentPage}
-                    contentInProgress={this.state.contentInProgress}
-                    utilityInProgress={this.state.utilityInProgress}
-                    qualityInProgress={this.state.qualityInProgress}
-                    efficacyInProgress={this.state.efficacyInProgress}
+            criterionAnswers:this.state.criterionAnswers,
+            criterionCompletionStatuses:this.state.criterionCompletionStatuses, 
 
-                    handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
-                    contentSummaryButton={this.state.contentSummaryButton}
-                    utilitySummaryButton={this.state.utilitySummaryButton}
-                    qualitySummaryButton={this.state.qualitySummaryButton}
-                    efficacySummaryButton={this.state.efficacySummaryButton} />
+            changeCriterionAnswer:this.changeCriterionAnswer.bind(this),
+            clearLocalStorage:this.clearLocalStorage.bind(this),
+            initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
+            distinctiveClicked:this.distinctiveClicked.bind(this),
+        };
 
-                <SurveyPageContainer className="SurveyPage"
-                    currentPage={this.state.currentPage}
+        const dimensionMenuProps = {
+            currentPage:this.state.currentPage,
+            contentInProgress:this.state.contentInProgress,
+            utilityInProgress:this.state.utilityInProgress,
+            qualityInProgress:this.state.qualityInProgress,
+            efficacyInProgress:this.state.efficacyInProgress,
 
-                    curriculumTitle={this.state.curriculumTitle}
-                    publicationDate={this.state.publicationDate}
-                    gradeRange={this.state.gradeRange}
+            contentSummaryButton:this.state.contentSummaryButton,
+            utilitySummaryButton:this.state.utilitySummaryButton,
+            qualitySummaryButton:this.state.qualitySummaryButton,
+            efficacySummaryButton:this.state.efficacySummaryButton,
 
-                    contentInProgress={this.state.contentInProgress}
-                    utilityInProgress={this.state.utilityInProgress}
-                    qualityInProgress={this.state.qualityInProgress}
-                    efficacyInProgress={this.state.efficacyInProgress}
+            distinctiveClicked:this.distinctiveClicked.bind(this),
+            handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),
+        };
 
-                    criterionAnswers={this.state.criterionAnswers}
-                    changeCriterionAnswer={this.changeCriterionAnswer.bind(this)}
-                    clearLocalStorage={this.clearLocalStorage.bind(this)}
-                    initializeAnswerObjects={this.initializeAnswerObjects.bind(this)}
-                    criterionCompletionStatuses={this.state.criterionCompletionStatuses} />
+        const summaryButtonProps = {
+            currentPage:this.state.currentPage,
 
-                <div className="block
+            contentSummaryButton:this.state.contentSummaryButton,
+            utilitySummaryButton:this.state.utilitySummaryButton,
+            qualitySummaryButton:this.state.qualitySummaryButton,
+            efficacySummaryButton:this.state.efficacySummaryButton, 
+
+            handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
+        };
+        
+        if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
+            return (<FinalSummaryPage {...applicationProps} />);
+        } else if (this.state.currentPage === C.FINAL_PRINT_PAGE) {
+            return (<FinalPringPage {...applicationProps} />);
+        } else {
+            return (
+                <React.Fragment>
+                    <div className="l-survey-top">
+                        <SaveWorkModal
+                            buttonText="Can I save my work?"
+                            hasIcon="true" />
+                    </div>
+                    <div class="h5 u-mb30">You’re reviewing</div>
+                    <h1>{this.state.curriculumTitle}</h1>
+
+                    <PageInstructionsComponent currentPage={this.state.currentPage} />
+                    <DistinctiveMenuBar {...dimensionMenuProps} />
+                    <SurveyPageContainer className="SurveyPage" {...applicationProps} />
+
+                    <div className="block
                                 block__flush-bottom
                                 block__padded-top
                                 block__border-top">
-                    <div className="m-btn-group
+                        <div className="m-btn-group
                                     m-btn-group__wide">
-                        <SummaryButton handleSummaryButtonClick={this.handleSummaryButtonClick.bind(this)}
-                            currentPage={this.state.currentPage}
-                            contentSummaryButton={this.state.contentSummaryButton}
-                            utilitySummaryButton={this.state.utilitySummaryButton}
-                            qualitySummaryButton={this.state.qualitySummaryButton}
-                            efficacySummaryButton={this.state.efficacySummaryButton} />
-
-                        <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
+                            <SummaryButton {...summaryButtonProps} />
+                            <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
+                        </div>
                     </div>
-                </div>
-            </React.Fragment>
-        );
+                </React.Fragment>
+            );
+        }
     }
 }

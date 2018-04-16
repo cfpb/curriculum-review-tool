@@ -11,7 +11,6 @@ import QualityCriterionPage from "./QualityCriterionPage";
 import QualitySummaryPage from "./QualitySummaryPage";
 import EfficacyCriterionPage from "./EfficacyCriterionPage";
 import EfficacySummaryPage from "./EfficacySummaryPage";
-import FinalSummaryPage from "./FinalSummaryPage";
 import StartCriterionPage from "./StartCriterionPage";
 
 export default class SurveyPageContainer extends React.Component {
@@ -67,8 +66,6 @@ export default class SurveyPageContainer extends React.Component {
                 return (<EfficacyCriterionPage {...pageProps} />);
             }
 
-        }  else if (this.props.currentPage === C.FINAL_SUMMARY_PAGE) {
-            return (<FinalSummaryPage {...pageProps} />);
         } else {
             return (<StartCriterionPage  {...pageProps} />);
         }
