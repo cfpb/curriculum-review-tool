@@ -1271,7 +1271,9 @@ Array [
                   r="7"
                 />
               </svg>
-              <div>
+              <div
+                className="m-form-field_radio-text is-active"
+              >
                 <div>
                   <strong>
                     The study is strong.
@@ -1308,7 +1310,9 @@ Array [
                   r="7"
                 />
               </svg>
-              <div>
+              <div
+                className="m-form-field_radio-text"
+              >
                 <div>
                   <strong>
                     The study is not strong.
