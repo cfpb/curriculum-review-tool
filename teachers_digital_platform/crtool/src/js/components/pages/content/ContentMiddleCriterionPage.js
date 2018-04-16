@@ -7,14 +7,19 @@ import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentMiddleCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
-
+    
     render() {
         return (
             <React.Fragment>

@@ -7,10 +7,15 @@ import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentHighCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }

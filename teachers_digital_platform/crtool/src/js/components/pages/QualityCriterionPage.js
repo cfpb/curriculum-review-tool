@@ -7,10 +7,15 @@ import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class QualityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.QUALITY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
@@ -77,7 +82,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.1.1"
                                                 ref="quality-crt-text-optional-1.1.1"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.1.1']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.1', e.target.value)} />
                                         </div>
                                     </div>
@@ -188,7 +193,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.1.3"
                                                 ref="quality-crt-text-optional-1.1.3"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.1.3']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.3', e.target.value)} />
                                         </div>
                                     </div>
@@ -355,7 +360,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.3.1"
                                                 ref="quality-crt-text-optional-1.3.1"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.3.1']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.1', e.target.value)} />
                                         </div>
                                     </div>
@@ -415,7 +420,7 @@ export default class QualityCriterionPage extends React.Component {
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.3.2"
                                                 ref="quality-crt-text-optional-1.3.2"
-                                                value={this.props.criterionAnswers['equality-crt-text-optional-1.3.2']}
+                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
                                                 onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.2', e.target.value)} />
                                         </div>
                                     </div>

@@ -15,24 +15,25 @@ export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
         super();
         this.state = {
-        currentPage: localStorage.getItem(C.START_PAGE),
+            currentPage: localStorage.getItem(C.START_PAGE),
 
-        contentInProgress: localStorage.getItem(C.CONTENT_STATUS),
-        qualityInProgress: localStorage.getItem(C.QUALITY_STATUS),
-        utilityInProgress: localStorage.getItem(C.UTILITY_STATUS),
-        efficacyInProgress: localStorage.getItem(C.EFFICACY_STATUS),
+            contentInProgress: localStorage.getItem(C.CONTENT_STATUS),
+            qualityInProgress: localStorage.getItem(C.QUALITY_STATUS),
+            utilityInProgress: localStorage.getItem(C.UTILITY_STATUS),
+            efficacyInProgress: localStorage.getItem(C.EFFICACY_STATUS),
 
-        contentSummaryButton: localStorage.getItem(C.CONTENT_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
-        qualitySummaryButton: localStorage.getItem(C.QUALITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
-        utilitySummaryButton: localStorage.getItem(C.UTILITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
-        efficacySummaryButton: localStorage.getItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+            contentSummaryButton: localStorage.getItem(C.CONTENT_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+            qualitySummaryButton: localStorage.getItem(C.QUALITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+            utilitySummaryButton: localStorage.getItem(C.UTILITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+            efficacySummaryButton: localStorage.getItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
 
-        curriculumTitle: localStorage.getItem("curriculumTitle"),
-        publicationDate: localStorage.getItem("publicationDate"),
-        gradeRange: localStorage.getItem("gradeRange"),
+            curriculumTitle: localStorage.getItem("curriculumTitle"),
+            publicationDate: localStorage.getItem("publicationDate"),
+            gradeRange: localStorage.getItem("gradeRange"),
 
-        criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
-        criterionCompletionStatuses: JSON.parse(localStorage.getItem("criterionCompletionStatus")) || {},
+            criterionScores: JSON.parse(localStorage.getItem("criterionScores")) || {},
+            criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
+            criterionCompletionStatuses: JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {},
         };
     }
 
@@ -49,6 +50,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setDistinctiveStatus(C.QUALITY_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(C.EFFICACY_PAGE, C.STATUS_IN_START);
 
+        this.setState({criterionScores: {} });
         this.setState({criterionAnswers: {} });
         this.setState({criterionCompletionStatuses: {} });
 
@@ -68,14 +70,46 @@ export default class CustomerReviewToolComponent extends React.Component {
      * Verify all the criteria for a single criterion has been met
      */
     isCriterionComplete(alteredCriterionObjects, currentCriterion) {
+        let criterionScore = { 
+            all_yes:true,
+            total_yes:0,
+            total_no:0,
+        }
+
+        let isCriterionCompleteReturnValue = true;
+        let currentCriterionGroup = this.getCriterionGroupName(currentCriterion);
         for (var key in alteredCriterionObjects) {
             if (this.isKeyInCriterion(key, currentCriterion) && 
                 this.isRequiredCriterion(key) &&
                 this.isCriterionValueEmpty(key, alteredCriterionObjects)) {
-                return false;
+
+                criterionScore.all_yes = false;
+                isCriterionCompleteReturnValue = false;
+            }
+            else if (this.isKeyInCriterion(key, currentCriterion) && 
+                     this.isRequiredCriterion(key)) {
+                         
+                if (alteredCriterionObjects[key] === "no") {
+                    criterionScore.total_no += 1;
+                    criterionScore.all_yes = false;
+                }
+                else {
+                    criterionScore.total_yes += 1;
+                }
             }
         }
-        return true;
+        
+        this.setCriterionScoreState(currentCriterionGroup, criterionScore);
+        return isCriterionCompleteReturnValue;
+    }
+
+    getCriterionGroupName(currentCriterion) {
+        if (currentCriterion.includes("."))
+        {
+            return (currentCriterion.substring(0, currentCriterion.lastIndexOf(".")));
+        }
+
+        return currentCriterion;
     }
 
     /*
@@ -101,6 +135,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     initializeAnswerObjects(fields) {
+        let alteredCriterionScores =  this.state.criterionScores;
         let alteredCriterionObjects =  this.state.criterionAnswers;
         let alteredCriterionStatuses =  this.state.criterionCompletionStatuses;
         for (const key in fields) {
@@ -109,11 +144,20 @@ export default class CustomerReviewToolComponent extends React.Component {
             }
 
             let currentCriterion = key.substring(0, key.indexOf("."));
+            let currentCriterionGroup = this.getCriterionGroupName(currentCriterion);
             if (alteredCriterionStatuses[currentCriterion] === undefined) {
                 alteredCriterionStatuses[currentCriterion] = C.STATUS_IN_START;
+
+                let criterionScore = { 
+                    all_yes:false,
+                    total_yes:0,
+                    total_no:0,
+                }
+                alteredCriterionScores[currentCriterionGroup] = criterionScore;
             }
         }
 
+        this.saveCriterionScores(alteredCriterionScores);
         this.saveCriterionAnswers(alteredCriterionObjects);
         this.saveCriterionCompletionStatuses(alteredCriterionStatuses);
     }
@@ -156,6 +200,25 @@ export default class CustomerReviewToolComponent extends React.Component {
             this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS);
         }
     }
+ 
+    /*
+     * Manage state for specified criterion
+     */
+    setCriterionScoreState(key, val) {
+        let alteredCriterionScores =  this.state.criterionScores;
+        alteredCriterionScores[key] = val;
+
+        this.saveCriterionScores(alteredCriterionScores);
+        return alteredCriterionScores;
+    }
+
+    /*
+     * Set state values for criterion score
+     */
+    saveCriterionScores(alteredCriterionScores) {
+        localStorage.setItem("criterionScores", JSON.stringify(alteredCriterionScores));
+        this.setState({criterionScores: alteredCriterionScores});
+    }
 
     /*
      * Manage state for specified criterion
@@ -192,8 +255,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         let alteredData =  this.state.criterionCompletionStatuses
         alteredData[criterion] = status;
 
-        localStorage.setItem("criterionCompletionStatus", JSON.stringify(alteredData));
-        this.setState({criterionCompletionStatus: alteredData})
+        localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredData));
+        this.setState({criterionCompletionStatuses: alteredData})
     }
 
     handleFinalSummaryButtonClick() {
@@ -278,6 +341,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             efficacyInProgress:this.state.efficacyInProgress,
 
             criterionAnswers:this.state.criterionAnswers,
+            criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses, 
 
             changeCriterionAnswer:this.changeCriterionAnswer.bind(this),

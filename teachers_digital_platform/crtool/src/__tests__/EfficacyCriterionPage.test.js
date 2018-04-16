@@ -14,6 +14,7 @@ const efficacyProps = {
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
+    criterionScores:(() => {}),
 }
 
 beforeAll(() => {

@@ -18,6 +18,7 @@ export default class SurveyPageContainer extends React.Component {
     render() {
         const pageProps = {
             currentPage:this.props.currentPage,
+            criterionScores:this.props.criterionScores,
             criterionAnswers:this.props.criterionAnswers,
             changeCriterionAnswer:this.props.changeCriterionAnswer,
             setDistinctiveComplete:this.props.setDistinctiveComplete, 

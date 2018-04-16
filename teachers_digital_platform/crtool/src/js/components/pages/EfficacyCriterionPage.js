@@ -7,12 +7,27 @@ import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class EfficacyCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
         this.props.changeCriterionAnswer(C.EFFICACY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
+    initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
+    }
+
+    shouldHideAdditonalCriterion(currentCriterion) {
+        if (this.props.criterionScores[currentCriterion] !== undefined &&
+            this.props.criterionScores[currentCriterion].all_yes) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     render() {
@@ -711,7 +726,8 @@ export default class EfficacyCriterionPage extends React.Component {
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
                     criterionKey="efficacy-crt-quesion-2"
-                    criterionText="Criterion 2: Saving and investing" >
+                    criterionText="Criterion 2: Saving and investing"
+                    hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-quesion-1")} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-quesion-2"]} />
