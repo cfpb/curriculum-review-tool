@@ -34,6 +34,6 @@ export default class CriterionLinkWrapper extends React.Component {
     render() {
         return (
             this.renderCriterionTitle()
-          );
+        );
     }
 }

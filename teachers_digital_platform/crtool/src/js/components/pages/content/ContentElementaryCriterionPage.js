@@ -15,26 +15,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
         this.props.initializeAnswerObjects(myObjects);
     }
 
-    // handleCriterionTitleClick(criterionKey) {
-    //     this.props.setCriterionStatusToInProgress(criterionKey);
-    // }
-
-    // renderCriterionTitle(criterionKey, criterionText) {
-    //     if (this.props.criterionCompletionStatuses !== undefined &&
-    //         this.props.criterionCompletionStatuses[criterionKey] !== undefined &&
-    //         this.props.criterionCompletionStatuses[criterionKey] === C.STATUS_IN_PROGRESS) {
-            
-    //         return (<span>{criterionText}</span>);
-    //     }
-    //     else {
-    //         return(
-    //             <button className="a-btn" onClick={(e) => {this.handleCriterionTitleClick(criterionKey)}} >
-    //                 {criterionText}
-    //             </button>
-    //         );
-    //     }
-    // }
-
     render() {
         return (
             <React.Fragment>
@@ -391,7 +371,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                </CriterionLinkWrapper>
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
@@ -658,7 +637,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                </CriterionLinkWrapper>
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
@@ -773,7 +751,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                </CriterionLinkWrapper>
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
@@ -888,7 +865,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                </CriterionLinkWrapper>
                 <CriterionLinkWrapper 
                     setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
                     criterionCompletionStatuses={this.props.criterionCompletionStatuses}
@@ -968,6 +944,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal

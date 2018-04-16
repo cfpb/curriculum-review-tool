@@ -403,46 +403,6 @@ Array [
     <br />
     <br />
   </div>,
-  <div>
-    <button
-      className="a-btn"
-      onClick={[Function]}
-    >
-      Criterion 3: Spending
-    </button>
-    <br />
-    <br />
-  </div>,
-  <div>
-    <button
-      className="a-btn"
-      onClick={[Function]}
-    >
-      Criterion 4: Borrowing and credit
-    </button>
-    <br />
-    <br />
-  </div>,
-  <div>
-    <button
-      className="a-btn"
-      onClick={[Function]}
-    >
-      Criterion 5: Managing financial risk
-    </button>
-    <br />
-    <br />
-  </div>,
-  <div>
-    <button
-      className="a-btn"
-      onClick={[Function]}
-    >
-      Criterion 6: Financial responsibility and money management
-    </button>
-    <br />
-    <br />
-  </div>,
   <div
     className="l-survey-top"
   >
