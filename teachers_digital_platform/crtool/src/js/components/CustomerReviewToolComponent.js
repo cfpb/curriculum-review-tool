@@ -216,7 +216,9 @@ export default class CustomerReviewToolComponent extends React.Component {
         return (
             <React.Fragment>
                 <div className="l-survey-top">
-                  <SaveWorkModal />
+                  <SaveWorkModal
+                        buttonText="Can I save my work?"
+                        hasIcon="true" />
                 </div>
                 <div class="h5 u-mb30">You’re reviewing</div>
                 <h1>{this.state.curriculumTitle}</h1>

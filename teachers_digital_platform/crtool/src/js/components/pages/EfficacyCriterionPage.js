@@ -50,7 +50,11 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mt30">
                     <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
                     <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                    <SaveWorkModal />
+                    <p>
+                        <SaveWorkModal
+                            buttonText="How can I save my work?"
+                            hasIcon="false" />
+                    </p>
                 </div>
                 <hr className="hr
                                 u-mb30
@@ -985,7 +989,9 @@ export default class EfficacyCriterionPage extends React.Component {
                     </div>
                 </div>
                 <div className="l-survey-top">
-                    <SaveWorkModal />
+                    <SaveWorkModal
+                        buttonText="Can I save my work?"
+                        hasIcon="true" />
                 </div>
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
