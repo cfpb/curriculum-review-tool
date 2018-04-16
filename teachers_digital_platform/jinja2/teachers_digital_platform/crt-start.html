@@ -103,22 +103,22 @@
         </div>
         <form class="o-form">
             <div class="o-form_group">
+                <div class="m-form-field
+                            m-form-field__text">
+                    <label class="a-label
+                                    a-label__heading"
+                            for="tdp-crt_title">
+                        Curriculum title
+                    </label>
+                    <input class="a-text-input
+                                a-text-input__full"
+                        type="text"
+                        id="tdp-crt_title"
+                        onchange="onValuesChanged();">
+                </div>
+            </div>
+            <div class="o-form_group">
                 <ul class="content-l m-list m-list__unstyled">
-                    <li class="content-l_col content-l_col-1-2">
-                        <div class="m-form-field
-                                    m-form-field__text">
-                            <label class="a-label
-                                          a-label__heading"
-                                    for="tdp-crt_title">
-                                Curriculum title
-                            </label>
-                            <input class="a-text-input
-                                          a-text-input__full"
-                                    type="text"
-                                    id="tdp-crt_title"
-                                    onchange="onValuesChanged();">
-                        </div>
-                    </li>
                     <li class="content-l_col content-l_col-1-2">
                         <div class="m-form-field
                                     m-form-field__text">
@@ -134,22 +134,22 @@
                                     id="tdp-crt_pubdate">
                         </div>
                     </li>
+                    <li class="content-l_col content-l_col-1-2">
+                        <div class="m-form-field
+                                    m-form-field__select">
+                            <label class="a-label
+                                        a-label__heading"
+                                for="tdp-crt_grade">
+                                Grade range
+                            </label>
+                            <div class="a-select">
+                                <select id="tdp-crt_grade" onchange="onValuesChanged();">
+                                    <option value="">Select grade range</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-            </div>
-            <div class="o-form_group">
-                <div class="m-form-field
-                            m-form-field__select">
-                    <label class="a-label
-                                  a-label__heading"
-                           for="tdp-crt_grade">
-                        Grade range
-                    </label>
-                    <div class="a-select">
-                        <select id="tdp-crt_grade" onchange="onValuesChanged();">
-                            <option value="">Select grade range</option>
-                        </select>
-                    </div>
-                </div>
             </div>
             <div class="o-form_group">
                 <div class="m-notification
