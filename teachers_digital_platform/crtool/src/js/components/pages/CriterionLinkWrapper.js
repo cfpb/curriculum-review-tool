@@ -13,10 +13,7 @@ export default class CriterionLinkWrapper extends React.Component {
     }
 
     renderCriterionTitle() {
-        if (this.props.criterionCompletionStatuses !== undefined &&
-            this.props.criterionCompletionStatuses[this.props.criterionKey] !== undefined &&
-            this.props.criterionCompletionStatuses[this.props.criterionKey] === C.STATUS_IN_PROGRESS) {
-            
+        if (this.props.criterionCompletionStatuses[this.props.criterionKey] !== C.STATUS_IN_START) {
             return (this.props.children);
         }
         else {

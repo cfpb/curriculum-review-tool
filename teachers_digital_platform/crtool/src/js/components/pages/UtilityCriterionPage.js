@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class UtilityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -471,6 +472,11 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="utility-crt-question-2"
+                    criterionText="Criterion 2: Differentiated instruction for diverse populations" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]} />
@@ -1330,6 +1336,11 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="utility-crt-question-3"
+                    criterionText="Criterion 3: Quality materials for lesson planning" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]} />
@@ -1914,6 +1925,11 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="utility-crt-question-4"
+                    criterionText="Criterion 4: Materials to assess mastery" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]} />
@@ -2437,6 +2453,11 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="utility-crt-question-5"
+                    criterionText="Criterion 5: Instructional supports" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]} />
@@ -2694,6 +2715,10 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"

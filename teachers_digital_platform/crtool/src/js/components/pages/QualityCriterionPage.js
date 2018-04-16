@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class QualityCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -505,6 +506,11 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="quality-crt-question-2"
+                    criterionText="Criterion 2: Accuracy and timeliness" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]} />
@@ -708,6 +714,11 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="quality-crt-question-3"
+                    criterionText="Criterion 3: Objectivity" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]} />
@@ -1017,6 +1028,11 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="quality-crt-question-4"
+                    criterionText="Criterion 4: Visual appearance" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]} />
@@ -1348,6 +1364,9 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"

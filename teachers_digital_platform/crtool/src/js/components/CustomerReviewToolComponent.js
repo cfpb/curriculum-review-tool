@@ -110,7 +110,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             let currentCriterion = key.substring(0, key.indexOf("."));
             if (alteredCriterionStatuses[currentCriterion] === undefined) {
-                alteredCriterionStatuses[currentCriterion] = "";
+                alteredCriterionStatuses[currentCriterion] = C.STATUS_IN_START;
             }
         }
 

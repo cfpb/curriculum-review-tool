@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../../constants";
 import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentHighCriterionPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -302,6 +303,11 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-high-crt-quesion-2"
+                    criterionText="Criterion 2: Saving and investing" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-2"]} />
@@ -692,6 +698,11 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-high-crt-quesion-3"
+                    criterionText="Criterion 3: Spending" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-3"]} />
@@ -883,6 +894,11 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-high-crt-quesion-4"
+                    criterionText="Criterion 4: Borrowing and credit" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-4"]} />
@@ -1296,6 +1312,11 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-high-crt-quesion-5"
+                    criterionText="Criterion 5: Managing financial risk" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-5"]} />
@@ -1604,6 +1625,11 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                <CriterionLinkWrapper 
+                    setCriterionStatusToInProgress={this.props.setCriterionStatusToInProgress}
+                    criterionCompletionStatuses={this.props.criterionCompletionStatuses}
+                    criterionKey="content-high-crt-quesion-6"
+                    criterionText="Criterion 6: Financial responsibility and money management" >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-quesion-6"]} />
@@ -1760,6 +1786,11 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
+                </CriterionLinkWrapper>
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"
