@@ -90,7 +90,7 @@ export default class EfficacyCriterionPage extends React.Component {
                     <p className="lead-paragraph">
                         Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
                     </p>
-                    <p className="lead-paragraph">
+                    <p>
                         <b><em>You will answer these questions for each study individually.</em></b>
                     </p>
                     <div className="u-mt45 u-mb30">
@@ -741,7 +741,7 @@ export default class EfficacyCriterionPage extends React.Component {
                     <p className="lead-paragraph">
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
                     </p>
-                    <p className="lead-paragraph">
+                    <p>
                         <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
                     </p>
                     <ol className="m-list__unstyled">
@@ -859,9 +859,9 @@ export default class EfficacyCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-3"
-                    criterionText="Criterion 3: Impact" 
+                    criterionText="Criterion 3: Impact"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
@@ -871,7 +871,7 @@ export default class EfficacyCriterionPage extends React.Component {
                     <p className="lead-paragraph">
                         Is there enough evidence to support conclusions of consistent, strong, positive impact?
                     </p>
-                    <p className="lead-paragraph">
+                    <p>
                         <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
                     </p>
                     <ol className="m-list__unstyled">
