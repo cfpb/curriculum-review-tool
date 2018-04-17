@@ -43,9 +43,9 @@ const C = {
 
     START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
 
-    GRADE_ELEMENTARY: "Elementary School",
-    GRADE_MIDDLE: "Middle School",
-    GRADE_HIGH: "Middle School",
+    GRADE_ELEMENTARY: "Elementary school",
+    GRADE_MIDDLE: "Middle school",
+    GRADE_HIGH: "Middle school",
 };
 
 export default C;
