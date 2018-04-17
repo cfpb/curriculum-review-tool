@@ -49,7 +49,7 @@ export default class SaveWorkModal extends React.Component {
     render() {
         let currentIcon = "";
         if (this.props.hasIcon === "true") {
-            currentIcon = C.ICON_QUESTION;
+            currentIcon = C.ICON_QUESTION_ROUND;
         }
 
         return (

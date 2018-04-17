@@ -30,12 +30,12 @@ const C = {
     UTILITY_SUMMARY_BUTTON_ENABLED: "utility_summary_enabled",
     EFFICACY_SUMMARY_BUTTON_ENABLED: "efficacy_summary_enabled",
 
-    ICON_STAR: "star",
-    ICON_CHECK: "check-round",
-    ICON_SETTINGS: "settings",
-    ICON_DOCUMENT: "document",
+    ICON_CHECK_ROUND: "check-round",
     ICON_CREDIT_REPORTT: "credit-report",
+    ICON_DOCUMENT: "document",
     ICON_QUESTION: "question-round",
+    ICON_SETTINGS: "settings",
+    ICON_STAR: "star",
 
     STATUS_IN_START: "",
     STATUS_IN_PROGRESS: "in progress",
