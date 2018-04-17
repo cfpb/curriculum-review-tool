@@ -31,11 +31,17 @@ const C = {
     EFFICACY_SUMMARY_BUTTON_ENABLED: "efficacy_summary_enabled",
 
     ICON_CHECK_ROUND: "check-round",
-    ICON_CREDIT_REPORTT: "credit-report",
+    ICON_CREDIT_REPORT: "credit-report",
+    ICON_CREDIT_REPORT_ROUND: "credit-report-round",
     ICON_DOCUMENT: "document",
+    ICON_DOCUMENT_ROUND: "document-round",
+    ICON_PENCIL: "pencil",
+    ICON_PLUS_ROUND: "plus-round",
     ICON_QUESTION: "question-round",
     ICON_SETTINGS: "settings",
+    ICON_SETTINGS_ROUND: "settings-round",
     ICON_STAR: "star",
+    ICON_STAR_ROUND: "star-round",
 
     STATUS_IN_START: "",
     STATUS_IN_PROGRESS: "in progress",
