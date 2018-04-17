@@ -1,0 +1,17 @@
+//
+// Select
+// Remove once https://github.com/cfpb/capital-framework/issues/795 is fixed and deployed.
+//
+
+@select-height: 33px;
+
+.a-select {
+    select {
+        height: unit( @select-height / @base-font-size-px, em );
+    }
+
+    &:after {
+        width: unit( @select-height / @base-font-size-px, em );
+        line-height: unit( @select-height / @base-font-size-px, em );
+    }
+}
