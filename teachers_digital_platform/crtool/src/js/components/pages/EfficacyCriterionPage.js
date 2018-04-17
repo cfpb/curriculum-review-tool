@@ -84,7 +84,12 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-1"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-1"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
                     </h3>
                     <p className="lead-paragraph">
@@ -735,7 +740,12 @@ export default class EfficacyCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
                     </h3>
                     <p className="lead-paragraph">
@@ -865,7 +875,12 @@ export default class EfficacyCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 3: Impact
                     </h3>
                     <p className="lead-paragraph">

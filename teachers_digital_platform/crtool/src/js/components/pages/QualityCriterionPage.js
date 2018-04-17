@@ -60,7 +60,12 @@ export default class QualityCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-1"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["quality-crt-question-1"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 1: Accessibility
                     </h3>
                     <p className="lead-paragraph">
@@ -519,11 +524,16 @@ export default class QualityCriterionPage extends React.Component {
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="quality-crt-question-2"
-                    criterionText="Criterion 2: Accuracy and timeliness" 
+                    criterionText="Criterion 2: Accuracy and timeliness"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 2: Accuracy and timeliness
                     </h3>
                     <p className="lead-paragraph">
@@ -726,11 +736,16 @@ export default class QualityCriterionPage extends React.Component {
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="quality-crt-question-3"
-                    criterionText="Criterion 3: Objectivity" 
+                    criterionText="Criterion 3: Objectivity"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 3: Objectivity
                     </h3>
                     <p className="lead-paragraph">
@@ -1037,13 +1052,18 @@ export default class QualityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="quality-crt-question-4"
-                    criterionText="Criterion 4: Visual appearance" 
+                    criterionText="Criterion 4: Visual appearance"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 4: Visual appearance
                     </h3>
                     <p className="lead-paragraph">

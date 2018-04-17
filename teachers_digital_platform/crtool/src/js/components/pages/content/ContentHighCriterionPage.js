@@ -55,7 +55,12 @@ export default class ContentHighCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-1"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["content-high-crt-question-1"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 1: Earning, income, and careers
                     </h3>
                     <p className="lead-paragraph">
@@ -314,13 +319,18 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-2"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["content-high-crt-question-2"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
                     </h3>
                     <p className="lead-paragraph">
@@ -714,7 +724,12 @@ export default class ContentHighCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-3"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["content-high-crt-question-3"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 3: Spending
                     </h3>
                     <p className="lead-paragraph">
@@ -905,11 +920,16 @@ export default class ContentHighCriterionPage extends React.Component {
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-4"
-                    criterionText="Criterion 4: Borrowing and credit" 
+                    criterionText="Criterion 4: Borrowing and credit"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-4"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["content-high-crt-question-4"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 4: Borrowing and credit
                     </h3>
                     <p className="lead-paragraph">
@@ -1322,11 +1342,16 @@ export default class ContentHighCriterionPage extends React.Component {
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-5"
-                    criterionText="Criterion 5: Managing financial risk" 
+                    criterionText="Criterion 5: Managing financial risk"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-5"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["content-high-crt-question-5"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 5: Managing financial risk
                     </h3>
                     <p className="lead-paragraph">
@@ -1632,13 +1657,18 @@ export default class ContentHighCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-6"
                     criterionText="Criterion 6: Financial responsibility and money management"
                     {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["content-high-crt-question-6"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["content-high-crt-question-6"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 6: Financial responsibility and money management
                     </h3>
                     <p className="lead-paragraph">

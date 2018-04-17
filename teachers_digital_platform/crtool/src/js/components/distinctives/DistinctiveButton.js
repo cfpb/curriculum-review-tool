@@ -14,7 +14,7 @@ export default class DistinctiveButton extends React.Component {
 
       if (this.props.inProgress === C.STATUS_COMPLETE) {
           statusClassName += " is-complete"
-          currentIcon = C.ICON_CHECK;
+          currentIcon = C.ICON_CHECK_ROUND;
       }
       if (this.props.currentPage === this.props.distinctive) {
           statusClassName += " is-active"
@@ -25,8 +25,11 @@ export default class DistinctiveButton extends React.Component {
             <button className={statusClassName} onClick={this.handleOnClick.bind(this)}>
                 <div class="o-dimension-section-bar_selector">
                     <span className="o-dimension-section-bar_selector-title">
-                        <span className="a-icon a-icon__large"><SvgIcon icon={currentIcon} /></span>
-                        &nbsp;&nbsp;{this.props.title}
+                        <SvgIcon
+                            icon={currentIcon}
+                            isLarge="true"
+                            hasSpaceAfter="true" />
+                        {this.props.title}
                         &ensp;<span className="o-dimension-section-bar_selector-status">{this.props.inProgress}</span>
                     </span>
                     <span className="o-dimension-section-bar_selector-text">{this.props.description}</span>

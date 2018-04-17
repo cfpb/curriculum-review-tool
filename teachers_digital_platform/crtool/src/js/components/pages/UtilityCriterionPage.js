@@ -60,7 +60,12 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 1: Materials to support cognitive development
                     </h3>
                     <p className="lead-paragraph">
@@ -489,7 +494,12 @@ export default class UtilityCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 2: Differentiated instruction for diverse populations
                     </h3>
                     <p className="lead-paragraph">
@@ -1346,13 +1356,18 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="utility-crt-question-3"
-                    criterionText="Criterion 3: Quality materials for lesson planning" 
+                    criterionText="Criterion 3: Quality materials for lesson planning"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 3: Quality materials for lesson planning
                     </h3>
                     <p className="lead-paragraph">
@@ -1940,7 +1955,12 @@ export default class UtilityCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 4: Materials to assess mastery
                     </h3>
                     <p className="lead-paragraph">
@@ -2461,13 +2481,18 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="utility-crt-question-5"
                     criterionText="Criterion 5: Instructional supports"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]}
+                            color="green"
+                            isLarge="false"
+                            hasSpaceBefore="false"
+                            hasSpaceAfter="true" />
                         Criterion 5: Instructional supports
                     </h3>
                     <p className="lead-paragraph">
