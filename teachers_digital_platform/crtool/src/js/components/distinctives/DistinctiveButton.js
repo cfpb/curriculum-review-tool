@@ -16,7 +16,7 @@ export default class DistinctiveButton extends React.Component {
           statusClassName += " is-complete"
           currentIcon = C.ICON_CHECK;
       }
-      else if (this.props.currentPage === this.props.distinctive) {
+      if (this.props.currentPage === this.props.distinctive) {
           statusClassName += " is-active"
       }
 
