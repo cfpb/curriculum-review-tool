@@ -174,7 +174,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="content-elementary-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
                     {...criterionLinkWrapperProps} >
@@ -381,7 +381,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="content-elementary-crt-question-3"
                     criterionText="Criterion 3: Spending"
                     {...criterionLinkWrapperProps} >
@@ -759,7 +759,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="content-elementary-crt-question-5"
                     criterionText="Criterion 5: Managing financial risk"
                     {...criterionLinkWrapperProps} >
@@ -872,7 +872,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="content-elementary-crt-question-6"
                     criterionText="Criterion 6: Financial responsibility and money management"
                     {...criterionLinkWrapperProps} >
@@ -963,6 +963,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
             </React.Fragment>
         );
-        
+
     }
 }
