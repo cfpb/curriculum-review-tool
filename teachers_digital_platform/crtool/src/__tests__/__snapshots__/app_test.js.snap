@@ -155,14 +155,12 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-             
+              
             Content
-             
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
@@ -212,14 +210,12 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-             
+              
             Utility
-             
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
@@ -269,14 +265,12 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-             
+              
             Quality
-             
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
@@ -329,14 +323,12 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-             
+              
             Efficacy
-             
+             
             <span
               className="o-dimension-section-bar_selector-status"
-            >
-               
-            </span>
+            />
           </span>
           <span
             className="o-dimension-section-bar_selector-text"
