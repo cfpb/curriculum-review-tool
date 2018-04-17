@@ -9,7 +9,7 @@ import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
-import FinalPringPage from "./pages/FinalPrintPage";
+import FinalPrintPage from "./pages/FinalPrintPage";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -395,7 +395,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
         } else if (this.state.currentPage === C.FINAL_PRINT_PAGE) {
-            return (<FinalPringPage {...applicationProps} />);
+            return (<FinalPrintPage {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {
             return (
                 <React.Fragment>

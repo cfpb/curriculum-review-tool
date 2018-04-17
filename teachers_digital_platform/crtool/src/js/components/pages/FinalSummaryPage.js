@@ -21,16 +21,16 @@ export default class FinalSummaryPage extends React.Component {
 
                 <br /><br />
 
-                <button onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
-                    Final PRINT
-                </button>
+                <div className="u-center">
+                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>Final Print</button>
+                </div>
 
                 <br /><br />
 
-                <button onClick={(e) => {this.props.distinctiveClicked(C.START_PAGE); e.preventDefault();}}>
-                    Back
-                </button>
-                
+                <div className="u-center">
+                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.distinctiveClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
+                </div>
+
                 <br /><br />
 
                 <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
