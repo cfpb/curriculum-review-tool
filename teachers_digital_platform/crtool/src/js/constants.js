@@ -38,7 +38,7 @@ const C = {
     ICON_EXCLAMATION_MARK_ROUND: "exclamation-mark-round",
     ICON_PENCIL: "pencil",
     ICON_PLUS_ROUND: "plus-round",
-    ICON_QUESTION: "question-round",
+    ICON_QUESTION_ROUND: "question-round",
     ICON_SETTINGS: "settings",
     ICON_SETTINGS_ROUND: "settings-round",
     ICON_STAR: "star",
