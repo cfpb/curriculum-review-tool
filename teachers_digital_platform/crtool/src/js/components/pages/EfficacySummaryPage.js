@@ -2,6 +2,7 @@ import React from "react";
 
 import C from "../../constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
+import SvgIcon from "../svgs/SvgIcon";
 
 export default class EfficacySummaryPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
@@ -15,8 +16,11 @@ export default class EfficacySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <h2 className="h1">
-                <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M409.2 723.3c-12.5-14.7-34.6-16.5-49.3-3.9-14.5 12.3-16.4 34-4.4 48.7L443.6 874c6.6 8 16.5 12.6 26.9 12.6 1 0 2 0 3-.1 11.4-1 21.6-7.5 27.3-17.4l157.7-273.2c9.6-16.8 3.7-38.2-13.1-47.7-16.6-9.5-37.8-3.8-47.5 12.7L465.3 790.7l-56.1-67.4z"/><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm71.8 165.2h1.5l176.9 170.8H571.8V270.4zm179 222.1v405.2c0 22.1-17.9 40-40 40H290.3c-22.1 0-40-17.9-40-40V310.4c0-22.1 17.9-40 40-40h235.2v186.5c0 16.9 13.7 30.5 30.6 30.6h194.7v5z"/></svg></span>
-                    &nbsp;Efficacy summary
+                    <SvgIcon
+                        icon="credit-report-round"
+                        isLarge="true"
+                        hasSpaceAfter="true" />
+                    Efficacy summary
                 </h2>
                 <p className="lead-paragraph">
                     Review the scores and your notes for each efficacy criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
@@ -302,8 +306,11 @@ export default class EfficacySummaryPage extends React.Component {
                                 u-mt30" />
                 <div className="o-well u-mb30">
                     <h2>
-                        <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm329.9 449.4l-68.7 63.5-69.3 64.1 27.5 138.5 9.1 45.9c10.1 50.9-18.7 71.9-64 46.5l-164.1-91.8-164.1 91.8c-45.3 25.4-74.1 4.4-64-46.5l9.1-45.9 9.1-45.9 18.4-92.6-69.3-64.1-34.4-31.8-34.4-31.8c-38.1-35.3-27.1-69.1 24.4-75.2l93-11 93.8-11.1L441.3 329l19.6-42.5c21.8-47.2 57.4-47.2 79.1 0l19.6 42.5 59.2 128.2 93.8 11.1 93 11c51.4 6.2 62.4 40.1 24.3 75.3z"/></svg></span>
-                        &nbsp;Efficacy overall score
+                        <SvgIcon
+                            icon="credit-report-round"
+                            isLarge="true"
+                            hasSpaceAfter="true" />
+                        Efficacy overall score
                     </h2>
                     <p className="lead-paragraph">
                         How does this curriculum meet the criteria for efficacy:

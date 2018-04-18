@@ -9,10 +9,10 @@ Array [
     className="h1"
   >
     <span
-      className="a-icon a-icon__large"
+      className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        className="cf-icon-svg"
+        class="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -24,7 +24,7 @@ Array [
         />
       </svg>
     </span>
-     Efficacy
+    Efficacy
   </h2>,
   <p
     className="lead-paragraph"

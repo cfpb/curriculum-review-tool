@@ -58,8 +58,6 @@ export default class ContentHighCriterionPage extends React.Component {
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-high-crt-question-1"]}
                             color="green"
-                            isLarge="false"
-                            hasSpaceBefore="false"
                             hasSpaceAfter="true" />
                         Criterion 1: Earning, income, and careers
                     </h3>
@@ -328,8 +326,6 @@ export default class ContentHighCriterionPage extends React.Component {
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-high-crt-question-2"]}
                             color="green"
-                            isLarge="false"
-                            hasSpaceBefore="false"
                             hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
                     </h3>
@@ -727,8 +723,6 @@ export default class ContentHighCriterionPage extends React.Component {
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-high-crt-question-3"]}
                             color="green"
-                            isLarge="false"
-                            hasSpaceBefore="false"
                             hasSpaceAfter="true" />
                         Criterion 3: Spending
                     </h3>
@@ -927,8 +921,6 @@ export default class ContentHighCriterionPage extends React.Component {
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-high-crt-question-4"]}
                             color="green"
-                            isLarge="false"
-                            hasSpaceBefore="false"
                             hasSpaceAfter="true" />
                         Criterion 4: Borrowing and credit
                     </h3>
@@ -1349,8 +1341,6 @@ export default class ContentHighCriterionPage extends React.Component {
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-high-crt-question-5"]}
                             color="green"
-                            isLarge="false"
-                            hasSpaceBefore="false"
                             hasSpaceAfter="true" />
                         Criterion 5: Managing financial risk
                     </h3>
@@ -1666,8 +1656,6 @@ export default class ContentHighCriterionPage extends React.Component {
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-high-crt-question-6"]}
                             color="green"
-                            isLarge="false"
-                            hasSpaceBefore="false"
                             hasSpaceAfter="true" />
                         Criterion 6: Financial responsibility and money management
                     </h3>

@@ -9,7 +9,7 @@ Array [
     className="h1"
   >
     <span
-      className="a-icon a-icon__large"
+      className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
         class="cf-icon-svg"
@@ -21,7 +21,7 @@ Array [
         />
       </svg>
     </span>
-     Quality
+    Quality
   </h2>,
   <p
     className="lead-paragraph"
