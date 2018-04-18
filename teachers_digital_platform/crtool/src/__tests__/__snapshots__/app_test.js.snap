@@ -12,10 +12,10 @@ exports[`renders without crashing 1`] = `
       onClick={[Function]}
     >
       <span
-        className="a-icon a-icon__large"
+        className="a-icon a-icon__large a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -24,7 +24,6 @@ exports[`renders without crashing 1`] = `
           />
         </svg>
       </span>
-       
       Can I save my work?
     </button>
     <div
@@ -135,10 +134,10 @@ exports[`renders without crashing 1`] = `
             className="o-dimension-section-bar_selector-title"
           >
             <span
-              className="a-icon a-icon__large"
+              className="a-icon a-icon__large a-icon__space-after"
             >
               <svg
-                class="cf-icon-svg"
+                className="cf-icon-svg"
                 viewBox="0 0 651.7 1200"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -155,7 +154,6 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-              
             Content
              
             <span
@@ -198,10 +196,10 @@ exports[`renders without crashing 1`] = `
             className="o-dimension-section-bar_selector-title"
           >
             <span
-              className="a-icon a-icon__large"
+              className="a-icon a-icon__large a-icon__space-after"
             >
               <svg
-                class="cf-icon-svg"
+                className="cf-icon-svg"
                 viewBox="0 0 834 1200"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -210,7 +208,6 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-              
             Utility
              
             <span
@@ -253,10 +250,10 @@ exports[`renders without crashing 1`] = `
             className="o-dimension-section-bar_selector-title"
           >
             <span
-              className="a-icon a-icon__large"
+              className="a-icon a-icon__large a-icon__space-after"
             >
               <svg
-                class="cf-icon-svg"
+                className="cf-icon-svg"
                 viewBox="0 0 969.7 1200"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -265,7 +262,6 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-              
             Quality
              
             <span
@@ -308,10 +304,10 @@ exports[`renders without crashing 1`] = `
             className="o-dimension-section-bar_selector-title"
           >
             <span
-              className="a-icon a-icon__large"
+              className="a-icon a-icon__large a-icon__space-after"
             >
               <svg
-                class="cf-icon-svg"
+                className="cf-icon-svg"
                 viewBox="0 0 651.7 1200"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -323,7 +319,6 @@ exports[`renders without crashing 1`] = `
                 />
               </svg>
             </span>
-              
             Efficacy
              
             <span

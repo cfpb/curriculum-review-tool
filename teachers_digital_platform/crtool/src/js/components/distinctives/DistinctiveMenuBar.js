@@ -53,7 +53,7 @@ export default class DistinctiveMenuBar extends React.Component {
                 criterionText: "1-3 criteria",
                 estimateText: "est. time 30 min.",
                 description: "Has validated impact on knowledge, skills, or behaviors",
-                icon: C.ICON_CREDIT_REPORTT,
+                icon: C.ICON_CREDIT_REPORT,
                 distinctive:  C.EFFICACY_PAGE,
                 currentPage: this.props.currentPage,
                 inProgress: this.props.efficacyInProgress,

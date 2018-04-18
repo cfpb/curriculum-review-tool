@@ -43,8 +43,11 @@ export default class EfficacyCriterionPage extends React.Component {
                             u-mb45
                             u-mt30" />
                 <h2 className="h1">
-                    <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M409.2 723.3c-12.5-14.7-34.6-16.5-49.3-3.9-14.5 12.3-16.4 34-4.4 48.7L443.6 874c6.6 8 16.5 12.6 26.9 12.6 1 0 2 0 3-.1 11.4-1 21.6-7.5 27.3-17.4l157.7-273.2c9.6-16.8 3.7-38.2-13.1-47.7-16.6-9.5-37.8-3.8-47.5 12.7L465.3 790.7l-56.1-67.4z"/><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm71.8 165.2h1.5l176.9 170.8H571.8V270.4zm179 222.1v405.2c0 22.1-17.9 40-40 40H290.3c-22.1 0-40-17.9-40-40V310.4c0-22.1 17.9-40 40-40h235.2v186.5c0 16.9 13.7 30.5 30.6 30.6h194.7v5z"/></svg></span>
-                    &nbsp;Efficacy
+                    <SvgIcon
+                        icon="credit-report-round"
+                        isLarge="true"
+                        hasSpaceAfter="true" />
+                    Efficacy
                 </h2>
                 <p className="lead-paragraph">
                     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
@@ -84,7 +87,10 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-1"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-1"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
                     </h3>
                     <p className="lead-paragraph">
@@ -95,7 +101,13 @@ export default class EfficacyCriterionPage extends React.Component {
                     </p>
                     <div className="u-mt45 u-mb30">
                         <div className="l-survey-top">
-                            <button className="a-btn a-btn__link">Remove <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"/></svg></span></button>
+                            <button className="a-btn a-btn__link">
+                                Remove
+                                <SvgIcon
+                                    icon="x-round"
+                                    islarge="true"
+                                    hasSpaceBefore="true" />
+                            </button>
                         </div>
                         <div className="m-form-field m-form-field__text">
                             <label className="a-label a-label__heading" for="efficacy-crt-study-1">
@@ -712,15 +724,18 @@ export default class EfficacyCriterionPage extends React.Component {
                     </div>
                     <div className="u-mt15 u-mb30">
                         <button className="a-btn a-btn__link">
-                            Review another study&nbsp;
-                            <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm263.1 550.7H549.6v213.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V655.9H236c-27.6 0-50-22.4-50-50s22.4-50 50-50h213.6V342.3c0-27.6 22.4-50 50-50s50 22.4 50 50v213.6h213.6c27.6 0 50 22.4 50 50s-22.5 50-50.1 50z"/></svg></span>
+                            Review another study
+                            <SvgIcon
+                                icon="plus-round"
+                                islarge="true"
+                                hasSpaceBefore="true" />
                         </button>
                     </div>
                     <button className="a-btn u-mb30">I’m done adding studies</button>
                     <div className="m-notification
                             m-notification__visible
                             m-notification__success">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm259 284.2L481.4 870.3c-8.2 14.1-22.7 23.4-39 24.8-1.4.1-2.9.2-4.3.2-14.8 0-28.9-6.6-38.4-18L244.4 690.9c-17.9-21-15.4-52.6 5.7-70.5 21-17.9 52.6-15.4 70.5 5.7.2.3.5.5.7.8l109.4 131.4 241.8-418.8c13.6-24 44.2-32.4 68.2-18.8 24 13.6 32.4 44.2 18.8 68.2l-.5.5z"/></svg>
+                        <SvgIcon icon="check-round" />
                         <div className="m-notification_content">
                             <div className="m-notification_message">
                                 <p>You don’t need to complete Criteria 2 or 3 and can move on to the efficacy summary.</p>
@@ -735,7 +750,10 @@ export default class EfficacyCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
                     </h3>
                     <p className="lead-paragraph">
@@ -865,7 +883,10 @@ export default class EfficacyCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 3: Impact
                     </h3>
                     <p className="lead-paragraph">

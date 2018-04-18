@@ -9,10 +9,10 @@ Array [
     className="h1"
   >
     <span
-      className="a-icon a-icon__large"
+      className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        className="cf-icon-svg"
+        class="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -32,7 +32,7 @@ Array [
         />
       </svg>
     </span>
-     Content
+    Content
   </h2>,
   <p
     className="lead-paragraph"
@@ -80,10 +80,6 @@ Array [
       className="a-btn a-btn__link"
       onClick={[Function]}
     >
-      <span
-        className="a-icon a-icon__large"
-      />
-       
       How can I save my work?
     </button>
     <div
@@ -404,10 +400,10 @@ Array [
         onClick={[Function]}
       >
         <span
-          className="a-icon"
+          className="a-icon a-icon__space-after"
         >
           <svg
-            className="cf-icon-svg"
+            class="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -416,7 +412,6 @@ Array [
             />
           </svg>
         </span>
-         
         Criterion 2: Saving and investing
       </button>
     </h3>
@@ -429,10 +424,10 @@ Array [
       onClick={[Function]}
     >
       <span
-        className="a-icon a-icon__large"
+        className="a-icon a-icon__large a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -441,7 +436,6 @@ Array [
           />
         </svg>
       </span>
-       
       Can I save my work?
     </button>
     <div

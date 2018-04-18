@@ -9,10 +9,10 @@ Array [
     className="h1"
   >
     <span
-      className="a-icon a-icon__large"
+      className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        className="cf-icon-svg"
+        class="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -24,7 +24,7 @@ Array [
         />
       </svg>
     </span>
-     Efficacy
+    Efficacy
   </h2>,
   <p
     className="lead-paragraph"
@@ -120,10 +120,6 @@ Array [
         className="a-btn a-btn__link"
         onClick={[Function]}
       >
-        <span
-          className="a-icon a-icon__large"
-        />
-         
         How can I save my work?
       </button>
       <div
@@ -244,12 +240,12 @@ Array [
         <button
           className="a-btn a-btn__link"
         >
-          Remove 
+          Remove
           <span
-            className="a-icon a-icon__large"
+            className="a-icon a-icon__space-before"
           >
             <svg
-              className="cf-icon-svg"
+              class="cf-icon-svg"
               viewBox="0 0 1000 1200"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -1375,12 +1371,12 @@ Array [
       <button
         className="a-btn a-btn__link"
       >
-        Review another study 
+        Review another study
         <span
-          className="a-icon a-icon__large"
+          className="a-icon a-icon__space-before"
         >
           <svg
-            className="cf-icon-svg"
+            class="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -1399,15 +1395,19 @@ Array [
     <div
       className="m-notification m-notification__visible m-notification__success"
     >
-      <svg
-        className="cf-icon-svg"
-        viewBox="0 0 1000 1200"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        className="a-icon"
       >
-        <path
-          d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm259 284.2L481.4 870.3c-8.2 14.1-22.7 23.4-39 24.8-1.4.1-2.9.2-4.3.2-14.8 0-28.9-6.6-38.4-18L244.4 690.9c-17.9-21-15.4-52.6 5.7-70.5 21-17.9 52.6-15.4 70.5 5.7.2.3.5.5.7.8l109.4 131.4 241.8-418.8c13.6-24 44.2-32.4 68.2-18.8 24 13.6 32.4 44.2 18.8 68.2l-.5.5z"
-        />
-      </svg>
+        <svg
+          class="cf-icon-svg"
+          viewBox="0 0 1000 1200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm259 284.2L481.4 870.3c-8.2 14.1-22.7 23.4-39 24.8-1.4.1-2.9.2-4.3.2-14.8 0-28.9-6.6-38.4-18L244.4 690.9c-17.9-21-15.4-52.6 5.7-70.5 21-17.9 52.6-15.4 70.5 5.7.2.3.5.5.7.8l109.4 131.4 241.8-418.8c13.6-24 44.2-32.4 68.2-18.8 24 13.6 32.4 44.2 18.8 68.2l-.5.5z"
+          />
+        </svg>
+      </span>
       <div
         className="m-notification_content"
       >
@@ -1429,10 +1429,10 @@ Array [
       onClick={[Function]}
     >
       <span
-        className="a-icon a-icon__large"
+        className="a-icon a-icon__large a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -1441,7 +1441,6 @@ Array [
           />
         </svg>
       </span>
-       
       Can I save my work?
     </button>
     <div

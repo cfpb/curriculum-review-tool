@@ -33,8 +33,11 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <h2 className="h1">
-                    <span className="a-icon a-icon__large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" className="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm353.1 537.2c0 11-8.9 21.5-19.7 23.4l-60.1 10.4c-1.1.2-2.1.3-3.2.3-6.5 24.9-16.4 48.8-29.5 71 .8.8 1.5 1.6 2.1 2.5l35.2 49.8c6.3 9 5.2 22.7-2.6 30.5l-51.2 51.2c-7.8 7.8-21.5 9-30.5 2.6l-49.8-35.2c-.9-.6-1.7-1.3-2.5-2.1-22.2 13.1-46.1 23-71 29.5 0 1.1-.1 2.1-.3 3.2l-10.4 60.1c-1.9 10.8-12.4 19.7-23.4 19.7h-72.4c-11 0-21.5-8.9-23.4-19.7L430 879.5c-.2-1.1-.3-2.1-.3-3.2-24.9-6.5-48.8-16.4-71-29.5-.8.8-1.6 1.5-2.5 2.1l-49.9 35.2c-9 6.3-22.7 5.2-30.5-2.6l-51.2-51.2c-7.8-7.8-9-21.5-2.6-30.5l35.2-49.8c.6-.9 1.3-1.7 2.1-2.5-13.1-22.2-23-46.1-29.4-71-1.1 0-2.1-.1-3.2-.3l-60.1-10.4c-10.8-1.9-19.7-12.4-19.7-23.4V570c0-11 8.9-21.5 19.7-23.4l60.1-10.4c1.1-.2 2.2-.2 3.2-.2 6.5-24.9 16.4-48.8 29.5-71-.8-.8-1.5-1.6-2.1-2.5l-35.2-49.9c-6.3-9-5.2-22.7 2.6-30.5l51.1-51.2c7.8-7.8 21.5-9 30.5-2.6l49.9 35.2c.9.6 1.7 1.3 2.5 2.1 22.2-13.1 46.1-23 71-29.5 0-1.1.1-2.1.2-3.2l10.4-60.1c1.9-10.8 12.4-19.7 23.4-19.7h72.4c11 0 21.5 8.9 23.4 19.7L570 333c.2 1.1.3 2.1.3 3.2 24.9 6.5 48.8 16.4 71 29.5.8-.8 1.6-1.5 2.5-2.1l49.8-35.2c9-6.3 22.7-5.2 30.5 2.6l51.2 51.2c7.8 7.8 9 21.5 2.6 30.5l-35.2 49.8c-.6.9-1.3 1.7-2.1 2.5 13 22.2 22.9 46.1 29.4 71 1.1 0 2.1.1 3.2.3l60.1 10.4c10.9 1.8 19.8 12.3 19.8 23.3v72.4z"/><circle cx="500" cy="606.2" r="120.2"/></svg></span>
-                    &nbsp;Utility
+                    <SvgIcon
+                        icon="settings-round"
+                        isLarge="true"
+                        hasSpaceAfter="true" />
+                    Utility
                 </h2>
                 <p className="lead-paragraph">
                     The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
@@ -60,7 +63,10 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mt30" />
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 1: Materials to support cognitive development
                     </h3>
                     <p className="lead-paragraph">
@@ -489,7 +495,10 @@ export default class UtilityCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 2: Differentiated instruction for diverse populations
                     </h3>
                     <p className="lead-paragraph">
@@ -1346,13 +1355,16 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="utility-crt-question-3"
-                    criterionText="Criterion 3: Quality materials for lesson planning" 
+                    criterionText="Criterion 3: Quality materials for lesson planning"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 3: Quality materials for lesson planning
                     </h3>
                     <p className="lead-paragraph">
@@ -1940,7 +1952,10 @@ export default class UtilityCriterionPage extends React.Component {
                     {...criterionLinkWrapperProps}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 4: Materials to assess mastery
                     </h3>
                     <p className="lead-paragraph">
@@ -2461,13 +2476,16 @@ export default class UtilityCriterionPage extends React.Component {
                         </textarea>
                     </div>
                 </div>
-                <CriterionLinkWrapper 
+                <CriterionLinkWrapper
                     criterionKey="utility-crt-question-5"
                     criterionText="Criterion 5: Instructional supports"
                     {...criterionLinkWrapperProps} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
-                        <SvgIcon icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]} />
+                        <SvgIcon
+                            icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]}
+                            color="green"
+                            hasSpaceAfter="true" />
                         Criterion 5: Instructional supports
                     </h3>
                     <p className="lead-paragraph">

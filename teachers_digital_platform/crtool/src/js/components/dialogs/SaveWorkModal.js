@@ -49,13 +49,16 @@ export default class SaveWorkModal extends React.Component {
     render() {
         let currentIcon = "";
         if (this.props.hasIcon === "true") {
-            currentIcon = C.ICON_QUESTION;
+            currentIcon = C.ICON_QUESTION_ROUND;
         }
 
         return (
             <React.Fragment>
                 <button className="a-btn a-btn__link" onClick={(e) => {this.openSaveWorkModalDialog()}}>
-                    <span className="a-icon a-icon__large"><SvgIcon icon={currentIcon} /></span>&nbsp;
+                    <SvgIcon
+                        icon={currentIcon}
+                        isLarge="true"
+                        hasSpaceAfter="true" />
                     {this.props.buttonText}
                 </button>
                 <div className="o-modal"
