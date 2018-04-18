@@ -35,6 +35,7 @@ const C = {
     ICON_CREDIT_REPORT_ROUND: "credit-report-round",
     ICON_DOCUMENT: "document",
     ICON_DOCUMENT_ROUND: "document-round",
+    ICON_EXCLAMATION_MARK_ROUND: "exclamation-mark-round",
     ICON_PENCIL: "pencil",
     ICON_PLUS_ROUND: "plus-round",
     ICON_QUESTION: "question-round",
@@ -42,6 +43,7 @@ const C = {
     ICON_SETTINGS_ROUND: "settings-round",
     ICON_STAR: "star",
     ICON_STAR_ROUND: "star-round",
+    ICON_X_ROUND: "x-round",
 
     STATUS_IN_START: "",
     STATUS_IN_PROGRESS: "in progress",
