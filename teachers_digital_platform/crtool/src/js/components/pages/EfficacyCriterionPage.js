@@ -106,7 +106,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 <SvgIcon
                                     icon="x-round"
                                     islarge="true"
-                                    hasSpaceAfter="true" />
+                                    hasSpaceBefore="true" />
                             </button>
                         </div>
                         <div className="m-form-field m-form-field__text">
