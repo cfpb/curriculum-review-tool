@@ -130,6 +130,35 @@
 
     &.is-active.is-complete {
         background-color: @green-20;
+
+        &:focus,
+        &:hover {
+            background-color: @btn-bg-hover;
+            border-color: @btn-bg-hover;
+            color: @btn-text;
+
+            .a-icon {
+                color: inherit;
+            }
+
+            .o-dimension-section-bar_selector-status {
+                color: @btn-text;
+            }
+        }
+
+        &:active {
+            background-color: @green-20;
+            border-color: @green;
+            color: @text;
+
+            .a-icon {
+                color: @green;
+            }
+
+            .o-dimension-section-bar_selector-status {
+                color: @gray;
+            }
+        }
     }
 }
 
