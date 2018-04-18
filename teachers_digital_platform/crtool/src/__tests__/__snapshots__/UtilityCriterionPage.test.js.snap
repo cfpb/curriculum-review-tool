@@ -114,12 +114,12 @@ Array [
                 className="o-modal_close a-btn a-btn__link"
                 onClick={[Function]}
               >
-                Close  
+                Close
                 <span
-                  className="a-icon a-icon__large"
+                  className="a-icon a-icon__large a-icon__space-before"
                 >
                   <svg
-                    className="cf-icon-svg"
+                    class="cf-icon-svg"
                     viewBox="0 0 1000 1200"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1003,12 +1003,12 @@ Array [
               className="o-modal_close a-btn a-btn__link"
               onClick={[Function]}
             >
-              Close  
+              Close
               <span
-                className="a-icon a-icon__large"
+                className="a-icon a-icon__large a-icon__space-before"
               >
                 <svg
-                  className="cf-icon-svg"
+                  class="cf-icon-svg"
                   viewBox="0 0 1000 1200"
                   xmlns="http://www.w3.org/2000/svg"
                 >
