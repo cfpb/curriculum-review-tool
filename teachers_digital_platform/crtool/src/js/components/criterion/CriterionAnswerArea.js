@@ -20,30 +20,26 @@ export default class CriterionAnswerArea extends React.Component {
                     {this.showBeneficialText()}
                 </div>
                 <div class="o-survey_answer">
-                    <RadioButton 
-                        radioText="Yes" 
+                    <RadioButton
+                        radioText="Yes"
                         showButton="true"
-                        text={this.props.text} 
+                        text={this.props.text}
                         isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'yes'}
                         {...this.props} />
-                    <RadioButton 
-                        radioText="No"  
+                    <RadioButton
+                        radioText="No"
                         showButton="true"
-                        text={this.props.text} 
-                        isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'no'} 
+                        text={this.props.text}
+                        isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'no'}
                         {...this.props} />
-                    <RadioButton 
-                        radioText="NA"  
+                    <RadioButton
+                        radioText="NA"
                         showButton={this.props.componentData.showNaButton}
-                        text={this.props.text} 
-                        isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'na'}  
+                        text={this.props.text}
+                        isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'na'}
                         {...this.props} />
                 </div>
             </div>
         );
     }
 }
-
-
-
-

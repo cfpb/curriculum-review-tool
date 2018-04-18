@@ -4,7 +4,7 @@ import React from "react";
 import CriterionAnswerArea from "./CriterionAnswerArea";
 
 export default class CriterionRow extends React.Component {
-    render() {        
+    render() {
         return (
             <li class="o-survey">
                 <div class="o-survey_number">
@@ -16,14 +16,10 @@ export default class CriterionRow extends React.Component {
                 </div>
                 <div class="o-survey_components">
                     <h5 class="h3">Component</h5>
-                    
+
                     {this.props.rowData.components.map((componentData, i) => <CriterionAnswerArea key={i} {...this.props} componentData={this.props.rowData.components[i]}/>)}
                 </div>
             </li>
         );
     }
 }
-
-
-
-

@@ -14,8 +14,8 @@ export default class CriterionComponent extends React.Component {
             <ol className="m-list__unstyled">
                 {
                     this.props.criterionData.rows.map(
-                        (rowData, i) => 
-                        <CriterionRow key={i} {...this.props} rowData={this.props.criterionData.rows[i]}/>) 
+                        (rowData, i) =>
+                        <CriterionRow key={i} {...this.props} rowData={this.props.criterionData.rows[i]}/>)
                 }
             </ol>
             <div className="m-form-field m-form-field__textarea">
@@ -30,7 +30,3 @@ export default class CriterionComponent extends React.Component {
         );
     }
 }
-
-
-
-
