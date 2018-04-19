@@ -115,8 +115,6 @@ export default class CustomerReviewToolComponent extends React.Component {
      * Verify all the criteria for a whole distinctive has been met
      */
     isDistinctiveComplete(alteredCriterionObjects, changedDistinctive) {
-
-        console.log("changedDistinctive: " + changedDistinctive);
         for (var statusKey in this.state.criterionCompletionStatuses) {
             if (this.isCriterionInDistinctive(statusKey, changedDistinctive) &&
                 this.state.criterionCompletionStatuses[statusKey] !== C.ICON_CHECK_ROUND) {

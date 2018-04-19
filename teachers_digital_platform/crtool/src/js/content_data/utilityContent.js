@@ -12,18 +12,21 @@ export const UtilityContent = {
                         showNaButton:false,
                         showBenifitialText:false,
                         criterionRefId:"utility-crt-question-1.1.1",
+                        hasInlineHtml:true,
                         componentText:"Are there multiple activities for <strong>conceptual learning</strong> that describe underlying ideas in writing and verbally? (e.g., being an informed consumer)",
                     },
                     {
                         showNaButton:false,
                         showBenifitialText:false,
                         criterionRefId:"utility-crt-question-1.1.2",
+                        hasInlineHtml:true,
                         componentText:"Are there multiple activities for <strong>procedural learning</strong>, such as memorizing content or practicing processes accurately and quickly? (e.g., knowing how to calculate interest or define a student loan)",
                     },
                     {
                         showNaButton:false,
                         showBenifitialText:false,
                         criterionRefId:"utility-crt-question-1.1.3",
+                        hasInlineHtml:true,
                         componentText:"Are there multiple <strong>application</strong> activities that allow students to independently use knowledge and skills in simulated or real situations, choosing a strategy to solve problems with persistence? (e.g., making a budget)",
                     },
                 ]

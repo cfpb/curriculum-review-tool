@@ -12,11 +12,19 @@ export default class CriterionAnswerArea extends React.Component {
         return null;
     }
 
+    renderComponentText() {
+        if (this.props.componentData.hasInlineHtml) {
+            return (<span dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
+        } else {
+            return (this.props.componentData.componentText);
+        }
+    }
+
     render() {
         return (
             <div class="o-survey_component">
                 <div class="o-survey_question">
-                    <p><span dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} /></p>
+                    <p>{this.renderComponentText()}</p>
                     {this.showBeneficialText()}
                 </div>
                 <div class="o-survey_answer">
