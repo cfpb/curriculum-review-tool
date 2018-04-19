@@ -58,7 +58,7 @@ export default class UtilitySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                    <button class="a-btn a-btn__link">
+                    <button className="a-btn a-btn__link">
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
@@ -124,12 +124,12 @@ export default class UtilitySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
                         <p><b>Your answers for <em>beneficial</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -140,7 +140,7 @@ export default class UtilitySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -194,7 +194,7 @@ export default class UtilitySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -205,7 +205,7 @@ export default class UtilitySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -277,12 +277,12 @@ export default class UtilitySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
                         <p><b>Your answers for <em>beneficial</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -293,7 +293,7 @@ export default class UtilitySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -347,7 +347,7 @@ export default class UtilitySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -358,7 +358,7 @@ export default class UtilitySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -412,7 +412,7 @@ export default class UtilitySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -423,7 +423,7 @@ export default class UtilitySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
