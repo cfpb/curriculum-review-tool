@@ -23,8 +23,9 @@ export default class ContentElementarySummaryPage extends React.Component {
                     Content summary
                 </h2>
                 <p className="lead-paragraph">
-                    Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.</p>
-                <p className="lead-paragraph">
+                    Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
+                </p>
+                <p>
                     Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
                 </p>
                 <div className="m-notification
@@ -60,7 +61,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                    <button class="a-btn a-btn__link">
+                    <button className="a-btn a-btn__link">
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
@@ -124,7 +125,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -135,7 +136,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -175,7 +176,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -205,7 +206,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -216,7 +217,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -286,7 +287,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -297,7 +298,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -337,7 +338,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -367,7 +368,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -378,7 +379,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -418,7 +419,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -448,7 +449,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -459,7 +460,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -513,7 +514,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     </ul>
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
-                        <ul class="m-component-list">
+                        <ul className="m-component-list">
                             <li><b>0</b> Yes</li>
                             <li><b>0</b> No</li>
                         </ul>
@@ -524,7 +525,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                         <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, pho number, email address, Social Security number, etc.
+                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                         </small>
                     </label>
                     <textarea className="a-text-input a-text-input__full"
@@ -559,7 +560,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className="m-form-field_radio-text">
                                         <div><strong>Strong content</strong></div>
                                         All 6 criteria were met, and at least one was exceeded
                                     </div>
@@ -568,14 +569,14 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </li>
                         <li className="u-mb30">
                             <div className="m-form-field
-                                        m-form-field__radio
-                                        m-form-field__display">
+                                            m-form-field__radio
+                                            m-form-field__display">
                                 <div className="a-label">
                                     <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className="m-form-field_radio-text is-active">
                                         <div><strong>Moderate content</strong></div>
                                         All 6 criteria were met
                                     </div>
@@ -584,8 +585,8 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </li>
                         <li className="u-mb30">
                             <div className="m-form-field
-                                        m-form-field__radio
-                                        m-form-field__display">
+                                            m-form-field__radio
+                                            m-form-field__display">
                                 <div className="a-label">
                                     <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
@@ -600,8 +601,8 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </li>
                     </ul>
                     <hr className="hr
-                                u-mb45
-                                u-mt30" />
+                                    u-mb45
+                                    u-mt30" />
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
