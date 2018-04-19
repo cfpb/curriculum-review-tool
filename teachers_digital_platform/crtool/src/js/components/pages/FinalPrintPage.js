@@ -1,5 +1,6 @@
 import React from "react";
 
+import C from "../../constants";
 import ContentSwitchComponent from "./partial_pages/ContentSwitchComponent";
 import CriterionComponent from "../criterion/CriterionComponent";
 import PrintIntroComponent from "./partial_pages/PrintIntroComponent";
@@ -219,6 +220,7 @@ export default class FinalPrintPage extends React.Component {
                     </p>
                     {EfficacyContent.criterion.map((criterion, i) => <CriterionComponent key={i} criterionData={EfficacyContent.criterion[i]} {...this.props} />)}
                 </div>
+                <button className="a-btn a-btn__super" onClick={(e) => {this.props.distinctiveClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
             </React.Fragment>
         );
     }
