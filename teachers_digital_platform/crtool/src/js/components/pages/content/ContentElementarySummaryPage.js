@@ -1,8 +1,8 @@
 import React from "react";
 
-import C from "../../constants";
-import SaveWorkModal from "../dialogs/SaveWorkModal";
-import SvgIcon from "../svgs/SvgIcon";
+import C from "../../../constants";
+import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import SvgIcon from "../../svgs/SvgIcon";
 
 export default class ContentElementarySummaryPage extends React.Component {
     changeCriterionAnswer(key, checkedValue) {
