@@ -30,7 +30,8 @@ export default class CriterionLinkWrapper extends React.Component {
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <button className="a-btn
-                                            a-btn__heading"
+                                            a-btn__heading
+                                            a-btn__no-line"
                                 onClick={(e) => {this.handleCriterionTitleClick(this.props.criterionKey)}} >
                             <SvgIcon
                                 icon="plus-round"
