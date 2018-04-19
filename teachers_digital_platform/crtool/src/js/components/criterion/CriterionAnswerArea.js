@@ -14,9 +14,9 @@ export default class CriterionAnswerArea extends React.Component {
 
     renderComponentText() {
         if (this.props.componentData.hasInlineHtml) {
-            return (<span dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
+            return (<div dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
         } else {
-            return (this.props.componentData.componentText);
+            return (<p>{this.props.componentData.componentText}</p>);
         }
     }
 
@@ -24,7 +24,7 @@ export default class CriterionAnswerArea extends React.Component {
         return (
             <div class="o-survey_component">
                 <div class="o-survey_question">
-                    <p>{this.renderComponentText()}</p>
+                    {this.renderComponentText()}
                     {this.showBeneficialText()}
                 </div>
                 <div class="o-survey_answer">
@@ -41,7 +41,7 @@ export default class CriterionAnswerArea extends React.Component {
                         isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'no'}
                         {...this.props} />
                     <RadioButton
-                        radioText="NA"
+                        radioText="N/A"
                         showButton={this.props.componentData.showNaButton}
                         text={this.props.text}
                         isChecked={this.props.criterionAnswers[this.props.componentData.criterionRefId] === 'na'}
