@@ -1,6 +1,7 @@
 import React from "react";
 
 import C from "../../constants";
+import DistinctiveMenuBar from "../distinctives/DistinctiveMenuBar";
 import ContentElementaryCriterionPage from "./content/ContentElementaryCriterionPage";
 import ContentMiddleCriterionPage from "./content/ContentMiddleCriterionPage";
 import ContentHighCriterionPage from "./content/ContentHighCriterionPage";
@@ -17,16 +18,22 @@ import StartCriterionPage from "./StartCriterionPage";
 
 export default class SurveyPageContainer extends React.Component {
 
+    renderDistinctiveMenuBar() {
+        return (
+            <DistinctiveMenuBar {...this.props} />
+        );
+    }
+
     render() {        
         if (this.props.currentPage === C.CONTENT_PAGE) {
 
             if (this.props.contentInProgress === C.STATUS_COMPLETE) {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
-                    return (<ContentElementarySummaryPage {...this.props} />);
+                    return (<React.Fragment><ContentElementarySummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
                 } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
-                    return (<ContentMiddleSummaryPage {...this.props} />);
+                    return (<React.Fragment><ContentMiddleSummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
                 } else {
-                    return (<ContentHighSummaryPage {...this.props} />);
+                    return (<React.Fragment><ContentHighSummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
                 }
             } else {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
@@ -41,7 +48,7 @@ export default class SurveyPageContainer extends React.Component {
         } else if (this.props.currentPage === C.UTILITY_PAGE) {
 
             if (this.props.utilityInProgress === C.STATUS_COMPLETE) {
-                return (<UtilitySummaryPage {...this.props} />);
+                return (<React.Fragment><UtilitySummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
             } else {
                 return (<UtilityCriterionPage {...this.props} /> );
             }
@@ -49,7 +56,7 @@ export default class SurveyPageContainer extends React.Component {
         } else if (this.props.currentPage === C.QUALITY_PAGE) {
             
             if (this.props.qualityInProgress === C.STATUS_COMPLETE) {
-                return (<QualitySummaryPage {...this.props} />);
+                return (<React.Fragment><QualitySummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
             } else {
                 return (<QualityCriterionPage {...this.props} />);
             }
@@ -57,7 +64,7 @@ export default class SurveyPageContainer extends React.Component {
         } else if (this.props.currentPage === C.EFFICACY_PAGE) {
             
             if (this.props.efficacyInProgress === C.STATUS_COMPLETE) {
-                return (<EfficacySummaryPage {...this.props} />);
+                return (<React.Fragment><EfficacySummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
             } else {
                 return (<EfficacyCriterionPage {...this.props} />);
             }

@@ -10,6 +10,7 @@ import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
 import FinalPrintPage from "./pages/FinalPrintPage";
+import DateTimeFormater from "../DateTimeFormatter";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -29,6 +30,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             curriculumTitle: localStorage.getItem("curriculumTitle"),
             publicationDate: localStorage.getItem("publicationDate"),
+            distinctiveCompletedDate: localStorage.getItem("distinctiveCompletedDate"),
             gradeRange: localStorage.getItem("gradeRange"),
 
             criterionScores: JSON.parse(localStorage.getItem("criterionScores")) || {},
@@ -195,6 +197,11 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
+    editCriterionAfterSummary(distinctiveName) {
+        this.setDistinctiveStatus(distinctiveName, C.STATUS_IN_PROGRESS);
+        this.distinctiveClicked(distinctiveName);
+    }
+
     setCriterionStatusToInProgress(criterionKey) {
         this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_PROGRESS);
     }
@@ -210,6 +217,15 @@ export default class CustomerReviewToolComponent extends React.Component {
         else {
             this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS);
         }
+    }
+
+    /*
+     * Set state values for dimention finish date
+     */
+    setDistinctiveCompletionDateNow() {
+        let completedDate = DateTimeFormater.getDateNowFormat();
+        localStorage.setItem("distinctiveCompletedDate", completedDate);
+        this.setState({distinctiveCompletedDate: completedDate});
     }
 
     /*
@@ -275,6 +291,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     handleSummaryButtonClick() {
+        this.setDistinctiveCompletionDateNow();
         this.setDistinctiveStatus(this.state.currentPage, C.STATUS_COMPLETE);
     }
 
@@ -344,6 +361,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             currentPage:this.state.currentPage,
             curriculumTitle:this.state.curriculumTitle,
             publicationDate:this.state.publicationDate,
+            distinctiveCompletedDate:this.state.distinctiveCompletedDate,
             gradeRange:this.state.gradeRange,
 
             contentInProgress:this.state.contentInProgress,
@@ -360,6 +378,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
+            editCriterionAfterSummary:this.editCriterionAfterSummary.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
         };
 
@@ -407,7 +426,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
                     <PageInstructionsComponent currentPage={this.state.currentPage} />
                     <DistinctiveMenuBar {...dimensionMenuProps} />
-                    <SurveyPageContainer className="SurveyPage" {...applicationProps} />
+                    <SurveyPageContainer className="SurveyPage" {...applicationProps} {...dimensionMenuProps} />
 
                     <div className="block
                                 block__flush-bottom
