@@ -953,7 +953,7 @@ Array [
       className="h2"
     >
       <button
-        className="a-btn a-btn__heading"
+        className="a-btn a-btn__heading a-btn__no-line"
         onClick={[Function]}
       >
         <span
