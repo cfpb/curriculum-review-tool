@@ -33,7 +33,7 @@
 {# BODY items #}
 
 {% block header %}
-    <header class="o-header" role="banner">
+    <header class="o-header u-hide-on-print" role="banner">
         <div class="m-global-eyebrow m-global-eyebrow__horizontal">
             <div class="wrapper wrapper__match-content">
                 <div class="m-global-eyebrow_tagline">
@@ -62,6 +62,12 @@
 {% block content_main scoped %}
 {% endblock content_main %}
 
+{% block footer %}
+    <div class="u-hide-on-print">
+        {% import 'organisms/footer.html' as o_footer with context %}
+        {{ o_footer.render() }}
+    </div>
+{% endblock footer %}
 
 {% block javascript scoped -%}
 {# Conditional comment used to block IE8 and under from receiving JS #}
