@@ -499,22 +499,6 @@ export default class ContentElementarySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>Meets</strong></div>
-                                        0 components were addressed
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
                                     <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
