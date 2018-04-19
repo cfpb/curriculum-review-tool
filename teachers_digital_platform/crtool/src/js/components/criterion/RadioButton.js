@@ -3,9 +3,10 @@ import React from "react";
 
 export default class RadioButton extends React.Component {
     render() {
-        let svgClasses = "m-form-field_radio-icon ";
+        let svgClasses = "m-form-field_radio-icon";
+
         if (this.props.isChecked) {
-            svgClasses = svgClasses + "is-active";
+            svgClasses += " is-active";
         }
 
         if (!this.props.showButton) {
