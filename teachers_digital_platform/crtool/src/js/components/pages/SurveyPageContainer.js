@@ -17,68 +17,53 @@ import StartCriterionPage from "./StartCriterionPage";
 
 export default class SurveyPageContainer extends React.Component {
 
-    render() {
-        const pageProps = {
-            currentPage:this.props.currentPage,
-            criterionScores:this.props.criterionScores,
-            criterionAnswers:this.props.criterionAnswers,
-            changeCriterionAnswer:this.props.changeCriterionAnswer,
-            setDistinctiveComplete:this.props.setDistinctiveComplete, 
-            curriculumTitle:this.props.curriculumTitle,
-            publicationDate:this.props.publicationDate,
-            gradeRange:this.props.gradeRange,
-            initializeAnswerObjects:this.props.initializeAnswerObjects,
-            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
-            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
-            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
-          };
-        
+    render() {        
         if (this.props.currentPage === C.CONTENT_PAGE) {
 
             if (this.props.contentInProgress === C.STATUS_COMPLETE) {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
-                    return (<ContentElementarySummaryPage {...pageProps} />);
+                    return (<ContentElementarySummaryPage {...this.props} />);
                 } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
-                    return (<ContentMiddleSummaryPage {...pageProps} />);
+                    return (<ContentMiddleSummaryPage {...this.props} />);
                 } else {
-                    return (<ContentHighSummaryPage {...pageProps} />);
+                    return (<ContentHighSummaryPage {...this.props} />);
                 }
             } else {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
-                    return (<ContentElementaryCriterionPage {...pageProps} />);
+                    return (<ContentElementaryCriterionPage {...this.props} />);
                 } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
-                    return (<ContentMiddleCriterionPage {...pageProps} />);
+                    return (<ContentMiddleCriterionPage {...this.props} />);
                 } else {
-                    return (<ContentHighCriterionPage {...pageProps} />);
+                    return (<ContentHighCriterionPage {...this.props} />);
                 }
             }
 
         } else if (this.props.currentPage === C.UTILITY_PAGE) {
 
             if (this.props.utilityInProgress === C.STATUS_COMPLETE) {
-                return (<UtilitySummaryPage {...pageProps} />);
+                return (<UtilitySummaryPage {...this.props} />);
             } else {
-                return (<UtilityCriterionPage {...pageProps} /> );
+                return (<UtilityCriterionPage {...this.props} /> );
             }
 
         } else if (this.props.currentPage === C.QUALITY_PAGE) {
             
             if (this.props.qualityInProgress === C.STATUS_COMPLETE) {
-                return (<QualitySummaryPage {...pageProps} />);
+                return (<QualitySummaryPage {...this.props} />);
             } else {
-                return (<QualityCriterionPage {...pageProps} />);
+                return (<QualityCriterionPage {...this.props} />);
             }
 
         } else if (this.props.currentPage === C.EFFICACY_PAGE) {
             
             if (this.props.efficacyInProgress === C.STATUS_COMPLETE) {
-                return (<EfficacySummaryPage {...pageProps} />);
+                return (<EfficacySummaryPage {...this.props} />);
             } else {
-                return (<EfficacyCriterionPage {...pageProps} />);
+                return (<EfficacyCriterionPage {...this.props} />);
             }
 
         } else {
-            return (<StartCriterionPage  {...pageProps} />);
+            return (<StartCriterionPage  {...this.props} />);
         }
     }
 }

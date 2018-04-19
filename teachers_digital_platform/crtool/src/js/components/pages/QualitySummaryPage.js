@@ -43,7 +43,7 @@ export default class QualitySummaryPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <button className="a-btn">
+                <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
                 <hr className="hr
