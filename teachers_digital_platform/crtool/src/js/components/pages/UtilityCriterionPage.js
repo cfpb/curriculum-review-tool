@@ -79,7 +79,7 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p> Includes a balanced focus on concepts, procedures, and application.</p>
+                                <p>Includes a balanced focus on concepts, procedures, and application.</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
