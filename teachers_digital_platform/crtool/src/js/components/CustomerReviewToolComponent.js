@@ -17,26 +17,26 @@ export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
         super();
         this.state = {
-            currentPage: localStorage.getItem(C.START_PAGE),
+            currentPage: Repository.getCurrentPage(),
 
-            contentInProgress: localStorage.getItem(C.CONTENT_STATUS),
-            qualityInProgress: localStorage.getItem(C.QUALITY_STATUS),
-            utilityInProgress: localStorage.getItem(C.UTILITY_STATUS),
-            efficacyInProgress: localStorage.getItem(C.EFFICACY_STATUS),
+            contentInProgress: Repository.getContentInProgress(),
+            qualityInProgress: Repository.getQualityInProgress(),
+            utilityInProgress: Repository.getUtilityInProgress(),
+            efficacyInProgress: Repository.getEfficacyInProgress(),
 
-            contentSummaryButton: localStorage.getItem(C.CONTENT_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
-            qualitySummaryButton: localStorage.getItem(C.QUALITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
-            utilitySummaryButton: localStorage.getItem(C.UTILITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
-            efficacySummaryButton: localStorage.getItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS,
+            contentSummaryButton: Repository.getContentSummaryButton(),
+            qualitySummaryButton: Repository.getQualitySummaryButton(),
+            utilitySummaryButton: Repository.getUtilitySummaryButton(),
+            efficacySummaryButton: Repository.getEfficacySummaryButton(),
 
-            curriculumTitle: localStorage.getItem("curriculumTitle"),
-            publicationDate: localStorage.getItem("publicationDate"),
-            gradeRange: localStorage.getItem("gradeRange"),
+            curriculumTitle: Repository.getCurriculumTitle(),
+            publicationDate: Repository.getPublicationDate(),
+            gradeRange: Repository.getGradeRange(),
 
-            criterionScores: JSON.parse(localStorage.getItem("criterionScores")) || {},
-            criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
-            distinctiveCompletedDate: JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {},
-            criterionCompletionStatuses: JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {},
+            criterionScores: Repository.getCriterionScores(),
+            criterionAnswers: Repository.getCriterionAnswers(),
+            distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
+            criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
         };
     }
 
@@ -45,18 +45,18 @@ export default class CustomerReviewToolComponent extends React.Component {
      * Used for starting a new review
      */
     clearLocalStorage() {
-        localStorage.clear();
-        this.distinctiveClicked(C.START_PAGE);
+        Repository.clearAllData();
+        Repository.saveCurrentPage(this, C.START_PAGE);
 
-        this.setDistinctiveStatus(C.CONTENT_PAGE, C.STATUS_IN_START);
-        this.setDistinctiveStatus(C.UTILITY_PAGE, C.STATUS_IN_START);
-        this.setDistinctiveStatus(C.QUALITY_PAGE, C.STATUS_IN_START);
-        this.setDistinctiveStatus(C.EFFICACY_PAGE, C.STATUS_IN_START);
+        Repository.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
+        Repository.setDistinctiveStatus(this, C.UTILITY_PAGE, C.STATUS_IN_START);
+        Repository.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
+        Repository.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
 
-        this.setState({criterionScores: {} });
-        this.setState({criterionAnswers: {} });
-        this.setState({distinctiveCompletedDate: {} });
-        this.setState({criterionCompletionStatuses: {} });
+        Repository.saveCriterionScores(this, {});
+        Repository.saveCriterionAnswers(this, {});
+        Repository.saveDistinctiveCompletionDates(this, {});
+        Repository.saveCriterionCompletionStatuses(this, {});
 
         let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
         window.location = startPage;
@@ -168,9 +168,9 @@ export default class CustomerReviewToolComponent extends React.Component {
             }
         }
 
-        this.saveCriterionScores(alteredCriterionScores);
-        this.saveCriterionAnswers(alteredCriterionObjects);
-        this.saveCriterionCompletionStatuses(alteredCriterionStatuses);
+        Repository.saveCriterionScores(this, alteredCriterionScores);
+        Repository.saveCriterionAnswers(this, alteredCriterionObjects);
+        Repository.saveCriterionCompletionStatuses(this, alteredCriterionStatuses);
     }
 
     /*
@@ -199,9 +199,13 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
-    editCriterionAfterSummary(distinctiveName) {
-        this.setDistinctiveStatus(distinctiveName, C.STATUS_IN_PROGRESS);
-        this.distinctiveClicked(distinctiveName);
+    setDistinctiveBackToInProgress(distinctiveName) {
+        Repository.setDistinctiveStatus(this, distinctiveName, C.STATUS_IN_PROGRESS);
+        Repository.saveCurrentPage(this, distinctiveName);
+    }
+
+    distinctiveClicked(distinctiveName) {
+        Repository.saveCurrentPage(this, distinctiveName);
     }
 
     setCriterionStatusToInProgress(criterionKey) {
@@ -214,10 +218,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     calculateDistinctiveCompletion(alteredCriterionObjects, changedDistinctive) {
         if (this.isDistinctiveComplete(alteredCriterionObjects, changedDistinctive)) {
-            this.setSummaryButtonEnabled(changedDistinctive, C.STATUS_COMPLETE);
+            Repository.setSummaryButtonEnabled(this, changedDistinctive, C.STATUS_COMPLETE);
         }
         else {
-            this.setDistinctiveStatus(changedDistinctive, C.STATUS_IN_PROGRESS);
+            Repository.setDistinctiveStatus(this, changedDistinctive, C.STATUS_IN_PROGRESS);
         }
     }
 
@@ -248,16 +252,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         let alteredCriterionScores =  this.state.criterionScores;
         alteredCriterionScores[key] = val;
 
-        this.saveCriterionScores(alteredCriterionScores);
+        Repository.saveCriterionScores(this, alteredCriterionScores);
         return alteredCriterionScores;
-    }
-
-    /*
-     * Set state values for criterion score
-     */
-    saveCriterionScores(alteredCriterionScores) {
-        localStorage.setItem("criterionScores", JSON.stringify(alteredCriterionScores));
-        this.setState({criterionScores: alteredCriterionScores});
     }
 
     /*
@@ -267,24 +263,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         let alteredCriterionAnswers =  this.state.criterionAnswers
         alteredCriterionAnswers[key] = val;
 
-        this.saveCriterionAnswers(alteredCriterionAnswers);
+        Repository.saveCriterionAnswers(this, alteredCriterionAnswers);
         return alteredCriterionAnswers;
-    }
-
-    /*
-     * Set state values for all criterion values
-     */
-    saveCriterionAnswers(alteredCriterionAnswers) {
-        localStorage.setItem("criterionAnswers", JSON.stringify(alteredCriterionAnswers));
-        this.setState({criterionAnswers: alteredCriterionAnswers});
-    }
-
-    /*
-     * Set state values for all criterion completion statuses
-     */
-    saveCriterionCompletionStatuses(alteredCriterionCompletionStatues) {
-        localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredCriterionCompletionStatues));
-        this.setState({criterionCompletionStatuses: alteredCriterionCompletionStatues});
     }
 
     /*
@@ -295,77 +275,16 @@ export default class CustomerReviewToolComponent extends React.Component {
         let alteredData =  this.state.criterionCompletionStatuses
         alteredData[criterion] = status;
 
-        this.saveCriterionCompletionStatuses(alteredData);
+        Repository.saveCriterionCompletionStatuses(this, alteredData);
     }
 
     handleFinalSummaryButtonClick() {
-        this.distinctiveClicked(C.FINAL_SUMMARY_PAGE);
+        Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
     }
 
     handleSummaryButtonClick() {
         this.setDistinctiveCompletionDateNow(this.state.currentPage);
-        this.setDistinctiveStatus(this.state.currentPage, C.STATUS_COMPLETE);
-    }
-
-    /*
-     * Set the current criterion Summary Button status
-     */
-    setSummaryButtonEnabled(changedDistinctive, distinctiveStatus) {
-        switch(changedDistinctive) {
-        case C.CONTENT_PAGE:
-            localStorage.setItem(C.CONTENT_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            this.setState({contentSummaryButton: distinctiveStatus});
-            break;
-        case C.UTILITY_PAGE:
-            localStorage.setItem(C.UTILITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            this.setState({utilitySummaryButton: distinctiveStatus});
-            break;
-        case C.QUALITY_PAGE:
-            localStorage.setItem(C.QUALITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            this.setState({qualitySummaryButton: distinctiveStatus});
-            break;
-        case C.EFFICACY_PAGE:
-            localStorage.setItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            this.setState({efficacySummaryButton: distinctiveStatus});
-            break;
-        default:
-            break;
-        }
-    }
-
-    /*
-     * Set the current Distinctive button status
-     */
-    setDistinctiveStatus(changedDistinctive, distinctiveStatus) {
-        switch(changedDistinctive) {
-        case C.CONTENT_PAGE:
-            localStorage.setItem(C.CONTENT_STATUS, distinctiveStatus);
-            this.setState({contentInProgress: distinctiveStatus});
-            break;
-        case C.UTILITY_PAGE:
-            localStorage.setItem(C.UTILITY_STATUS, distinctiveStatus);
-            this.setState({utilityInProgress: distinctiveStatus});
-            break;
-        case C.QUALITY_PAGE:
-            localStorage.setItem(C.QUALITY_STATUS, distinctiveStatus);
-            this.setState({qualityInProgress: distinctiveStatus});
-            break;
-        case C.EFFICACY_PAGE:
-            localStorage.setItem(C.EFFICACY_STATUS, distinctiveStatus);
-            this.setState({efficacyInProgress: distinctiveStatus});
-            break;
-        default:
-            break;
-        }
-    }
-
-    /*
-     * Track the current Distinctive
-     * Allows us to always load the last distinctive worked on
-     */
-    distinctiveClicked(clickedDistinctive) {
-        localStorage.setItem(C.START_PAGE, clickedDistinctive);
-        this.setState({currentPage: clickedDistinctive});
+        Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
     }
 
     render() {
@@ -390,7 +309,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
-            editCriterionAfterSummary:this.editCriterionAfterSummary.bind(this),
+            setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
         };
 

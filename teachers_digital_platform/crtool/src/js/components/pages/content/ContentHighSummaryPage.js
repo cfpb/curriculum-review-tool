@@ -58,7 +58,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                <div className="l-survey-top">
-                    <button class="a-btn a-btn__link" onClick={(e) => {this.props.editCriterionAfterSummary(C.CONTENT_PAGE);}}>
+                    <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
