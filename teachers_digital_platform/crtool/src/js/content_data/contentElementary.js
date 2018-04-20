@@ -84,7 +84,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 3: Spending",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-elementary-crt-notes-optional-3",
-            rows: [{
+            rows: [
+                {
                     indicatorNumber: "3.1",
                     indicatorText: "People choose to buy some goods or services over others.",
                     components: [
@@ -138,7 +139,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 4: Borrowing and credit",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for borrowing and credit?",
             notesRefId: "content-elementary-crt-notes-optional-4",
-            rows: [{
+            rows: [
+                {
                     indicatorNumber: "4.1",
                     indicatorText: "Borrowing allows people to purchase goods and services now that must be paid for in the future.",
                     components: [
@@ -162,7 +164,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 5: Managing financial risk",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?",
             notesRefId: "content-elementary-crt-notes-optional-5",
-            rows: [{
+            rows: [
+                {
                     indicatorNumber: "5.1",
                     indicatorText: "People make choices to protect themselves from financial risks.",
                     components: [
@@ -186,7 +189,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 6: Financial responsibility and money management",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?",
             notesRefId: "content-elementary-crt-notes-optional-6",
-            rows: [{
+            rows: [
+                {
                     indicatorNumber: "6.1",
                     indicatorText: "Financial responsibility involves planning for the future.",
                     components: [
