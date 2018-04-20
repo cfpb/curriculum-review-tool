@@ -9,6 +9,7 @@ import EfficacyStudyComponent from "./partial.pages/EfficacyStudyComponent";
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
+        console.log("criterionAnswerChanged: key: " + key + " -> " + checkedValue);
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
@@ -109,14 +110,17 @@ export default class EfficacyCriterionPage extends React.Component {
                             studyCount="1"
                             showRemoveButton="false"
                             {...this.props}
+                            criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                             />
 
                     <h1>Between first & Second study component</h1>
 
                     <EfficacyStudyComponent 
                             studyCount="2"
+                            showNaButton="false"
                             showRemoveButton="true"
                             {...this.props}
+                            criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                             />
 
 

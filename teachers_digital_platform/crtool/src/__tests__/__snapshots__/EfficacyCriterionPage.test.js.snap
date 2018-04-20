@@ -231,6 +231,514 @@ Array [
         </em>
       </b>
     </p>
+    <h1>
+      Before first study component
+    </h1>
+    <div
+      className="u-mt45 u-mb30"
+    >
+      <div
+        className="m-form-field m-form-field__text"
+      >
+        <label
+          className="a-label a-label__heading"
+          for="efficacy-crt-question-1_study"
+        >
+          Study name
+          <small
+            className="a-label_helper a-label_helper__block"
+          >
+            Enter name of study you’re reviewing
+          </small>
+        </label>
+        <input
+          className="a-text-input a-text-input__full"
+          id="efficacy-crt-question-#1study"
+          onChange={[Function]}
+          type="text"
+          value="efficacy-crt-question-#1study"
+        />
+      </div>
+    </div>
+    <ol
+      className="m-list__unstyled"
+    >
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            1.1
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              class="o-survey_question"
+            >
+              <p>
+                Does the study use a comparison group? (e.g., state averages, students not participating in the intervention)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.1#1a"
+                  name="efficacy-crt-question-1.1.1#1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.1#1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.1#1b"
+                  name="efficacy-crt-question-1.1.1#1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.1#1b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.1#1c"
+                  name="efficacy-crt-question-1.1.1#1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.1#1c"
+                >
+                  NA
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              class="o-survey_question"
+            >
+              <p>
+                Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?
+              </p>
+              <p
+                class="o-survey_question-helper"
+              >
+                Beneficial, but not essential.
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.2#1a"
+                  name="efficacy-crt-question-1.1.2#1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.2#1a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.2#1b"
+                  name="efficacy-crt-question-1.1.2#1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.2#1b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.2#1c"
+                  name="efficacy-crt-question-1.1.2#1"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.2#1c"
+                >
+                  NA
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div
+      className="m-form-field m-form-field__textarea"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="efficacy-crt-notes-optional-1"
+      >
+        My notes  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+        <small
+          className="a-label_helper a-label_helper__block"
+        >
+          Anything you want to note about this study? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+        </small>
+      </label>
+      <textarea
+        className="a-text-input a-text-input__full u-mb30"
+        id="efficacy-crt-notes-optional-1"
+        onChange={[Function]}
+        rows="6"
+        value={undefined}
+      />
+    </div>
+    <h1>
+      Between first & Second study component
+    </h1>
+    <div
+      className="u-mt45 u-mb30"
+    >
+      <div
+        className="l-survey-top"
+      >
+        <button
+          className="a-btn a-btn__link"
+        >
+          Remove
+          <span
+            className="a-icon a-icon__space-before"
+          >
+            <svg
+              class="cf-icon-svg"
+              viewBox="0 0 1000 1200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        className="m-form-field m-form-field__text"
+      >
+        <label
+          className="a-label a-label__heading"
+          for="efficacy-crt-question-1_study"
+        >
+          Study name
+          <small
+            className="a-label_helper a-label_helper__block"
+          >
+            Enter name of study you’re reviewing
+          </small>
+        </label>
+        <input
+          className="a-text-input a-text-input__full"
+          id="efficacy-crt-question-#2study"
+          onChange={[Function]}
+          type="text"
+          value="efficacy-crt-question-#2study"
+        />
+      </div>
+    </div>
+    <ol
+      className="m-list__unstyled"
+    >
+      <li
+        className="o-survey"
+      >
+        <div
+          className="o-survey_number"
+        >
+          <h4
+            className="h3"
+          >
+            1.1
+          </h4>
+        </div>
+        <div
+          className="o-survey_indicator"
+        >
+          <h5
+            className="h3"
+          >
+            Indicator
+          </h5>
+          <p>
+            The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.
+          </p>
+        </div>
+        <div
+          className="o-survey_components"
+        >
+          <h5
+            className="h3"
+          >
+            Component
+          </h5>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              class="o-survey_question"
+            >
+              <p>
+                Does the study use a comparison group? (e.g., state averages, students not participating in the intervention)
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.1#2a"
+                  name="efficacy-crt-question-1.1.1#2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.1#2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.1#2b"
+                  name="efficacy-crt-question-1.1.1#2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.1#2b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.1#2c"
+                  name="efficacy-crt-question-1.1.1#2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.1#2c"
+                >
+                  NA
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-survey_component"
+          >
+            <div
+              class="o-survey_question"
+            >
+              <p>
+                Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?
+              </p>
+              <p
+                class="o-survey_question-helper"
+              >
+                Beneficial, but not essential.
+              </p>
+            </div>
+            <div
+              className="o-survey_answer"
+            >
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.2#2a"
+                  name="efficacy-crt-question-1.1.2#2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.2#2a"
+                >
+                  Yes
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.2#2b"
+                  name="efficacy-crt-question-1.1.2#2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.2#2b"
+                >
+                  No
+                </label>
+              </div>
+              <div
+                className="m-form-field m-form-field__radio m-form-field__lg-target"
+              >
+                <input
+                  checked={false}
+                  className="a-radio"
+                  id="efficacy-crt-question-1.1.2#2c"
+                  name="efficacy-crt-question-1.1.2#2"
+                  onChange={[Function]}
+                  type="radio"
+                  value="0"
+                />
+                <label
+                  className="a-label"
+                  htmlFor="efficacy-crt-question-1.1.2#2c"
+                >
+                  NA
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div
+      className="m-form-field m-form-field__textarea"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="efficacy-crt-notes-optional-1"
+      >
+        My notes  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+        <small
+          className="a-label_helper a-label_helper__block"
+        >
+          Anything you want to note about this study? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+        </small>
+      </label>
+      <textarea
+        className="a-text-input a-text-input__full u-mb30"
+        id="efficacy-crt-notes-optional-1"
+        onChange={[Function]}
+        rows="6"
+        value={undefined}
+      />
+    </div>
     <div
       className="u-mt45 u-mb30"
     >

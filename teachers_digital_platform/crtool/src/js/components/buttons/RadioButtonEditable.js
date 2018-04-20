@@ -2,6 +2,11 @@
 import React from "react";
 
 export default class RadioButtonEditable extends React.Component {
+    
+    generateUniqueId() {
+        return this.props.currentCriterionRefId + this.props.uniqueId;
+    }
+
     render() {
         if (!this.props.showButton) {
             return null;
@@ -9,15 +14,14 @@ export default class RadioButtonEditable extends React.Component {
             return (
                 <div className="m-form-field m-form-field__radio m-form-field__lg-target">
                     <input className="a-radio" type="radio" value="0"
-                        id={this.props.criterionRefId}
-                        name={this.props.criterionRefId}
-                        ref={this.props.criterionRefId}
+                        id={this.generateUniqueId()}
+                        name={this.props.currentCriterionRefId}
+                        ref={this.props.currentCriterionRefId}
                         checked={this.props.isChecked}
-                        onChange={() => {this.criterionAnswerChanged()}} />
+                        onChange={() => {this.props.radioButtonClicked()}} />
 
-                    <label className="a-label" htmlFor={this.props.criterionRefId}>
+                    <label className="a-label" htmlFor={this.generateUniqueId()}>
                         {this.props.radioText}
-                            <br /> JUNK
                     </label>
                 </div>
             );
