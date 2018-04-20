@@ -99,7 +99,7 @@ export default class SummaryCirterionComponent extends React.Component {
                         id="utility-crt-notes-optional-3"
                         ref="utility-crt-notes-optional-3"
                         value={this.props.criterionAnswers['utility-crt-notes-optional-3']}
-                        onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-3', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr

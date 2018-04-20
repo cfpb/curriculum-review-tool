@@ -12,6 +12,7 @@ import FinalSummaryPage from "./pages/FinalSummaryPage";
 import FinalPrintPage from "./pages/FinalPrintPage";
 import DateTimeFormater from "../dateTimeFormatter";
 import Repository from "../repository";
+import CriterionService from "../criterionService";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -62,89 +63,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         window.location = startPage;
     }
 
-    isCriterionValueEmpty(key, alteredCriterionObjects) {
-        return alteredCriterionObjects[key] === "" || alteredCriterionObjects === undefined;
-    }
-
-    isKeyInCriterion(key, currentCriterion) {
-        return key.startsWith(currentCriterion.toLowerCase());
-    }
-
-    /*
-     * Verify all the criteria for a single criterion has been met
-     */
-    isCriterionComplete(alteredCriterionObjects, currentCriterion) {
-        let criterionScore = {
-            all_yes:true,
-            total_yes:0,
-            total_no:0,
-        }
-
-        let isCriterionCompleteReturnValue = true;
-        let currentCriterionGroup = this.getCriterionGroupName(currentCriterion);
-        for (var key in alteredCriterionObjects) {
-            if (this.isKeyInCriterion(key, currentCriterion) &&
-                this.isRequiredCriterion(key) &&
-                this.isCriterionValueEmpty(key, alteredCriterionObjects)) {
-
-                criterionScore.all_yes = false;
-                isCriterionCompleteReturnValue = false;
-            }
-            else if (this.isKeyInCriterion(key, currentCriterion) &&
-                     this.isRequiredCriterion(key)) {
-
-                if (alteredCriterionObjects[key] === "no") {
-                    criterionScore.total_no += 1;
-                    criterionScore.all_yes = false;
-                }
-                else {
-                    criterionScore.total_yes += 1;
-                }
-            }
-        }
-
-        this.setCriterionScoreState(currentCriterionGroup, criterionScore);
-        return isCriterionCompleteReturnValue;
-    }
-
-    getCriterionGroupName(currentCriterion) {
-        if (currentCriterion.includes(".")){
-            return (currentCriterion.substring(0, currentCriterion.lastIndexOf(".")));
-        }
-
-        return currentCriterion;
-    }
-
-    /*
-     * Verify all the criteria for a whole distinctive has been met
-     */
-    isDistinctiveComplete(alteredCriterionObjects, changedDistinctive) {
-        for (var statusKey in this.state.criterionCompletionStatuses) {
-            if (this.isCriterionInDistinctive(statusKey, changedDistinctive) &&
-                this.state.criterionCompletionStatuses[statusKey] !== C.ICON_CHECK_ROUND) {
-                    return false;
-            }
-        }
-
-        for (var criterionKey in alteredCriterionObjects) {
-            if (this.isCriterionInDistinctive(criterionKey, changedDistinctive) &&
-                this.isRequiredCriterion(criterionKey) &&
-                this.isCriterionValueEmpty(criterionKey, alteredCriterionObjects)) {
-                    return false;
-            }
-        }
-
-        return true;
-    }
-
-    isCriterionInDistinctive(key, changedDistinctive) {
-        return key.startsWith(changedDistinctive.toLowerCase());
-    }
-
-    isRequiredCriterion(key) {
-        return !key.includes("optional");
-    }
-
     initializeAnswerObjects(fields) {
         let alteredCriterionScores =  this.state.criterionScores;
         let alteredCriterionObjects =  this.state.criterionAnswers;
@@ -155,7 +73,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             }
 
             let currentCriterion = key.substring(0, key.indexOf("."));
-            let currentCriterionGroup = this.getCriterionGroupName(currentCriterion);
+            let currentCriterionGroup = CriterionService.getCriterionGroupName(currentCriterion);
             if (alteredCriterionStatuses[currentCriterion] === undefined) {
                 alteredCriterionStatuses[currentCriterion] = C.STATUS_IN_START;
 
@@ -173,32 +91,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveCriterionCompletionStatuses(this, alteredCriterionStatuses);
     }
 
-    /*
-     * The value of a criterion has changed we need to update localStorage
-     * and update any other states in the application
-     */
-    changeCriterionAnswer(distinctive, key, val) {
-        let alteredCriterionObjects =  this.state.criterionAnswers
-        alteredCriterionObjects[key] = val;
-
-        alteredCriterionObjects = this.setCriterionAnswersState(alteredCriterionObjects);
-
-        this.calculateCriterionCompletion(alteredCriterionObjects, distinctive, key);
-        this.calculateDistinctiveCompletion(alteredCriterionObjects, distinctive);
-    }
-
-    calculateCriterionCompletion(alteredCriterionObjects, changedDistinctive, key) {
-        let criterionKey = key.substring(0, key.indexOf("."));
-
-        if (this.isCriterionComplete(alteredCriterionObjects, criterionKey)) {
-            // Use the ICON Check so we can just pass that down and now have to add logic later
-            this.setCriterionCompletionStatuses(criterionKey, C.ICON_CHECK_ROUND);
-        }
-        else {
-            this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_PROGRESS);
-        }
-    }
-
     setDistinctiveBackToInProgress(distinctiveName) {
         Repository.setDistinctiveStatus(this, distinctiveName, C.STATUS_IN_PROGRESS);
         Repository.saveCurrentPage(this, distinctiveName);
@@ -208,21 +100,16 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveCurrentPage(this, distinctiveName);
     }
 
+    criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
+        CriterionService.changeCriterionAnswer(this, distinctiveName, changedQuestion, newValue);
+    }
+
     setCriterionStatusToInProgress(criterionKey) {
-        this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_PROGRESS);
+        CriterionService.setCriterionCompletionStatuses(this, criterionKey, C.STATUS_IN_PROGRESS);
     }
 
     setCriterionStatusToInStart(criterionKey) {
-        this.setCriterionCompletionStatuses(criterionKey, C.STATUS_IN_START);
-    }
-
-    calculateDistinctiveCompletion(alteredCriterionObjects, changedDistinctive) {
-        if (this.isDistinctiveComplete(alteredCriterionObjects, changedDistinctive)) {
-            Repository.setSummaryButtonEnabled(this, changedDistinctive, C.STATUS_COMPLETE);
-        }
-        else {
-            Repository.setDistinctiveStatus(this, changedDistinctive, C.STATUS_IN_PROGRESS);
-        }
+        CriterionService.setCriterionCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
     }
 
     /*
@@ -243,39 +130,6 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             Repository.saveDistinctiveCompletionDates(this, distinctiveCompletionDates);
         }
-    }
-
-    /*
-     * Manage state for specified criterion
-     */
-    setCriterionScoreState(key, val) {
-        let alteredCriterionScores =  this.state.criterionScores;
-        alteredCriterionScores[key] = val;
-
-        Repository.saveCriterionScores(this, alteredCriterionScores);
-        return alteredCriterionScores;
-    }
-
-    /*
-     * Manage state for specified criterion
-     */
-    setCriterionAnswersState(key, val) {
-        let alteredCriterionAnswers =  this.state.criterionAnswers
-        alteredCriterionAnswers[key] = val;
-
-        Repository.saveCriterionAnswers(this, alteredCriterionAnswers);
-        return alteredCriterionAnswers;
-    }
-
-    /*
-     * Save the Completion Status of each criterion.  This will allow
-     * Ease of work flow when loading pages based on Criterion status
-     */
-    setCriterionCompletionStatuses(criterion, status) {
-        let alteredData =  this.state.criterionCompletionStatuses
-        alteredData[criterion] = status;
-
-        Repository.saveCriterionCompletionStatuses(this, alteredData);
     }
 
     handleFinalSummaryButtonClick() {
@@ -305,7 +159,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
-            changeCriterionAnswer:this.changeCriterionAnswer.bind(this),
+            changeCriterionAnswer:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
