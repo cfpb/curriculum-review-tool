@@ -9,6 +9,24 @@ const Repository = {
     },
 
     /*
+     * Establish default empty states for application data
+     */
+    resetApplicationData() {
+        this.clearAllData();
+        this.saveCurrentPage(this, C.START_PAGE);
+
+        this.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
+        this.setDistinctiveStatus(this, C.UTILITY_PAGE, C.STATUS_IN_START);
+        this.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
+        this.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
+
+        this.saveCriterionScores(this, {});
+        this.saveCriterionAnswers(this, {});
+        this.saveDistinctiveCompletionDates(this, {});
+        this.saveCriterionGroupCompletionStatuses(this, {});
+    },
+
+    /*
      * Get data from localStorage
      */
     getCurrentPage() {
@@ -102,7 +120,7 @@ const Repository = {
     /*
      * Set state values for all criterion completion statuses
      */
-    saveCriterionCompletionStatuses(component, alteredCriterionCompletionStatues) {
+    saveCriterionGroupCompletionStatuses(component, alteredCriterionCompletionStatues) {
         localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredCriterionCompletionStatues));
         component.setState({criterionCompletionStatuses: alteredCriterionCompletionStatues});
     },

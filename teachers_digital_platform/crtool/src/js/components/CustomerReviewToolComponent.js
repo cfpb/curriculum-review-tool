@@ -46,19 +46,12 @@ export default class CustomerReviewToolComponent extends React.Component {
      * Used for starting a new review
      */
     clearLocalStorage() {
-        Repository.clearAllData();
-        Repository.saveCurrentPage(this, C.START_PAGE);
+        Repository.resetApplicationData();
 
-        Repository.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
-        Repository.setDistinctiveStatus(this, C.UTILITY_PAGE, C.STATUS_IN_START);
-        Repository.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
-        Repository.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
+        this.navigateBackToStartPage();
+    }
 
-        Repository.saveCriterionScores(this, {});
-        Repository.saveCriterionAnswers(this, {});
-        Repository.saveDistinctiveCompletionDates(this, {});
-        Repository.saveCriterionCompletionStatuses(this, {});
-
+    navigateBackToStartPage() {
         let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
         window.location = startPage;
     }
@@ -104,11 +97,11 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     setCriterionStatusToInProgress(criterionKey) {
-        CriterionService.setCriterionCompletionStatuses(this, criterionKey, C.STATUS_IN_PROGRESS);
+        CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_PROGRESS);
     }
 
     setCriterionStatusToInStart(criterionKey) {
-        CriterionService.setCriterionCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
+        CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
     }
 
     render() {

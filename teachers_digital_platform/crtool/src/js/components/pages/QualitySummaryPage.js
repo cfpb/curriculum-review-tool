@@ -58,7 +58,7 @@ export default class QualitySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                    <button className="a-btn a-btn__link">
+                <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.QUALITY_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"

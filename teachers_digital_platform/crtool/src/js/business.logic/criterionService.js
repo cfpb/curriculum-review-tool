@@ -48,7 +48,7 @@ const CriterionService = {
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
 
-        this.calculateCriterionCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
+        this.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
         this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
     },
 
@@ -65,10 +65,12 @@ const CriterionService = {
         }
     },
 
-        /*
+    /*
      * Verify all the criteria for a whole distinctive has been met
      */
     isDistinctiveComplete(component, alteredCriterionObjects, changedDistinctive) {
+
+        // Check all the criterion group statuses
         for (var statusKey in component.state.criterionCompletionStatuses) {
             if (this.isCriterionInDistinctive(statusKey, changedDistinctive) &&
                 !statusKey.includes("optional") &&
@@ -77,6 +79,7 @@ const CriterionService = {
             }
         }
 
+        // Check each individual criterion question
         for (var criterionKey in alteredCriterionObjects) {
             if (this.isCriterionInDistinctive(criterionKey, changedDistinctive) &&
                 this.isRequiredCriterion(criterionKey) &&
@@ -85,22 +88,23 @@ const CriterionService = {
             }
         }
 
+        // Did not find any failing conditions so this Distinctive is complete
         return true;
     },
 
     /*
      * Method that determins if the current Criterion for the given dimension is complete
      */
-    calculateCriterionCompletion(component, alteredCriterionObjects, changedDistinctive, changedQuestion) {
+    calculateCriterionGroupCompletion(component, alteredCriterionObjects, changedDistinctive, changedQuestion) {
         let criterionKey = this.getCriterionQuestionKey(changedQuestion);
 
-        if (this.isCriterionComplete(component, alteredCriterionObjects, criterionKey)) {
+        if (this.isCriterionGroupComplete(component, alteredCriterionObjects, criterionKey)) {
             // Use the ICON_CHECK_ROUND as complete state so we can just pass that 
             // down and now have to add logic later
-            this.setCriterionCompletionStatuses(component, criterionKey, C.ICON_CHECK_ROUND);
+            this.setCriterionGroupCompletionStatuses(component, criterionKey, C.ICON_CHECK_ROUND);
         }
         else {
-            this.setCriterionCompletionStatuses(component, criterionKey, C.STATUS_IN_PROGRESS);
+            this.setCriterionGroupCompletionStatuses(component, criterionKey, C.STATUS_IN_PROGRESS);
         }
     },
 
@@ -108,17 +112,19 @@ const CriterionService = {
      * Save the Completion Status of each criterion.  This will allow
      * Ease of work flow when loading pages based on Criterion status
      */
-    setCriterionCompletionStatuses(component, criterion, status) {
+    setCriterionGroupCompletionStatuses(component, criterion, status) {
         let alteredData =  component.state.criterionCompletionStatuses
         alteredData[criterion] = status;
 
-        Repository.saveCriterionCompletionStatuses(component, alteredData);
+        Repository.saveCriterionGroupCompletionStatuses(component, alteredData);
     },
 
     /*
-     * Verify all the criteria for a single criterion has been met
+     * Verify all the criteria for a single criterion group has been met
      */
-    isCriterionComplete(component, alteredCriterionObjects, currentCriterion) {
+    isCriterionGroupComplete(component, alteredCriterionObjects, currentCriterion) {
+        // We are building a criterionScore object that can be passed 
+        // around and used for multiple scenarios
         let criterionScore = {
             all_yes:true,
             total_yes:0,
@@ -152,6 +158,10 @@ const CriterionService = {
         return isCriterionCompleteReturnValue;
     },
 
+    /*
+     * We need to know if there are Criterion Answer Objects that have not be filled out
+     * This method helps us identify all the "visible" Criterion Answer Objects.
+     */
     initializeAnswerObjects(component, fields) {
         let alteredCriterionScores =  component.state.criterionScores;
         let alteredCriterionObjects =  component.state.criterionAnswers;
@@ -179,7 +189,7 @@ const CriterionService = {
 
         Repository.saveCriterionScores(component, alteredCriterionScores);
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
-        Repository.saveCriterionCompletionStatuses(component, alteredCriterionStatuses);
+        Repository.saveCriterionGroupCompletionStatuses(component, alteredCriterionStatuses);
     },
 
     /*
