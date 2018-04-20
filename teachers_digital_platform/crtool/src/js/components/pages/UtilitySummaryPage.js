@@ -7,8 +7,8 @@ import CurriculumInformation from "../common/CurriculumInformation";
 import SummaryCriterionComponent from "../common/SummaryCriterionComponent";
 
 export default class UtilitySummaryPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.UTILITY_PAGE, key, checkedValue);
+    criterionAnswerChanged(key, checkedValue) {
+        this.props.criterionAnswerChanged(C.UTILITY_PAGE, key, checkedValue);
     }
 
     render() {
@@ -140,7 +140,7 @@ export default class UtilitySummaryPage extends React.Component {
                         id="utility-crt-notes-optional-1"
                         ref="utility-crt-notes-optional-1"
                         value={this.props.criterionAnswers['utility-crt-notes-optional-1']}
-                        onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-1', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-1', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -205,7 +205,7 @@ export default class UtilitySummaryPage extends React.Component {
                         id="utility-crt-notes-optional-2"
                         ref="utility-crt-notes-optional-2"
                         value={this.props.criterionAnswers['utility-crt-notes-optional-2']}
-                        onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-2', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-2', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -364,7 +364,7 @@ export default class UtilitySummaryPage extends React.Component {
                         id="utility-crt-notes-optional-4"
                         ref="utility-crt-notes-optional-4"
                         value={this.props.criterionAnswers['utility-crt-notes-optional-4']}
-                        onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-4', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-4', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -429,7 +429,7 @@ export default class UtilitySummaryPage extends React.Component {
                         id="utility-crt-notes-optional-5"
                         ref="utility-crt-notes-optional-5"
                         value={this.props.criterionAnswers['utility-crt-notes-optional-5']}
-                        onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-5', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-5', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -514,7 +514,7 @@ export default class UtilitySummaryPage extends React.Component {
                             id="utility-crt-assets"
                             ref="utility-crt-assets"
                             value={this.props.criterionAnswers['utility-crt-assets']}
-                            onChange={e=>this.changeCriterionAnswer('utility-crt-assets', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('utility-crt-assets', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -532,7 +532,7 @@ export default class UtilitySummaryPage extends React.Component {
                             id="utility-crt-gaps"
                             ref="utility-crt-gaps"
                             value={this.props.criterionAnswers['utility-crt-gaps']}
-                            onChange={e=>this.changeCriterionAnswer('utility-crt-gaps', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('utility-crt-gaps', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -549,7 +549,7 @@ export default class UtilitySummaryPage extends React.Component {
                             id="utility-crt-overall-notes"
                             ref="utility-crt-overall-notes"
                             value={this.props.criterionAnswers['utility-crt-overall-notes']}
-                            onChange={e=>this.changeCriterionAnswer('utility-crt-overall-notes', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('utility-crt-overall-notes', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

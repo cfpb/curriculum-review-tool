@@ -5,8 +5,8 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class EfficacySummaryPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.EFFICACY_PAGE, key, checkedValue);
+    criterionAnswerChanged(key, checkedValue) {
+        this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
     render() {
@@ -148,7 +148,7 @@ export default class EfficacySummaryPage extends React.Component {
                         id="efficacy-crt-notes-optional-1"
                         ref="efficacy-crt-notes-optional-1"
                         value={this.props.criterionAnswers['efficacy-crt-notes-optional-1']}
-                        onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-1', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-1', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -213,7 +213,7 @@ export default class EfficacySummaryPage extends React.Component {
                         id="efficacy-crt-notes-optional-2"
                         ref="efficacy-crt-notes-optional-2"
                         value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
-                        onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-2', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -301,7 +301,7 @@ export default class EfficacySummaryPage extends React.Component {
                         id="efficacy-crt-notes-optional-3"
                         ref="efficacy-crt-notes-optional-3"
                         value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
-                        onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-3', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -386,7 +386,7 @@ export default class EfficacySummaryPage extends React.Component {
                             id="efficacy-crt-assets"
                             ref="efficacy-crt-assets"
                             value={this.props.criterionAnswers['efficacy-crt-assets']}
-                            onChange={e=>this.changeCriterionAnswer('efficacy-crt-assets', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-assets', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -404,7 +404,7 @@ export default class EfficacySummaryPage extends React.Component {
                             id="efficacy-crt-gaps"
                             ref="efficacy-crt-gaps"
                             value={this.props.criterionAnswers['efficacy-crt-gaps']}
-                            onChange={e=>this.changeCriterionAnswer('efficacy-crt-gaps', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-gaps', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -421,7 +421,7 @@ export default class EfficacySummaryPage extends React.Component {
                             id="efficacy-crt-overall-notes"
                             ref="efficacy-crt-overall-notes"
                             value={this.props.criterionAnswers['efficacy-crt-overall-notes']}
-                            onChange={e=>this.changeCriterionAnswer('efficacy-crt-overall-notes', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-overall-notes', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

@@ -35,7 +35,7 @@ const CriterionService = {
      * The value of a criterion has changed we need to update localStorage
      * and update any other states in the application
      */
-    changeCriterionAnswer(component, distinctive, changedQuestion, newValue) {
+    criterionAnswerChanged(component, distinctive, changedQuestion, newValue) {
         let alteredCriterionObjects =  component.state.criterionAnswers
         alteredCriterionObjects[changedQuestion] = newValue;
 

@@ -6,9 +6,9 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class QualityCriterionPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
+    criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.changeCriterionAnswer(C.QUALITY_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.QUALITY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
@@ -95,7 +95,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 id="quality-crt-text-optional-1.1.1"
                                                 ref="quality-crt-text-optional-1.1.1"
                                                 value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.1', e.target.value)} />
+                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -107,7 +107,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.1"
                                                 ref="quality-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.1a">
                                                 Yes
@@ -121,7 +121,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.1"
                                                 ref="quality-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.1b">
                                                 No
@@ -135,7 +135,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.1"
                                                 ref="quality-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.1', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.1c">
                                                 N/A
@@ -157,7 +157,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.2"
                                                 ref="quality-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.2a">
                                                 Yes
@@ -171,7 +171,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.2"
                                                 ref="quality-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.2b">
                                                 No
@@ -185,7 +185,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.2"
                                                 ref="quality-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.2', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.2c">
                                                 N/A
@@ -206,7 +206,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 id="quality-crt-text-optional-1.1.3"
                                                 ref="quality-crt-text-optional-1.1.3"
                                                 value={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.1.3', e.target.value)} />
+                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.3', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -218,7 +218,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.3"
                                                 ref="quality-crt-question-1.1.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.3a">
                                                 Yes
@@ -232,7 +232,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.3"
                                                 ref="quality-crt-question-1.1.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.3b">
                                                 No
@@ -246,7 +246,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.1.3"
                                                 ref="quality-crt-question-1.1.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.1.3"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.1.3', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.1.3c">
                                                 N/A
@@ -279,7 +279,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.2.1"
                                                 ref="quality-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.2.1a">
                                                 Yes
@@ -293,7 +293,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.2.1"
                                                 ref="quality-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.2.1b">
                                                 No
@@ -307,7 +307,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.2.1"
                                                 ref="quality-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.1', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.2.1c">
                                                 N/A
@@ -328,7 +328,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.2.2"
                                                 ref="quality-crt-question-1.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.2.2a">
                                                 Yes
@@ -342,7 +342,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.2.2"
                                                 ref="quality-crt-question-1.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.2.2b">
                                                 No
@@ -373,7 +373,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 id="quality-crt-text-optional-1.3.1"
                                                 ref="quality-crt-text-optional-1.3.1"
                                                 value={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.1', e.target.value)} />
+                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.1', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -385,7 +385,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.1"
                                                 ref="quality-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.1a">
                                                 Yes
@@ -399,7 +399,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.1"
                                                 ref="quality-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.1b">
                                                 No
@@ -413,7 +413,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.1"
                                                 ref="quality-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.1', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.1c">
                                                 N/A
@@ -433,7 +433,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 id="quality-crt-text-optional-1.3.2"
                                                 ref="quality-crt-text-optional-1.3.2"
                                                 value={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
-                                                onChange={e=>this.changeCriterionAnswer('quality-crt-text-optional-1.3.2', e.target.value)} />
+                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.2', e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -445,7 +445,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.2"
                                                 ref="quality-crt-question-1.3.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.2a">
                                                 Yes
@@ -459,7 +459,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.2"
                                                 ref="quality-crt-question-1.3.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.2b">
                                                 No
@@ -481,7 +481,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.3"
                                                 ref="quality-crt-question-1.3.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.3a">
                                                 Yes
@@ -495,7 +495,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-1.3.3"
                                                 ref="quality-crt-question-1.3.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-1.3.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-1.3.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.3b">
                                                 No
@@ -519,7 +519,7 @@ export default class QualityCriterionPage extends React.Component {
                                     id="quality-crt-notes-optional-1"
                                     ref="quality-crt-notes-optional-1"
                                     value={this.props.criterionAnswers['quality-crt-notes-optional-1']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-1', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -562,7 +562,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.1"
                                                 ref="quality-crt-question-2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.1a">
                                                 Yes
@@ -576,7 +576,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.1"
                                                 ref="quality-crt-question-2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.1b">
                                                 No
@@ -609,7 +609,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.2.1"
                                                 ref="quality-crt-question-2.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.2.1a">
                                                 Yes
@@ -623,7 +623,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.2.1"
                                                 ref="quality-crt-question-2.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.2.1b">
                                                 No
@@ -644,7 +644,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.2.2"
                                                 ref="quality-crt-question-2.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.2.2a">
                                                 Yes
@@ -658,7 +658,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.2.2"
                                                 ref="quality-crt-question-2.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.2.2b">
                                                 No
@@ -691,7 +691,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.3"
                                                 ref="quality-crt-question-2.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.3a">
                                                 Yes
@@ -705,7 +705,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-2.3"
                                                 ref="quality-crt-question-2.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-2.3b">
                                                 No
@@ -729,7 +729,7 @@ export default class QualityCriterionPage extends React.Component {
                                     id="quality-crt-notes-optional-2"
                                     ref="quality-crt-notes-optional-2"
                                     value={this.props.criterionAnswers['quality-crt-notes-optional-2']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-2', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -772,7 +772,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.1.1"
                                                 ref="quality-crt-question-3.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.1.1a">
                                                 Yes
@@ -786,7 +786,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.1.1"
                                                 ref="quality-crt-question-3.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.1.1b">
                                                 No
@@ -807,7 +807,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.1.2"
                                                 ref="quality-crt-question-3.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.1.2a">
                                                 Yes
@@ -821,7 +821,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.1.2"
                                                 ref="quality-crt-question-3.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.1.2b">
                                                 No
@@ -854,7 +854,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.2.1"
                                                 ref="quality-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.2.1a">
                                                 Yes
@@ -868,7 +868,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.2.1"
                                                 ref="quality-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.2.1b">
                                                 No
@@ -889,7 +889,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.2.2"
                                                 ref="quality-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.2.2a">
                                                 Yes
@@ -903,7 +903,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.2.2"
                                                 ref="quality-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.2.2b">
                                                 No
@@ -936,7 +936,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.3.1"
                                                 ref="quality-crt-question-3.3.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.3.1a">
                                                 Yes
@@ -950,7 +950,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.3.1"
                                                 ref="quality-crt-question-3.3.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.3.1b">
                                                 No
@@ -971,7 +971,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.3.2"
                                                 ref="quality-crt-question-3.3.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.3.2a">
                                                 Yes
@@ -985,7 +985,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.3.2"
                                                 ref="quality-crt-question-3.3.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.3.2b">
                                                 No
@@ -1007,7 +1007,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.3.3"
                                                 ref="quality-crt-question-3.3.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.3.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.3.3a">
                                                 Yes
@@ -1021,7 +1021,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-3.3.3"
                                                 ref="quality-crt-question-3.3.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-3.3.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-3.3.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-3.3.3b">
                                                 No
@@ -1045,7 +1045,7 @@ export default class QualityCriterionPage extends React.Component {
                                     id="quality-crt-notes-optional-3"
                                     ref="quality-crt-notes-optional-3"
                                     value={this.props.criterionAnswers['quality-crt-notes-optional-3']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-3', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1088,7 +1088,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.1"
                                                 ref="quality-crt-question-4.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.1a">
                                                 Yes
@@ -1102,7 +1102,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.1"
                                                 ref="quality-crt-question-4.1.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.1b">
                                                 No
@@ -1123,7 +1123,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.2"
                                                 ref="quality-crt-question-4.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.2a">
                                                 Yes
@@ -1137,7 +1137,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.2"
                                                 ref="quality-crt-question-4.1.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.2b">
                                                 No
@@ -1158,7 +1158,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.3"
                                                 ref="quality-crt-question-4.1.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.3a">
                                                 Yes
@@ -1172,7 +1172,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.3"
                                                 ref="quality-crt-question-4.1.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.3b">
                                                 No
@@ -1193,7 +1193,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.4"
                                                 ref="quality-crt-question-4.1.4"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.4a">
                                                 Yes
@@ -1207,7 +1207,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.1.4"
                                                 ref="quality-crt-question-4.1.4"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.1.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.1.4b">
                                                 No
@@ -1240,7 +1240,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.1"
                                                 ref="quality-crt-question-4.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.1a">
                                                 Yes
@@ -1254,7 +1254,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.1"
                                                 ref="quality-crt-question-4.2.1"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.1b">
                                                 No
@@ -1275,7 +1275,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.2"
                                                 ref="quality-crt-question-4.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.2a">
                                                 Yes
@@ -1289,7 +1289,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.2"
                                                 ref="quality-crt-question-4.2.2"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.2b">
                                                 No
@@ -1310,7 +1310,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.3"
                                                 ref="quality-crt-question-4.2.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.3a">
                                                 Yes
@@ -1324,7 +1324,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.3"
                                                 ref="quality-crt-question-4.2.3"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.3b">
                                                 No
@@ -1345,7 +1345,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.4"
                                                 ref="quality-crt-question-4.2.4"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.4a">
                                                 Yes
@@ -1359,7 +1359,7 @@ export default class QualityCriterionPage extends React.Component {
                                                 name="quality-crt-question-4.2.4"
                                                 ref="quality-crt-question-4.2.4"
                                                 checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('quality-crt-question-4.2.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-4.2.4b">
                                                 No
@@ -1383,7 +1383,7 @@ export default class QualityCriterionPage extends React.Component {
                                     id="quality-crt-notes-optional-4"
                                     ref="quality-crt-notes-optional-4"
                                     value={this.props.criterionAnswers['quality-crt-notes-optional-4']}
-                                    onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-4', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

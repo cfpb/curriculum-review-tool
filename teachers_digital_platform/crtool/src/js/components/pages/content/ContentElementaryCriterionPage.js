@@ -6,9 +6,9 @@ import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentElementaryCriterionPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
+    criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
@@ -91,7 +91,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-1.1"
                                                 ref="content-elementary-crt-question-1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.1a">
                                                 Yes
@@ -105,7 +105,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-1.1"
                                                 ref="content-elementary-crt-question-1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.1b">
                                                 No
@@ -138,7 +138,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-1.2"
                                                 ref="content-elementary-crt-question-1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.2a">
                                                 Yes
@@ -152,7 +152,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-1.2"
                                                 ref="content-elementary-crt-question-1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-1.2b">
                                                 No
@@ -176,7 +176,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     id="content-elementary-crt-notes-optional-1"
                                     ref="content-elementary-crt-notes-optional-1"
                                     value={this.props.criterionAnswers['content-elementary-crt-notes-optional-1']}
-                                    onChange={e=>this.changeCriterionAnswer('content-elementary-crt-notes-optional-1', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.1.1"
                                                 ref="content-elementary-crt-question-2.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.1.1a">
                                                 Yes
@@ -233,7 +233,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.1.1"
                                                 ref="content-elementary-crt-question-2.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.1.1b">
                                                 No
@@ -254,7 +254,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.1.2"
                                                 ref="content-elementary-crt-question-2.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.1.2a">
                                                 Yes
@@ -268,7 +268,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.1.2"
                                                 ref="content-elementary-crt-question-2.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.1.2b">
                                                 No
@@ -301,7 +301,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.2"
                                                 ref="content-elementary-crt-question-2.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.2a">
                                                 Yes
@@ -315,7 +315,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.2"
                                                 ref="content-elementary-crt-question-2.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.2b">
                                                 No
@@ -348,7 +348,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.3"
                                                 ref="content-elementary-crt-question-2.3"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.3a">
                                                 Yes
@@ -362,7 +362,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-2.3"
                                                 ref="content-elementary-crt-question-2.3"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-2.3b">
                                                 No
@@ -386,7 +386,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     id="content-elementary-crt-notes-optional-2"
                                     ref="content-elementary-crt-notes-optional-2"
                                     value={this.props.criterionAnswers['content-elementary-crt-notes-optional-2']}
-                                    onChange={e=>this.changeCriterionAnswer('content-elementary-crt-notes-optional-2', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -429,7 +429,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.1.1"
                                                 ref="content-elementary-crt-question-3.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.1.1a">
                                                 Yes
@@ -443,7 +443,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.1.1"
                                                 ref="content-elementary-crt-question-3.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.1.1b">
                                                 No
@@ -464,7 +464,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.1.2"
                                                 ref="content-elementary-crt-question-3.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.1.2a">
                                                 Yes
@@ -478,7 +478,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.1.2"
                                                 ref="content-elementary-crt-question-3.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.1.2b">
                                                 No
@@ -511,7 +511,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.1"
                                                 ref="content-elementary-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.1a">
                                                 Yes
@@ -525,7 +525,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.1"
                                                 ref="content-elementary-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.1b">
                                                 No
@@ -546,7 +546,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.2"
                                                 ref="content-elementary-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.2a">
                                                 Yes
@@ -560,7 +560,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.2"
                                                 ref="content-elementary-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.2b">
                                                 No
@@ -581,7 +581,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.3"
                                                 ref="content-elementary-crt-question-3.2.3"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.3a">
                                                 Yes
@@ -595,7 +595,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.3"
                                                 ref="content-elementary-crt-question-3.2.3"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.3b">
                                                 No
@@ -616,7 +616,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.4"
                                                 ref="content-elementary-crt-question-3.2.4"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.4a">
                                                 Yes
@@ -630,7 +630,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-3.2.4"
                                                 ref="content-elementary-crt-question-3.2.4"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-3.2.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-3.2.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-3.2.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-3.2.4b">
                                                 No
@@ -654,7 +654,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     id="content-elementary-crt-notes-optional-3"
                                     ref="content-elementary-crt-notes-optional-3"
                                     value={this.props.criterionAnswers['content-elementary-crt-notes-optional-3']}
-                                    onChange={e=>this.changeCriterionAnswer('content-elementary-crt-notes-optional-3', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -697,7 +697,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-4.1.1"
                                                 ref="content-elementary-crt-question-4.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-4.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-4.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-4.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-4.1.1a">
                                                 Yes
@@ -711,7 +711,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-4.1.1"
                                                 ref="content-elementary-crt-question-4.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-4.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-4.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-4.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-4.1.1b">
                                                 No
@@ -732,7 +732,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-4.1.2"
                                                 ref="content-elementary-crt-question-4.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-4.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-4.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-4.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-4.1.2a">
                                                 Yes
@@ -746,7 +746,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-4.1.2"
                                                 ref="content-elementary-crt-question-4.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-4.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-4.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-4.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-4.1.2b">
                                                 No
@@ -770,7 +770,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     id="content-elementary-crt-notes-optional-4"
                                     ref="content-elementary-crt-notes-optional-4"
                                     value={this.props.criterionAnswers['content-elementary-crt-notes-optional-4']}
-                                    onChange={e=>this.changeCriterionAnswer('content-elementary-crt-notes-optional-4', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -813,7 +813,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-5.1.1"
                                                 ref="content-elementary-crt-question-5.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-5.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-5.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-5.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-5.1.1a">
                                                 Yes
@@ -827,7 +827,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-5.1.1"
                                                 ref="content-elementary-crt-question-5.1.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-5.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-5.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-5.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-5.1.1b">
                                                 No
@@ -848,7 +848,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-5.1.2"
                                                 ref="content-elementary-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-5.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-5.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-5.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-5.1.2a">
                                                 Yes
@@ -862,7 +862,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-5.1.2"
                                                 ref="content-elementary-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-5.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-5.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-5.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-5.1.2b">
                                                 No
@@ -886,7 +886,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     id="content-elementary-crt-notes-optional-5"
                                     ref="content-elementary-crt-notes-optional-5"
                                     value={this.props.criterionAnswers['content-elementary-crt-notes-optional-5']}
-                                    onChange={e=>this.changeCriterionAnswer('content-elementary-crt-notes-optional-5', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -929,7 +929,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-6.1"
                                                 ref="content-elementary-crt-question-6.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-6.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-6.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-6.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-6.1a">
                                                 Yes
@@ -943,7 +943,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                 name="content-elementary-crt-question-6.1"
                                                 ref="content-elementary-crt-question-6.1"
                                                 checked={this.props.criterionAnswers["content-elementary-crt-question-6.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-elementary-crt-question-6.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-6.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-elementary-crt-question-6.1b">
                                                 No
@@ -967,7 +967,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     id="content-elementary-crt-notes-optional-6"
                                     ref="content-elementary-crt-notes-optional-6"
                                     value={this.props.criterionAnswers['content-elementary-crt-notes-optional-6']}
-                                    onChange={e=>this.changeCriterionAnswer('content-elementary-crt-notes-optional-6', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-6', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

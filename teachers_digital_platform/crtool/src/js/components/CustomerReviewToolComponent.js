@@ -101,7 +101,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
-        CriterionService.changeCriterionAnswer(this, distinctiveName, changedQuestion, newValue);
+        CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
     }
 
     setCriterionStatusToInProgress(criterionKey) {
@@ -159,7 +159,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
-            changeCriterionAnswer:this.criterionAnswerChanged.bind(this),
+            criterionAnswerChanged:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),

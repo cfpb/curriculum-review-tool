@@ -9,7 +9,7 @@ const contentProps = {
     currentPage:"ContentCriterionPage",
     criterionAnswers: {},
     criterionNotes:{},
-    changeCriterionAnswer: _changeContentRadio.bind(this),
+    criterionAnswerChanged: _changeContentRadio.bind(this),
     changeCriterionNotes:_changeContentNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
     initializeAnswerObjects:(() => { }),

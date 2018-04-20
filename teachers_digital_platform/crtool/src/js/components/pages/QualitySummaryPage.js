@@ -5,8 +5,8 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class QualitySummaryPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.QUALITY_PAGE, key, checkedValue);
+    criterionAnswerChanged(key, checkedValue) {
+        this.props.criterionAnswerChanged(C.QUALITY_PAGE, key, checkedValue);
     }
 
     render() {
@@ -148,7 +148,7 @@ export default class QualitySummaryPage extends React.Component {
                         id="quality-crt-notes-optional-1"
                         ref="quality-crt-notes-optional-1"
                         value={this.props.criterionAnswers['quality-crt-notes-optional-1']}
-                        onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-1', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-1', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -213,7 +213,7 @@ export default class QualitySummaryPage extends React.Component {
                         id="quality-crt-notes-optional-2"
                         ref="quality-crt-notes-optional-2"
                         value={this.props.criterionAnswers['quality-crt-notes-optional-2']}
-                        onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-2', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-2', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -301,7 +301,7 @@ export default class QualitySummaryPage extends React.Component {
                         id="quality-crt-notes-optional-3"
                         ref="quality-crt-notes-optional-3"
                         value={this.props.criterionAnswers['quality-crt-notes-optional-3']}
-                        onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-3', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-3', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -366,7 +366,7 @@ export default class QualitySummaryPage extends React.Component {
                         id="quality-crt-notes-optional-4"
                         ref="quality-crt-notes-optional-4"
                         value={this.props.criterionAnswers['quality-crt-notes-optional-4']}
-                        onChange={e=>this.changeCriterionAnswer('quality-crt-notes-optional-4', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-4', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -451,7 +451,7 @@ export default class QualitySummaryPage extends React.Component {
                             id="quality-crt-assets"
                             ref="quality-crt-assets"
                             value={this.props.criterionAnswers['quality-crt-assets']}
-                            onChange={e=>this.changeCriterionAnswer('quality-crt-assets', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('quality-crt-assets', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -469,7 +469,7 @@ export default class QualitySummaryPage extends React.Component {
                             id="quality-crt-gaps"
                             ref="quality-crt-gaps"
                             value={this.props.criterionAnswers['quality-crt-gaps']}
-                            onChange={e=>this.changeCriterionAnswer('quality-crt-gaps', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('quality-crt-gaps', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -486,7 +486,7 @@ export default class QualitySummaryPage extends React.Component {
                             id="quality-crt-overall-notes"
                             ref="quality-crt-overall-notes"
                             value={this.props.criterionAnswers['quality-crt-overall-notes']}
-                            onChange={e=>this.changeCriterionAnswer('quality-crt-overall-notes', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('quality-crt-overall-notes', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

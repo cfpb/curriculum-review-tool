@@ -6,9 +6,9 @@ import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
 
 export default class ContentHighCriterionPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
+    criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
@@ -91,7 +91,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.1"
                                                 ref="content-high-crt-question-1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.1a">
                                                 Yes
@@ -105,7 +105,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.1"
                                                 ref="content-high-crt-question-1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.1b">
                                                 No
@@ -138,7 +138,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.1"
                                                 ref="content-high-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.1a">
                                                 Yes
@@ -152,7 +152,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.1"
                                                 ref="content-high-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.1b">
                                                 No
@@ -173,7 +173,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.2"
                                                 ref="content-high-crt-question-1.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.2a">
                                                 Yes
@@ -187,7 +187,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.2"
                                                 ref="content-high-crt-question-1.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.2b">
                                                 No
@@ -208,7 +208,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.3"
                                                 ref="content-high-crt-question-1.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.3a">
                                                 Yes
@@ -222,7 +222,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.3"
                                                 ref="content-high-crt-question-1.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.3b">
                                                 No
@@ -243,7 +243,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.4"
                                                 ref="content-high-crt-question-1.2.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.4a">
                                                 Yes
@@ -257,7 +257,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.4"
                                                 ref="content-high-crt-question-1.2.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.4b">
                                                 No
@@ -278,7 +278,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.5"
                                                 ref="content-high-crt-question-1.2.5"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.5a">
                                                 Yes
@@ -292,7 +292,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-1.2.5"
                                                 ref="content-high-crt-question-1.2.5"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-1.2.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-1.2.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-1.2.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-1.2.5b">
                                                 No
@@ -316,7 +316,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                     id="content-high-crt-notes-optional-1"
                                     ref="content-high-crt-notes-optional-1"
                                     value={this.props.criterionAnswers['content-high-crt-notes-optional-1']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-1', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -359,7 +359,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.1"
                                                 ref="content-high-crt-question-2.1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.1a">
                                                 Yes
@@ -373,7 +373,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.1"
                                                 ref="content-high-crt-question-2.1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.1b">
                                                 No
@@ -394,7 +394,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.2"
                                                 ref="content-high-crt-question-2.1.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.2a">
                                                 Yes
@@ -408,7 +408,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.2"
                                                 ref="content-high-crt-question-2.1.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.2b">
                                                 No
@@ -429,7 +429,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.3"
                                                 ref="content-high-crt-question-2.1.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.3a">
                                                 Yes
@@ -443,7 +443,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.3"
                                                 ref="content-high-crt-question-2.1.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.3b">
                                                 No
@@ -464,7 +464,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.4"
                                                 ref="content-high-crt-question-2.1.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.4a">
                                                 Yes
@@ -478,7 +478,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.4"
                                                 ref="content-high-crt-question-2.1.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.4b">
                                                 No
@@ -499,7 +499,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.5"
                                                 ref="content-high-crt-question-2.1.5"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.5a">
                                                 Yes
@@ -513,7 +513,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.1.5"
                                                 ref="content-high-crt-question-2.1.5"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.1.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.1.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.1.5b">
                                                 No
@@ -546,7 +546,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.2"
                                                 ref="content-high-crt-question-2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.2a">
                                                 Yes
@@ -560,7 +560,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.2"
                                                 ref="content-high-crt-question-2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.2b">
                                                 No
@@ -593,7 +593,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.3"
                                                 ref="content-high-crt-question-2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.3a">
                                                 Yes
@@ -607,7 +607,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.3"
                                                 ref="content-high-crt-question-2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.3b">
                                                 No
@@ -640,7 +640,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.4.1"
                                                 ref="content-high-crt-question-2.4.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.4.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.4.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.4.1a">
                                                 Yes
@@ -654,7 +654,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.4.1"
                                                 ref="content-high-crt-question-2.4.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.4.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.4.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.4.1b">
                                                 No
@@ -675,7 +675,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.4.2"
                                                 ref="content-high-crt-question-2.4.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.4.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.4.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.4.2a">
                                                 Yes
@@ -689,7 +689,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-2.4.2"
                                                 ref="content-high-crt-question-2.4.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-2.4.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-2.4.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-2.4.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-2.4.2b">
                                                 No
@@ -713,7 +713,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                     id="content-high-crt-notes-optional-2"
                                     ref="content-high-crt-notes-optional-2"
                                     value={this.props.criterionAnswers['content-high-crt-notes-optional-2']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-2', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -756,7 +756,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.1"
                                                 ref="content-high-crt-question-3.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.1a">
                                                 Yes
@@ -770,7 +770,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.1"
                                                 ref="content-high-crt-question-3.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.1b">
                                                 No
@@ -803,7 +803,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.2.1"
                                                 ref="content-high-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.2.1a">
                                                 Yes
@@ -817,7 +817,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.2.1"
                                                 ref="content-high-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.2.1b">
                                                 No
@@ -838,7 +838,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.2.2"
                                                 ref="content-high-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.2.2a">
                                                 Yes
@@ -852,7 +852,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.2.2"
                                                 ref="content-high-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.2.2b">
                                                 No
@@ -873,7 +873,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.2.3"
                                                 ref="content-high-crt-question-3.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.2.3a">
                                                 Yes
@@ -887,7 +887,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-3.2.3"
                                                 ref="content-high-crt-question-3.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-3.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-3.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-3.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-3.2.3b">
                                                 No
@@ -911,7 +911,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                     id="content-high-crt-notes-optional-3"
                                     ref="content-high-crt-notes-optional-3"
                                     value={this.props.criterionAnswers['content-high-crt-notes-optional-3']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-3', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -954,7 +954,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.1"
                                                 ref="content-high-crt-question-4.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.1a">
                                                 Yes
@@ -968,7 +968,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.1"
                                                 ref="content-high-crt-question-4.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.1b">
                                                 No
@@ -1001,7 +1001,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.1"
                                                 ref="content-high-crt-question-4.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.1a">
                                                 Yes
@@ -1015,7 +1015,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.1"
                                                 ref="content-high-crt-question-4.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.1b">
                                                 No
@@ -1036,7 +1036,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.2"
                                                 ref="content-high-crt-question-4.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.2a">
                                                 Yes
@@ -1050,7 +1050,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.2"
                                                 ref="content-high-crt-question-4.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.2b">
                                                 No
@@ -1071,7 +1071,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.3"
                                                 ref="content-high-crt-question-4.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.3a">
                                                 Yes
@@ -1085,7 +1085,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.3"
                                                 ref="content-high-crt-question-4.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.3b">
                                                 No
@@ -1106,7 +1106,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.4"
                                                 ref="content-high-crt-question-4.2.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.4a">
                                                 Yes
@@ -1120,7 +1120,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.2.4"
                                                 ref="content-high-crt-question-4.2.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.2.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.2.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.2.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.2.4b">
                                                 No
@@ -1153,7 +1153,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.1"
                                                 ref="content-high-crt-question-4.3.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.1a">
                                                 Yes
@@ -1167,7 +1167,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.1"
                                                 ref="content-high-crt-question-4.3.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.1b">
                                                 No
@@ -1188,7 +1188,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.2"
                                                 ref="content-high-crt-question-4.3.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.2a">
                                                 Yes
@@ -1202,7 +1202,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.2"
                                                 ref="content-high-crt-question-4.3.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.2b">
                                                 No
@@ -1223,7 +1223,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.3"
                                                 ref="content-high-crt-question-4.3.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.3a">
                                                 Yes
@@ -1237,7 +1237,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.3"
                                                 ref="content-high-crt-question-4.3.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.3b">
                                                 No
@@ -1258,7 +1258,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.4"
                                                 ref="content-high-crt-question-4.3.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.4a">
                                                 Yes
@@ -1272,7 +1272,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.4"
                                                 ref="content-high-crt-question-4.3.4"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.4b">
                                                 No
@@ -1293,7 +1293,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.5"
                                                 ref="content-high-crt-question-4.3.5"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.5a">
                                                 Yes
@@ -1307,7 +1307,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-4.3.5"
                                                 ref="content-high-crt-question-4.3.5"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-4.3.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-4.3.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-4.3.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-4.3.5b">
                                                 No
@@ -1331,7 +1331,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                     id="content-high-crt-notes-optional-4"
                                     ref="content-high-crt-notes-optional-4"
                                     value={this.props.criterionAnswers['content-high-crt-notes-optional-4']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-4', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1374,7 +1374,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.1.1"
                                                 ref="content-high-crt-question-5.1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.1.1a">
                                                 Yes
@@ -1388,7 +1388,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.1.1"
                                                 ref="content-high-crt-question-5.1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.1.1b">
                                                 No
@@ -1409,7 +1409,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.1.2"
                                                 ref="content-high-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.1.2a">
                                                 Yes
@@ -1423,7 +1423,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.1.2"
                                                 ref="content-high-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.1.2b">
                                                 No
@@ -1444,7 +1444,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.1.3"
                                                 ref="content-high-crt-question-5.1.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.1.3a">
                                                 Yes
@@ -1458,7 +1458,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.1.3"
                                                 ref="content-high-crt-question-5.1.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.1.3b">
                                                 No
@@ -1491,7 +1491,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.2.1"
                                                 ref="content-high-crt-question-5.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.2.1a">
                                                 Yes
@@ -1505,7 +1505,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.2.1"
                                                 ref="content-high-crt-question-5.2.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.2.1b">
                                                 No
@@ -1526,7 +1526,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.2.2"
                                                 ref="content-high-crt-question-5.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.2.2a">
                                                 Yes
@@ -1540,7 +1540,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.2.2"
                                                 ref="content-high-crt-question-5.2.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.2.2b">
                                                 No
@@ -1561,7 +1561,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.2.3"
                                                 ref="content-high-crt-question-5.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.2.3a">
                                                 Yes
@@ -1575,7 +1575,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.2.3"
                                                 ref="content-high-crt-question-5.2.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.2.3b">
                                                 No
@@ -1608,7 +1608,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.3"
                                                 ref="content-high-crt-question-5.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.3a">
                                                 Yes
@@ -1622,7 +1622,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-5.3"
                                                 ref="content-high-crt-question-5.3"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-5.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-5.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-5.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-5.3b">
                                                 No
@@ -1646,7 +1646,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                     id="content-high-crt-notes-optional-5"
                                     ref="content-high-crt-notes-optional-5"
                                     value={this.props.criterionAnswers['content-high-crt-notes-optional-5']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-5', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1689,7 +1689,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-6.1.1"
                                                 ref="content-high-crt-question-6.1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-6.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-6.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-6.1.1a">
                                                 Yes
@@ -1703,7 +1703,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-6.1.1"
                                                 ref="content-high-crt-question-6.1.1"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-6.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-6.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-6.1.1b">
                                                 No
@@ -1724,7 +1724,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-6.1.2"
                                                 ref="content-high-crt-question-6.1.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-6.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-6.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-6.1.2a">
                                                 Yes
@@ -1738,7 +1738,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-6.1.2"
                                                 ref="content-high-crt-question-6.1.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-6.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-6.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-6.1.2b">
                                                 No
@@ -1771,7 +1771,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-6.2"
                                                 ref="content-high-crt-question-6.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-6.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-6.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-6.2a">
                                                 Yes
@@ -1785,7 +1785,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                                 name="content-high-crt-question-6.2"
                                                 ref="content-high-crt-question-6.2"
                                                 checked={this.props.criterionAnswers["content-high-crt-question-6.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('content-high-crt-question-6.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('content-high-crt-question-6.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="content-high-crt-question-6.2b">
                                                 No
@@ -1809,7 +1809,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                     id="content-high-crt-notes-optional-6"
                                     ref="content-high-crt-notes-optional-6"
                                     value={this.props.criterionAnswers['content-high-crt-notes-optional-6']}
-                                    onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-6', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-6', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

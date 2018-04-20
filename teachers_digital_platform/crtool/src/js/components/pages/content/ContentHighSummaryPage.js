@@ -5,8 +5,8 @@ import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class ContentHighSummaryPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
+    criterionAnswerChanged(key, checkedValue) {
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
     render() {
