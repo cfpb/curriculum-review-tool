@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import C from '../js/constants';
+import C from '../js/business.logic/constants';
 import ContentCriterionPage from '../js/components/pages/content/ContentElementaryCriterionPage';
 import renderer from 'react-test-renderer';
 

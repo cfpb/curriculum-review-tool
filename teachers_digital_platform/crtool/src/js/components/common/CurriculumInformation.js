@@ -1,12 +1,7 @@
 import React from "react";      
 
-import C from "../../business.logic/constants";
-
 export default class CurriculumInformation extends React.Component {
     render() {
-        console.log(this.props.currentPage);
-        console.log(this.props.distinctiveCompletedDate[C.UTILITY_PAGE])
-        console.log(this.props.distinctiveCompletedDate[this.props.currentPage]);
         return (
             <React.Fragment>
             <hr className="hr

@@ -4,15 +4,22 @@ import Repository from "./repository";
 const CriterionService = {
 
     getCriterionGroupName(currentCriterion) {
-        if (currentCriterion.includes(".")) {
-            return (currentCriterion.substring(0, currentCriterion.lastIndexOf(".")));
+        let strippedCriterion = this.cleanCriterionKeyNames(currentCriterion);
+        if (strippedCriterion.includes(".")) {
+            return (strippedCriterion.substring(0, strippedCriterion.lastIndexOf(".")));
         }
+        return strippedCriterion;
+    },
 
-        return currentCriterion;
+    cleanCriterionKeyNames(currentCriterion) {
+        let strippedName = currentCriterion.replace("-question", "").replace("-notes", "").replace("_study", "");
+        return strippedName;
     },
 
     getCriterionQuestionKey(changedCriterionQuestion) {
-        return changedCriterionQuestion.substring(0, changedCriterionQuestion.indexOf("."));
+        //Need to grab enough of the name to get the first number (criterion number)
+        let criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("-")+2);
+        return criterionName;
     },
 
     isCriterionValueEmpty(key, alteredCriterionObjects) {
@@ -64,7 +71,8 @@ const CriterionService = {
     isDistinctiveComplete(component, alteredCriterionObjects, changedDistinctive) {
         for (var statusKey in component.state.criterionCompletionStatuses) {
             if (this.isCriterionInDistinctive(statusKey, changedDistinctive) &&
-            component.state.criterionCompletionStatuses[statusKey] !== C.ICON_CHECK_ROUND) {
+                !statusKey.includes("optional") &&
+                component.state.criterionCompletionStatuses[statusKey] !== C.ICON_CHECK_ROUND) {
                     return false;
             }
         }
@@ -142,6 +150,36 @@ const CriterionService = {
 
         this.setCriterionScoreState(component, currentCriterionGroup, criterionScore);
         return isCriterionCompleteReturnValue;
+    },
+
+    initializeAnswerObjects(component, fields) {
+        let alteredCriterionScores =  component.state.criterionScores;
+        let alteredCriterionObjects =  component.state.criterionAnswers;
+        let alteredCriterionStatuses =  component.state.criterionCompletionStatuses;
+        for (const criterionKey in fields) {
+            if (alteredCriterionObjects[criterionKey] === undefined) {
+                alteredCriterionObjects[criterionKey] = "";
+            }
+
+            if (criterionKey.includes("optional")) {
+                let currentCriterion = this.getCriterionQuestionKey(criterionKey);
+                let currentCriterionGroup = CriterionService.getCriterionGroupName(currentCriterion);
+                if (alteredCriterionStatuses[currentCriterion] === undefined) {
+                    alteredCriterionStatuses[currentCriterion] = C.STATUS_IN_START;
+                    
+                    let criterionScore = {
+                        all_yes:false,
+                        total_yes:0,
+                        total_no:0,
+                    }
+                    alteredCriterionScores[currentCriterionGroup] = criterionScore;
+                }
+            }
+        }
+
+        Repository.saveCriterionScores(component, alteredCriterionScores);
+        Repository.saveCriterionAnswers(component, alteredCriterionObjects);
+        Repository.saveCriterionCompletionStatuses(component, alteredCriterionStatuses);
     },
 
     /*

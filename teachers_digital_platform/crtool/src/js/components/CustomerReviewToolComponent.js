@@ -63,32 +63,18 @@ export default class CustomerReviewToolComponent extends React.Component {
         window.location = startPage;
     }
 
-    initializeAnswerObjects(fields) {
-        let alteredCriterionScores =  this.state.criterionScores;
-        let alteredCriterionObjects =  this.state.criterionAnswers;
-        let alteredCriterionStatuses =  this.state.criterionCompletionStatuses;
-        for (const key in fields) {
-            if (alteredCriterionObjects[key] === undefined) {
-                alteredCriterionObjects[key] = "";
-            }
-
-            let currentCriterion = key.substring(0, key.indexOf("."));
-            let currentCriterionGroup = CriterionService.getCriterionGroupName(currentCriterion);
-            if (alteredCriterionStatuses[currentCriterion] === undefined) {
-                alteredCriterionStatuses[currentCriterion] = C.STATUS_IN_START;
-
-                let criterionScore = {
-                    all_yes:false,
-                    total_yes:0,
-                    total_no:0,
-                }
-                alteredCriterionScores[currentCriterionGroup] = criterionScore;
-            }
+    /*
+     * Set state values for dimention finish date
+     */
+    setDistinctiveCompletionDateNow(distinctiveName) {
+        let distinctiveCompletionDates =  this.state.distinctiveCompletedDate;
+        if (distinctiveCompletionDates[distinctiveName] === undefined ||
+            distinctiveCompletionDates[distinctiveName] === "") {
+                
+            let completedDate = DateTimeFormater.getDateNowFormat();
+            distinctiveCompletionDates[distinctiveName] = completedDate;
+            Repository.saveDistinctiveCompletionDates(this, distinctiveCompletionDates);
         }
-
-        Repository.saveCriterionScores(this, alteredCriterionScores);
-        Repository.saveCriterionAnswers(this, alteredCriterionObjects);
-        Repository.saveCriterionCompletionStatuses(this, alteredCriterionStatuses);
     }
 
     setDistinctiveBackToInProgress(distinctiveName) {
@@ -98,6 +84,19 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     distinctiveClicked(distinctiveName) {
         Repository.saveCurrentPage(this, distinctiveName);
+    }
+
+    handleFinalSummaryButtonClick() {
+        Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
+    }
+
+    handleSummaryButtonClick() {
+        this.setDistinctiveCompletionDateNow(this.state.currentPage);
+        Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
+    }
+
+    initializeAnswerObjects(fields) {
+        CriterionService.initializeAnswerObjects(this, fields);
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
@@ -110,35 +109,6 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     setCriterionStatusToInStart(criterionKey) {
         CriterionService.setCriterionCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
-    }
-
-    /*
-     * Set state values for dimention finish date
-     */
-    setDistinctiveCompletionDateNow(distinctiveName) {
-        let distinctiveCompletionDates =  this.state.distinctiveCompletedDate;
-
-        console.log("setDistinctiveCompletionDateNow: " + distinctiveName);
-        console.log("current value: " + distinctiveCompletionDates[distinctiveName]);
-        if (distinctiveCompletionDates[distinctiveName] === undefined ||
-            distinctiveCompletionDates[distinctiveName] === "") {
-                
-            let completedDate = DateTimeFormater.getDateNowFormat();
-            distinctiveCompletionDates[distinctiveName] = completedDate;
-
-            console.log("new value: " + completedDate);
-
-            Repository.saveDistinctiveCompletionDates(this, distinctiveCompletionDates);
-        }
-    }
-
-    handleFinalSummaryButtonClick() {
-        Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
-    }
-
-    handleSummaryButtonClick() {
-        this.setDistinctiveCompletionDateNow(this.state.currentPage);
-        Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
     }
 
     render() {

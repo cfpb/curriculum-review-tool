@@ -21,8 +21,10 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     shouldHideAdditonalCriterion(currentCriterion) {
-        if (this.props.criterionScores[currentCriterion] !== undefined &&
-            this.props.criterionScores[currentCriterion].all_yes) {
+        let currentCriterionGroupName = currentCriterion.replace("-question", "");
+
+        if (this.props.criterionScores[currentCriterionGroupName] !== undefined &&
+            this.props.criterionScores[currentCriterionGroupName].all_yes) {
             return false;
         }
         else {
@@ -110,17 +112,17 @@ export default class EfficacyCriterionPage extends React.Component {
                             </button>
                         </div>
                         <div className="m-form-field m-form-field__text">
-                            <label className="a-label a-label__heading" for="efficacy-crt-study-1">
+                            <label className="a-label a-label__heading" for="efficacy-crt-question-1_study">
                                 Study name
                                 <small className="a-label_helper a-label_helper__block">
                                     Enter name of study you’re reviewing
                                 </small>
                             </label>
                             <input className="a-text-input a-text-input__full" type="text"
-                                id="efficacy-crt-study-1"
-                                ref="efficacy-crt-study-1"
-                                value={this.props.criterionAnswers['efficacy-crt-study-1']}
-                                onChange={e=>this.criterionAnswerChanged('efficacy-crt-study-1', e.target.value)} />
+                                id="efficacy-crt-question-1_study"
+                                ref="efficacy-crt-question-1_study"
+                                value={this.props.criterionAnswers['efficacy-crt-question-1_study']}
+                                onChange={e=>this.criterionAnswerChanged('efficacy-crt-question-1_study', e.target.value)} />
                         </div>
                     </div>
                     <ol className="m-list__unstyled">
