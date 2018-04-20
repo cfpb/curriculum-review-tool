@@ -74,7 +74,7 @@ export default class StartOverModal extends React.Component {
                                     isLarge="true"
                                     hasSpaceBefore="true" />
                             </button>
-                            <h1 id="modal-start-over_title" className="h4">Starting over</h1>
+                            <h1 id="modal-start-over_title" className="h3">Starting over</h1>
                             <div id="modal-start-over_desc">
                                 <p>Starting a new review will erase your answers for all dimensions. Are you sure you want to start a new review?</p>
                             </div>

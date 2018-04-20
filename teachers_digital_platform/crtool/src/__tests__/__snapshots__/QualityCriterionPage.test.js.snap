@@ -125,7 +125,7 @@ Array [
                 </span>
               </button>
               <h1
-                className="h4"
+                className="h3"
                 id="modal-save-work_title"
               >
                 Saving your work
@@ -1035,7 +1035,7 @@ Array [
               </span>
             </button>
             <h1
-              className="h4"
+              className="h3"
               id="modal-save-work_title"
             >
               Saving your work
