@@ -78,7 +78,7 @@ export default class SaveWorkModal extends React.Component {
                                         isLarge="true"
                                         hasSpaceBefore="true" />
                                 </button>
-                                <h1 id="modal-save-work_title" className="h4">Saving your work</h1>
+                                <h1 id="modal-save-work_title" className="h3">Saving your work</h1>
                                 <div id="modal-save-work_desc">
                                     <p>This tool uses cookies to <strong>temporarily</strong> save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.</p>
                                     <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank" rel="noopener noreferrer">save the summary as a PDF</a>.</p>
