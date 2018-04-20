@@ -18,7 +18,7 @@ export default class SummaryCirterionComponent extends React.Component {
         return (
             <React.Fragment>
             <h3 className="h2">{this.props.title}</h3>
-                <p className="u-mb30">{this.props.criterionData.leadParagraph}</p>
+                <p className="u-mb30">{this.props.leadParagraph}</p>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
                                     u-mb0">

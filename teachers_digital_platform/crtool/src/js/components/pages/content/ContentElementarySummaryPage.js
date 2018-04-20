@@ -61,13 +61,13 @@ export default class ContentElementarySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                    <button className="a-btn a-btn__link">
-                        <SvgIcon
-                            icon="pencil"
-                            islarge="true"
-                            hasSpaceAfter="true" />
-                        View or edit responses
-                    </button>
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.editCriterionAfterSummary(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
                 </div>
                 <h3 className="h2">Criterion 1:  Earning, income, and careers</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for earning, income, and careers.</p>

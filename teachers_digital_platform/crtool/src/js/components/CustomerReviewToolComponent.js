@@ -10,7 +10,8 @@ import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
 import FinalPrintPage from "./pages/FinalPrintPage";
-import DateTimeFormater from "../DateTimeFormatter";
+import DateTimeFormater from "../dateTimeFormatter";
+import Repository from "../repository";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -30,11 +31,11 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             curriculumTitle: localStorage.getItem("curriculumTitle"),
             publicationDate: localStorage.getItem("publicationDate"),
-            distinctiveCompletedDate: localStorage.getItem("distinctiveCompletedDate"),
             gradeRange: localStorage.getItem("gradeRange"),
 
             criterionScores: JSON.parse(localStorage.getItem("criterionScores")) || {},
             criterionAnswers: JSON.parse(localStorage.getItem("criterionAnswers")) || {},
+            distinctiveCompletedDate: JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {},
             criterionCompletionStatuses: JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {},
         };
     }
@@ -54,6 +55,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
         this.setState({criterionScores: {} });
         this.setState({criterionAnswers: {} });
+        this.setState({distinctiveCompletedDate: {} });
         this.setState({criterionCompletionStatuses: {} });
 
         let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
@@ -222,10 +224,21 @@ export default class CustomerReviewToolComponent extends React.Component {
     /*
      * Set state values for dimention finish date
      */
-    setDistinctiveCompletionDateNow() {
-        let completedDate = DateTimeFormater.getDateNowFormat();
-        localStorage.setItem("distinctiveCompletedDate", completedDate);
-        this.setState({distinctiveCompletedDate: completedDate});
+    setDistinctiveCompletionDateNow(distinctiveName) {
+        let distinctiveCompletionDates =  this.state.distinctiveCompletedDate;
+
+        console.log("setDistinctiveCompletionDateNow: " + distinctiveName);
+        console.log("current value: " + distinctiveCompletionDates[distinctiveName]);
+        if (distinctiveCompletionDates[distinctiveName] === undefined ||
+            distinctiveCompletionDates[distinctiveName] === "") {
+                
+            let completedDate = DateTimeFormater.getDateNowFormat();
+            distinctiveCompletionDates[distinctiveName] = completedDate;
+
+            console.log("new value: " + completedDate);
+
+            Repository.saveDistinctiveCompletionDates(this, distinctiveCompletionDates);
+        }
     }
 
     /*
@@ -282,8 +295,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         let alteredData =  this.state.criterionCompletionStatuses
         alteredData[criterion] = status;
 
-        localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredData));
-        this.setState({criterionCompletionStatuses: alteredData})
+        this.saveCriterionCompletionStatuses(alteredData);
     }
 
     handleFinalSummaryButtonClick() {
@@ -291,7 +303,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     handleSummaryButtonClick() {
-        this.setDistinctiveCompletionDateNow();
+        this.setDistinctiveCompletionDateNow(this.state.currentPage);
         this.setDistinctiveStatus(this.state.currentPage, C.STATUS_COMPLETE);
     }
 

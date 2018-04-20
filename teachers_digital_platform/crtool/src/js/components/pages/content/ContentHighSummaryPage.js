@@ -57,8 +57,8 @@ export default class ContentHighSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <div className="l-survey-top">
-                    <button className="a-btn a-btn__link">
+               <div className="l-survey-top">
+                    <button class="a-btn a-btn__link" onClick={(e) => {this.props.editCriterionAfterSummary(C.CONTENT_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
