@@ -1,7 +1,7 @@
 import React from "react";
 import resolveUrl from "resolve-url";
 
-import C from "../constants";
+import C from "../business.logic/constants";
 import SummaryButton from "./buttons/SummaryButton";
 import SaveWorkModal from "./dialogs/SaveWorkModal";
 import StartOverModal from "./dialogs/StartOverModal";
@@ -10,9 +10,9 @@ import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
 import FinalPrintPage from "./pages/FinalPrintPage";
-import DateTimeFormater from "../dateTimeFormatter";
-import Repository from "../repository";
-import CriterionService from "../criterionService";
+import DateTimeFormater from "../business.logic/dateTimeFormatter";
+import Repository from "../business.logic/repository";
+import CriterionService from "../business.logic/criterionService";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {

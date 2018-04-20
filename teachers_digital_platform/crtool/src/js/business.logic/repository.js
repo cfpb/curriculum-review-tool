@@ -1,4 +1,4 @@
-import C from ../business.logic/constants";
+import C from "./constants";
 
 const Repository = {
     /*

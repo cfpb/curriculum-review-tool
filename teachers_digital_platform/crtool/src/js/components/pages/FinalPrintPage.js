@@ -1,6 +1,8 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
+import FinalSummaryButton from "../buttons/FinalSummaryButton";
+import StartOverModal from "../dialogs/StartOverModal";
 import ContentSwitchComponent from "./partial_pages/ContentSwitchComponent";
 import CriterionComponent from "../criterion/CriterionComponent";
 import PrintIntroComponent from "./partial_pages/PrintIntroComponent";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class StartOverModal extends React.Component {

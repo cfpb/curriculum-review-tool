@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
 import CurriculumInformation from "../common/CurriculumInformation";

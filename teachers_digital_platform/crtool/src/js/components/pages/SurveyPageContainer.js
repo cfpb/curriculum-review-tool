@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
 import DistinctiveMenuBar from "../distinctives/DistinctiveMenuBar";
 import ContentElementaryCriterionPage from "./content/ContentElementaryCriterionPage";
 import ContentMiddleCriterionPage from "./content/ContentMiddleCriterionPage";
