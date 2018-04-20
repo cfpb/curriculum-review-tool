@@ -20,11 +20,29 @@ export default class CriterionAnswerArea extends React.Component {
         }
     }
 
+    renderTextFieldValue() {
+        if (this.props.componentData.criterionTextRefId !== undefined &&
+            this.props.criterionAnswers[this.props.componentData.criterionTextRefId] !== undefined) {
+            return (
+                <React.Fragment>
+                    <p>
+                        <strong>
+                            {this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}
+                        </strong>
+                    </p>
+                </React.Fragment>
+            );
+        } else {
+            return null;
+        }
+    }
+
     render() {
         return (
             <div class="o-survey_component">
                 <div class="o-survey_question">
                     {this.renderComponentText()}
+                    {this.renderTextFieldValue()}
                     {this.showBeneficialText()}
                 </div>
                 <div class="o-survey_answer">

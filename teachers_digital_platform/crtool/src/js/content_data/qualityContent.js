@@ -14,6 +14,7 @@ export const QualityContent = {
                             showBeneficialText: false,
                             criterionRefId: "quality-crt-question-1.1.1",
                             hasInlineHtml: true,
+                            criterionTextRefId: "quality-crt-text-optional-1.1.1",
                             componentText: "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
                         },
                         {
@@ -21,6 +22,7 @@ export const QualityContent = {
                             showBeneficialText: false,
                             criterionRefId: "quality-crt-question-1.1.2",
                             hasInlineHtml: true,
+                            criterionTextRefId: "quality-crt-text-optional-1.1.2",
                             componentText: "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
                         },
                         {
@@ -28,6 +30,7 @@ export const QualityContent = {
                             showBeneficialText: true,
                             criterionRefId: "quality-crt-question-1.1.3",
                             hasInlineHtml: true,
+                            criterionTextRefId: "quality-crt-text-optional-1.1.3",
                             componentText: "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
                         },
                     ]
@@ -61,6 +64,7 @@ export const QualityContent = {
                             showBeneficialText: false,
                             criterionRefId: "quality-crt-question-1.3.1",
                             hasInlineHtml: false,
+                            criterionTextRefId: "quality-crt-text-optional-1.3.1",
                             componentText: "Do the materials include any special needs formats? (e.g., Braille)",
                         },
                         {
@@ -68,6 +72,7 @@ export const QualityContent = {
                             showBeneficialText: true,
                             criterionRefId: "quality-crt-question-1.3.2",
                             hasInlineHtml: false,
+                            criterionTextRefId: "quality-crt-text-optional-1.3.2",
                             componentText: "Are the materials available in languages other than English?",
                         },
                         {
