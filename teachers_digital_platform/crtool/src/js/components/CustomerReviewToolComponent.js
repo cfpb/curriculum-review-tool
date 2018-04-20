@@ -104,6 +104,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
     }
 
+    criterionAnswerChangedEfficacyStuday(criterionName, newValue) {
+        console.log("criterionAnswerChangedEfficacyStuday: " + criterionName + " : " + newValue);
+    }
+
     render() {
         const applicationProps = {
             currentPage:this.state.currentPage,
@@ -126,6 +130,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
+            criterionAnswerChangedEfficacyStuday:this.criterionAnswerChangedEfficacyStuday.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
         };

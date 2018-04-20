@@ -4,6 +4,7 @@ import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
+import EfficacyStudyComponent from "./partial.pages/EfficacyStudyComponent";
 
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -101,6 +102,26 @@ export default class EfficacyCriterionPage extends React.Component {
                     <p>
                         <b><em>You will answer these questions for each study individually.</em></b>
                     </p>
+
+
+                    <h1>Before first study component</h1>
+                    <EfficacyStudyComponent 
+                            studyCount="1"
+                            showRemoveButton="false"
+                            {...this.props}
+                            />
+
+                    <h1>Between first & Second study component</h1>
+
+                    <EfficacyStudyComponent 
+                            studyCount="2"
+                            showRemoveButton="true"
+                            {...this.props}
+                            />
+
+
+
+
                     <div className="u-mt45 u-mb30">
                         <div className="l-survey-top">
                             <button className="a-btn a-btn__link">
@@ -675,6 +696,23 @@ export default class EfficacyCriterionPage extends React.Component {
                                     onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <h4 className="h2">Score for [study name]</h4>
                     <div className="m-curriculum-status">
                         <ul className="m-list__unstyled u-mb0">
@@ -862,6 +900,16 @@ export default class EfficacyCriterionPage extends React.Component {
                             </div>
                         </li>
                     </ol>
+
+
+
+
+
+
+
+
+
+
                     <div className="m-form-field m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-2">
                             My notes
@@ -1029,6 +1077,13 @@ export default class EfficacyCriterionPage extends React.Component {
                             </div>
                         </li>
                     </ol>
+
+
+
+
+
+
+
                     <div className="m-form-field m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-3">
                             My notes
