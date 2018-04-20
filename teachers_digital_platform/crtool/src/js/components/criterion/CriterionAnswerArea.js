@@ -6,7 +6,7 @@ import RadioButton from "./RadioButton";
 export default class CriterionAnswerArea extends React.Component {
 
     showBeneficialText() {
-        if (this.props.componentData.showBenifitialText) {
+        if (this.props.componentData.showBeneficialText) {
             return (<p class="o-survey_question-helper">Beneficial, but not essential.</p>);
         }
         return null;

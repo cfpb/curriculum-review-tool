@@ -6,7 +6,7 @@ import CriterionRow from "./CriterionRow";
 export default class CriterionComponent extends React.Component {
     render() {
         return (
-            <React.Fragment>
+            <div className="block block__flush-top">
                 <h3 className="h2">{this.props.criterionData.title}</h3>
                 <p className="lead-paragraph">
                     {this.props.criterionData.leadParagraph}
@@ -25,7 +25,7 @@ export default class CriterionComponent extends React.Component {
                     </label>
                     <p>{this.props.criterionAnswers[this.props.criterionData.notesRefId]}</p>
                 </div>
-            </React.Fragment>
+            </div>
         );
     }
 }
