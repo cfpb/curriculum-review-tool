@@ -1591,7 +1591,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p> The cost of insurance is inﬂuenced by individual behavior and a range of other factors.</p>
+                                <p>The cost of insurance is inﬂuenced by individual behavior and a range of other factors.</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
