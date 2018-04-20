@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import C from '../js/constants';
+import C from '../js/business.logic/constants';
 import EfficacyCriterionPage from '../js/components/pages/EfficacyCriterionPage';
 import renderer from 'react-test-renderer';
 

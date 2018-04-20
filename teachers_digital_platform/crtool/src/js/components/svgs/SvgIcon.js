@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
 
 export default class SvgIcon extends React.Component {
 

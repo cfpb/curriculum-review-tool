@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import C from '../js/constants';
+import C from '../js/business.logic/constants';
 import DistinctiveButton from '../js/components/distinctives/DistinctiveButton';
 import renderer from 'react-test-renderer';
 import { listeners } from 'cluster';

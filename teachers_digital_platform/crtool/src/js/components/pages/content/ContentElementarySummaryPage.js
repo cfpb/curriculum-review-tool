@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../../constants";
+import C from "../../../business.logic/constants";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class ContentElementarySummaryPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
+    criterionAnswerChanged(key, checkedValue) {
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
     render() {
@@ -46,7 +46,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <button className="a-btn">
+                <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
                 <hr className="hr
@@ -61,13 +61,13 @@ export default class ContentElementarySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                    <button className="a-btn a-btn__link">
-                        <SvgIcon
-                            icon="pencil"
-                            islarge="true"
-                            hasSpaceAfter="true" />
-                        View or edit responses
-                    </button>
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
                 </div>
                 <h3 className="h2">Criterion 1:  Earning, income, and careers</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for earning, income, and careers.</p>

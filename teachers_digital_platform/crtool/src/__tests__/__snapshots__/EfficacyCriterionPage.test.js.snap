@@ -261,7 +261,7 @@ Array [
       >
         <label
           className="a-label a-label__heading"
-          for="efficacy-crt-study-1"
+          for="efficacy-crt-question-1_study"
         >
           Study name
           <small
@@ -272,7 +272,7 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
-          id="efficacy-crt-study-1"
+          id="efficacy-crt-question-1_study"
           onChange={[Function]}
           type="text"
           value={undefined}

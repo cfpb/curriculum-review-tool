@@ -1,9 +1,9 @@
 import React from "react";
 
-import C from "../../constants";
-import ContentSwitchComponent from "./partial_pages/ContentSwitchComponent";
+import C from "../../business.logic/constants";
+import ContentSwitchComponent from "./partial.pages/ContentSwitchComponent";
 import CriterionComponent from "../criterion/CriterionComponent";
-import PrintIntroComponent from "./partial_pages/PrintIntroComponent";
+import PrintIntroComponent from "./partial.pages/PrintIntroComponent";
 import SvgIcon from "../svgs/SvgIcon";
 import { EfficacyContent } from "../../content_data/efficacyContent";
 import { QualityContent } from "../../content_data/qualityContent";

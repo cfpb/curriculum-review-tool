@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../../constants";
+import C from "../../../business.logic/constants";
 import CriterionComponent from "../../criterion/CriterionComponent";
 import { ContentElementaryCriterion } from "../../../content_data/contentElementary";
 import { ContentMiddleCriterion } from "../../../content_data/contentMiddle";

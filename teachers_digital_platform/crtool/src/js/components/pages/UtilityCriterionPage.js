@@ -1,14 +1,14 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class UtilityCriterionPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
+    criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.changeCriterionAnswer(C.UTILITY_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.UTILITY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
@@ -96,7 +96,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.1.1"
                                                 ref="utility-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.1.1a">
                                                 Yes
@@ -110,7 +110,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.1.1"
                                                 ref="utility-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.1.1b">
                                                 No
@@ -131,7 +131,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.1.2"
                                                 ref="utility-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.1.2a">
                                                 Yes
@@ -145,7 +145,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.1.2"
                                                 ref="utility-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.1.2b">
                                                 No
@@ -166,7 +166,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.1.3"
                                                 ref="utility-crt-question-1.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.1.3a">
                                                 Yes
@@ -180,7 +180,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.1.3"
                                                 ref="utility-crt-question-1.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.1.3b">
                                                 No
@@ -213,7 +213,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.1"
                                                 ref="utility-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.1a">
                                                 Yes
@@ -227,7 +227,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.1"
                                                 ref="utility-crt-question-1.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.1b">
                                                 No
@@ -248,7 +248,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.2"
                                                 ref="utility-crt-question-1.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.2a">
                                                 Yes
@@ -262,7 +262,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.2"
                                                 ref="utility-crt-question-1.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.2b">
                                                 No
@@ -283,7 +283,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.3"
                                                 ref="utility-crt-question-1.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.3a">
                                                 Yes
@@ -297,7 +297,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.3"
                                                 ref="utility-crt-question-1.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.3b">
                                                 No
@@ -318,7 +318,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.4"
                                                 ref="utility-crt-question-1.2.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.4a">
                                                 Yes
@@ -332,7 +332,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.2.4"
                                                 ref="utility-crt-question-1.2.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.2.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.2.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.2.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.2.4b">
                                                 No
@@ -365,7 +365,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.3.1"
                                                 ref="utility-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.3.1a">
                                                 Yes
@@ -379,7 +379,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.3.1"
                                                 ref="utility-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.3.1b">
                                                 No
@@ -400,7 +400,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.3.2"
                                                 ref="utility-crt-question-1.3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.3.2a">
                                                 Yes
@@ -414,7 +414,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.3.2"
                                                 ref="utility-crt-question-1.3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.3.2b">
                                                 No
@@ -447,7 +447,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.4"
                                                 ref="utility-crt-question-1.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.4a">
                                                 Yes
@@ -461,7 +461,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-1.4"
                                                 ref="utility-crt-question-1.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-1.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-1.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-1.4b">
                                                 No
@@ -485,7 +485,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     id="utility-crt-notes-optional-1"
                                     ref="utility-crt-notes-optional-1"
                                     value={this.props.criterionAnswers['utility-crt-notes-optional-1']}
-                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-1', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -528,7 +528,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.1"
                                                 ref="utility-crt-question-2.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.1a">
                                                 Yes
@@ -542,7 +542,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.1"
                                                 ref="utility-crt-question-2.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.1b">
                                                 No
@@ -563,7 +563,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.2"
                                                 ref="utility-crt-question-2.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.2a">
                                                 Yes
@@ -577,7 +577,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.2"
                                                 ref="utility-crt-question-2.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.2b">
                                                 No
@@ -598,7 +598,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.3"
                                                 ref="utility-crt-question-2.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.3a">
                                                 Yes
@@ -612,7 +612,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.3"
                                                 ref="utility-crt-question-2.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.3b">
                                                 No
@@ -633,7 +633,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.4"
                                                 ref="utility-crt-question-2.1.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.4a">
                                                 Yes
@@ -647,7 +647,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.4"
                                                 ref="utility-crt-question-2.1.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.4b">
                                                 No
@@ -668,7 +668,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.5"
                                                 ref="utility-crt-question-2.1.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.5a">
                                                 Yes
@@ -682,7 +682,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.5"
                                                 ref="utility-crt-question-2.1.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.5b">
                                                 No
@@ -703,7 +703,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.6"
                                                 ref="utility-crt-question-2.1.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.6', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.6', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.6a">
                                                 Yes
@@ -717,7 +717,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.6"
                                                 ref="utility-crt-question-2.1.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.6', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.6', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.6b">
                                                 No
@@ -739,7 +739,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.7"
                                                 ref="utility-crt-question-2.1.7"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.7"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.7', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.7', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.7a">
                                                 Yes
@@ -753,7 +753,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.7"
                                                 ref="utility-crt-question-2.1.7"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.7"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.7', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.7', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.7b">
                                                 No
@@ -775,7 +775,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.8"
                                                 ref="utility-crt-question-2.1.8"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.8"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.8', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.8', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.8a">
                                                 Yes
@@ -789,7 +789,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.8"
                                                 ref="utility-crt-question-2.1.8"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.8"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.8', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.8', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.8b">
                                                 No
@@ -811,7 +811,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.9"
                                                 ref="utility-crt-question-2.1.9"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.9"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.9', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.9', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.9a">
                                                 Yes
@@ -825,7 +825,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.9"
                                                 ref="utility-crt-question-2.1.9"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.9"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.9', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.9', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.9b">
                                                 No
@@ -846,7 +846,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.10"
                                                 ref="utility-crt-question-2.1.10"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.10"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.10', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.10', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.10a">
                                                 Yes
@@ -860,7 +860,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.1.10"
                                                 ref="utility-crt-question-2.1.10"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.1.10"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.1.10', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.1.10', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.1.10b">
                                                 No
@@ -893,7 +893,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.2.1"
                                                 ref="utility-crt-question-2.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.2.1a">
                                                 Yes
@@ -907,7 +907,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.2.1"
                                                 ref="utility-crt-question-2.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.2.1b">
                                                 No
@@ -928,7 +928,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.2.2"
                                                 ref="utility-crt-question-2.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.2.2a">
                                                 Yes
@@ -942,7 +942,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.2.2"
                                                 ref="utility-crt-question-2.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.2.2b">
                                                 No
@@ -964,7 +964,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.2.3"
                                                 ref="utility-crt-question-2.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.2.3a">
                                                 Yes
@@ -978,7 +978,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.2.3"
                                                 ref="utility-crt-question-2.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.2.3b">
                                                 No
@@ -1011,7 +1011,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.1"
                                                 ref="utility-crt-question-2.3.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.1a">
                                                 Yes
@@ -1025,7 +1025,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.1"
                                                 ref="utility-crt-question-2.3.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.1b">
                                                 No
@@ -1046,7 +1046,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.2"
                                                 ref="utility-crt-question-2.3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.2a">
                                                 Yes
@@ -1060,7 +1060,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.2"
                                                 ref="utility-crt-question-2.3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.2b">
                                                 No
@@ -1082,7 +1082,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.3"
                                                 ref="utility-crt-question-2.3.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.3a">
                                                 Yes
@@ -1096,7 +1096,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.3"
                                                 ref="utility-crt-question-2.3.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.3b">
                                                 No
@@ -1118,7 +1118,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.4"
                                                 ref="utility-crt-question-2.3.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.4a">
                                                 Yes
@@ -1132,7 +1132,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.4"
                                                 ref="utility-crt-question-2.3.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.4b">
                                                 No
@@ -1154,7 +1154,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.5"
                                                 ref="utility-crt-question-2.3.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.5a">
                                                 Yes
@@ -1168,7 +1168,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.5"
                                                 ref="utility-crt-question-2.3.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.5b">
                                                 No
@@ -1190,7 +1190,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.6"
                                                 ref="utility-crt-question-2.3.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.6', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.6', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.6a">
                                                 Yes
@@ -1204,7 +1204,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.6"
                                                 ref="utility-crt-question-2.3.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.6', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.6', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.6b">
                                                 No
@@ -1218,7 +1218,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.3.6"
                                                 ref="utility-crt-question-2.3.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.3.6"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.3.6', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.3.6', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.3.6c">
                                                 N/A
@@ -1252,7 +1252,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.4"
                                                 ref="utility-crt-question-2.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.4a">
                                                 Yes
@@ -1266,7 +1266,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.4"
                                                 ref="utility-crt-question-2.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.4b">
                                                 No
@@ -1280,7 +1280,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.4"
                                                 ref="utility-crt-question-2.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.4"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.4', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.4', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.4c">
                                                 N/A
@@ -1313,7 +1313,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.5"
                                                 ref="utility-crt-question-2.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.5a">
                                                 Yes
@@ -1327,7 +1327,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-2.5"
                                                 ref="utility-crt-question-2.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-2.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-2.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-2.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-2.5b">
                                                 No
@@ -1351,7 +1351,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     id="utility-crt-notes-optional-2"
                                     ref="utility-crt-notes-optional-2"
                                     value={this.props.criterionAnswers['utility-crt-notes-optional-2']}
-                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-2', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1394,7 +1394,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.1"
                                                 ref="utility-crt-question-3.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.1a">
                                                 Yes
@@ -1408,7 +1408,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.1"
                                                 ref="utility-crt-question-3.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.1b">
                                                 No
@@ -1438,7 +1438,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.2"
                                                 ref="utility-crt-question-3.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.2a">
                                                 Yes
@@ -1452,7 +1452,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.2"
                                                 ref="utility-crt-question-3.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.2b">
                                                 No
@@ -1473,7 +1473,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.3"
                                                 ref="utility-crt-question-3.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.3a">
                                                 Yes
@@ -1487,7 +1487,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.3"
                                                 ref="utility-crt-question-3.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.3b">
                                                 No
@@ -1508,7 +1508,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.4"
                                                 ref="utility-crt-question-3.1.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.4a">
                                                 Yes
@@ -1522,7 +1522,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.4"
                                                 ref="utility-crt-question-3.1.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.4b">
                                                 No
@@ -1543,7 +1543,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.5"
                                                 ref="utility-crt-question-3.1.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.5a">
                                                 Yes
@@ -1557,7 +1557,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.5"
                                                 ref="utility-crt-question-3.1.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.5b">
                                                 No
@@ -1578,7 +1578,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.6"
                                                 ref="utility-crt-question-3.1.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.6', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.6', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.6a">
                                                 Yes
@@ -1592,7 +1592,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.6"
                                                 ref="utility-crt-question-3.1.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.6', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.6', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.6b">
                                                 No
@@ -1614,7 +1614,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.7"
                                                 ref="utility-crt-question-3.1.7"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.7"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.7', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.7', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.7a">
                                                 Yes
@@ -1628,7 +1628,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.1.7"
                                                 ref="utility-crt-question-3.1.7"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.1.7"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.1.7', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.1.7', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.1.7b">
                                                 No
@@ -1661,7 +1661,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.2"
                                                 ref="utility-crt-question-3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.2a">
                                                 Yes
@@ -1675,7 +1675,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.2"
                                                 ref="utility-crt-question-3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.2b">
                                                 No
@@ -1708,7 +1708,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.1"
                                                 ref="utility-crt-question-3.3.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.1a">
                                                 Yes
@@ -1722,7 +1722,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.1"
                                                 ref="utility-crt-question-3.3.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.1b">
                                                 No
@@ -1744,7 +1744,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.2"
                                                 ref="utility-crt-question-3.3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.2a">
                                                 Yes
@@ -1758,7 +1758,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.2"
                                                 ref="utility-crt-question-3.3.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.2b">
                                                 No
@@ -1780,7 +1780,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.3"
                                                 ref="utility-crt-question-3.3.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.3a">
                                                 Yes
@@ -1794,7 +1794,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.3"
                                                 ref="utility-crt-question-3.3.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.3b">
                                                 No
@@ -1808,7 +1808,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.3.3"
                                                 ref="utility-crt-question-3.3.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.3.3"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.3.3', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.3.3', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.3.3c">
                                                 N/A
@@ -1842,7 +1842,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.4"
                                                 ref="utility-crt-question-3.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.4a">
                                                 Yes
@@ -1856,7 +1856,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.4"
                                                 ref="utility-crt-question-3.4"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.4b">
                                                 No
@@ -1890,7 +1890,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.5"
                                                 ref="utility-crt-question-3.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.5a">
                                                 Yes
@@ -1904,7 +1904,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.5"
                                                 ref="utility-crt-question-3.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.5b">
                                                 No
@@ -1918,7 +1918,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-3.5"
                                                 ref="utility-crt-question-3.5"
                                                 checked={this.props.criterionAnswers["utility-crt-question-3.5"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-3.5', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-3.5', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-3.5c">
                                                 N/A
@@ -1942,7 +1942,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     id="utility-crt-notes-optional-3"
                                     ref="utility-crt-notes-optional-3"
                                     value={this.props.criterionAnswers['utility-crt-notes-optional-3']}
-                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-3', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1985,7 +1985,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.1.1"
                                                 ref="utility-crt-question-4.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.1.1a">
                                                 Yes
@@ -1999,7 +1999,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.1.1"
                                                 ref="utility-crt-question-4.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.1.1b">
                                                 No
@@ -2020,7 +2020,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.1.2"
                                                 ref="utility-crt-question-4.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.1.2a">
                                                 Yes
@@ -2034,7 +2034,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.1.2"
                                                 ref="utility-crt-question-4.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.1.2b">
                                                 No
@@ -2056,7 +2056,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.1.3"
                                                 ref="utility-crt-question-4.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.1.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.1.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.1.3a">
                                                 Yes
@@ -2070,7 +2070,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.1.3"
                                                 ref="utility-crt-question-4.1.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.1.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.1.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.1.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.1.3b">
                                                 No
@@ -2103,7 +2103,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.2.1"
                                                 ref="utility-crt-question-4.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.2.1a">
                                                 Yes
@@ -2117,7 +2117,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.2.1"
                                                 ref="utility-crt-question-4.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.2.1b">
                                                 No
@@ -2138,7 +2138,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.2.2"
                                                 ref="utility-crt-question-4.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.2.2a">
                                                 Yes
@@ -2152,7 +2152,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.2.2"
                                                 ref="utility-crt-question-4.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.2.2b">
                                                 No
@@ -2186,7 +2186,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.3"
                                                 ref="utility-crt-question-4.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.3a">
                                                 Yes
@@ -2200,7 +2200,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.3"
                                                 ref="utility-crt-question-4.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.3b">
                                                 No
@@ -2233,7 +2233,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.4.1"
                                                 ref="utility-crt-question-4.4.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.4.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.4.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.4.1a">
                                                 Yes
@@ -2247,7 +2247,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.4.1"
                                                 ref="utility-crt-question-4.4.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.4.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.4.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.4.1b">
                                                 No
@@ -2269,7 +2269,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.4.2"
                                                 ref="utility-crt-question-4.4.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.4.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.4.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.4.2a">
                                                 Yes
@@ -2283,7 +2283,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.4.2"
                                                 ref="utility-crt-question-4.4.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.4.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.4.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.4.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.4.2b">
                                                 No
@@ -2316,7 +2316,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.5.1"
                                                 ref="utility-crt-question-4.5.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.5.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.5.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.5.1a">
                                                 Yes
@@ -2330,7 +2330,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.5.1"
                                                 ref="utility-crt-question-4.5.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.5.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.5.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.5.1b">
                                                 No
@@ -2351,7 +2351,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.5.2"
                                                 ref="utility-crt-question-4.5.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.5.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.5.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.5.2a">
                                                 Yes
@@ -2365,7 +2365,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.5.2"
                                                 ref="utility-crt-question-4.5.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.5.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.5.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.5.2b">
                                                 No
@@ -2387,7 +2387,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.5.3"
                                                 ref="utility-crt-question-4.5.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.5.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.5.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.5.3a">
                                                 Yes
@@ -2401,7 +2401,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.5.3"
                                                 ref="utility-crt-question-4.5.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.5.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.5.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.5.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.5.3b">
                                                 No
@@ -2434,7 +2434,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.6"
                                                 ref="utility-crt-question-4.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.6', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.6', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.6a">
                                                 Yes
@@ -2448,7 +2448,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-4.6"
                                                 ref="utility-crt-question-4.6"
                                                 checked={this.props.criterionAnswers["utility-crt-question-4.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-4.6', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-4.6', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-4.6b">
                                                 No
@@ -2472,7 +2472,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     id="utility-crt-notes-optional-4"
                                     ref="utility-crt-notes-optional-4"
                                     value={this.props.criterionAnswers['utility-crt-notes-optional-4']}
-                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-4', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2515,7 +2515,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.1.1"
                                                 ref="utility-crt-question-5.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.1.1a">
                                                 Yes
@@ -2529,7 +2529,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.1.1"
                                                 ref="utility-crt-question-5.1.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.1.1b">
                                                 No
@@ -2551,7 +2551,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.1.2"
                                                 ref="utility-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.1.2a">
                                                 Yes
@@ -2565,7 +2565,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.1.2"
                                                 ref="utility-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.1.2b">
                                                 No
@@ -2579,7 +2579,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.1.2"
                                                 ref="utility-crt-question-5.1.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.1.2"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.1.2', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.1.2', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.1.2c">
                                                 N/A
@@ -2612,7 +2612,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.1"
                                                 ref="utility-crt-question-5.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.1a">
                                                 Yes
@@ -2626,7 +2626,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.1"
                                                 ref="utility-crt-question-5.2.1"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.1b">
                                                 No
@@ -2648,7 +2648,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.2"
                                                 ref="utility-crt-question-5.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.2a">
                                                 Yes
@@ -2662,7 +2662,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.2"
                                                 ref="utility-crt-question-5.2.2"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.2b">
                                                 No
@@ -2684,7 +2684,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.3"
                                                 ref="utility-crt-question-5.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.3a">
                                                 Yes
@@ -2698,7 +2698,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.3"
                                                 ref="utility-crt-question-5.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.3b">
                                                 No
@@ -2712,7 +2712,7 @@ export default class UtilityCriterionPage extends React.Component {
                                                 name="utility-crt-question-5.2.3"
                                                 ref="utility-crt-question-5.2.3"
                                                 checked={this.props.criterionAnswers["utility-crt-question-5.2.3"] === 'na'}
-                                                onChange={() => {this.changeCriterionAnswer('utility-crt-question-5.2.3', 'na')}} />
+                                                onChange={() => {this.criterionAnswerChanged('utility-crt-question-5.2.3', 'na')}} />
                                             <label className="a-label"
                                                 htmlFor="utility-crt-question-5.2.3c">
                                                 N/A
@@ -2736,7 +2736,7 @@ export default class UtilityCriterionPage extends React.Component {
                                     id="utility-crt-notes-optional-5"
                                     ref="utility-crt-notes-optional-5"
                                     value={this.props.criterionAnswers['utility-crt-notes-optional-5']}
-                                    onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-5', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

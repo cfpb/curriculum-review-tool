@@ -1,14 +1,14 @@
 import React from "react";
 
-import C from "../../constants";
+import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
 
 export default class EfficacyCriterionPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
+    criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.changeCriterionAnswer(C.EFFICACY_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
     componentDidMount() {
@@ -21,8 +21,10 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     shouldHideAdditonalCriterion(currentCriterion) {
-        if (this.props.criterionScores[currentCriterion] !== undefined &&
-            this.props.criterionScores[currentCriterion].all_yes) {
+        let currentCriterionGroupName = currentCriterion.replace("-question", "");
+
+        if (this.props.criterionScores[currentCriterionGroupName] !== undefined &&
+            this.props.criterionScores[currentCriterionGroupName].all_yes) {
             return false;
         }
         else {
@@ -110,17 +112,17 @@ export default class EfficacyCriterionPage extends React.Component {
                             </button>
                         </div>
                         <div className="m-form-field m-form-field__text">
-                            <label className="a-label a-label__heading" for="efficacy-crt-study-1">
+                            <label className="a-label a-label__heading" for="efficacy-crt-question-1_study">
                                 Study name
                                 <small className="a-label_helper a-label_helper__block">
                                     Enter name of study you’re reviewing
                                 </small>
                             </label>
                             <input className="a-text-input a-text-input__full" type="text"
-                                id="efficacy-crt-study-1"
-                                ref="efficacy-crt-study-1"
-                                value={this.props.criterionAnswers['efficacy-crt-study-1']}
-                                onChange={e=>this.changeCriterionAnswer('efficacy-crt-study-1', e.target.value)} />
+                                id="efficacy-crt-question-1_study"
+                                ref="efficacy-crt-question-1_study"
+                                value={this.props.criterionAnswers['efficacy-crt-question-1_study']}
+                                onChange={e=>this.criterionAnswerChanged('efficacy-crt-question-1_study', e.target.value)} />
                         </div>
                     </div>
                     <ol className="m-list__unstyled">
@@ -147,7 +149,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.1.1"
                                                 ref="efficacy-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.1.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.1.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.1.1a">
                                                 Yes
@@ -161,7 +163,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.1.1"
                                                 ref="efficacy-crt-question-1.1.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.1.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.1.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.1.1b">
                                                 No
@@ -183,7 +185,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.1.2"
                                                 ref="efficacy-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.1.2a">
                                                 Yes
@@ -197,7 +199,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.1.2"
                                                 ref="efficacy-crt-question-1.1.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.1.2b">
                                                 No
@@ -230,7 +232,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.2"
                                                 ref="efficacy-crt-question-1.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.2a">
                                                 Yes
@@ -244,7 +246,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.2"
                                                 ref="efficacy-crt-question-1.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.2b">
                                                 No
@@ -278,7 +280,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.3.1"
                                                 ref="efficacy-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.3.1a">
                                                 Yes
@@ -292,7 +294,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.3.1"
                                                 ref="efficacy-crt-question-1.3.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.3.1b">
                                                 No
@@ -314,7 +316,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.3.2"
                                                 ref="efficacy-crt-question-1.3.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.3.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.3.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.3.2a">
                                                 Yes
@@ -328,7 +330,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.3.2"
                                                 ref="efficacy-crt-question-1.3.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.3.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.3.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.3.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.3.2b">
                                                 No
@@ -361,7 +363,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.1"
                                                 ref="efficacy-crt-question-1.4.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.1a">
                                                 Yes
@@ -375,7 +377,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.1"
                                                 ref="efficacy-crt-question-1.4.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.1b">
                                                 No
@@ -396,7 +398,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.2"
                                                 ref="efficacy-crt-question-1.4.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.2a">
                                                 Yes
@@ -410,7 +412,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.2"
                                                 ref="efficacy-crt-question-1.4.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.2b">
                                                 No
@@ -431,7 +433,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.3"
                                                 ref="efficacy-crt-question-1.4.3"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.3"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.3', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.3', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.3a">
                                                 Yes
@@ -445,7 +447,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.3"
                                                 ref="efficacy-crt-question-1.4.3"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.3"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.3', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.3', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.3b">
                                                 No
@@ -466,7 +468,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.4"
                                                 ref="efficacy-crt-question-1.4.4"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.4"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.4', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.4', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.4a">
                                                 Yes
@@ -480,7 +482,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.4"
                                                 ref="efficacy-crt-question-1.4.4"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.4"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.4', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.4', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.4b">
                                                 No
@@ -502,7 +504,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.5"
                                                 ref="efficacy-crt-question-1.4.5"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.5a">
                                                 Yes
@@ -516,7 +518,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.5"
                                                 ref="efficacy-crt-question-1.4.5"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.5b">
                                                 No
@@ -538,7 +540,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.6"
                                                 ref="efficacy-crt-question-1.4.6"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.6', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.6', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.6a">
                                                 Yes
@@ -552,7 +554,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.4.6"
                                                 ref="efficacy-crt-question-1.4.6"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.4.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.4.6', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.4.6', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.4.6b">
                                                 No
@@ -585,7 +587,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.5"
                                                 ref="efficacy-crt-question-1.5"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.5"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.5', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.5', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.5a">
                                                 Yes
@@ -599,7 +601,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.5"
                                                 ref="efficacy-crt-question-1.5"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.5"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.5', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.5', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.5b">
                                                 No
@@ -632,7 +634,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.6"
                                                 ref="efficacy-crt-question-1.6"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.6"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.6', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.6', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.6a">
                                                 Yes
@@ -646,7 +648,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-1.6"
                                                 ref="efficacy-crt-question-1.6"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-1.6"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-1.6', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-1.6', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-1.6b">
                                                 No
@@ -670,7 +672,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                     id="efficacy-crt-notes-optional-1"
                                     ref="efficacy-crt-notes-optional-1"
                                     value={this.props.criterionAnswers['efficacy-crt-notes-optional-1']}
-                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-1', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                     <h4 className="h2">Score for [study name]</h4>
@@ -787,7 +789,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-2.1"
                                                 ref="efficacy-crt-question-2.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-2.1a">
                                                 Yes
@@ -801,7 +803,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-2.1"
                                                 ref="efficacy-crt-question-2.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-2.1b">
                                                 No
@@ -835,7 +837,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-2.2"
                                                 ref="efficacy-crt-question-2.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-2.2a">
                                                 Yes
@@ -849,7 +851,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-2.2"
                                                 ref="efficacy-crt-question-2.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-2.2b">
                                                 No
@@ -873,7 +875,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                     id="efficacy-crt-notes-optional-2"
                                     ref="efficacy-crt-notes-optional-2"
                                     value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
-                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-2', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -919,7 +921,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-3.1"
                                                 ref="efficacy-crt-question-3.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-3.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-3.1a">
                                                 Yes
@@ -933,7 +935,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-3.1"
                                                 ref="efficacy-crt-question-3.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-3.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-3.1b">
                                                 No
@@ -966,7 +968,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-3.2.1"
                                                 ref="efficacy-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.1', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.1', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-3.2.1a">
                                                 Yes
@@ -980,7 +982,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-3.2.1"
                                                 ref="efficacy-crt-question-3.2.1"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.1', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.1', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-3.2.1b">
                                                 No
@@ -1002,7 +1004,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-3.2.2"
                                                 ref="efficacy-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.2', 'yes')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.2', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-3.2.2a">
                                                 Yes
@@ -1016,7 +1018,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                 name="efficacy-crt-question-3.2.2"
                                                 ref="efficacy-crt-question-3.2.2"
                                                 checked={this.props.criterionAnswers["efficacy-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.changeCriterionAnswer('efficacy-crt-question-3.2.2', 'no')}} />
+                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.2', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="efficacy-crt-question-3.2.2b">
                                                 No
@@ -1040,7 +1042,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                     id="efficacy-crt-notes-optional-3"
                                     ref="efficacy-crt-notes-optional-3"
                                     value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
-                                    onChange={e=>this.changeCriterionAnswer('efficacy-crt-notes-optional-3', e.target.value)} >
+                                    onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../../constants";
+import C from "../../../business.logic/constants";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class ContentHighSummaryPage extends React.Component {
-    changeCriterionAnswer(key, checkedValue) {
-        this.props.changeCriterionAnswer(C.CONTENT_PAGE, key, checkedValue);
+    criterionAnswerChanged(key, checkedValue) {
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
     render() {
@@ -43,7 +43,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <button className="a-btn">
+                <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
                 <hr className="hr
@@ -57,8 +57,8 @@ export default class ContentHighSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <div className="l-survey-top">
-                    <button className="a-btn a-btn__link">
+               <div className="l-survey-top">
+                    <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
