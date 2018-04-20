@@ -1,6 +1,6 @@
 import React from "react";
 
-import C from "../../constants.js"
+import C from "../../business.logic/constants"
 import DistinctiveButton from "../distinctives/DistinctiveButton";
 import FinalSummaryButton from "../buttons/FinalSummaryButton";
 

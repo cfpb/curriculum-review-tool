@@ -50,7 +50,7 @@ export default class UtilitySummaryPage extends React.Component {
                 </button>
                 <CurriculumInformation {...this.props} />
                 <div className="l-survey-top">
-                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.editCriterionAfterSummary(C.UTILITY_PAGE);}}>
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
