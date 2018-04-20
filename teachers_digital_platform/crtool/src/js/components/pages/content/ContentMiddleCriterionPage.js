@@ -400,7 +400,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p> Investments involve purchase of financial assets to increase wealth.</p>
+                                <p>Investments involve purchase of financial assets to increase wealth.</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
