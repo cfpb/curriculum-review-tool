@@ -23,11 +23,11 @@ export default class CriterionAnswerArea extends React.Component {
     renderTextFieldValue() {
         if (this.props.componentData.criterionTextRefId !== undefined &&
             this.props.criterionAnswers[this.props.componentData.criterionTextRefId] !== undefined &&
-            this.props.criterionTextLabel !== undefined) {
+            this.props.componentData.criterionTextLabel !== undefined) {
             return (
                 <div className="m-form-field m-form-field__text u-mt30">
                     <label className="a-label a-label__heading">
-                        {this.props.criterionTextLabel}
+                        {this.props.componentData.criterionTextLabel}
                     </label>
                     <p>
                         {this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}
