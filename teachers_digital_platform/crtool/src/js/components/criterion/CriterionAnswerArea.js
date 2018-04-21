@@ -14,7 +14,7 @@ export default class CriterionAnswerArea extends React.Component {
 
     renderComponentText() {
         if (this.props.componentData.hasInlineHtml) {
-            return (<div dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
+            return (<div className="u-mb15" dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
         } else {
             return (<p>{this.props.componentData.componentText}</p>);
         }
@@ -26,14 +26,12 @@ export default class CriterionAnswerArea extends React.Component {
             this.props.criterionTextLabel !== undefined) {
             return (
                 <div className="m-form-field m-form-field__text u-mt30">
-                    <label className="a-label a-label__heading" for="{this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}">
+                    <label className="a-label a-label__heading">
                         {this.props.criterionTextLabel}
                     </label>
-                    <input className="a-text-input a-text-input__full" type="text"
-                        id="{this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}"
-                        ref="{this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}"
-                        value={this.props.criterionAnswers[this.props.criterionAnswers[this.props.componentData.criterionTextRefId]]}
-                        onChange={e=>this.criterionAnswerChanged(this.props.criterionAnswers[this.props.componentData.criterionTextRefId], e.target.value)} />
+                    <p>
+                        {this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}
+                    </p>
                 </div>
             );
         } else {
