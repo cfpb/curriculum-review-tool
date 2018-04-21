@@ -22,15 +22,19 @@ export default class CriterionAnswerArea extends React.Component {
 
     renderTextFieldValue() {
         if (this.props.componentData.criterionTextRefId !== undefined &&
-            this.props.criterionAnswers[this.props.componentData.criterionTextRefId] !== undefined) {
+            this.props.criterionAnswers[this.props.componentData.criterionTextRefId] !== undefined &&
+            this.props.criterionTextLabel !== undefined) {
             return (
-                <React.Fragment>
-                    <p>
-                        <strong>
-                            {this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}
-                        </strong>
-                    </p>
-                </React.Fragment>
+                <div className="m-form-field m-form-field__text u-mt30">
+                    <label className="a-label a-label__heading" for="{this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}">
+                        {this.props.criterionTextLabel}
+                    </label>
+                    <input className="a-text-input a-text-input__full" type="text"
+                        id="{this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}"
+                        ref="{this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}"
+                        value={this.props.criterionAnswers[this.props.criterionAnswers[this.props.componentData.criterionTextRefId]]}
+                        onChange={e=>this.criterionAnswerChanged(this.props.criterionAnswers[this.props.componentData.criterionTextRefId], e.target.value)} />
+                </div>
             );
         } else {
             return null;
@@ -42,8 +46,8 @@ export default class CriterionAnswerArea extends React.Component {
             <div class="o-survey_component">
                 <div class="o-survey_question">
                     {this.renderComponentText()}
-                    {this.renderTextFieldValue()}
                     {this.showBeneficialText()}
+                    {this.renderTextFieldValue()}
                 </div>
                 <div class="o-survey_answer">
                     <RadioButton
