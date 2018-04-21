@@ -1,5 +1,7 @@
 import React from "react";
 
+import C from "../../../business.logic/constants";
+
 export default class PrintIntroComponent extends React.Component {
     render() {
         return (
@@ -41,7 +43,7 @@ export default class PrintIntroComponent extends React.Component {
                         This summary shows the scores for all four dimensions.
                     </p>
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                    <p><strong>Date completed:</strong> ?? February 1, 2018 ??</p>
+                    <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
                     <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
                 </div>
             </React.Fragment>

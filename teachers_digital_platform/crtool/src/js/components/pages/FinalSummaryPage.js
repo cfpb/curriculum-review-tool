@@ -4,6 +4,7 @@ import C from "../../business.logic/constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import StartOverModal from "../dialogs/StartOverModal";
 import SvgIcon from "../svgs/SvgIcon";
+import CurriculumInformation from "../common/CurriculumInformation";
 
 export default class FinalSummaryPage extends React.Component {
     render() {
@@ -41,17 +42,7 @@ export default class FinalSummaryPage extends React.Component {
                         Print or save entire review
                     </button>
                 </div>
-                <hr className="hr
-                                u-mb30
-                                u-mt30" />
-                <h2>Summary of findings</h2>
-                <p><strong>Curriculum title:</strong> {this.props.curriculumTitle}</p>
-                <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
-                <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                <p><strong>Reviewed on:</strong> [today’s date]</p>
-                <hr className="hr
-                                u-mb30
-                                u-mt30" />
+                <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]} />
                 <div className="block
                                 block__flush-top
                                 block__padded-bottom

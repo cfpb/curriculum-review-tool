@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../../business.logic/constants";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import SvgIcon from "../../svgs/SvgIcon";
+import CurriculumInformation from "../../common/CurriculumInformation";
 
 export default class ContentHighSummaryPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -46,17 +47,7 @@ export default class ContentHighSummaryPage extends React.Component {
                 <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-                <h2>Curriculum information</h2>
-                <p><strong>Curriculum title:</strong> {this.props.curriculumTitle}</p>
-                <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
-                <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                <p><strong>Reviewed on:</strong> [today’s date]</p>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
+                <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
                <div className="l-survey-top">
                     <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
                         <SvgIcon

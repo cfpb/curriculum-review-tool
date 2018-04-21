@@ -80,6 +80,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     handleFinalSummaryButtonClick() {
+        this.setDistinctiveCompletionDateNow(C.FINAL_SUMMARY_PAGE);
         Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
     }
 

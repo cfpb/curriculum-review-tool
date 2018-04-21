@@ -48,7 +48,7 @@ export default class UtilitySummaryPage extends React.Component {
                 <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
-                <CurriculumInformation {...this.props} />
+                <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
                 <div className="l-survey-top">
                     <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
                         <SvgIcon
