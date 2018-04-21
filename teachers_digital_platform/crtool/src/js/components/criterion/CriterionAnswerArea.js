@@ -14,9 +14,28 @@ export default class CriterionAnswerArea extends React.Component {
 
     renderComponentText() {
         if (this.props.componentData.hasInlineHtml) {
-            return (<div dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
+            return (<div className="u-mb15" dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
         } else {
             return (<p>{this.props.componentData.componentText}</p>);
+        }
+    }
+
+    renderTextFieldValue() {
+        if (this.props.componentData.criterionTextRefId !== undefined &&
+            this.props.criterionAnswers[this.props.componentData.criterionTextRefId] !== undefined &&
+            this.props.componentData.criterionTextLabel !== undefined) {
+            return (
+                <div className="m-form-field m-form-field__text u-mt30">
+                    <label className="a-label a-label__heading">
+                        {this.props.componentData.criterionTextLabel}
+                    </label>
+                    <p>
+                        {this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}
+                    </p>
+                </div>
+            );
+        } else {
+            return null;
         }
     }
 
@@ -26,6 +45,7 @@ export default class CriterionAnswerArea extends React.Component {
                 <div class="o-survey_question">
                     {this.renderComponentText()}
                     {this.showBeneficialText()}
+                    {this.renderTextFieldValue()}
                 </div>
                 <div class="o-survey_answer">
                     <RadioButton

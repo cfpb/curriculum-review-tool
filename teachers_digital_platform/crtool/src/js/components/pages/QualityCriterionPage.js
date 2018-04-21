@@ -87,7 +87,7 @@ export default class QualityCriterionPage extends React.Component {
                                     <div className="o-survey_question">
                                         <p>If there are <strong>paper-based materials:</strong></p>
                                         <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
-                                        <div className="m-form-field m-form-field__text">
+                                        <div className="m-form-field m-form-field__text u-mt30">
                                             <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.1">
                                                 Cost of materials per student: $
                                             </label>
@@ -198,7 +198,7 @@ export default class QualityCriterionPage extends React.Component {
                                         <p>If there are <strong>web-based materials:</strong></p>
                                         <p>Can web-based material be accessed without purchasing specialized software?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field m-form-field__text">
+                                        <div className="m-form-field m-form-field__text u-mt30">
                                             <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.3">
                                                 Specialized software
                                             </label>
@@ -365,7 +365,7 @@ export default class QualityCriterionPage extends React.Component {
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
                                         <p>Do the materials include any special needs formats? (e.g., Braille)</p>
-                                        <div className="m-form-field m-form-field__text">
+                                        <div className="m-form-field m-form-field__text u-mt30">
                                             <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.1">
                                                 Special needs formats include:
                                             </label>
@@ -425,7 +425,7 @@ export default class QualityCriterionPage extends React.Component {
                                     <div className="o-survey_question">
                                         <p>Are the materials available in languages other than English?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field m-form-field__text">
+                                        <div className="m-form-field m-form-field__text u-mt30">
                                             <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.2">
                                                 Languages included:
                                             </label>
