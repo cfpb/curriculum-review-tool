@@ -1,6 +1,7 @@
 import C from "../constants";
 import Repository from "../repository";
 import UtilityService from "../utilityService";
+import QualityCalculationService from "../summary/qualityCalculationService";
 
 const CriterionCalculationService = {
 
@@ -63,42 +64,11 @@ const CriterionCalculationService = {
         let currentCriterionGroupName = UtilityService.getCriterionGroupName(currentCriterion);
         let criterionScore = {};
 
-        console.log("isCriterionGroupComplete = currentCriterion: " + currentCriterion);
-        if (currentCriterion.includes("quality")) {
-            criterionScore = this.calculateDefaultCompletionForCriterionGroup(component, alteredCriterionObjects, currentCriterionGroupName, currentCriterion);
-            isCriterionCompleteReturnValue = criterionScore.answered_all_complete;
-        } else {
+        criterionScore = this.calculateDefaultCompletionForCriterionGroup(component, alteredCriterionObjects, currentCriterionGroupName, currentCriterion);
+        isCriterionCompleteReturnValue = criterionScore.answered_all_complete;
 
-            // We are building a criterionScore object that can be passed 
-            // around and used for multiple scenarios
-            criterionScore = {
-                all_essential_yes:true,
-                essential_total_yes:0,
-                essential_total_no:0,
-                beneficial_total_yes:0,
-                beneficial_total_no:0,
-                
-            }
-            for (var key in alteredCriterionObjects) {
-                if (UtilityService.isKeyInCriterion(key, currentCriterion) &&
-                    UtilityService.isRequiredCriterion(key) &&
-                    UtilityService.isCriterionValueEmpty(key, alteredCriterionObjects)) {
-                    
-                    criterionScore.all_yes = false;
-                    isCriterionCompleteReturnValue = false;
-                }
-                else if (UtilityService.isKeyInCriterion(key, currentCriterion) &&
-                         UtilityService.isRequiredCriterion(key)) {
-                    
-                    if (alteredCriterionObjects[key] === "no") {
-                        criterionScore.total_no += 1;
-                        criterionScore.all_yes = false;
-                    }
-                    else {
-                        criterionScore.total_yes += 1;
-                    }
-                }
-            }
+        if (currentCriterionGroupName.includes("quality")) {
+            criterionScore = QualityCalculationService.isQualityCriterionGroupComplete(currentCriterionGroupName, criterionScore);
         }
             
         this.setCriterionScoreState(component, currentCriterionGroupName, criterionScore);
