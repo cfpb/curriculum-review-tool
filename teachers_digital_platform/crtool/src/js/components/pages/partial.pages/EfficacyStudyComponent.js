@@ -64,14 +64,14 @@ export default class EfficacyStudyComponent extends React.Component {
                             <h5 className="h3">Component</h5>
                             <EfficacySubComponentRow 
                                 componentText="Does the study use a comparison group? (e.g., state averages, students not participating in the intervention)"
-                                showBenifitialText="false"
+                                showBeneficialText="false"
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.1.1", "")}
                                 {...this.props}
                                 />
                             <EfficacySubComponentRow 
                                 componentText="Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?"
-                                showBenifitialText="true"
+                                showBeneficialText="true"
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.1.2", "")}
                                 {...this.props}
@@ -90,7 +90,7 @@ export default class EfficacyStudyComponent extends React.Component {
                                 <h5 className="h3">Component</h5>
                                 <EfficacySubComponentRow 
                                     componentText="Does the study adequately describe the intervention received by the treated students and (if applicable) the materials/practices delivered to the comparison students?"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.2", "")}
                                     {...this.props}
@@ -109,14 +109,14 @@ export default class EfficacyStudyComponent extends React.Component {
                                 <h5 className="h3">Component</h5>
                                 <EfficacySubComponentRow 
                                     componentText="Is the study free of possible alternative explanations other than possible initial differences between groups?"
-                                    showBenifitialText="true"
+                                    showBeneficialText="true"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.3.1", "")}
                                     {...this.props}
                                     />
                                 <EfficacySubComponentRow 
                                     componentText="Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)"
-                                    showBenifitialText="true"
+                                    showBeneficialText="true"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.3.2", "")}
                                     {...this.props}
@@ -136,42 +136,42 @@ export default class EfficacyStudyComponent extends React.Component {
 
                                 <EfficacySubComponentRow 
                                     componentText="Is there at least one student-level outcome?"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.1", "")}
                                     {...this.props}
                                     />
                                 <EfficacySubComponentRow 
                                     componentText="Is the student outcome measure clearly defined and a measure of the intended construct?"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.2", "")}
                                     {...this.props}
                                     />
                                 <EfficacySubComponentRow 
                                     componentText="Are the student outcome measures collected in the same manner for all study participants?"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.3", "")}
                                     {...this.props}
                                     />
                                 <EfficacySubComponentRow 
                                     componentText="Does the study measure student financial knowledge, attitudes, or behavior?"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.4", "")}
                                     {...this.props}
                                     />
                                 <EfficacySubComponentRow 
                                     componentText="Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?"
-                                    showBenifitialText="true"
+                                    showBeneficialText="true"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.5", "")}
                                     {...this.props}
                                     />
                                 <EfficacySubComponentRow 
                                     componentText="Does the study collect student outcome data from a source other than (or in addition to) the students?"
-                                    showBenifitialText="true"
+                                    showBeneficialText="true"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.6", "")}
                                     {...this.props}
@@ -190,7 +190,7 @@ export default class EfficacyStudyComponent extends React.Component {
                                 <h5 className="h3">Component</h5>
                                 <EfficacySubComponentRow 
                                     componentText="Is the analysis performed using appropriate statistical techniques? (e.g., correct test of significance, correct level of analysis)"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.5", "")}
                                     {...this.props}
@@ -209,7 +209,7 @@ export default class EfficacyStudyComponent extends React.Component {
                                 <h5 className="h3">Component</h5>
                                 <EfficacySubComponentRow 
                                     componentText="Was the study performed in the last 10 years?"
-                                    showBenifitialText="false"
+                                    showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.6", "")}
                                     {...this.props}

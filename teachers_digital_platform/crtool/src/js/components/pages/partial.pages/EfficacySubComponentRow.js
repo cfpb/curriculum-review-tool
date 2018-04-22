@@ -5,8 +5,8 @@ import RadioButtonEditable from "../../buttons/RadioButtonEditable";
 
 export default class EfficacySubComponentRow extends React.Component {
 
-    showBenifitialText() {
-        if (this.props.showBenifitialText === "true") {
+    showBeneficialText() {
+        if (this.props.showBeneficialText === "true") {
             return (<p class="o-survey_question-helper">Beneficial, but not essential.</p>);
         }
         return null;
@@ -18,7 +18,7 @@ export default class EfficacySubComponentRow extends React.Component {
             <div className="o-survey_component">
                 <div class="o-survey_question">
                     <p>{this.props.componentText}</p>
-                    {this.showBenifitialText()}
+                    {this.showBeneficialText()}
                 </div>
                 <div className="o-survey_answer">
                     <RadioButtonEditable
