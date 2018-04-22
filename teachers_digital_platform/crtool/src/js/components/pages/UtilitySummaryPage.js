@@ -4,11 +4,60 @@ import C from "../../business.logic/constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
 import CurriculumInformation from "../common/CurriculumInformation";
-import SummaryCriterionComponent from "../common/SummaryCriterionComponent";
 
 export default class UtilitySummaryPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
         this.props.criterionAnswerChanged(C.UTILITY_PAGE, key, checkedValue);
+    }
+
+    criterionOveralScoreClassName(level) {
+
+        let isLimited = false;
+        if (this.props.criterionScores["utility-crt-1"].doesnotmeet ||
+            this.props.criterionScores["utility-crt-2"].doesnotmeet ||
+            this.props.criterionScores["utility-crt-3"].doesnotmeet ||
+            this.props.criterionScores["utility-crt-4"].doesnotmeet ||
+            this.props.criterionScores["utility-crt-5"].doesnotmeet ) {
+
+            isLimited = true;
+        }
+
+        let isModerate = false;
+        if (this.props.criterionScores["utility-crt-1"].meets &&
+            this.props.criterionScores["utility-crt-2"].meets &&
+            this.props.criterionScores["utility-crt-3"].meets &&
+            this.props.criterionScores["utility-crt-4"].meets &&
+            this.props.criterionScores["utility-crt-5"].meets ) {
+
+            isModerate = true;
+        }
+
+        let className = "m-form-field_radio-icon";
+        if (level === "limited" && isLimited) {
+            className = className + " is-active";
+        } else if (level === "moderate" && isModerate) {
+            className = className + " is-active";
+        } else if (level === "strong" && !isLimited && !isModerate) {
+            className = className + " is-active";
+        }
+
+        return className;
+    }
+
+    ctrierionClassNameFor(criterion, level) {
+        let criterionGroupName = "utility-crt-" + criterion;
+        let criterionScore = this.props.criterionScores[criterionGroupName];
+        let className = "m-form-field_radio-icon";
+
+        if (level === "exceeds" && criterionScore.exceeds) {
+            className = className + " is-active";
+        } else if (level === "meets" && criterionScore.meets) {
+            className = className + " is-active";
+        } else if (level === "doesnotmeet" && criterionScore.doesnotmeet) {
+            className = className + " is-active";
+        }
+
+        return className;
     }
 
     render() {
@@ -293,17 +342,12 @@ export default class UtilitySummaryPage extends React.Component {
                         id="utility-crt-notes-optional-3"
                         ref="utility-crt-notes-optional-3"
                         value={this.props.criterionAnswers['utility-crt-notes-optional-3']}
-                        onChange={e=>this.changeCriterionAnswer('utility-crt-notes-optional-3', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-
-                <SummaryCriterionComponent 
-                    title="Criterion 3: Quality materials for lesson planning" 
-                    leadParagraph="Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?" 
-                    {...this.props} />
                 
                 <h3 className="h2">Criterion 4: Materials to assess mastery</h3>
                 <p className="u-mb30">Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?</p>

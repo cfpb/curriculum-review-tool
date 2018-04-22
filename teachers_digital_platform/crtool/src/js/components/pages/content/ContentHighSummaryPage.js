@@ -132,7 +132,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         id="content-high-crt-notes-optional-1"
                         ref="content-high-crt-notes-optional-1"
                         value={this.props.criterionAnswers['content-high-crt-notes-optional-1']}
-                        onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-1', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-1', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -213,7 +213,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         id="content-high-crt-notes-optional-2"
                         ref="content-high-crt-notes-optional-2"
                         value={this.props.criterionAnswers['content-high-crt-notes-optional-2']}
-                        onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-2', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-2', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -294,7 +294,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         id="content-high-crt-notes-optional-3"
                         ref="content-high-crt-notes-optional-3"
                         value={this.props.criterionAnswers['content-high-crt-notes-optional-3']}
-                        onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-3', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-3', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -375,7 +375,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         id="content-high-crt-notes-optional-4"
                         ref="content-high-crt-notes-optional-4"
                         value={this.props.criterionAnswers['content-high-crt-notes-optional-4']}
-                        onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-4', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-4', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -456,7 +456,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         id="content-high-crt-notes-optional-5"
                         ref="content-high-crt-notes-optional-5"
                         value={this.props.criterionAnswers['content-high-crt-notes-optional-5']}
-                        onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-5', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-5', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -521,7 +521,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         id="content-high-crt-notes-optional-6"
                         ref="content-high-crt-notes-optional-6"
                         value={this.props.criterionAnswers['content-high-crt-notes-optional-6']}
-                        onChange={e=>this.changeCriterionAnswer('content-high-crt-notes-optional-6', e.target.value)} >
+                        onChange={e=>this.criterionAnswerChanged('content-high-crt-notes-optional-6', e.target.value)} >
                     </textarea>
                 </div>
                 <hr className="hr
@@ -606,7 +606,7 @@ export default class ContentHighSummaryPage extends React.Component {
                             id="content-high-crt-assets-optional"
                             ref="content-high-crt-assets-optional"
                             value={this.props.criterionAnswers['content-high-crt-assets-optional']}
-                            onChange={e=>this.changeCriterionAnswer('content-high-crt-assets-optional', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('content-high-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -624,7 +624,7 @@ export default class ContentHighSummaryPage extends React.Component {
                             id="content-high-crt-gaps-optional"
                             ref="content-high-crt-gaps-optional"
                             value={this.props.criterionAnswers['content-high-crt-gaps-optional']}
-                            onChange={e=>this.changeCriterionAnswer('content-high-crt-gaps-optional', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('content-high-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -641,7 +641,7 @@ export default class ContentHighSummaryPage extends React.Component {
                             id="content-high-crt-overall-notes-optional"
                             ref="content-high-crt-overall-notes-optional"
                             value={this.props.criterionAnswers['content-high-crt-overall-notes-optional']}
-                            onChange={e=>this.changeCriterionAnswer('content-high-crt-overall-notes-optional', e.target.value)} >
+                            onChange={e=>this.criterionAnswerChanged('content-high-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

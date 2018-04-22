@@ -57,6 +57,7 @@ export default class QualitySummaryPage extends React.Component {
 
         return className;
     }
+    
     render() {
         return (
             <React.Fragment>
