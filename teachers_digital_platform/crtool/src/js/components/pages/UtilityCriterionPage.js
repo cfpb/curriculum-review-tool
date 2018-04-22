@@ -21,12 +21,6 @@ export default class UtilityCriterionPage extends React.Component {
     }
 
     render() {
-        const criterionLinkWrapperProps = {
-            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
-            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
-            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
-        };
-
         return (
             <React.Fragment>
                 <hr className="hr
@@ -492,7 +486,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="utility-crt-question-2"
                     criterionText="Criterion 2: Differentiated instruction for diverse populations"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1358,7 +1352,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="utility-crt-question-3"
                     criterionText="Criterion 3: Quality materials for lesson planning"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1949,7 +1943,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="utility-crt-question-4"
                     criterionText="Criterion 4: Materials to assess mastery"
-                    {...criterionLinkWrapperProps}  >
+                    {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -2479,7 +2473,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="utility-crt-question-5"
                     criterionText="Criterion 5: Instructional supports"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon

@@ -35,6 +35,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
+            criterionClickedTitles: Repository.getCriterionClickedTitles(),
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
             criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
@@ -109,6 +110,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_PROGRESS);
     }
 
+    setCriterionTitleLinkClicked(criterionKey) {
+        CriterionService.setCriterionTitleLinkClicked(this, criterionKey);
+    }
+
     setCriterionStatusToInStart(criterionKey) {
         CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
     }
@@ -127,6 +132,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             efficacyInProgress:this.state.efficacyInProgress,
 
             criterionAnswers:this.state.criterionAnswers,
+            criterionClickedTitles:this.state.criterionClickedTitles,
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
@@ -138,6 +144,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
+            setCriterionTitleLinkClicked: this.setCriterionTitleLinkClicked.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
         };

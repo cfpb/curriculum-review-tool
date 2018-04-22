@@ -113,10 +113,25 @@ const CriterionService = {
      * Ease of work flow when loading pages based on Criterion status
      */
     setCriterionGroupCompletionStatuses(component, criterion, status) {
-        let alteredData =  component.state.criterionCompletionStatuses
+        let alteredData =  component.state.criterionCompletionStatuses;
         alteredData[criterion] = status;
 
         Repository.saveCriterionGroupCompletionStatuses(component, alteredData);
+    },
+
+    /*
+     * Save any criterion titles that have been clicked.  This way we know to always
+     * show them going forward with out clicking them again
+     */
+    setCriterionTitleLinkClicked(component, criterion) {
+        let criterionClickedTitles = component.state.criterionClickedTitles;
+
+        if (criterionClickedTitles !== undefined &&
+            criterionClickedTitles[criterion] !== "clicked") {
+
+            criterionClickedTitles[criterion] = "clicked";
+            Repository.setCriterionTitleLinkClicked(component, criterionClickedTitles);
+        }
     },
 
     /*

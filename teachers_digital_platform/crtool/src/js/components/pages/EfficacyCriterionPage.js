@@ -6,9 +6,13 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
 import EfficacyStudyComponent from "./partial.pages/EfficacyStudyComponent";
 import EditableSubComponentRow from "./partial.pages/EditableSubComponentRow";
+import EditableCriterionRowWrapper from "./partial.pages/EditableCriterionRowWrapper";
 
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
+
+        console.log("criterionAnswerChanged - key: " + key + " => value: " + checkedValue);
+
         this.initializeAnswerValuesByRefs();
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
@@ -23,15 +27,16 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     shouldHideAdditonalCriterion(currentCriterion) {
-        let currentCriterionGroupName = currentCriterion.replace("-question", "");
+        return false;
+        // let currentCriterionGroupName = currentCriterion.replace("-question", "");
 
-        if (this.props.criterionScores[currentCriterionGroupName] !== undefined &&
-            this.props.criterionScores[currentCriterionGroupName].all_yes) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        // if (this.props.criterionScores[currentCriterionGroupName] !== undefined &&
+        //     this.props.criterionScores[currentCriterionGroupName].all_yes) {
+        //     return false;
+        // }
+        // else {
+        //     return true;
+        // }
     }
 
     getEfficacyStudyItems() {
@@ -54,14 +59,8 @@ export default class EfficacyCriterionPage extends React.Component {
         let newCriterionRefId = "efficacy-crt-question-" + criterionNumber + otherText;
         return newCriterionRefId;
     }
-    
-    render() {
-        const criterionLinkWrapperProps = {
-            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
-            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
-            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
-        };
 
+    render() {
         return (
             <React.Fragment>
                 <hr className="hr
@@ -207,7 +206,7 @@ export default class EfficacyCriterionPage extends React.Component {
                     criterionKey="efficacy-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
                     hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-question-1")}
-                    {...criterionLinkWrapperProps}  >
+                    {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -223,44 +222,32 @@ export default class EfficacyCriterionPage extends React.Component {
                         <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
                     </p>
                     <ol className="m-list__unstyled">
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">2.1</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>There is sufficient research to judge efficacy.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("2.1", "_beneficial")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">2.2</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>The studies examine the range of participants and settings for which the curriculum was designed.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
+                        <EditableCriterionRowWrapper 
+                            {...this.props}
+                            criterionNumber="2.1"
+                            indicatorText="There is sufficient research to judge efficacy." >
+                            <EditableSubComponentRow 
+                                componentText="Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?"
+                                showBeneficialText="true"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("2.1", "_beneficial")}
+                                {...this.props}
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
+                                />
+                        </EditableCriterionRowWrapper>
+                        <EditableCriterionRowWrapper 
+                            {...this.props}
+                            criterionNumber="2.2"
+                            indicatorText="The studies examine the range of participants and settings for which the curriculum was designed." >
+                            <EditableSubComponentRow 
                                     componentText="Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?"
                                     showBeneficialText="true"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("2.2", "_beneficial")}
                                     {...this.props}
+                                    criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                                     />
-                            </div>
-                        </li>
+                        </EditableCriterionRowWrapper>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-2">
@@ -282,7 +269,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-3"
                     criterionText="Criterion 3: Impact"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -298,51 +285,43 @@ export default class EfficacyCriterionPage extends React.Component {
                         <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
                     </p>
                     <ol className="m-list__unstyled">
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">3.1</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>Positive impacts are statistically significant and substantively important.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Does at least one evaluation indicate positive effects significant at the 10% level?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("3.1", "")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">3.2</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>Findings are consistent across studies and context; there is evidence of positive effects with no overriding contrary evidence.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("3.2.1", "")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("3.2.1", "_beneficial")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
+
+                        <EditableCriterionRowWrapper 
+                            {...this.props}
+                            criterionNumber="3.1"
+                            indicatorText="Positive impacts are statistically significant and substantively important." >
+
+                            <EditableSubComponentRow 
+                                componentText="Does at least one evaluation indicate positive effects significant at the 10% level?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("3.1", "")}
+                                {...this.props}
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
+                                />
+                        </EditableCriterionRowWrapper>
+                        <EditableCriterionRowWrapper 
+                            {...this.props}
+                            criterionNumber="3.2"
+                            indicatorText="Findings are consistent across studies and context; there is evidence of positive effects with no overriding contrary evidence." >
+                            <EditableSubComponentRow 
+                                componentText="Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("3.2.1", "")}
+                                {...this.props}
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
+                                showBeneficialText="true"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("3.2.1", "_beneficial")}
+                                {...this.props}
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
+                                />
+                        </EditableCriterionRowWrapper>
+
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-3">

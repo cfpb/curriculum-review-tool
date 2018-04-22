@@ -21,12 +21,6 @@ export default class QualityCriterionPage extends React.Component {
     }
 
     render() {
-        const criterionLinkWrapperProps = {
-            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
-            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
-            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
-        };
-
         return (
             <React.Fragment>
                 <hr className="hr
@@ -526,7 +520,7 @@ export default class QualityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="quality-crt-question-2"
                     criterionText="Criterion 2: Accuracy and timeliness"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -736,7 +730,7 @@ export default class QualityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="quality-crt-question-3"
                     criterionText="Criterion 3: Objectivity"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1052,7 +1046,7 @@ export default class QualityCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="quality-crt-question-4"
                     criterionText="Criterion 4: Visual appearance"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon

@@ -1,6 +1,5 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class CriterionLinkWrapper extends React.Component {
@@ -10,7 +9,7 @@ export default class CriterionLinkWrapper extends React.Component {
     }
 
     handleCriterionTitleClick(criterionKey) {
-        this.props.setCriterionStatusToInProgress(criterionKey);
+        this.props.setCriterionTitleLinkClicked(criterionKey);
     }
 
     componentWillMount() {
@@ -20,12 +19,10 @@ export default class CriterionLinkWrapper extends React.Component {
     renderCriterionTitle() {
         if (this.props.hideCriterion) {
             return (null);
-        }
-        else if (this.props.criterionCompletionStatuses[this.props.criterionKey] !== undefined &&
-                 this.props.criterionCompletionStatuses[this.props.criterionKey] !== C.STATUS_IN_START) {
+        }else if (this.props.criterionClickedTitles !== undefined &&
+                  this.props.criterionClickedTitles[this.props.criterionKey] === "clicked") {
             return (this.props.children);
-        }
-        else {
+        }else {
             return(
                 <div className="block block__flush-top">
                     <h3 className="h2">
