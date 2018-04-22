@@ -374,10 +374,10 @@ export default class EfficacySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="efficacy-crt-assets"
-                            ref="efficacy-crt-assets"
-                            value={this.props.criterionAnswers['efficacy-crt-assets']}
-                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-assets', e.target.value)} >
+                            id="efficacy-crt-assets-optional"
+                            ref="efficacy-crt-assets-optional"
+                            value={this.props.criterionAnswers['efficacy-crt-assets-optional']}
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -392,10 +392,10 @@ export default class EfficacySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="efficacy-crt-gaps"
-                            ref="efficacy-crt-gaps"
-                            value={this.props.criterionAnswers['efficacy-crt-gaps']}
-                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-gaps', e.target.value)} >
+                            id="efficacy-crt-gaps-optional"
+                            ref="efficacy-crt-gaps-optional"
+                            value={this.props.criterionAnswers['efficacy-crt-gaps-optional']}
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -409,10 +409,10 @@ export default class EfficacySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="efficacy-crt-overall-notes"
-                            ref="efficacy-crt-overall-notes"
-                            value={this.props.criterionAnswers['efficacy-crt-overall-notes']}
-                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-overall-notes', e.target.value)} >
+                            id="efficacy-crt-overall-notes-optional"
+                            ref="efficacy-crt-overall-notes-optional"
+                            value={this.props.criterionAnswers['efficacy-crt-overall-notes-optional']}
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

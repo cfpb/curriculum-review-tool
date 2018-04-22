@@ -603,10 +603,10 @@ export default class ContentMiddleSummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-middle-crt-assets"
-                            ref="content-middle-crt-assets"
-                            value={this.props.criterionAnswers['content-middle-crt-assets']}
-                            onChange={e=>this.changeCriterionAnswer('content-middle-crt-assets', e.target.value)} >
+                            id="content-middle-crt-assets-optional"
+                            ref="content-middle-crt-assets-optional"
+                            value={this.props.criterionAnswers['content-middle-crt-assets-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-middle-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -621,10 +621,10 @@ export default class ContentMiddleSummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-middle-crt-gaps"
-                            ref="content-middle-crt-gaps"
-                            value={this.props.criterionAnswers['content-middle-crt-gaps']}
-                            onChange={e=>this.changeCriterionAnswer('content-middle-crt-gaps', e.target.value)} >
+                            id="content-middle-crt-gaps-optional"
+                            ref="content-middle-crt-gaps-optional"
+                            value={this.props.criterionAnswers['content-middle-crt-gaps-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-middle-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -638,10 +638,10 @@ export default class ContentMiddleSummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-middle-crt-overall-notes"
-                            ref="content-middle-crt-overall-notes"
-                            value={this.props.criterionAnswers['content-middle-crt-overall-notes']}
-                            onChange={e=>this.changeCriterionAnswer('content-middle-crt-overall-notes', e.target.value)} >
+                            id="content-middle-crt-overall-notes-optional"
+                            ref="content-middle-crt-overall-notes-optional"
+                            value={this.props.criterionAnswers['content-middle-crt-overall-notes-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-middle-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

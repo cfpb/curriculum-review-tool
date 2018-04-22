@@ -15,8 +15,10 @@ const CriterionService = {
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
 
-        CriterionCalculationService.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
-        this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
+        if (!changedQuestion.includes("optional")) {
+            CriterionCalculationService.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
+            this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
+        }
     },
 
     /*
@@ -59,6 +61,7 @@ const CriterionService = {
             if (UtilityService.isCriterionInDistinctive(criterionKey, changedDistinctive) &&
                 UtilityService.isRequiredCriterion(criterionKey) &&
                 UtilityService.isCriterionValueEmpty(criterionKey, alteredCriterionObjects)) {
+
                     return false;
             }
         }
@@ -117,8 +120,6 @@ const CriterionService = {
         for (var key in component.state.criterionAnswers) {
             let studyNumber = "#" + efficacyStudyNumber + "#";
             if (!key.includes(studyNumber)) {
-                console.log("studyNumber to Remove: " + studyNumber);
-                console.log("criterionKey to Remove: " + key);
                 newCriterionAnswers[key] = component.state.criterionAnswers[key]
             }
         }

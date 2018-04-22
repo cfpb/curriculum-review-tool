@@ -30,8 +30,6 @@ export default class QualitySummaryPage extends React.Component {
             isModerate = true;
         }
 
-        console.log("level: " + level);
-        console.log("isLimited: " + isLimited + " ### isModerate: " + isModerate);
         let className = "m-form-field_radio-icon";
         if (level === "limited" && isLimited) {
             className = className + " is-active";
@@ -491,10 +489,10 @@ export default class QualitySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="quality-crt-assets"
-                            ref="quality-crt-assets"
-                            value={this.props.criterionAnswers['quality-crt-assets']}
-                            onChange={e=>this.criterionAnswerChanged('quality-crt-assets', e.target.value)} >
+                            id="quality-crt-assets-optional"
+                            ref="quality-crt-assets-optional"
+                            value={this.props.criterionAnswers['quality-crt-assets-optional']}
+                            onChange={e=>this.criterionAnswerChanged('quality-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -509,10 +507,10 @@ export default class QualitySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="quality-crt-gaps"
-                            ref="quality-crt-gaps"
-                            value={this.props.criterionAnswers['quality-crt-gaps']}
-                            onChange={e=>this.criterionAnswerChanged('quality-crt-gaps', e.target.value)} >
+                            id="quality-crt-gaps-optional"
+                            ref="quality-crt-gaps-optional"
+                            value={this.props.criterionAnswers['quality-crt-gaps-optional']}
+                            onChange={e=>this.criterionAnswerChanged('quality-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -526,10 +524,10 @@ export default class QualitySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="quality-crt-overall-notes"
-                            ref="quality-crt-overall-notes"
-                            value={this.props.criterionAnswers['quality-crt-overall-notes']}
-                            onChange={e=>this.criterionAnswerChanged('quality-crt-overall-notes', e.target.value)} >
+                            id="quality-crt-overall-notes-optional"
+                            ref="quality-crt-overall-notes-optional"
+                            value={this.props.criterionAnswers['quality-crt-overall-notes-optional']}
+                            onChange={e=>this.criterionAnswerChanged('quality-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

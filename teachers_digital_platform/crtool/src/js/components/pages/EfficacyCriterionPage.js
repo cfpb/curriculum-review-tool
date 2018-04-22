@@ -10,9 +10,6 @@ import EditableCriterionRowWrapper from "./partial.pages/EditableCriterionRowWra
 
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
-
-        console.log("criterionAnswerChanged - key: " + key + " => value: " + checkedValue);
-
         this.initializeAnswerValuesByRefs();
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }

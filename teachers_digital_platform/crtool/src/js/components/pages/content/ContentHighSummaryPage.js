@@ -603,10 +603,10 @@ export default class ContentHighSummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-high-crt-assets"
-                            ref="content-high-crt-assets"
-                            value={this.props.criterionAnswers['content-high-crt-assets']}
-                            onChange={e=>this.changeCriterionAnswer('content-high-crt-assets', e.target.value)} >
+                            id="content-high-crt-assets-optional"
+                            ref="content-high-crt-assets-optional"
+                            value={this.props.criterionAnswers['content-high-crt-assets-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-high-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -621,10 +621,10 @@ export default class ContentHighSummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-high-crt-gaps"
-                            ref="content-high-crt-gaps"
-                            value={this.props.criterionAnswers['content-high-crt-gaps']}
-                            onChange={e=>this.changeCriterionAnswer('content-high-crt-gaps', e.target.value)} >
+                            id="content-high-crt-gaps-optional"
+                            ref="content-high-crt-gaps-optional"
+                            value={this.props.criterionAnswers['content-high-crt-gaps-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-high-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -638,10 +638,10 @@ export default class ContentHighSummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-high-crt-overall-notes"
-                            ref="content-high-crt-overall-notes"
-                            value={this.props.criterionAnswers['content-high-crt-overall-notes']}
-                            onChange={e=>this.changeCriterionAnswer('content-high-crt-overall-notes', e.target.value)} >
+                            id="content-high-crt-overall-notes-optional"
+                            ref="content-high-crt-overall-notes-optional"
+                            value={this.props.criterionAnswers['content-high-crt-overall-notes-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-high-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

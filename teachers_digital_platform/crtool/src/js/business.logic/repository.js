@@ -26,8 +26,6 @@ const Repository = {
         this.saveCriterionEfficacyStudies(this, [0]);
         this.saveDistinctiveCompletionDates(this, {});
         this.saveCriterionGroupCompletionStatuses(this, {});
-
-        console.log("resetApplicationData() invoked!!!!!!");
     },
 
     /*

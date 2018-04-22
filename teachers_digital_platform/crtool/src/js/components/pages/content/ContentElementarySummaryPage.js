@@ -606,10 +606,10 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-elementary-crt-assets"
-                            ref="content-elementary-crt-assets"
-                            value={this.props.criterionAnswers['content-elementary-crt-assets']}
-                            onChange={e=>this.changeCriterionAnswer('content-elementary-crt-assets', e.target.value)} >
+                            id="content-elementary-crt-assets-optional"
+                            ref="content-elementary-crt-assets-optional"
+                            value={this.props.criterionAnswers['content-elementary-crt-assets-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-elementary-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -624,10 +624,10 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-elementary-crt-gaps"
-                            ref="content-elementary-crt-gaps"
-                            value={this.props.criterionAnswers['content-elementary-crt-gaps']}
-                            onChange={e=>this.changeCriterionAnswer('content-elementary-crt-gaps', e.target.value)} >
+                            id="content-elementary-crt-gaps-optional"
+                            ref="content-elementary-crt-gaps-optional"
+                            value={this.props.criterionAnswers['content-elementary-crt-gaps-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-elementary-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -641,10 +641,10 @@ export default class ContentElementarySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="content-elementary-crt-overall-notes"
-                            ref="content-elementary-crt-overall-notes"
-                            value={this.props.criterionAnswers['content-elementary-crt-overall-notes']}
-                            onChange={e=>this.changeCriterionAnswer('content-elementary-crt-overall-notes', e.target.value)} >
+                            id="content-elementary-crt-overall-notes-optional"
+                            ref="content-elementary-crt-overall-notes-optional"
+                            value={this.props.criterionAnswers['content-elementary-crt-overall-notes-optional']}
+                            onChange={e=>this.changeCriterionAnswer('content-elementary-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

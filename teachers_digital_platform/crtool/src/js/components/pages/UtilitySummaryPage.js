@@ -511,10 +511,10 @@ export default class UtilitySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="utility-crt-assets"
-                            ref="utility-crt-assets"
-                            value={this.props.criterionAnswers['utility-crt-assets']}
-                            onChange={e=>this.criterionAnswerChanged('utility-crt-assets', e.target.value)} >
+                            id="utility-crt-assets-optional"
+                            ref="utility-crt-assets-optional"
+                            value={this.props.criterionAnswers['utility-crt-assets-optional']}
+                            onChange={e=>this.criterionAnswerChanged('utility-crt-assets-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -529,10 +529,10 @@ export default class UtilitySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="utility-crt-gaps"
-                            ref="utility-crt-gaps"
-                            value={this.props.criterionAnswers['utility-crt-gaps']}
-                            onChange={e=>this.criterionAnswerChanged('utility-crt-gaps', e.target.value)} >
+                            id="utility-crt-gaps-optional"
+                            ref="utility-crt-gaps-optional"
+                            value={this.props.criterionAnswers['utility-crt-gaps-optional']}
+                            onChange={e=>this.criterionAnswerChanged('utility-crt-gaps-optional', e.target.value)} >
                         </textarea>
                     </div>
                     <div className="m-form-field
@@ -546,10 +546,10 @@ export default class UtilitySummaryPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                             rows="6"
-                            id="utility-crt-overall-notes"
-                            ref="utility-crt-overall-notes"
-                            value={this.props.criterionAnswers['utility-crt-overall-notes']}
-                            onChange={e=>this.criterionAnswerChanged('utility-crt-overall-notes', e.target.value)} >
+                            id="utility-crt-overall-notes-optional"
+                            ref="utility-crt-overall-notes-optional"
+                            value={this.props.criterionAnswers['utility-crt-overall-notes-optional']}
+                            onChange={e=>this.criterionAnswerChanged('utility-crt-overall-notes-optional', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
