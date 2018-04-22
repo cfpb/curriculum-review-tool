@@ -28,7 +28,7 @@ export const QualityContent = {
                         {
                             showNaButton: true,
                             showBeneficialText: true,
-                            criterionRefId: "quality-crt-question-1.1.3",
+                            criterionRefId: "quality-crt-question-1.1.3_beneficial",
                             hasInlineHtml: true,
                             componentText: "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
                             criterionTextRefId: "quality-crt-text-optional-1.1.3",
@@ -72,7 +72,7 @@ export const QualityContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "quality-crt-question-1.3.2",
+                            criterionRefId: "quality-crt-question-1.3.2_beneficial",
                             hasInlineHtml: false,
                             componentText: "Are the materials available in languages other than English?",
                             criterionTextRefId: "quality-crt-text-optional-1.3.2",
@@ -81,7 +81,7 @@ export const QualityContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "quality-crt-question-1.3.3",
+                            criterionRefId: "quality-crt-question-1.3.3_beneficial",
                             hasInlineHtml: false,
                             componentText: "Written materials and physical products are durable and reusable or easy to replace.",
                         },
@@ -208,7 +208,7 @@ export const QualityContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "quality-crt-question-3.3.3",
+                            criterionRefId: "quality-crt-question-3.3.3_beneficial",
                             hasInlineHtml: false,
                             componentText: "Are the authors’ credentials presented, and do the credentials demonstrate financial education expertise?",
                         },

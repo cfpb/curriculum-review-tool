@@ -27,6 +27,10 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     shouldHideAdditonalCriterion(currentCriterion) {
+
+        //TODO: Only show Additional criterion if 2 studies are strong
+        //      a study is strong if all essential criterion are true
+        
         return false;
         // let currentCriterionGroupName = currentCriterion.replace("-question", "");
 

@@ -444,7 +444,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.1.3a"
-                  name="quality-crt-question-1.1.3"
+                  name="quality-crt-question-1.1.3_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
@@ -463,7 +463,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.1.3b"
-                  name="quality-crt-question-1.1.3"
+                  name="quality-crt-question-1.1.3_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
@@ -482,7 +482,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.1.3c"
-                  name="quality-crt-question-1.1.3"
+                  name="quality-crt-question-1.1.3_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
@@ -824,7 +824,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.3.2a"
-                  name="quality-crt-question-1.3.2"
+                  name="quality-crt-question-1.3.2_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
@@ -843,7 +843,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.3.2b"
-                  name="quality-crt-question-1.3.2"
+                  name="quality-crt-question-1.3.2_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
@@ -882,7 +882,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.3.3a"
-                  name="quality-crt-question-1.3.3"
+                  name="quality-crt-question-1.3.3_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
@@ -901,7 +901,7 @@ Array [
                   checked={false}
                   className="a-radio"
                   id="quality-crt-question-1.3.3b"
-                  name="quality-crt-question-1.3.3"
+                  name="quality-crt-question-1.3.3_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
