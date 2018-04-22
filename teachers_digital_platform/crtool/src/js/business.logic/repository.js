@@ -22,6 +22,7 @@ const Repository = {
 
         this.saveCriterionScores(this, {});
         this.saveCriterionAnswers(this, {});
+        this.saveCriterionEfficacyStudies(this, [0]);
         this.saveDistinctiveCompletionDates(this, {});
         this.saveCriterionGroupCompletionStatuses(this, {});
     },
@@ -85,6 +86,10 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionAnswers")) || {};
     },
 
+    getCriterionEfficacyStudies() {
+        return JSON.parse(localStorage.getItem("criterionEfficacyStudies")) || [0];
+    },
+
     getDistinctiveCompletedDate() {
         return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
     },
@@ -116,6 +121,15 @@ const Repository = {
         localStorage.setItem("criterionAnswers", JSON.stringify(alteredCriterionAnswers));
         component.setState({criterionAnswers: alteredCriterionAnswers});
     },
+
+    /*
+     * Set state values for all criterion efficacy studies
+     */
+    saveCriterionEfficacyStudies(component, alteredCriterionEfficacyStudies) {
+        localStorage.setItem("criterionEfficacyStudies", JSON.stringify(alteredCriterionEfficacyStudies));
+        component.setState({criterionEfficacyStudies: alteredCriterionEfficacyStudies});
+    },
+    
 
     /*
      * Set state values for all criterion completion statuses

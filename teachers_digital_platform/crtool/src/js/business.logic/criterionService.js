@@ -159,6 +159,50 @@ const CriterionService = {
     },
 
     /*
+     * We need to track the number of efficacy studies a user has so we can allow them to add and remove them
+     */
+    initializeEfficacyStudies(component, efficacyStudyNumber) {
+        let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
+        
+        if (efficacyStudyNumber !== undefined) {
+            efficacyStudyCriterion.push(efficacyStudyNumber);
+            Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
+        }
+    },
+
+    /*
+     * Efficacy Dimension has the ability to add an unlimited number of Criterion one
+     * Also called Study.  This method allows us to remove each of the criterion answers
+     */
+    removeEfficacyStudy(component, efficacyStudyNumber) {
+        let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
+        let indexOfItemToRemove = efficacyStudyCriterion.indexOf(efficacyStudyNumber);
+
+        efficacyStudyCriterion.splice(indexOfItemToRemove, 1);
+        Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
+
+        this.removeCriterionAnswersForStudy(component, efficacyStudyNumber);
+    },
+
+    /*
+     * Efficacy Dimension has the ability to add an unlimited number of Criterion one
+     * Also called Study.  This method allows us to the whole study
+     */
+    removeCriterionAnswersForStudy(component, efficacyStudyNumber) {
+        let newCriterionAnswers = {};
+        for (var key in component.state.criterionAnswers) {
+            let studyNumber = "#" + efficacyStudyNumber + "#";
+            if (!key.includes(studyNumber)) {
+                console.log("studyNumber to Remove: " + studyNumber);
+                console.log("criterionKey to Remove: " + key);
+                newCriterionAnswers[key] = component.state.criterionAnswers[key]
+            }
+        }
+
+        Repository.saveCriterionAnswers(component, newCriterionAnswers);
+    },
+
+    /*
      * We need to know if there are Criterion Answer Objects that have not be filled out
      * This method helps us identify all the "visible" Criterion Answer Objects.
      */
@@ -171,7 +215,7 @@ const CriterionService = {
                 alteredCriterionObjects[criterionKey] = "";
             }
 
-            if (criterionKey.includes("optional")) {
+            if (!criterionKey.includes("optional")) {
                 let currentCriterion = this.getCriterionQuestionKey(criterionKey);
                 let currentCriterionGroup = CriterionService.getCriterionGroupName(currentCriterion);
                 if (alteredCriterionStatuses[currentCriterion] === undefined) {

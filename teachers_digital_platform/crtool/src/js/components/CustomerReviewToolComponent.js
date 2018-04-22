@@ -36,6 +36,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
+            criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
             criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
         };
@@ -93,6 +94,14 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.initializeAnswerObjects(this, fields);
     }
 
+    initializeEfficacyStudies(efficacyStudyNumber) {
+        CriterionService.initializeEfficacyStudies(this, efficacyStudyNumber);
+    }
+
+    removeEfficacyStudy(efficacyStudyNumber) {
+        CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
+    }
+
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
         CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
     }
@@ -119,13 +128,16 @@ export default class CustomerReviewToolComponent extends React.Component {
             efficacyInProgress:this.state.efficacyInProgress,
 
             criterionAnswers:this.state.criterionAnswers,
+            criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
+            removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
             criterionAnswerChanged:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
+            initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),

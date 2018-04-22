@@ -8,7 +8,7 @@ export default class RadioButtonEditable extends React.Component {
     }
 
     render() {
-        if (!this.props.showButton) {
+        if (this.props.showButton === "false" && this.props.radioText === "NA") {
             return null;
         } else {
             return (

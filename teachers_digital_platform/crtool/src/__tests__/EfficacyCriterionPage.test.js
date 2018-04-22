@@ -9,6 +9,7 @@ const efficacyProps = {
     currentPage:"EfficacyCriterionPage",
     criterionAnswers: {},
     criterionNotes:{},
+    criterionEfficacyStudies:[0],
     changeEfficacyAnswer: _changeEfficacyRadio.bind(this),
     changeEfficacyNotes:_changeEfficacyNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
