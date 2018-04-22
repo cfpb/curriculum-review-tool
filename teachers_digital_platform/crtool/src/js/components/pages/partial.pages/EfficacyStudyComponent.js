@@ -1,6 +1,6 @@
 import React from "react";
 
-import EfficacySubComponentRow from "./EfficacySubComponentRow";
+import EditableSubComponentRow from "./EditableSubComponentRow";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class EfficacyStudyComponent extends React.Component {
@@ -62,18 +62,18 @@ export default class EfficacyStudyComponent extends React.Component {
                         </div>
                         <div className="o-survey_components">
                             <h5 className="h3">Component</h5>
-                            <EfficacySubComponentRow 
+                            <EditableSubComponentRow 
                                 componentText="Does the study use a comparison group? (e.g., state averages, students not participating in the intervention)"
                                 showBeneficialText="false"
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.1.1", "")}
                                 {...this.props}
                                 />
-                            <EfficacySubComponentRow 
+                            <EditableSubComponentRow 
                                 componentText="Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?"
                                 showBeneficialText="true"
                                 showNaButton="false"
-                                currentCriterionRefId={this.generateStudyRefId("1.1.2", "")}
+                                currentCriterionRefId={this.generateStudyRefId("1.1.2", "_beneficial")}
                                 {...this.props}
                                 />
                         </div>
@@ -88,7 +88,7 @@ export default class EfficacyStudyComponent extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Does the study adequately describe the intervention received by the treated students and (if applicable) the materials/practices delivered to the comparison students?"
                                     showBeneficialText="false"
                                     showNaButton="false"
@@ -107,18 +107,18 @@ export default class EfficacyStudyComponent extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Is the study free of possible alternative explanations other than possible initial differences between groups?"
                                     showBeneficialText="true"
                                     showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.3.1", "")}
+                                    currentCriterionRefId={this.generateStudyRefId("1.3.1", "_beneficial")}
                                     {...this.props}
                                     />
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)"
                                     showBeneficialText="true"
                                     showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.3.2", "")}
+                                    currentCriterionRefId={this.generateStudyRefId("1.3.2", "_beneficial")}
                                     {...this.props}
                                     />
                             </div>
@@ -134,46 +134,46 @@ export default class EfficacyStudyComponent extends React.Component {
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
 
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Is there at least one student-level outcome?"
                                     showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.1", "")}
                                     {...this.props}
                                     />
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Is the student outcome measure clearly defined and a measure of the intended construct?"
                                     showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.2", "")}
                                     {...this.props}
                                     />
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Are the student outcome measures collected in the same manner for all study participants?"
                                     showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.3", "")}
                                     {...this.props}
                                     />
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Does the study measure student financial knowledge, attitudes, or behavior?"
                                     showBeneficialText="false"
                                     showNaButton="false"
                                     currentCriterionRefId={this.generateStudyRefId("1.4.4", "")}
                                     {...this.props}
                                     />
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?"
                                     showBeneficialText="true"
                                     showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.5", "")}
+                                    currentCriterionRefId={this.generateStudyRefId("1.4.5", "_beneficial")}
                                     {...this.props}
                                     />
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Does the study collect student outcome data from a source other than (or in addition to) the students?"
                                     showBeneficialText="true"
                                     showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.6", "")}
+                                    currentCriterionRefId={this.generateStudyRefId("1.4.6", "_beneficial")}
                                     {...this.props}
                                     />
                             </div>
@@ -188,7 +188,7 @@ export default class EfficacyStudyComponent extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Is the analysis performed using appropriate statistical techniques? (e.g., correct test of significance, correct level of analysis)"
                                     showBeneficialText="false"
                                     showNaButton="false"
@@ -207,7 +207,7 @@ export default class EfficacyStudyComponent extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <EfficacySubComponentRow 
+                                <EditableSubComponentRow 
                                     componentText="Was the study performed in the last 10 years?"
                                     showBeneficialText="false"
                                     showNaButton="false"

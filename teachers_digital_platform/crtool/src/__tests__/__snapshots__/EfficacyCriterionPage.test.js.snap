@@ -369,15 +369,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.1.2#0#a"
-                  name="efficacy-crt-question-1.1.2#0#"
+                  id="efficacy-crt-question-1.1.2#0#_beneficiala"
+                  name="efficacy-crt-question-1.1.2#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.1.2#0#a"
+                  htmlFor="efficacy-crt-question-1.1.2#0#_beneficiala"
                 >
                   Yes
                 </label>
@@ -388,15 +388,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.1.2#0#b"
-                  name="efficacy-crt-question-1.1.2#0#"
+                  id="efficacy-crt-question-1.1.2#0#_beneficialb"
+                  name="efficacy-crt-question-1.1.2#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.1.2#0#b"
+                  htmlFor="efficacy-crt-question-1.1.2#0#_beneficialb"
                 >
                   No
                 </label>
@@ -548,15 +548,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.3.1#0#a"
-                  name="efficacy-crt-question-1.3.1#0#"
+                  id="efficacy-crt-question-1.3.1#0#_beneficiala"
+                  name="efficacy-crt-question-1.3.1#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.3.1#0#a"
+                  htmlFor="efficacy-crt-question-1.3.1#0#_beneficiala"
                 >
                   Yes
                 </label>
@@ -567,15 +567,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.3.1#0#b"
-                  name="efficacy-crt-question-1.3.1#0#"
+                  id="efficacy-crt-question-1.3.1#0#_beneficialb"
+                  name="efficacy-crt-question-1.3.1#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.3.1#0#b"
+                  htmlFor="efficacy-crt-question-1.3.1#0#_beneficialb"
                 >
                   No
                 </label>
@@ -606,15 +606,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.3.2#0#a"
-                  name="efficacy-crt-question-1.3.2#0#"
+                  id="efficacy-crt-question-1.3.2#0#_beneficiala"
+                  name="efficacy-crt-question-1.3.2#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.3.2#0#a"
+                  htmlFor="efficacy-crt-question-1.3.2#0#_beneficiala"
                 >
                   Yes
                 </label>
@@ -625,15 +625,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.3.2#0#b"
-                  name="efficacy-crt-question-1.3.2#0#"
+                  id="efficacy-crt-question-1.3.2#0#_beneficialb"
+                  name="efficacy-crt-question-1.3.2#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.3.2#0#b"
+                  htmlFor="efficacy-crt-question-1.3.2#0#_beneficialb"
                 >
                   No
                 </label>
@@ -910,15 +910,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.4.5#0#a"
-                  name="efficacy-crt-question-1.4.5#0#"
+                  id="efficacy-crt-question-1.4.5#0#_beneficiala"
+                  name="efficacy-crt-question-1.4.5#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.4.5#0#a"
+                  htmlFor="efficacy-crt-question-1.4.5#0#_beneficiala"
                 >
                   Yes
                 </label>
@@ -929,15 +929,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.4.5#0#b"
-                  name="efficacy-crt-question-1.4.5#0#"
+                  id="efficacy-crt-question-1.4.5#0#_beneficialb"
+                  name="efficacy-crt-question-1.4.5#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.4.5#0#b"
+                  htmlFor="efficacy-crt-question-1.4.5#0#_beneficialb"
                 >
                   No
                 </label>
@@ -968,15 +968,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.4.6#0#a"
-                  name="efficacy-crt-question-1.4.6#0#"
+                  id="efficacy-crt-question-1.4.6#0#_beneficiala"
+                  name="efficacy-crt-question-1.4.6#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.4.6#0#a"
+                  htmlFor="efficacy-crt-question-1.4.6#0#_beneficiala"
                 >
                   Yes
                 </label>
@@ -987,15 +987,15 @@ Array [
                 <input
                   checked={false}
                   className="a-radio"
-                  id="efficacy-crt-question-1.4.6#0#b"
-                  name="efficacy-crt-question-1.4.6#0#"
+                  id="efficacy-crt-question-1.4.6#0#_beneficialb"
+                  name="efficacy-crt-question-1.4.6#0#_beneficial"
                   onChange={[Function]}
                   type="radio"
                   value="0"
                 />
                 <label
                   className="a-label"
-                  htmlFor="efficacy-crt-question-1.4.6#0#b"
+                  htmlFor="efficacy-crt-question-1.4.6#0#_beneficialb"
                 >
                   No
                 </label>

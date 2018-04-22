@@ -5,6 +5,7 @@ import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
 import EfficacyStudyComponent from "./partial.pages/EfficacyStudyComponent";
+import EditableSubComponentRow from "./partial.pages/EditableSubComponentRow";
 
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -49,6 +50,11 @@ export default class EfficacyCriterionPage extends React.Component {
         return maxNumber;
     }
 
+    generateStudyRefId(criterionNumber, otherText) {
+        let newCriterionRefId = "efficacy-crt-question-" + criterionNumber + otherText;
+        return newCriterionRefId;
+    }
+    
     render() {
         const criterionLinkWrapperProps = {
             setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
@@ -227,42 +233,13 @@ export default class EfficacyCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-2.1a"
-                                                name="efficacy-crt-question-2.1"
-                                                ref="efficacy-crt-question-2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-2.1a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-2.1b"
-                                                name="efficacy-crt-question-2.1"
-                                                ref="efficacy-crt-question-2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <EditableSubComponentRow 
+                                    componentText="Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?"
+                                    showBeneficialText="true"
+                                    showNaButton="false"
+                                    currentCriterionRefId={this.generateStudyRefId("2.1", "_beneficial")}
+                                    {...this.props}
+                                    />
                             </div>
                         </li>
                         <li className="o-survey">
@@ -275,55 +252,16 @@ export default class EfficacyCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-2.2a"
-                                                name="efficacy-crt-question-2.2"
-                                                ref="efficacy-crt-question-2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-2.2b"
-                                                name="efficacy-crt-question-2.2"
-                                                ref="efficacy-crt-question-2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-2.2b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <EditableSubComponentRow 
+                                    componentText="Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?"
+                                    showBeneficialText="true"
+                                    showNaButton="false"
+                                    currentCriterionRefId={this.generateStudyRefId("2.2", "_beneficial")}
+                                    {...this.props}
+                                    />
                             </div>
                         </li>
                     </ol>
-
-
-
-
-
-
-
-
-
-
                     <div className="m-form-field m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-2">
                             My notes
@@ -370,41 +308,13 @@ export default class EfficacyCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Does at least one evaluation indicate positive effects significant at the 10% level?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-3.1a"
-                                                name="efficacy-crt-question-3.1"
-                                                ref="efficacy-crt-question-3.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-3.1a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-3.1b"
-                                                name="efficacy-crt-question-3.1"
-                                                ref="efficacy-crt-question-3.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-3.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <EditableSubComponentRow 
+                                    componentText="Does at least one evaluation indicate positive effects significant at the 10% level?"
+                                    showBeneficialText="false"
+                                    showNaButton="false"
+                                    currentCriterionRefId={this.generateStudyRefId("3.1", "")}
+                                    {...this.props}
+                                    />
                             </div>
                         </li>
                         <li className="o-survey">
@@ -417,87 +327,23 @@ export default class EfficacyCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-3.2.1a"
-                                                name="efficacy-crt-question-3.2.1"
-                                                ref="efficacy-crt-question-3.2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-3.2.1a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-3.2.1b"
-                                                name="efficacy-crt-question-3.2.1"
-                                                ref="efficacy-crt-question-3.2.1"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-3.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-3.2.2a"
-                                                name="efficacy-crt-question-3.2.2"
-                                                ref="efficacy-crt-question-3.2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-3.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="efficacy-crt-question-3.2.2b"
-                                                name="efficacy-crt-question-3.2.2"
-                                                ref="efficacy-crt-question-3.2.2"
-                                                checked={this.props.criterionAnswers["efficacy-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('efficacy-crt-question-3.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="efficacy-crt-question-3.2.2b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <EditableSubComponentRow 
+                                    componentText="Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)"
+                                    showBeneficialText="false"
+                                    showNaButton="false"
+                                    currentCriterionRefId={this.generateStudyRefId("3.2.1", "")}
+                                    {...this.props}
+                                    />
+                                <EditableSubComponentRow 
+                                    componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
+                                    showBeneficialText="true"
+                                    showNaButton="false"
+                                    currentCriterionRefId={this.generateStudyRefId("3.2.1", "_beneficial")}
+                                    {...this.props}
+                                    />
                             </div>
                         </li>
                     </ol>
-
-
-
-
-
-
-
                     <div className="m-form-field m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-3">
                             My notes

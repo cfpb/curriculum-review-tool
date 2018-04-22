@@ -3,7 +3,7 @@ import React from "react";
 
 import RadioButtonEditable from "../../buttons/RadioButtonEditable";
 
-export default class EfficacySubComponentRow extends React.Component {
+export default class EditableSubComponentRow extends React.Component {
 
     showBeneficialText() {
         if (this.props.showBeneficialText === "true") {
