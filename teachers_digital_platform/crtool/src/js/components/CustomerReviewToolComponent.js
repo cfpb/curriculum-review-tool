@@ -2,10 +2,9 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../business.logic/constants";
-import SummaryButton from "./buttons/SummaryButton";
 import SaveWorkModal from "./dialogs/SaveWorkModal";
-import StartOverModal from "./dialogs/StartOverModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
+import FooterButtonAreaComponent from "./pages/partial.pages/FooterButtonAreaComponent";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
@@ -167,6 +166,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualitySummaryButton:this.state.qualitySummaryButton,
             efficacySummaryButton:this.state.efficacySummaryButton,
 
+            clearLocalStorage:this.clearLocalStorage.bind(this),
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
@@ -189,16 +189,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                     <DistinctiveMenuBar {...dimensionMenuProps} />
                     <SurveyPageContainer className="SurveyPage" {...applicationProps} {...dimensionMenuProps} />
 
-                    <div className="block
-                                block__flush-bottom
-                                block__padded-top
-                                block__border-top">
-                        <div className="m-btn-group
-                                    m-btn-group__wide">
-                            <SummaryButton {...summaryButtonProps} />
-                            <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
-                        </div>
-                    </div>
+                    <FooterButtonAreaComponent {...summaryButtonProps} />
                 </React.Fragment>
             );
         }
