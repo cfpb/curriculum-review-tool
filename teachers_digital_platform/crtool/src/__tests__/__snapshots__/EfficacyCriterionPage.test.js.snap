@@ -1209,7 +1209,7 @@ Array [
     <h4
       className="h2"
     >
-      Score for [study name]
+      Score for 
     </h4>
     <div
       className="m-curriculum-status"
