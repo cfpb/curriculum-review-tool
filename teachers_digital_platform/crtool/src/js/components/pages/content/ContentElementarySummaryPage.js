@@ -61,7 +61,6 @@ export default class ContentElementarySummaryPage extends React.Component {
         return className;
     }
 
-
     render() {
         return (
             <React.Fragment>

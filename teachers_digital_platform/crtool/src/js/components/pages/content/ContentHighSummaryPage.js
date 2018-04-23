@@ -10,6 +10,57 @@ export default class ContentHighSummaryPage extends React.Component {
         this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
+    criterionOveralScoreClassName(level) {
+        let isLimited = false;
+        if (this.props.criterionScores["content-high-crt-1"].doesnotmeet ||
+            this.props.criterionScores["content-high-crt-2"].doesnotmeet ||
+            this.props.criterionScores["content-high-crt-3"].doesnotmeet ||
+            this.props.criterionScores["content-high-crt-4"].doesnotmeet ||
+            this.props.criterionScores["content-high-crt-5"].doesnotmeet ||
+            this.props.criterionScores["content-high-crt-6"].doesnotmeet ) {
+
+            isLimited = true;
+        }
+
+        let isModerate = false;
+        if (this.props.criterionScores["content-high-crt-1"].meets &&
+            this.props.criterionScores["content-high-crt-2"].meets &&
+            this.props.criterionScores["content-high-crt-3"].meets &&
+            this.props.criterionScores["content-high-crt-4"].meets &&
+            this.props.criterionScores["content-high-crt-5"].meets &&
+            this.props.criterionScores["content-high-crt-6"].meets ) {
+
+            isModerate = true;
+        }
+
+        let className = "m-form-field_radio-icon";
+        if (level === "limited" && isLimited) {
+            className = className + " is-active";
+        } else if (level === "moderate" && isModerate) {
+            className = className + " is-active";
+        } else if (level === "strong" && !isLimited && !isModerate) {
+            className = className + " is-active";
+        }
+
+        return className;
+    }
+
+    criterionClassNameFor(criterion, level) {
+        let criterionGroupName = "content-high-crt-" + criterion;
+        let criterionScore = this.props.criterionScores[criterionGroupName];
+        let className = "m-form-field_radio-icon";
+
+        if (level === "exceeds" && criterionScore.exceeds) {
+            className = className + " is-active";
+        } else if (level === "meets" && criterionScore.meets) {
+            className = className + " is-active";
+        } else if (level === "doesnotmeet" && criterionScore.doesnotmeet) {
+            className = className + " is-active";
+        }
+
+        return className;
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -67,7 +118,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("1", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -83,7 +134,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("1", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -99,7 +150,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("1", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -114,8 +165,8 @@ export default class ContentHighSummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>0</b> No</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-1"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-1"].essential_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>
@@ -148,7 +199,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("2", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -164,7 +215,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("2", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -180,7 +231,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("2", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -195,8 +246,8 @@ export default class ContentHighSummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>0</b> No</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-2"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-2"].essential_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>
@@ -229,7 +280,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("3", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -245,7 +296,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("3", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -261,7 +312,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("3", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -276,8 +327,8 @@ export default class ContentHighSummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>0</b> No</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-3"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-3"].essential_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>
@@ -310,7 +361,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("4", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -326,7 +377,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("4", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -342,7 +393,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("4", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -357,8 +408,8 @@ export default class ContentHighSummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>0</b> No</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-4"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-4"].essential_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>
@@ -391,7 +442,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("5", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -407,7 +458,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("5", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -423,7 +474,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("5", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -438,8 +489,8 @@ export default class ContentHighSummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>0</b> No</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-5"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-5"].essential_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>
@@ -472,13 +523,13 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("6", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className="m-form-field_radio-text is-active">
                                         <div><strong>Exceeds</strong></div>
-                                        1 component was addressed
+                                        both components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -488,7 +539,23 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("6", "meets")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className="m-form-field_radio-text is-active">
+                                        <div><strong>Meets</strong></div>
+                                        1 components was addressed
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                            m-form-field__radio
+                                            m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.criterionClassNameFor("6", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -503,8 +570,8 @@ export default class ContentHighSummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for these components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>0</b> No</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-6"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["content-high-crt-6"].essential_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>
@@ -544,7 +611,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -560,7 +627,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -576,7 +643,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                         m-form-field__radio
                                         m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>

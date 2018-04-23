@@ -1,4 +1,4 @@
-const ContentElementaryCalculationService = {
+const ContentHighCalculationService = {
 
     /*
      * Verify Content criterion scores
@@ -15,9 +15,9 @@ const ContentElementaryCalculationService = {
         } else if (currentCriterionGroupName.includes("crt-3")) {
             criterionScore = this.calculateThirdCriterion(criterionScore);
         } else if (currentCriterionGroupName.includes("crt-4")) {
-            criterionScore = this.calculateFourAndFiveCriterion(criterionScore);
+            criterionScore = this.calculateFourCriterion(criterionScore);
         } else if (currentCriterionGroupName.includes("crt-5")) {
-            criterionScore = this.calculateFourAndFiveCriterion(criterionScore);
+            criterionScore = this.calculateFiveCriterion(criterionScore);
         } else if (currentCriterionGroupName.includes("crt-6")) {
             criterionScore = this.calculateSixthCriterion(criterionScore);
         }
@@ -28,7 +28,7 @@ const ContentElementaryCalculationService = {
     calculateFirstCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes > 0) {
+        } else if (criterionScore.essential_total_yes >= 5) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -39,7 +39,7 @@ const ContentElementaryCalculationService = {
     calculateSecondCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 3) {
+        } else if (criterionScore.essential_total_yes >= 8) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -50,7 +50,7 @@ const ContentElementaryCalculationService = {
     calculateThirdCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 5) {
+        } else if (criterionScore.essential_total_yes >= 3) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -58,10 +58,21 @@ const ContentElementaryCalculationService = {
         return criterionScore;
     },
 
-    calculateFourAndFiveCriterion(criterionScore) {
+    calculateFourCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes > 0) {
+        } else if (criterionScore.essential_total_yes > 9) {
+            criterionScore.meets = true;
+        } else {
+            criterionScore.doesnotmeet = true;
+        }
+        return criterionScore;
+    },
+
+    calculateFiveCriterion(criterionScore) {
+        if (criterionScore.all_essential_yes) {
+            criterionScore.exceeds = true;
+        } else if (criterionScore.essential_total_yes >= 6) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -71,6 +82,8 @@ const ContentElementaryCalculationService = {
 
     calculateSixthCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
+            criterionScore.exceeds = true;
+        } else if (criterionScore.essential_total_yes >= 2) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -79,4 +92,4 @@ const ContentElementaryCalculationService = {
     },
 }
 
-export default ContentElementaryCalculationService;
+export default ContentHighCalculationService;

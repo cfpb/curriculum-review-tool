@@ -44,7 +44,7 @@ export default class UtilitySummaryPage extends React.Component {
         return className;
     }
 
-    ctrierionClassNameFor(criterion, level) {
+    criterionClassNameFor(criterion, level) {
         let criterionGroupName = "utility-crt-" + criterion;
         let criterionScore = this.props.criterionScores[criterionGroupName];
         let className = "m-form-field_radio-icon";
@@ -117,7 +117,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("1", "meets")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("1", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -133,7 +133,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("1", "doesnotmeet")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("1", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -182,7 +182,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("2", "exceeds")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("2", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -199,7 +199,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("2", "meets")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("2", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -216,7 +216,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("2", "doesnotmeet")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("2", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -270,7 +270,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("3", "exceeds")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("3", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -287,7 +287,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("3", "meets")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("3", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -304,7 +304,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("3", "doesnotmeet")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("3", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -359,7 +359,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("4", "exceeds")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("4", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -376,7 +376,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("4", "meets")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("4", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -393,7 +393,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("4", "doesnotmeet")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("4", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -447,7 +447,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("5", "exceeds")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("5", "exceeds")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -464,7 +464,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("5", "meets")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("5", "meets")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -481,7 +481,7 @@ export default class UtilitySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.ctrierionClassNameFor("5", "doesnotmeet")} viewBox="0 0 22 22">
+                                    <svg className={this.criterionClassNameFor("5", "doesnotmeet")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
