@@ -21,12 +21,6 @@ export default class ContentHighCriterionPage extends React.Component {
     }
 
     render() {
-        const criterionLinkWrapperProps = {
-            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
-            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
-            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
-        };
-
         return (
             <React.Fragment>
                 <hr className="hr
@@ -323,7 +317,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -720,7 +714,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-3"
                     criterionText="Criterion 3: Spending"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -918,7 +912,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-4"
                     criterionText="Criterion 4: Borrowing and credit"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1338,7 +1332,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-5"
                     criterionText="Criterion 5: Managing financial risk"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1653,7 +1647,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-high-crt-question-6"
                     criterionText="Criterion 6: Financial responsibility and money management"
-                    {...criterionLinkWrapperProps}  >
+                    {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon

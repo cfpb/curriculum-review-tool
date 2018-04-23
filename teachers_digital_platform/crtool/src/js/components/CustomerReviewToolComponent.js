@@ -2,10 +2,9 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../business.logic/constants";
-import SummaryButton from "./buttons/SummaryButton";
 import SaveWorkModal from "./dialogs/SaveWorkModal";
-import StartOverModal from "./dialogs/StartOverModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
+import FooterButtonAreaComponent from "./pages/partial.pages/FooterButtonAreaComponent";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
@@ -36,6 +35,8 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
+            criterionClickedTitles: Repository.getCriterionClickedTitles(),
+            criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
             criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
         };
@@ -80,6 +81,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     handleFinalSummaryButtonClick() {
+        this.setDistinctiveCompletionDateNow(C.FINAL_SUMMARY_PAGE);
         Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
     }
 
@@ -92,12 +94,24 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.initializeAnswerObjects(this, fields);
     }
 
+    initializeEfficacyStudies(efficacyStudyNumber) {
+        CriterionService.initializeEfficacyStudies(this, efficacyStudyNumber);
+    }
+
+    removeEfficacyStudy(efficacyStudyNumber) {
+        CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
+    }
+
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
         CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
     }
 
     setCriterionStatusToInProgress(criterionKey) {
         CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_PROGRESS);
+    }
+
+    setCriterionTitleLinkClicked(criterionKey) {
+        CriterionService.setCriterionTitleLinkClicked(this, criterionKey);
     }
 
     setCriterionStatusToInStart(criterionKey) {
@@ -118,14 +132,19 @@ export default class CustomerReviewToolComponent extends React.Component {
             efficacyInProgress:this.state.efficacyInProgress,
 
             criterionAnswers:this.state.criterionAnswers,
+            criterionClickedTitles:this.state.criterionClickedTitles,
+            criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
+            removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
             criterionAnswerChanged:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
+            initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
+            setCriterionTitleLinkClicked: this.setCriterionTitleLinkClicked.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
         };
@@ -154,6 +173,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualitySummaryButton:this.state.qualitySummaryButton,
             efficacySummaryButton:this.state.efficacySummaryButton,
 
+            clearLocalStorage:this.clearLocalStorage.bind(this),
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
@@ -176,16 +196,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                     <DistinctiveMenuBar {...dimensionMenuProps} />
                     <SurveyPageContainer className="SurveyPage" {...applicationProps} {...dimensionMenuProps} />
 
-                    <div className="block
-                                block__flush-bottom
-                                block__padded-top
-                                block__border-top">
-                        <div className="m-btn-group
-                                    m-btn-group__wide">
-                            <SummaryButton {...summaryButtonProps} />
-                            <StartOverModal clearLocalStorage={this.clearLocalStorage.bind(this)}/>
-                        </div>
-                    </div>
+                    <FooterButtonAreaComponent {...summaryButtonProps} />
                 </React.Fragment>
             );
         }

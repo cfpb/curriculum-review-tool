@@ -22,6 +22,8 @@ const Repository = {
 
         this.saveCriterionScores(this, {});
         this.saveCriterionAnswers(this, {});
+        this.setCriterionTitleLinkClicked(this, {});
+        this.saveCriterionEfficacyStudies(this, [0]);
         this.saveDistinctiveCompletionDates(this, {});
         this.saveCriterionGroupCompletionStatuses(this, {});
     },
@@ -85,12 +87,20 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionAnswers")) || {};
     },
 
+    getCriterionEfficacyStudies() {
+        return JSON.parse(localStorage.getItem("criterionEfficacyStudies")) || [0];
+    },
+
     getDistinctiveCompletedDate() {
-        return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
+        return JSON.parse(localStorage.getItem("dis tinctiveCompletedDate")) || {};
     },
 
     getCriterionCompletionSatuses() {
         return JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {};
+    },
+
+    getCriterionClickedTitles() {
+        return JSON.parse(localStorage.getItem("criterionClickedTitles")) || {};
     },
 
     /*
@@ -118,11 +128,28 @@ const Repository = {
     },
 
     /*
+     * Set state values for all criterion efficacy studies
+     */
+    saveCriterionEfficacyStudies(component, alteredCriterionEfficacyStudies) {
+        localStorage.setItem("criterionEfficacyStudies", JSON.stringify(alteredCriterionEfficacyStudies));
+        component.setState({criterionEfficacyStudies: alteredCriterionEfficacyStudies});
+    },
+    
+
+    /*
      * Set state values for all criterion completion statuses
      */
     saveCriterionGroupCompletionStatuses(component, alteredCriterionCompletionStatues) {
         localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredCriterionCompletionStatues));
         component.setState({criterionCompletionStatuses: alteredCriterionCompletionStatues});
+    },
+
+    /*
+     * Set the state values for all clicked criterion titles
+     */
+    setCriterionTitleLinkClicked(component, alteredCriterionClickedTitles) {
+        localStorage.setItem("criterionClickedTitles", JSON.stringify(alteredCriterionClickedTitles));
+        component.setState({criterionClickedTitles: alteredCriterionClickedTitles});
     },
 
     /*

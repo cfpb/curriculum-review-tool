@@ -4,6 +4,15 @@ import React from "react";
 import CriterionRow from "./CriterionRow";
 
 export default class CriterionComponent extends React.Component {
+
+    renderMyNotes() {
+        if (this.props.criterionAnswers[this.props.criterionData.notesRefId] === "") {
+            return (<p class="o-survey_question-helper">No information provided</p>);
+        } else {
+            return this.props.criterionAnswers[this.props.criterionData.notesRefId];
+        }
+    }
+
     render() {
         return (
             <div className="block block__flush-top">
@@ -23,7 +32,7 @@ export default class CriterionComponent extends React.Component {
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
                     </label>
-                    <p>{this.props.criterionAnswers[this.props.criterionData.notesRefId]}</p>
+                    <p>{this.renderMyNotes()}</p>
                 </div>
             </div>
         );

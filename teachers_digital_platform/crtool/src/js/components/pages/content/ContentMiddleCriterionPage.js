@@ -21,11 +21,6 @@ export default class ContentMiddleCriterionPage extends React.Component {
     }
 
     render() {
-        const criterionLinkWrapperProps = {
-            setCriterionStatusToInStart:this.props.setCriterionStatusToInStart,
-            setCriterionStatusToInProgress:this.props.setCriterionStatusToInProgress,
-            criterionCompletionStatuses:this.props.criterionCompletionStatuses,
-        };
         return (
             <React.Fragment>
                 <hr className="hr
@@ -217,7 +212,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-middle-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -579,7 +574,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-middle-crt-question-3"
                     criterionText="Criterion 3: Spending"
-                    {...criterionLinkWrapperProps}  >
+                    {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -812,7 +807,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-middle-crt-question-4"
                     criterionText="Criterion 4: Borrowing and credit"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1127,7 +1122,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-middle-crt-question-5"
                     criterionText="Criterion 5: Borrowing and credit"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
@@ -1337,7 +1332,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="content-middle-crt-question-6"
                     criterionText="Criterion 6: Financial responsibility and money management"
-                    {...criterionLinkWrapperProps} >
+                    {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon

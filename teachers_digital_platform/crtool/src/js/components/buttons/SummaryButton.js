@@ -42,10 +42,10 @@ export default class SummaryButton extends React.Component {
             );
         }
         else {
-            if (this.props.currentPage === C.FINAL_SUMMARY_PAGE) {
+            if (this.props.currentPage === C.FINAL_SUMMARY_PAGE ||
+                this.props.currentPage === C.START_PAGE) {
                 return (null);
-            }
-            else {
+            } else {
                 return (
                     <button className="a-btn" disabled >
                         Continue to summary

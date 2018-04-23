@@ -19,7 +19,7 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-1.1.2",
+                            criterionRefId: "efficacy-crt-question-1.1.2_beneficial",
                             hasInlineHtml: false,
                             componentText: "Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?",
                         },
@@ -45,14 +45,14 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-1.3.1",
+                            criterionRefId: "efficacy-crt-question-1.3.1_beneficial",
                             hasInlineHtml: false,
                             componentText: "Is the study free of possible alternative explanations other than possible initial differences between groups?",
                         },
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-1.3.2",
+                            criterionRefId: "efficacy-crt-question-1.3.2_beneficial",
                             hasInlineHtml: false,
                             componentText: "Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)",
                         },
@@ -93,14 +93,14 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-1.4.5",
+                            criterionRefId: "efficacy-crt-question-1.4.5_beneficial",
                             hasInlineHtml: false,
                             componentText: "Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?",
                         },
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-1.4.6",
+                            criterionRefId: "efficacy-crt-question-1.4.6_beneficial",
                             hasInlineHtml: false,
                             componentText: "Does the study collect student outcome data from a source other than (or in addition to) the students?",
                         },
@@ -146,7 +146,7 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-2.1",
+                            criterionRefId: "efficacy-crt-question-2.1_beneficial",
                             hasInlineHtml: false,
                             componentText: "Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?",
                         },
@@ -159,7 +159,7 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-2.2.1",
+                            criterionRefId: "efficacy-crt-question-2.2.1_beneficial",
                             hasInlineHtml: false,
                             componentText: "Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?",
                         },
@@ -199,7 +199,7 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-3.2.2",
+                            criterionRefId: "efficacy-crt-question-3.2.2_beneficial",
                             hasInlineHtml: false,
                             componentText: "Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?",
                         },

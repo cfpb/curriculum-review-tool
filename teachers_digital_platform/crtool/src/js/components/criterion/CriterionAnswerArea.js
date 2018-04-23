@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import RadioButton from "./RadioButton";
+import RadioButton from "../buttons/RadioButton";
 
 export default class CriterionAnswerArea extends React.Component {
 
