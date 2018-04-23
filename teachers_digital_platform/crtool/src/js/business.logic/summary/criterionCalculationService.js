@@ -2,6 +2,9 @@ import C from "../constants";
 import Repository from "../repository";
 import UtilityService from "../utilityService";
 import QualityCalculationService from "../summary/qualityCalculationService";
+import UtilityCalculationService from "../summary/utilityCalculationService";
+
+
 
 const CriterionCalculationService = {
 
@@ -69,6 +72,8 @@ const CriterionCalculationService = {
 
         if (currentCriterionGroupName.includes("quality")) {
             criterionScore = QualityCalculationService.isQualityCriterionGroupComplete(currentCriterionGroupName, criterionScore);
+        } else if (currentCriterionGroupName.includes("utility")) {
+            criterionScore = UtilityCalculationService.isUtilityCriterionGroupComplete(currentCriterionGroupName, criterionScore);
         }
             
         this.setCriterionScoreState(component, currentCriterionGroupName, criterionScore);
