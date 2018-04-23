@@ -79,146 +79,144 @@ export default class EfficacyStudyComponent extends React.Component {
                         </div>
                     </li>
                     <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">1.2</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Does the study adequately describe the intervention received by the treated students and (if applicable) the materials/practices delivered to the comparison students?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.2", "")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">1.3</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Is the study free of possible alternative explanations other than possible initial differences between groups?"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.3.1", "_beneficial")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.3.2", "_beneficial")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">1.4</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                        <div className="o-survey_number">
+                            <h4 className="h3">1.2</h4>
+                        </div>
+                        <div className="o-survey_indicator">
+                            <h5 className="h3">Indicator</h5>
+                            <p>Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.</p>
+                        </div>
+                        <div className="o-survey_components">
+                            <h5 className="h3">Component</h5>
+                            <EditableSubComponentRow 
+                                componentText="Does the study adequately describe the intervention received by the treated students and (if applicable) the materials/practices delivered to the comparison students?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.2", "")}
+                                {...this.props}
+                                />
+                        </div>
+                    </li>
+                    <li className="o-survey">
+                        <div className="o-survey_number">
+                            <h4 className="h3">1.3</h4>
+                        </div>
+                        <div className="o-survey_indicator">
+                            <h5 className="h3">Indicator</h5>
+                            <p>Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.</p>
+                        </div>
+                        <div className="o-survey_components">
+                            <h5 className="h3">Component</h5>
+                            <EditableSubComponentRow 
+                                componentText="Is the study free of possible alternative explanations other than possible initial differences between groups?"
+                                showBeneficialText="true"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.3.1", "_beneficial")}
+                                {...this.props}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)"
+                                showBeneficialText="true"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.3.2", "_beneficial")}
+                                {...this.props}
+                                />
+                        </div>
+                    </li>
+                    <li className="o-survey">
+                        <div className="o-survey_number">
+                            <h4 className="h3">1.4</h4>
+                        </div>
+                        <div className="o-survey_indicator">
+                            <h5 className="h3">Indicator</h5>
+                            <p>The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.</p>
+                        </div>
+                        <div className="o-survey_components">
+                            <h5 className="h3">Component</h5>
 
-                                <EditableSubComponentRow 
-                                    componentText="Is there at least one student-level outcome?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.1", "")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Is the student outcome measure clearly defined and a measure of the intended construct?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.2", "")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Are the student outcome measures collected in the same manner for all study participants?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.3", "")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Does the study measure student financial knowledge, attitudes, or behavior?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.4", "")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.5", "_beneficial")}
-                                    {...this.props}
-                                    />
-                                <EditableSubComponentRow 
-                                    componentText="Does the study collect student outcome data from a source other than (or in addition to) the students?"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.4.6", "_beneficial")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">1.5</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>The data are analyzed using appropriate statistical techniques.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Is the analysis performed using appropriate statistical techniques? (e.g., correct test of significance, correct level of analysis)"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.5", "")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-                        <li className="o-survey">
-                            <div className="o-survey_number">
-                                <h4 className="h3">1.6</h4>
-                            </div>
-                            <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
-                                <p>Evidence of impact is recent enough to be relevant.</p>
-                            </div>
-                            <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
-                                <EditableSubComponentRow 
-                                    componentText="Was the study performed in the last 10 years?"
-                                    showBeneficialText="false"
-                                    showNaButton="false"
-                                    currentCriterionRefId={this.generateStudyRefId("1.6", "")}
-                                    {...this.props}
-                                    />
-                            </div>
-                        </li>
-
+                            <EditableSubComponentRow 
+                                componentText="Is there at least one student-level outcome?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.4.1", "")}
+                                {...this.props}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Is the student outcome measure clearly defined and a measure of the intended construct?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.4.2", "")}
+                                {...this.props}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Are the student outcome measures collected in the same manner for all study participants?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.4.3", "")}
+                                {...this.props}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Does the study measure student financial knowledge, attitudes, or behavior?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.4.4", "")}
+                                {...this.props}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?"
+                                showBeneficialText="true"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.4.5", "_beneficial")}
+                                {...this.props}
+                                />
+                            <EditableSubComponentRow 
+                                componentText="Does the study collect student outcome data from a source other than (or in addition to) the students?"
+                                showBeneficialText="true"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.4.6", "_beneficial")}
+                                {...this.props}
+                                />
+                        </div>
+                    </li>
+                    <li className="o-survey">
+                        <div className="o-survey_number">
+                            <h4 className="h3">1.5</h4>
+                        </div>
+                        <div className="o-survey_indicator">
+                            <h5 className="h3">Indicator</h5>
+                            <p>The data are analyzed using appropriate statistical techniques.</p>
+                        </div>
+                        <div className="o-survey_components">
+                            <h5 className="h3">Component</h5>
+                            <EditableSubComponentRow 
+                                componentText="Is the analysis performed using appropriate statistical techniques? (e.g., correct test of significance, correct level of analysis)"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.5", "")}
+                                {...this.props}
+                                />
+                        </div>
+                    </li>
+                    <li className="o-survey">
+                        <div className="o-survey_number">
+                            <h4 className="h3">1.6</h4>
+                        </div>
+                        <div className="o-survey_indicator">
+                            <h5 className="h3">Indicator</h5>
+                            <p>Evidence of impact is recent enough to be relevant.</p>
+                        </div>
+                        <div className="o-survey_components">
+                            <h5 className="h3">Component</h5>
+                            <EditableSubComponentRow 
+                                componentText="Was the study performed in the last 10 years?"
+                                showBeneficialText="false"
+                                showNaButton="false"
+                                currentCriterionRefId={this.generateStudyRefId("1.6", "")}
+                                {...this.props}
+                                />
+                        </div>
+                    </li>
                 </ol>
-
                 <div className="m-form-field m-form-field__textarea">
                     <label className="a-label a-label__heading" htmlFor={this.generateStudyRefId("1", "_notes_optional")}>
                         My notes
@@ -235,7 +233,55 @@ export default class EfficacyStudyComponent extends React.Component {
                                 onChange={e=>this.props.criterionAnswerChanged(this.generateStudyRefId("1", "_notes_optional"), e.target.value)} >
                     </textarea>
                 </div>
-
+                <h4 className="h2">Score for {this.props.criterionAnswers[this.generateStudyRefId("", "study")]}</h4>
+                <div className="m-curriculum-status">
+                    <ul className="m-list__unstyled u-mb0">
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                            m-form-field__radio
+                                            m-form-field__display">
+                                <div className="a-label">
+                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className="m-form-field_radio-text is-active">
+                                        <div><strong>The study is strong.</strong></div>
+                                        All essential components were met.
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                            m-form-field__radio
+                                            m-form-field__display">
+                                <div className="a-label">
+                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className="m-form-field_radio-text">
+                                        <div><strong>The study is not strong.</strong></div>
+                                        Not all essential components were met.
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div className="m-curriculum-status_components">
+                        <p><b>Total number of essential components</b></p>
+                        <ul className="m-component-list">
+                            <li><b>5</b> Yes</li>
+                            <li><b>0</b> No</li>
+                        </ul>
+                        <p><b>Total number of beneficial components</b></p>
+                        <ul className="m-component-list">
+                            <li><b>0</b> Yes</li>
+                            <li><b>2</b> No</li>
+                        </ul>
+                    </div>
+                </div>
             </React.Fragment>
         );
     }

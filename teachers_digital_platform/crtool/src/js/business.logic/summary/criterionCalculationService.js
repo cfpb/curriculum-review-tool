@@ -6,6 +6,7 @@ import UtilityCalculationService from "../summary/utilityCalculationService";
 import ContentElementaryCalculationService from "../summary/contentElementaryCalculationService";
 import ContentMiddleCalculationService from "../summary/contentMiddleCalculationService";
 import ContentHighCalculationService from "../summary/contentHighCalculationService";
+import EfficacyCalculationService from "../summary/efficacyCalculationService";
 
 
 
@@ -83,6 +84,8 @@ const CriterionCalculationService = {
             criterionScore = ContentMiddleCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
         } else if (currentCriterionGroupName.includes("content-high")) {
             criterionScore = ContentHighCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
+        } else if (currentCriterionGroupName.includes("efficacy")) {
+            criterionScore = EfficacyCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
         }
             
         this.setCriterionScoreState(component, currentCriterionGroupName, criterionScore);
