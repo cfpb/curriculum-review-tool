@@ -1,9 +1,9 @@
 import React from "react";
 
-import C from "../../business.logic/constants"; 
+import C from "../../business.logic/constants";
 
 export default class FinalSummaryButton extends React.Component {
-    
+
     handleFinalSummaryButtonClick() {
         this.props.handleFinalSummaryButtonClick();
     }

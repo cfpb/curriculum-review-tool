@@ -1,7 +1,7 @@
 const DateTimeFormatter = {
 
-    getDateNowFormat() {  
-        let dateToFormat = new Date();     
+    getDateNowFormat() {
+        let dateToFormat = new Date();
         let month=new Array(12);
         month[0]="January";
         month[1]="February";
@@ -15,11 +15,11 @@ const DateTimeFormatter = {
         month[9]="October";
         month[10]="November";
         month[11]="December";
-        
+
         // e.g. "Nov 13, 2016";
         let formatedDate = month[dateToFormat.getMonth()]+" "+dateToFormat.getDate()+",  "+dateToFormat.getFullYear();
         return formatedDate;
     }
 }
-    
+
 export default DateTimeFormatter;

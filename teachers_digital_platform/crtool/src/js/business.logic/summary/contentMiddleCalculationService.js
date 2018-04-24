@@ -15,13 +15,13 @@ const ContentMiddleCalculationService = {
         } else if (currentCriterionGroupName.includes("crt-3")) {
             criterionScore = this.calculateThirdCriterion(criterionScore);
         } else if (currentCriterionGroupName.includes("crt-4")) {
-            criterionScore = this.calculateFoureCriterion(criterionScore);
+            criterionScore = this.calculateFourCriterion(criterionScore);
         } else if (currentCriterionGroupName.includes("crt-5")) {
             criterionScore = this.calculateFiveCriterion(criterionScore);
         } else if (currentCriterionGroupName.includes("crt-6")) {
             criterionScore = this.calculateSixthCriterion(criterionScore);
         }
-            
+
         return criterionScore;
     },
 

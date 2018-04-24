@@ -10,7 +10,7 @@ const UtilityCalculationService = {
         } else {
             criterionScore = this.calculateUtilityCriterion(criterionScore);
         }
-            
+
         return criterionScore;
     },
 
@@ -19,7 +19,7 @@ const UtilityCalculationService = {
         criterionScore.meets = false;
         criterionScore.doesnotmeet = false;
 
-        if (criterionScore.essential_total_no === 0 && 
+        if (criterionScore.essential_total_no === 0 &&
             criterionScore.beneficial_total_yes > 0) {
 
             criterionScore.exceeds = true;
@@ -33,7 +33,7 @@ const UtilityCalculationService = {
 
         return criterionScore;
     },
-    
+
     calculateUtilityCriterion(criterionScore) {
         criterionScore.exceeds = false;
         criterionScore.meets = false;

@@ -1,3 +1,5 @@
+import Repository from "./repository";
+
 const UtilityService = {
 
     isCriterionValueEmpty(key, alteredCriterionObjects) {
@@ -18,8 +20,8 @@ const UtilityService = {
 
     isEssential(key) {
         return !key.includes("beneficial");
-    },    
-   
+    },
+
     getCriterionGroupName(currentCriterion) {
         let strippedCriterion = this.cleanCriterionKeyNames(currentCriterion);
         if (strippedCriterion.includes(".")) {
@@ -36,7 +38,20 @@ const UtilityService = {
     getCriterionQuestionKey(changedCriterionQuestion) {
         //Need to grab enough of the name to get the first number (criterion number)
         let criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("-")+2);
+        if (criterionName.includes("#")) {
+            criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("#")+1);
+        }
         return criterionName;
+    },
+
+    /*
+     * Manage state for specified criterion
+     */
+    setCriterionScoreState(component, currentCriterionGroup, criterionScore) {
+        let alteredCriterionScores =  component.state.criterionScores;
+        alteredCriterionScores[currentCriterionGroup] = criterionScore;
+
+        Repository.saveCriterionScores(component, alteredCriterionScores);
     },
 
 }

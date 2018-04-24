@@ -10,6 +10,8 @@ const efficacyProps = {
     criterionAnswers: {},
     criterionNotes:{},
     criterionEfficacyStudies:[0],
+    studyCount: 0,
+    studyAnswers: {0: "efficacy-crt-question-#0#study"},
     changeEfficacyAnswer: _changeEfficacyRadio.bind(this),
     changeEfficacyNotes:_changeEfficacyNotes.bind(this),
     setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
@@ -17,6 +19,8 @@ const efficacyProps = {
     criterionCompletionStatuses:(() => {}),
     criterionScores:(() => {}),
     setCriterionStatusToInStart:(() => {}),
+    setCriterionTitleLinkClicked:(() => {}),
+    initializeStudyAnsers:(() => {}),
 }
 
 beforeAll(() => {

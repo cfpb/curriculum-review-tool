@@ -11,7 +11,7 @@ const QualityCalculationService = {
         } else if (currentCriterionGroupName.includes("quality-crt")) {
             criterionScore = this.calculateQualityCriterion(criterionScore);
         }
-            
+
         return criterionScore;
     },
 
@@ -20,7 +20,7 @@ const QualityCalculationService = {
         criterionScore.meets = false;
         criterionScore.doesnotmeet = false;
 
-        if (criterionScore.essential_total_no === 0 && 
+        if (criterionScore.essential_total_no === 0 &&
             criterionScore.beneficial_total_yes > 0) {
 
             criterionScore.exceeds = true;
@@ -34,7 +34,7 @@ const QualityCalculationService = {
 
         return criterionScore;
     },
-    
+
     calculateQualityCriterion(criterionScore) {
         criterionScore.exceeds = false;
         criterionScore.meets = false;

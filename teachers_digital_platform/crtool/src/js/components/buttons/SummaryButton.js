@@ -1,9 +1,9 @@
 import React from "react";
 
-import C from "../../business.logic/constants"; 
+import C from "../../business.logic/constants";
 
 export default class SummaryButton extends React.Component {
-    
+
     handleSummaryButtonClick() {
         this.props.handleSummaryButtonClick();
     }
@@ -33,8 +33,9 @@ export default class SummaryButton extends React.Component {
                 </button>
             );
         }
-        else if (this.props.currentPage === C.EFFICACY_PAGE &&
-                 this.props.efficacySummaryButton === C.STATUS_COMPLETE) {
+        else if (this.props.finishAddingEfficacyStudies === false ||
+                 (this.props.currentPage === C.EFFICACY_PAGE &&
+                  this.props.efficacySummaryButton === C.STATUS_COMPLETE)) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to efficacy summary

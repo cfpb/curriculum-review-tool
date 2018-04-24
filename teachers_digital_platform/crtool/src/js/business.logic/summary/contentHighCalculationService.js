@@ -21,7 +21,7 @@ const ContentHighCalculationService = {
         } else if (currentCriterionGroupName.includes("crt-6")) {
             criterionScore = this.calculateSixthCriterion(criterionScore);
         }
-            
+
         return criterionScore;
     },
 

@@ -18,6 +18,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         super();
         this.state = {
             currentPage: Repository.getCurrentPage(),
+            finishAddingEfficacyStudies: Repository.getFinishAddingEfficacyStudies(),
 
             contentInProgress: Repository.getContentInProgress(),
             qualityInProgress: Repository.getQualityInProgress(),
@@ -33,6 +34,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             publicationDate: Repository.getPublicationDate(),
             gradeRange: Repository.getGradeRange(),
 
+            studyAnswers: Repository.getStudyAnswers(),
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
             criterionClickedTitles: Repository.getCriterionClickedTitles(),
@@ -64,7 +66,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         let distinctiveCompletionDates =  this.state.distinctiveCompletedDate;
         if (distinctiveCompletionDates[distinctiveName] === undefined ||
             distinctiveCompletionDates[distinctiveName] === "") {
-                
+
             let completedDate = DateTimeFormater.getDateNowFormat();
             distinctiveCompletionDates[distinctiveName] = completedDate;
             Repository.saveDistinctiveCompletionDates(this, distinctiveCompletionDates);
@@ -90,6 +92,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
     }
 
+    initializeStudyAnsers(key, study) {
+        CriterionService.initializeStudyAnsers(this, key, study);
+    }
+
     initializeAnswerObjects(fields) {
         CriterionService.initializeAnswerObjects(this, fields);
     }
@@ -98,8 +104,16 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.initializeEfficacyStudies(this, efficacyStudyNumber);
     }
 
+    handleFinishAddingEfficacyStudies(value) {
+        CriterionService.handleFinishAddingEfficacyStudies(this, value);
+    }
+
     removeEfficacyStudy(efficacyStudyNumber) {
         CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
+    }
+
+    studyAnswerChanged(studyKey, changedQuestion, newValue) {
+        CriterionService.studyAnswerChanged(this, studyKey, changedQuestion, newValue);
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
@@ -125,12 +139,14 @@ export default class CustomerReviewToolComponent extends React.Component {
             publicationDate:this.state.publicationDate,
             distinctiveCompletedDate:this.state.distinctiveCompletedDate,
             gradeRange:this.state.gradeRange,
+            finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
 
             contentInProgress:this.state.contentInProgress,
             utilityInProgress:this.state.utilityInProgress,
             qualityInProgress:this.state.qualityInProgress,
             efficacyInProgress:this.state.efficacyInProgress,
 
+            studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,
             criterionClickedTitles:this.state.criterionClickedTitles,
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
@@ -139,10 +155,13 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
+            studyAnswerChanged:this.studyAnswerChanged.bind(this),
             criterionAnswerChanged:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
+            initializeStudyAnsers:this.initializeStudyAnsers.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
+            handleFinishAddingEfficacyStudies:this.handleFinishAddingEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
             setCriterionTitleLinkClicked: this.setCriterionTitleLinkClicked.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),

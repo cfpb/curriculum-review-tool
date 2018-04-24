@@ -24,7 +24,7 @@ export default class SurveyPageContainer extends React.Component {
         );
     }
 
-    render() {        
+    render() {
         if (this.props.currentPage === C.CONTENT_PAGE) {
 
             if (this.props.contentInProgress === C.STATUS_COMPLETE) {
@@ -54,7 +54,7 @@ export default class SurveyPageContainer extends React.Component {
             }
 
         } else if (this.props.currentPage === C.QUALITY_PAGE) {
-            
+
             if (this.props.qualityInProgress === C.STATUS_COMPLETE) {
                 return (<React.Fragment><QualitySummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
             } else {
@@ -62,7 +62,7 @@ export default class SurveyPageContainer extends React.Component {
             }
 
         } else if (this.props.currentPage === C.EFFICACY_PAGE) {
-            
+
             if (this.props.efficacyInProgress === C.STATUS_COMPLETE) {
                 return (<React.Fragment><EfficacySummaryPage {...this.props} />{this.renderDistinctiveMenuBar()}</React.Fragment>);
             } else {

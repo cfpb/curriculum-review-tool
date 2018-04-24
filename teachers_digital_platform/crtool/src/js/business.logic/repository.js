@@ -14,12 +14,14 @@ const Repository = {
     resetApplicationData() {
         this.clearAllData();
         this.saveCurrentPage(this, C.START_PAGE);
+        this.saveFinishAddingEfficacyStudies(this, false);
 
         this.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(this, C.UTILITY_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
 
+        this.saveStudyAnsers(this, {});
         this.saveCriterionScores(this, {});
         this.saveCriterionAnswers(this, {});
         this.setCriterionTitleLinkClicked(this, {});
@@ -83,6 +85,10 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionScores")) || {};
     },
 
+    getStudyAnswers() {
+        return JSON.parse(localStorage.getItem("studyAnswers")) || {};
+    },
+
     getCriterionAnswers() {
         return JSON.parse(localStorage.getItem("criterionAnswers")) || {};
     },
@@ -91,8 +97,12 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionEfficacyStudies")) || [0];
     },
 
+    getFinishAddingEfficacyStudies() {
+        return localStorage.getItem("finishAddingEfficacyStudies");
+    },
+
     getDistinctiveCompletedDate() {
-        return JSON.parse(localStorage.getItem("dis tinctiveCompletedDate")) || {};
+        return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
     },
 
     getCriterionCompletionSatuses() {
@@ -106,7 +116,7 @@ const Repository = {
     /*
      * Set state values for criterion score
      */
-    saveDistinctiveCompletionDates(component, distinctiveCompletionDates) {  
+    saveDistinctiveCompletionDates(component, distinctiveCompletionDates) {
         localStorage.setItem("distinctiveCompletedDate", JSON.stringify(distinctiveCompletionDates));
         component.setState({distinctiveCompletedDate: distinctiveCompletionDates});
     },
@@ -117,6 +127,11 @@ const Repository = {
     saveCriterionScores(component, alteredCriterionScores) {
         localStorage.setItem("criterionScores", JSON.stringify(alteredCriterionScores));
         component.setState({criterionScores: alteredCriterionScores});
+    },
+
+    saveStudyAnsers(component, alteredStudies) {
+        localStorage.setItem("studyAnswers", JSON.stringify(alteredStudies));
+        component.setState({studyAnswers: alteredStudies});
     },
 
     /*
@@ -134,7 +149,14 @@ const Repository = {
         localStorage.setItem("criterionEfficacyStudies", JSON.stringify(alteredCriterionEfficacyStudies));
         component.setState({criterionEfficacyStudies: alteredCriterionEfficacyStudies});
     },
-    
+
+    /*
+     *
+     */
+    saveFinishAddingEfficacyStudies(component, value) {
+        localStorage.setItem("finishAddingEfficacyStudies", value);
+        component.setState({finishAddingEfficacyStudies: value});
+    },
 
     /*
      * Set state values for all criterion completion statuses

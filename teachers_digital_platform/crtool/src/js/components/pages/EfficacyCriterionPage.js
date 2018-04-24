@@ -14,34 +14,51 @@ export default class EfficacyCriterionPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
-    componentDidMount() {
-        this.initializeAnswerValuesByRefs();
-    }
-
     initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
 
-    shouldHideAdditonalCriterion(currentCriterion) {
+    componentWillMount() {
+        // This will force criterion 2 to always show with out the link title
+        this.props.setCriterionTitleLinkClicked("efficacy-crt-question-2");
+    }
 
-        //TODO: Only show Additional criterion if 2 studies are strong
-        //      a study is strong if all essential criterion are true
-        
+    twoStrongStudiesExist() {
+        let count = 0;
+        for (var score in this.props.criterionScores) {
+            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes)
+            {
+                count += 1;
+                if (count === 2) {
+                    return true;
+                }
+            }
+        }
+
         return false;
-        // let currentCriterionGroupName = currentCriterion.replace("-question", "");
+    }
 
-        // if (this.props.criterionScores[currentCriterionGroupName] !== undefined &&
-        //     this.props.criterionScores[currentCriterionGroupName].all_yes) {
-        //     return false;
-        // }
-        // else {
-        //     return true;
-        // }
+    twoCompleteStudiesExist() {
+        let count = 0;
+        for (var score in this.props.criterionScores) {
+            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].answered_all_complete)
+            {
+                count += 1;
+                if (count === 2) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
+        if (studyComponents === undefined) {
+            return [0]; //In case the data gets removed we need at lest one element
+        }
         return studyComponents;
     }
 
@@ -59,6 +76,44 @@ export default class EfficacyCriterionPage extends React.Component {
     generateStudyRefId(criterionNumber, otherText) {
         let newCriterionRefId = "efficacy-crt-question-" + criterionNumber + otherText;
         return newCriterionRefId;
+    }
+
+    renderDoneAddingStoriesButton() {
+        if (this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist() || !this.twoCompleteStudiesExist()) {
+            return (
+                <button className="a-btn u-mb30" disabled >
+                    I’m done adding studies
+                </button>
+            );
+        } else {
+            return (
+                <button className="a-btn u-mb30"
+                        onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
+                    I’m done adding studies
+                </button>
+            );
+        }
+    }
+
+    renderWarningContinueWithout2and3() {
+        if (!this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist()) {
+            return (null);
+        } else {
+            return (
+                <div className="m-notification
+                        m-notification__visible
+                        m-notification__success">
+                    <SvgIcon icon="check-round" />
+                    <div className="m-notification_content">
+                        <div className="m-notification_message">
+                            <p>You don’t need to complete Criteria 2 or 3 and can move on to the efficacy summary.</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+
     }
 
     render() {
@@ -124,16 +179,16 @@ export default class EfficacyCriterionPage extends React.Component {
                     <p>
                         <b><em>You will answer these questions for each study individually.</em></b>
                     </p>
-                                                    
-                    {this.getEfficacyStudyItems().map((i) => 
-                            <EfficacyStudyComponent key={i} 
-                                                    {...this.props} 
+
+                    {this.getEfficacyStudyItems().map((i) =>
+                            <EfficacyStudyComponent key={i}
+                                                    {...this.props}
                                                     studyCount={i}
                                                     showRemoveButton={i>0}
                                                     criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />)}
 
                     <div className="u-mt15 u-mb30">
-                        <button className="a-btn a-btn__link" 
+                        <button className="a-btn a-btn__link"
                             onClick={() => this.AddEfficacyStudy()}>
                             Review another study
                             <SvgIcon
@@ -142,22 +197,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                 hasSpaceBefore="true" />
                         </button>
                     </div>
-                    <button className="a-btn u-mb30">I’m done adding studies</button>
-                    <div className="m-notification
-                            m-notification__visible
-                            m-notification__success">
-                        <SvgIcon icon="check-round" />
-                        <div className="m-notification_content">
-                            <div className="m-notification_message">
-                                <p>You don’t need to complete Criteria 2 or 3 and can move on to the efficacy summary.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {this.renderDoneAddingStoriesButton()}
+                    {this.renderWarningContinueWithout2and3()}
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
-                    hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-question-1")}
+                    hideCriterion={!this.twoStrongStudiesExist()}
                     {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
@@ -174,11 +220,11 @@ export default class EfficacyCriterionPage extends React.Component {
                         <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
                     </p>
                     <ol className="m-list__unstyled">
-                        <EditableCriterionRowWrapper 
+                        <EditableCriterionRowWrapper
                             {...this.props}
                             criterionNumber="2.1"
                             indicatorText="There is sufficient research to judge efficacy." >
-                            <EditableSubComponentRow 
+                            <EditableSubComponentRow
                                 componentText="Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?"
                                 showBeneficialText="true"
                                 showNaButton="false"
@@ -187,11 +233,11 @@ export default class EfficacyCriterionPage extends React.Component {
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                                 />
                         </EditableCriterionRowWrapper>
-                        <EditableCriterionRowWrapper 
+                        <EditableCriterionRowWrapper
                             {...this.props}
                             criterionNumber="2.2"
                             indicatorText="The studies examine the range of participants and settings for which the curriculum was designed." >
-                            <EditableSubComponentRow 
+                            <EditableSubComponentRow
                                     componentText="Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?"
                                     showBeneficialText="true"
                                     showNaButton="false"
@@ -238,12 +284,12 @@ export default class EfficacyCriterionPage extends React.Component {
                     </p>
                     <ol className="m-list__unstyled">
 
-                        <EditableCriterionRowWrapper 
+                        <EditableCriterionRowWrapper
                             {...this.props}
                             criterionNumber="3.1"
                             indicatorText="Positive impacts are statistically significant and substantively important." >
 
-                            <EditableSubComponentRow 
+                            <EditableSubComponentRow
                                 componentText="Does at least one evaluation indicate positive effects significant at the 10% level?"
                                 showBeneficialText="false"
                                 showNaButton="false"
@@ -252,11 +298,11 @@ export default class EfficacyCriterionPage extends React.Component {
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                                 />
                         </EditableCriterionRowWrapper>
-                        <EditableCriterionRowWrapper 
+                        <EditableCriterionRowWrapper
                             {...this.props}
                             criterionNumber="3.2"
                             indicatorText="Findings are consistent across studies and context; there is evidence of positive effects with no overriding contrary evidence." >
-                            <EditableSubComponentRow 
+                            <EditableSubComponentRow
                                 componentText="Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)"
                                 showBeneficialText="false"
                                 showNaButton="false"
@@ -264,7 +310,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 {...this.props}
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                                 />
-                            <EditableSubComponentRow 
+                            <EditableSubComponentRow
                                 componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
                                 showBeneficialText="true"
                                 showNaButton="false"

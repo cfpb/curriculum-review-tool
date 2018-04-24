@@ -2,6 +2,7 @@ import C from "./constants";
 import Repository from "./repository";
 import UtilityService from "./utilityService";
 import CriterionCalculationService from "./summary/criterionCalculationService";
+import EfficacyCalculationService from "./summary/efficacyCalculationService";
 
 const CriterionService = {
 
@@ -10,7 +11,7 @@ const CriterionService = {
      * and update any other states in the application
      */
     criterionAnswerChanged(component, distinctive, changedQuestion, newValue) {
-        let alteredCriterionObjects =  component.state.criterionAnswers
+        let alteredCriterionObjects =  component.state.criterionAnswers;
         alteredCriterionObjects[changedQuestion] = newValue;
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
@@ -19,6 +20,17 @@ const CriterionService = {
             CriterionCalculationService.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
             this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
         }
+    },
+
+    /*
+     * If an Efficacy Study Answer changed we call this method to store it, and calculate the results
+     */
+    studyAnswerChanged(component, studyKey, changedQuestion, newValue) {
+        let alteredStudyAnswers = component.state.studyAnswers;
+        alteredStudyAnswers[studyKey][changedQuestion] = newValue;
+
+        Repository.saveStudyAnsers(component, alteredStudyAnswers);
+        EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
     },
 
     /*
@@ -90,11 +102,17 @@ const CriterionService = {
      */
     initializeEfficacyStudies(component, efficacyStudyNumber) {
         let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
-        
+
         if (efficacyStudyNumber !== undefined) {
             efficacyStudyCriterion.push(efficacyStudyNumber);
             Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
+
+            this.handleFinishAddingEfficacyStudies(component, false);
         }
+    },
+
+    handleFinishAddingEfficacyStudies(component, value) {
+        Repository.saveFinishAddingEfficacyStudies(component, value);
     },
 
     /*
@@ -102,6 +120,14 @@ const CriterionService = {
      * Also called Study.  This method allows us to remove each of the criterion answers
      */
     removeEfficacyStudy(component, efficacyStudyNumber) {
+        this.removeCriterionScoresForStudy(component, efficacyStudyNumber);
+        this.removeStudyAnswers(component, efficacyStudyNumber);
+
+        this.handleFinishAddingEfficacyStudies(component, false);
+        this.removeCriterionEfficacyStudy(component, efficacyStudyNumber);
+    },
+
+    removeCriterionEfficacyStudy(component, efficacyStudyNumber) {
         let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
         let indexOfItemToRemove = efficacyStudyCriterion.indexOf(efficacyStudyNumber);
 
@@ -110,6 +136,22 @@ const CriterionService = {
 
         this.removeCriterionAnswersForStudy(component, efficacyStudyNumber);
     },
+
+    removeStudyAnswers(component, efficacyStudyNumber) {
+        let existingStudyAnswers = component.state.studyAnswers;
+
+        delete existingStudyAnswers[efficacyStudyNumber];
+        Repository.saveStudyAnsers(component, existingStudyAnswers);
+    },
+
+    removeCriterionScoresForStudy(component, efficacyStudyNumber) {
+        let studyNumberName = "efficacy-crt-1-" + efficacyStudyNumber;
+        let newCriterionScores = component.state.criterionScores;
+
+        delete newCriterionScores[studyNumberName];
+        Repository.saveCriterionEfficacyStudies(component, newCriterionScores);
+    },
+
 
     /*
      * Efficacy Dimension has the ability to add an unlimited number of Criterion one
@@ -141,6 +183,15 @@ const CriterionService = {
         }
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
+    },
+
+    initializeStudyAnsers(component, key, studyRefIds) {
+        let existingStudies = component.state.studyAnswers;
+        if (existingStudies[key] === undefined) {
+
+            existingStudies[key] = studyRefIds;
+            Repository.saveStudyAnsers(component, existingStudies);
+        }
     },
 }
 
