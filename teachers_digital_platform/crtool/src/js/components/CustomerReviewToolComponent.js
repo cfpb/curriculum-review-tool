@@ -66,7 +66,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         let distinctiveCompletionDates =  this.state.distinctiveCompletedDate;
         if (distinctiveCompletionDates[distinctiveName] === undefined ||
             distinctiveCompletionDates[distinctiveName] === "") {
-                
+
             let completedDate = DateTimeFormater.getDateNowFormat();
             distinctiveCompletionDates[distinctiveName] = completedDate;
             Repository.saveDistinctiveCompletionDates(this, distinctiveCompletionDates);

@@ -36,7 +36,7 @@ const CriterionCalculationService = {
         } else if (currentCriterionGroupName.includes("efficacy")) {
             // criterionScore = EfficacyCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore, component.state.criterionAnswers);
         }
-            
+
         UtilityService.setCriterionScoreState(component, currentCriterionGroupName, criterionScore);
         return isCriterionCompleteReturnValue;
     },
@@ -48,7 +48,7 @@ const CriterionCalculationService = {
         let criterionKey = UtilityService.getCriterionQuestionKey(changedQuestion);
 
         if (this.isCriterionGroupComplete(component, alteredCriterionObjects, criterionKey)) {
-            // Use the ICON_CHECK_ROUND as complete state so we can just pass that 
+            // Use the ICON_CHECK_ROUND as complete state so we can just pass that
             // down and now have to add logic later
             this.setCriterionGroupCompletionStatuses(component, criterionKey, C.ICON_CHECK_ROUND);
         }

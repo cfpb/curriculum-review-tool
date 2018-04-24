@@ -20,8 +20,8 @@ const UtilityService = {
 
     isEssential(key) {
         return !key.includes("beneficial");
-    },    
-   
+    },
+
     getCriterionGroupName(currentCriterion) {
         let strippedCriterion = this.cleanCriterionKeyNames(currentCriterion);
         if (strippedCriterion.includes(".")) {

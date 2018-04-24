@@ -102,7 +102,7 @@ const CriterionService = {
      */
     initializeEfficacyStudies(component, efficacyStudyNumber) {
         let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
-        
+
         if (efficacyStudyNumber !== undefined) {
             efficacyStudyCriterion.push(efficacyStudyNumber);
             Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
@@ -130,10 +130,10 @@ const CriterionService = {
     removeCriterionEfficacyStudy(component, efficacyStudyNumber) {
         let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
         let indexOfItemToRemove = efficacyStudyCriterion.indexOf(efficacyStudyNumber);
-        
+
         efficacyStudyCriterion.splice(indexOfItemToRemove, 1);
         Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
-        
+
         this.removeCriterionAnswersForStudy(component, efficacyStudyNumber);
     },
 
@@ -151,7 +151,7 @@ const CriterionService = {
         delete newCriterionScores[studyNumberName];
         Repository.saveCriterionEfficacyStudies(component, newCriterionScores);
     },
-    
+
 
     /*
      * Efficacy Dimension has the ability to add an unlimited number of Criterion one

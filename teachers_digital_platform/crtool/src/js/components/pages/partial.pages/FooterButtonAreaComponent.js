@@ -9,7 +9,7 @@ export default class FooterButtonAreaComponent extends React.Component {
     render() {
         if (this.props.currentPage === C.START_PAGE) {
             return null;
-        } else { 
+        } else {
             return (
                 <React.Fragment>
                     <div className="block

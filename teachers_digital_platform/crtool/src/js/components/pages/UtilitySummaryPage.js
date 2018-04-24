@@ -348,7 +348,7 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                
+
                 <h3 className="h2">Criterion 4: Materials to assess mastery</h3>
                 <p className="u-mb30">Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?</p>
                 <div className="m-curriculum-status">

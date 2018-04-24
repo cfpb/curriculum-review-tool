@@ -22,26 +22,26 @@ export default class EditableSubComponentRow extends React.Component {
                 </div>
                 <div className="o-survey_answer">
                     <RadioButtonEditable
-                        uniqueId="a" 
+                        uniqueId="a"
                         radioText="Yes"
                         showButton="true"
-                        isChecked={this.props.criterionAnswers[this.props.currentCriterionRefId] === 'yes'}                                                
+                        isChecked={this.props.criterionAnswers[this.props.currentCriterionRefId] === 'yes'}
                         radioButtonClicked={(e) => {this.props.criterionAnswerChanged(this.props.currentCriterionRefId, 'yes');}}
                         {...this.props} />
 
-                    <RadioButtonEditable 
-                        uniqueId="b" 
+                    <RadioButtonEditable
+                        uniqueId="b"
                         radioText="No"
                         showButton="true"
-                        isChecked={this.props.criterionAnswers[this.props.currentCriterionRefId] === 'no'} 
+                        isChecked={this.props.criterionAnswers[this.props.currentCriterionRefId] === 'no'}
                         radioButtonClicked={(e) => {this.props.criterionAnswerChanged(this.props.currentCriterionRefId, 'no');}}
                         {...this.props} />
 
-                    <RadioButtonEditable 
-                        uniqueId="c" 
+                    <RadioButtonEditable
+                        uniqueId="c"
                         radioText="NA"
                         showButton={this.props.showNaButton}
-                        isChecked={this.props.criterionAnswers[this.props.currentCriterionRefId] === 'na'} 
+                        isChecked={this.props.criterionAnswers[this.props.currentCriterionRefId] === 'na'}
                         radioButtonClicked={(e) => {this.props.criterionAnswerChanged(this.props.currentCriterionRefId, 'na');}}
                         {...this.props} />
                 </div>

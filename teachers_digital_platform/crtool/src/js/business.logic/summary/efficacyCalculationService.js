@@ -13,7 +13,7 @@ const EfficacyCalculationService = {
     },
 
     isEfficacyStudyComplete(studyKey, alteredStudyAnswers, criterionGroupName) {
-        // We are building a criterionScore object that can be passed 
+        // We are building a criterionScore object that can be passed
         // around and used for multiple scenarios
         let criterionScore = {
             criterionName:criterionGroupName,
@@ -31,7 +31,7 @@ const EfficacyCalculationService = {
         for (var key in currentStudy) {
             if (UtilityService.isRequiredCriterion(key) &&
                 UtilityService.isCriterionValueEmpty(key, currentStudy)) {
-                
+
                 criterionScore.answered_all_complete = false;
                 if (UtilityService.isEssential(key)) {
                     criterionScore.all_essential_yes = false;
@@ -70,7 +70,7 @@ const EfficacyCalculationService = {
         criterionScore.exceeds = false;
         criterionScore.meets = false;
         criterionScore.doesnotmeet = false;
-        
+
         if (currentCriterionGroupName.includes("-1")) {
             criterionScore = this.calculateFirstCriterion(criterionScore, allCriterionAnswers);
         } else if (currentCriterionGroupName.includes("-2")) {
@@ -78,7 +78,7 @@ const EfficacyCalculationService = {
         } else if (currentCriterionGroupName.includes("-3")) {
             criterionScore = this.calculateThirdCriterion(criterionScore);
         }
-        
+
         return criterionScore;
     },
 
@@ -109,7 +109,7 @@ const EfficacyCalculationService = {
     },
 
     calculateUtilityCriterionWithExceeds(criterionScore) {
-        if (criterionScore.essential_total_no === 0 && 
+        if (criterionScore.essential_total_no === 0 &&
             criterionScore.beneficial_total_yes > 0) {
 
             criterionScore.exceeds = true;
@@ -123,7 +123,7 @@ const EfficacyCalculationService = {
 
         return criterionScore;
     },
-    
+
 }
 
 export default EfficacyCalculationService;

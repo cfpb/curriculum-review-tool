@@ -116,7 +116,7 @@ const Repository = {
     /*
      * Set state values for criterion score
      */
-    saveDistinctiveCompletionDates(component, distinctiveCompletionDates) {  
+    saveDistinctiveCompletionDates(component, distinctiveCompletionDates) {
         localStorage.setItem("distinctiveCompletedDate", JSON.stringify(distinctiveCompletionDates));
         component.setState({distinctiveCompletedDate: distinctiveCompletionDates});
     },
@@ -149,9 +149,9 @@ const Repository = {
         localStorage.setItem("criterionEfficacyStudies", JSON.stringify(alteredCriterionEfficacyStudies));
         component.setState({criterionEfficacyStudies: alteredCriterionEfficacyStudies});
     },
-    
+
     /*
-     * 
+     *
      */
     saveFinishAddingEfficacyStudies(component, value) {
         localStorage.setItem("finishAddingEfficacyStudies", value);

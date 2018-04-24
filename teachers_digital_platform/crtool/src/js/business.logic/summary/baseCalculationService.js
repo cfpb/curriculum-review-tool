@@ -3,7 +3,7 @@ import UtilityService from "../utilityService";
 const BaseCalculationService = {
 
     calculateDefaultCompletionForCriterionGroup(component, alteredCriterionObjects, currentCriterionGroupName, currentCriterion) {
-        // We are building a criterionScore object that can be passed 
+        // We are building a criterionScore object that can be passed
         // around and used for multiple scenarios
         let criterionScore = {
             criterionName:"",
@@ -21,7 +21,7 @@ const BaseCalculationService = {
             if (UtilityService.isKeyInCriterion(key, currentCriterion) &&
                 UtilityService.isRequiredCriterion(key) &&
                 UtilityService.isCriterionValueEmpty(key, alteredCriterionObjects)) {
-                
+
                 criterionScore.answered_all_complete = false;
                 if (UtilityService.isEssential(key)) {
                     criterionScore.all_essential_yes = false;
