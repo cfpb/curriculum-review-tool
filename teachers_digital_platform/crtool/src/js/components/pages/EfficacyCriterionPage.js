@@ -39,6 +39,21 @@ export default class EfficacyCriterionPage extends React.Component {
         return false;
     }
 
+    twoCompleteStudiesExist() {
+        let count = 0;
+        for (var score in this.props.criterionScores) {
+            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].answered_all_complete) 
+            {
+                count += 1;   
+                if (count === 2) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
         if (studyComponents === undefined) {
@@ -61,6 +76,44 @@ export default class EfficacyCriterionPage extends React.Component {
     generateStudyRefId(criterionNumber, otherText) {
         let newCriterionRefId = "efficacy-crt-question-" + criterionNumber + otherText;
         return newCriterionRefId;
+    }
+
+    renderDoneAddingStoriesButton() {
+        if (this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist() || !this.twoCompleteStudiesExist()) {
+            return (
+                <button className="a-btn u-mb30" disabled >
+                    I’m done adding studies
+                </button>
+            );
+        } else {
+            return (
+                <button className="a-btn u-mb30" 
+                        onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
+                    I’m done adding studies
+                </button>
+            );
+        }
+    }
+
+    renderWarningContinueWithout2and3() {
+        if (!this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist()) {
+            return (null);
+        } else {
+            return (
+                <div className="m-notification
+                        m-notification__visible
+                        m-notification__success">
+                    <SvgIcon icon="check-round" />
+                    <div className="m-notification_content">
+                        <div className="m-notification_message">
+                            <p>You don’t need to complete Criteria 2 or 3 and can move on to the efficacy summary.</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        
     }
 
     render() {
@@ -144,17 +197,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                 hasSpaceBefore="true" />
                         </button>
                     </div>
-                    <button className="a-btn u-mb30">I’m done adding studies</button>
-                    <div className="m-notification
-                            m-notification__visible
-                            m-notification__success">
-                        <SvgIcon icon="check-round" />
-                        <div className="m-notification_content">
-                            <div className="m-notification_message">
-                                <p>You don’t need to complete Criteria 2 or 3 and can move on to the efficacy summary.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {this.renderDoneAddingStoriesButton()}
+                    {this.renderWarningContinueWithout2and3()}
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-2"

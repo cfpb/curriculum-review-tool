@@ -14,6 +14,7 @@ const Repository = {
     resetApplicationData() {
         this.clearAllData();
         this.saveCurrentPage(this, C.START_PAGE);
+        this.saveFinishAddingEfficacyStudies(this, false);
 
         this.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(this, C.UTILITY_PAGE, C.STATUS_IN_START);
@@ -96,6 +97,10 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionEfficacyStudies")) || [0];
     },
 
+    getFinishAddingEfficacyStudies() {
+        return localStorage.getItem("finishAddingEfficacyStudies");
+    },
+
     getDistinctiveCompletedDate() {
         return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
     },
@@ -145,6 +150,13 @@ const Repository = {
         component.setState({criterionEfficacyStudies: alteredCriterionEfficacyStudies});
     },
     
+    /*
+     * 
+     */
+    saveFinishAddingEfficacyStudies(component, value) {
+        localStorage.setItem("finishAddingEfficacyStudies", value);
+        component.setState({finishAddingEfficacyStudies: value});
+    },
 
     /*
      * Set state values for all criterion completion statuses

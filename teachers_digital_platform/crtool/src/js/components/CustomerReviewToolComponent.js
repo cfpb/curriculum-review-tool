@@ -18,6 +18,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         super();
         this.state = {
             currentPage: Repository.getCurrentPage(),
+            finishAddingEfficacyStudies: Repository.getFinishAddingEfficacyStudies(),
 
             contentInProgress: Repository.getContentInProgress(),
             qualityInProgress: Repository.getQualityInProgress(),
@@ -103,6 +104,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.initializeEfficacyStudies(this, efficacyStudyNumber);
     }
 
+    handleFinishAddingEfficacyStudies(value) {
+        CriterionService.handleFinishAddingEfficacyStudies(this, value);
+    }
+
     removeEfficacyStudy(efficacyStudyNumber) {
         CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
     }
@@ -134,6 +139,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             publicationDate:this.state.publicationDate,
             distinctiveCompletedDate:this.state.distinctiveCompletedDate,
             gradeRange:this.state.gradeRange,
+            finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
 
             contentInProgress:this.state.contentInProgress,
             utilityInProgress:this.state.utilityInProgress,
@@ -155,6 +161,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             initializeStudyAnsers:this.initializeStudyAnsers.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
+            handleFinishAddingEfficacyStudies:this.handleFinishAddingEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
             setCriterionTitleLinkClicked: this.setCriterionTitleLinkClicked.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
