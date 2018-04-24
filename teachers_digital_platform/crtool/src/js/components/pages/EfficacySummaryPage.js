@@ -11,50 +11,87 @@ export default class EfficacySummaryPage extends React.Component {
     }
 
     criterionOveralScoreClassName(level) {
+        let hasTwoStrongStudies = this.twoStrongStudiesExist();
+        let isLarge = this.scoreIsLarge(hasTwoStrongStudies);
+        let criterionThreeScore = this.props.criterionScores["efficacy-crt-3"];
 
-        let isLimited = false;
-        if (this.props.criterionScores["efficacy-crt-1-0"].doesnotmeet ||
-            this.props.criterionScores["efficacy-crt-2"].doesnotmeet ||
-            this.props.criterionScores["efficacy-crt-3"].doesnotmeet ) {
 
-            isLimited = true;
-        }
-
-        let isModerate = false;
-        if (this.props.criterionScores["efficacy-crt-1-0"].meets &&
-            this.props.criterionScores["efficacy-crt-2"].meets &&
-            this.props.criterionScores["efficacy-crt-3"].meets ) {
-
-            isModerate = true;
-        }
 
         let className = "m-form-field_radio-icon";
-        if (level === "limited" && isLimited) {
+        if (level === "strong" && 
+            isLarge && 
+            criterionThreeScore.all_essential_yes && 
+            criterionThreeScore.beneficial_total_no === 0) {
+
             className = className + " is-active";
-        } else if (level === "moderate" && isModerate) {
+        } else if (level === "moderate" &&
+        isLarge && 
+                    criterionThreeScore.all_essential_yes && 
+                    criterionThreeScore.beneficial_total_no === 1) {
+                        
             className = className + " is-active";
-        } else if (level === "strong" && !isLimited && !isModerate) {
+        } else if (level === "mixed" && 
+        isLarge && 
+                    criterionThreeScore.essential_total_yes < 2) {
+
+            className = className + " is-active";
+        } else if (level === "limited" && 
+                    !isLarge && 
+                    criterionThreeScore.essential_total_yes === 0 && 
+                    criterionThreeScore.beneficial_total_yes === 1) {
+
+            className = className + " is-active";
+        } else if (level === "notenoughinfo" && 
+                    !isLarge) {
+
             className = className + " is-active";
         }
 
         return className;
     }
 
-    criterionClassNameFor(criterion, level) {
-        let criterionGroupName = "efficacy-crt-" + criterion;
-        if (criterion === "1") {
-            criterionGroupName += "-0";
+    twoStrongStudiesExist() {
+        let count = 0;
+        for (var score in this.props.criterionScores) {
+            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes)
+            {
+                count += 1;
+                if (count === 2) {
+                    return true;
+                }
+            }
         }
 
-        let criterionScore = this.props.criterionScores[criterionGroupName];
-        let className = "m-form-field_radio-icon";
+        return false;
+    }
 
-        if (level === "exceeds" && criterionScore.exceeds) {
+    scoreIsLarge(hasTwoStrongStudies) {
+        return (hasTwoStrongStudies && 
+                this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes > 0);
+    }
+
+    scoreIsModerate(hasTwoStrongStudies) {
+        return (hasTwoStrongStudies &&
+                this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes === 0);
+    }
+
+    scoreIsLimited(hasTwoStrongStudies) {
+        return (!hasTwoStrongStudies);
+    }
+
+    scoreScopeOfEvidenceClassName(level) {
+        let className = "m-form-field_radio-icon";
+        let hasTwoStrongStudies = this.twoStrongStudiesExist();
+
+        if (this.scoreIsLarge(hasTwoStrongStudies) && level === "large") {
             className = className + " is-active";
-        } else if (level === "meets" && criterionScore.meets) {
+
+        } else if (this.scoreIsModerate(hasTwoStrongStudies) && level === "moderate") {
             className = className + " is-active";
-        } else if (level === "doesnotmeet" && criterionScore !== undefined && criterionScore.doesnotmeet) {
+
+        } else if (this.scoreIsLimited(hasTwoStrongStudies)  && level === "small") {
             className = className + " is-active";
+
         }
 
         return className;
@@ -98,6 +135,15 @@ export default class EfficacySummaryPage extends React.Component {
                     Print or save summary
                 </button>
                 <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.EFFICACY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Based on your answers, the efficacy score for this curriculum is:</h3>
                 <p>
                     <a href="#">
@@ -116,7 +162,7 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
+                                    <svg className={this.scoreScopeOfEvidenceClassName("large")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -131,7 +177,7 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
+                                    <svg className={this.scoreScopeOfEvidenceClassName("moderate")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -146,7 +192,7 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className="m-form-field_radio-icon"viewBox="0 0 22 22">
+                                    <svg className={this.scoreScopeOfEvidenceClassName("small")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
@@ -210,6 +256,22 @@ export default class EfficacySummaryPage extends React.Component {
                                         m-form-field__radio
                                         m-form-field__display">
                                 <div className="a-label">
+                                    <svg className={this.criterionOveralScoreClassName("mixed")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className="m-form-field_radio-text">
+                                        <div><strong>Mixed efficacy</strong></div>
+                                        At least one of the criteria was not met
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                        m-form-field__radio
+                                        m-form-field__display">
+                                <div className="a-label">
                                     <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
@@ -217,6 +279,22 @@ export default class EfficacySummaryPage extends React.Component {
                                     <div className="m-form-field_radio-text">
                                         <div><strong>Limited efficacy</strong></div>
                                         At least one of the criteria was not met
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                        m-form-field__radio
+                                        m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.criterionOveralScoreClassName("notenoughinfo")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className="m-form-field_radio-text">
+                                        <div><strong>Not enough information</strong></div>
+                                        No studies met criterion 1
                                     </div>
                                 </div>
                             </div>
