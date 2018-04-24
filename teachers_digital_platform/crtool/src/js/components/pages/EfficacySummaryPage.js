@@ -13,7 +13,7 @@ export default class EfficacySummaryPage extends React.Component {
     criterionOveralScoreClassName(level) {
 
         let isLimited = false;
-        if (this.props.criterionScores["efficacy-crt-1"].doesnotmeet ||
+        if (this.props.criterionScores["efficacy-crt-1-0"].doesnotmeet ||
             this.props.criterionScores["efficacy-crt-2"].doesnotmeet ||
             this.props.criterionScores["efficacy-crt-3"].doesnotmeet ) {
 
@@ -21,7 +21,7 @@ export default class EfficacySummaryPage extends React.Component {
         }
 
         let isModerate = false;
-        if (this.props.criterionScores["efficacy-crt-1"].meets &&
+        if (this.props.criterionScores["efficacy-crt-1-0"].meets &&
             this.props.criterionScores["efficacy-crt-2"].meets &&
             this.props.criterionScores["efficacy-crt-3"].meets ) {
 
@@ -42,6 +42,10 @@ export default class EfficacySummaryPage extends React.Component {
 
     criterionClassNameFor(criterion, level) {
         let criterionGroupName = "efficacy-crt-" + criterion;
+        if (criterion === "1") {
+            criterionGroupName += "-0";
+        }
+
         let criterionScore = this.props.criterionScores[criterionGroupName];
         let className = "m-form-field_radio-icon";
 
@@ -49,7 +53,7 @@ export default class EfficacySummaryPage extends React.Component {
             className = className + " is-active";
         } else if (level === "meets" && criterionScore.meets) {
             className = className + " is-active";
-        } else if (level === "doesnotmeet" && criterionScore.doesnotmeet) {
+        } else if (level === "doesnotmeet" && criterionScore !== undefined && criterionScore.doesnotmeet) {
             className = className + " is-active";
         }
 
@@ -162,13 +166,13 @@ export default class EfficacySummaryPage extends React.Component {
                     <div className="m-curriculum-status_components">
                         <p><b>Your answers for <em>essential</em> components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>{this.props.criterionScores["efficacy-crt-1"].essential_total_yes}</b> Yes</li>
-                            <li><b>{this.props.criterionScores["efficacy-crt-1"].essential_total_no}</b> No</li>
+                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].essential_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].essential_total_no}</b> No</li>
                         </ul>
                         <p><b>Your answers for <em>beneficial</em> components:</b></p>
                         <ul className="m-component-list">
-                            <li><b>{this.props.criterionScores["efficacy-crt-1"].beneficial_total_yes}</b> Yes</li>
-                            <li><b>{this.props.criterionScores["efficacy-crt-1"].beneficial_total_no}</b> No</li>
+                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].beneficial_total_yes}</b> Yes</li>
+                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].beneficial_total_no}</b> No</li>
                         </ul>
                     </div>
                 </div>

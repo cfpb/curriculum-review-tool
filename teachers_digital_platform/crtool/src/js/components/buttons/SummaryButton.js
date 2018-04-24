@@ -36,9 +36,6 @@ export default class SummaryButton extends React.Component {
         else if (this.props.finishAddingEfficacyStudies === false ||
                  (this.props.currentPage === C.EFFICACY_PAGE &&
                   this.props.efficacySummaryButton === C.STATUS_COMPLETE)) {
-                    console.log("this.props.currentPage: " + this.props.currentPage);
-                    console.log("this.props.efficacySummaryButton: " + this.props.efficacySummaryButton);
-                    console.log("this.props.finishAddingEfficacyStudies: " + this.props.finishAddingEfficacyStudies);
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to efficacy summary
