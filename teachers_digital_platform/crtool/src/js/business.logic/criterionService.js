@@ -2,6 +2,7 @@ import C from "./constants";
 import Repository from "./repository";
 import UtilityService from "./utilityService";
 import CriterionCalculationService from "./summary/criterionCalculationService";
+import EfficacyCalculationService from "./summary/efficacyCalculationService";
 
 const CriterionService = {
 
@@ -10,7 +11,7 @@ const CriterionService = {
      * and update any other states in the application
      */
     criterionAnswerChanged(component, distinctive, changedQuestion, newValue) {
-        let alteredCriterionObjects =  component.state.criterionAnswers
+        let alteredCriterionObjects =  component.state.criterionAnswers;
         alteredCriterionObjects[changedQuestion] = newValue;
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
@@ -19,6 +20,19 @@ const CriterionService = {
             CriterionCalculationService.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
             this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
         }
+    },
+
+    /*
+     * If an Efficacy Study Answer changed we call this method to store it, and calculate the results
+     */
+    studyAnswerChanged(component, studyKey, changedQuestion, newValue) {
+        let alteredStudyAnswers = component.state.studyAnswers;
+        alteredStudyAnswers[studyKey][changedQuestion] = newValue;
+
+        console.log("studyAnswerChanged: " + studyKey);
+
+        Repository.saveStudyAnsers(component, alteredStudyAnswers);
+        EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
     },
 
     /*
@@ -141,6 +155,15 @@ const CriterionService = {
         }
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
+    },
+
+    initializeStudyAnsers(component, key, studyRefIds) {
+        let existingStudies = component.state.studyAnswers;
+        if (existingStudies[key] === undefined) {
+
+            existingStudies[key] = studyRefIds;
+            Repository.saveStudyAnsers(component, existingStudies);
+        }
     },
 }
 

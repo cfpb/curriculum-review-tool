@@ -14,16 +14,15 @@ export default class EfficacyCriterionPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
-    componentDidMount() {
-        this.initializeAnswerValuesByRefs();
-    }
-
     initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
     }
 
     shouldHideAdditonalCriterion(currentCriterion) {
+
+        // Once we show Criterion 2 there will be no link, go ahead and exapnd it by default!
+        // Criterion 2 appears once they have entered 2 or more STRONG Studies
 
         //TODO: Only show Additional criterion if 2 studies are strong
         //      a study is strong if all essential criterion are true

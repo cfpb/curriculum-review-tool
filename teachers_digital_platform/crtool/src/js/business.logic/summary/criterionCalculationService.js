@@ -85,7 +85,10 @@ const CriterionCalculationService = {
         } else if (currentCriterionGroupName.includes("content-high")) {
             criterionScore = ContentHighCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
         } else if (currentCriterionGroupName.includes("efficacy")) {
-            criterionScore = EfficacyCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
+            console.log("@@@@@@@@@@@@@@@: " + currentCriterion);
+            let allCriterionAnswers = component.state.criterionAnswers;
+            console.log(allCriterionAnswers);
+            criterionScore = EfficacyCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore, component.state.criterionAnswers);
         }
             
         this.setCriterionScoreState(component, currentCriterionGroupName, criterionScore);

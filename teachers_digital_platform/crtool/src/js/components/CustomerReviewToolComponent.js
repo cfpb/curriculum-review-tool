@@ -33,6 +33,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             publicationDate: Repository.getPublicationDate(),
             gradeRange: Repository.getGradeRange(),
 
+            studyAnswers: Repository.getStudyAnswers(),
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
             criterionClickedTitles: Repository.getCriterionClickedTitles(),
@@ -90,6 +91,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
     }
 
+    initializeStudyAnsers(key, study) {
+        CriterionService.initializeStudyAnsers(this, key, study);
+    }
+
     initializeAnswerObjects(fields) {
         CriterionService.initializeAnswerObjects(this, fields);
     }
@@ -100,6 +105,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     removeEfficacyStudy(efficacyStudyNumber) {
         CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
+    }
+
+    studyAnswerChanged(studyKey, changedQuestion, newValue) {
+        CriterionService.studyAnswerChanged(this, studyKey, changedQuestion, newValue);
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
@@ -131,6 +140,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualityInProgress:this.state.qualityInProgress,
             efficacyInProgress:this.state.efficacyInProgress,
 
+            studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,
             criterionClickedTitles:this.state.criterionClickedTitles,
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
@@ -139,8 +149,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
+            studyAnswerChanged:this.studyAnswerChanged.bind(this),
             criterionAnswerChanged:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
+            initializeStudyAnsers:this.initializeStudyAnsers.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),

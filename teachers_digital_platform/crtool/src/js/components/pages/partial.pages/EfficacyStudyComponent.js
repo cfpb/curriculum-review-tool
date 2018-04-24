@@ -32,6 +32,37 @@ export default class EfficacyStudyComponent extends React.Component {
         return newCriterionRefId;
     }
 
+    componentWillMount() {
+        this.initializeAnswerObjects();
+    }
+
+    criterionStudyAnswerChanged(key, checkedValue) {
+        console.log("criterionStudyAnswerChanged");
+        this.props.studyAnswerChanged(this.props.studyCount, key, checkedValue);
+    }
+
+    initializeAnswerObjects() {
+        let studyRefIds = {};
+
+        studyRefIds["efficacy-crt-question-1#" + this.props.studyCount + "#_notes_optional"] = "";
+        studyRefIds["efficacy-crt-question-1.1.1#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.1.2#" + this.props.studyCount + "#_beneficial"] = "";
+        studyRefIds["efficacy-crt-question-1.2.1#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.3.1#" + this.props.studyCount + "#_beneficial"] = "";
+        studyRefIds["efficacy-crt-question-1.3.2#" + this.props.studyCount + "#_beneficial"] = "";
+        studyRefIds["efficacy-crt-question-1.4.1#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.4.2#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.4.3#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.4.4#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.4.5#" + this.props.studyCount + "#_beneficial"] = "";
+        studyRefIds["efficacy-crt-question-1.4.6#" + this.props.studyCount + "#_beneficial"] = "";
+        studyRefIds["efficacy-crt-question-1.5#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.6#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-#" + this.props.studyCount + "#study"] = "";
+
+        this.props.initializeStudyAnsers(this.props.studyCount, studyRefIds);;
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -48,7 +79,7 @@ export default class EfficacyStudyComponent extends React.Component {
                             id={this.generateStudyRefId("", "study")}
                             ref={this.generateStudyRefId("", "study")}
                             value={this.props.criterionAnswers[this.generateStudyRefId("", "study")]}
-                            onChange={e=>this.props.criterionAnswerChanged(this.generateStudyRefId("", "study"), e.target.value)} />
+                            onChange={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("", "study"), e.target.value)} />
                     </div>
                 </div>
                 <ol className="m-list__unstyled">
@@ -68,6 +99,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.1.1", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?"
@@ -75,6 +108,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.1.2", "_beneficial")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                         </div>
                     </li>
@@ -94,6 +129,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.2", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                         </div>
                     </li>
@@ -113,6 +150,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.3.1", "_beneficial")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)"
@@ -120,6 +159,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.3.2", "_beneficial")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                         </div>
                     </li>
@@ -140,6 +181,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.4.1", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Is the student outcome measure clearly defined and a measure of the intended construct?"
@@ -147,6 +190,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.4.2", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Are the student outcome measures collected in the same manner for all study participants?"
@@ -154,6 +199,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.4.3", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Does the study measure student financial knowledge, attitudes, or behavior?"
@@ -161,6 +208,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.4.4", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?"
@@ -168,6 +217,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.4.5", "_beneficial")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                             <EditableSubComponentRow 
                                 componentText="Does the study collect student outcome data from a source other than (or in addition to) the students?"
@@ -175,6 +226,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.4.6", "_beneficial")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                         </div>
                     </li>
@@ -194,6 +247,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.5", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                         </div>
                     </li>
@@ -230,7 +285,7 @@ export default class EfficacyStudyComponent extends React.Component {
                                 id={this.generateStudyRefId("1", "_notes_optional")}
                                 ref={this.generateStudyRefId("1", "_notes_optional")}
                                 value={this.props.criterionAnswers[this.generateStudyRefId("1", "_notes_optional")]}
-                                onChange={e=>this.props.criterionAnswerChanged(this.generateStudyRefId("1", "_notes_optional"), e.target.value)} >
+                                onChange={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("1", "_notes_optional"), e.target.value)} >
                     </textarea>
                 </div>
                 <h4 className="h2">Score for {this.props.criterionAnswers[this.generateStudyRefId("", "study")]}</h4>

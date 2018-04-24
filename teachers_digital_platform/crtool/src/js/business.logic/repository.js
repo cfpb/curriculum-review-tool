@@ -20,6 +20,7 @@ const Repository = {
         this.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
 
+        this.saveStudyAnsers(this, {});
         this.saveCriterionScores(this, {});
         this.saveCriterionAnswers(this, {});
         this.setCriterionTitleLinkClicked(this, {});
@@ -83,6 +84,10 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionScores")) || {};
     },
 
+    getStudyAnswers() {
+        return JSON.parse(localStorage.getItem("studyAnswers")) || {};
+    },
+
     getCriterionAnswers() {
         return JSON.parse(localStorage.getItem("criterionAnswers")) || {};
     },
@@ -117,6 +122,11 @@ const Repository = {
     saveCriterionScores(component, alteredCriterionScores) {
         localStorage.setItem("criterionScores", JSON.stringify(alteredCriterionScores));
         component.setState({criterionScores: alteredCriterionScores});
+    },
+
+    saveStudyAnsers(component, alteredStudies) {
+        localStorage.setItem("studyAnswers", JSON.stringify(alteredStudies));
+        component.setState({studyAnswers: alteredStudies});
     },
 
     /*

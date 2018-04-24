@@ -36,6 +36,9 @@ const UtilityService = {
     getCriterionQuestionKey(changedCriterionQuestion) {
         //Need to grab enough of the name to get the first number (criterion number)
         let criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("-")+2);
+        if (criterionName.includes("#")) {
+            criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("#")+1);
+        }
         return criterionName;
     },
 
