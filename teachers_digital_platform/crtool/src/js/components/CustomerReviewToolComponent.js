@@ -191,6 +191,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilitySummaryButton:this.state.utilitySummaryButton,
             qualitySummaryButton:this.state.qualitySummaryButton,
             efficacySummaryButton:this.state.efficacySummaryButton,
+            finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
 
             clearLocalStorage:this.clearLocalStorage.bind(this),
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
