@@ -1,5 +1,6 @@
 import React from "react";
 
+import EfficacyStudyScoreComponent from "./EfficacyStudyScoreComponent";
 import EditableSubComponentRow from "./EditableSubComponentRow";
 import SvgIcon from "../../svgs/SvgIcon";
 
@@ -37,7 +38,6 @@ export default class EfficacyStudyComponent extends React.Component {
     }
 
     criterionStudyAnswerChanged(key, checkedValue) {
-        console.log("criterionStudyAnswerChanged");
         this.props.studyAnswerChanged(this.props.studyCount, key, checkedValue);
     }
 
@@ -47,7 +47,7 @@ export default class EfficacyStudyComponent extends React.Component {
         studyRefIds["efficacy-crt-question-1#" + this.props.studyCount + "#_notes_optional"] = "";
         studyRefIds["efficacy-crt-question-1.1.1#" + this.props.studyCount + "#"] = "";
         studyRefIds["efficacy-crt-question-1.1.2#" + this.props.studyCount + "#_beneficial"] = "";
-        studyRefIds["efficacy-crt-question-1.2.1#" + this.props.studyCount + "#"] = "";
+        studyRefIds["efficacy-crt-question-1.2#" + this.props.studyCount + "#"] = "";
         studyRefIds["efficacy-crt-question-1.3.1#" + this.props.studyCount + "#_beneficial"] = "";
         studyRefIds["efficacy-crt-question-1.3.2#" + this.props.studyCount + "#_beneficial"] = "";
         studyRefIds["efficacy-crt-question-1.4.1#" + this.props.studyCount + "#"] = "";
@@ -78,7 +78,7 @@ export default class EfficacyStudyComponent extends React.Component {
                         <input className="a-text-input a-text-input__full" type="text"
                             id={this.generateStudyRefId("", "study")}
                             ref={this.generateStudyRefId("", "study")}
-                            value={this.props.criterionAnswers[this.generateStudyRefId("", "study")]}
+                            value={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("", "study")]}
                             onChange={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("", "study"), e.target.value)} />
                     </div>
                 </div>
@@ -268,6 +268,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 showNaButton="false"
                                 currentCriterionRefId={this.generateStudyRefId("1.6", "")}
                                 {...this.props}
+                                criterionAnswerChanged={this.criterionStudyAnswerChanged.bind(this)}
+                                criterionAnswers={this.props.studyAnswers[this.props.studyCount]}
                                 />
                         </div>
                     </li>
@@ -284,59 +286,15 @@ export default class EfficacyStudyComponent extends React.Component {
                                 rows="6"
                                 id={this.generateStudyRefId("1", "_notes_optional")}
                                 ref={this.generateStudyRefId("1", "_notes_optional")}
-                                value={this.props.criterionAnswers[this.generateStudyRefId("1", "_notes_optional")]}
+                                value={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("1", "_notes_optional")]}
                                 onChange={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("1", "_notes_optional"), e.target.value)} >
                     </textarea>
                 </div>
-                <h4 className="h2">Score for {this.props.criterionAnswers[this.generateStudyRefId("", "study")]}</h4>
-                <div className="m-curriculum-status">
-                    <ul className="m-list__unstyled u-mb0">
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className="m-form-field_radio-icon is-active" viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text is-active">
-                                        <div><strong>The study is strong.</strong></div>
-                                        All essential components were met.
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className="m-form-field_radio-icon" viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>The study is not strong.</strong></div>
-                                        Not all essential components were met.
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className="m-curriculum-status_components">
-                        <p><b>Total number of essential components</b></p>
-                        <ul className="m-component-list">
-                            <li><b>5</b> Yes</li>
-                            <li><b>0</b> No</li>
-                        </ul>
-                        <p><b>Total number of beneficial components</b></p>
-                        <ul className="m-component-list">
-                            <li><b>0</b> Yes</li>
-                            <li><b>2</b> No</li>
-                        </ul>
-                    </div>
-                </div>
+                <EfficacyStudyScoreComponent 
+                    studyScore={this.props.criterionScores["efficacy-crt-1-" + this.props.studyCount]}
+                    studyScoreName={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("", "study")]}
+                    {...this.props}
+                    />
             </React.Fragment>
         );
     }

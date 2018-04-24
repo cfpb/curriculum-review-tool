@@ -29,8 +29,6 @@ const CriterionService = {
         let alteredStudyAnswers = component.state.studyAnswers;
         alteredStudyAnswers[studyKey][changedQuestion] = newValue;
 
-        console.log("studyAnswerChanged: " + studyKey);
-
         Repository.saveStudyAnsers(component, alteredStudyAnswers);
         EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
     },
@@ -116,14 +114,37 @@ const CriterionService = {
      * Also called Study.  This method allows us to remove each of the criterion answers
      */
     removeEfficacyStudy(component, efficacyStudyNumber) {
+        this.removeCriterionScoresForStudy(component, efficacyStudyNumber);
+        this.removeStudyAnswers(component, efficacyStudyNumber);
+
+        this.removeCriterionEfficacyStudy(component, efficacyStudyNumber);
+    },
+
+    removeCriterionEfficacyStudy(component, efficacyStudyNumber) {
         let efficacyStudyCriterion = component.state.criterionEfficacyStudies;
         let indexOfItemToRemove = efficacyStudyCriterion.indexOf(efficacyStudyNumber);
-
+        
         efficacyStudyCriterion.splice(indexOfItemToRemove, 1);
         Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
-
+        
         this.removeCriterionAnswersForStudy(component, efficacyStudyNumber);
     },
+
+    removeStudyAnswers(component, efficacyStudyNumber) {
+        let existingStudyAnswers = component.state.studyAnswers;
+
+        delete existingStudyAnswers[efficacyStudyNumber];
+        Repository.saveStudyAnsers(component, existingStudyAnswers);
+    },
+
+    removeCriterionScoresForStudy(component, efficacyStudyNumber) {
+        let studyNumberName = "efficacy-crt-1-" + efficacyStudyNumber;
+        let newCriterionScores = component.state.criterionScores;
+
+        delete newCriterionScores[studyNumberName];
+        Repository.saveCriterionEfficacyStudies(component, newCriterionScores);
+    },
+    
 
     /*
      * Efficacy Dimension has the ability to add an unlimited number of Criterion one

@@ -19,28 +19,31 @@ export default class EfficacyCriterionPage extends React.Component {
         this.props.initializeAnswerObjects(myObjects);
     }
 
-    shouldHideAdditonalCriterion(currentCriterion) {
+    componentWillMount() {
+        // This will force criterion 2 to always show with out the link title
+        this.props.setCriterionTitleLinkClicked("efficacy-crt-question-2");
+    }
 
-        // Once we show Criterion 2 there will be no link, go ahead and exapnd it by default!
-        // Criterion 2 appears once they have entered 2 or more STRONG Studies
+    twoStrongStudiesExist() {
+        let count = 0;
+        for (var score in this.props.criterionScores) {
+            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes) 
+            {
+                count += 1;   
+                if (count === 2) {
+                    return true;
+                }
+            }
+        }
 
-        //TODO: Only show Additional criterion if 2 studies are strong
-        //      a study is strong if all essential criterion are true
-        
         return false;
-        // let currentCriterionGroupName = currentCriterion.replace("-question", "");
-
-        // if (this.props.criterionScores[currentCriterionGroupName] !== undefined &&
-        //     this.props.criterionScores[currentCriterionGroupName].all_yes) {
-        //     return false;
-        // }
-        // else {
-        //     return true;
-        // }
     }
 
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
+        if (studyComponents === undefined) {
+            return [0]; //In case the data gets removed we need at lest one element
+        }
         return studyComponents;
     }
 
@@ -156,7 +159,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
-                    hideCriterion={this.shouldHideAdditonalCriterion("efficacy-crt-question-1")}
+                    hideCriterion={!this.twoStrongStudiesExist()}
                     {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">

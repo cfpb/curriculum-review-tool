@@ -1,3 +1,5 @@
+import Repository from "./repository";
+
 const UtilityService = {
 
     isCriterionValueEmpty(key, alteredCriterionObjects) {
@@ -40,6 +42,16 @@ const UtilityService = {
             criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("#")+1);
         }
         return criterionName;
+    },
+
+    /*
+     * Manage state for specified criterion
+     */
+    setCriterionScoreState(component, currentCriterionGroup, criterionScore) {
+        let alteredCriterionScores =  component.state.criterionScores;
+        alteredCriterionScores[currentCriterionGroup] = criterionScore;
+
+        Repository.saveCriterionScores(component, alteredCriterionScores);
     },
 
 }

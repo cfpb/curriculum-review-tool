@@ -97,7 +97,7 @@ const Repository = {
     },
 
     getDistinctiveCompletedDate() {
-        return JSON.parse(localStorage.getItem("dis tinctiveCompletedDate")) || {};
+        return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
     },
 
     getCriterionCompletionSatuses() {
