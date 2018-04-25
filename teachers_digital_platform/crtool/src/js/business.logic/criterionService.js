@@ -29,8 +29,24 @@ const CriterionService = {
         let alteredStudyAnswers = component.state.studyAnswers;
         alteredStudyAnswers[studyKey][changedQuestion] = newValue;
 
+        // Study changed so this invalidates any criterion 2 or 3 values.
+        this.resetEfficacyCriterionOnStudyChange(component);
+        
         Repository.saveStudyAnsers(component, alteredStudyAnswers);
         EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
+    },
+
+    /*
+     * Efficacy Survey is complicated.  User can have mulitple studies and 
+     * if any of them change then other Criterion must start over. 
+     * Also they must hide and "I'm done adding studies" must be re-enabled
+     */
+    resetEfficacyCriterionOnStudyChange(component) {
+        this.handleFinishAddingEfficacyStudies(component, false);
+        this.removeCriterionScoresForCriterion2and3(component);
+        this.removeCriterionCompletionStatusForCriterion2and3(component)
+
+        this.removeCriterionAnswesForEfficacy2and3(component);
     },
 
     /*
@@ -152,6 +168,31 @@ const CriterionService = {
         Repository.saveCriterionEfficacyStudies(component, newCriterionScores);
     },
 
+    /*
+     * Need the ability to remove all all Criterion Scores 
+     * related to Efficacy criteroin 2 or 3
+     */
+    removeCriterionScoresForCriterion2and3(component) {
+        let newCriterionScores = component.state.criterionScores;
+
+        delete newCriterionScores["efficacy-crt-2"];
+        delete newCriterionScores["efficacy-crt-3"];
+
+        Repository.saveCriterionScores(component, newCriterionScores);
+    },
+
+     /*
+     * Need the ability to remove all all Criterion Scores 
+     * related to Efficacy criteroin 2 or 3
+     */
+    removeCriterionCompletionStatusForCriterion2and3(component) {
+        let statuses = component.state.criterionCompletionStatuses;
+
+        delete statuses["efficacy-crt-question-2"];
+        delete statuses["efficacy-crt-question-3"];
+
+        Repository.saveCriterionGroupCompletionStatuses(component, statuses);
+    },
 
     /*
      * Efficacy Dimension has the ability to add an unlimited number of Criterion one
@@ -162,6 +203,20 @@ const CriterionService = {
         for (var key in component.state.criterionAnswers) {
             let studyNumber = "#" + efficacyStudyNumber + "#";
             if (!key.includes(studyNumber)) {
+                newCriterionAnswers[key] = component.state.criterionAnswers[key]
+            }
+        }
+
+        Repository.saveCriterionAnswers(component, newCriterionAnswers);
+    },
+
+    /*
+     * Remove any Criteron Answer that has namePart in its name/key
+     */
+    removeCriterionAnswesForEfficacy2and3(component, namePart) {
+        let newCriterionAnswers = {};
+        for (var key in component.state.criterionAnswers) {
+            if (!key.includes("efficacy-crt")) {
                 newCriterionAnswers[key] = component.state.criterionAnswers[key]
             }
         }

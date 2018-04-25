@@ -10,22 +10,27 @@ export default class EfficacySummaryPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
+    createEmptyScore(criterionName) {
+        let criterionScore = {
+            criterionName:criterionName,
+            has_beneficial:true,
+            all_essential_yes:false,
+            essential_total_yes:0,
+            essential_total_no:0,
+            beneficial_total_yes:0,
+            beneficial_total_no:0,
+            answered_all_complete:true,
+        };
+        return criterionScore;
+    }
+
     criterionOveralScoreClassName(level, type) {
         let hasTwoStrongStudies = this.twoStrongStudiesExist();
         let isLarge = this.scoreIsLarge(hasTwoStrongStudies);
         let criterionThreeScore = this.props.criterionScores["efficacy-crt-3"];
 
         if (criterionThreeScore === undefined) {
-            criterionThreeScore = {
-                criterionName:"efficacy-crt-3",
-                has_beneficial:true,
-                all_essential_yes:false,
-                essential_total_yes:0,
-                essential_total_no:0,
-                beneficial_total_yes:0,
-                beneficial_total_no:0,
-                answered_all_complete:true,
-            };
+            criterionThreeScore = this.createEmptyScore("efficacy-crt-3");
         }
 
         let className = "m-form-field_radio-icon";
@@ -79,13 +84,23 @@ export default class EfficacySummaryPage extends React.Component {
     }
 
     scoreIsLarge(hasTwoStrongStudies) {
-        return (hasTwoStrongStudies &&
-                this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes > 0);
+        let criterionScore = this.props.criterionScores["efficacy-crt-2"];
+        if (criterionScore === undefined) {
+            criterionScore = this.createEmptyScore("efficacy-crt-2");
+        }
+
+        return (hasTwoStrongStudies && 
+            criterionScore.beneficial_total_yes > 0);
     }
 
     scoreIsModerate(hasTwoStrongStudies) {
+        let criterionScore = this.props.criterionScores["efficacy-crt-2"];
+        if (criterionScore === undefined) {
+            criterionScore = this.createEmptyScore("efficacy-crt-2");
+        }
+
         return (hasTwoStrongStudies &&
-                this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes === 0);
+                criterionScore.beneficial_total_yes === 0);
     }
 
     scoreIsLimited(hasTwoStrongStudies) {

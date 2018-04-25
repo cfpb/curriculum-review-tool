@@ -199,6 +199,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
 
             clearLocalStorage:this.clearLocalStorage.bind(this),
+            distinctiveClicked:this.distinctiveClicked.bind(this),
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
