@@ -112,7 +112,7 @@ export default class UtilitySummaryPage extends React.Component {
                     </button>
                 </div>
                 <h3 className="h2">Criterion 1: Materials to support cognitive development</h3>
-                <p className="u-mb30">Materials provide instructional suggestions designed to support the cognitive development of students' financial capability.</p>
+                <p className="u-mb30">Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability.</p>
                 <div className="m-curriculum-status">
                 <ul className="m-list__unstyled
                                     u-mb0">
@@ -186,7 +186,7 @@ export default class UtilitySummaryPage extends React.Component {
                     </button>
                 </div>
                 <h3 className="h2">Criterion 2: Differentiated instruction for diverse populations</h3>
-                <p className="u-mb30">Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students' race, ethnicity, gender, income, special education status, and English language proficiency.</p>
+                <p className="u-mb30">Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency.</p>
                 <div className="m-curriculum-status">
                 <ul className="m-list__unstyled
                                     u-mb0">
