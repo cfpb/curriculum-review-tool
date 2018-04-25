@@ -1,9 +1,9 @@
 // Dimension selection bar
 
-@bp-dimension-2-columns: 445px;
-@bp-dimension-4-columns: 877px;
+@bp-dimension-2-columns: 495px;
+@bp-dimension-4-columns: 1035px;
 @bp-dimension-wide-gutters: 923px;
-@bp-dimension-larger-text: 1020px;
+@bp-dimension-larger-text: 1140px;
 
 .o-dimension-selection-bar {
     display: flex;
@@ -171,6 +171,7 @@
     color: inherit;
     font-size: unit( @size-v / @base-font-size-px, em );
     height: 100%;
+    min-height: unit( 93px / @size-v, em );
     padding: unit( 13px / @size-v, em );
     text-align: left;
     transition-duration: 0.1s;
