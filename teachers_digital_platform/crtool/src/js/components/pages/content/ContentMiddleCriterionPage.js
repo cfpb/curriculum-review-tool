@@ -1121,7 +1121,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 </div>
                 <CriterionLinkWrapper
                     criterionKey="content-middle-crt-question-5"
-                    criterionText="Criterion 5: Borrowing and credit"
+                    criterionText="Criterion 5: Managing financial risk"
                     {...this.props} >
                 <div className="block block__flush-top">
                     <h3 className="h2">
@@ -1129,7 +1129,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-5"]}
                             color="green"
                             hasSpaceAfter="true" />
-                        Criterion 5: Borrowing and credit
+                        Criterion 5: Managing financial risk
                     </h3>
                     <p className="lead-paragraph">
                         Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
