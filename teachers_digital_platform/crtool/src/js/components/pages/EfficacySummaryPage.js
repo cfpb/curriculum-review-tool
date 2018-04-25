@@ -31,30 +31,30 @@ export default class EfficacySummaryPage extends React.Component {
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
 
-        if (level === "strong" && 
-            isLarge && 
-            criterionThreeScore.all_essential_yes && 
+        if (level === "strong" &&
+            isLarge &&
+            criterionThreeScore.all_essential_yes &&
             criterionThreeScore.beneficial_total_no === 0) {
 
             className = className + " is-active";
         } else if (level === "moderate" &&
-                    isLarge && 
-                    criterionThreeScore.all_essential_yes && 
+                    isLarge &&
+                    criterionThreeScore.all_essential_yes &&
                     criterionThreeScore.beneficial_total_no === 1) {
-                        
+
             className = className + " is-active";
-        } else if (level === "mixed" && 
-                    isLarge && 
+        } else if (level === "mixed" &&
+                    isLarge &&
                     criterionThreeScore.essential_total_yes < 2) {
 
             className = className + " is-active";
-        } else if (level === "limited" && 
-                    !isLarge && 
-                    criterionThreeScore.essential_total_yes === 0 && 
+        } else if (level === "limited" &&
+                    !isLarge &&
+                    criterionThreeScore.essential_total_yes === 0 &&
                     criterionThreeScore.beneficial_total_yes === 1) {
 
             className = className + " is-active";
-        } else if (level === "notenoughinfo" && 
+        } else if (level === "notenoughinfo" &&
                     !isLarge) {
 
             className = className + " is-active";
@@ -79,7 +79,7 @@ export default class EfficacySummaryPage extends React.Component {
     }
 
     scoreIsLarge(hasTwoStrongStudies) {
-        return (hasTwoStrongStudies && 
+        return (hasTwoStrongStudies &&
                 this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes > 0);
     }
 

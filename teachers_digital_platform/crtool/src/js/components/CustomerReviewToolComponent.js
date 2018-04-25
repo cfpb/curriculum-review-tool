@@ -191,7 +191,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityInProgress:this.state.utilityInProgress,
             qualityInProgress:this.state.qualityInProgress,
             efficacyInProgress:this.state.efficacyInProgress,
-            
+
             contentSummaryButton:this.state.contentSummaryButton,
             utilitySummaryButton:this.state.utilitySummaryButton,
             qualitySummaryButton:this.state.qualitySummaryButton,
