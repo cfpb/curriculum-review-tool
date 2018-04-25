@@ -241,7 +241,6 @@ export default class EfficacySummaryPage extends React.Component {
                                     </svg>
                                     <div className="m-form-field_radio-text">
                                         <div><strong>Strong efficacy</strong></div>
-                                        All 4 criteria were met, and at least one was exceeded
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +256,6 @@ export default class EfficacySummaryPage extends React.Component {
                                     </svg>
                                     <div className="m-form-field_radio-text is-active">
                                         <div><strong>Moderate efficacy</strong></div>
-                                        All 4 criteria were met
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +271,6 @@ export default class EfficacySummaryPage extends React.Component {
                                     </svg>
                                     <div className="m-form-field_radio-text">
                                         <div><strong>Mixed efficacy</strong></div>
-                                        At least one of the criteria was not met
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +286,6 @@ export default class EfficacySummaryPage extends React.Component {
                                     </svg>
                                     <div className="m-form-field_radio-text">
                                         <div><strong>Limited efficacy</strong></div>
-                                        At least one of the criteria was not met
                                     </div>
                                 </div>
                             </div>
@@ -305,7 +301,6 @@ export default class EfficacySummaryPage extends React.Component {
                                     </svg>
                                     <div className="m-form-field_radio-text">
                                         <div><strong>Not enough information</strong></div>
-                                        No studies met criterion 1
                                     </div>
                                 </div>
                             </div>
