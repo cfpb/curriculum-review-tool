@@ -96,7 +96,7 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     renderWarningContinueWithout2and3() {
-        if (!this.props.finishAddingEfficacyStudies) {
+        if (!this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist()) {
             return (null);
         } else {
             return (

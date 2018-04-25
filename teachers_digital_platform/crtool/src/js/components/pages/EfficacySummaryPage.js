@@ -15,7 +15,18 @@ export default class EfficacySummaryPage extends React.Component {
         let isLarge = this.scoreIsLarge(hasTwoStrongStudies);
         let criterionThreeScore = this.props.criterionScores["efficacy-crt-3"];
 
-
+        if (criterionThreeScore === undefined) {
+            criterionThreeScore = {
+                criterionName:"efficacy-crt-3",
+                has_beneficial:true,
+                all_essential_yes:false,
+                essential_total_yes:0,
+                essential_total_no:0,
+                beneficial_total_yes:0,
+                beneficial_total_no:0,
+                answered_all_complete:true,
+            };
+        }
 
         let className = "m-form-field_radio-icon";
         if (level === "strong" && 
@@ -25,13 +36,13 @@ export default class EfficacySummaryPage extends React.Component {
 
             className = className + " is-active";
         } else if (level === "moderate" &&
-        isLarge && 
+                    isLarge && 
                     criterionThreeScore.all_essential_yes && 
                     criterionThreeScore.beneficial_total_no === 1) {
                         
             className = className + " is-active";
         } else if (level === "mixed" && 
-        isLarge && 
+                    isLarge && 
                     criterionThreeScore.essential_total_yes < 2) {
 
             className = className + " is-active";
@@ -146,7 +157,7 @@ export default class EfficacySummaryPage extends React.Component {
                 </div>
                 <h3 className="h2">Based on your answers, the efficacy score for this curriculum is:</h3>
                 <p>
-                    <a href="#">
+                    <a>
                         How efficacy is scored.
                         <SvgIcon
                             icon="document"
