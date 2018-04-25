@@ -189,6 +189,15 @@ export default class ContentMiddleSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                                <div className="l-survey-top">
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
+                </div>
                 <h3 className="h2">Criterion 2: Saving and investing</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for saving and investing.</p>
                 <div className="m-curriculum-status">
@@ -270,6 +279,15 @@ export default class ContentMiddleSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
+                </div>
                 <h3 className="h2">Criterion 3: Spending</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for spending.</p>
                 <div className="m-curriculum-status">
@@ -351,6 +369,15 @@ export default class ContentMiddleSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
+                </div>
                 <h3 className="h2">Criterion 4: Borrowing and credit</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for borrowing and credit.</p>
                 <div className="m-curriculum-status">
@@ -432,6 +459,15 @@ export default class ContentMiddleSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
+                </div>
                 <h3 className="h2">Criterion 5: Managing financial risk</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance.</p>
                 <div className="m-curriculum-status">
@@ -513,6 +549,15 @@ export default class ContentMiddleSummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                <button class="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.CONTENT_PAGE);}}>
+                    <SvgIcon
+                        icon="pencil"
+                        islarge="true"
+                        hasSpaceAfter="true" />
+                    View or edit responses
+                </button>
+                </div>
                 <h3 className="h2">Criterion 6: Financial responsibility and money management</h3>
                 <p className="u-mb30">The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions.</p>
                 <div className="m-curriculum-status">

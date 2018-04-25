@@ -172,6 +172,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 2: Differentiated instruction for diverse populations</h3>
                 <p className="u-mb30">Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.</p>
                 <div className="m-curriculum-status">
@@ -260,6 +269,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 3: Quality materials for lesson planning</h3>
                 <p className="u-mb30">Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?</p>
                 <div className="m-curriculum-status">
@@ -348,7 +366,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 4: Materials to assess mastery</h3>
                 <p className="u-mb30">Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?</p>
                 <div className="m-curriculum-status">
@@ -437,6 +463,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 5: Instructional supports</h3>
                 <p className="u-mb30">Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?</p>
                 <div className="m-curriculum-status">

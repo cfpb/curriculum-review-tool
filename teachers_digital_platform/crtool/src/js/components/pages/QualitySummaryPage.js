@@ -100,7 +100,7 @@ export default class QualitySummaryPage extends React.Component {
                                 u-mb45
                                 u-mt30" />
                 <div className="l-survey-top">
-                <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.QUALITY_PAGE);}}>
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.QUALITY_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
@@ -196,6 +196,15 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.QUALITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 2: Accuracy and timeliness</h3>
                 <p className="u-mb30">Curriculum materials are current and free of errors.</p>
                 <div className="m-curriculum-status">
@@ -261,6 +270,15 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.QUALITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 3: Objectivity</h3>
                 <p className="u-mb30">Curriculum materials are objective.</p>
                 <div className="m-curriculum-status">
@@ -349,6 +367,15 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.QUALITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 4: Visual appearance </h3>
                 <p className="u-mb30">The visual appearance of the student materials is conducive to learning.</p>
                 <div className="m-curriculum-status">
