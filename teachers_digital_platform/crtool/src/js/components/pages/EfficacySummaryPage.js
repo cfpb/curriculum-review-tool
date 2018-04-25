@@ -155,7 +155,7 @@ export default class EfficacySummaryPage extends React.Component {
                         View or edit responses
                     </button>
                 </div>
-                <h3 className="h2">Based on your answers, the efficacy score for this curriculum is:</h3>
+                <h2 className="h2">Based on your answers, the efficacy score for this curriculum is:</h2>
                 <p>
                     <a>
                         How efficacy is scored.

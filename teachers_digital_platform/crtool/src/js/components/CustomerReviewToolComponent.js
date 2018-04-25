@@ -187,6 +187,11 @@ export default class CustomerReviewToolComponent extends React.Component {
         const summaryButtonProps = {
             currentPage:this.state.currentPage,
 
+            contentInProgress:this.state.contentInProgress,
+            utilityInProgress:this.state.utilityInProgress,
+            qualityInProgress:this.state.qualityInProgress,
+            efficacyInProgress:this.state.efficacyInProgress,
+            
             contentSummaryButton:this.state.contentSummaryButton,
             utilitySummaryButton:this.state.utilitySummaryButton,
             qualitySummaryButton:this.state.qualitySummaryButton,

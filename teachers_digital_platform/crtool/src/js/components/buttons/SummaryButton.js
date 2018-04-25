@@ -9,7 +9,17 @@ export default class SummaryButton extends React.Component {
     }
 
     render() {
-        if (this.props.currentPage === C.CONTENT_PAGE &&
+        if ( (this.props.currentPage === C.CONTENT_PAGE && this.props.contentInProgress === C.STATUS_COMPLETE) || 
+             (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityInProgress === C.STATUS_COMPLETE) || 
+             (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) || 
+             (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) ) {
+                return (
+                <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
+                    Print or save summary
+                </button>
+            );
+        } 
+        else if (this.props.currentPage === C.CONTENT_PAGE &&
             this.props.contentSummaryButton === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
@@ -33,10 +43,10 @@ export default class SummaryButton extends React.Component {
                 </button>
             );
         }
-        else if (this.props.finishAddingEfficacyStudies) {
+        else if (this.props.currentPage === C.EFFICACY_PAGE && this.props.finishAddingEfficacyStudies) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to efficacy summary
+                Continue to efficacy summary
                 </button>
             );
         }
