@@ -44,8 +44,8 @@ export default class QualityCriterionPage extends React.Component {
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <h4>This dimension has <em>essential</em> and <em>beneficial</em> components.</h4>
-                    <p><b><em>Essential components</em></b> have been shown to positively impact student learning.<br /><b><em>Beneficial components</em></b> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <h4>This dimension has essential and beneficial components.</h4>
+                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
                     <p>
                         <SaveWorkModal
                             buttonText="How can I save my work?"

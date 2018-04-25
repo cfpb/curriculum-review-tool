@@ -40,7 +40,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <ul>
                     <li>Read through the scope and sequence of the curriculum.</li>
                     <li>Skim the lesson plans, student materials, and assessments.</li>
-                    <li>Select <b><em>yes</em></b> for the components that are addressed, and <b><em>no</em></b> for those that are not.</li>
+                    <li>Select “yes” for the components that are addressed, and “no” for those that are not.</li>
                 </ul>
                 <p>
                     <SaveWorkModal
