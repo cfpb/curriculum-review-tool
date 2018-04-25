@@ -8,7 +8,7 @@ import FooterButtonAreaComponent from "./pages/partial.pages/FooterButtonAreaCom
 import SurveyPageContainer from "./pages/SurveyPageContainer";
 import PageInstructionsComponent from "./PageInstructionsComponent";
 import FinalSummaryPage from "./pages/FinalSummaryPage";
-import FinalPrintPage from "./pages/FinalPrintPage";
+import PrintAndSummaryPages from "./pages/PrintAndSummaryPages";
 import DateTimeFormater from "../business.logic/dateTimeFormatter";
 import Repository from "../business.logic/repository";
 import CriterionService from "../business.logic/criterionService";
@@ -206,7 +206,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
         } else if (this.state.currentPage === C.FINAL_PRINT_PAGE) {
-            return (<FinalPrintPage {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
+            return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {
             return (
                 <React.Fragment>

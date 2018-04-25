@@ -6,7 +6,8 @@ import CriterionRow from "./CriterionRow";
 export default class CriterionComponent extends React.Component {
 
     renderMyNotes() {
-        if (this.props.criterionAnswers[this.props.criterionData.notesRefId] === "") {
+        let notes = this.props.criterionAnswers[this.props.criterionData.notesRefId];
+        if (notes === undefined || notes === "") {
             return (<p class="o-survey_question-helper">No information provided</p>);
         } else {
             return this.props.criterionAnswers[this.props.criterionData.notesRefId];
