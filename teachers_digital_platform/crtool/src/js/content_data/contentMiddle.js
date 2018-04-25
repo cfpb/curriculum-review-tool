@@ -40,7 +40,7 @@ export const ContentMiddleCriterion = {
         {
             title: "Criterion 2: Saving and Investing",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for saving and investing?",
-            notesRefId: "content-middle-crt-notes-optional-1",
+            notesRefId: "content-middle-crt-notes-optional-2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -119,7 +119,7 @@ export const ContentMiddleCriterion = {
         {
             title: "Criterion 3: Spending",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for spending?",
-            notesRefId: "content-middle-crt-notes-optional-1",
+            notesRefId: "content-middle-crt-notes-optional-3",
             rows: [
                 {
                     indicatorNumber: "3.1",
@@ -168,7 +168,7 @@ export const ContentMiddleCriterion = {
         {
             title: "Criterion 4: Borrowing and credit",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for borrowing and credit?",
-            notesRefId: "content-middle-crt-notes-optional-1",
+            notesRefId: "content-middle-crt-notes-optional-4",
             rows: [
                 {
                     indicatorNumber: "4.1",
@@ -233,9 +233,9 @@ export const ContentMiddleCriterion = {
             ]
         },
         {
-            title: "Criterion 5: Borrowing and credit",
+            title: "Criterion 5: Managing financial risk",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?",
-            notesRefId: "content-middle-crt-notes-optional-1",
+            notesRefId: "content-middle-crt-notes-optional-5",
             rows: [
                 {
                     indicatorNumber: "5.1",
@@ -284,7 +284,7 @@ export const ContentMiddleCriterion = {
         {
             title: "Criterion 6: Financial responsibility and money management",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?",
-            notesRefId: "content-middle-crt-notes-optional-1",
+            notesRefId: "content-middle-crt-notes-optional-6",
             rows: [
                 {
                     indicatorNumber: "6.1",
