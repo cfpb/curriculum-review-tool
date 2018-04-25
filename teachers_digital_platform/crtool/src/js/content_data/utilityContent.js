@@ -7,7 +7,7 @@ export const UtilityContent = {
             rows: [
                 {
                     indicatorNumber: "1.1",
-                    indicatorText: "Includes a balanced focus on concepts, procedures, and application.",
+                    indicatorText: "Includes a balanced focus on concepts, procedures, and application",
                     components: [
                         {
                             showNaButton: false,
@@ -34,7 +34,7 @@ export const UtilityContent = {
                 },
                 {
                     indicatorNumber: "1.2",
-                    indicatorText: "Requires higher-order skills like analysis, synthesis, and evaluation.",
+                    indicatorText: "Requires higher-order skills like analysis, synthesis, and evaluation",
                     components: [
                         {
                             showNaButton: false,
@@ -68,7 +68,7 @@ export const UtilityContent = {
                 },
                 {
                     indicatorNumber: "1.3",
-                    indicatorText: "Promotes development of executive functioning.",
+                    indicatorText: "Promotes development of executive functioning",
                     components: [
                         {
                             showNaButton: false,
@@ -88,7 +88,7 @@ export const UtilityContent = {
                 },
                 {
                     indicatorNumber: "1.4",
-                    indicatorText: "Encourages students to use specialized financial vocabulary.",
+                    indicatorText: "Encourages students to use specialized financial vocabulary",
                     components: [
                         {
                             showNaButton: false,
@@ -108,7 +108,7 @@ export const UtilityContent = {
             rows: [
                 {
                     indicatorNumber: "2.1",
-                    indicatorText: "Attends to a diversity of students’ needs.",
+                    indicatorText: "Attends to a diversity of students’ needs",
                     components: [
                         {
                             showNaButton: false,
@@ -253,7 +253,7 @@ export const UtilityContent = {
                             showBeneficialText: true,
                             criterionRefId: "utility-crt-question-2.3.6_beneficial",
                             hasInlineHtml: false,
-                            componentText: "Do the materials make connections to daily home life, careers, vocations, community events, and recreation?",
+                            componentText: "Do pictures appear current or recent?",
                         },
                     ]
                 },
