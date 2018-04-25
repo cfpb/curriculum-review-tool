@@ -79,7 +79,7 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     renderDoneAddingStoriesButton() {
-        if (this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist() || !this.twoCompleteStudiesExist()) {
+        if (this.props.finishAddingEfficacyStudies) {
             return (
                 <button className="a-btn u-mb30" disabled >
                     I’m done adding studies

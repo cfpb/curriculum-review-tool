@@ -1219,7 +1219,7 @@ Array [
     </div>
     <button
       className="a-btn u-mb30"
-      disabled={true}
+      onClick={[Function]}
     >
       I’m done adding studies
     </button>

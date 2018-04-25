@@ -10,51 +10,103 @@ export default class EfficacySummaryPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
-    criterionOveralScoreClassName(level) {
+    criterionOveralScoreClassName(level, type) {
+        let hasTwoStrongStudies = this.twoStrongStudiesExist();
+        let isLarge = this.scoreIsLarge(hasTwoStrongStudies);
+        let criterionThreeScore = this.props.criterionScores["efficacy-crt-3"];
 
-        let isLimited = false;
-        if (this.props.criterionScores["efficacy-crt-1-0"].doesnotmeet ||
-            this.props.criterionScores["efficacy-crt-2"].doesnotmeet ||
-            this.props.criterionScores["efficacy-crt-3"].doesnotmeet ) {
-
-            isLimited = true;
-        }
-
-        let isModerate = false;
-        if (this.props.criterionScores["efficacy-crt-1-0"].meets &&
-            this.props.criterionScores["efficacy-crt-2"].meets &&
-            this.props.criterionScores["efficacy-crt-3"].meets ) {
-
-            isModerate = true;
+        if (criterionThreeScore === undefined) {
+            criterionThreeScore = {
+                criterionName:"efficacy-crt-3",
+                has_beneficial:true,
+                all_essential_yes:false,
+                essential_total_yes:0,
+                essential_total_no:0,
+                beneficial_total_yes:0,
+                beneficial_total_no:0,
+                answered_all_complete:true,
+            };
         }
 
         let className = "m-form-field_radio-icon";
-        if (level === "limited" && isLimited) {
+        if (type === "text") className = "m-form-field_radio-text";
+
+        if (level === "strong" &&
+            isLarge &&
+            criterionThreeScore.all_essential_yes &&
+            criterionThreeScore.beneficial_total_no === 0) {
+
             className = className + " is-active";
-        } else if (level === "moderate" && isModerate) {
+        } else if (level === "moderate" &&
+                    isLarge &&
+                    criterionThreeScore.all_essential_yes &&
+                    criterionThreeScore.beneficial_total_no === 1) {
+
             className = className + " is-active";
-        } else if (level === "strong" && !isLimited && !isModerate) {
+        } else if (level === "mixed" &&
+                    isLarge &&
+                    criterionThreeScore.essential_total_yes < 2) {
+
+            className = className + " is-active";
+        } else if (level === "limited" &&
+                    !isLarge &&
+                    criterionThreeScore.essential_total_yes === 0 &&
+                    criterionThreeScore.beneficial_total_yes === 1) {
+
+            className = className + " is-active";
+        } else if (level === "notenoughinfo" &&
+                    !isLarge) {
+
             className = className + " is-active";
         }
 
         return className;
     }
 
-    criterionClassNameFor(criterion, level) {
-        let criterionGroupName = "efficacy-crt-" + criterion;
-        if (criterion === "1") {
-            criterionGroupName += "-0";
+    twoStrongStudiesExist() {
+        let count = 0;
+        for (var score in this.props.criterionScores) {
+            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes)
+            {
+                count += 1;
+                if (count === 2) {
+                    return true;
+                }
+            }
         }
 
-        let criterionScore = this.props.criterionScores[criterionGroupName];
-        let className = "m-form-field_radio-icon";
+        return false;
+    }
 
-        if (level === "exceeds" && criterionScore.exceeds) {
+    scoreIsLarge(hasTwoStrongStudies) {
+        return (hasTwoStrongStudies &&
+                this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes > 0);
+    }
+
+    scoreIsModerate(hasTwoStrongStudies) {
+        return (hasTwoStrongStudies &&
+                this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes === 0);
+    }
+
+    scoreIsLimited(hasTwoStrongStudies) {
+        return (!hasTwoStrongStudies);
+    }
+
+    scoreScopeOfEvidenceClassName(level, type) {
+        let className = "m-form-field_radio-icon";
+        if (type === "text") className = "m-form-field_radio-text";
+
+        let hasTwoStrongStudies = this.twoStrongStudiesExist();
+
+        if (this.scoreIsLarge(hasTwoStrongStudies) && level === "large") {
             className = className + " is-active";
-        } else if (level === "meets" && criterionScore.meets) {
+
+        } else if (this.scoreIsModerate(hasTwoStrongStudies) && level === "moderate") {
             className = className + " is-active";
-        } else if (level === "doesnotmeet" && criterionScore !== undefined && criterionScore.doesnotmeet) {
+
+        } else if (this.scoreIsLimited(hasTwoStrongStudies)  && level === "small") {
             className = className + " is-active";
+
         }
 
         return className;
@@ -99,7 +151,7 @@ export default class EfficacySummaryPage extends React.Component {
                 </button>
                 <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
                 <div className="l-survey-top">
-                <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.EFFICACY_PAGE);}}>
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.EFFICACY_PAGE);}}>
                         <SvgIcon
                             icon="pencil"
                             islarge="true"
@@ -107,8 +159,16 @@ export default class EfficacySummaryPage extends React.Component {
                         View or edit responses
                     </button>
                 </div>
-                <h3 className="h2">Criterion 1: Strength of study (inclusion criteria)</h3>
-                <p className="u-mb30">Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.</p>
+                <h2 className="h2">Based on your answers, the efficacy score for this curriculum is:</h2>
+                <p>
+                    <a>
+                        How efficacy is scored.
+                        <SvgIcon
+                            icon="document"
+                            hasSpaceBefore="true" />
+                    </a>
+                </p>
+                <h4 className="h3">Score for scope of evidence</h4>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
                                     u-mb0">
@@ -117,14 +177,12 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("1", "exceeds")} viewBox="0 0 22 22">
+                                    <svg className={this.scoreScopeOfEvidenceClassName("large")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
-                                        <div><strong>Exceeds</strong></div>
-                                        All essential components scored “yes”<br />
-                                        At least one beneficial component scored “yes”
+                                    <div className={this.scoreScopeOfEvidenceClassName("large", "text")}>
+                                        Large body of evidence
                                     </div>
                                 </div>
                             </div>
@@ -134,216 +192,32 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("1", "meets")} viewBox="0 0 22 22">
+                                    <svg className={this.scoreScopeOfEvidenceClassName("moderate")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>Meets</strong></div>
-                                        All essential components scored “yes”<br />
-                                        None of the beneficial components scored “yes”
+                                    <div className={this.scoreScopeOfEvidenceClassName("moderate", "text")}>
+                                        Moderate body of evidence
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li className="u-mb30">
+                        <li>
                             <div className="m-form-field
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("1", "doesnotmeet")} viewBox="0 0 22 22">
+                                    <svg className={this.scoreScopeOfEvidenceClassName("small")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>Does not meet</strong></div>
-                                        One or more essential components scored “no”
+                                    <div className={this.scoreScopeOfEvidenceClassName("small", "text")}>
+                                        Small body of evidence
                                     </div>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <div className="m-curriculum-status_components">
-                        <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul className="m-component-list">
-                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].essential_total_yes}</b> Yes</li>
-                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].essential_total_no}</b> No</li>
-                        </ul>
-                        <p><b>Your answers for <em>beneficial</em> components:</b></p>
-                        <ul className="m-component-list">
-                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].beneficial_total_yes}</b> Yes</li>
-                            <li><b>{this.props.criterionScores["efficacy-crt-1-0"].beneficial_total_no}</b> No</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-1">
-                        My notes
-                        &nbsp;<small className="a-label_helper">(optional)</small>
-                        <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                        </small>
-                    </label>
-                    <textarea className="a-text-input a-text-input__full"
-                        rows="6"
-                        id="efficacy-crt-notes-optional-1"
-                        ref="efficacy-crt-notes-optional-1"
-                        value={this.props.criterionAnswers['efficacy-crt-notes-optional-1']}
-                        onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-1', e.target.value)} >
-                    </textarea>
-                </div>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-                <h3 className="h2">Criterion 2: Saving and investing</h3>
-                <p className="u-mb30">Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?</p>
-                <div className="m-curriculum-status">
-                    <ul className="m-list__unstyled
-                                    u-mb0">
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("2", "meets")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text is-active">
-                                        <div><strong>Meets</strong></div>
-                                        All essential components scored “yes”
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("2", "doesnotmeet")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>Does not meet</strong></div>
-                                        One or more essential components scored “no”
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className="m-curriculum-status_components">
-                        <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul className="m-component-list">
-                            <li><b>{this.props.criterionScores["efficacy-crt-2"].beneficial_total_yes}</b> Yes</li>
-                            <li><b>{this.props.criterionScores["efficacy-crt-2"].beneficial_total_no}</b> No</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-2">
-                        My notes
-                        &nbsp;<small className="a-label_helper">(optional)</small>
-                        <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                        </small>
-                    </label>
-                    <textarea className="a-text-input a-text-input__full"
-                        rows="6"
-                        id="efficacy-crt-notes-optional-2"
-                        ref="efficacy-crt-notes-optional-2"
-                        value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
-                        onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
-                    </textarea>
-                </div>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-                <h3 className="h2">Criterion 3: Impact</h3>
-                <p className="u-mb30">Is there enough evidence to support conclusions of consistent, strong, positive impact?</p>
-                <div className="m-curriculum-status">
-                    <ul className="m-list__unstyled
-                                    u-mb0">
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("3", "exceeds")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text is-active">
-                                        <div><strong>Exceeds</strong></div>
-                                        All essential components scored “yes”<br />
-                                        At least one beneficial component scored “yes”
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("3", "meets")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>Meets</strong></div>
-                                        All essential components scored “yes”<br />
-                                        None of the beneficial components scored “yes”
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionClassNameFor("3", "doesnotmeet")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className="m-form-field_radio-text">
-                                        <div><strong>Does not meet</strong></div>
-                                        One or more essential components scored “no”
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className="m-curriculum-status_components">
-                    <p><b>Your answers for <em>essential</em> components:</b></p>
-                    <ul className="m-component-list">
-                        <li><b>{this.props.criterionScores["efficacy-crt-3"].essential_total_yes}</b> Yes</li>
-                        <li><b>{this.props.criterionScores["efficacy-crt-3"].essential_total_no}</b> No</li>
-                    </ul>
-                    <p><b>Your answers for <em>beneficial</em> components:</b></p>
-                    <ul className="m-component-list">
-                        <li><b>{this.props.criterionScores["efficacy-crt-3"].beneficial_total_yes}</b> Yes</li>
-                        <li><b>{this.props.criterionScores["efficacy-crt-3"].beneficial_total_no}</b> No</li>
-                    </ul>
-                    </div>
-                </div>
-                <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-3">
-                        My notes
-                        &nbsp;<small className="a-label_helper">(optional)</small>
-                        <small className="a-label_helper a-label_helper__block">
-                            Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                        </small>
-                    </label>
-                    <textarea className="a-text-input a-text-input__full"
-                        rows="6"
-                        id="efficacy-crt-notes-optional-3"
-                        ref="efficacy-crt-notes-optional-3"
-                        value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
-                        onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
-                    </textarea>
                 </div>
                 <hr className="hr
                                 u-mb45
@@ -369,9 +243,8 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("strong", "text")}>
                                         <div><strong>Strong efficacy</strong></div>
-                                        All 4 criteria were met, and at least one was exceeded
                                     </div>
                                 </div>
                             </div>
@@ -385,9 +258,23 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionOveralScoreClassName("moderate", "text")}>
                                         <div><strong>Moderate efficacy</strong></div>
-                                        All 4 criteria were met
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                        m-form-field__radio
+                                        m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.criterionOveralScoreClassName("mixed")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className={this.criterionOveralScoreClassName("mixed", "text")}>
+                                        <div><strong>Mixed efficacy</strong></div>
                                     </div>
                                 </div>
                             </div>
@@ -401,9 +288,23 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("limited", "text")}>
                                         <div><strong>Limited efficacy</strong></div>
-                                        At least one of the criteria was not met
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                        m-form-field__radio
+                                        m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.criterionOveralScoreClassName("notenoughinfo")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className={this.criterionOveralScoreClassName("notenoughinfo", "text")}>
+                                        <div><strong>Not enough information</strong></div>
                                     </div>
                                 </div>
                             </div>

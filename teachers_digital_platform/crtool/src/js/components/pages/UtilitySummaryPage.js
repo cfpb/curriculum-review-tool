@@ -10,7 +10,7 @@ export default class UtilitySummaryPage extends React.Component {
         this.props.criterionAnswerChanged(C.UTILITY_PAGE, key, checkedValue);
     }
 
-    criterionOveralScoreClassName(level) {
+    criterionOveralScoreClassName(level, type) {
 
         let isLimited = false;
         if (this.props.criterionScores["utility-crt-1"].doesnotmeet ||
@@ -33,6 +33,8 @@ export default class UtilitySummaryPage extends React.Component {
         }
 
         let className = "m-form-field_radio-icon";
+        if (type === "text") className = "m-form-field_radio-text";
+
         if (level === "limited" && isLimited) {
             className = className + " is-active";
         } else if (level === "moderate" && isModerate) {
@@ -44,10 +46,12 @@ export default class UtilitySummaryPage extends React.Component {
         return className;
     }
 
-    criterionClassNameFor(criterion, level) {
+    criterionClassNameFor(criterion, level, type) {
         let criterionGroupName = "utility-crt-" + criterion;
         let criterionScore = this.props.criterionScores[criterionGroupName];
+
         let className = "m-form-field_radio-icon";
+        if (type === "text") className = "m-form-field_radio-text";
 
         if (level === "exceeds" && criterionScore.exceeds) {
             className = className + " is-active";
@@ -121,7 +125,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionClassNameFor("1", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”
                                     </div>
@@ -137,7 +141,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("1", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -172,6 +176,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 2: Differentiated instruction for diverse populations</h3>
                 <p className="u-mb30">Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.</p>
                 <div className="m-curriculum-status">
@@ -186,7 +199,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionClassNameFor("2", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -203,7 +216,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("2", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -220,7 +233,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("2", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -260,6 +273,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 3: Quality materials for lesson planning</h3>
                 <p className="u-mb30">Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?</p>
                 <div className="m-curriculum-status">
@@ -274,7 +296,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionClassNameFor("3", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -291,7 +313,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("3", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -308,7 +330,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("3", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -348,7 +370,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 4: Materials to assess mastery</h3>
                 <p className="u-mb30">Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?</p>
                 <div className="m-curriculum-status">
@@ -363,7 +393,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionClassNameFor("4", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -380,7 +410,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("4", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -397,7 +427,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("4", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -437,6 +467,15 @@ export default class UtilitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
+                <div className="l-survey-top">
+                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.UTILITY_PAGE);}}>
+                        <SvgIcon
+                            icon="pencil"
+                            islarge="true"
+                            hasSpaceAfter="true" />
+                        View or edit responses
+                    </button>
+                </div>
                 <h3 className="h2">Criterion 5: Instructional supports</h3>
                 <p className="u-mb30">Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?</p>
                 <div className="m-curriculum-status">
@@ -451,7 +490,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionClassNameFor("5", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
                                         All essential components scored “yes”<br />
                                         At least one beneficial component scored “yes”
@@ -468,7 +507,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("5", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
                                         All essential components scored “yes”<br />
                                         None of the beneficial components scored “yes”
@@ -485,7 +524,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionClassNameFor("5", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
                                         One or more essential components scored “no”
                                     </div>
@@ -546,7 +585,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("strong", "text")} >
                                         <div><strong>Strong utility</strong></div>
                                         All 5 criteria were met, and at least one was exceeded
                                     </div>
@@ -562,7 +601,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionOveralScoreClassName("moderate", "text")} >
                                         <div><strong>Moderate utility</strong></div>
                                         All 5 criteria were met
                                     </div>
@@ -578,7 +617,7 @@ export default class UtilitySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("limited", "text")} >
                                         <div><strong>Limited utility</strong></div>
                                         At least one of the criteria was not met
                                     </div>
