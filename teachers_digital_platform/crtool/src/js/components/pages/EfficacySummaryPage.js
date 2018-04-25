@@ -10,7 +10,7 @@ export default class EfficacySummaryPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
-    criterionOveralScoreClassName(level) {
+    criterionOveralScoreClassName(level, type) {
         let hasTwoStrongStudies = this.twoStrongStudiesExist();
         let isLarge = this.scoreIsLarge(hasTwoStrongStudies);
         let criterionThreeScore = this.props.criterionScores["efficacy-crt-3"];
@@ -29,6 +29,8 @@ export default class EfficacySummaryPage extends React.Component {
         }
 
         let className = "m-form-field_radio-icon";
+        if (type === "text") className = "m-form-field_radio-text";
+
         if (level === "strong" && 
             isLarge && 
             criterionThreeScore.all_essential_yes && 
@@ -90,8 +92,10 @@ export default class EfficacySummaryPage extends React.Component {
         return (!hasTwoStrongStudies);
     }
 
-    scoreScopeOfEvidenceClassName(level) {
+    scoreScopeOfEvidenceClassName(level, type) {
         let className = "m-form-field_radio-icon";
+        if (type === "text") className = "m-form-field_radio-text";
+
         let hasTwoStrongStudies = this.twoStrongStudiesExist();
 
         if (this.scoreIsLarge(hasTwoStrongStudies) && level === "large") {
@@ -177,7 +181,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.scoreScopeOfEvidenceClassName("large", "text")}>
                                         Large body of evidence
                                     </div>
                                 </div>
@@ -192,7 +196,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.scoreScopeOfEvidenceClassName("moderate", "text")}>
                                         Moderate body of evidence
                                     </div>
                                 </div>
@@ -207,7 +211,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.scoreScopeOfEvidenceClassName("small", "text")}>
                                         Small body of evidence
                                     </div>
                                 </div>
@@ -239,7 +243,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("strong", "text")}>
                                         <div><strong>Strong efficacy</strong></div>
                                     </div>
                                 </div>
@@ -254,7 +258,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.criterionOveralScoreClassName("moderate", "text")}>
                                         <div><strong>Moderate efficacy</strong></div>
                                     </div>
                                 </div>
@@ -269,7 +273,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("mixed", "text")}>
                                         <div><strong>Mixed efficacy</strong></div>
                                     </div>
                                 </div>
@@ -284,7 +288,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("limited", "text")}>
                                         <div><strong>Limited efficacy</strong></div>
                                     </div>
                                 </div>
@@ -299,7 +303,7 @@ export default class EfficacySummaryPage extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.criterionOveralScoreClassName("notenoughinfo", "text")}>
                                         <div><strong>Not enough information</strong></div>
                                     </div>
                                 </div>
