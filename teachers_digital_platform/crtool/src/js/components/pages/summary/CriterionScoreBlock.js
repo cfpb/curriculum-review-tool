@@ -9,19 +9,19 @@ export default class ContentBlockSummary extends React.Component {
 
     criterionOveralScoreClassName(level, type) {
         let isLimited = false;
-        if (this.props.criterionScores[this.props.dimentionKey + "1"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimentionKey + "2"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimentionKey + "3"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimentionKey + "4"].doesnotmeet ) {
+        if (this.props.criterionScores[this.props.dimensionKey + "1"].doesnotmeet ||
+            this.props.criterionScores[this.props.dimensionKey + "2"].doesnotmeet ||
+            this.props.criterionScores[this.props.dimensionKey + "3"].doesnotmeet ||
+            this.props.criterionScores[this.props.dimensionKey + "4"].doesnotmeet ) {
 
             isLimited = true;
         }
 
         let isModerate = false;
-        if (this.props.criterionScores[this.props.dimentionKey + "1"].meets &&
-            this.props.criterionScores[this.props.dimentionKey + "2"].meets &&
-            this.props.criterionScores[this.props.dimentionKey + "3"].meets &&
-            this.props.criterionScores[this.props.dimentionKey + "4"].meets ) {
+        if (this.props.criterionScores[this.props.dimensionKey + "1"].meets &&
+            this.props.criterionScores[this.props.dimensionKey + "2"].meets &&
+            this.props.criterionScores[this.props.dimensionKey + "3"].meets &&
+            this.props.criterionScores[this.props.dimensionKey + "4"].meets ) {
 
             isModerate = true;
         }
@@ -41,7 +41,7 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderTextValue(style, level) {
-        let criterionScore = this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber];
+        let criterionScore = this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber];
         let isTrue = false;
 
         if (level === "exceeds" && criterionScore !== undefined){
@@ -92,8 +92,8 @@ export default class ContentBlockSummary extends React.Component {
                 <React.Fragment>
                 <p><b>Your answers for <em>beneficial</em> components:</b></p>
                 <ul className="m-component-list">
-                    <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
-                    <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
                 </ul>
                 </React.Fragment>
             );
@@ -152,14 +152,14 @@ export default class ContentBlockSummary extends React.Component {
                 <div className="m-curriculum-status_components">
                     <p><b>Your answers for <em>essential</em> components:</b></p>
                     <ul className="m-component-list">
-                        <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
-                        <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
+                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
+                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
                     </ul>
                     {this.renderBeneficial()}
                 </div>
             </div>
             <div className="m-form-field m-form-field__textarea">
-                <label className="a-label a-label__heading" htmlFor={this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber}>
+                <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
                     My notes
                     &nbsp;<small className="a-label_helper">(optional)</small>
                     <small className="a-label_helper a-label_helper__block">
@@ -168,10 +168,10 @@ export default class ContentBlockSummary extends React.Component {
                 </label>
                 <textarea className="a-text-input a-text-input__full"
                     rows="6"
-                    id={this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber}
-                    ref={this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber}
-                    value={this.props.criterionAnswers[this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber]}
-                    onChange={e=>this.criterionAnswerChanged(this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
+                    id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                    ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                    value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
+                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
                 </textarea>
             </div>
             </React.Fragment>

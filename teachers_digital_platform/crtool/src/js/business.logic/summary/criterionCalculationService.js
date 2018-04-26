@@ -24,7 +24,7 @@ const CriterionCalculationService = {
         isCriterionCompleteReturnValue = criterionScore.answered_all_complete;
 
         if (currentCriterionGroupName.includes("quality")) {
-            criterionScore = QualityCalculationService.isQualityCriterionGroupComplete(currentCriterionGroupName, criterionScore);
+            criterionScore = QualityCalculationService.isQualityCriterionGroupComplete(component, currentCriterionGroupName, criterionScore, alteredCriterionObjects);
         } else if (currentCriterionGroupName.includes("utility")) {
             criterionScore = UtilityCalculationService.isUtilityCriterionGroupComplete(currentCriterionGroupName, criterionScore);
         } else if (currentCriterionGroupName.includes("content-elementary")) {
@@ -51,9 +51,27 @@ const CriterionCalculationService = {
             // Use the ICON_CHECK_ROUND as complete state so we can just pass that
             // down and now have to add logic later
             this.setCriterionGroupCompletionStatuses(component, criterionKey, C.ICON_CHECK_ROUND);
+            this.setDimensionOveralScore(component, criterionKey);
         }
         else {
             this.setCriterionGroupCompletionStatuses(component, criterionKey, C.STATUS_IN_PROGRESS);
+        }
+    },
+
+    setDimensionOveralScore(component, criterionKey) {
+        let currentCriterionGroupName = UtilityService.getCriterionGroupName(criterionKey);
+        if (currentCriterionGroupName.includes("quality")) {
+            QualityCalculationService.calculateOveralScore(component);
+        } else if (currentCriterionGroupName.includes("utility")) {
+            //UtilityCalculationService.calculateOveralScore(component);
+        } else if (currentCriterionGroupName.includes("content-elementary")) {
+            //ContentElementaryCalculationService.calculateOveralScore(component);
+        } else if (currentCriterionGroupName.includes("content-middle")) {
+            //ContentMiddleCalculationService.calculateOveralScore(component);
+        } else if (currentCriterionGroupName.includes("content-high")) {
+            //ContentHighCalculationService.calculateOveralScore(component);
+        } else if (currentCriterionGroupName.includes("efficacy")) {
+            //TODO: calculate overalscore for efficacy
         }
     },
 

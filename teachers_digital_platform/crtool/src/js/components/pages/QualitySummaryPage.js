@@ -105,7 +105,7 @@ export default class QualitySummaryPage extends React.Component {
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
-                                    dimentionKey="quality-crt-"
+                                    dimensionKey="quality-crt-"
                                     dimensionPage={C.QUALITY_PAGE}
                                     criterionNumber="1"
                                     criterionName="Criterion 1: Accessibility"
@@ -119,7 +119,7 @@ export default class QualitySummaryPage extends React.Component {
                 <CriterionScoreBlock 
                                     showExceeds={false}
                                     showBeneficial={false}
-                                    dimentionKey="quality-crt-"
+                                    dimensionKey="quality-crt-"
                                     dimensionPage={C.QUALITY_PAGE}
                                     criterionNumber="2"
                                     criterionName="Criterion 2: Accuracy and timeliness"
@@ -133,7 +133,7 @@ export default class QualitySummaryPage extends React.Component {
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
-                                    dimentionKey="quality-crt-"
+                                    dimensionKey="quality-crt-"
                                     dimensionPage={C.QUALITY_PAGE}
                                     criterionNumber="3"
                                     criterionName="Criterion 3: Objectivity"
@@ -147,7 +147,7 @@ export default class QualitySummaryPage extends React.Component {
                 <CriterionScoreBlock 
                                     showExceeds={false}
                                     showBeneficial={false}
-                                    dimentionKey="quality-crt-"
+                                    dimensionKey="quality-crt-"
                                     dimensionPage={C.QUALITY_PAGE}
                                     criterionNumber="4"
                                     criterionName="Criterion 4: Visual appearance"

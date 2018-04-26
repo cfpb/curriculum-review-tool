@@ -37,6 +37,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             studyAnswers: Repository.getStudyAnswers(),
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
+            dimensionOverallScores: Repository.getDimensionOverallScores(),
             criterionClickedTitles: Repository.getCriterionClickedTitles(),
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
@@ -137,6 +138,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             currentPage:this.state.currentPage,
             curriculumTitle:this.state.curriculumTitle,
             publicationDate:this.state.publicationDate,
+            dimensionOverallScores:this.state.dimensionOverallScores,
             distinctiveCompletedDate:this.state.distinctiveCompletedDate,
             gradeRange:this.state.gradeRange,
             finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
@@ -179,6 +181,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilitySummaryButton:this.state.utilitySummaryButton,
             qualitySummaryButton:this.state.qualitySummaryButton,
             efficacySummaryButton:this.state.efficacySummaryButton,
+            dimensionOverallScores:this.state.dimensionOverallScores,
 
             distinctiveClicked:this.distinctiveClicked.bind(this),
             handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),

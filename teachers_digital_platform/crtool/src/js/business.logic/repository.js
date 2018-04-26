@@ -26,6 +26,7 @@ const Repository = {
         this.saveCriterionAnswers(this, {});
         this.setCriterionTitleLinkClicked(this, {});
         this.saveCriterionEfficacyStudies(this, [0]);
+        this.savedimensionOverallScores(this, {});
         this.saveDistinctiveCompletionDates(this, {});
         this.saveCriterionGroupCompletionStatuses(this, {});
     },
@@ -105,12 +106,21 @@ const Repository = {
         return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
     },
 
+    getDimensionOverallScores() {
+        return JSON.parse(localStorage.getItem("dimensionOverlScores")) || {};
+    },
+
     getCriterionCompletionSatuses() {
         return JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {};
     },
 
     getCriterionClickedTitles() {
         return JSON.parse(localStorage.getItem("criterionClickedTitles")) || {};
+    },
+
+    savedimensionOverallScores(component, dimensionOverlScores) {
+        localStorage.setItem("dimensionOverlScores", JSON.stringify(dimensionOverlScores));
+        component.setState({dimensionOverlScores: dimensionOverlScores});
     },
 
     /*

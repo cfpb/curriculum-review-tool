@@ -7,6 +7,7 @@ export default class DimensionScoreBlock extends React.Component {
         this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
     }
 
+    
     criterionOveralScoreClassName(level, type) {
 
         let isLimited = false;
