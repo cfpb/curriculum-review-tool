@@ -685,7 +685,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("limited", "text")} >
                                         <div><strong>Limited content</strong></div>
-                                        At least one of the criteria was not met
+                                        At least one criterion was not met
                                     </div>
                                 </div>
                             </div>
