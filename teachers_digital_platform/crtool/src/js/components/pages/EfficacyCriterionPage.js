@@ -189,7 +189,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                                     criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />)}
 
                     <div className="u-mt15 u-mb30">
-                        <button className="a-btn a-btn__link"
+                        <button className="a-btn a-btn__link a-btn__no-line"
                             onClick={() => this.AddEfficacyStudy()}>
                             Review another study
                             <SvgIcon
