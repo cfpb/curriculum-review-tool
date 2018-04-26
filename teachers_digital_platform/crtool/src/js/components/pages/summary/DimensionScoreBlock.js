@@ -9,33 +9,11 @@ export default class DimensionScoreBlock extends React.Component {
 
     
     criterionOveralScoreClassName(level, type) {
-
-        let isLimited = false;
-        if (this.props.criterionScores["quality-crt-1"].doesnotmeet ||
-            this.props.criterionScores["quality-crt-2"].doesnotmeet ||
-            this.props.criterionScores["quality-crt-3"].doesnotmeet ||
-            this.props.criterionScores["quality-crt-4"].doesnotmeet ) {
-
-            isLimited = true;
-        }
-
-        let isModerate = false;
-        if (this.props.criterionScores["quality-crt-1"].meets &&
-            this.props.criterionScores["quality-crt-2"].meets &&
-            this.props.criterionScores["quality-crt-3"].meets &&
-            this.props.criterionScores["quality-crt-4"].meets ) {
-
-            isModerate = true;
-        }
-
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
 
-        if (level === "limited" && isLimited) {
-            className = className + " is-active";
-        } else if (level === "moderate" && isModerate) {
-            className = className + " is-active";
-        } else if (level === "strong" && !isLimited && !isModerate) {
+        let dimensionScore = this.props.dimensionOverallScores[this.props.dimensionPage];
+        if (dimensionScore !== undefined && level === dimensionScore) {
             className = className + " is-active";
         }
 

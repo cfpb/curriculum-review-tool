@@ -8,58 +8,6 @@ import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import CurriculumInformation from "../common/CurriculumInformation";
 
 export default class QualitySummaryPage extends React.Component {
-    criterionOveralScoreClassName(level, type) {
-
-        let isLimited = false;
-        if (this.props.criterionScores["quality-crt-1"].doesnotmeet ||
-            this.props.criterionScores["quality-crt-2"].doesnotmeet ||
-            this.props.criterionScores["quality-crt-3"].doesnotmeet ||
-            this.props.criterionScores["quality-crt-4"].doesnotmeet ) {
-
-            isLimited = true;
-        }
-
-        let isModerate = false;
-        if (this.props.criterionScores["quality-crt-1"].meets &&
-            this.props.criterionScores["quality-crt-2"].meets &&
-            this.props.criterionScores["quality-crt-3"].meets &&
-            this.props.criterionScores["quality-crt-4"].meets ) {
-
-            isModerate = true;
-        }
-
-        let className = "m-form-field_radio-icon";
-        if (type === "text") className = "m-form-field_radio-text";
-
-        if (level === "limited" && isLimited) {
-            className = className + " is-active";
-        } else if (level === "moderate" && isModerate) {
-            className = className + " is-active";
-        } else if (level === "strong" && !isLimited && !isModerate) {
-            className = className + " is-active";
-        }
-
-        return className;
-    }
-
-    criterionClassNameFor(criterion, level, type) {
-        let criterionGroupName = "quality-crt-" + criterion;
-        let criterionScore = this.props.criterionScores[criterionGroupName];
-
-        let className = "m-form-field_radio-icon";
-        if (type === "text") className = "m-form-field_radio-text";
-
-        if (level === "exceeds" && criterionScore.exceeds) {
-            className = className + " is-active";
-        } else if (level === "meets" && criterionScore.meets) {
-            className = className + " is-active";
-        } else if (level === "doesnotmeet" && criterionScore.doesnotmeet) {
-            className = className + " is-active";
-        }
-
-        return className;
-    }
-
     render() {
         return (
             <React.Fragment>
@@ -98,9 +46,6 @@ export default class QualitySummaryPage extends React.Component {
                     Print or save summary
                 </button>
                 <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
 
                 <CriterionScoreBlock 
                                     showExceeds={true}
@@ -111,10 +56,6 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionName="Criterion 1: Accessibility"
                                     criterionLead="Curriculum materials are physically accessible to teachers and students in a typical school setting."
                                     {...this.props} />
-
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
                 
                 <CriterionScoreBlock 
                                     showExceeds={false}
@@ -126,10 +67,6 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionLead="Curriculum materials are current and free of errors."
                                     {...this.props} />
 
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -140,10 +77,6 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionLead="Curriculum materials are objective."
                                     {...this.props} />
 
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-
                 <CriterionScoreBlock 
                                     showExceeds={false}
                                     showBeneficial={false}
@@ -153,12 +86,6 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionName="Criterion 4: Visual appearance"
                                     criterionLead="The visual appearance of the student materials is conducive to learning."
                                     {...this.props} />
-
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-
-
 
                 <DimensionScoreBlock 
                                     dimensionPage={C.QUALITY_PAGE}

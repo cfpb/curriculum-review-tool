@@ -105,8 +105,10 @@ export default class ContentBlockSummary extends React.Component {
     render() {
         return (
             <React.Fragment>
+            <hr className="hr
+                            u-mb45
+                            u-mt30" />
             <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
-
             <h3 className="h2">{this.props.criterionName}</h3>
             <p className="u-mb30">{this.props.criterionLead}</p>
             <div className="m-curriculum-status">
