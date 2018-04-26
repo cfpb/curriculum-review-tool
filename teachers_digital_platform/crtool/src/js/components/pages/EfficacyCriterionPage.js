@@ -56,9 +56,6 @@ export default class EfficacyCriterionPage extends React.Component {
 
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
-        
-        console.log("#################");
-        console.log(studyComponents);
 
         if (studyComponents === undefined) {
             return {"efficacy-study-":{criterionName:"efficacy-study-"}}; //In case the data gets removed we need at lest one element

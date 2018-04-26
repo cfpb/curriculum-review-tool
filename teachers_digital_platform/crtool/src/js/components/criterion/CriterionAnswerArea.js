@@ -13,10 +13,15 @@ export default class CriterionAnswerArea extends React.Component {
     }
 
     renderComponentText() {
-        if (this.props.componentData.hasInlineHtml) {
-            return (<div className="u-mb15" dangerouslySetInnerHTML={{__html: this.props.componentData.componentText}} />);
+        let text = this.props.componentData.componentText;
+
+        if (text === undefined || text === "") {
+            text = <p class="o-survey_question-helper">No information provided</p>;
+        }
+        if (this.props.componentData.hasInlineHtml && text !== undefined) {
+            return (<div className="u-mb15" dangerouslySetInnerHTML={{__html: text}} />);
         } else {
-            return (<p>{this.props.componentData.componentText}</p>);
+            return (<p>{text}</p>);
         }
     }
 
