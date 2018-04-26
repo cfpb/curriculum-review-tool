@@ -61,6 +61,11 @@ export default class CustomerReviewToolComponent extends React.Component {
         window.location = startPage;
     }
 
+    openPrintPage() {
+        let surveyPage = resolveUrl(window.location.href, C.SURVEY_PAGE_RELATIVE_URL);
+        window.open(surveyPage, '_blank');
+    }
+
     /*
      * Set state values for dimention finish date
      */
@@ -84,9 +89,46 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveCurrentPage(this, distinctiveName);
     }
 
+    resetPrintButtonState(distinctiveName) {
+        Repository.savePrintButtonPage(this, C.START_PAGE);
+        this.setState({currentPrintButton: distinctiveName});
+    }
+
     printButtonClicked(distinctiveName) {
+        //Set up navigation to load dimension print screen
         Repository.savePrintButtonPage(this, distinctiveName);
         Repository.saveCurrentPage(this, distinctiveName);
+        
+        if (distinctiveName !== C.START_PAGE) {
+            this.openPrintPage();
+            
+            this.setState({currentPage: distinctiveName});
+            this.setState({currentPrintButton: C.START_PAGE});
+        }
+    }
+
+    print_OLD_ButtonClicked(distinctiveName) {
+        //Set up navigation to load dimension print screen
+        Repository.savePrintButtonPage(this, distinctiveName);
+        Repository.saveCurrentPage(this, distinctiveName);
+
+        //Open in new tab
+        if (distinctiveName !== C.START_PAGE) {
+            this.openPrintPage();
+            
+            //HACK: Need to find a better way to manage multiple tabs (The whole localStorage is messing with this)
+            //Set up to navigate back to dimension summary
+            console.log("one");
+            setTimeout(function() {
+                console.log("two");
+                this.setState({currentPrintButton: C.START_PAGE});
+                this.setState({currentPage: distinctiveName});
+                // Repository.savePrintButtonPage(this, C.START_PAGE);
+                // Repository.saveCurrentPage(this, distinctiveName);
+                console.log("three");
+            }, 5000);
+            console.log("four");
+        }
     }
 
     handleFinalSummaryButtonClick() {
@@ -162,6 +204,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
+            resetPrintButtonState:this.resetPrintButtonState.bind(this),
             printButtonClicked:this.printButtonClicked.bind(this),
             removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
@@ -214,7 +257,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
-        console.log(this.state.currentPrintButton);
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
         } else if (this.state.currentPrintButton !== undefined && this.state.currentPrintButton !== C.START_PAGE) {

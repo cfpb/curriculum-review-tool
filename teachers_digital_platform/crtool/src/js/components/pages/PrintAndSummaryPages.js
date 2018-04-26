@@ -2,6 +2,8 @@ import React from "react";
 
 import C from "../../business.logic/constants";
 import QualityPrintPage from "./QualityPrintPage";
+import UtilityPrintPage from "./UtilityPrintPage";
+import ContentPrintPage from "./ContentPrintPage";
 import PrintIntroComponent from "./partial.pages/PrintIntroComponent";
 import ContentCriterionBlockSummary from "./summary/ContentCriterionBlockSummary";
 import UtilityCriterionBlockSummary from "./summary/UtilityCriterionBlockSummary";
@@ -16,13 +18,13 @@ export default class PrintAndSummaryPages extends React.Component {
 
     render() {
         if (this.props.currentPrintButton === C.QUALITY_PAGE) {
-            return (
-                <React.Fragment>
-                    <QualityPrintPage 
-                                    showPrintIntro={true}
-                                    {...this.props} />
-                </React.Fragment>
-            );
+            return ( <QualityPrintPage showPrintIntro={true} {...this.props} /> );
+        } else if (this.props.currentPrintButton === C.UTILITY_PAGE) {
+            return ( <UtilityPrintPage showPrintIntro={true} {...this.props} /> );
+        } else if (this.props.currentPrintButton === C.CONTENT_PAGE) {
+            return ( <ContentPrintPage showPrintIntro={true} {...this.props} /> );
+        } else if (this.props.currentPrintButton === C.EFFICACY_PAGE) {
+            return ( <UtilityPrintPage showPrintIntro={true} {...this.props} /> );
         } else {
 
             return (

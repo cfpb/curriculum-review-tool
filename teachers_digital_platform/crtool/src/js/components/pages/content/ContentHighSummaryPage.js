@@ -42,7 +42,7 @@ export default class ContentHighSummaryPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
+                <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
                 <DimensionInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />

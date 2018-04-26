@@ -1,7 +1,5 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-
 export default class DimensionInformation extends React.Component {
     renderReviewedOnDate() {
         if (this.props.reviewedOnDate !== undefined) {
@@ -21,7 +19,6 @@ export default class DimensionInformation extends React.Component {
                         {this.props.dimensionSummary}
                     </p>
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                    <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
                     <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
                     <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
                 </div>

@@ -1,8 +1,6 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
-import SaveWorkModal from "../dialogs/SaveWorkModal";
-import SvgIcon from "../svgs/SvgIcon";
 import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
 import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
@@ -11,7 +9,12 @@ import QualityCriterionBlockSummary from "../../components/pages/summary/Quality
 
 export default class QualityPrintPage extends React.Component {
 
+    componentDidMount() {
+        this.props.resetPrintButtonState(C.QUALITY_PAGE);
+    }
+
     render() {
+
         return (
             <React.Fragment>
                 <div class="u-hide-on-print">
@@ -23,7 +26,7 @@ export default class QualityPrintPage extends React.Component {
 
                 <DimensionInformation   
                             dimensionName={C.QUALITY_PAGE} 
-                            dimensionSummary="The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards." 
+                            dimensionSummary="The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access." 
                             {...this.props}
                             reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
 
@@ -71,6 +74,7 @@ export default class QualityPrintPage extends React.Component {
                                     criterionLead="The visual appearance of the student materials is conducive to learning."
                                     {...this.props} />
 
+                <br /><br />
                 {/* Quality Overall Score */}
                 <DimensionScoreBlock 
                                     dimensionPage={C.QUALITY_PAGE}
@@ -79,9 +83,13 @@ export default class QualityPrintPage extends React.Component {
                                     dimensionLead="How does this curriculum meet the criteria for quality:"
                                     {...this.props} />
 
-                {/* Quality individual Criterion Q&A for all Criterion*/}
-                <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                <br /><br />
+                {/* Forced Page Break */}
+                <div className="u-page-break-before">
 
+                    {/* Quality individual Criterion Q&A for all Criterion*/}
+                    <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                </div>
                 <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
             </React.Fragment>
         );

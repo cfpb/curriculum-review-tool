@@ -1,5 +1,6 @@
 import React from "react";
 
+import C from "../../../business.logic/constants";
 import ViewEditResponseComponent from "../../common/ViewEditResponseComponent";
 
 export default class ContentBlockSummary extends React.Component {
@@ -102,6 +103,48 @@ export default class ContentBlockSummary extends React.Component {
         }
     }
 
+    renderMyNotes() {
+        if (this.currentPrintButton === C.START_PAGE) {
+            return this.renderNotesEditableVersion();
+        }
+        else {
+            return this.renderNotesPrintVersion();
+        }
+    }
+
+    renderNotesEditableVersion() {
+        return (
+            <textarea className="a-text-input a-text-input__full"
+                rows="6"
+                id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
+                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
+            </textarea>
+        );
+    }
+
+    renderNotesPrintVersion() {
+        let notes = this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber];
+        if (notes === undefined || notes === "") {
+            return (<p class="o-survey_question-helper">No information provided</p>);
+        } else {
+            return notes;
+        }
+    }
+
+    renderNotesHelperText() {
+        if (this.currentPrintButton === C.START_PAGE) {
+            return (
+                <small className="a-label_helper a-label_helper__block">
+                    Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+                </small>
+            );
+        } else {
+            return null;
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -164,17 +207,10 @@ export default class ContentBlockSummary extends React.Component {
                 <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
                     My notes
                     &nbsp;<small className="a-label_helper">(optional)</small>
-                    <small className="a-label_helper a-label_helper__block">
-                        Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                    </small>
+                    {this.renderNotesHelperText()}
                 </label>
-                <textarea className="a-text-input a-text-input__full"
-                    rows="6"
-                    id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
-                    ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
-                    value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
-                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
-                </textarea>
+
+                <p>{this.renderMyNotes()}</p>
             </div>
             </React.Fragment>
         );

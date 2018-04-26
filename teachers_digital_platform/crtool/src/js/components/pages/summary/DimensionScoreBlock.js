@@ -1,12 +1,12 @@
 import React from "react";
 
+import C from "../../../business.logic/constants";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class DimensionScoreBlock extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
         this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
     }
-
     
     criterionOveralScoreClassName(level, type) {
         let className = "m-form-field_radio-icon";
@@ -20,10 +20,18 @@ export default class DimensionScoreBlock extends React.Component {
         return className;
     }
 
+    renderNotesPrintVersion(notes) {
+        if (notes === undefined || notes === "") {
+            return (<p class="o-survey_question-helper">No information provided</p>);
+        } else {
+            return notes;
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
-                <div className="o-well u-mb30">
+                <div className={this.props.currentPrintButton === C.START_PAGE && "o-well u-mb30"}>
                     <h2>
                         <SvgIcon
                             icon="star-round"
@@ -93,17 +101,27 @@ export default class DimensionScoreBlock extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            <small className="a-label_helper a-label_helper__block">
-                                List the strengths for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                            </small>
+                            {
+                                this.props.currentPrintButton === C.START_PAGE && 
+                                (
+                                    <small className="a-label_helper a-label_helper__block">
+                                        List the strengths for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+                                    </small>
+                                )
+                            }
                         </label>
-                        <textarea className="a-text-input a-text-input__full"
-                            rows="6"
-                            id={this.props.dimensionKey + "assets-optional"} 
-                            ref={this.props.dimensionKey + "assets-optional"} 
-                            value={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
-                            onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
-                        </textarea>
+
+                        {
+                            this.props.currentPrintButton === C.START_PAGE && 
+                                <textarea className="a-text-input a-text-input__full"
+                                    rows="6"
+                                    id={this.props.dimensionKey + "assets-optional"} 
+                                    ref={this.props.dimensionKey + "assets-optional"} 
+                                    value={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
+                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
+                                </textarea>
+                        }
+                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea
@@ -111,34 +129,54 @@ export default class DimensionScoreBlock extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            <small className="a-label_helper a-label_helper__block">
-                                List the weaknesses for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                            </small>
+                            {
+                                this.props.currentPrintButton === C.START_PAGE && 
+                                (
+                                    <small className="a-label_helper a-label_helper__block">
+                                        List the weaknesses for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+                                    </small>
+                                )
+                            }
                         </label>
-                        <textarea className="a-text-input a-text-input__full"
-                            rows="6"
-                            id={this.props.dimensionKey + "gaps-optional"} 
-                            ref={this.props.dimensionKey + "gaps-optional"} 
-                            value={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
-                            onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
-                        </textarea>
+
+                        {
+                            this.props.currentPrintButton === C.START_PAGE && 
+                                <textarea className="a-text-input a-text-input__full"
+                                    rows="6"
+                                    id={this.props.dimensionKey + "gaps-optional"} 
+                                    ref={this.props.dimensionKey + "gaps-optional"} 
+                                    value={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
+                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
+                                </textarea>
+                        }
+                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            <small className="a-label_helper a-label_helper__block">
-                                Add any final thoughts about the overall quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                            </small>
+                            {
+                                this.props.currentPrintButton === C.START_PAGE && 
+                                (
+                                    <small className="a-label_helper a-label_helper__block">
+                                        Add any final thoughts about the overall quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+                                    </small>
+                                )
+                            }
                         </label>
-                        <textarea className="a-text-input a-text-input__full"
-                            rows="6"
-                            id={this.props.dimensionKey + "overall-notes-optional"} 
-                            ref={this.props.dimensionKey + "overall-notes-optional"} 
-                            value={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
-                            onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
-                        </textarea>
+                        
+                        {
+                            this.props.currentPrintButton === C.START_PAGE && 
+                                <textarea className="a-text-input a-text-input__full"
+                                    rows="6"
+                                    id={this.props.dimensionKey + "overall-notes-optional"} 
+                                    ref={this.props.dimensionKey + "overall-notes-optional"} 
+                                    value={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
+                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
+                                </textarea>
+                        }
+                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
                     </div>
                 </div>
             </React.Fragment>

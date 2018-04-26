@@ -50,6 +50,7 @@ const C = {
     STATUS_COMPLETE: "complete",
 
     START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
+    SURVEY_PAGE_RELATIVE_URL: "../../tdp/crt-survey/",
 
     GRADE_ELEMENTARY: "Elementary school",
     GRADE_MIDDLE: "Middle school",

@@ -1,52 +1,34 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
-import SaveWorkModal from "../dialogs/SaveWorkModal";
-import SvgIcon from "../svgs/SvgIcon";
+import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
 import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import DimensionInformation from "../common/DimensionInformation";
+import UtilityCriterionBlockSummary from "../../components/pages/summary/UtilityCriterionBlockSummary";
 
-export default class UtilitySummaryPage extends React.Component {
+export default class UtilityPrintPage extends React.Component {
+    componentDidMount() {
+        this.props.resetPrintButtonState(C.UTILITY_PAGE);
+    }
+
     render() {
         return (
             <React.Fragment>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-                <h2 className="h1">
-                    <SvgIcon
-                        icon="settings-round"
-                        isLarge="true"
-                        hasSpaceAfter="true" />
-                    Utility summary
-                </h2>
-                <p className="lead-paragraph">
-                    Review the scores and your notes for each utility criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
-                </p>
-                <div className="m-notification
-                                m-notification__visible
-                                m-notification__warning
-                                u-mt30
-                                u-mb30">
-                    <SvgIcon icon="exclamation-mark-round" />
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h3 className="h4">Your work is saved temporarily.</h3>
-                            <p>
-                                To save a permanent copy of your results, please print the summary or save it as a PDF.&ensp;
-                                <SaveWorkModal
-                                    buttonText="Learn more about how to save your work."
-                                    hasIcon="false" />
-                            </p>
-                        </div>
-                    </div>
+                <div class="u-hide-on-print">
+                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
                 </div>
-                <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.UTILITY_PAGE); e.preventDefault();}}>
-                    Print or save summary
-                </button>
-                <DimensionInformation dimensionName={C.UTILITY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
+                <br />
 
+                {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
+
+                <DimensionInformation   
+                            dimensionName={C.UTILITY_PAGE} 
+                            dimensionSummary="TThe utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge." 
+                            {...this.props}
+                            reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
+
+                {/* Criterion 1 */}
                 <CriterionScoreBlock 
                                     showExceeds={false}
                                     showBeneficial={false}
@@ -57,6 +39,7 @@ export default class UtilitySummaryPage extends React.Component {
                                     criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
                                     {...this.props} />
 
+                {/* Criterion 2 */}
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -67,6 +50,7 @@ export default class UtilitySummaryPage extends React.Component {
                                     criterionLead="Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency."
                                     {...this.props} />
 
+                {/* Criterion 3 */}
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -77,6 +61,7 @@ export default class UtilitySummaryPage extends React.Component {
                                     criterionLead="Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects."
                                     {...this.props} />
 
+                {/* Criterion 4 */}
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -87,6 +72,7 @@ export default class UtilitySummaryPage extends React.Component {
                                     criterionLead="Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery."
                                     {...this.props} />
 
+                {/* Criterion 5 */}
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -97,12 +83,23 @@ export default class UtilitySummaryPage extends React.Component {
                                     criterionLead="Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students."
                                     {...this.props} />
 
+                <br /><br />
+                {/* Utility Overall Score */}
                 <DimensionScoreBlock 
                                     dimensionPage={C.UTILITY_PAGE}
                                     dimensionKey="utility-crt-"
                                     dimensionName="Utility"
                                     dimensionLead="How does this curriculum meet the criteria for utility:"
                                     {...this.props} />
+
+                <br /><br />
+                {/* Forced Page Break */}
+                <div className="u-page-break-before">
+
+                    {/* Utility individual Criterion Q&A for all Criterion*/}
+                    <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                </div>
+                <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
             </React.Fragment>
         );
     }

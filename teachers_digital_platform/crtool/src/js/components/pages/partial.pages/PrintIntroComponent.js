@@ -1,7 +1,5 @@
 import React from "react";
 
-import C from "../../../business.logic/constants";
-
 export default class PrintIntroComponent extends React.Component {
     render() {
         return (
