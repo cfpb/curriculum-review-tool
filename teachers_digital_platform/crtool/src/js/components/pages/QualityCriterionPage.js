@@ -45,7 +45,7 @@ export default class QualityCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30">
                     <h4>This dimension has essential and beneficial components.</h4>
-                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
                     <p>
                         <SaveWorkModal
                             buttonText="How can I save my work?"
@@ -83,13 +83,14 @@ export default class QualityCriterionPage extends React.Component {
                                         <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
                                         <div className="m-form-field m-form-field__text u-mt30">
                                             <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.1">
-                                                Cost of materials per student: $
+                                                Cost of materials per student:
                                             </label>
                                             <input className="a-text-input a-text-input__full" type="text"
                                                 id="quality-crt-text-optional-1.1.1"
                                                 ref="quality-crt-text-optional-1.1.1"
                                                 value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
-                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)} />
+                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)}
+                                                placeholder="$" />
                                         </div>
                                     </div>
                                     <div className="o-survey_answer">
@@ -461,9 +462,21 @@ export default class QualityCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </li>
+                        <li className="o-survey">
+                            <div className="o-survey_number">
+                                <h4 className="h3">1.4</h4>
+                            </div>
+                            <div className="o-survey_indicator">
+                                <h5 className="h3">Indicator</h5>
+                                <p>Written materials and physical products are durable and reusable or easy to replace.</p>
+                            </div>
+                            <div className="o-survey_components">
+                                <h5 className="h3">Component</h5>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>Written materials and physical products are durable and reusable or easy to replace.</p>
+                                        <p>Are written materials and physical products durable and reusable or easy to replace? (e.g., continued electronic access to materials at no additional cost)</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
                                     </div>
                                     <div className="o-survey_answer">
@@ -471,13 +484,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.3a"
-                                                name="quality-crt-question-1.3.3_beneficial"
-                                                ref="quality-crt-question-1.3.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.3_beneficial"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.3_beneficial', 'yes')}} />
+                                                id="quality-crt-question-1.4a"
+                                                name="quality-crt-question-1.4_beneficial"
+                                                ref="quality-crt-question-1.4_beneficial"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.4_beneficial"] === 'yes'}
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.4_beneficial', 'yes')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.3a">
+                                                htmlFor="quality-crt-question-1.4a">
                                                 Yes
                                             </label>
                                         </div>
@@ -485,13 +498,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__radio
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.3b"
-                                                name="quality-crt-question-1.3.3_beneficial"
-                                                ref="quality-crt-question-1.3.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.3_beneficial"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.3_beneficial', 'no')}} />
+                                                id="quality-crt-question-1.4b"
+                                                name="quality-crt-question-1.4_beneficial"
+                                                ref="quality-crt-question-1.4_beneficial"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.4_beneficial"] === 'no'}
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.4_beneficial', 'no')}} />
                                             <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.3b">
+                                                htmlFor="quality-crt-question-1.4b">
                                                 No
                                             </label>
                                         </div>
