@@ -3,7 +3,7 @@ import React from "react";
 import C from "../../business.logic/constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
-import CurriculumInformation from "../common/CurriculumInformation";
+import DimensionInformation from "../common/DimensionInformation";
 
 export default class EfficacySummaryPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -164,7 +164,7 @@ export default class EfficacySummaryPage extends React.Component {
                 <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
-                <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
+                <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
                 <div className="l-survey-top">
                     <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.EFFICACY_PAGE);}}>
                         <SvgIcon

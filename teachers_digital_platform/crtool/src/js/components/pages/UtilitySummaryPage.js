@@ -5,7 +5,7 @@ import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
 import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
-import CurriculumInformation from "../common/CurriculumInformation";
+import DimensionInformation from "../common/DimensionInformation";
 
 export default class UtilitySummaryPage extends React.Component {
     render() {
@@ -45,7 +45,7 @@ export default class UtilitySummaryPage extends React.Component {
                 <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
-                <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
+                <DimensionInformation dimensionName={C.UTILITY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
 
                 <CriterionScoreBlock 
                                     showExceeds={false}

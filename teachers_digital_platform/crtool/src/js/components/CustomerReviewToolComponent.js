@@ -37,6 +37,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             studyAnswers: Repository.getStudyAnswers(),
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
+            currentPrintButton: Repository.getPrintButtonPage(),
             dimensionOverallScores: Repository.getDimensionOverallScores(),
             criterionClickedTitles: Repository.getCriterionClickedTitles(),
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
@@ -80,6 +81,11 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     distinctiveClicked(distinctiveName) {
+        Repository.saveCurrentPage(this, distinctiveName);
+    }
+
+    printButtonClicked(distinctiveName) {
+        Repository.savePrintButtonPage(this, distinctiveName);
         Repository.saveCurrentPage(this, distinctiveName);
     }
 
@@ -150,11 +156,13 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,
+            currentPrintButton:this.state.currentPrintButton,
             criterionClickedTitles:this.state.criterionClickedTitles,
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
+            printButtonClicked:this.printButtonClicked.bind(this),
             removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
             studyAnswerChanged:this.studyAnswerChanged.bind(this),
@@ -206,9 +214,10 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
+        console.log(this.state.currentPrintButton);
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
-        } else if (this.state.currentPage === C.FINAL_PRINT_PAGE) {
+        } else if (this.state.currentPrintButton !== undefined && this.state.currentPrintButton !== C.START_PAGE) {
             return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {
             return (

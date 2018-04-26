@@ -6,7 +6,7 @@ import { ContentElementaryCriterion } from "../../../content_data/contentElement
 import { ContentMiddleCriterion } from "../../../content_data/contentMiddle";
 import { ContentHighCriterion } from "../../../content_data/contentHigh";
 
-export default class ContentSwitchComponent extends React.Component {
+export default class ContentCriterionSwitchComponent extends React.Component {
 
     render() {
         if (this.props.gradeRange === C.GRADE_ELEMENTARY) {

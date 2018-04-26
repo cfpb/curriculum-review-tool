@@ -3,50 +3,31 @@ import React from "react";
 import C from "../../business.logic/constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
+import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
 import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import DimensionInformation from "../common/DimensionInformation";
+import QualityCriterionBlockSummary from "../../components/pages/summary/QualityCriterionBlockSummary";
 
-export default class QualitySummaryPage extends React.Component {
+export default class QualityPrintPage extends React.Component {
+
     render() {
         return (
             <React.Fragment>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-                <h2 className="h1">
-                    <SvgIcon
-                        icon="star-round"
-                        isLarge="true"
-                        hasSpaceAfter="true" />
-                    Quality summary
-                </h2>
-                <p className="lead-paragraph">
-                    Review the scores and your notes for each quality criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
-                </p>
-                <div className="m-notification
-                                m-notification__visible
-                                m-notification__warning
-                                u-mt30
-                                u-mb30">
-                    <SvgIcon icon="exclamation-mark-round" />
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h3 className="h4">Your work is saved temporarily.</h3>
-                            <p>
-                                To save a permanent copy of your results, please print the summary or save it as a PDF.&ensp;
-                                <SaveWorkModal
-                                    buttonText="Learn more about how to save your work."
-                                    hasIcon="false" />
-                            </p>
-                        </div>
-                    </div>
+                <div class="u-hide-on-print">
+                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
                 </div>
-                <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.QUALITY_PAGE); e.preventDefault();}}>
-                    Print or save summary
-                </button>
-                <DimensionInformation dimensionName={C.QUALITY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
+                <br />
 
+                {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
+
+                <DimensionInformation   
+                            dimensionName={C.QUALITY_PAGE} 
+                            dimensionSummary="The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards." 
+                            {...this.props}
+                            reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
+
+                {/* Criterion 1 */}
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -57,6 +38,7 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionLead="Curriculum materials are physically accessible to teachers and students in a typical school setting."
                                     {...this.props} />
                 
+                {/* Criterion 2 */}
                 <CriterionScoreBlock 
                                     showExceeds={false}
                                     showBeneficial={false}
@@ -67,6 +49,7 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionLead="Curriculum materials are current and free of errors."
                                     {...this.props} />
 
+                {/* Criterion 4 */}
                 <CriterionScoreBlock 
                                     showExceeds={true}
                                     showBeneficial={true}
@@ -77,6 +60,7 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionLead="Curriculum materials are objective."
                                     {...this.props} />
 
+                {/* Criterion 3 */}
                 <CriterionScoreBlock 
                                     showExceeds={false}
                                     showBeneficial={false}
@@ -87,12 +71,18 @@ export default class QualitySummaryPage extends React.Component {
                                     criterionLead="The visual appearance of the student materials is conducive to learning."
                                     {...this.props} />
 
+                {/* Quality Overall Score */}
                 <DimensionScoreBlock 
                                     dimensionPage={C.QUALITY_PAGE}
                                     dimensionKey="quality-crt-"
                                     dimensionName="Quality"
                                     dimensionLead="How does this curriculum meet the criteria for quality:"
                                     {...this.props} />
+
+                {/* Quality individual Criterion Q&A for all Criterion*/}
+                <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+
+                <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
             </React.Fragment>
         );
     }

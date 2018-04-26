@@ -22,20 +22,28 @@ const QualityCalculationService = {
 
         let score = "strong";
 
-        if (component.state.criterionScores["quality-crt-1"].doesnotmeet ||
-            component.state.criterionScores["quality-crt-2"].doesnotmeet ||
-            component.state.criterionScores["quality-crt-3"].doesnotmeet ||
-            component.state.criterionScores["quality-crt-4"].doesnotmeet ) {
+        if (component.state.criterionScores["quality-crt-1"] === undefined ||
+            component.state.criterionScores["quality-crt-2"] === undefined ||
+            component.state.criterionScores["quality-crt-3"] === undefined ||
+            component.state.criterionScores["quality-crt-4"] === undefined ) {
 
             score = "limited";
-        }
-
-        if (component.state.criterionScores["quality-crt-1"].meets &&
-            component.state.criterionScores["quality-crt-2"].meets &&
-            component.state.criterionScores["quality-crt-3"].meets &&
-            component.state.criterionScores["quality-crt-4"].meets ) {
-
-            score = "moderate";
+        } else {
+            if (component.state.criterionScores["quality-crt-1"].doesnotmeet ||
+                component.state.criterionScores["quality-crt-2"].doesnotmeet ||
+                component.state.criterionScores["quality-crt-3"].doesnotmeet ||
+                component.state.criterionScores["quality-crt-4"].doesnotmeet ) {
+                
+                score = "limited";
+            }
+            
+            if (component.state.criterionScores["quality-crt-1"].meets &&
+                component.state.criterionScores["quality-crt-2"].meets &&
+                component.state.criterionScores["quality-crt-3"].meets &&
+                component.state.criterionScores["quality-crt-4"].meets ) {
+                
+                score = "moderate";
+            }
         }
 
         this.setDimensionOverallScore(component, C.QUALITY_PAGE, score);

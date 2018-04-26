@@ -31,28 +31,33 @@ const ContentElementaryCalculationService = {
     calculateOveralScore(component) {
 
         let score = "strong";
-        console.log(component.state.criterionScores);
-        console.log(component.state.criterionScores["content-elementary-crt-1"]);
-        console.log(component.state.criterionScores["content-elementary-crt-1"].doesnotmeet);
-
-        if (component.state.criterionScores["content-elementary-crt-1"].doesnotmeet ||
-            component.state.criterionScores["content-elementary-crt-2"].doesnotmeet ||
-            component.state.criterionScores["content-elementary-crt-3"].doesnotmeet ||
-            component.state.criterionScores["content-elementary-crt-4"].doesnotmeet ||
-            component.state.criterionScores["content-elementary-crt-5"].doesnotmeet ||
-            component.state.criterionScores["content-elementary-crt-6"].doesnotmeet ) {
+        if (component.state.criterionScores["content-elementary-crt-1"] === undefined ||
+            component.state.criterionScores["content-elementary-crt-2"] === undefined ||
+            component.state.criterionScores["content-elementary-crt-3"] === undefined ||
+            component.state.criterionScores["content-elementary-crt-4"] === undefined||
+            component.state.criterionScores["content-elementary-crt-5"] === undefined ) {
 
             score = "limited";
-        }
+        } else {
+            if (component.state.criterionScores["content-elementary-crt-1"].doesnotmeet ||
+                component.state.criterionScores["content-elementary-crt-2"].doesnotmeet ||
+                component.state.criterionScores["content-elementary-crt-3"].doesnotmeet ||
+                component.state.criterionScores["content-elementary-crt-4"].doesnotmeet ||
+                component.state.criterionScores["content-elementary-crt-5"].doesnotmeet ||
+                component.state.criterionScores["content-elementary-crt-6"].doesnotmeet ) {
 
-        if (component.state.criterionScores["content-elementary-crt-1"].meets &&
-            component.state.criterionScores["content-elementary-crt-2"].meets &&
-            component.state.criterionScores["content-elementary-crt-3"].meets &&
-            component.state.criterionScores["content-elementary-crt-4"].meets &&
-            component.state.criterionScores["content-elementary-crt-5"].meets &&
-            component.state.criterionScores["content-elementary-crt-6"].meets ) {
+                score = "limited";
+            }
 
-            score = "moderate";
+            if (component.state.criterionScores["content-elementary-crt-1"].meets &&
+                component.state.criterionScores["content-elementary-crt-2"].meets &&
+                component.state.criterionScores["content-elementary-crt-3"].meets &&
+                component.state.criterionScores["content-elementary-crt-4"].meets &&
+                component.state.criterionScores["content-elementary-crt-5"].meets &&
+                component.state.criterionScores["content-elementary-crt-6"].meets ) {
+
+                score = "moderate";
+            }
         }
 
         this.setDimensionOverallScore(component, C.CONTENT_PAGE, score);

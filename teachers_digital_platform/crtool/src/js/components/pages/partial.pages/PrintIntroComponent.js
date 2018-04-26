@@ -33,19 +33,6 @@ export default class PrintIntroComponent extends React.Component {
                     </ul>
                     <p className="u-mt30"><em>These instructions won’t be included in your file.</em></p>
                 </div>
-                <div className="block
-                                block__flush-top
-                                block__padded-bottom
-                                block__border-bottom">
-                    <div className="h5">CFPB curriculum review tool</div>
-                    <h1>Final summary for {this.props.curriculumTitle}</h1>
-                    <p className="lead-paragraph u-mb30">
-                        This summary shows the scores for all four dimensions.
-                    </p>
-                    <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                    <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
-                    <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
-                </div>
             </React.Fragment>
         );
     }

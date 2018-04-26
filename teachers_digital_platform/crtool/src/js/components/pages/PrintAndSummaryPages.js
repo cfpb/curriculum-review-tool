@@ -1,11 +1,12 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
+import QualityPrintPage from "./QualityPrintPage";
 import PrintIntroComponent from "./partial.pages/PrintIntroComponent";
-import ContentBlockSummary from "./summary/ContentBlockSummary";
-import UtilityBlockSummary from "./summary/UtilityBlockSummary";
-import QualityBlockSummary from "./summary/QualityBlockSummary";
-import EfficacyBlockSummary from "./summary/EfficacyBlockSummary";
+import ContentCriterionBlockSummary from "./summary/ContentCriterionBlockSummary";
+import UtilityCriterionBlockSummary from "./summary/UtilityCriterionBlockSummary";
+import QualityCriterionBlockSummary from "./summary/QualityCriterionBlockSummary";
+import EfficacyCriterionBlockSummary from "./summary/EfficacyCriterionBlockSummary";
 
 export default class PrintAndSummaryPages extends React.Component {
 
@@ -14,20 +15,31 @@ export default class PrintAndSummaryPages extends React.Component {
     }
 
     render() {
-        return (
-            <React.Fragment>
-                <PrintIntroComponent {...this.props} />
+        if (this.props.currentPrintButton === C.QUALITY_PAGE) {
+            return (
+                <React.Fragment>
+                    <QualityPrintPage 
+                                    showPrintIntro={true}
+                                    {...this.props} />
+                </React.Fragment>
+            );
+        } else {
 
-                <ContentBlockSummary {...this.props} />
+            return (
+                <React.Fragment>
+                    <PrintIntroComponent {...this.props} />
 
-                <UtilityBlockSummary {...this.props} />
+                    <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
 
-                <QualityBlockSummary {...this.props} />
+                    <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
 
-                <EfficacyBlockSummary {...this.props} />
+                    <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
 
-                <button className="a-btn a-btn__super" onClick={(e) => {this.props.distinctiveClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
-            </React.Fragment>
-        );
+                    <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+
+                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.distinctiveClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
+                </React.Fragment>
+            );
+        }
     }
 }
