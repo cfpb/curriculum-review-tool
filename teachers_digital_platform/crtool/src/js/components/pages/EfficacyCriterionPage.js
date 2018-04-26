@@ -56,8 +56,9 @@ export default class EfficacyCriterionPage extends React.Component {
 
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
+
         if (studyComponents === undefined) {
-            return [0]; //In case the data gets removed we need at lest one element
+            return {"efficacy-study-":{criterionName:"efficacy-study-"}}; //In case the data gets removed we need at lest one element
         }
         return studyComponents;
     }
@@ -203,7 +204,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <CriterionLinkWrapper
                     criterionKey="efficacy-crt-question-2"
                     criterionText="Criterion 2: Saving and investing"
-                    hideCriterion={!this.twoStrongStudiesExist()}
+                    hideCriterion={!this.twoStrongStudiesExist() || !this.props.finishAddingEfficacyStudies}
                     {...this.props}  >
                 <div className="block block__flush-top">
                     <h3 className="h2">
