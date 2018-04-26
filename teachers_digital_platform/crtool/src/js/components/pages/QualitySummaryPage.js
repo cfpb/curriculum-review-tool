@@ -98,9 +98,6 @@ export default class QualitySummaryPage extends React.Component {
                     Print or save summary
                 </button>
                 <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
 
                 <CriterionScoreBlock 
                                     showExceeds={true}
