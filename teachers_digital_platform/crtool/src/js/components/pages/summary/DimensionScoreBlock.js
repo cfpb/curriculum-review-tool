@@ -46,7 +46,7 @@ export default class DimensionScoreBlock extends React.Component {
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("strong", "text")}>
                                         <div><strong>Strong utility</strong></div>
-                                        All 4 criteria were met, and at least one was exceeded
+                                        {this.props.strongText}
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ export default class DimensionScoreBlock extends React.Component {
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("moderate", "text")}>
                                         <div><strong>Moderate utility</strong></div>
-                                        All 4 criteria were met
+                                        {this.props.moderate}
                                     </div>
                                 </div>
                             </div>

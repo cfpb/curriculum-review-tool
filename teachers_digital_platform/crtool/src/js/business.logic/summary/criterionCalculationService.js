@@ -65,11 +65,11 @@ const CriterionCalculationService = {
         } else if (currentCriterionGroupName.includes("utility")) {
             UtilityCalculationService.calculateOveralScore(component);
         } else if (currentCriterionGroupName.includes("content-elementary")) {
-            //ContentElementaryCalculationService.calculateOveralScore(component);
+            ContentElementaryCalculationService.calculateOveralScore(component);
         } else if (currentCriterionGroupName.includes("content-middle")) {
-            //ContentMiddleCalculationService.calculateOveralScore(component);
+            ContentMiddleCalculationService.calculateOveralScore(component);
         } else if (currentCriterionGroupName.includes("content-high")) {
-            //ContentHighCalculationService.calculateOveralScore(component);
+            ContentHighCalculationService.calculateOveralScore(component);
         } else if (currentCriterionGroupName.includes("efficacy")) {
             //TODO: calculate overalscore for efficacy
         }

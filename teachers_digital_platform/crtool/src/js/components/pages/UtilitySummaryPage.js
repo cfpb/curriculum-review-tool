@@ -46,7 +46,6 @@ export default class UtilitySummaryPage extends React.Component {
                     Print or save summary
                 </button>
                 <CurriculumInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
-                
 
                 <CriterionScoreBlock 
                                     showExceeds={false}
