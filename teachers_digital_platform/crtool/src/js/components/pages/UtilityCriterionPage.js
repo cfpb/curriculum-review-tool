@@ -45,7 +45,7 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30">
                     <h4>This dimension has essential and beneficial components.</h4>
-                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
                     <p>
                         <SaveWorkModal
                             buttonText="How can I save my work?"
@@ -73,7 +73,7 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p>Includes a balanced focus on concepts, procedures, and application.</p>
+                                <p>Includes a balanced focus on concepts, procedures, and application</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
@@ -190,7 +190,7 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p>Requires higher-order skills like analysis, synthesis, and evaluation.</p>
+                                <p>Requires higher-order skills like analysis, synthesis, and evaluation</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
@@ -342,7 +342,7 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p>Promotes development of executive functioning.</p>
+                                <p>Promotes development of executive functioning</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
@@ -424,7 +424,7 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p>Encourages students to use specialized financial vocabulary.</p>
+                                <p>Encourages students to use specialized financial vocabulary</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
@@ -505,7 +505,7 @@ export default class UtilityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_indicator">
                                 <h5 className="h3">Indicator</h5>
-                                <p>Attends to a diversity of students’ needs.</p>
+                                <p>Attends to a diversity of students’ needs</p>
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
@@ -1172,7 +1172,7 @@ export default class UtilityCriterionPage extends React.Component {
                                 </div>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>Do the materials make connections to daily home life, careers, vocations, community events, and recreation?</p>
+                                        <p>Do pictures appear current or recent?</p>
                                         <p className="o-survey_question-helper">Beneficial, but not essential.</p>
                                     </div>
                                     <div className="o-survey_answer">

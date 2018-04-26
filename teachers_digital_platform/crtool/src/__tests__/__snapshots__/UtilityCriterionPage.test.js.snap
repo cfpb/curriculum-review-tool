@@ -69,7 +69,7 @@ Array [
       <strong>
         Beneficial components
       </strong>
-       hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
+       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
     </p>
     <p>
       <button
@@ -204,7 +204,7 @@ Array [
             Indicator
           </h5>
           <p>
-            Includes a balanced focus on concepts, procedures, and application.
+            Includes a balanced focus on concepts, procedures, and application
           </p>
         </div>
         <div
@@ -409,7 +409,7 @@ Array [
             Indicator
           </h5>
           <p>
-            Requires higher-order skills like analysis, synthesis, and evaluation.
+            Requires higher-order skills like analysis, synthesis, and evaluation
           </p>
         </div>
         <div
@@ -671,7 +671,7 @@ Array [
             Indicator
           </h5>
           <p>
-            Promotes development of executive functioning.
+            Promotes development of executive functioning
           </p>
         </div>
         <div
@@ -819,7 +819,7 @@ Array [
             Indicator
           </h5>
           <p>
-            Encourages students to use specialized financial vocabulary.
+            Encourages students to use specialized financial vocabulary
           </p>
         </div>
         <div
