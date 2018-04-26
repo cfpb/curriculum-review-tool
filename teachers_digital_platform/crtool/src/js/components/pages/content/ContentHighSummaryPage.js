@@ -128,7 +128,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("1", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
-                                        All 3 components were addressed
+                                        5 or more components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("1", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
-                                        2 components were addressed
+                                        4 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("1", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
-                                        Less than 2 components were addressed
+                                        Less than 4 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("2", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
-                                        7 or more components were addressed
+                                        8 or more components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +234,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("2", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
-                                        5 or 6 components were addressed
+                                        6 or 7 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +250,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("2", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
-                                        Less than 5 components were addressed
+                                        Less than 6 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +308,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("3", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
-                                        All 5 components were addressed
+                                        All 4 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -324,7 +324,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("3", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
-                                        4 components were addressed
+                                        3 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +340,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("3", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
-                                        Less than 4 components were addressed
+                                        Less than 3 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -398,7 +398,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("4", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
-                                        6 or more components were addressed
+                                        9 or more components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -414,7 +414,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("4", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
-                                        5 components were addressed
+                                        7 or 8 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -430,7 +430,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("4", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
-                                        Less than 5 components were addressed
+                                        Less than 7 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -488,7 +488,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("5", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
-                                        All 4 components were addressed
+                                        6 or more components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -504,7 +504,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("5", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
-                                        3 components were addressed
+                                        5 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -520,7 +520,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("5", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
-                                        Less than 3 components were addressed
+                                        Less than 5 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -578,7 +578,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("6", "exceeds", "text")} >
                                         <div><strong>Exceeds</strong></div>
-                                        both components were addressed
+                                        All 3 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -594,7 +594,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("6", "meets", "text")} >
                                         <div><strong>Meets</strong></div>
-                                        1 components was addressed
+                                        2 components were addressed
                                     </div>
                                 </div>
                             </div>
@@ -610,7 +610,7 @@ export default class ContentHighSummaryPage extends React.Component {
                                     </svg>
                                     <div className={this.criterionClassNameFor("6", "doesnotmeet", "text")} >
                                         <div><strong>Does not meet</strong></div>
-                                        0 components were addressed
+                                        Less than 2 components were addressed
                                     </div>
                                 </div>
                             </div>
