@@ -19,7 +19,7 @@ export default class UtilityPrintPage extends React.Component {
 
                 <DimensionInformation
                             dimensionName={C.UTILITY_PAGE}
-                            dimensionSummary="TThe utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge."
+                            dimensionSummary="The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge."
                             {...this.props}
                             reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
 

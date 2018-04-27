@@ -25,7 +25,7 @@ export default class ContentPrintPage extends React.Component {
 
                 <DimensionInformation
                     dimensionName={C.CONTENT_PAGE}
-                    dimensionSummary="TThe content dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge."
+                    dimensionSummary="The content dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge."
                     {...this.props}
                     reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
