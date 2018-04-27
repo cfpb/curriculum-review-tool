@@ -9,7 +9,7 @@ export default class DimensionInformation extends React.Component {
         }
         return this.props.distinctiveCompletedDate[this.props.currentPage]
     }
-    
+
     render() {
         if (this.props.currentPrintButton !== C.START_PAGE) {
             return (
@@ -38,9 +38,8 @@ export default class DimensionInformation extends React.Component {
                     <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
-                    <hr class="hr u-mb45 u-mt30" />
                 </React.Fragment>
             );
-        } 
+        }
     }
 }
