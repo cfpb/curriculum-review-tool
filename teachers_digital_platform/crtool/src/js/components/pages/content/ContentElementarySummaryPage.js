@@ -27,9 +27,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                 <p>
                     Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
                 </p>
-
                 <SaveWorkInformation />
-
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
