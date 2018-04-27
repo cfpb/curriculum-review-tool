@@ -54,7 +54,7 @@ export default class SaveWorkModal extends React.Component {
 
         return (
             <React.Fragment>
-                <button className="a-btn a-btn__link" onClick={(e) => {this.openSaveWorkModalDialog()}}>
+                <button className="a-btn a-btn__link a-btn__no-line" onClick={(e) => {this.openSaveWorkModalDialog()}}>
                     <SvgIcon
                         icon={currentIcon}
                         isLarge="true"
