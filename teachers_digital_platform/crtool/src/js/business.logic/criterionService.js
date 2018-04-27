@@ -16,7 +16,7 @@ const CriterionService = {
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
 
-        if (!changedQuestion.includes("optional")) {
+        if (!changedQuestion.includes("optional") && !changedQuestion.includes("takeaway")) {
             CriterionCalculationService.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
             this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
         }

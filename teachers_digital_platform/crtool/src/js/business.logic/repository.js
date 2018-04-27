@@ -29,6 +29,7 @@ const Repository = {
         this.saveCriterionEfficacyStudies(this, [0]);
         this.savedimensionOverallScores(this, {});
         this.saveDistinctiveCompletionDates(this, {});
+        this.saveFinalSummaryShowEntireReview(this, "");
         this.saveCriterionGroupCompletionStatuses(this, {});
     },
 
@@ -119,6 +120,10 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {};
     },
 
+    getFinalSummaryShowEntireReview() {
+        return localStorage.getItem("finalSummaryShowEntireReview");
+    },
+
     getCriterionClickedTitles() {
         return JSON.parse(localStorage.getItem("criterionClickedTitles")) || {};
     },
@@ -171,6 +176,14 @@ const Repository = {
     saveFinishAddingEfficacyStudies(component, value) {
         localStorage.setItem("finishAddingEfficacyStudies", value);
         component.setState({finishAddingEfficacyStudies: value});
+    },
+
+    /*
+     * Set value for finalSummaryShowEntireReview
+     */
+    saveFinalSummaryShowEntireReview(component, value) {
+        localStorage.setItem("finalSummaryShowEntireReview", value);
+        component.setState({finalSummaryShowEntireReview: value});
     },
 
     /*

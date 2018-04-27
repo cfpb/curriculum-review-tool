@@ -24,7 +24,7 @@ export default class KeyTakeawaysComponent extends React.Component {
                         id="crt-key-takeaways"
                         ref="crt-key-takeaways"
                         value={this.props.criterionAnswers['crt-key-takeaways']}
-                        onChange={e=>this.changeCriterionAnswer('crt-key-takeaways', e.target.value)} >
+                        onChange={e=>this.props.criterionAnswerChanged('crt-key-takeaways', e.target.value)} >
                     </textarea>
                 </div>
             </div>

@@ -65,13 +65,17 @@ export default class FinalSummaryPage extends React.Component {
 
                 <KeyTakeawaysComponent {...this.props} />
 
+                {
+                    this.props.finalSummaryShowEntireReview === "true" &&
+                    <span>
+                        <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                    </span>
+                }
 
-                <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-
-                <PrintOrSaveFinalSummary />
+                <PrintOrSaveFinalSummary  {...this.props}/>
 
                 <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
             </React.Fragment>

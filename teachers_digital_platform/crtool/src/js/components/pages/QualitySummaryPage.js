@@ -6,6 +6,7 @@ import SvgIcon from "../svgs/SvgIcon";
 import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import DimensionInformation from "../common/DimensionInformation";
+import SaveWorkInformation from "../common/SaveWorkInformation";
 
 export default class QualitySummaryPage extends React.Component {
     render() {
@@ -24,24 +25,7 @@ export default class QualitySummaryPage extends React.Component {
                 <p className="lead-paragraph">
                     Review the scores and your notes for each quality criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
                 </p>
-                <div className="m-notification
-                                m-notification__visible
-                                m-notification__warning
-                                u-mt30
-                                u-mb30">
-                    <SvgIcon icon="exclamation-mark-round" />
-                    <div className="m-notification_content">
-                        <div className="m-notification_message">
-                            <h3 className="h4">Your work is saved temporarily.</h3>
-                            <p>
-                                To save a permanent copy of your results, please print the summary or save it as a PDF.&ensp;
-                                <SaveWorkModal
-                                    buttonText="Learn more about how to save your work."
-                                    hasIcon="false" />
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <SaveWorkInformation />
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.QUALITY_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>

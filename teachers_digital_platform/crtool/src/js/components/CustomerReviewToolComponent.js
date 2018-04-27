@@ -43,6 +43,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
             criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
+            finalSummaryShowEntireReview: Repository.getFinalSummaryShowEntireReview(),
         };
     }
 
@@ -94,6 +95,19 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setState({currentPrintButton: distinctiveName});
     }
 
+    setPrintFinalSummaryShowEntireReview(newValue, showEverything) {
+        Repository.saveFinalSummaryShowEntireReview(this, newValue);
+        this.setState({finalSummaryShowEntireReview: newValue});
+
+        if (newValue === "true" && showEverything === "true") {
+            this.printButtonClicked(C.FINAL_PRINT_EVERYTHING);
+        } else if (newValue === "true"){
+            this.printButtonClicked(C.FINAL_PRINT_PAGE);
+        } else {
+            this.resetPrintButtonState(C.START_PAGE);
+        }
+    }
+
     printButtonClicked(distinctiveName) {
         //Set up navigation to load dimension print screen
         Repository.savePrintButtonPage(this, distinctiveName);
@@ -104,6 +118,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             this.setState({currentPage: distinctiveName});
             this.setState({currentPrintButton: C.START_PAGE});
+            this.setState({finalSummaryShowEntireReview: "false"});
         }
     }
 
@@ -179,6 +194,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
+            finalSummaryShowEntireReview:this.state.finalSummaryShowEntireReview,
 
             resetPrintButtonState:this.resetPrintButtonState.bind(this),
             printButtonClicked:this.printButtonClicked.bind(this),
@@ -195,6 +211,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             setCriterionTitleLinkClicked: this.setCriterionTitleLinkClicked.bind(this),
             setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
+            setPrintFinalSummaryShowEntireReview:this.setPrintFinalSummaryShowEntireReview.bind(this),
         };
 
         const dimensionMenuProps = {
@@ -233,7 +250,12 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
-        if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
+        console.log("@@@@@@ currentPage: @@@@@@@@@@");
+        console.log(this.state.currentPage);
+        console.log("@@@@@@@@@@@@@@@@");
+        if (this.state.currentPage === C.FINAL_SUMMARY_PAGE || 
+            this.state.currentPage === C.FINAL_PRINT_EVERYTHING || 
+            this.state.currentPage === C.FINAL_PRINT_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
         } else if (this.state.currentPrintButton !== undefined && this.state.currentPrintButton !== C.START_PAGE) {
             return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
