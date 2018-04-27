@@ -16,7 +16,7 @@ export const QualityContent = {
                             hasInlineHtml: true,
                             componentText: "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
                             criterionTextRefId: "quality-crt-text-optional-1.1.1",
-                            criterionTextLabel: "Cost of materials per student: $",
+                            criterionTextLabel: "Cost of materials per student:",
                         },
                         {
                             showNaButton: true,
@@ -78,12 +78,18 @@ export const QualityContent = {
                             criterionTextRefId: "quality-crt-text-optional-1.3.2",
                             criterionTextLabel: "Languages included:",
                         },
+                    ]
+                },
+                {
+                    indicatorNumber: "1.4",
+                    indicatorText: "Written materials and physical products are durable and reusable or easy to replace.",
+                    components: [
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "quality-crt-question-1.3.3_beneficial",
+                            criterionRefId: "quality-crt-question-1.4_beneficial",
                             hasInlineHtml: false,
-                            componentText: "Written materials and physical products are durable and reusable or easy to replace.",
+                            componentText: "Are written materials and physical products durable and reusable or easy to replace? (e.g., continued electronic access to materials at no additional cost)",
                         },
                     ]
                 },
