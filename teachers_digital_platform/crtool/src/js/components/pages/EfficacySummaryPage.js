@@ -52,7 +52,12 @@ export default class EfficacySummaryPage extends React.Component {
                 <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
                 <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
-                <EfficacyOveralScoreComponent {...this.props} />
+                <br /><br />
+                <EfficacyOveralScoreComponent dimensionPage={C.UTILITY_PAGE}
+                                              dimensionName="Efficacy"
+                                              dimensionKey="utility-crt-"
+                                              dimensionLead="How does this curriculum meet the criteria for efficacy:"
+                                              {...this.props} />
             </React.Fragment>
         );
     }

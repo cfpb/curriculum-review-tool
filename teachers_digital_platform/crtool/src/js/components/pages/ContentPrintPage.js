@@ -21,11 +21,6 @@ export default class ContentPrintPage extends React.Component {
         }
         return (
             <React.Fragment>
-                <div class="u-hide-on-print">
-                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
-                </div>
-                <br />
-
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
 
                 <DimensionInformation   
@@ -116,7 +111,6 @@ export default class ContentPrintPage extends React.Component {
                     {/* Content individual Criterion Q&A for all Criterion*/}
                     <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
                 </div>
-                <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
             </React.Fragment>
         );
     }

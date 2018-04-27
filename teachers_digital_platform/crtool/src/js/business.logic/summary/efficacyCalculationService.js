@@ -18,10 +18,6 @@ const EfficacyCalculationService = {
 
     calculateOveralScore(component) {
         let hasTwoStrongStudies = this.twoStrongStudiesExist(component);
-
-        console.log("#################");
-        console.log(component.state.criterionScores);
-        console.log("#################");
         if (component.state.criterionScores === undefined) {
             return false;
         }

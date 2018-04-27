@@ -16,11 +16,6 @@ export default class EfficacyPrintPage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div class="u-hide-on-print">
-                    <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
-                </div>
-                <br />
-
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
 
                 <DimensionInformation   
@@ -31,8 +26,12 @@ export default class EfficacyPrintPage extends React.Component {
 
                 <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
-                <EfficacyOveralScoreComponent {...this.props} />
-
+                <br /><br />
+                <EfficacyOveralScoreComponent dimensionPage={C.UTILITY_PAGE}
+                                              dimensionName="Efficacy"
+                                              dimensionKey="utility-crt-"
+                                              dimensionLead="How does this curriculum meet the criteria for efficacy:"
+                                              {...this.props} />
                 <br /><br />
                 {/* Forced Page Break */}
                 <div className="u-page-break-before">
@@ -40,7 +39,6 @@ export default class EfficacyPrintPage extends React.Component {
                     {/* Efficacy individual Criterion Q&A for all Criterion*/}
                     <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
                 </div>
-                <button className="a-btn a-btn__super" onClick={(e) => {this.props.printButtonClicked(C.START_PAGE); e.preventDefault();}}>Back</button>
             </React.Fragment>
         );
     }

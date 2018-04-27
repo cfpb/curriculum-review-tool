@@ -113,7 +113,6 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderNotesEditableVersion() {
-        console.log("Showing Editable version!!!");
         return (
             <textarea className="a-text-input a-text-input__full"
                 rows="6"
@@ -126,7 +125,6 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderNotesPrintVersion() {
-        console.log("Showing Print version");
         let notes = this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber];
         if (notes === undefined || notes === "") {
             return (<p class="o-survey_question-helper">No information provided</p>);
