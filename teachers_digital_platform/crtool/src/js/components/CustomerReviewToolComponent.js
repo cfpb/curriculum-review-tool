@@ -117,8 +117,14 @@ export default class CustomerReviewToolComponent extends React.Component {
             this.openPrintPage();
 
             this.setState({currentPage: distinctiveName});
-            this.setState({currentPrintButton: C.START_PAGE});
+            this.setState({currentPrintButton: ""});
             this.setState({finalSummaryShowEntireReview: "false"});
+
+            setTimeout(function(){
+                localStorage.setItem(C.START_PAGE, distinctiveName);
+                localStorage.setItem("currentPrintButton", "");
+                localStorage.setItem("finalSummaryShowEntireReview", "false");
+          },4000);
         }
     }
 
@@ -250,9 +256,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
-        console.log("@@@@@@ currentPage: @@@@@@@@@@");
-        console.log(this.state.currentPage);
-        console.log("@@@@@@@@@@@@@@@@");
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE || 
             this.state.currentPage === C.FINAL_PRINT_EVERYTHING || 
             this.state.currentPage === C.FINAL_PRINT_PAGE) {

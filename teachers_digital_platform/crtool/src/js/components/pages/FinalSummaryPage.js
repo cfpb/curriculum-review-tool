@@ -21,6 +21,22 @@ import EfficacyCriterionBlockSummary from "./summary/EfficacyCriterionBlockSumma
 
 
 export default class FinalSummaryPage extends React.Component {
+    renderAllCriterionQuestions() {
+        if (this.props.currentPrintButton === C.FINAL_PRINT_EVERYTHING) {
+            return (
+                <React.Fragment>
+                    <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                    <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                    <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                    <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                </React.Fragment>
+            );
+        } else {
+            console.log("WHY ARE WE NOT PRINTING the criterion blocks!!!");
+            return null;
+        }
+    }
+
     render() {
         let contentDimensionKey = "content-high-crt-";
         if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
@@ -28,11 +44,13 @@ export default class FinalSummaryPage extends React.Component {
         } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
             contentDimensionKey = "content-middle-crt-";
         }
-        console.log("FiNAL SUMMARY PAGE!!!!");
         return (
             <React.Fragment>
-
-                <DistinctiveMenuBar {...this.props} />
+                
+                {                    
+                        this.props.finalSummaryShowEntireReview !== "true" && 
+                                <DistinctiveMenuBar {...this.props} />
+                }
 
                 <FinalCurriculumInformation {...this.props} />
 
@@ -65,19 +83,16 @@ export default class FinalSummaryPage extends React.Component {
 
                 <KeyTakeawaysComponent {...this.props} />
 
+                {this.renderAllCriterionQuestions()}
+
                 {
-                    this.props.finalSummaryShowEntireReview === "true" &&
-                    <span>
-                        <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                        <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                        <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                        <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                    </span>
+                    this.props.finalSummaryShowEntireReview !== "true" && 
+                        <span>
+                            <PrintOrSaveFinalSummary  {...this.props}/>
+                            <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
+                        </span>
                 }
 
-                <PrintOrSaveFinalSummary  {...this.props}/>
-
-                <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
             </React.Fragment>
         );
     }

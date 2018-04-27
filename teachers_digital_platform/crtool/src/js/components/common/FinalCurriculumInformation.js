@@ -22,9 +22,13 @@ export default class FinalCurriculumInformation extends React.Component {
                     <p className="lead-paragraph u-mb30">
                         This summary shows the scores for all four dimensions.
                     </p>
-
-                    <SaveWorkInformation />
-                    <PrintOrSaveFinalSummary {...this.props} />
+                    {                    
+                        this.props.finalSummaryShowEntireReview !== "true" && 
+                        <span>
+                            <SaveWorkInformation />
+                            <PrintOrSaveFinalSummary {...this.props} />
+                        </span>
+                    }
                     
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
