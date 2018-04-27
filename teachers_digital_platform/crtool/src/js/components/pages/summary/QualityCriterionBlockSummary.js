@@ -4,7 +4,7 @@ import SvgIcon from "../../svgs/SvgIcon";
 import CriterionComponent from "../../criterion/CriterionComponent";
 import { QualityContent } from "../../../content_data/qualityContent";
 
-export default class ContentBlockSummary extends React.Component {
+export default class QualityCriterionBlockSummary extends React.Component {
 
     render() {
         return (

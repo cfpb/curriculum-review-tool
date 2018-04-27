@@ -1,3 +1,6 @@
+import C from "../constants";
+import Repository from "../repository";
+
 const ContentHighCalculationService = {
 
     /*
@@ -23,6 +26,48 @@ const ContentHighCalculationService = {
         }
 
         return criterionScore;
+    },
+
+    calculateOveralScore(component) {
+
+        let score = "strong";
+        if (component.state.criterionScores["content-high-crt-1"] === undefined ||
+            component.state.criterionScores["content-high-crt-2"] === undefined ||
+            component.state.criterionScores["content-high-crt-3"] === undefined ||
+            component.state.criterionScores["content-high-crt-4"] === undefined||
+            component.state.criterionScores["content-high-crt-5"] === undefined ) {
+
+            score = "limited";
+        } else {
+            if (component.state.criterionScores["content-high-crt-1"].doesnotmeet ||
+                component.state.criterionScores["content-high-crt-2"].doesnotmeet ||
+                component.state.criterionScores["content-high-crt-3"].doesnotmeet ||
+                component.state.criterionScores["content-high-crt-4"].doesnotmeet ||
+                component.state.criterionScores["content-high-crt-5"].doesnotmeet ||
+                component.state.criterionScores["content-high-crt-6"].doesnotmeet ) {
+
+                score = "limited";
+            }
+
+            if (component.state.criterionScores["content-high-crt-1"].meets &&
+                component.state.criterionScores["content-high-crt-2"].meets &&
+                component.state.criterionScores["content-high-crt-3"].meets &&
+                component.state.criterionScores["content-high-crt-4"].meets &&
+                component.state.criterionScores["content-high-crt-5"].meets &&
+                component.state.criterionScores["content-high-crt-6"].meets ) {
+
+                score = "moderate";
+            }
+        }
+
+        this.setDimensionOverallScore(component, C.CONTENT_PAGE, score);
+    },
+
+    setDimensionOverallScore(component, distinctiveName, score) {
+        let dimensionOverallScores =  component.state.dimensionOverallScores;
+
+        dimensionOverallScores[distinctiveName] = score;
+        Repository.savedimensionOverallScores(component, dimensionOverallScores);
     },
 
     calculateFirstCriterion(criterionScore) {

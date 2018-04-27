@@ -3,14 +3,14 @@ This file contains all constants in the app.
 */
 
 const C = {
-	// ACTION TYPES
-	CHANGE_DISTINCTIVE: "CHANGE_DISTINCTIVE",
+    // ACTION TYPES
+    CHANGE_DISTINCTIVE: "CHANGE_DISTINCTIVE",
 
-	// OTHER CONSTANTS
-    CONTENT_PAGE: "CONTENT",
-    UTILITY_PAGE: "UTILITY",
-    QUALITY_PAGE: "QUALITY",
-    EFFICACY_PAGE: "EFFICACY",
+    // OTHER CONSTANTS
+    CONTENT_PAGE: "Content",
+    UTILITY_PAGE: "Utility",
+    QUALITY_PAGE: "Quality",
+    EFFICACY_PAGE: "Efficacy",
     FINAL_SUMMARY_PAGE: "FINAL_SUMMARY_PAGE",
     FINAL_PRINT_PAGE: "FINAL_PRINT_PAGE",
     START_PAGE: "START",
@@ -48,12 +48,14 @@ const C = {
     STATUS_IN_START: "",
     STATUS_IN_PROGRESS: "in progress",
     STATUS_COMPLETE: "complete",
+    EFFICACY_SCOPE_EVIDENCE: "efficacy_scope_evidence",
 
     START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
+    SURVEY_PAGE_RELATIVE_URL: "../../tdp/crt-survey/",
 
     GRADE_ELEMENTARY: "Elementary school",
     GRADE_MIDDLE: "Middle school",
-    GRADE_HIGH: "Middle school",
+    GRADE_HIGH: "High school",
 };
 
 export default C;

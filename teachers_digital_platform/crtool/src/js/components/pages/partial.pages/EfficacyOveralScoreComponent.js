@@ -3,16 +3,16 @@ import React from "react";
 import C from "../../../business.logic/constants";
 import SvgIcon from "../../svgs/SvgIcon";
 
-export default class DimensionScoreBlock extends React.Component {
+export default class EfficacyOveralScoreComponent extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
-        this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
+        this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
     criterionOveralScoreClassName(level, type) {
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
 
-        let dimensionScore = this.props.dimensionOverallScores[this.props.dimensionPage];
+        let dimensionScore = this.props.dimensionOverallScores[C.EFFICACY_PAGE];
         if (dimensionScore !== undefined && level === dimensionScore) {
             className = className + " is-active";
         }
@@ -53,8 +53,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("strong", "text")}>
-                                        <div><strong>Strong utility</strong></div>
-                                        {this.props.strongText}
+                                        <div><strong>Strong efficacy</strong></div>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +68,22 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("moderate", "text")}>
-                                        <div><strong>Moderate utility</strong></div>
-                                        {this.props.moderate}
+                                        <div><strong>Moderate efficacy</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                        m-form-field__radio
+                                        m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.criterionOveralScoreClassName("mixed")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className={this.criterionOveralScoreClassName("mixed", "text")}>
+                                        <div><strong>Mixed efficacy</strong></div>
                                     </div>
                                 </div>
                             </div>
@@ -85,8 +98,22 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("limited", "text")}>
-                                        <div><strong>Limited utility</strong></div>
-                                        {this.props.limitedText}
+                                        <div><strong>Limited efficacy</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                        m-form-field__radio
+                                        m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.criterionOveralScoreClassName("notenoughinfo")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className={this.criterionOveralScoreClassName("notenoughinfo", "text")}>
+                                        <div><strong>Not enough information</strong></div>
                                     </div>
                                 </div>
                             </div>

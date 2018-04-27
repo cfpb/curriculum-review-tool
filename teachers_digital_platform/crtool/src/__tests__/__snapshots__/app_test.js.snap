@@ -124,7 +124,7 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_button CONTENT"
+        className="o-dimension-section-bar_button Content"
         onClick={[Function]}
       >
         <div
@@ -186,7 +186,7 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_button UTILITY"
+        className="o-dimension-section-bar_button Utility"
         onClick={[Function]}
       >
         <div
@@ -240,7 +240,7 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_button QUALITY"
+        className="o-dimension-section-bar_button Quality"
         onClick={[Function]}
       >
         <div
@@ -294,7 +294,7 @@ exports[`renders without crashing 1`] = `
       className="o-dimension-section-bar_dimension"
     >
       <button
-        className="o-dimension-section-bar_button EFFICACY"
+        className="o-dimension-section-bar_button Efficacy"
         onClick={[Function]}
       >
         <div

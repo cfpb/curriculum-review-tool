@@ -37,6 +37,8 @@ export default class CustomerReviewToolComponent extends React.Component {
             studyAnswers: Repository.getStudyAnswers(),
             criterionScores: Repository.getCriterionScores(),
             criterionAnswers: Repository.getCriterionAnswers(),
+            currentPrintButton: Repository.getPrintButtonPage(),
+            dimensionOverallScores: Repository.getDimensionOverallScores(),
             criterionClickedTitles: Repository.getCriterionClickedTitles(),
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
@@ -57,6 +59,11 @@ export default class CustomerReviewToolComponent extends React.Component {
     navigateBackToStartPage() {
         let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
         window.location = startPage;
+    }
+
+    openPrintPage() {
+        let surveyPage = resolveUrl(window.location.href, C.SURVEY_PAGE_RELATIVE_URL);
+        window.open(surveyPage, '_blank');
     }
 
     /*
@@ -80,6 +87,24 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     distinctiveClicked(distinctiveName) {
         Repository.saveCurrentPage(this, distinctiveName);
+    }
+
+    resetPrintButtonState(distinctiveName) {
+        Repository.savePrintButtonPage(this, C.START_PAGE);
+        this.setState({currentPrintButton: distinctiveName});
+    }
+
+    printButtonClicked(distinctiveName) {
+        //Set up navigation to load dimension print screen
+        Repository.savePrintButtonPage(this, distinctiveName);
+        Repository.saveCurrentPage(this, distinctiveName);
+
+        if (distinctiveName !== C.START_PAGE) {
+            this.openPrintPage();
+
+            this.setState({currentPage: distinctiveName});
+            this.setState({currentPrintButton: C.START_PAGE});
+        }
     }
 
     handleFinalSummaryButtonClick() {
@@ -137,6 +162,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             currentPage:this.state.currentPage,
             curriculumTitle:this.state.curriculumTitle,
             publicationDate:this.state.publicationDate,
+            dimensionOverallScores:this.state.dimensionOverallScores,
             distinctiveCompletedDate:this.state.distinctiveCompletedDate,
             gradeRange:this.state.gradeRange,
             finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
@@ -148,11 +174,14 @@ export default class CustomerReviewToolComponent extends React.Component {
 
             studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,
+            currentPrintButton:this.state.currentPrintButton,
             criterionClickedTitles:this.state.criterionClickedTitles,
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
 
+            resetPrintButtonState:this.resetPrintButtonState.bind(this),
+            printButtonClicked:this.printButtonClicked.bind(this),
             removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
             setCriterionStatusToInStart:this.setCriterionStatusToInStart.bind(this),
             studyAnswerChanged:this.studyAnswerChanged.bind(this),
@@ -179,6 +208,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilitySummaryButton:this.state.utilitySummaryButton,
             qualitySummaryButton:this.state.qualitySummaryButton,
             efficacySummaryButton:this.state.efficacySummaryButton,
+            dimensionOverallScores:this.state.dimensionOverallScores,
 
             distinctiveClicked:this.distinctiveClicked.bind(this),
             handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),
@@ -205,7 +235,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
-        } else if (this.state.currentPage === C.FINAL_PRINT_PAGE) {
+        } else if (this.state.currentPrintButton !== undefined && this.state.currentPrintButton !== C.START_PAGE) {
             return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {
             return (

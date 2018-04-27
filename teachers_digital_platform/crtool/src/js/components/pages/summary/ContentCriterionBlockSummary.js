@@ -1,7 +1,7 @@
 import React from "react";
 
 import SvgIcon from "../../svgs/SvgIcon";
-import ContentSwitchComponent from "../partial.pages/ContentSwitchComponent";
+import ContentCriterionSwitchComponent from "../partial.pages/ContentCriterionSwitchComponent";
 
 export default class ContentBlockSummary extends React.Component {
 
@@ -24,7 +24,7 @@ export default class ContentBlockSummary extends React.Component {
                     <p className="lead-paragraph">
                         This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability.
                     </p>
-                    <ContentSwitchComponent {...this.props} />
+                    <ContentCriterionSwitchComponent {...this.props} />
 
                 </div>
             </React.Fragment>

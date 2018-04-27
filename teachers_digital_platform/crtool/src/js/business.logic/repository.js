@@ -14,6 +14,7 @@ const Repository = {
     resetApplicationData() {
         this.clearAllData();
         this.saveCurrentPage(this, C.START_PAGE);
+        this.savePrintButtonPage(this, C.START_PAGE);
         this.saveFinishAddingEfficacyStudies(this, false);
 
         this.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
@@ -26,6 +27,7 @@ const Repository = {
         this.saveCriterionAnswers(this, {});
         this.setCriterionTitleLinkClicked(this, {});
         this.saveCriterionEfficacyStudies(this, [0]);
+        this.savedimensionOverallScores(this, {});
         this.saveDistinctiveCompletionDates(this, {});
         this.saveCriterionGroupCompletionStatuses(this, {});
     },
@@ -35,6 +37,10 @@ const Repository = {
      */
     getCurrentPage() {
         return localStorage.getItem(C.START_PAGE);
+    },
+
+    getPrintButtonPage() {
+        return localStorage.getItem("currentPrintButton") || C.START_PAGE;
     },
 
     getContentInProgress() {
@@ -105,12 +111,21 @@ const Repository = {
         return JSON.parse(localStorage.getItem("distinctiveCompletedDate")) || {};
     },
 
+    getDimensionOverallScores() {
+        return JSON.parse(localStorage.getItem("dimensionOverallScores")) || {};
+    },
+
     getCriterionCompletionSatuses() {
         return JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {};
     },
 
     getCriterionClickedTitles() {
         return JSON.parse(localStorage.getItem("criterionClickedTitles")) || {};
+    },
+
+    savedimensionOverallScores(component, dimensionOverallScores) {
+        localStorage.setItem("dimensionOverallScores", JSON.stringify(dimensionOverallScores));
+        component.setState({dimensionOverallScores: dimensionOverallScores});
     },
 
     /*
@@ -181,6 +196,11 @@ const Repository = {
     saveCurrentPage(component, clickedDistinctive) {
         localStorage.setItem(C.START_PAGE, clickedDistinctive);
         component.setState({currentPage: clickedDistinctive});
+    },
+
+    savePrintButtonPage(component, distinctiveName) {
+        localStorage.setItem("currentPrintButton", distinctiveName);
+        component.setState({currentPrintButton: distinctiveName});
     },
 
     /*

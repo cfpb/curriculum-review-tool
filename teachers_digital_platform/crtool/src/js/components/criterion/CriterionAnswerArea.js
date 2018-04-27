@@ -14,7 +14,6 @@ export default class CriterionAnswerArea extends React.Component {
 
     renderComponentText() {
         let text = this.props.componentData.componentText;
-
         if (text === undefined || text === "") {
             text = <p class="o-survey_question-helper">No information provided</p>;
         }
@@ -29,13 +28,18 @@ export default class CriterionAnswerArea extends React.Component {
         if (this.props.componentData.criterionTextRefId !== undefined &&
             this.props.criterionAnswers[this.props.componentData.criterionTextRefId] !== undefined &&
             this.props.componentData.criterionTextLabel !== undefined) {
+
+            let text = this.props.criterionAnswers[this.props.componentData.criterionTextRefId];
+            if (text === undefined || text === "") {
+                text = <p class="o-survey_question-helper">No information provided</p>;
+            }
             return (
                 <div className="m-form-field m-form-field__text u-mt30">
                     <label className="a-label a-label__heading">
                         {this.props.componentData.criterionTextLabel}
                     </label>
                     <p>
-                        {this.props.criterionAnswers[this.props.componentData.criterionTextRefId]}
+                        {text}
                     </p>
                 </div>
             );

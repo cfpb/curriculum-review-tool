@@ -1,5 +1,6 @@
 import React from "react";
 
+import C from "../../../business.logic/constants";
 import ViewEditResponseComponent from "../../common/ViewEditResponseComponent";
 
 export default class ContentBlockSummary extends React.Component {
@@ -9,19 +10,19 @@ export default class ContentBlockSummary extends React.Component {
 
     criterionOveralScoreClassName(level, type) {
         let isLimited = false;
-        if (this.props.criterionScores[this.props.dimentionKey + "1"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimentionKey + "2"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimentionKey + "3"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimentionKey + "4"].doesnotmeet ) {
+        if (this.props.criterionScores[this.props.dimensionKey + "1"].doesnotmeet ||
+            this.props.criterionScores[this.props.dimensionKey + "2"].doesnotmeet ||
+            this.props.criterionScores[this.props.dimensionKey + "3"].doesnotmeet ||
+            this.props.criterionScores[this.props.dimensionKey + "4"].doesnotmeet ) {
 
             isLimited = true;
         }
 
         let isModerate = false;
-        if (this.props.criterionScores[this.props.dimentionKey + "1"].meets &&
-            this.props.criterionScores[this.props.dimentionKey + "2"].meets &&
-            this.props.criterionScores[this.props.dimentionKey + "3"].meets &&
-            this.props.criterionScores[this.props.dimentionKey + "4"].meets ) {
+        if (this.props.criterionScores[this.props.dimensionKey + "1"].meets &&
+            this.props.criterionScores[this.props.dimensionKey + "2"].meets &&
+            this.props.criterionScores[this.props.dimensionKey + "3"].meets &&
+            this.props.criterionScores[this.props.dimensionKey + "4"].meets ) {
 
             isModerate = true;
         }
@@ -41,7 +42,7 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderTextValue(style, level) {
-        let criterionScore = this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber];
+        let criterionScore = this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber];
         let isTrue = false;
 
         if (level === "exceeds" && criterionScore !== undefined){
@@ -92,10 +93,52 @@ export default class ContentBlockSummary extends React.Component {
                 <React.Fragment>
                 <p><b>Your answers for <em>beneficial</em> components:</b></p>
                 <ul className="m-component-list">
-                    <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
-                    <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
                 </ul>
                 </React.Fragment>
+            );
+        } else {
+            return null;
+        }
+    }
+
+    renderMyNotes() {
+        if (this.props.currentPrintButton === C.START_PAGE) {
+            return this.renderNotesEditableVersion();
+        }
+        else {
+            return this.renderNotesPrintVersion();
+        }
+    }
+
+    renderNotesEditableVersion() {
+        return (
+            <textarea className="a-text-input a-text-input__full"
+                rows="6"
+                id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
+                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
+            </textarea>
+        );
+    }
+
+    renderNotesPrintVersion() {
+        let notes = this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber];
+        if (notes === undefined || notes === "") {
+            return (<p class="o-survey_question-helper">No information provided</p>);
+        } else {
+            return notes;
+        }
+    }
+
+    renderNotesHelperText() {
+        if (this.props.currentPrintButton === C.START_PAGE) {
+            return (
+                <small className="a-label_helper a-label_helper__block">
+                    Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
+                </small>
             );
         } else {
             return null;
@@ -105,8 +148,10 @@ export default class ContentBlockSummary extends React.Component {
     render() {
         return (
             <React.Fragment>
+            <hr className="hr
+                            u-mb45
+                            u-mt30" />
             <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
-
             <h3 className="h2">{this.props.criterionName}</h3>
             <p className="u-mb30">{this.props.criterionLead}</p>
             <div className="m-curriculum-status">
@@ -152,27 +197,20 @@ export default class ContentBlockSummary extends React.Component {
                 <div className="m-curriculum-status_components">
                     <p><b>Your answers for <em>essential</em> components:</b></p>
                     <ul className="m-component-list">
-                        <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
-                        <li><b>{this.props.criterionScores[this.props.dimentionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
+                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
+                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
                     </ul>
                     {this.renderBeneficial()}
                 </div>
             </div>
             <div className="m-form-field m-form-field__textarea">
-                <label className="a-label a-label__heading" htmlFor={this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber}>
+                <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
                     My notes
                     &nbsp;<small className="a-label_helper">(optional)</small>
-                    <small className="a-label_helper a-label_helper__block">
-                        Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                    </small>
+                    {this.renderNotesHelperText()}
                 </label>
-                <textarea className="a-text-input a-text-input__full"
-                    rows="6"
-                    id={this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber}
-                    ref={this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber}
-                    value={this.props.criterionAnswers[this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber]}
-                    onChange={e=>this.criterionAnswerChanged(this.props.dimentionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
-                </textarea>
+
+                <p>{this.renderMyNotes()}</p>
             </div>
             </React.Fragment>
         );
