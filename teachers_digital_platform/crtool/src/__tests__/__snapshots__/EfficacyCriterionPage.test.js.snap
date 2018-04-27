@@ -1198,7 +1198,7 @@ Array [
       className="u-mt15 u-mb30"
     >
       <button
-        className="a-btn a-btn__link"
+        className="a-btn a-btn__link a-btn__no-line"
         onClick={[Function]}
       >
         Review another study
