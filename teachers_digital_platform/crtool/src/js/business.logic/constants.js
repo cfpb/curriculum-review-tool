@@ -7,10 +7,10 @@ const C = {
     CHANGE_DISTINCTIVE: "CHANGE_DISTINCTIVE",
 
     // OTHER CONSTANTS
-    CONTENT_PAGE: "CONTENT",
-    UTILITY_PAGE: "UTILITY",
-    QUALITY_PAGE: "QUALITY",
-    EFFICACY_PAGE: "EFFICACY",
+    CONTENT_PAGE: "Content",
+    UTILITY_PAGE: "Utility",
+    QUALITY_PAGE: "Quality",
+    EFFICACY_PAGE: "Efficacy",
     FINAL_SUMMARY_PAGE: "FINAL_SUMMARY_PAGE",
     FINAL_PRINT_PAGE: "FINAL_PRINT_PAGE",
     START_PAGE: "START",
@@ -55,7 +55,7 @@ const C = {
 
     GRADE_ELEMENTARY: "Elementary school",
     GRADE_MIDDLE: "Middle school",
-    GRADE_HIGH: "Middle school",
+    GRADE_HIGH: "High school",
 };
 
 export default C;
