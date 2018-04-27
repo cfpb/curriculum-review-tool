@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     className="l-survey-top"
   >
     <button
-      className="a-btn a-btn__link"
+      className="a-btn a-btn__link a-btn__no-line"
       onClick={[Function]}
     >
       <span

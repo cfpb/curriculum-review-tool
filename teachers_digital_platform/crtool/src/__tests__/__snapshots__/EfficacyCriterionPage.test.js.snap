@@ -105,7 +105,7 @@ Array [
     </p>
     <p>
       <button
-        className="a-btn a-btn__link"
+        className="a-btn a-btn__link a-btn__no-line"
         onClick={[Function]}
       >
         How can I save my work?
@@ -1228,7 +1228,7 @@ Array [
     className="l-survey-top"
   >
     <button
-      className="a-btn a-btn__link"
+      className="a-btn a-btn__link a-btn__no-line"
       onClick={[Function]}
     >
       <span
