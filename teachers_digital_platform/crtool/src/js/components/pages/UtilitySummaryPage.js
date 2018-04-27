@@ -38,6 +38,9 @@ export default class UtilitySummaryPage extends React.Component {
                     criterionNumber="1"
                     criterionName="Criterion 1: Materials to support cognitive development"
                     criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -48,6 +51,9 @@ export default class UtilitySummaryPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Differentiated instruction for diverse populations"
                     criterionLead="Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -58,6 +64,9 @@ export default class UtilitySummaryPage extends React.Component {
                     criterionNumber="3"
                     criterionName="Criterion 3: Quality materials for lesson planning"
                     criterionLead="Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -68,6 +77,9 @@ export default class UtilitySummaryPage extends React.Component {
                     criterionNumber="4"
                     criterionName="Criterion 4: Materials to assess mastery"
                     criterionLead="Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -78,6 +90,9 @@ export default class UtilitySummaryPage extends React.Component {
                     criterionNumber="5"
                     criterionName="Criterion 5: Instructional supports"
                     criterionLead="Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <DimensionScoreBlock
@@ -85,6 +100,9 @@ export default class UtilitySummaryPage extends React.Component {
                     dimensionKey="utility-crt-"
                     dimensionName="Utility"
                     dimensionLead="How does this curriculum meet the criteria for utility:"
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
             </React.Fragment>
         );

@@ -38,6 +38,9 @@ export default class QualitySummaryPage extends React.Component {
                     criterionNumber="1"
                     criterionName="Criterion 1: Accessibility"
                     criterionLead="Curriculum materials are physically accessible to teachers and students in a typical school setting."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -48,6 +51,9 @@ export default class QualitySummaryPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Accuracy and timeliness"
                     criterionLead="Curriculum materials are current and free of errors."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -58,6 +64,9 @@ export default class QualitySummaryPage extends React.Component {
                     criterionNumber="3"
                     criterionName="Criterion 3: Objectivity"
                     criterionLead="Curriculum materials are objective."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -68,6 +77,9 @@ export default class QualitySummaryPage extends React.Component {
                     criterionNumber="4"
                     criterionName="Criterion 4: Visual appearance"
                     criterionLead="The visual appearance of the student materials is conducive to learning."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <DimensionScoreBlock

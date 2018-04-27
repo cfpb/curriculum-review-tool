@@ -38,6 +38,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionNumber="1"
                     criterionName="Criterion 1:  Earning, income, and careers"
                     criterionLead="The curriculum addresses grade-level appropriate topics for earning, income, and careers."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -48,6 +51,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Saving and investing"
                     criterionLead="The curriculum addresses grade-level appropriate topics for saving and investing."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -58,6 +64,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionNumber="3"
                     criterionName="Criterion 3: Spending"
                     criterionLead="The curriculum addresses grade-level appropriate topics for spending."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -68,6 +77,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionNumber="4"
                     criterionName="Criterion 4: Borrowing and credit"
                     criterionLead="The curriculum addresses grade-level appropriate topics for borrowing and credit."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -78,6 +90,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionNumber="5"
                     criterionName="Criterion 5: Managing financial risk"
                     criterionLead="The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -88,6 +103,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionNumber="6"
                     criterionName="Criterion 6: Financial responsibility and money management"
                     criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <DimensionScoreBlock
@@ -95,9 +113,9 @@ export default class ContentHighSummaryPage extends React.Component {
                     dimensionKey="content-high-crt-"
                     dimensionName="Content"
                     dimensionLead="How does this curriculum meet the criteria for content:"
-                    strongText="All 6 criteria were met, and at least one was exceeded"
-                    moderate="All 6 criteria were met"
-                    limitedText="At least one of the criteria was not met"
+                    strongText="5 or more components were addressed"
+                    moderate="4 components were addressed"
+                    limitedText="Less than 4 components were addressed"
                     {...this.props} />
             </React.Fragment>
         );
