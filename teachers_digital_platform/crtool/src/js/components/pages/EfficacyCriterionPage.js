@@ -144,7 +144,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             <li>Results, which provide the findings</li>
                         </ul>
                     </li>
-                    <li>For <b><em>each study,</em></b> answer the questions in Criterion 1 to determine if it’s a strong study. Review all studies before moving onto Criterion 2.
+                    <li>For <b>each study,</b> answer the questions in Criterion 1 to determine if it’s a strong study. Review all studies before moving onto Criterion 2.
                         <ul>
                             <li>If a study is strong, you’ll reference it when answering the questions in Criteria 2 and 3.</li>
                             <li>If no studies meet the inclusion criteria (none were strong), you don’t need to complete Criteria 2 and 3 and can move on to the efficacy summary.</li>
@@ -178,7 +178,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
                     </p>
                     <p>
-                        <b><em>You will answer these questions for each study individually.</em></b>
+                        <b>You will answer these questions for each study individually.</b>
                     </p>
 
                     {this.getEfficacyStudyItems().map((i) =>
@@ -218,7 +218,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
                     </p>
                     <p>
-                        <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
+                        <b>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</b>
                     </p>
                     <ol className="m-list__unstyled">
                         <EditableCriterionRowWrapper
@@ -281,7 +281,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         Is there enough evidence to support conclusions of consistent, strong, positive impact?
                     </p>
                     <p>
-                        <b><em>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</em></b>
+                        <b>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</b>
                     </p>
                     <ol className="m-list__unstyled">
 
