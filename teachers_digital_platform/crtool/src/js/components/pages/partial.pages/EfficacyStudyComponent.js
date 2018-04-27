@@ -10,7 +10,7 @@ export default class EfficacyStudyComponent extends React.Component {
         if (this.props.showRemoveButton) {
             return (
                 <div className="l-survey-top">
-                    <button className="a-btn a-btn__link"
+                    <button className="a-btn a-btn__link a-btn__no-line"
                         onClick={() => this.removeEfficacyStudy(this.props.studyCount)} >
                         Remove
                         <SvgIcon
