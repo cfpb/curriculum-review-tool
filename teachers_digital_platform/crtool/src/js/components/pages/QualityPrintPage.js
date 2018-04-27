@@ -48,12 +48,12 @@ export default class QualityPrintPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Accuracy and timeliness"
                     criterionLead="Curriculum materials are current and free of errors."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionLead="Curriculum materials are current and free of errors."
+                    criterionMeetsText="All essential components scored “yes”"
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
-                {/* Criterion 4 */}
+                {/* Criterion 3 */}
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={true}
@@ -67,7 +67,7 @@ export default class QualityPrintPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
-                {/* Criterion 3 */}
+                {/* Criterion 4 */}
                 <CriterionScoreBlock
                     showExceeds={false}
                     showBeneficial={false}
@@ -76,8 +76,7 @@ export default class QualityPrintPage extends React.Component {
                     criterionNumber="4"
                     criterionName="Criterion 4: Visual appearance"
                     criterionLead="The visual appearance of the student materials is conducive to learning."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”"
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
@@ -87,6 +86,9 @@ export default class QualityPrintPage extends React.Component {
                     dimensionKey="quality-crt-"
                     dimensionName="Quality"
                     dimensionLead="How does this curriculum meet the criteria for quality:"
+                    strongText="All 4 criteria were met, and at least one was exceeded"
+                    moderateText="All 4 criteria were met"
+                    limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
                 {/* Forced Page Break */}

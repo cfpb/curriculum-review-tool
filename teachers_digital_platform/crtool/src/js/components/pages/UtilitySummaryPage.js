@@ -40,8 +40,7 @@ export default class UtilitySummaryPage extends React.Component {
                     criterionNumber="1"
                     criterionName="Criterion 1: Materials to support cognitive development"
                     criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”"
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
@@ -104,9 +103,9 @@ export default class UtilitySummaryPage extends React.Component {
                     dimensionKey="utility-crt-"
                     dimensionName="Utility"
                     dimensionLead="How does this curriculum meet the criteria for utility:"
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    strongText="All 5 criteria were met, and at least one was exceeded"
+                    moderateText="All 5 criteria were met"
+                    limitedText="At least one of the criteria was not met"
                     {...this.props} />
             </React.Fragment>
         );

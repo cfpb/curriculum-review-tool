@@ -38,9 +38,9 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="1"
                     criterionName="Criterion 1:  Earning, income, and careers"
                     criterionLead="The curriculum addresses grade-level appropriate topics for earning, income, and careers."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    criterionExceedsText="All 3 components were addressed"
+                    criterionMeetsText="2 components were addressed"
+                    criterionDoesNotMeetText="Less than 2 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -51,9 +51,9 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Saving and investing"
                     criterionLead="The curriculum addresses grade-level appropriate topics for saving and investing."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    criterionExceedsText="7 or more components were addressed"
+                    criterionMeetsText="5 or 6 components were addressed"
+                    criterionDoesNotMeetText="Less than 5 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -64,9 +64,9 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="3"
                     criterionName="Criterion 3: Spending"
                     criterionLead="The curriculum addresses grade-level appropriate topics for spending."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    criterionExceedsText="All 5 components were addressed"
+                    criterionMeetsText="4 components were addressed"
+                    criterionDoesNotMeetText="Less than 4 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -77,9 +77,9 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="4"
                     criterionName="Criterion 4: Borrowing and credit"
                     criterionLead="The curriculum addresses grade-level appropriate topics for borrowing and credit."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    criterionExceedsText="6 or more components were addressed"
+                    criterionMeetsText="5 components were addressed"
+                    criterionDoesNotMeetText="Less than 5 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -90,9 +90,9 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="5"
                     criterionName="Criterion 5: Managing financial risk"
                     criterionLead="The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    criterionExceedsText="All 4 components were addressed"
+                    criterionMeetsText="3 components were addressed"
+                    criterionDoesNotMeetText="Less than 3 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -103,9 +103,8 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="6"
                     criterionName="Criterion 6: Financial responsibility and money management"
                     criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
+                    criterionMeetsText="1 component was addressed"
+                    criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
 
                 <hr class="hr u-mb45 u-mt30" />
@@ -116,7 +115,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     dimensionName="Content"
                     dimensionLead="How does this curriculum meet the criteria for content:"
                     strongText="All 6 criteria were met, and at least one was exceeded"
-                    moderate="All 6 criteria were met"
+                    moderateText="All 6 criteria were met"
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
             </React.Fragment>
