@@ -26,6 +26,7 @@ export default class EfficacySummaryPage extends React.Component {
                 <p className="lead-paragraph">
                     Review the scores and your notes for each efficacy criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
                 </p>
+
                 <SaveWorkInformation />
 
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.EFFICACY_PAGE); e.preventDefault();}}>
@@ -35,7 +36,7 @@ export default class EfficacySummaryPage extends React.Component {
                 <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
                 <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
-                <br /><br />
+
                 <EfficacyOveralScoreComponent
                     dimensionPage={C.UTILITY_PAGE}
                     dimensionName="Efficacy"

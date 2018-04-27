@@ -111,6 +111,8 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
+                <hr class="hr u-mb45 u-mt30" />
+
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
                     dimensionKey="content-elementary-crt-"

@@ -82,6 +82,8 @@ export default class QualitySummaryPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
+                <hr class="hr u-mb45 u-mt30" />
+
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}
                     dimensionKey="quality-crt-"
