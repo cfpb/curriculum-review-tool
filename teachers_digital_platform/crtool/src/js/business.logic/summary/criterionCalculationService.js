@@ -6,6 +6,7 @@ import UtilityCalculationService from "../summary/utilityCalculationService";
 import ContentElementaryCalculationService from "../summary/contentElementaryCalculationService";
 import ContentMiddleCalculationService from "../summary/contentMiddleCalculationService";
 import ContentHighCalculationService from "../summary/contentHighCalculationService";
+import EfficacyCalculationService from "../summary/efficacyCalculationService";
 import BaseCalculationService from "../summary/baseCalculationService";
 
 
@@ -71,7 +72,7 @@ const CriterionCalculationService = {
         } else if (currentCriterionGroupName.includes("content-high")) {
             ContentHighCalculationService.calculateOveralScore(component);
         } else if (currentCriterionGroupName.includes("efficacy")) {
-            //TODO: calculate overalscore for efficacy
+            EfficacyCalculationService.calculateOveralScore(component);
         }
     },
 

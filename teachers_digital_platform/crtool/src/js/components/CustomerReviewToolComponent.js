@@ -107,30 +107,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
-    print_OLD_ButtonClicked(distinctiveName) {
-        //Set up navigation to load dimension print screen
-        Repository.savePrintButtonPage(this, distinctiveName);
-        Repository.saveCurrentPage(this, distinctiveName);
-
-        //Open in new tab
-        if (distinctiveName !== C.START_PAGE) {
-            this.openPrintPage();
-            
-            //HACK: Need to find a better way to manage multiple tabs (The whole localStorage is messing with this)
-            //Set up to navigate back to dimension summary
-            console.log("one");
-            setTimeout(function() {
-                console.log("two");
-                this.setState({currentPrintButton: C.START_PAGE});
-                this.setState({currentPage: distinctiveName});
-                // Repository.savePrintButtonPage(this, C.START_PAGE);
-                // Repository.saveCurrentPage(this, distinctiveName);
-                console.log("three");
-            }, 5000);
-            console.log("four");
-        }
-    }
-
     handleFinalSummaryButtonClick() {
         this.setDistinctiveCompletionDateNow(C.FINAL_SUMMARY_PAGE);
         Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);

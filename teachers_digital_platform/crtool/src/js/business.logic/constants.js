@@ -48,6 +48,7 @@ const C = {
     STATUS_IN_START: "",
     STATUS_IN_PROGRESS: "in progress",
     STATUS_COMPLETE: "complete",
+    EFFICACY_SCOPE_EVIDENCE: "efficacy_scope_evidence",
 
     START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
     SURVEY_PAGE_RELATIVE_URL: "../../tdp/crt-survey/",

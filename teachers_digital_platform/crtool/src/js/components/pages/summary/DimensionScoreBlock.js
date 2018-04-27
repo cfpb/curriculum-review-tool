@@ -86,7 +86,7 @@ export default class DimensionScoreBlock extends React.Component {
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("limited", "text")}>
                                         <div><strong>Limited utility</strong></div>
-                                        At least one of the criteria was not met
+                                        {this.props.limitedText}
                                     </div>
                                 </div>
                             </div>

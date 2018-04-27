@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../business.logic/constants";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import SvgIcon from "../svgs/SvgIcon";
+import ViewEditResponseComponent from "../common/ViewEditResponseComponent";
 import DimensionInformation from "../common/DimensionInformation";
 
 export default class EfficacySummaryPage extends React.Component {
@@ -10,118 +11,25 @@ export default class EfficacySummaryPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
-    createEmptyScore(criterionName) {
-        let criterionScore = {
-            criterionName:criterionName,
-            has_beneficial:true,
-            all_essential_yes:false,
-            essential_total_yes:0,
-            essential_total_no:0,
-            beneficial_total_yes:0,
-            beneficial_total_no:0,
-            answered_all_complete:true,
-        };
-        return criterionScore;
-    }
-
     criterionOveralScoreClassName(level, type) {
-        let hasTwoStrongStudies = this.twoStrongStudiesExist();
-        let isLarge = this.scoreIsLarge(hasTwoStrongStudies);
-        let criterionThreeScore = this.props.criterionScores["efficacy-crt-3"];
-
-        if (criterionThreeScore === undefined) {
-            criterionThreeScore = this.createEmptyScore("efficacy-crt-3");
-        }
-
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
 
-        if (level === "strong" &&
-            isLarge &&
-            criterionThreeScore.all_essential_yes &&
-            criterionThreeScore.beneficial_total_no === 0) {
-
-            className = className + " is-active";
-        } else if (level === "moderate" &&
-                    isLarge &&
-                    criterionThreeScore.all_essential_yes &&
-                    criterionThreeScore.beneficial_total_no === 1) {
-
-            className = className + " is-active";
-        } else if (level === "mixed" &&
-                    isLarge &&
-                    criterionThreeScore.essential_total_yes < 2) {
-
-            className = className + " is-active";
-        } else if (level === "limited" &&
-                    !isLarge &&
-                    criterionThreeScore.essential_total_yes === 0 &&
-                    criterionThreeScore.beneficial_total_yes === 1) {
-
-            className = className + " is-active";
-        } else if (level === "notenoughinfo" &&
-                    !isLarge) {
-
+        let dimensionScore = this.props.dimensionOverallScores[C.EFFICACY_PAGE];
+        if (dimensionScore !== undefined && level === dimensionScore) {
             className = className + " is-active";
         }
 
         return className;
     }
 
-    twoStrongStudiesExist() {
-        let count = 0;
-        for (var score in this.props.criterionScores) {
-            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes)
-            {
-                count += 1;
-                if (count === 2) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    scoreIsLarge(hasTwoStrongStudies) {
-        let criterionScore = this.props.criterionScores["efficacy-crt-2"];
-        if (criterionScore === undefined) {
-            criterionScore = this.createEmptyScore("efficacy-crt-2");
-        }
-
-        return (hasTwoStrongStudies && 
-            criterionScore.beneficial_total_yes > 0);
-    }
-
-    scoreIsModerate(hasTwoStrongStudies) {
-        let criterionScore = this.props.criterionScores["efficacy-crt-2"];
-        if (criterionScore === undefined) {
-            criterionScore = this.createEmptyScore("efficacy-crt-2");
-        }
-
-        return (hasTwoStrongStudies &&
-                criterionScore.beneficial_total_yes === 0);
-    }
-
-    scoreIsLimited(hasTwoStrongStudies) {
-        return (!hasTwoStrongStudies);
-    }
-
-    scoreScopeOfEvidenceClassName(level, type) {
+    scopOfEvidenceScore(level, type) {
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
 
-        let hasTwoStrongStudies = this.twoStrongStudiesExist();
-
-        if (this.scoreIsLarge(hasTwoStrongStudies) && level === "large") {
+        let dimensionScore = this.props.dimensionOverallScores[C.EFFICACY_SCOPE_EVIDENCE];
+        if (dimensionScore !== undefined && level === dimensionScore) {
             className = className + " is-active";
-
-        } else if (this.scoreIsModerate(hasTwoStrongStudies) && level === "moderate") {
-            className = className + " is-active";
-
-        } else if (this.scoreIsLimited(hasTwoStrongStudies)  && level === "small") {
-            className = className + " is-active";
-
         }
 
         return className;
@@ -161,19 +69,15 @@ export default class EfficacySummaryPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
+
+                <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.EFFICACY_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
+
                 <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
-                <div className="l-survey-top">
-                    <button className="a-btn a-btn__link" onClick={(e) => {this.props.setDistinctiveBackToInProgress(C.EFFICACY_PAGE);}}>
-                        <SvgIcon
-                            icon="pencil"
-                            islarge="true"
-                            hasSpaceAfter="true" />
-                        View or edit responses
-                    </button>
-                </div>
+
+                <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
+
                 <h2 className="h2">Based on your answers, the efficacy score for this curriculum is:</h2>
                 <p>
                     <a>
@@ -183,6 +87,7 @@ export default class EfficacySummaryPage extends React.Component {
                             hasSpaceBefore="true" />
                     </a>
                 </p>
+
                 <h4 className="h3">Score for scope of evidence</h4>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
@@ -192,11 +97,11 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.scoreScopeOfEvidenceClassName("large")} viewBox="0 0 22 22">
+                                    <svg className={this.scopOfEvidenceScore("large")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.scoreScopeOfEvidenceClassName("large", "text")}>
+                                    <div className={this.scopOfEvidenceScore("large", "text")}>
                                         Large body of evidence
                                     </div>
                                 </div>
@@ -207,11 +112,11 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.scoreScopeOfEvidenceClassName("moderate")} viewBox="0 0 22 22">
+                                    <svg className={this.scopOfEvidenceScore("moderate")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.scoreScopeOfEvidenceClassName("moderate", "text")}>
+                                    <div className={this.scopOfEvidenceScore("moderate", "text")}>
                                         Moderate body of evidence
                                     </div>
                                 </div>
@@ -222,11 +127,11 @@ export default class EfficacySummaryPage extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.scoreScopeOfEvidenceClassName("small")} viewBox="0 0 22 22">
+                                    <svg className={this.scopOfEvidenceScore("small")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.scoreScopeOfEvidenceClassName("small", "text")}>
+                                    <div className={this.scopOfEvidenceScore("small", "text")}>
                                         Small body of evidence
                                     </div>
                                 </div>
@@ -234,6 +139,11 @@ export default class EfficacySummaryPage extends React.Component {
                         </li>
                     </ul>
                 </div>
+
+
+
+
+
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />

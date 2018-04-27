@@ -104,7 +104,7 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderMyNotes() {
-        if (this.currentPrintButton === C.START_PAGE) {
+        if (this.props.currentPrintButton === C.START_PAGE) {
             return this.renderNotesEditableVersion();
         }
         else {
@@ -113,6 +113,7 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderNotesEditableVersion() {
+        console.log("Showing Editable version!!!");
         return (
             <textarea className="a-text-input a-text-input__full"
                 rows="6"
@@ -125,6 +126,7 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderNotesPrintVersion() {
+        console.log("Showing Print version");
         let notes = this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber];
         if (notes === undefined || notes === "") {
             return (<p class="o-survey_question-helper">No information provided</p>);
@@ -134,7 +136,7 @@ export default class ContentBlockSummary extends React.Component {
     }
 
     renderNotesHelperText() {
-        if (this.currentPrintButton === C.START_PAGE) {
+        if (this.props.currentPrintButton === C.START_PAGE) {
             return (
                 <small className="a-label_helper a-label_helper__block">
                     Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.

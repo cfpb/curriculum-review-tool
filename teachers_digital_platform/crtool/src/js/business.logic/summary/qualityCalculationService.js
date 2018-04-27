@@ -56,7 +56,6 @@ const QualityCalculationService = {
         Repository.savedimensionOverallScores(component, dimensionOverallScores);
     },
 
-
     calculateQualityCriterionWithExceeds(criterionScore) {
         criterionScore.exceeds = false;
         criterionScore.meets = false;

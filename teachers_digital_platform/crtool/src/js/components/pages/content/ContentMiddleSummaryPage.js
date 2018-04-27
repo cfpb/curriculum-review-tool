@@ -113,6 +113,9 @@ export default class ContentMiddleSummaryPage extends React.Component {
                                     dimensionKey="content-middle-crt-"
                                     dimensionName="Content"
                                     dimensionLead="How does this curriculum meet the criteria for content:"
+                                    strongText="All 6 criteria were met, and at least one was exceeded"
+                                    moderate="All 6 criteria were met"
+                                    limitedText="At least one of the criteria was not met"
                                     {...this.props} />
             </React.Fragment>
         );

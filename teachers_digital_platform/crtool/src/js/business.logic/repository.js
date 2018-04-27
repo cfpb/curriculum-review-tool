@@ -112,7 +112,7 @@ const Repository = {
     },
 
     getDimensionOverallScores() {
-        return JSON.parse(localStorage.getItem("dimensionOverllScores")) || {};
+        return JSON.parse(localStorage.getItem("dimensionOverallScores")) || {};
     },
 
     getCriterionCompletionSatuses() {
@@ -123,9 +123,9 @@ const Repository = {
         return JSON.parse(localStorage.getItem("criterionClickedTitles")) || {};
     },
 
-    savedimensionOverallScores(component, dimensionOverllScores) {
-        localStorage.setItem("dimensionOverllScores", JSON.stringify(dimensionOverllScores));
-        component.setState({dimensionOverllScores: dimensionOverllScores});
+    savedimensionOverallScores(component, dimensionOverallScores) {
+        localStorage.setItem("dimensionOverallScores", JSON.stringify(dimensionOverallScores));
+        component.setState({dimensionOverallScores: dimensionOverallScores});
     },
 
     /*
