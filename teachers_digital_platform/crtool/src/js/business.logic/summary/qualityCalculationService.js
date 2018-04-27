@@ -33,15 +33,15 @@ const QualityCalculationService = {
                 component.state.criterionScores["quality-crt-2"].doesnotmeet ||
                 component.state.criterionScores["quality-crt-3"].doesnotmeet ||
                 component.state.criterionScores["quality-crt-4"].doesnotmeet ) {
-                
+
                 score = "limited";
             }
-            
+
             if (component.state.criterionScores["quality-crt-1"].meets &&
                 component.state.criterionScores["quality-crt-2"].meets &&
                 component.state.criterionScores["quality-crt-3"].meets &&
                 component.state.criterionScores["quality-crt-4"].meets ) {
-                
+
                 score = "moderate";
             }
         }

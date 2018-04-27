@@ -47,62 +47,62 @@ export default class UtilitySummaryPage extends React.Component {
                 </button>
                 <DimensionInformation dimensionName={C.UTILITY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={false}
-                                    showBeneficial={false}
-                                    dimensionKey="utility-crt-"
-                                    dimensionPage={C.UTILITY_PAGE}
-                                    criterionNumber="1"
-                                    criterionName="Criterion 1: Materials to support cognitive development"
-                                    criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={false}
+                    showBeneficial={false}
+                    dimensionKey="utility-crt-"
+                    dimensionPage={C.UTILITY_PAGE}
+                    criterionNumber="1"
+                    criterionName="Criterion 1: Materials to support cognitive development"
+                    criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="utility-crt-"
-                                    dimensionPage={C.UTILITY_PAGE}
-                                    criterionNumber="2"
-                                    criterionName="Criterion 2: Differentiated instruction for diverse populations"
-                                    criterionLead="Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="utility-crt-"
+                    dimensionPage={C.UTILITY_PAGE}
+                    criterionNumber="2"
+                    criterionName="Criterion 2: Differentiated instruction for diverse populations"
+                    criterionLead="Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="utility-crt-"
-                                    dimensionPage={C.UTILITY_PAGE}
-                                    criterionNumber="3"
-                                    criterionName="Criterion 3: Quality materials for lesson planning"
-                                    criterionLead="Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="utility-crt-"
+                    dimensionPage={C.UTILITY_PAGE}
+                    criterionNumber="3"
+                    criterionName="Criterion 3: Quality materials for lesson planning"
+                    criterionLead="Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="utility-crt-"
-                                    dimensionPage={C.UTILITY_PAGE}
-                                    criterionNumber="4"
-                                    criterionName="Criterion 4: Materials to assess mastery"
-                                    criterionLead="Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="utility-crt-"
+                    dimensionPage={C.UTILITY_PAGE}
+                    criterionNumber="4"
+                    criterionName="Criterion 4: Materials to assess mastery"
+                    criterionLead="Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="utility-crt-"
-                                    dimensionPage={C.UTILITY_PAGE}
-                                    criterionNumber="5"
-                                    criterionName="Criterion 5: Instructional supports"
-                                    criterionLead="Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="utility-crt-"
+                    dimensionPage={C.UTILITY_PAGE}
+                    criterionNumber="5"
+                    criterionName="Criterion 5: Instructional supports"
+                    criterionLead="Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students."
+                    {...this.props} />
 
-                <DimensionScoreBlock 
-                                    dimensionPage={C.UTILITY_PAGE}
-                                    dimensionKey="utility-crt-"
-                                    dimensionName="Utility"
-                                    dimensionLead="How does this curriculum meet the criteria for utility:"
-                                    {...this.props} />
+                <DimensionScoreBlock
+                    dimensionPage={C.UTILITY_PAGE}
+                    dimensionKey="utility-crt-"
+                    dimensionName="Utility"
+                    dimensionLead="How does this curriculum meet the criteria for utility:"
+                    {...this.props} />
             </React.Fragment>
         );
     }

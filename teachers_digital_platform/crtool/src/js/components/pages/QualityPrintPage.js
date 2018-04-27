@@ -19,14 +19,14 @@ export default class QualityPrintPage extends React.Component {
             <React.Fragment>
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
 
-                <DimensionInformation   
-                            dimensionName={C.QUALITY_PAGE} 
-                            dimensionSummary="The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access." 
+                <DimensionInformation
+                            dimensionName={C.QUALITY_PAGE}
+                            dimensionSummary="The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access."
                             {...this.props}
                             reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
 
                 {/* Criterion 1 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={true}
                                     showBeneficial={true}
                                     dimensionKey="quality-crt-"
@@ -35,9 +35,9 @@ export default class QualityPrintPage extends React.Component {
                                     criterionName="Criterion 1: Accessibility"
                                     criterionLead="Curriculum materials are physically accessible to teachers and students in a typical school setting."
                                     {...this.props} />
-                
+
                 {/* Criterion 2 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={false}
                                     showBeneficial={false}
                                     dimensionKey="quality-crt-"
@@ -48,7 +48,7 @@ export default class QualityPrintPage extends React.Component {
                                     {...this.props} />
 
                 {/* Criterion 4 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={true}
                                     showBeneficial={true}
                                     dimensionKey="quality-crt-"
@@ -59,7 +59,7 @@ export default class QualityPrintPage extends React.Component {
                                     {...this.props} />
 
                 {/* Criterion 3 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={false}
                                     showBeneficial={false}
                                     dimensionKey="quality-crt-"
@@ -71,7 +71,7 @@ export default class QualityPrintPage extends React.Component {
 
                 <br /><br />
                 {/* Quality Overall Score */}
-                <DimensionScoreBlock 
+                <DimensionScoreBlock
                                     dimensionPage={C.QUALITY_PAGE}
                                     dimensionKey="quality-crt-"
                                     dimensionName="Quality"

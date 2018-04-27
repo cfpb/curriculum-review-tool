@@ -46,78 +46,76 @@ export default class ContentHighSummaryPage extends React.Component {
                     Print or save summary
                 </button>
                 <DimensionInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
-               
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    criterionNumber="1"
-                                    criterionName="Criterion 1:  Earning, income, and careers"
-                                    criterionLead="The curriculum addresses grade-level appropriate topics for earning, income, and careers."
-                                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    criterionNumber="2"
-                                    criterionName="Criterion 2: Saving and investing"
-                                    criterionLead="The curriculum addresses grade-level appropriate topics for saving and investing."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="content-high-crt-"
+                    dimensionPage={C.CONTENT_PAGE}
+                    criterionNumber="1"
+                    criterionName="Criterion 1:  Earning, income, and careers"
+                    criterionLead="The curriculum addresses grade-level appropriate topics for earning, income, and careers."
+                    {...this.props} />
 
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="content-high-crt-"
+                    dimensionPage={C.CONTENT_PAGE}
+                    criterionNumber="2"
+                    criterionName="Criterion 2: Saving and investing"
+                    criterionLead="The curriculum addresses grade-level appropriate topics for saving and investing."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    criterionNumber="3"
-                                    criterionName="Criterion 3: Spending"
-                                    criterionLead="The curriculum addresses grade-level appropriate topics for spending."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="content-high-crt-"
+                    dimensionPage={C.CONTENT_PAGE}
+                    criterionNumber="3"
+                    criterionName="Criterion 3: Spending"
+                    criterionLead="The curriculum addresses grade-level appropriate topics for spending."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    criterionNumber="4"
-                                    criterionName="Criterion 4: Borrowing and credit"
-                                    criterionLead="The curriculum addresses grade-level appropriate topics for borrowing and credit."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="content-high-crt-"
+                    dimensionPage={C.CONTENT_PAGE}
+                    criterionNumber="4"
+                    criterionName="Criterion 4: Borrowing and credit"
+                    criterionLead="The curriculum addresses grade-level appropriate topics for borrowing and credit."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    criterionNumber="5"
-                                    criterionName="Criterion 5: Managing financial risk"
-                                    criterionLead="The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="content-high-crt-"
+                    dimensionPage={C.CONTENT_PAGE}
+                    criterionNumber="5"
+                    criterionName="Criterion 5: Managing financial risk"
+                    criterionLead="The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance."
+                    {...this.props} />
 
-                <CriterionScoreBlock 
-                                    showExceeds={true}
-                                    showBeneficial={true}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    criterionNumber="6"
-                                    criterionName="Criterion 6: Financial responsibility and money management"
-                                    criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
-                                    {...this.props} />
+                <CriterionScoreBlock
+                    showExceeds={true}
+                    showBeneficial={true}
+                    dimensionKey="content-high-crt-"
+                    dimensionPage={C.CONTENT_PAGE}
+                    criterionNumber="6"
+                    criterionName="Criterion 6: Financial responsibility and money management"
+                    criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
+                    {...this.props} />
 
-
-                <DimensionScoreBlock 
-                                    dimensionPage={C.CONTENT_PAGE}
-                                    dimensionKey="content-high-crt-"
-                                    dimensionName="Content"
-                                    dimensionLead="How does this curriculum meet the criteria for content:"
-                                    strongText="All 6 criteria were met, and at least one was exceeded"
-                                    moderate="All 6 criteria were met"
-                                    limitedText="At least one of the criteria was not met"
-                                    {...this.props} />
+                <DimensionScoreBlock
+                    dimensionPage={C.CONTENT_PAGE}
+                    dimensionKey="content-high-crt-"
+                    dimensionName="Content"
+                    dimensionLead="How does this curriculum meet the criteria for content:"
+                    strongText="All 6 criteria were met, and at least one was exceeded"
+                    moderate="All 6 criteria were met"
+                    limitedText="At least one of the criteria was not met"
+                    {...this.props} />
             </React.Fragment>
         );
     }

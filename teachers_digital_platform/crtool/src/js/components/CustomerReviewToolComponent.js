@@ -98,10 +98,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         //Set up navigation to load dimension print screen
         Repository.savePrintButtonPage(this, distinctiveName);
         Repository.saveCurrentPage(this, distinctiveName);
-        
+
         if (distinctiveName !== C.START_PAGE) {
             this.openPrintPage();
-            
+
             this.setState({currentPage: distinctiveName});
             this.setState({currentPrintButton: C.START_PAGE});
         }

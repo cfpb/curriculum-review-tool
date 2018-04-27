@@ -4,7 +4,7 @@ import C from "../../../business.logic/constants";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class EfficacyScopeEvidenceComponent extends React.Component {
-    
+
     scopOfEvidenceScore(level, type) {
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
@@ -21,9 +21,9 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
         return (
             <React.Fragment>
                 <h2 className="h2">Based on your answers, the efficacy score for this curriculum is:</h2>
-                
 
-                {this.props.currentPrintButton === C.START_PAGE && 
+
+                {this.props.currentPrintButton === C.START_PAGE &&
                         (<p><a> How efficacy is scored. <SvgIcon icon="document" hasSpaceBefore="true" /></a></p>)}
 
                 <h4 className="h3">Score for scope of evidence</h4>
@@ -81,4 +81,3 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
         );
     }
 }
-

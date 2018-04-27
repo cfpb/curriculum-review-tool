@@ -18,9 +18,9 @@ export default class EfficacyPrintPage extends React.Component {
             <React.Fragment>
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
 
-                <DimensionInformation   
-                            dimensionName={C.EFFICACY_PAGE} 
-                            dimensionSummary="The efficacy dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access." 
+                <DimensionInformation
+                            dimensionName={C.EFFICACY_PAGE}
+                            dimensionSummary="The efficacy dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access."
                             {...this.props}
                             reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
 

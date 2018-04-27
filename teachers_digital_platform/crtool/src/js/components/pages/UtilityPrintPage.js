@@ -17,14 +17,14 @@ export default class UtilityPrintPage extends React.Component {
             <React.Fragment>
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
 
-                <DimensionInformation   
-                            dimensionName={C.UTILITY_PAGE} 
-                            dimensionSummary="TThe utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge." 
+                <DimensionInformation
+                            dimensionName={C.UTILITY_PAGE}
+                            dimensionSummary="TThe utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge."
                             {...this.props}
                             reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
 
                 {/* Criterion 1 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={false}
                                     showBeneficial={false}
                                     dimensionKey="utility-crt-"
@@ -35,7 +35,7 @@ export default class UtilityPrintPage extends React.Component {
                                     {...this.props} />
 
                 {/* Criterion 2 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={true}
                                     showBeneficial={true}
                                     dimensionKey="utility-crt-"
@@ -46,7 +46,7 @@ export default class UtilityPrintPage extends React.Component {
                                     {...this.props} />
 
                 {/* Criterion 3 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={true}
                                     showBeneficial={true}
                                     dimensionKey="utility-crt-"
@@ -57,7 +57,7 @@ export default class UtilityPrintPage extends React.Component {
                                     {...this.props} />
 
                 {/* Criterion 4 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={true}
                                     showBeneficial={true}
                                     dimensionKey="utility-crt-"
@@ -68,7 +68,7 @@ export default class UtilityPrintPage extends React.Component {
                                     {...this.props} />
 
                 {/* Criterion 5 */}
-                <CriterionScoreBlock 
+                <CriterionScoreBlock
                                     showExceeds={true}
                                     showBeneficial={true}
                                     dimensionKey="utility-crt-"
@@ -80,7 +80,7 @@ export default class UtilityPrintPage extends React.Component {
 
                 <br /><br />
                 {/* Utility Overall Score */}
-                <DimensionScoreBlock 
+                <DimensionScoreBlock
                                     dimensionPage={C.UTILITY_PAGE}
                                     dimensionKey="utility-crt-"
                                     dimensionName="Utility"
