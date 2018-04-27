@@ -1,6 +1,8 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
+import SaveWorkInformation from "../common/SaveWorkInformation";
+import PrintOrSaveFinalSummary from "../common/PrintOrSaveFinalSummary";
 
 export default class FinalCurriculumInformation extends React.Component {
     renderReviewedOnDate() {
@@ -16,11 +18,15 @@ export default class FinalCurriculumInformation extends React.Component {
                                 block__flush-top
                                 block__padded-bottom
                                 block__border-bottom">
-                    <div className="h5">CFPB curriculum review tool</div>
                     <h1>Final summary for {this.props.curriculumTitle}</h1>
                     <p className="lead-paragraph u-mb30">
                         This summary shows the scores for all four dimensions.
                     </p>
+
+                    <SaveWorkInformation />
+                    <PrintOrSaveFinalSummary />
+                    
+
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
                     <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>
