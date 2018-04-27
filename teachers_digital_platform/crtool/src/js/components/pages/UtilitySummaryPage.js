@@ -35,6 +35,8 @@ export default class UtilitySummaryPage extends React.Component {
                     showBeneficial={false}
                     dimensionKey="utility-crt-"
                     dimensionPage={C.UTILITY_PAGE}
+                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
                     criterionNumber="1"
                     criterionName="Criterion 1: Materials to support cognitive development"
                     criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."

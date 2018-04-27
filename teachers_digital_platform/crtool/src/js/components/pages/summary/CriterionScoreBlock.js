@@ -3,7 +3,7 @@ import React from "react";
 import C from "../../../business.logic/constants";
 import ViewEditResponseComponent from "../../common/ViewEditResponseComponent";
 
-export default class ContentBlockSummary extends React.Component {
+export default class CriterionScoreBlock extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
         this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
     }
@@ -112,11 +112,32 @@ export default class ContentBlockSummary extends React.Component {
         }
     }
 
+    renderEssential() {
+        let essentialAnswerTotalText = "<b>Your answers for <em>essential</em> components:</b>";
+        if (this.props.essentialAnsserTotalText !== undefined && this.props.essentailAnserTotalText !== "") {
+            essentialAnswerTotalText = this.props.essentailAnserTotalText;
+        }
+
+        return (
+            <React.Fragment>
+                <p><div dangerouslySetInnerHTML={{__html: essentialAnswerTotalText}} /></p>
+                <ul className="m-component-list">
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
+                </ul>
+            </React.Fragment>
+        );
+    }
+
     renderBeneficial() {
+        let beneficialAnswerTotalText = "<b>Your answers for <em>essential</em> components:</b>";
+        if (this.props.beneficialAnswerTotalText !== undefined && this.props.beneficialAnswerTotalText !== "") {
+            beneficialAnswerTotalText = this.props.beneficialAnswerTotalText;
+        }
         if (this.props.showBeneficial) {
             return (
                 <React.Fragment>
-                    <p><b>Your answers for <em>beneficial</em> components:</b></p>
+                <p><div dangerouslySetInnerHTML={{__html: beneficialAnswerTotalText}} /></p>
                     <ul className="m-component-list">
                         <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
                         <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
@@ -219,11 +240,7 @@ export default class ContentBlockSummary extends React.Component {
                         </li>
                     </ul>
                     <div className="m-curriculum-status_components">
-                        <p><b>Your answers for <em>essential</em> components:</b></p>
-                        <ul className="m-component-list">
-                            <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
-                            <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
-                        </ul>
+                        {this.renderEssential()}
                         {this.renderBeneficial()}
                     </div>
                 </div>
