@@ -15,7 +15,7 @@ export default class FinalSummaryButton extends React.Component {
             this.props.efficacyInProgress === C.STATUS_COMPLETE) {
                 return (
                     <div className="u-center">
-                        <button className="a-btn a-btn__super" onClick={(e) => {this.handleFinalSummaryButtonClick()}}>Final Summary</button>
+                        <button className="a-btn a-btn__super" onClick={(e) => {this.handleFinalSummaryButtonClick()}}>Final summary</button>
                     </div>
                 );
         } else {
