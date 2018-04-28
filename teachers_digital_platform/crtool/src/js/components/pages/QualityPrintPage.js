@@ -48,7 +48,6 @@ export default class QualityPrintPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Accuracy and timeliness"
                     criterionLead="Curriculum materials are current and free of errors."
-                    criterionLead="Curriculum materials are current and free of errors."
                     criterionMeetsText="All essential components scored “yes”"
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
