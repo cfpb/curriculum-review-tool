@@ -32,8 +32,13 @@ export default class EfficacySummaryPage extends React.Component {
                 </button>
 
                 <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
+
+                <hr class="hr u-mb45 u-mt30" />
+
                 <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
+
+                <hr class="hr u-mb45 u-mt30" />
 
                 <EfficacyOveralScoreComponent
                     dimensionPage={C.UTILITY_PAGE}
