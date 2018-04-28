@@ -1,0 +1,12 @@
+// Full-width layout
+
+.l-full-width {
+    box-sizing: border-box;
+    margin-left: unit( -30px / @base-font-size-px, em );
+    margin-right: unit( -30px / @base-font-size-px, em );
+
+    .respond-to-min(1230px , {
+        margin-left: ~'calc(50% + 7.5px - 50vw)';
+        margin-right: ~'calc(50% + 7.5px - 50vw)';
+    });
+}
