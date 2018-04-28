@@ -2,14 +2,48 @@
 // Button groups
 //
 
+.m-btn-group {
+    .a-btn {
+        margin-right: unit( 6px / @btn-font-size, em);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        + .a-btn {
+            margin-left: 0;
+        }
+    }
+
+    .a-btn__super {
+        margin-right: unit( 6px / @btn__super-font-size, em);
+
+        + .a-btn__super {
+            margin-left: 0;
+        }
+    }
+
+    .a-btn__link {
+        padding-top: unit( @btn-v-padding / @btn-font-size, em );
+
+        &.a-btn__super {
+            padding-top: unit( 11px / @btn__super-font-size, em );
+        }
+    }
+  }
+
 // Adds variant with more spacing between buttons.
 
 .m-btn-group__wide {
-    .a-btn + .a-btn {
-        margin-left: unit( @grid_gutter-width / @btn-font-size, em );
+    .a-btn {
+        margin-right: unit( @grid_gutter-width / @btn-font-size, em );
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
-    .a-btn__super + .a-btn__super {
-        margin-left: unit( @grid_gutter-width / @btn__super-font-size, em );
+    .a-btn__super {
+        margin-right: unit( @grid_gutter-width / @btn__super-font-size, em );
     }
 }
