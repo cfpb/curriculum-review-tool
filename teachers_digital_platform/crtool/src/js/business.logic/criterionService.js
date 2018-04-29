@@ -67,7 +67,10 @@ const CriterionService = {
      * Ease of work flow when loading pages based on Criterion status
      */
     setCriterionGroupCompletionStatuses(component, criterion, status) {
-        CriterionCalculationService.setCriterionGroupCompletionStatuses(component, criterion, status);
+        // Do not change if the current criterion group is already complete
+        if (component.state.criterionCompletionStatuses[criterion] !== C.ICON_CHECK_ROUND) {
+            CriterionCalculationService.setCriterionGroupCompletionStatuses(component, criterion, status);
+        }
     },
 
     /*
@@ -230,20 +233,23 @@ const CriterionService = {
      */
     initializeAnswerObjects(component, fields) {
         let alteredCriterionObjects =  component.state.criterionAnswers;
+        let foundNewCriterionObject = false;
 
         for (const criterionKey in fields) {
             if (alteredCriterionObjects[criterionKey] === undefined) {
                 alteredCriterionObjects[criterionKey] = "";
+                foundNewCriterionObject = true;
             }
         }
 
-        Repository.saveCriterionAnswers(component, alteredCriterionObjects);
+        if (foundNewCriterionObject) {
+            Repository.saveCriterionAnswers(component, alteredCriterionObjects);
+        }
     },
 
     initializeStudyAnsers(component, key, studyRefIds) {
         let existingStudies = component.state.studyAnswers;
         if (existingStudies[key] === undefined) {
-
             existingStudies[key] = studyRefIds;
             Repository.saveStudyAnsers(component, existingStudies);
         }

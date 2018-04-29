@@ -18,7 +18,7 @@ import StartCriterionPage from "./StartCriterionPage";
 export default class SurveyPageContainer extends React.Component {
     render() {
         if (this.props.currentPage === C.CONTENT_PAGE) {
-            if (this.props.contentInProgress === C.STATUS_COMPLETE) {
+            if (this.props.contentIsSummaryView) {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
                     return (<ContentElementarySummaryPage {...this.props} />);
                 } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
@@ -36,19 +36,19 @@ export default class SurveyPageContainer extends React.Component {
                 }
             }
         } else if (this.props.currentPage === C.UTILITY_PAGE) {
-            if (this.props.utilityInProgress === C.STATUS_COMPLETE) {
+            if (this.props.utilityIsSummaryView) {
                 return (<UtilitySummaryPage {...this.props} />);
             } else {
                 return (<UtilityCriterionPage {...this.props} /> );
             }
         } else if (this.props.currentPage === C.QUALITY_PAGE) {
-            if (this.props.qualityInProgress === C.STATUS_COMPLETE) {
+            if (this.props.qualityIsSummaryView) {
                 return (<QualitySummaryPage {...this.props} />);
             } else {
                 return (<QualityCriterionPage {...this.props} />);
             }
         } else if (this.props.currentPage === C.EFFICACY_PAGE) {
-            if (this.props.efficacyInProgress === C.STATUS_COMPLETE) {
+            if (this.props.efficacyIsSummaryView) {
                 return (<EfficacySummaryPage {...this.props} />);
             } else {
                 return (<EfficacyCriterionPage {...this.props} />);

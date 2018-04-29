@@ -22,6 +22,11 @@ const Repository = {
         this.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
         this.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
 
+        this.setDistinctiveView(this, C.CONTENT_PAGE, false);
+        this.setDistinctiveView(this, C.UTILITY_PAGE, false);
+        this.setDistinctiveView(this, C.QUALITY_PAGE, false);
+        this.setDistinctiveView(this, C.EFFICACY_PAGE, false);
+
         this.saveStudyAnsers(this, {});
         this.saveCriterionScores(this, {});
         this.saveCriterionAnswers(this, {});
@@ -58,6 +63,22 @@ const Repository = {
 
     getEfficacyInProgress() {
         return localStorage.getItem(C.EFFICACY_STATUS);
+    },
+
+    getContentViewSummary() {
+        return localStorage.getItem(C.CONTENT_SUMMARY_VIEW) || false;
+    },
+
+    getQualityViewSummary() {
+        return localStorage.getItem(C.QUALITY_SUMMARY_VIEW) || false;
+    },
+
+    getUtilityViewSummary() {
+        return localStorage.getItem(C.UTILITY_SUMMARY_VIEW) || false;
+    },
+
+    getEfficacyViewSummary() {
+        return localStorage.getItem(C.EFFICACY_SUMMARY_VIEW) || false;
     },
 
     getContentSummaryButton() {
@@ -262,6 +283,32 @@ const Repository = {
         case C.EFFICACY_PAGE:
             localStorage.setItem(C.EFFICACY_STATUS, distinctiveStatus);
             component.setState({efficacyInProgress: distinctiveStatus});
+            break;
+        default:
+            break;
+        }
+    },
+
+    /*
+     * Set the current Distinctive view to either Summary or Survey
+     */
+    setDistinctiveView(component, changedDistinctive, isSummaryView) {
+        switch(changedDistinctive) {
+        case C.CONTENT_PAGE:
+            localStorage.setItem(C.CONTENT_SUMMARY_VIEW, isSummaryView);
+            component.setState({contentIsSummaryView: isSummaryView});
+            break;
+        case C.UTILITY_PAGE:
+            localStorage.setItem(C.UTILITY_SUMMARY_VIEW, isSummaryView);
+            component.setState({utilityIsSummaryView: isSummaryView});
+            break;
+        case C.QUALITY_PAGE:
+            localStorage.setItem(C.QUALITY_SUMMARY_VIEW, isSummaryView);
+            component.setState({qualityIsSummaryView: isSummaryView});
+            break;
+        case C.EFFICACY_PAGE:
+            localStorage.setItem(C.EFFICACY_SUMMARY_VIEW, isSummaryView);
+            component.setState({efficacyIsSummaryView: isSummaryView});
             break;
         default:
             break;

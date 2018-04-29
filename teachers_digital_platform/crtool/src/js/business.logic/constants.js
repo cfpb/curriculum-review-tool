@@ -20,6 +20,11 @@ const C = {
     UTILITY_STATUS: "utility_status",
     QUALITY_STATUS: "quality_status",
     EFFICACY_STATUS: "efficacy_status",
+    
+    CONTENT_SUMMARY_VIEW: "content_summary_view",
+    UTILITY_SUMMARY_VIEW: "utility_summary_view",
+    QUALITY_SUMMARY_VIEW: "quality_summary_view",
+    EFFICACY_SUMMARY_VIEW: "efficacy_summary_view",
 
     CONTENT_CRITERION_IS_COMPLETE: "content_is_complete",
     UTILITY_CRITERION_IS_COMPLETE: "utility_is_complete",
