@@ -159,7 +159,7 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: true,
-                            criterionRefId: "efficacy-crt-question-2.2.1_beneficial",
+                            criterionRefId: "efficacy-crt-question-2.2_beneficial",
                             hasInlineHtml: false,
                             componentText: "Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?",
                         },
@@ -179,7 +179,7 @@ export const EfficacyContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: false,
-                            criterionRefId: "efficacy-crt-question-3.1.1",
+                            criterionRefId: "efficacy-crt-question-3.1",
                             hasInlineHtml: false,
                             componentText: "Does at least one evaluation indicate positive effects significant at the 10% level?",
                         },
