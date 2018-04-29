@@ -35,9 +35,14 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
+                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
                     criterionNumber="1"
                     criterionName="Criterion 1: Accessibility"
                     criterionLead="Curriculum materials are physically accessible to teachers and students in a typical school setting."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -45,9 +50,12 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={false}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
+                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
                     criterionNumber="2"
                     criterionName="Criterion 2: Accuracy and timeliness"
                     criterionLead="Curriculum materials are current and free of errors."
+                    criterionMeetsText="All essential components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -55,9 +63,14 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
+                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
                     criterionNumber="3"
                     criterionName="Criterion 3: Objectivity"
                     criterionLead="Curriculum materials are objective."
+                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
+                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -65,16 +78,24 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={false}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
+                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
                     criterionNumber="4"
                     criterionName="Criterion 4: Visual appearance"
                     criterionLead="The visual appearance of the student materials is conducive to learning."
+                    criterionMeetsText="All essential components scored “yes”"
+                    criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
+
+                <hr class="hr u-mb45 u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}
                     dimensionKey="quality-crt-"
                     dimensionName="Quality"
                     dimensionLead="How does this curriculum meet the criteria for quality:"
+                    strongText="All 4 criteria were met, and at least one was exceeded"
+                    moderateText="All 4 criteria were met"
+                    limitedText="At least one of the criteria was not met"
                     {...this.props} />
             </React.Fragment>
         );

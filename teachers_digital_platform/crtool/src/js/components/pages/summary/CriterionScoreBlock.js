@@ -3,7 +3,7 @@ import React from "react";
 import C from "../../../business.logic/constants";
 import ViewEditResponseComponent from "../../common/ViewEditResponseComponent";
 
-export default class ContentBlockSummary extends React.Component {
+export default class CriterionScoreBlock extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
         this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
     }
@@ -61,6 +61,31 @@ export default class ContentBlockSummary extends React.Component {
         return textValue;
     }
 
+    renderExceedsText() {
+        if (this.props.criterionExceedsText) {
+            return (<div dangerouslySetInnerHTML={{__html: this.props.criterionExceedsText}} />);
+        } else {
+            return null;
+        }
+    }
+
+    renderMeetsText() {
+        if (this.props.criterionMeetsText) {
+            return (<div dangerouslySetInnerHTML={{__html: this.props.criterionMeetsText}} />);
+        } else {
+            return null;
+        }
+    }
+
+    renderDoesNotMeetText() {
+        if (this.props.criterionDoesNotMeetText) {
+            return (<div dangerouslySetInnerHTML={{__html: this.props.criterionDoesNotMeetText}} />);
+        } else {
+            return null;
+        }
+    }
+
+
     renderExceeds() {
         if (this.props.showExceeds) {
             return (
@@ -75,8 +100,8 @@ export default class ContentBlockSummary extends React.Component {
                             </svg>
                             <div className={this.renderTextValue("text", "exceeds")} >
                                 <div><strong>Exceeds</strong></div>
-                                All essential components scored “yes”<br />
-                                At least one beneficial component scored “yes”
+                                {this.props.criterionExceedsContent}
+                                {this.renderExceedsText()}
                             </div>
                         </div>
                     </div>
@@ -87,15 +112,36 @@ export default class ContentBlockSummary extends React.Component {
         }
     }
 
+    renderEssential() {
+        let essentialAnswerTotalText = "<b>Your answers for <em>essential</em> components:</b>";
+        if (this.props.essentialAnsserTotalText !== undefined && this.props.essentailAnserTotalText !== "") {
+            essentialAnswerTotalText = this.props.essentailAnserTotalText;
+        }
+
+        return (
+            <React.Fragment>
+                <p dangerouslySetInnerHTML={{__html: essentialAnswerTotalText}} />
+                <ul className="m-component-list">
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
+                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
+                </ul>
+            </React.Fragment>
+        );
+    }
+
     renderBeneficial() {
+        let beneficialAnswerTotalText = "<b>Your answers for <em>beneficial</em> components:</b>";
+        if (this.props.beneficialAnswerTotalText !== undefined && this.props.beneficialAnswerTotalText !== "") {
+            beneficialAnswerTotalText = this.props.beneficialAnswerTotalText;
+        }
         if (this.props.showBeneficial) {
             return (
                 <React.Fragment>
-                <p><b>Your answers for <em>beneficial</em> components:</b></p>
-                <ul className="m-component-list">
-                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
-                    <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
-                </ul>
+                    <p dangerouslySetInnerHTML={{__html: beneficialAnswerTotalText}} />
+                    <ul className="m-component-list">
+                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
+                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>
+                    </ul>
                 </React.Fragment>
             );
         } else {
@@ -148,70 +194,65 @@ export default class ContentBlockSummary extends React.Component {
     render() {
         return (
             <React.Fragment>
-            <hr className="hr
-                            u-mb45
-                            u-mt30" />
-            <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
-            <h3 className="h2">{this.props.criterionName}</h3>
-            <p className="u-mb30">{this.props.criterionLead}</p>
-            <div className="m-curriculum-status">
-                <ul className="m-list__unstyled
-                                u-mb0">
+                <hr className="hr
+                                u-mb45
+                                u-mt30" />
+                <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
+                <h3 className="h2">{this.props.criterionName}</h3>
+                <p className="u-mb30">{this.props.criterionLead}</p>
+                <div className="m-curriculum-status">
+                    <ul className="m-list__unstyled
+                                    u-mb0">
 
-                    {this.renderExceeds()}
+                        {this.renderExceeds()}
 
-                    <li className="u-mb30">
-                        <div className="m-form-field
-                                        m-form-field__radio
-                                        m-form-field__display">
-                            <div className="a-label">
-                                <svg className={this.renderTextValue("icon", "meets")} viewBox="0 0 22 22">
-                                    <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                    <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                </svg>
-                                <div className={this.renderTextValue("text", "meets")} >
-                                    <div><strong>Meets</strong></div>
-                                    All essential components scored “yes”<br />
-                                    None of the beneficial components scored “yes”
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                            m-form-field__radio
+                                            m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.renderTextValue("icon", "meets")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className={this.renderTextValue("text", "meets")} >
+                                        <div><strong>Meets</strong></div>
+                                        {this.renderMeetsText()}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li className="u-mb30">
-                        <div className="m-form-field
-                                        m-form-field__radio
-                                        m-form-field__display">
-                            <div className="a-label">
-                                <svg className={this.renderTextValue("icon", "doesnotmeet")} viewBox="0 0 22 22">
-                                    <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                    <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                </svg>
-                                <div className={this.renderTextValue("text", "doesnotmeet")} >
-                                    <div><strong>Does not meet</strong></div>
-                                    One or more essential components scored “no”
+                        </li>
+                        <li className="u-mb30">
+                            <div className="m-form-field
+                                            m-form-field__radio
+                                            m-form-field__display">
+                                <div className="a-label">
+                                    <svg className={this.renderTextValue("icon", "doesnotmeet")} viewBox="0 0 22 22">
+                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                    </svg>
+                                    <div className={this.renderTextValue("text", "doesnotmeet")} >
+                                        <div><strong>Does not meet</strong></div>
+                                        {this.renderDoesNotMeetText()}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-                <div className="m-curriculum-status_components">
-                    <p><b>Your answers for <em>essential</em> components:</b></p>
-                    <ul className="m-component-list">
-                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
-                        <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
+                        </li>
                     </ul>
-                    {this.renderBeneficial()}
+                    <div className="m-curriculum-status_components">
+                        {this.renderEssential()}
+                        {this.renderBeneficial()}
+                    </div>
                 </div>
-            </div>
-            <div className="m-form-field m-form-field__textarea">
-                <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
-                    My notes
-                    &nbsp;<small className="a-label_helper">(optional)</small>
-                    {this.renderNotesHelperText()}
-                </label>
+                <div className="m-form-field m-form-field__textarea">
+                    <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
+                        My notes
+                        &nbsp;<small className="a-label_helper">(optional)</small>
+                        {this.renderNotesHelperText()}
+                    </label>
 
-                <p>{this.renderMyNotes()}</p>
-            </div>
+                    <p>{this.renderMyNotes()}</p>
+                </div>
             </React.Fragment>
         );
     }

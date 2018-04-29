@@ -20,13 +20,12 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h2 className="h2">Based on your answers, the efficacy score for this curriculum is:</h2>
-
+                <h2>Based on your answers, the efficacy score for this curriculum is:</h2>
 
                 {this.props.currentPrintButton === C.START_PAGE &&
                         (<p><a> How efficacy is scored. <SvgIcon icon="document" hasSpaceBefore="true" /></a></p>)}
 
-                <h4 className="h3">Score for scope of evidence</h4>
+                <h3>Score for scope of evidence</h3>
                 <div className="m-curriculum-status">
                     <ul className="m-list__unstyled
                                     u-mb0">

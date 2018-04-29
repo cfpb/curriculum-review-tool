@@ -517,5 +517,8 @@ Array [
     You’re Reviewing: 
     <b />
   </h2>,
+  <hr
+    className="hr u-mb30 u-mt45"
+  />,
 ]
 `;

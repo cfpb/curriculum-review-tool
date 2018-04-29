@@ -26,14 +26,14 @@ export default class EfficacyPrintPage extends React.Component {
 
                 <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
-                <br /><br />
+
                 <EfficacyOveralScoreComponent
-                    dimensionPage={C.EFFICACY_PAGE}
+                    dimensionPage={C.UTILITY_PAGE}
                     dimensionName="Efficacy"
                     dimensionKey="utility-crt-"
                     dimensionLead="How does this curriculum meet the criteria for efficacy:"
                     {...this.props} />
-                <br /><br />
+
                 {/* Forced Page Break */}
                 <div className="u-page-break-before">
 

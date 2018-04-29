@@ -27,9 +27,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                 <p>
                     Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
                 </p>
-
                 <SaveWorkInformation />
-
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
@@ -43,6 +41,9 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionNumber="1"
                     criterionName="Criterion 1:  Earning, income, and careers"
                     criterionLead="The curriculum addresses grade-level appropriate topics for earning, income, and careers."
+                    criterionExceedsText="Both components were addressed"
+                    criterionMeetsText="1 component was addressed"
+                    criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -53,6 +54,9 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionNumber="2"
                     criterionName="Criterion 2: Saving and investing"
                     criterionLead="The curriculum addresses grade-level appropriate topics for saving and investing."
+                    criterionExceedsText="All 4 components were addressed"
+                    criterionMeetsText="3 components were addressed"
+                    criterionDoesNotMeetText="Less than 3 components were addressed"
                     {...this.props} />
 
 
@@ -64,6 +68,9 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionNumber="3"
                     criterionName="Criterion 3: Spending"
                     criterionLead="The curriculum addresses grade-level appropriate topics for spending."
+                    criterionExceedsText="5 or more components were addressed"
+                    criterionMeetsText="4 components were addressed"
+                    criterionDoesNotMeetText="Less than 4 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -74,6 +81,9 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionNumber="4"
                     criterionName="Criterion 4: Borrowing and credit"
                     criterionLead="The curriculum addresses grade-level appropriate topics for borrowing and credit."
+                    criterionExceedsText="Both components were addressed"
+                    criterionMeetsText="1 component was addressed"
+                    criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -84,6 +94,9 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionNumber="5"
                     criterionName="Criterion 5: Managing financial risk"
                     criterionLead="The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance."
+                    criterionExceedsText="Both components were addressed"
+                    criterionMeetsText="1 component was addressed"
+                    criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -94,7 +107,11 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionNumber="6"
                     criterionName="Criterion 6: Financial responsibility and money management"
                     criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
+                    criterionMeetsText="1 component was addressed"
+                    criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
+
+                <hr class="hr u-mb45 u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
@@ -102,8 +119,8 @@ export default class ContentElementarySummaryPage extends React.Component {
                     dimensionName="Content"
                     dimensionLead="How does this curriculum meet the criteria for content:"
                     strongText="All 6 criteria were met, and at least one was exceeded"
-                    moderate="All 6 criteria were met"
-                    limitedText="At least one of the criteria was not met"
+                    moderateText="All 6 criteria were met"
+                    limitedText="At least one criterion was not met"
                     {...this.props} />
             </React.Fragment>
         );
