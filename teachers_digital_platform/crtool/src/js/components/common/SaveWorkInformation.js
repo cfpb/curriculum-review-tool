@@ -23,7 +23,8 @@ export default class SaveWorkInformation extends React.Component {
                             To save a permanent copy of your results, please print the summary or save it as a PDF.&ensp;
                             <SaveWorkModal
                                 buttonText="Learn more about how to save your work."
-                                hasIcon="false" />
+                                hasIcon="false"
+                                hasUnderline="true" />
                         </p>
                     </div>
                 </div>
