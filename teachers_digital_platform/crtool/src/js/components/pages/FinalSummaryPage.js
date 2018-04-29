@@ -9,6 +9,7 @@ import PrintOrSaveFinalSummary from "../common/PrintOrSaveFinalSummary";
 import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
 import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
+import DimensionNotReviewedComponent from "../common/DimensionNotReviewedComponent";
 import DimensionInformation from "../common/DimensionInformation";
 import KeyTakeawaysComponent from "../common/KeyTakeawaysComponent";
 import FinalCurriculumInformation from "../common/FinalCurriculumInformation";
@@ -32,7 +33,6 @@ export default class FinalSummaryPage extends React.Component {
                 </React.Fragment>
             );
         } else {
-            console.log("WHY ARE WE NOT PRINTING the criterion blocks!!!");
             return null;
         }
     }
@@ -54,32 +54,44 @@ export default class FinalSummaryPage extends React.Component {
 
                 <FinalCurriculumInformation {...this.props} />
 
-                <DimensionScoreBlock
-                    dimensionPage={C.CONTENT_PAGE}
-                    dimensionKey={contentDimensionKey}
-                    dimensionName="Content"
-                    dimensionLead="How does this curriculum meet the criteria for content:"
-                    {...this.props} />
+                { this.props.contentSummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Content" {...this.props} />}
+                { this.props.contentSummaryButton === "complete" && 
+                    <DimensionScoreBlock
+                        dimensionPage={C.CONTENT_PAGE}
+                        dimensionKey={contentDimensionKey}
+                        dimensionName="Content"
+                        dimensionLead="How does this curriculum meet the criteria for content:"
+                        {...this.props} />
+                }
 
+                { this.props.utilitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Utility" {...this.props} />}
+                { this.props.utilitySummaryButton === "complete" && 
                 <DimensionScoreBlock
                     dimensionPage={C.UTILITY_PAGE}
                     dimensionKey="utility-crt-"
                     dimensionName="Utility"
                     dimensionLead="How does this curriculum meet the criteria for utility:"
                     {...this.props} />
+                }
 
+                { this.props.qualitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Quality" {...this.props} />}
+                { this.props.qualitySummaryButton === "complete" && 
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}
                     dimensionKey="quality-crt-"
                     dimensionName="Quality"
                     dimensionLead="How does this curriculum meet the criteria for quality:"
                     {...this.props} />
+                }
 
+                { this.props.efficacySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Efficacy" {...this.props} />}
+                { this.props.efficacySummaryButton === "complete" && 
                 <EfficacyOveralScoreComponent dimensionPage={C.EFFICACY_PAGE}
                                               dimensionName="Efficacy"
                                               dimensionKey="utility-crt-"
                                               dimensionLead="How does this curriculum meet the criteria for efficacy:"
                                               {...this.props} />
+                }
 
                 <KeyTakeawaysComponent {...this.props} />
 

@@ -193,6 +193,12 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualityInProgress:this.state.qualityInProgress,
             efficacyInProgress:this.state.efficacyInProgress,
 
+
+            contentSummaryButton:this.state.contentSummaryButton,
+            utilitySummaryButton:this.state.utilitySummaryButton,
+            qualitySummaryButton:this.state.qualitySummaryButton,
+            efficacySummaryButton:this.state.efficacySummaryButton,
+
             studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,
             currentPrintButton:this.state.currentPrintButton,
@@ -202,6 +208,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
             finalSummaryShowEntireReview:this.state.finalSummaryShowEntireReview,
 
+            handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),
             resetPrintButtonState:this.resetPrintButtonState.bind(this),
             printButtonClicked:this.printButtonClicked.bind(this),
             removeEfficacyStudy:this.removeEfficacyStudy.bind(this),
@@ -256,8 +263,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
-        console.log(this.state.currentPage);
-
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE || 
             this.state.currentPage === C.FINAL_PRINT_EVERYTHING || 
             this.state.currentPage === C.FINAL_PRINT_PAGE) {
@@ -265,7 +270,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         } else if (this.state.currentPrintButton !== undefined && this.state.currentPrintButton !== C.START_PAGE) {
             return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {
-            console.log("Normal flow");
             return (
                 <React.Fragment>
                     <div className="l-survey-top">

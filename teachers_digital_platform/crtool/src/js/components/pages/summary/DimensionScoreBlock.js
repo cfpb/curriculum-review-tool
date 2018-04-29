@@ -2,6 +2,7 @@ import React from "react";
 
 import C from "../../../business.logic/constants";
 import SvgIcon from "../../svgs/SvgIcon";
+import DimensionIconTitleComponent from "../../common/DimensionIconTitleComponent";
 
 export default class DimensionScoreBlock extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -28,17 +29,17 @@ export default class DimensionScoreBlock extends React.Component {
         }
     }
 
+    isPrintMode() {
+        let isPrintMode = false;
+        isPrintMode = this.props.currentPrintButton !== "" && this.props.currentPrintButton !== C.START_PAGE;
+        return isPrintMode;
+    }
+
     render() {
         return (
             <React.Fragment>
-                <div className={this.props.currentPrintButton === C.START_PAGE && "o-well u-mb30"}>
-                    <h2>
-                        <SvgIcon
-                            icon="star-round"
-                            isLarge="true"
-                            hasSpaceAfter="true" />
-                        {this.props.dimensionName} overall score
-                    </h2>
+                <div className={!this.isPrintMode() && "o-well u-mb30"}>
+                    <DimensionIconTitleComponent {...this.props} dimensionTitle={this.props.dimensionName + " overall score"} />
                     <p className="lead-paragraph">
                         {this.props.dimensionLead}
                     </p>
@@ -102,7 +103,7 @@ export default class DimensionScoreBlock extends React.Component {
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             {
-                                this.props.currentPrintButton === C.START_PAGE &&
+                                this.isPrintMode() === false &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         List the strengths for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -112,7 +113,7 @@ export default class DimensionScoreBlock extends React.Component {
                         </label>
 
                         {
-                            this.props.currentPrintButton === C.START_PAGE &&
+                            this.isPrintMode() === false &&
                                 <textarea className="a-text-input a-text-input__full"
                                     rows="6"
                                     id={this.props.dimensionKey + "assets-optional"}
@@ -121,7 +122,7 @@ export default class DimensionScoreBlock extends React.Component {
                                     onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
                                 </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])}
+                        {this.isPrintMode() && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea
@@ -130,7 +131,7 @@ export default class DimensionScoreBlock extends React.Component {
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             {
-                                this.props.currentPrintButton === C.START_PAGE &&
+                                this.isPrintMode() === false &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         List the weaknesses for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -140,7 +141,7 @@ export default class DimensionScoreBlock extends React.Component {
                         </label>
 
                         {
-                            this.props.currentPrintButton === C.START_PAGE &&
+                            this.isPrintMode() === false &&
                                 <textarea className="a-text-input a-text-input__full"
                                     rows="6"
                                     id={this.props.dimensionKey + "gaps-optional"}
@@ -149,7 +150,7 @@ export default class DimensionScoreBlock extends React.Component {
                                     onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
                                 </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
+                        {this.isPrintMode() && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
@@ -157,7 +158,7 @@ export default class DimensionScoreBlock extends React.Component {
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             {
-                                this.props.currentPrintButton === C.START_PAGE &&
+                                this.isPrintMode() === false &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         Add any final thoughts about the overall quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -167,7 +168,7 @@ export default class DimensionScoreBlock extends React.Component {
                         </label>
 
                         {
-                            this.props.currentPrintButton === C.START_PAGE &&
+                            this.isPrintMode() === false &&
                                 <textarea className="a-text-input a-text-input__full"
                                     rows="6"
                                     id={this.props.dimensionKey + "overall-notes-optional"}
@@ -176,9 +177,13 @@ export default class DimensionScoreBlock extends React.Component {
                                     onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
                                 </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
+                        {this.isPrintMode() && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
                     </div>
                 </div>
+
+                <hr className="hr
+                               u-mb45
+                               u-mt30" />
             </React.Fragment>
         );
     }

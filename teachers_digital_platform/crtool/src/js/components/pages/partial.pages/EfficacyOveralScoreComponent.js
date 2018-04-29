@@ -2,6 +2,7 @@ import React from "react";
 
 import C from "../../../business.logic/constants";
 import SvgIcon from "../../svgs/SvgIcon";
+import DimensionIconTitleComponent from "../../common/DimensionIconTitleComponent";
 
 export default class EfficacyOveralScoreComponent extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -32,13 +33,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
         return (
             <React.Fragment>
                 <div className={this.props.currentPrintButton === C.START_PAGE && "o-well u-mb30"}>
-                    <h2>
-                        <SvgIcon
-                            icon="star-round"
-                            isLarge="true"
-                            hasSpaceAfter="true" />
-                        {this.props.dimensionName} overall score
-                    </h2>
+                    <DimensionIconTitleComponent {...this.props} dimensionTitle={this.props.dimensionName + " overall score"} />
                     <p className="lead-paragraph">
                         {this.props.dimensionLead}
                     </p>
@@ -206,6 +201,11 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
                     </div>
                 </div>
+
+                <hr className="hr
+                               u-mb45
+                               u-mt30" />
+
             </React.Fragment>
         );
     }
