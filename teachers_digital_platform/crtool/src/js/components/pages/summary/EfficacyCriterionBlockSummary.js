@@ -1,6 +1,7 @@
 import React from "react";
 
 import CriterionComponent from "../../criterion/CriterionComponent";
+import CriterionEfficacyStudyComponent from "../../criterion/CriterionEfficacyStudyComponent";
 import { EfficacyContent } from "../../../content_data/efficacyContent";
 import DimensionIconTitleComponent from "../../common/DimensionIconTitleComponent";
 import DimensionNotReviewedComponent from "../../common/DimensionNotReviewedComponent";
@@ -23,6 +24,10 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
                         <p className="lead-paragraph">
                             The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness.
                         </p>
+
+                        <h1>Map Studies here</h1>
+                        <CriterionEfficacyStudyComponent {...this.props} />
+
                         {EfficacyContent.criterion.map((criterion, i) => <CriterionComponent key={i} criterionData={EfficacyContent.criterion[i]} {...this.props} />)}
                     </div>
                 }
