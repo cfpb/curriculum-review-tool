@@ -8,48 +8,15 @@ export default class CriterionScoreBlock extends React.Component {
         this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
     }
 
-    criterionOveralScoreClassName(level, type) {
-        let isLimited = false;
-        if (this.props.criterionScores[this.props.dimensionKey + "1"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimensionKey + "2"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimensionKey + "3"].doesnotmeet ||
-            this.props.criterionScores[this.props.dimensionKey + "4"].doesnotmeet ) {
-
-            isLimited = true;
-        }
-
-        let isModerate = false;
-        if (this.props.criterionScores[this.props.dimensionKey + "1"].meets &&
-            this.props.criterionScores[this.props.dimensionKey + "2"].meets &&
-            this.props.criterionScores[this.props.dimensionKey + "3"].meets &&
-            this.props.criterionScores[this.props.dimensionKey + "4"].meets ) {
-
-            isModerate = true;
-        }
-
-        let className = "m-form-field_radio-icon";
-        if (type === "text") className = "m-form-field_radio-text";
-
-        if (level === "limited" && isLimited) {
-            className = className + " is-active";
-        } else if (level === "moderate" && isModerate) {
-            className = className + " is-active";
-        } else if (level === "strong" && !isLimited && !isModerate) {
-            className = className + " is-active";
-        }
-
-        return className;
-    }
-
     renderTextValue(style, level) {
         let criterionScore = this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber];
         let isTrue = false;
 
         if (level === "exceeds" && criterionScore !== undefined){
             isTrue = criterionScore.exceeds;
-        } else if (level === "meets") {
+        } else if (level === "meets" && criterionScore !== undefined) {
             isTrue = criterionScore.meets;
-        } else if (level === "doesnotmeet") {
+        } else if (level === "doesnotmeet" && criterionScore !== undefined) {
             isTrue = criterionScore.doesnotmeet;
         }
 

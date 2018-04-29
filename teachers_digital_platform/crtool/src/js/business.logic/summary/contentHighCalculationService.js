@@ -34,8 +34,9 @@ const ContentHighCalculationService = {
         if (component.state.criterionScores["content-high-crt-1"] === undefined ||
             component.state.criterionScores["content-high-crt-2"] === undefined ||
             component.state.criterionScores["content-high-crt-3"] === undefined ||
-            component.state.criterionScores["content-high-crt-4"] === undefined||
-            component.state.criterionScores["content-high-crt-5"] === undefined ) {
+            component.state.criterionScores["content-high-crt-4"] === undefined ||
+            component.state.criterionScores["content-high-crt-5"] === undefined ||
+            component.state.criterionScores["content-high-crt-6"] === undefined ) {
 
             score = "limited";
         } else {
