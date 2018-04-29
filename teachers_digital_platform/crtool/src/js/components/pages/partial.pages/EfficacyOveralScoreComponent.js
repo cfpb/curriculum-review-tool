@@ -122,8 +122,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            {
-                                this.props.currentPrintButton === C.START_PAGE &&
+                            {this.props.currentPrintButton === C.START_PAGE &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         List the strengths for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -132,17 +131,18 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                             }
                         </label>
 
-                        {
-                            this.props.currentPrintButton === C.START_PAGE &&
-                                <textarea className="a-text-input a-text-input__full"
-                                    rows="6"
-                                    id={this.props.dimensionKey + "assets-optional"}
-                                    ref={this.props.dimensionKey + "assets-optional"}
-                                    value={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
-                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
-                                </textarea>
+                        {this.props.currentPrintButton === C.START_PAGE &&
+                            <textarea className="a-text-input a-text-input__full"
+                                rows="6"
+                                id={this.props.dimensionKey + "assets-optional"}
+                                ref={this.props.dimensionKey + "assets-optional"}
+                                value={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
+                                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
+                            </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])}
+                        {this.props.currentPrintButton !== C.START_PAGE &&
+                            this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])
+                        }
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea
@@ -150,8 +150,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            {
-                                this.props.currentPrintButton === C.START_PAGE &&
+                            {this.props.currentPrintButton === C.START_PAGE &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         List the weaknesses for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -160,25 +159,25 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                             }
                         </label>
 
-                        {
-                            this.props.currentPrintButton === C.START_PAGE &&
-                                <textarea className="a-text-input a-text-input__full"
-                                    rows="6"
-                                    id={this.props.dimensionKey + "gaps-optional"}
-                                    ref={this.props.dimensionKey + "gaps-optional"}
-                                    value={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
-                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
-                                </textarea>
+                        {this.props.currentPrintButton === C.START_PAGE &&
+                            <textarea className="a-text-input a-text-input__full"
+                                rows="6"
+                                id={this.props.dimensionKey + "gaps-optional"}
+                                ref={this.props.dimensionKey + "gaps-optional"}
+                                value={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
+                                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
+                            </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
+                        {this.props.currentPrintButton !== C.START_PAGE &&
+                            this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])
+                        }
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            {
-                                this.props.currentPrintButton === C.START_PAGE &&
+                            {this.props.currentPrintButton === C.START_PAGE &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         Add any final thoughts about the overall quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -187,24 +186,23 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                             }
                         </label>
 
-                        {
-                            this.props.currentPrintButton === C.START_PAGE &&
-                                <textarea className="a-text-input a-text-input__full"
-                                    rows="6"
-                                    id={this.props.dimensionKey + "overall-notes-optional"}
-                                    ref={this.props.dimensionKey + "overall-notes-optional"}
-                                    value={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
-                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
-                                </textarea>
+                        {this.props.currentPrintButton === C.START_PAGE &&
+                            <textarea className="a-text-input a-text-input__full"
+                                rows="6"
+                                id={this.props.dimensionKey + "overall-notes-optional"}
+                                ref={this.props.dimensionKey + "overall-notes-optional"}
+                                value={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
+                                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
+                            </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE && this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
+                        {this.props.currentPrintButton !== C.START_PAGE &&
+                            this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])
+                        }
                     </div>
                 </div>
-
                 <hr className="hr
                                u-mb45
                                u-mt30" />
-
             </React.Fragment>
         );
     }

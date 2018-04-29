@@ -89,7 +89,7 @@ export default class EfficacyCriterionPage extends React.Component {
         } else {
             return (
                 <button className="a-btn u-mb30"
-                        onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
+                    onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
                     I’m done adding studies
                 </button>
             );
@@ -180,11 +180,12 @@ export default class EfficacyCriterionPage extends React.Component {
                     </p>
 
                     {this.getEfficacyStudyItems().map((i) =>
-                            <EfficacyStudyComponent key={i}
-                                                    {...this.props}
-                                                    studyCount={i}
-                                                    showRemoveButton={i>0}
-                                                    criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />)}
+                        <EfficacyStudyComponent key={i}
+                            {...this.props}
+                            studyCount={i}
+                            showRemoveButton={i>0}
+                            criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
+                    )}
 
                     <div className="u-mt15 u-mb30">
                         <button className="a-btn a-btn__link a-btn__no-line"
@@ -230,8 +231,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 ref={this.generateStudyRefId("2.1", "_beneficial")}
                                 currentCriterionRefId={this.generateStudyRefId("2.1", "_beneficial")}
                                 {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
-                                />
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
                         </EditableCriterionRowWrapper>
                         <EditableCriterionRowWrapper
                             {...this.props}
@@ -244,8 +244,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                     ref={this.generateStudyRefId("2.2", "_beneficial")}
                                     currentCriterionRefId={this.generateStudyRefId("2.2", "_beneficial")}
                                     {...this.props}
-                                    criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
-                                    />
+                                    criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
                         </EditableCriterionRowWrapper>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
@@ -257,11 +256,11 @@ export default class EfficacyCriterionPage extends React.Component {
                             </small>
                         </label>
                         <textarea className="a-text-input a-text-input__full"
-                                    rows="6"
-                                    id="efficacy-crt-notes-optional-2"
-                                    ref="efficacy-crt-notes-optional-2"
-                                    value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
-                                    onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
+                            rows="6"
+                            id="efficacy-crt-notes-optional-2"
+                            ref="efficacy-crt-notes-optional-2"
+                            value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -297,8 +296,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 ref={this.generateStudyRefId("3.1", "")}
                                 currentCriterionRefId={this.generateStudyRefId("3.1", "")}
                                 {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
-                                />
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
                         </EditableCriterionRowWrapper>
                         <EditableCriterionRowWrapper
                             {...this.props}
@@ -311,8 +309,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 ref={this.generateStudyRefId("3.2.1", "")}
                                 currentCriterionRefId={this.generateStudyRefId("3.2.1", "")}
                                 {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
-                                />
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
                             <EditableSubComponentRow
                                 componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
                                 showBeneficialText="true"
@@ -320,8 +317,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 ref={this.generateStudyRefId("3.2.2", "_beneficial")}
                                 currentCriterionRefId={this.generateStudyRefId("3.2.2", "_beneficial")}
                                 {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
-                                />
+                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
                         </EditableCriterionRowWrapper>
 
                     </ol>
@@ -334,11 +330,11 @@ export default class EfficacyCriterionPage extends React.Component {
                             </small>
                         </label>
                         <textarea className="a-text-input a-text-input__full"
-                                    rows="6"
-                                    id="efficacy-crt-notes-optional-3"
-                                    ref="efficacy-crt-notes-optional-3"
-                                    value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
-                                    onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
+                            rows="6"
+                            id="efficacy-crt-notes-optional-3"
+                            ref="efficacy-crt-notes-optional-3"
+                            value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
+                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

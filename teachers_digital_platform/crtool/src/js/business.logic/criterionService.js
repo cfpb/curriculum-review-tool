@@ -31,14 +31,14 @@ const CriterionService = {
 
         // Study changed so this invalidates any criterion 2 or 3 values.
         this.resetEfficacyCriterionOnStudyChange(component);
-        
+
         Repository.saveStudyAnsers(component, alteredStudyAnswers);
         EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
     },
 
     /*
-     * Efficacy Survey is complicated.  User can have mulitple studies and 
-     * if any of them change then other Criterion must start over. 
+     * Efficacy Survey is complicated.  User can have mulitple studies and
+     * if any of them change then other Criterion must start over.
      * Also they must hide and "I'm done adding studies" must be re-enabled
      */
     resetEfficacyCriterionOnStudyChange(component) {
@@ -169,7 +169,7 @@ const CriterionService = {
     },
 
     /*
-     * Need the ability to remove all all Criterion Scores 
+     * Need the ability to remove all all Criterion Scores
      * related to Efficacy criteroin 2 or 3
      */
     removeCriterionScoresForCriterion2and3(component) {
@@ -182,7 +182,7 @@ const CriterionService = {
     },
 
      /*
-     * Need the ability to remove all all Criterion Scores 
+     * Need the ability to remove all all Criterion Scores
      * related to Efficacy criteroin 2 or 3
      */
     removeCriterionCompletionStatusForCriterion2and3(component) {

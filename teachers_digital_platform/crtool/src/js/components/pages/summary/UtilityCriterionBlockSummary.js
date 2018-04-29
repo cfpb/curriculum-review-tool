@@ -10,15 +10,15 @@ export default class UtilityCriterionBlockSummary extends React.Component {
     render() {
         return (
             <React.Fragment>
-                { this.props.utilitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Utility" dimensionName="Utility" {...this.props} />}
-                {
-                    this.props.utilitySummaryButton === "complete" &&
+                {this.props.utilitySummaryButton !== "complete" &&
+                    <DimensionNotReviewedComponent dimensionTitle="Utility" dimensionName="Utility" {...this.props} />
+                }
+                {this.props.utilitySummaryButton === "complete" &&
                     <div className="block
                                     block__flush-top
                                     block__padded-bottom
                                     block__border-bottom
                                     u-page-break-before">
-
                         <DimensionIconTitleComponent dimensionName="Utility" dimensionTitle={"Utility"} {...this.props} />
                         <p className="lead-paragraph">
                             The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge.

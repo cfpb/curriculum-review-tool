@@ -267,12 +267,12 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
-        if (this.state.currentPage === C.FINAL_SUMMARY_PAGE || 
-            this.state.currentPage === C.FINAL_PRINT_EVERYTHING || 
+        if (this.state.currentPage === C.FINAL_SUMMARY_PAGE ||
+            this.state.currentPage === C.FINAL_PRINT_EVERYTHING ||
             this.state.currentPage === C.FINAL_PRINT_PAGE) {
             return (<FinalSummaryPage {...applicationProps} />);
-        } else if (this.state.currentPrintButton !== undefined && 
-                   this.state.currentPrintButton !== "" && 
+        } else if (this.state.currentPrintButton !== undefined &&
+                   this.state.currentPrintButton !== "" &&
                    this.state.currentPrintButton !== C.START_PAGE) {
             return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {

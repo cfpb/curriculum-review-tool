@@ -25,7 +25,7 @@ export default class FinalCurriculumInformation extends React.Component {
 
                     <SaveWorkInformation />
                     <PrintOrSaveFinalSummary  {...this.props} />
-                    
+
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
                     <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>

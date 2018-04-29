@@ -9,9 +9,10 @@ export default class ContentBlockSummary extends React.Component {
     render() {
         return (
             <React.Fragment>
-                { this.props.contentSummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Content" dimensionName="Content" {...this.props} />}
-                {
-                    this.props.contentSummaryButton === "complete" &&
+                {this.props.contentSummaryButton !== "complete" &&
+                    <DimensionNotReviewedComponent dimensionTitle="Content" dimensionName="Content" {...this.props} />
+                }
+                {this.props.contentSummaryButton === "complete" &&
                     <div className="block
                                     block__flush-top
                                     block__padded-bottom

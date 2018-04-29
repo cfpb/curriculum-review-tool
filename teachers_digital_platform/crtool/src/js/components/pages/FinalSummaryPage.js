@@ -27,16 +27,19 @@ export default class FinalSummaryPage extends React.Component {
         }
         return (
             <React.Fragment>
-                
-                {                    
-                    this.props.finalSummaryShowEntireReview !== "true" && 
-                            <DistinctiveMenuBar {...this.props} />
+
+                {this.props.finalSummaryShowEntireReview !== "true" &&
+                    <DistinctiveMenuBar {...this.props} />
                 }
 
                 <FinalCurriculumInformation {...this.props} />
 
-                { this.props.contentSummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Content overall score" dimensionName="Content" {...this.props} />}
-                { this.props.contentSummaryButton === "complete" && 
+                {this.props.contentSummaryButton !== "complete" &&
+                    <DimensionNotReviewedComponent
+                        dimensionTitle="Content overall score"
+                        dimensionName="Content" {...this.props} />
+                }
+                {this.props.contentSummaryButton === "complete" &&
                     <DimensionScoreBlock
                         dimensionPage={C.CONTENT_PAGE}
                         dimensionKey={contentDimensionKey}
@@ -44,40 +47,49 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionLead="How does this curriculum meet the criteria for content:"
                         {...this.props} />
                 }
-
-                { this.props.utilitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Utility overall score" dimensionName="Utility" {...this.props} />}
-                { this.props.utilitySummaryButton === "complete" && 
-                <DimensionScoreBlock
-                    dimensionPage={C.UTILITY_PAGE}
-                    dimensionKey="utility-crt-"
-                    dimensionName="Utility"
-                    dimensionLead="How does this curriculum meet the criteria for utility:"
-                    {...this.props} />
+                {this.props.utilitySummaryButton !== "complete" &&
+                    <DimensionNotReviewedComponent
+                        dimensionTitle="Utility overall score"
+                        dimensionName="Utility" {...this.props} />
                 }
-
-                { this.props.qualitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Quality overall score" dimensionName="Quality" {...this.props} />}
-                { this.props.qualitySummaryButton === "complete" && 
-                <DimensionScoreBlock
-                    dimensionPage={C.QUALITY_PAGE}
-                    dimensionKey="quality-crt-"
-                    dimensionName="Quality"
-                    dimensionLead="How does this curriculum meet the criteria for quality:"
-                    {...this.props} />
+                {this.props.utilitySummaryButton === "complete" &&
+                    <DimensionScoreBlock
+                        dimensionPage={C.UTILITY_PAGE}
+                        dimensionKey="utility-crt-"
+                        dimensionName="Utility"
+                        dimensionLead="How does this curriculum meet the criteria for utility:"
+                        {...this.props} />
                 }
-
-                { this.props.efficacySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Efficacy overall score" dimensionName="Efficacy" {...this.props} />}
-                { this.props.efficacySummaryButton === "complete" && 
-                <EfficacyOveralScoreComponent dimensionPage={C.EFFICACY_PAGE}
-                                              dimensionName="Efficacy"
-                                              dimensionKey="utility-crt-"
-                                              dimensionLead="How does this curriculum meet the criteria for efficacy:"
-                                              {...this.props} />
+                {this.props.qualitySummaryButton !== "complete" &&
+                    <DimensionNotReviewedComponent
+                        dimensionTitle="Quality overall score"
+                        dimensionName="Quality" {...this.props} />
+                }
+                {this.props.qualitySummaryButton === "complete" &&
+                    <DimensionScoreBlock
+                        dimensionPage={C.QUALITY_PAGE}
+                        dimensionKey="quality-crt-"
+                        dimensionName="Quality"
+                        dimensionLead="How does this curriculum meet the criteria for quality:"
+                        {...this.props} />
+                }
+                {this.props.efficacySummaryButton !== "complete" &&
+                    <DimensionNotReviewedComponent
+                        dimensionTitle="Efficacy overall score"
+                        dimensionName="Efficacy" {...this.props} />
+                }
+                {this.props.efficacySummaryButton === "complete" &&
+                    <EfficacyOveralScoreComponent
+                        dimensionPage={C.EFFICACY_PAGE}
+                        dimensionName="Efficacy"
+                        dimensionKey="utility-crt-"
+                        dimensionLead="How does this curriculum meet the criteria for efficacy:"
+                        {...this.props} />
                 }
 
                 <KeyTakeawaysComponent {...this.props} />
 
-                {
-                    this.props.currentPrintButton === C.FINAL_PRINT_EVERYTHING &&
+                {this.props.currentPrintButton === C.FINAL_PRINT_EVERYTHING &&
                     <React.Fragment>
                         <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
                         <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
@@ -85,15 +97,12 @@ export default class FinalSummaryPage extends React.Component {
                         <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
                     </React.Fragment>
                 }
-
-                {
-                    this.props.finalSummaryShowEntireReview !== "true" && 
-                        <span>
-                            <PrintOrSaveFinalSummary  {...this.props}/>
-                            <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
-                        </span>
+                {this.props.finalSummaryShowEntireReview !== "true" &&
+                    <span>
+                        <PrintOrSaveFinalSummary  {...this.props}/>
+                        <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
+                    </span>
                 }
-
             </React.Fragment>
         );
     }

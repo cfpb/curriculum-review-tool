@@ -49,8 +49,7 @@ export default class KeyTakeawaysComponent extends React.Component {
                             Key takeaways
                             &nbsp;<small className="a-label_helper">(optional)</small>
                         </h2>
-                        {   
-                            this.props.currentPrintButton === C.START_PAGE &&
+                        {this.props.currentPrintButton === C.START_PAGE &&
                             <small className="a-label_helper a-label_helper__block">
                                 Add any final thoughts about the overall curriculum. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
                             </small>
