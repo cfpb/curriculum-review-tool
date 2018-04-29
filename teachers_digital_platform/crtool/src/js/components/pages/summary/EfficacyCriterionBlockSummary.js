@@ -10,9 +10,9 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
     render() {
         return (
             <React.Fragment>
-                { this.props.qualitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Efficacy" dimensionName="Efficacy" {...this.props} />}
+                { this.props.efficacySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Efficacy" dimensionName="Efficacy" {...this.props} />}
                 {
-                    this.props.qualitySummaryButton === "complete" &&
+                    this.props.efficacySummaryButton === "complete" &&
                     <div className="block
                                     block__flush-top
                                     block__padded-bottom

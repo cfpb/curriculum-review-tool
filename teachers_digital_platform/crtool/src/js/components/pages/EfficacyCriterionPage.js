@@ -113,8 +113,6 @@ export default class EfficacyCriterionPage extends React.Component {
                 </div>
             );
         }
-
-
     }
 
     render() {
@@ -229,6 +227,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 componentText="Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?"
                                 showBeneficialText="true"
                                 showNaButton="false"
+                                ref={this.generateStudyRefId("2.1", "_beneficial")}
                                 currentCriterionRefId={this.generateStudyRefId("2.1", "_beneficial")}
                                 {...this.props}
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
@@ -242,6 +241,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                     componentText="Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?"
                                     showBeneficialText="true"
                                     showNaButton="false"
+                                    ref={this.generateStudyRefId("2.2", "_beneficial")}
                                     currentCriterionRefId={this.generateStudyRefId("2.2", "_beneficial")}
                                     {...this.props}
                                     criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
@@ -294,6 +294,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 componentText="Does at least one evaluation indicate positive effects significant at the 10% level?"
                                 showBeneficialText="false"
                                 showNaButton="false"
+                                ref={this.generateStudyRefId("3.1", "")}
                                 currentCriterionRefId={this.generateStudyRefId("3.1", "")}
                                 {...this.props}
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
@@ -307,6 +308,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 componentText="Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)"
                                 showBeneficialText="false"
                                 showNaButton="false"
+                                ref={this.generateStudyRefId("3.2.1", "")}
                                 currentCriterionRefId={this.generateStudyRefId("3.2.1", "")}
                                 {...this.props}
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
@@ -315,7 +317,8 @@ export default class EfficacyCriterionPage extends React.Component {
                                 componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
                                 showBeneficialText="true"
                                 showNaButton="false"
-                                currentCriterionRefId={this.generateStudyRefId("3.2.1", "_beneficial")}
+                                ref={this.generateStudyRefId("3.2.2", "_beneficial")}
+                                currentCriterionRefId={this.generateStudyRefId("3.2.2", "_beneficial")}
                                 {...this.props}
                                 criterionAnswerChanged={this.criterionAnswerChanged.bind(this)}
                                 />
