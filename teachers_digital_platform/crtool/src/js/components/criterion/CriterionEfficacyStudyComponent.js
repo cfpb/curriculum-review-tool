@@ -2,6 +2,7 @@
 import React from "react";
 
 import CriterionRow from "./CriterionRow";
+import EfficacyStudyScoreComponent from "../pages/partial.pages/EfficacyStudyScoreComponent";
 import { EfficacyStudyContent } from "../../content_data/efficacyStudyContent";
 
 export default class CriterionEfficacyStudyComponent extends React.Component {
@@ -13,6 +14,11 @@ export default class CriterionEfficacyStudyComponent extends React.Component {
         } else {
             return this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].notesRefId.replace("_study_", studyCount)];
         }
+    }
+    
+    generateStudyRefId(criterionNumber, otherText, studyCount) {
+        let newCriterionRefId = "efficacy-crt-question-" + criterionNumber + "#" + studyCount + "#"+ otherText;
+        return newCriterionRefId;
     }
 
     render() {
@@ -28,18 +34,14 @@ export default class CriterionEfficacyStudyComponent extends React.Component {
                 {
                     this.props.criterionEfficacyStudies.map(
                         (studyCount, i) =>
-                        <React.Fragment>
-                            {console.log("studyCount: " + studyCount + " : " + i)}
-                            {console.log(studyCount)}
-                            {console.log(this.props.studyAnswers[studyCount])}
-                            
+                        <React.Fragment>                            
                             <label className="a-label a-label__heading">
                                 Study name
                             </label>
                             <p>{this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].studyNameRefId.replace("_study_", studyCount)]}</p> 
 
                             <br /><br />
-                            
+
                             <ol className="m-list__unstyled">
                                 {
                                     EfficacyStudyContent.criterion[0].rows.map((criterion, i) => 
@@ -59,6 +61,15 @@ export default class CriterionEfficacyStudyComponent extends React.Component {
                                 </label>
                                 <p>{this.renderMyNotes(studyCount)}</p>
                             </div>
+
+                            <br /><br />
+
+                            <EfficacyStudyScoreComponent
+                                studyScore={this.props.criterionScores["efficacy-crt-1-" + studyCount]}
+                                studyScoreName={this.props.studyAnswers[studyCount][this.generateStudyRefId("", "study", studyCount)]}
+                                {...this.props}
+                                />
+
                         </React.Fragment>
                     )
                 }

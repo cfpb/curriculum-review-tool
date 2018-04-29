@@ -163,10 +163,6 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
-        console.log("criterionAnswerChanged");
-        console.log(distinctiveName);
-        console.log(changedQuestion);
-        console.log(newValue);
         CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
     }
 
