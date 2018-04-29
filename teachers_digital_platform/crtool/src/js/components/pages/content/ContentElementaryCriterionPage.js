@@ -970,12 +970,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                 </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
-                <div className="l-survey-top">
-                    <SaveWorkModal
-                        buttonText="Can I save my work?"
-                        hasIcon="true" />
-                </div>
-                <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
                 <hr className="hr
                                 u-mb30
                                 u-mt45" />
