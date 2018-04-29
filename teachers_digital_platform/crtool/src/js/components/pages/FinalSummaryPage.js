@@ -18,21 +18,6 @@ import EfficacyCriterionBlockSummary from "./summary/EfficacyCriterionBlockSumma
 
 
 export default class FinalSummaryPage extends React.Component {
-    renderAllCriterionQuestions() {
-        if (this.props.currentPrintButton === C.FINAL_PRINT_EVERYTHING) {
-            return (
-                <React.Fragment>
-                    <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                    <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                    <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                    <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </React.Fragment>
-            );
-        } else {
-            return null;
-        }
-    }
-
     render() {
         let contentDimensionKey = "content-high-crt-";
         if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
@@ -50,7 +35,7 @@ export default class FinalSummaryPage extends React.Component {
 
                 <FinalCurriculumInformation {...this.props} />
 
-                { this.props.contentSummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Content" {...this.props} />}
+                { this.props.contentSummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Content overall score" dimensionName="Content" {...this.props} />}
                 { this.props.contentSummaryButton === "complete" && 
                     <DimensionScoreBlock
                         dimensionPage={C.CONTENT_PAGE}
@@ -60,7 +45,7 @@ export default class FinalSummaryPage extends React.Component {
                         {...this.props} />
                 }
 
-                { this.props.utilitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Utility" {...this.props} />}
+                { this.props.utilitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Utility overall score" dimensionName="Utility" {...this.props} />}
                 { this.props.utilitySummaryButton === "complete" && 
                 <DimensionScoreBlock
                     dimensionPage={C.UTILITY_PAGE}
@@ -70,7 +55,7 @@ export default class FinalSummaryPage extends React.Component {
                     {...this.props} />
                 }
 
-                { this.props.qualitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Quality" {...this.props} />}
+                { this.props.qualitySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Quality overall score" dimensionName="Quality" {...this.props} />}
                 { this.props.qualitySummaryButton === "complete" && 
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}
@@ -80,7 +65,7 @@ export default class FinalSummaryPage extends React.Component {
                     {...this.props} />
                 }
 
-                { this.props.efficacySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionName="Efficacy" {...this.props} />}
+                { this.props.efficacySummaryButton !== "complete" && <DimensionNotReviewedComponent dimensionTitle="Efficacy overall score" dimensionName="Efficacy" {...this.props} />}
                 { this.props.efficacySummaryButton === "complete" && 
                 <EfficacyOveralScoreComponent dimensionPage={C.EFFICACY_PAGE}
                                               dimensionName="Efficacy"
@@ -91,7 +76,15 @@ export default class FinalSummaryPage extends React.Component {
 
                 <KeyTakeawaysComponent {...this.props} />
 
-                {this.renderAllCriterionQuestions()}
+                {
+                    this.props.currentPrintButton === C.FINAL_PRINT_EVERYTHING &&
+                    <React.Fragment>
+                        <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                    </React.Fragment>
+                }
 
                 {
                     this.props.finalSummaryShowEntireReview !== "true" && 

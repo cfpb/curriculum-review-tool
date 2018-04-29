@@ -20,12 +20,12 @@ export default class DimensionIconTitleComponent extends React.Component {
 
     render() {
         return (
-            <h2>
+            <h2 className="h1">
                 <SvgIcon
                     icon={this.getDimensionIcon()}
                     isLarge="true"
                     hasSpaceAfter="true" />
-                    {this.props.dimensionName} score
+                    {this.props.dimensionTitle}
             </h2>
         );
     }
