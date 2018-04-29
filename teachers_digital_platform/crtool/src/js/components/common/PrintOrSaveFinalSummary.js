@@ -1,7 +1,5 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-
 export default class PrintOrSaveFinalSummary extends React.Component {
     render() {
         return (
@@ -13,9 +11,6 @@ export default class PrintOrSaveFinalSummary extends React.Component {
                 </button>
                 <button className="a-btn a-btn__super" onClick={(e) => {this.props.setPrintFinalSummaryShowEntireReview("true", "true"); e.preventDefault();}}>
                     Print or save entire review
-                </button>
-                <button className="a-btn a-btn__super" onClick={(e) => {this.props.distinctiveClicked(C.START_PAGE); e.preventDefault();}}>
-                    Back
                 </button>
             </div>
         );

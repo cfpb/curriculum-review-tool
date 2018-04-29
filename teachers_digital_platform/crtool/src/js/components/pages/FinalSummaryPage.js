@@ -1,16 +1,12 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
-import SaveWorkModal from "../dialogs/SaveWorkModal";
 import StartOverModal from "../dialogs/StartOverModal";
 import DistinctiveMenuBar from "../distinctives/DistinctiveMenuBar";
 import PrintOrSaveFinalSummary from "../common/PrintOrSaveFinalSummary";
 
-import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
-import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import DimensionNotReviewedComponent from "../common/DimensionNotReviewedComponent";
-import DimensionInformation from "../common/DimensionInformation";
 import KeyTakeawaysComponent from "../common/KeyTakeawaysComponent";
 import FinalCurriculumInformation from "../common/FinalCurriculumInformation";
 import EfficacyOveralScoreComponent from "../pages/partial.pages/EfficacyOveralScoreComponent";

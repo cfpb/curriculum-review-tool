@@ -1,7 +1,6 @@
 import React from "react";
 
 import C from "../../../business.logic/constants";
-import SvgIcon from "../../svgs/SvgIcon";
 import DimensionIconTitleComponent from "../../common/DimensionIconTitleComponent";
 
 export default class EfficacyOveralScoreComponent extends React.Component {

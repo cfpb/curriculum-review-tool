@@ -6,11 +6,6 @@ import UtilityPrintPage from "./UtilityPrintPage";
 import ContentPrintPage from "./ContentPrintPage";
 import EfficacyPrintPage from "./EfficacyPrintPage";
 import FinalSummaryPage from "../pages/FinalSummaryPage";
-import PrintIntroComponent from "./partial.pages/PrintIntroComponent";
-import ContentCriterionBlockSummary from "./summary/ContentCriterionBlockSummary";
-import UtilityCriterionBlockSummary from "./summary/UtilityCriterionBlockSummary";
-import QualityCriterionBlockSummary from "./summary/QualityCriterionBlockSummary";
-import EfficacyCriterionBlockSummary from "./summary/EfficacyCriterionBlockSummary";
 
 export default class PrintAndSummaryPages extends React.Component {
 

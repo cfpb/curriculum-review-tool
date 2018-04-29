@@ -1,6 +1,5 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class DimensionIconTitleComponent extends React.Component {

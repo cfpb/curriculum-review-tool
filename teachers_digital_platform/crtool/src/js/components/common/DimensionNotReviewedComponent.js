@@ -1,6 +1,5 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
 import DimensionIconTitleComponent from "./DimensionIconTitleComponent";
 
 export default class DimensionNotReviewedComponent extends React.Component {

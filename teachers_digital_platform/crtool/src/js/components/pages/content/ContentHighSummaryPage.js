@@ -1,7 +1,6 @@
 import React from "react";
 
 import C from "../../../business.logic/constants";
-import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import SvgIcon from "../../svgs/SvgIcon";
 import CriterionScoreBlock from "../summary/CriterionScoreBlock";
 import DimensionScoreBlock from "../summary/DimensionScoreBlock";
