@@ -13,12 +13,6 @@ export default class ContentPrintMiddlePage extends React.Component {
     }
 
     render() {
-        let contentDimensionKey = "content-high-crt-";
-        if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
-            contentDimensionKey = "content-elementary-crt-";
-        } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
-            contentDimensionKey = "content-middle-crt-";
-        }
         return (
             <React.Fragment>
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}

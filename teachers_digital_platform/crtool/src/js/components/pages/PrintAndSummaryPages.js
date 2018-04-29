@@ -38,5 +38,3 @@ export default class PrintAndSummaryPages extends React.Component {
         }
     }
 }
-
-
