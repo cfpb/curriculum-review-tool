@@ -18,14 +18,14 @@ export default class CriterionRow extends React.Component {
                 <div class="o-survey_components">
                     <h5 class="h3">Component</h5>
                     { // Is printing Efficacy Studies
-                        this.props.isEfficacyStudy && 
+                        this.props.isEfficacyStudy &&
                         <React.Fragment>
                             {this.props.rowData.components.map((componentData, i) => <CriterionAnswerAreaEfficacyStudy key={i} {...this.props} componentData={this.props.rowData.components[i]}/>)}
                         </React.Fragment>
                     }
 
                     { // Is printing anything that is not Efficacy studies
-                        this.props.isEfficacyStudy !== true && 
+                        this.props.isEfficacyStudy !== true &&
                         <React.Fragment>
                             {this.props.rowData.components.map((componentData, i) => <CriterionAnswerArea key={i} {...this.props} componentData={this.props.rowData.components[i]}/>)}
                         </React.Fragment>

@@ -15,7 +15,7 @@ export default class CriterionEfficacyStudyComponent extends React.Component {
             return this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].notesRefId.replace("_study_", studyCount)];
         }
     }
-    
+
     generateStudyRefId(criterionNumber, otherText, studyCount) {
         let newCriterionRefId = "efficacy-crt-question-" + criterionNumber + "#" + studyCount + "#"+ otherText;
         return newCriterionRefId;
@@ -27,27 +27,27 @@ export default class CriterionEfficacyStudyComponent extends React.Component {
                 <h3 className="h2">{EfficacyStudyContent.criterion[0].title}</h3>
                 <p className="lead-paragraph">
                 {EfficacyStudyContent.criterion[0].leadParagraph}
-                
+
                 <br /><br />
 
                 </p>
                 {
                     this.props.criterionEfficacyStudies.map(
                         (studyCount, i) =>
-                        <React.Fragment>                            
+                        <React.Fragment>
                             <label className="a-label a-label__heading">
                                 Study name
                             </label>
-                            <p>{this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].studyNameRefId.replace("_study_", studyCount)]}</p> 
+                            <p>{this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].studyNameRefId.replace("_study_", studyCount)]}</p>
 
                             <br /><br />
 
                             <ol className="m-list__unstyled">
                                 {
-                                    EfficacyStudyContent.criterion[0].rows.map((criterion, i) => 
-                                        <CriterionRow 
-                                            key={i} 
-                                            isEfficacyStudy={true} 
+                                    EfficacyStudyContent.criterion[0].rows.map((criterion, i) =>
+                                        <CriterionRow
+                                            key={i}
+                                            isEfficacyStudy={true}
                                             studyKey={studyCount}
                                             rowData={criterion}
                                             criterionData={criterion}
