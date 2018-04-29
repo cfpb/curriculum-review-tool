@@ -279,8 +279,19 @@ export default class CustomerReviewToolComponent extends React.Component {
                             buttonText="Can I save my work?"
                             hasIcon="true" />
                     </div>
-                    <div class="h5 u-mb30">You’re reviewing</div>
-                    <h1>{this.state.curriculumTitle}</h1>
+                    {
+                        this.state.currentPage === C.START_PAGE &&
+                        <React.Fragment>
+                            <div class="h5 u-mb30">You’re reviewing</div>
+                            <h1>{this.state.curriculumTitle}</h1>
+                        </React.Fragment>
+                    }
+                    {
+                        this.state.currentPage !== C.START_PAGE &&
+                        <React.Fragment>
+                            <div className="h4">You're Reviewing: {this.state.curriculumTitle}</div>
+                        </React.Fragment>
+                    }
 
                     <PageInstructionsComponent currentPage={this.state.currentPage} />
                     <DistinctiveMenuBar {...dimensionMenuProps} />
