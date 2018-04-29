@@ -7,7 +7,7 @@ import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import DimensionInformation from "../common/DimensionInformation";
 import ContentCriterionBlockSummary from "../../components/pages/summary/ContentCriterionBlockSummary";
 
-export default class ContentPrintPage extends React.Component {
+export default class ContentPrintHighPage extends React.Component {
     componentDidMount() {
         this.props.resetPrintButtonState(C.CONTENT_PAGE);
     }

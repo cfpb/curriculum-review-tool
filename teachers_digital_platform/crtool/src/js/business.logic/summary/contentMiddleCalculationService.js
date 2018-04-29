@@ -34,8 +34,9 @@ const ContentMiddleCalculationService = {
         if (component.state.criterionScores["content-middle-crt-1"] === undefined ||
             component.state.criterionScores["content-middle-crt-2"] === undefined ||
             component.state.criterionScores["content-middle-crt-3"] === undefined ||
-            component.state.criterionScores["content-middle-crt-4"] === undefined||
-            component.state.criterionScores["content-middle-crt-5"] === undefined ) {
+            component.state.criterionScores["content-middle-crt-4"] === undefined ||
+            component.state.criterionScores["content-middle-crt-5"] === undefined ||
+            component.state.criterionScores["content-middle-crt-6"] === undefined ) {
 
             score = "limited";
         } else {

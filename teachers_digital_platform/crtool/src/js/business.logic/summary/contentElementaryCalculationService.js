@@ -34,8 +34,9 @@ const ContentElementaryCalculationService = {
         if (component.state.criterionScores["content-elementary-crt-1"] === undefined ||
             component.state.criterionScores["content-elementary-crt-2"] === undefined ||
             component.state.criterionScores["content-elementary-crt-3"] === undefined ||
-            component.state.criterionScores["content-elementary-crt-4"] === undefined||
-            component.state.criterionScores["content-elementary-crt-5"] === undefined ) {
+            component.state.criterionScores["content-elementary-crt-4"] === undefined ||
+            component.state.criterionScores["content-elementary-crt-5"] === undefined ||
+            component.state.criterionScores["content-elementary-crt-6"] === undefined ) {
 
             score = "limited";
         } else {
