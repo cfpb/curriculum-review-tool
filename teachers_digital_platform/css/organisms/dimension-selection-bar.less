@@ -67,17 +67,6 @@
             color: @gray;
         }
 
-        &:focus,
-        &:hover {
-            background-color: @btn-bg-hover;
-            border-color: @btn-bg-hover;
-            color: @btn-text;
-
-            .o-dimension-section-bar_selector-status {
-                color: @btn-text;
-            }
-        }
-
         &:active {
             background-color: @pacific-20;
             border-color: @pacific;
@@ -130,34 +119,15 @@
 
     &.is-active.is-complete {
         background-color: @green-20;
+        border-color: @green;
+        color: @text;
 
-        &:focus,
-        &:hover {
-            background-color: @btn-bg-hover;
-            border-color: @btn-bg-hover;
-            color: @btn-text;
-
-            .a-icon {
-                color: inherit;
-            }
-
-            .o-dimension-section-bar_selector-status {
-                color: @btn-text;
-            }
+        .a-icon {
+            color: @green;
         }
 
-        &:active {
-            background-color: @green-20;
-            border-color: @green;
-            color: @text;
-
-            .a-icon {
-                color: @green;
-            }
-
-            .o-dimension-section-bar_selector-status {
-                color: @gray;
-            }
+        .o-dimension-section-bar_selector-status {
+            color: @gray;
         }
     }
 }
