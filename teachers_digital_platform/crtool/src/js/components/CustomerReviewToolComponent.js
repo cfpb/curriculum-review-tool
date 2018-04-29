@@ -256,6 +256,8 @@ export default class CustomerReviewToolComponent extends React.Component {
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
+        console.log(this.state.currentPage);
+
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE || 
             this.state.currentPage === C.FINAL_PRINT_EVERYTHING || 
             this.state.currentPage === C.FINAL_PRINT_PAGE) {
@@ -263,6 +265,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         } else if (this.state.currentPrintButton !== undefined && this.state.currentPrintButton !== C.START_PAGE) {
             return (<PrintAndSummaryPages {...applicationProps} handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)} />);
         } else {
+            console.log("Normal flow");
             return (
                 <React.Fragment>
                     <div className="l-survey-top">

@@ -48,8 +48,8 @@ export default class FinalSummaryPage extends React.Component {
             <React.Fragment>
                 
                 {                    
-                        this.props.finalSummaryShowEntireReview !== "true" && 
-                                <DistinctiveMenuBar {...this.props} />
+                    this.props.finalSummaryShowEntireReview !== "true" && 
+                            <DistinctiveMenuBar {...this.props} />
                 }
 
                 <FinalCurriculumInformation {...this.props} />
