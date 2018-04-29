@@ -291,6 +291,26 @@ export default class CustomerReviewToolComponent extends React.Component {
                     <SurveyPageContainer className="SurveyPage" {...applicationProps} {...dimensionMenuProps} />
 
                     <FooterButtonAreaComponent {...summaryButtonProps} />
+
+                    {
+                        (
+                            (this.state.currentPage === C.CONTENT_PAGE && this.state.contentInProgress === C.STATUS_COMPLETE) ||
+                            (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityInProgress === C.STATUS_COMPLETE) ||
+                            (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityInProgress === C.STATUS_COMPLETE) ||
+                            (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyInProgress === C.STATUS_COMPLETE)
+                        ) &&
+
+                        <div class="l-full-width">
+                            <div class="o-inner-footer u-mt45">
+                                <div class="wrapper content_wrapper">
+                                    <div class="content_main">
+                                        <h2>Choose another dimension or review the final summary</h2>
+                                        <DistinctiveMenuBar {...dimensionMenuProps} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 </React.Fragment>
             );
         }
