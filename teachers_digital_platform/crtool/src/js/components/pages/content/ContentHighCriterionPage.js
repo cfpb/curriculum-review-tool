@@ -1818,6 +1818,9 @@ export default class ContentHighCriterionPage extends React.Component {
                         hasIcon="true" />
                 </div>
                 <h2 className="h4">You’re Reviewing: <b>{this.props.curriculumTitle}</b></h2>
+                <hr className="hr
+                                u-mb30
+                                u-mt45" />
             </React.Fragment>
         );
     }

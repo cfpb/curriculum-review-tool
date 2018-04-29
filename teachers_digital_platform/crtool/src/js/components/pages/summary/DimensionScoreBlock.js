@@ -109,7 +109,6 @@ export default class DimensionScoreBlock extends React.Component {
                                 )
                             }
                         </label>
-
                         {this.isPrintMode() === false &&
                             <textarea className="a-text-input a-text-input__full"
                                 rows="6"
@@ -137,7 +136,6 @@ export default class DimensionScoreBlock extends React.Component {
                                 )
                             }
                         </label>
-
                         {this.isPrintMode() === false &&
                             <textarea className="a-text-input a-text-input__full"
                                 rows="6"
@@ -164,7 +162,6 @@ export default class DimensionScoreBlock extends React.Component {
                                 )
                             }
                         </label>
-
                         {this.isPrintMode() === false &&
                             <textarea className="a-text-input a-text-input__full"
                                 rows="6"
@@ -179,10 +176,6 @@ export default class DimensionScoreBlock extends React.Component {
                         }
                     </div>
                 </div>
-
-                <hr className="hr
-                               u-mb45
-                               u-mt30" />
             </React.Fragment>
         );
     }
