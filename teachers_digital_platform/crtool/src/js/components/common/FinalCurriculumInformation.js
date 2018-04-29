@@ -3,6 +3,7 @@ import React from "react";
 import C from "../../business.logic/constants";
 import SaveWorkInformation from "../common/SaveWorkInformation";
 import PrintOrSaveFinalSummary from "../common/PrintOrSaveFinalSummary";
+import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
 
 export default class FinalCurriculumInformation extends React.Component {
     renderReviewedOnDate() {
@@ -11,9 +12,17 @@ export default class FinalCurriculumInformation extends React.Component {
         }
         return this.props.distinctiveCompletedDate[this.props.currentPage]
     }
+
+    isPrintMode() {
+        let isPrintMode = false;
+        isPrintMode = this.props.currentPrintButton !== "" && this.props.currentPrintButton !== C.START_PAGE;
+        return isPrintMode;
+    }
+
     render() {
         return (
             <React.Fragment>
+                {this.isPrintMode() && <PrintIntroComponent {...this.props} />}
                 <div className="block
                                 block__flush-top
                                 block__padded-bottom

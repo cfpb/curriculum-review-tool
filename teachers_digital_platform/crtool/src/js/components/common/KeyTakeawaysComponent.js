@@ -8,7 +8,8 @@ export default class KeyTakeawaysComponent extends React.Component {
     }
 
     renderKeyTakeaway() {
-        if (this.props.currentPrintButton === C.START_PAGE) {
+        if (this.props.currentPrintButton === C.START_PAGE ||
+            this.props.currentPrintButton === "") {
             return this.renderEditableVersion();
         }
         else {
@@ -23,7 +24,7 @@ export default class KeyTakeawaysComponent extends React.Component {
                 id="crt-key-takeaways"
                 ref="crt-key-takeaways"
                 value={this.props.criterionAnswers["crt-key-takeaways"]}
-                onChange={e=>this.props.criterionAnswerChanged("crt-key-takeaways", e.target.value)} >
+                onChange={e=>this.props.criterionAnswerChanged("final", "crt-key-takeaways", e.target.value)} >
             </textarea>
         );
     }
