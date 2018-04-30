@@ -34,7 +34,7 @@ const EfficacyCalculationService = {
             criterionThreeScore.all_essential_yes &&
             criterionThreeScore.beneficial_total_no === 0) {
 
-            score = "large";
+            score = "strong";
         } else if (isLarge &&
                     criterionThreeScore.all_essential_yes &&
                     criterionThreeScore.beneficial_total_no === 1) {

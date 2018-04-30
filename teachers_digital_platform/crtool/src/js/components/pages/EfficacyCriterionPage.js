@@ -167,7 +167,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <div className="block block__flush-top">
                     <h3 className="h2">
                         <SvgIcon
-                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-1"]}
+                            icon={this.props.finishAddingEfficacyStudies && C.ICON_CHECK_ROUND}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
