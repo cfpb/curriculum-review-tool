@@ -128,7 +128,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                 localStorage.setItem(C.START_PAGE, distinctiveName);
                 localStorage.setItem("currentPrintButton", "");
                 localStorage.setItem("finalSummaryShowEntireReview", "false");
-          },4000);
+          },2000);
         }
     }
 
