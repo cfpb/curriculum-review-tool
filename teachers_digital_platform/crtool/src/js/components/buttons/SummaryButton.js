@@ -9,10 +9,10 @@ export default class SummaryButton extends React.Component {
     }
 
     render() {
-        if ( (this.props.currentPage === C.CONTENT_PAGE && this.props.contentInProgress === C.STATUS_COMPLETE) ||
-             (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityInProgress === C.STATUS_COMPLETE) ||
-             (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) ||
-             (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) ) {
+        if ( (this.props.currentPage === C.CONTENT_PAGE && this.props.contentIsSummaryView) ||
+             (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityIsSummaryView) ||
+             (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityIsSummaryView) ||
+             (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyIsSummaryView) ) {
                 return (
                 <button className="a-btn" onClick={(e) => {this.props.distinctiveClicked(C.FINAL_PRINT_PAGE); e.preventDefault();}}>
                     Print or save summary

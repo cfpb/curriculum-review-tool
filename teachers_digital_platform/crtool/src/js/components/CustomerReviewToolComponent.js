@@ -25,6 +25,11 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityInProgress: Repository.getUtilityInProgress(),
             efficacyInProgress: Repository.getEfficacyInProgress(),
 
+            contentIsSummaryView: Repository.getContentViewSummary(),
+            qualityIsSummaryView: Repository.getQualityViewSummary(),
+            utilityIsSummaryView: Repository.getUtilityViewSummary(),
+            efficacyIsSummaryView: Repository.getEfficacyViewSummary(),
+
             contentSummaryButton: Repository.getContentSummaryButton(),
             qualitySummaryButton: Repository.getQualitySummaryButton(),
             utilitySummaryButton: Repository.getUtilitySummaryButton(),
@@ -81,9 +86,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
-    setDistinctiveBackToInProgress(distinctiveName) {
-        Repository.setDistinctiveStatus(this, distinctiveName, C.STATUS_IN_PROGRESS);
-        Repository.saveCurrentPage(this, distinctiveName);
+    setDimensionSummaryView(dimensionName, isSummaryView) {
+        Repository.setDistinctiveView(this, dimensionName, isSummaryView);
     }
 
     distinctiveClicked(distinctiveName) {
@@ -136,6 +140,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     handleSummaryButtonClick() {
         this.setDistinctiveCompletionDateNow(this.state.currentPage);
         Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
+        this.setDimensionSummaryView(this.state.currentPage, true);
     }
 
     initializeStudyAnsers(key, study) {
@@ -193,6 +198,10 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualityInProgress:this.state.qualityInProgress,
             efficacyInProgress:this.state.efficacyInProgress,
 
+            contentIsSummaryView:this.state.contentIsSummaryView,
+            utilityIsSummaryView:this.state.utilityIsSummaryView,
+            qualityIsSummaryView:this.state.qualityIsSummaryView,
+            efficacyIsSummaryView:this.state.efficacyIsSummaryView,
 
             contentSummaryButton:this.state.contentSummaryButton,
             utilitySummaryButton:this.state.utilitySummaryButton,
@@ -208,6 +217,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
             finalSummaryShowEntireReview:this.state.finalSummaryShowEntireReview,
 
+            handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
             handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),
             resetPrintButtonState:this.resetPrintButtonState.bind(this),
             printButtonClicked:this.printButtonClicked.bind(this),
@@ -221,46 +231,10 @@ export default class CustomerReviewToolComponent extends React.Component {
             initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
             handleFinishAddingEfficacyStudies:this.handleFinishAddingEfficacyStudies.bind(this),
             distinctiveClicked:this.distinctiveClicked.bind(this),
+            setDimensionSummaryView:this.setDimensionSummaryView.bind(this),
             setCriterionTitleLinkClicked: this.setCriterionTitleLinkClicked.bind(this),
-            setDistinctiveBackToInProgress:this.setDistinctiveBackToInProgress.bind(this),
             setCriterionStatusToInProgress:this.setCriterionStatusToInProgress.bind(this),
             setPrintFinalSummaryShowEntireReview:this.setPrintFinalSummaryShowEntireReview.bind(this),
-        };
-
-        const dimensionMenuProps = {
-            currentPage:this.state.currentPage,
-            contentInProgress:this.state.contentInProgress,
-            utilityInProgress:this.state.utilityInProgress,
-            qualityInProgress:this.state.qualityInProgress,
-            efficacyInProgress:this.state.efficacyInProgress,
-
-            contentSummaryButton:this.state.contentSummaryButton,
-            utilitySummaryButton:this.state.utilitySummaryButton,
-            qualitySummaryButton:this.state.qualitySummaryButton,
-            efficacySummaryButton:this.state.efficacySummaryButton,
-            dimensionOverallScores:this.state.dimensionOverallScores,
-
-            distinctiveClicked:this.distinctiveClicked.bind(this),
-            handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),
-        };
-
-        const summaryButtonProps = {
-            currentPage:this.state.currentPage,
-
-            contentInProgress:this.state.contentInProgress,
-            utilityInProgress:this.state.utilityInProgress,
-            qualityInProgress:this.state.qualityInProgress,
-            efficacyInProgress:this.state.efficacyInProgress,
-
-            contentSummaryButton:this.state.contentSummaryButton,
-            utilitySummaryButton:this.state.utilitySummaryButton,
-            qualitySummaryButton:this.state.qualitySummaryButton,
-            efficacySummaryButton:this.state.efficacySummaryButton,
-            finishAddingEfficacyStudies:this.state.finishAddingEfficacyStudies,
-
-            clearLocalStorage:this.clearLocalStorage.bind(this),
-            distinctiveClicked:this.distinctiveClicked.bind(this),
-            handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
         };
 
         if (this.state.currentPage === C.FINAL_SUMMARY_PAGE ||
@@ -279,14 +253,25 @@ export default class CustomerReviewToolComponent extends React.Component {
                             buttonText="Can I save my work?"
                             hasIcon="true" />
                     </div>
-                    <div class="h5 u-mb30">You’re reviewing</div>
-                    <h1>{this.state.curriculumTitle}</h1>
+                    {
+                        this.state.currentPage === C.START_PAGE &&
+                        <React.Fragment>
+                            <div class="h5 u-mb30">You’re reviewing</div>
+                            <h1>{this.state.curriculumTitle}</h1>
+                        </React.Fragment>
+                    }
+                    {
+                        this.state.currentPage !== C.START_PAGE &&
+                        <React.Fragment>
+                            <div className="h4">You're Reviewing: {this.state.curriculumTitle}</div>
+                        </React.Fragment>
+                    }
 
                     <PageInstructionsComponent currentPage={this.state.currentPage} />
-                    <DistinctiveMenuBar {...dimensionMenuProps} />
-                    <SurveyPageContainer className="SurveyPage" {...applicationProps} {...dimensionMenuProps} />
+                    <DistinctiveMenuBar {...applicationProps} />
+                    <SurveyPageContainer className="SurveyPage" {...applicationProps} {...applicationProps} />
 
-                    <FooterButtonAreaComponent {...summaryButtonProps} />
+                    <FooterButtonAreaComponent {...applicationProps} />
 
                     {
                         (
@@ -301,7 +286,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                                 <div class="wrapper content_wrapper">
                                     <div class="content_main">
                                         <h2>Choose another dimension or review the final summary</h2>
-                                        <DistinctiveMenuBar {...dimensionMenuProps} />
+                                        <DistinctiveMenuBar {...applicationProps} />
                                     </div>
                                 </div>
                             </div>

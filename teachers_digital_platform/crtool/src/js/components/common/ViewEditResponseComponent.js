@@ -10,7 +10,7 @@ export default class ViewEditResponseComponent extends React.Component {
             return (
                 <React.Fragment>
                     <div className="l-survey-top">
-                        <button className="a-btn a-btn__link a-btn__no-line" onClick={(e) => {this.props.setDistinctiveBackToInProgress(this.props.criterionPage)}}>
+                        <button className="a-btn a-btn__link a-btn__no-line" onClick={(e) => {this.props.setDimensionSummaryView(this.props.criterionPage)}}>
                             <SvgIcon
                                 icon="pencil"
                                 islarge="true"
