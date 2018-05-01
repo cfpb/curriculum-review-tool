@@ -85,6 +85,10 @@ export default class QualityPrintPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
+
                 {/* Quality Overall Score */}
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}

@@ -101,6 +101,11 @@ export default class UtilityPrintPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
+
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
+
                 {/* Utility Overall Score */}
                 <DimensionScoreBlock
                     dimensionPage={C.UTILITY_PAGE}

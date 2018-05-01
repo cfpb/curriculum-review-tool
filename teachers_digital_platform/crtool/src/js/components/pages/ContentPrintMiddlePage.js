@@ -100,6 +100,10 @@ export default class ContentPrintMiddlePage extends React.Component {
                     criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
 
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
+
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
                     dimensionKey="content-middle-crt-"
