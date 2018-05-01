@@ -118,7 +118,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     dimensionKey="content-elementary-crt-"
                     dimensionName="Content"
                     dimensionLead="How does this curriculum meet the criteria for content:"
-                    strongText="All 6 criteria were met, and at least one was exceeded"
+                    strongText="All 6 criteria were met and at least one was exceeded"
                     moderateText="All 6 criteria were met"
                     limitedText="At least one criterion was not met"
                     {...this.props} />
