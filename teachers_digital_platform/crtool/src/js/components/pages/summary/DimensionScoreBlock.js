@@ -70,7 +70,7 @@ export default class DimensionScoreBlock extends React.Component {
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("moderate", "text")}>
                                         <div><strong>Moderate utility</strong></div>
-                                        {this.props.moderate}
+                                        {this.props.moderateText}
                                     </div>
                                 </div>
                             </div>
