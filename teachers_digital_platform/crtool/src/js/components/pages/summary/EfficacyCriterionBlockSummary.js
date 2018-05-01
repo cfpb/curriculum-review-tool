@@ -20,7 +20,11 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
                                     block__padded-bottom
                                     block__border-bottom
                                     u-page-break-before">
-                        <DimensionIconTitleComponent dimensionName="Efficacy" dimensionTitle={"Efficacy"} {...this.props} />
+                        <DimensionIconTitleComponent
+                            {...this.props}
+                            dimensionName="Efficacy"
+                            dimensionTitle={"Efficacy"}
+                            isH1="true" />
                         <p className="lead-paragraph">
                             The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness.
                         </p>

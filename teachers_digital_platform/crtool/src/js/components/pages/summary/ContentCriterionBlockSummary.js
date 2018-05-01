@@ -19,7 +19,11 @@ export default class ContentBlockSummary extends React.Component {
                                     block__border-bottom
                                     u-page-break-before">
 
-                        <DimensionIconTitleComponent dimensionName="Content" dimensionTitle={"Content"} {...this.props} />
+                        <DimensionIconTitleComponent
+                            {...this.props}
+                            dimensionName="Content"
+                            dimensionTitle={"Content"}
+                            isH1="true" />
                         <p className="lead-paragraph">
                             This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability.
                         </p>

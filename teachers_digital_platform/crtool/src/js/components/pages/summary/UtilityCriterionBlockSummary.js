@@ -19,7 +19,11 @@ export default class UtilityCriterionBlockSummary extends React.Component {
                                     block__padded-bottom
                                     block__border-bottom
                                     u-page-break-before">
-                        <DimensionIconTitleComponent dimensionName="Utility" dimensionTitle={"Utility"} {...this.props} />
+                        <DimensionIconTitleComponent
+                            {...this.props}
+                            dimensionName="Utility"
+                            dimensionTitle={"Utility"}
+                            isH1="true" />
                         <p className="lead-paragraph">
                             The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge.
                         </p>
