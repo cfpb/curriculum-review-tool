@@ -38,8 +38,8 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
                     criterionNumber="1"
                     criterionName="Criterion 1: Accessibility"
                     criterionLead="Curriculum materials are physically accessible to teachers and students in a typical school setting."
@@ -53,7 +53,7 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={false}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
                     criterionNumber="2"
                     criterionName="Criterion 2: Accuracy and timeliness"
                     criterionLead="Curriculum materials are current and free of errors."
@@ -66,8 +66,8 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
                     criterionNumber="3"
                     criterionName="Criterion 3: Objectivity"
                     criterionLead="Curriculum materials are objective."
@@ -81,7 +81,7 @@ export default class QualitySummaryPage extends React.Component {
                     showBeneficial={false}
                     dimensionKey="quality-crt-"
                     dimensionPage={C.QUALITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
                     criterionNumber="4"
                     criterionName="Criterion 4: Visual appearance"
                     criterionLead="The visual appearance of the student materials is conducive to learning."
