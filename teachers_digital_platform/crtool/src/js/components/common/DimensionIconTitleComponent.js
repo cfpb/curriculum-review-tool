@@ -20,7 +20,7 @@ export default class DimensionIconTitleComponent extends React.Component {
 
     render() {
         return (
-            <h2 className="h1">
+            <h2 className={this.props.isH1 === "true" && "h1"}>
                 <SvgIcon
                     icon={this.getDimensionIcon()}
                     isLarge="true"

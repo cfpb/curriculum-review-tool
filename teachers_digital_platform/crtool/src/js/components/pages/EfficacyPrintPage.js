@@ -34,12 +34,7 @@ export default class EfficacyPrintPage extends React.Component {
                     dimensionLead="How does this curriculum meet the criteria for efficacy:"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Efficacy individual Criterion Q&A for all Criterion*/}
-                    <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <EfficacyCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

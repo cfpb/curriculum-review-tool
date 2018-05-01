@@ -85,6 +85,10 @@ export default class QualityPrintPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
+
                 {/* Quality Overall Score */}
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}
@@ -96,12 +100,7 @@ export default class QualityPrintPage extends React.Component {
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Quality individual Criterion Q&A for all Criterion*/}
-                    <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <QualityCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

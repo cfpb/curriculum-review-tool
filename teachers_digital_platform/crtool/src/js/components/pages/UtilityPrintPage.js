@@ -101,6 +101,11 @@ export default class UtilityPrintPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
+
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
+
                 {/* Utility Overall Score */}
                 <DimensionScoreBlock
                     dimensionPage={C.UTILITY_PAGE}
@@ -112,12 +117,7 @@ export default class UtilityPrintPage extends React.Component {
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Utility individual Criterion Q&A for all Criterion*/}
-                    <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <UtilityCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

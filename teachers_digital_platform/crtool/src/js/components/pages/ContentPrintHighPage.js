@@ -101,6 +101,9 @@ export default class ContentPrintHighPage extends React.Component {
                     criterionDoesNotMeetText="Less than 2 components were addressed"
                     {...this.props} />
 
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
@@ -112,12 +115,7 @@ export default class ContentPrintHighPage extends React.Component {
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Content individual Criterion Q&A for all Criterion*/}
-                    <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <ContentCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

@@ -91,10 +91,16 @@ export default class FinalSummaryPage extends React.Component {
 
                 {this.props.currentPrintButton === C.FINAL_PRINT_EVERYTHING &&
                     <React.Fragment>
-                        <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                        <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                        <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                        <EfficacyCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
+                        <ContentCriterionBlockSummary
+                            {...this.props}
+                            hasBottomBorder="true" />
+                        <UtilityCriterionBlockSummary
+                            {...this.props}
+                            hasBottomBorder="true" />
+                        <QualityCriterionBlockSummary
+                            {...this.props}
+                            hasBottomBorder="true" />
+                        <EfficacyCriterionBlockSummary {...this.props} />
                     </React.Fragment>
                 }
                 {this.props.finalSummaryShowEntireReview !== "true" &&
