@@ -35,7 +35,7 @@ export default class ContentElementarySummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-elementary-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="1"
@@ -48,7 +48,7 @@ export default class ContentElementarySummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-elementary-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="2"
@@ -62,7 +62,7 @@ export default class ContentElementarySummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-elementary-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="3"
@@ -75,7 +75,7 @@ export default class ContentElementarySummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-elementary-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="4"
@@ -88,7 +88,7 @@ export default class ContentElementarySummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-elementary-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="5"

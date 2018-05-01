@@ -32,7 +32,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-middle-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="1"
@@ -45,7 +45,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-middle-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="2"
@@ -58,7 +58,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-middle-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="3"
@@ -71,7 +71,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-middle-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="4"
@@ -84,7 +84,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-middle-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="5"
@@ -97,7 +97,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
 
                 <CriterionScoreBlock
                     showExceeds={true}
-                    showBeneficial={true}
+                    showBeneficial={false}
                     dimensionKey="content-middle-crt-"
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber="6"
