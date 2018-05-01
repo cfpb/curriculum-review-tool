@@ -5,13 +5,13 @@ import DimensionIconTitleComponent from "./DimensionIconTitleComponent";
 export default class DimensionNotReviewedComponent extends React.Component {
     render() {
         return (
-            <React.Fragment>
+            <div className="block
+                            block__flush-top
+                            block__padded-bottom
+                            block__border-bottom">
                 <DimensionIconTitleComponent {...this.props} />
-                <p class="o-survey_question-helper">Dimension not reviewed</p>
-                <hr className="hr
-                               u-mb45
-                               u-mt30" />
-            </React.Fragment>
+                <p><em>Dimension not reviewed</em></p>
+            </div>
         );
     }
 }
