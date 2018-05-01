@@ -24,6 +24,9 @@ export default class ContentHighSummaryPage extends React.Component {
                 <p className="lead-paragraph">
                     Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
                 </p>
+                <p>
+                    Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
+                </p>
                 <SaveWorkInformation />
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE); e.preventDefault();}}>
                     Print or save summary
