@@ -24,6 +24,9 @@ export default class UtilitySummaryPage extends React.Component {
                 <p className="lead-paragraph">
                     Review the scores and your notes for each utility criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
                 </p>
+                <p>
+                    Then, review the overall score for the utility criteria and enter your thoughts about its strengths and weaknesses.
+                </p>
                 <SaveWorkInformation />
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.UTILITY_PAGE); e.preventDefault();}}>
                     Print or save summary

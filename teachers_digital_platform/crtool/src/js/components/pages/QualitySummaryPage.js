@@ -24,6 +24,9 @@ export default class QualitySummaryPage extends React.Component {
                 <p className="lead-paragraph">
                     Review the scores and your notes for each quality criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
                 </p>
+                <p>
+                    Then, review the overall score for the quality criteria and enter your thoughts about its strengths and weaknesses.
+                </p>
                 <SaveWorkInformation />
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.QUALITY_PAGE); e.preventDefault();}}>
                     Print or save summary
