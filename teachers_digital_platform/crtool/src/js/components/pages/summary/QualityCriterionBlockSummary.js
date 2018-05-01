@@ -8,17 +8,19 @@ import DimensionNotReviewedComponent from "../../common/DimensionNotReviewedComp
 export default class QualityCriterionBlockSummary extends React.Component {
 
     render() {
+        let wrapperClasses = "u-page-break-before";
+
+        if (this.props.hasBottomBorder === "true") {
+            wrapperClasses += " block block__flush-top block__padded-bottom block__border-bottom";
+        }
+
         return (
             <React.Fragment>
                 {this.props.qualitySummaryButton !== "complete" &&
                     <DimensionNotReviewedComponent dimensionTitle="Quality" dimensionName="Quality" {...this.props} />
                 }
                 {this.props.qualitySummaryButton === "complete" &&
-                    <div className="block
-                                    block__flush-top
-                                    block__padded-bottom
-                                    block__border-bottom
-                                    u-page-break-before">
+                    <div className={wrapperClasses}>
                         <DimensionIconTitleComponent
                             {...this.props}
                             dimensionName="Quality"

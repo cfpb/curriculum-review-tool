@@ -7,17 +7,19 @@ import ContentCriterionSwitchComponent from "../partial.pages/ContentCriterionSw
 export default class ContentBlockSummary extends React.Component {
 
     render() {
+        let wrapperClasses = "u-page-break-before";
+
+        if (this.props.hasBottomBorder === "true") {
+            wrapperClasses += " block block__flush-top block__padded-bottom block__border-bottom";
+        }
+
         return (
             <React.Fragment>
                 {this.props.contentSummaryButton !== "complete" &&
                     <DimensionNotReviewedComponent dimensionTitle="Content" dimensionName="Content" {...this.props} />
                 }
                 {this.props.contentSummaryButton === "complete" &&
-                    <div className="block
-                                    block__flush-top
-                                    block__padded-bottom
-                                    block__border-bottom
-                                    u-page-break-before">
+                    <div className={wrapperClasses}>
 
                         <DimensionIconTitleComponent
                             {...this.props}

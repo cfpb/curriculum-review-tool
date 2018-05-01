@@ -9,17 +9,19 @@ import DimensionNotReviewedComponent from "../../common/DimensionNotReviewedComp
 export default class EfficacyCriterionBlockSummary extends React.Component {
 
     render() {
+        let wrapperClasses = "u-page-break-before";
+
+        if (this.props.hasBottomBorder === "true") {
+            wrapperClasses += " block block__flush-top block__padded-bottom block__border-bottom";
+        }
+
         return (
             <React.Fragment>
                 {this.props.efficacySummaryButton !== "complete" &&
                     <DimensionNotReviewedComponent dimensionTitle="Efficacy" dimensionName="Efficacy" {...this.props} />
                 }
                 {this.props.efficacySummaryButton === "complete" &&
-                    <div className="block
-                                    block__flush-top
-                                    block__padded-bottom
-                                    block__border-bottom
-                                    u-page-break-before">
+                    <div className={wrapperClasses}>
                         <DimensionIconTitleComponent
                             {...this.props}
                             dimensionName="Efficacy"
