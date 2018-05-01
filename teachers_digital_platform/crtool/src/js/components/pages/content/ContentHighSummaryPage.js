@@ -118,7 +118,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     dimensionKey="content-high-crt-"
                     dimensionName="Content"
                     dimensionLead="How does this curriculum meet the criteria for content:"
-                    strongText="All 6 criteria were met, and at least one was exceeded"
+                    strongText="All 6 criteria were met and at least one was exceeded"
                     moderateText="All 6 criteria were met"
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />

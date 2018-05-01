@@ -40,7 +40,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <ul>
                     <li>Read through the scope and sequence of the curriculum.</li>
                     <li>Skim the lesson plans, student materials, and assessments.</li>
-                    <li>Select “yes” for the components that are addressed, and “no” for those that are not.</li>
+                    <li>Select “yes” for the components that are addressed and “no” for those that are not.</li>
                 </ul>
                 <p>
                     <SaveWorkModal
@@ -59,7 +59,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         Criterion 1: Earning, income, and careers
                     </h3>
                     <p className="lead-paragraph">
-                        Does the curriculum address grade-level appropriate topics for saving and investing?
+                        Does the curriculum address grade-level appropriate topics for earning, income, and careers?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
@@ -156,7 +156,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                 </div>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>Changes in the labor market or economic conditions can causes changes in worker’s income or unemployment.</p>
+                                        <p>Changes in the labor market or economic conditions can cause changes in worker’s income or unemployment.</p>
                                     </div>
                                     <div className="o-survey_answer">
                                         <div className="m-form-field

@@ -564,7 +564,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                 </div>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>Making good spending choices involves systematic decision making and planning, including comparing the benefits and costs of spending, asking questions, and comparison shopping.</p>
+                                        <p>Making good spending choices involves systematic decision-making and planning, including comparing the benefits and costs of spending, asking questions, and comparison shopping.</p>
                                     </div>
                                     <div className="o-survey_answer">
                                         <div className="m-form-field

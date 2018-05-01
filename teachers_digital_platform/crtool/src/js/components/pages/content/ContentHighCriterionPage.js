@@ -1054,7 +1054,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                 </div>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>Laws in place to protect consumers who use credit include requirements to provide full disclosure of credit terms, such the APR and fees, as well as protection against discrimination and limits on abusive marketing or collection practices.</p>
+                                        <p>Laws in place to protect consumers who use credit include requirements to provide full disclosure of credit terms, such as the APR and fees, as well as protection against discrimination and limits on abusive marketing or collection practices.</p>
                                     </div>
                                     <div className="o-survey_answer">
                                         <div className="m-form-field
@@ -1089,7 +1089,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                 </div>
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
-                                        <p>There are important considerations in taking financial aid for education, including underlying mechanics such as grants versus loans, amount of loans necessary to complete one’s education, loan forgiveness, and repayment schedules, and expected future income.</p>
+                                        <p>There are important considerations in taking financial aid for education, including underlying mechanics such as grants versus loans, amount of loans necessary to complete one’s education, loan forgiveness repayment schedules, and expected future income.</p>
                                     </div>
                                     <div className="o-survey_answer">
                                         <div className="m-form-field
