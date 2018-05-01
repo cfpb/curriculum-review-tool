@@ -14,19 +14,14 @@ export default class DimensionInformation extends React.Component {
         if (this.props.currentPrintButton !== C.START_PAGE) {
             return (
                 <React.Fragment>
-                    <div className="block
-                                    block__flush-top
-                                    block__padded-bottom
-                                    block__border-top">
-                        <div className="h5">CFPB curriculum review tool</div>
-                        <h1>{this.props.dimensionName} summary for {this.props.curriculumTitle}</h1>
-                        <p className="lead-paragraph u-mb30">
-                            {this.props.dimensionSummary}
-                        </p>
-                        <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                        {this.props.publicationDate !== "" && <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>}
-                        <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
-                    </div>
+                    <div className="h5">CFPB curriculum review tool</div>
+                    <h1>{this.props.dimensionName} summary for {this.props.curriculumTitle}</h1>
+                    <p className="lead-paragraph u-mb30">
+                        {this.props.dimensionSummary}
+                    </p>
+                    <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
+                    {this.props.publicationDate !== "" && <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>}
+                    <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
                 </React.Fragment>
             );
         } else {

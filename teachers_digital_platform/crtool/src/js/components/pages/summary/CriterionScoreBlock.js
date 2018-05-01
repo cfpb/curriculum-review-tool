@@ -162,7 +162,7 @@ export default class CriterionScoreBlock extends React.Component {
         return (
             <React.Fragment>
                 <hr className="hr
-                                u-mb45
+                                u-mb30
                                 u-mt30" />
                 <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
                 <h3 className="h2">{this.props.criterionName}</h3>

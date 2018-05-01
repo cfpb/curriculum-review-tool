@@ -101,7 +101,6 @@ export default class ContentPrintHighPage extends React.Component {
                     criterionDoesNotMeetText="Less than 2 components were addressed"
                     {...this.props} />
 
-
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
                     dimensionKey="content-high-crt-"
