@@ -112,12 +112,7 @@ export default class UtilityPrintPage extends React.Component {
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Utility individual Criterion Q&A for all Criterion*/}
-                    <UtilityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <UtilityCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

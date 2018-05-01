@@ -111,12 +111,7 @@ export default class ContentPrintHighPage extends React.Component {
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Content individual Criterion Q&A for all Criterion*/}
-                    <ContentCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <ContentCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

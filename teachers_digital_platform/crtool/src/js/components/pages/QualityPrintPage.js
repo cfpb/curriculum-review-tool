@@ -96,12 +96,7 @@ export default class QualityPrintPage extends React.Component {
                     limitedText="At least one of the criteria was not met"
                     {...this.props} />
 
-                {/* Forced Page Break */}
-                <div className="u-page-break-before">
-
-                    {/* Quality individual Criterion Q&A for all Criterion*/}
-                    <QualityCriterionBlockSummary {...this.props} /> {/* Criterion Information */}
-                </div>
+                <QualityCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }
