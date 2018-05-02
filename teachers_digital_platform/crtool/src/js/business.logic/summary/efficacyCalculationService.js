@@ -11,9 +11,9 @@ const EfficacyCalculationService = {
         let criterionGroupName = "efficacy-crt-1-" + studyKey;
         let criterionScore = this.isEfficacyStudyComplete(component, studyKey, alteredStudyAnswers, criterionGroupName);
 
-        EfficacyCalculationService.calculateOveralScore(component);
-
+        //Temporal Coupling: The next two lines must be in this order
         UtilityService.setCriterionScoreState(component, criterionGroupName, criterionScore);
+        EfficacyCalculationService.calculateOveralScore(component);
     },
 
     calculateOveralScore(component) {
@@ -22,34 +22,40 @@ const EfficacyCalculationService = {
             return false;
         }
 
-        let isLarge = this.scoreIsLarge(component, hasTwoStrongStudies);
+        let isSmall = this.scoreScopeOfEvidenceIsSmall(hasTwoStrongStudies);
         let criterionThreeScore = component.state.criterionScores["efficacy-crt-3"];
 
         if (criterionThreeScore === undefined) {
             criterionThreeScore = this.createEmptyScore("efficacy-crt-3");
         }
 
+        let allCriterionAnswers = Repository.getCriterionAnswers();
+        let ef_31 = allCriterionAnswers["efficacy-crt-question-3.1"];
+        let ef_321 = allCriterionAnswers["efficacy-crt-question-3.2.1"];
+        let ef_322 = allCriterionAnswers["efficacy-crt-question-3.2.2_beneficial"];
+
         let score = "notenoughinfo";
-        if (isLarge &&
-            criterionThreeScore.all_essential_yes &&
-            criterionThreeScore.beneficial_total_no === 0) {
+        if (isSmall || ef_31 === "no") {
+
+            score = "limited"
+        } else if (!isSmall &&
+                    ef_31 === "yes" && 
+                    ef_321 === "yes" &&
+                    ef_322 === "yes") {
 
             score = "strong";
-        } else if (isLarge &&
-                    criterionThreeScore.all_essential_yes &&
-                    criterionThreeScore.beneficial_total_no === 1) {
+        } else if (!isSmall &&
+                    ef_31 === "yes" && 
+                    ef_321 === "yes" &&
+                    ef_322 === "no") {
 
             score = "moderate";
-        } else if (isLarge &&
-                    criterionThreeScore.essential_total_yes < 2) {
+        } else if (!isSmall &&
+                    ef_31 === "yes" && 
+                    ef_321 === "no") {
 
             score = "mixed";
-        } else if (!isLarge &&
-                    criterionThreeScore.essential_total_yes === 0 &&
-                    criterionThreeScore.beneficial_total_yes === 1) {
-
-            score = "limited";
-        } else if (!isLarge) {
+        } else {
 
             score = "notenoughinfo";
         }
@@ -83,8 +89,9 @@ const EfficacyCalculationService = {
 
     twoStrongStudiesExist(component) {
         let count = 0;
-        for (var score in component.state.criterionScores) {
-            if (score.includes("efficacy-crt-1") && component.state.criterionScores[score].all_essential_yes) {
+        let criterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
+        for (var score in criterionScores) {
+            if (score.includes("efficacy-crt-1") && criterionScores[score].all_essential_yes) {
                 count += 1;
                 if (count === 2) {
                     return true;
@@ -95,7 +102,7 @@ const EfficacyCalculationService = {
         return false;
     },
 
-    scoreIsLarge(component, hasTwoStrongStudies) {
+    scoreScoeOfEvidenceIsLarge(component, hasTwoStrongStudies) {
         let criterionScore = component.state.criterionScores["efficacy-crt-2"];
         if (criterionScore === undefined) {
             criterionScore = this.createEmptyScore("efficacy-crt-2");
@@ -105,7 +112,7 @@ const EfficacyCalculationService = {
             criterionScore.beneficial_total_yes > 0);
     },
 
-    scoreIsModerate(component, hasTwoStrongStudies) {
+    scoreScopeOfEvidenceIsModerate(component, hasTwoStrongStudies) {
         let criterionScore = component.state.criterionScores["efficacy-crt-2"];
         if (criterionScore === undefined) {
             criterionScore = this.createEmptyScore("efficacy-crt-2");
@@ -115,7 +122,7 @@ const EfficacyCalculationService = {
                 criterionScore.beneficial_total_yes === 0);
     },
 
-    scoreIsLimited(hasTwoStrongStudies) {
+    scoreScopeOfEvidenceIsSmall(hasTwoStrongStudies) {
         return (!hasTwoStrongStudies);
     },
 
@@ -127,11 +134,12 @@ const EfficacyCalculationService = {
         }
 
         let score = "small";
-        if (this.scoreIsLarge(component, hasTwoStrongStudies)) {
+        if (this.scoreScoeOfEvidenceIsLarge(component, hasTwoStrongStudies)) {
             score = "large";
-        } else if (this.scoreIsModerate(component, hasTwoStrongStudies)) {
+        } else if (this.scoreScopeOfEvidenceIsModerate(component, hasTwoStrongStudies)) {
+            console.log("Scoring as Moderate: " + hasTwoStrongStudies);
             score = "moderate";
-        } else if (this.scoreIsLimited(component, hasTwoStrongStudies)) {
+        } else if (this.scoreScopeOfEvidenceIsSmall(component, hasTwoStrongStudies)) {
             score = "small";
         }
 
