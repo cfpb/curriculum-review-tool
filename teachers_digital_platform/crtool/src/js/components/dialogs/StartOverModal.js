@@ -80,7 +80,7 @@ export default class StartOverModal extends React.Component {
                             </div>
                         </div>
                         <div className="o-modal_footer">
-                            <div className="m-btn-group">
+                            <div className="m-btn-group m-btn-group__wide">
                                 <button className="a-btn" onClick={(e) => {this.clearLocalStorage()}} formAction={C.START_PAGE_RELATIVE_URL} >Yes</button>
                                 <button className="a-btn a-btn__link" onClick={(e) => {this.closestartOverModalDialog(); e.preventDefault();}}>No, return to current review</button>
                             </div>
