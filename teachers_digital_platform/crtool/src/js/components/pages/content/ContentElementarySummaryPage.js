@@ -31,7 +31,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                 <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE); e.preventDefault();}}>
                     Print or save summary
                 </button>
-                <DimensionInformation {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
+                <DimensionInformation dimensionName={C.CONTENT_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
                 <CriterionScoreBlock
                     showExceeds={true}
