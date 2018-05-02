@@ -29,7 +29,7 @@ export default class DimensionInformation extends React.Component {
                 <React.Fragment>
                     <hr class="hr u-mb45 u-mt30" />
                     <h2>Curriculum information</h2>
-                    <p><strong>Curriculum title:</strong> {this.props.dimensionName}</p>
+                    <p><strong>Curriculum title:</strong> {this.props.curriculumTitle}</p>
                     {this.props.publicationDate !== "" && <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>}
                     <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
