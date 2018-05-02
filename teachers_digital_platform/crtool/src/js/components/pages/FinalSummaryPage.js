@@ -65,6 +65,10 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionKey={contentDimensionKey}
                         dimensionName="Content"
                         dimensionLead="How does this curriculum meet the criteria for content:"
+                        isFinalSummary="true"
+                        strongText="All 6 criteria were met and at least one was exceeded"
+                        moderateText="All 6 criteria were met"
+                        limitedText="At least one of the criteria was not met"
                         {...this.props} />
                 }
                 {this.props.utilityInProgress !== C.STATUS_COMPLETE &&
@@ -78,6 +82,10 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionKey="utility-crt-"
                         dimensionName="Utility"
                         dimensionLead="How does this curriculum meet the criteria for utility:"
+                        isFinalSummary="true"
+                        strongText="All 5 criteria were met, and at least one was exceeded"
+                        moderateText="All 5 criteria were met"
+                        limitedText="At least one of the criteria was not met"
                         {...this.props} />
                 }
                 {this.props.qualityInProgress !== C.STATUS_COMPLETE &&
@@ -91,6 +99,10 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionKey="quality-crt-"
                         dimensionName="Quality"
                         dimensionLead="How does this curriculum meet the criteria for quality:"
+                        isFinalSummary="true"
+                        strongText="All 4 criteria were met, and at least one was exceeded"
+                        moderateText="All 4 criteria were met"
+                        limitedText="At least one of the criteria was not met"
                         {...this.props} />
                 }
                 {this.props.efficacyInProgress !== C.STATUS_COMPLETE &&
@@ -104,6 +116,7 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionName="Efficacy"
                         dimensionKey="utility-crt-"
                         dimensionLead="How does this curriculum meet the criteria for efficacy:"
+                        isFinalSummary="true"
                         {...this.props} />
                 }
 
