@@ -26,9 +26,6 @@ export default class FinalSummaryPage extends React.Component {
             contentDimensionKey = "content-middle-crt-";
         }
 
-
-        console.log("DimensionNotReviewedComponent for Content");
-        console.log(this.props.contentInProgress);
         return (
             <React.Fragment>
 

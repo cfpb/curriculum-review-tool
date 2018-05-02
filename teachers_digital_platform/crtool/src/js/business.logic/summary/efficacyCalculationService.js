@@ -137,7 +137,6 @@ const EfficacyCalculationService = {
         if (this.scoreScoeOfEvidenceIsLarge(component, hasTwoStrongStudies)) {
             score = "large";
         } else if (this.scoreScopeOfEvidenceIsModerate(component, hasTwoStrongStudies)) {
-            console.log("Scoring as Moderate: " + hasTwoStrongStudies);
             score = "moderate";
         } else if (this.scoreScopeOfEvidenceIsSmall(component, hasTwoStrongStudies)) {
             score = "small";
