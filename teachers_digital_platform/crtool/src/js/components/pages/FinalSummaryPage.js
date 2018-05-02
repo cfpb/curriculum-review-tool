@@ -25,6 +25,10 @@ export default class FinalSummaryPage extends React.Component {
         } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
             contentDimensionKey = "content-middle-crt-";
         }
+
+
+        console.log("DimensionNotReviewedComponent for Content");
+        console.log(this.props.contentInProgress);
         return (
             <React.Fragment>
 
@@ -34,12 +38,12 @@ export default class FinalSummaryPage extends React.Component {
 
                 <FinalCurriculumInformation {...this.props} />
 
-                {this.props.contentSummaryButton !== "complete" &&
+                {this.props.contentInProgress !== C.STATUS_COMPLETE &&
                     <DimensionNotReviewedComponent
                         dimensionTitle="Content overall score"
                         dimensionName="Content" {...this.props} />
                 }
-                {this.props.contentSummaryButton === "complete" &&
+                {this.props.contentInProgress === C.STATUS_COMPLETE &&
                     <DimensionScoreBlock
                         dimensionPage={C.CONTENT_PAGE}
                         dimensionKey={contentDimensionKey}
@@ -47,12 +51,12 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionLead="How does this curriculum meet the criteria for content:"
                         {...this.props} />
                 }
-                {this.props.utilitySummaryButton !== "complete" &&
+                {this.props.utilityInProgress !== C.STATUS_COMPLETE &&
                     <DimensionNotReviewedComponent
                         dimensionTitle="Utility overall score"
                         dimensionName="Utility" {...this.props} />
                 }
-                {this.props.utilitySummaryButton === "complete" &&
+                {this.props.utilityInProgress === C.STATUS_COMPLETE &&
                     <DimensionScoreBlock
                         dimensionPage={C.UTILITY_PAGE}
                         dimensionKey="utility-crt-"
@@ -60,12 +64,12 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionLead="How does this curriculum meet the criteria for utility:"
                         {...this.props} />
                 }
-                {this.props.qualitySummaryButton !== "complete" &&
+                {this.props.qualityInProgress !== C.STATUS_COMPLETE &&
                     <DimensionNotReviewedComponent
                         dimensionTitle="Quality overall score"
                         dimensionName="Quality" {...this.props} />
                 }
-                {this.props.qualitySummaryButton === "complete" &&
+                {this.props.qualityInProgress === C.STATUS_COMPLETE &&
                     <DimensionScoreBlock
                         dimensionPage={C.QUALITY_PAGE}
                         dimensionKey="quality-crt-"
@@ -73,12 +77,12 @@ export default class FinalSummaryPage extends React.Component {
                         dimensionLead="How does this curriculum meet the criteria for quality:"
                         {...this.props} />
                 }
-                {this.props.efficacySummaryButton !== "complete" &&
+                {this.props.efficacyInProgress !== C.STATUS_COMPLETE &&
                     <DimensionNotReviewedComponent
                         dimensionTitle="Efficacy overall score"
                         dimensionName="Efficacy" {...this.props} />
                 }
-                {this.props.efficacySummaryButton === "complete" &&
+                {this.props.efficacyInProgress === C.STATUS_COMPLETE &&
                     <EfficacyOveralScoreComponent
                         dimensionPage={C.EFFICACY_PAGE}
                         dimensionName="Efficacy"

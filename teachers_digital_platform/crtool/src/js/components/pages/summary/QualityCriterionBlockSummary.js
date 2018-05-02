@@ -16,10 +16,10 @@ export default class QualityCriterionBlockSummary extends React.Component {
 
         return (
             <React.Fragment>
-                {this.props.qualitySummaryButton !== "complete" &&
+                {this.props.qualityInProgress !== "complete" &&
                     <DimensionNotReviewedComponent dimensionTitle="Quality" dimensionName="Quality" {...this.props} />
                 }
-                {this.props.qualitySummaryButton === "complete" &&
+                {this.props.qualityInProgress === "complete" &&
                     <div className={wrapperClasses}>
                         <DimensionIconTitleComponent
                             {...this.props}

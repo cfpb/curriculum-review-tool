@@ -30,11 +30,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityIsSummaryView: Repository.getUtilityViewSummary(),
             efficacyIsSummaryView: Repository.getEfficacyViewSummary(),
 
-            contentSummaryButton: Repository.getContentSummaryButton(),
-            qualitySummaryButton: Repository.getQualitySummaryButton(),
-            utilitySummaryButton: Repository.getUtilitySummaryButton(),
-            efficacySummaryButton: Repository.getEfficacySummaryButton(),
-
             curriculumTitle: Repository.getCurriculumTitle(),
             publicationDate: Repository.getPublicationDate(),
             gradeRange: Repository.getGradeRange(),
@@ -202,11 +197,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityIsSummaryView:this.state.utilityIsSummaryView,
             qualityIsSummaryView:this.state.qualityIsSummaryView,
             efficacyIsSummaryView:this.state.efficacyIsSummaryView,
-
-            contentSummaryButton:this.state.contentSummaryButton,
-            utilitySummaryButton:this.state.utilitySummaryButton,
-            qualitySummaryButton:this.state.qualitySummaryButton,
-            efficacySummaryButton:this.state.efficacySummaryButton,
 
             studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,

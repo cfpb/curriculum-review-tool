@@ -13,6 +13,8 @@ export default class ContentPrintElementaryPage extends React.Component {
     }
 
     render() {
+        console.log("ContentPrintElementaryPage");
+        console.log(this.props.contentInProgress);
         return (
             <React.Fragment>
                 {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}

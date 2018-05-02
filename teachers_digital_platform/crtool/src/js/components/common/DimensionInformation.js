@@ -11,7 +11,7 @@ export default class DimensionInformation extends React.Component {
     }
 
     render() {
-        if (this.props.currentPrintButton !== C.START_PAGE) {
+        if (this.props.currentPrintButton !== C.START_PAGE && this.props.currentPrintButton !== "") {
             return (
                 <React.Fragment>
                     <div className="h5">CFPB curriculum review tool</div>

@@ -81,22 +81,6 @@ const Repository = {
         return localStorage.getItem(C.EFFICACY_SUMMARY_VIEW) || false;
     },
 
-    getContentSummaryButton() {
-        return localStorage.getItem(C.CONTENT_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
-    getQualitySummaryButton() {
-        return localStorage.getItem(C.QUALITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
-    getUtilitySummaryButton() {
-        return localStorage.getItem(C.UTILITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
-    getEfficacySummaryButton() {
-        return localStorage.getItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
     getCurriculumTitle() {
         return localStorage.getItem("curriculumTitle");
     },
