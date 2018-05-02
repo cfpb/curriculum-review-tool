@@ -114,7 +114,11 @@ export default class CustomerReviewToolComponent extends React.Component {
 
         if (distinctiveName !== C.START_PAGE) {
             this.openPrintPage();
-
+           
+            if (distinctiveName === C.FINAL_PRINT_PAGE || distinctiveName === C.FINAL_PRINT_EVERYTHING) {
+                distinctiveName = C.FINAL_SUMMARY_PAGE;
+            }
+           
             this.setState({currentPage: distinctiveName});
             this.setState({currentPrintButton: ""});
             this.setState({finalSummaryShowEntireReview: "false"});
