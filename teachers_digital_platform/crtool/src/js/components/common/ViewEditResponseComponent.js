@@ -5,7 +5,7 @@ import SvgIcon from "../svgs/SvgIcon";
 
 export default class ViewEditResponseComponent extends React.Component {
     setDimensionSummaryView() {
-        this.props.setDimensionSummaryView(this.props.criterionPage);
+        this.props.setDimensionSummaryView(this.props.criterionPage, false);
 
         //HACK: need to scroll to top of screen after we navigate.
         setTimeout(function(){
