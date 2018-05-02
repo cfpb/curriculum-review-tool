@@ -6,6 +6,12 @@ import SvgIcon from "../svgs/SvgIcon";
 export default class DistinctiveButton extends React.Component {
     handleOnClick() {
         this.props.distinctiveClicked(this.props.distinctive);
+
+        //HACK: need to scroll to top of screen after we navigate.
+        setTimeout(function(){
+            let main = document.getElementById("main");
+            main.scrollIntoView();
+        }, 100);
     }
 
     render() {

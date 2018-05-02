@@ -16,10 +16,10 @@ export default class UtilityCriterionBlockSummary extends React.Component {
 
         return (
             <React.Fragment>
-                {this.props.utilitySummaryButton !== "complete" &&
+                {this.props.utilityInProgress !== "complete" &&
                     <DimensionNotReviewedComponent dimensionTitle="Utility" dimensionName="Utility" {...this.props} />
                 }
-                {this.props.utilitySummaryButton === "complete" &&
+                {this.props.utilityInProgress === "complete" &&
                     <div className={wrapperClasses}>
                         <DimensionIconTitleComponent
                             {...this.props}

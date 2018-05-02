@@ -12,6 +12,9 @@ export default class PrintOrSaveFinalSummary extends React.Component {
                 <button className="a-btn a-btn__super" onClick={(e) => {this.props.setPrintFinalSummaryShowEntireReview("true", "true"); e.preventDefault();}}>
                     Print or save entire review
                 </button>
+                <hr className="hr
+                            u-mb45
+                            u-mt30" />
             </div>
         );
     }

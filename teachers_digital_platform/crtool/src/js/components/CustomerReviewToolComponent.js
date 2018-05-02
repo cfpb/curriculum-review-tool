@@ -30,11 +30,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityIsSummaryView: Repository.getUtilityViewSummary(),
             efficacyIsSummaryView: Repository.getEfficacyViewSummary(),
 
-            contentSummaryButton: Repository.getContentSummaryButton(),
-            qualitySummaryButton: Repository.getQualitySummaryButton(),
-            utilitySummaryButton: Repository.getUtilitySummaryButton(),
-            efficacySummaryButton: Repository.getEfficacySummaryButton(),
-
             curriculumTitle: Repository.getCurriculumTitle(),
             publicationDate: Repository.getPublicationDate(),
             gradeRange: Repository.getGradeRange(),
@@ -120,6 +115,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         if (distinctiveName !== C.START_PAGE) {
             this.openPrintPage();
 
+            if (distinctiveName === C.FINAL_PRINT_PAGE || distinctiveName === C.FINAL_PRINT_EVERYTHING) {
+                distinctiveName = C.FINAL_SUMMARY_PAGE;
+            }
+
             this.setState({currentPage: distinctiveName});
             this.setState({currentPrintButton: ""});
             this.setState({finalSummaryShowEntireReview: "false"});
@@ -203,11 +202,6 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualityIsSummaryView:this.state.qualityIsSummaryView,
             efficacyIsSummaryView:this.state.efficacyIsSummaryView,
 
-            contentSummaryButton:this.state.contentSummaryButton,
-            utilitySummaryButton:this.state.utilitySummaryButton,
-            qualitySummaryButton:this.state.qualitySummaryButton,
-            efficacySummaryButton:this.state.efficacySummaryButton,
-
             studyAnswers:this.state.studyAnswers,
             criterionAnswers:this.state.criterionAnswers,
             currentPrintButton:this.state.currentPrintButton,
@@ -275,10 +269,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
                     {
                         (
-                            (this.state.currentPage === C.CONTENT_PAGE && this.state.contentInProgress === C.STATUS_COMPLETE) ||
-                            (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityInProgress === C.STATUS_COMPLETE) ||
-                            (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityInProgress === C.STATUS_COMPLETE) ||
-                            (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyInProgress === C.STATUS_COMPLETE)
+                            (this.state.currentPage === C.CONTENT_PAGE && this.state.contentIsSummaryView) ||
+                            (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityIsSummaryView) ||
+                            (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityIsSummaryView) ||
+                            (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyIsSummaryView)
                         ) &&
 
                         <div class="l-full-width">

@@ -81,22 +81,6 @@ const Repository = {
         return localStorage.getItem(C.EFFICACY_SUMMARY_VIEW) || false;
     },
 
-    getContentSummaryButton() {
-        return localStorage.getItem(C.CONTENT_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
-    getQualitySummaryButton() {
-        return localStorage.getItem(C.QUALITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
-    getUtilitySummaryButton() {
-        return localStorage.getItem(C.UTILITY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
-    getEfficacySummaryButton() {
-        return localStorage.getItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED) || C.STATUS_IN_PROGRESS;
-    },
-
     getCurriculumTitle() {
         return localStorage.getItem("curriculumTitle");
     },
@@ -235,32 +219,6 @@ const Repository = {
     savePrintButtonPage(component, distinctiveName) {
         localStorage.setItem("currentPrintButton", distinctiveName);
         component.setState({currentPrintButton: distinctiveName});
-    },
-
-    /*
-     * Set the current criterion Summary Button status
-     */
-    setSummaryButtonEnabled(component, changedDistinctive, distinctiveStatus) {
-        switch(changedDistinctive) {
-        case C.CONTENT_PAGE:
-            localStorage.setItem(C.CONTENT_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({contentSummaryButton: distinctiveStatus});
-            break;
-        case C.UTILITY_PAGE:
-            localStorage.setItem(C.UTILITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({utilitySummaryButton: distinctiveStatus});
-            break;
-        case C.QUALITY_PAGE:
-            localStorage.setItem(C.QUALITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({qualitySummaryButton: distinctiveStatus});
-            break;
-        case C.EFFICACY_PAGE:
-            localStorage.setItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({efficacySummaryButton: distinctiveStatus});
-            break;
-        default:
-            break;
-        }
     },
 
     /*

@@ -40,9 +40,17 @@ export default class FinalCurriculumInformation extends React.Component {
                         </span>
                     }
 
-                    <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
-                    <p><strong>Date completed:</strong> {this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]}</p>
+                    {
+                        this.props.currentPage === C.FINAL_SUMMARY_PAGE &&
+                        <React.Fragment>
+                            <hr class="hr u-mb45 u-mt30" />
+                            <h2>Curriculum information</h2>
+                            <p><strong>Curriculum title:</strong> {this.props.curriculumTitle}</p>
+                        </React.Fragment>
+                    }
+
                     {this.props.publicationDate !== "" && <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>}
+                    <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
                 </div>
             </React.Fragment>

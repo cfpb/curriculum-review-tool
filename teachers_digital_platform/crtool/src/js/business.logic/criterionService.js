@@ -32,6 +32,8 @@ const CriterionService = {
         // Study changed so this invalidates any criterion 2 or 3 values.
         this.resetEfficacyCriterionOnStudyChange(component);
 
+        Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
+
         Repository.saveStudyAnsers(component, alteredStudyAnswers);
         EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
     },
@@ -55,7 +57,7 @@ const CriterionService = {
      */
     calculateDistinctiveCompletion(component, alteredCriterionObjects, changedDistinctive) {
         if (this.isDistinctiveComplete(component, alteredCriterionObjects, changedDistinctive)) {
-            Repository.setSummaryButtonEnabled(component, changedDistinctive, C.STATUS_COMPLETE);
+            Repository.setDistinctiveStatus(component, changedDistinctive, C.STATUS_COMPLETE);
         }
         else {
             Repository.setDistinctiveStatus(component, changedDistinctive, C.STATUS_IN_PROGRESS);
@@ -130,8 +132,16 @@ const CriterionService = {
         }
     },
 
+    /*
+     * Click Finish Adding Studies, set followup states.
+     */
     handleFinishAddingEfficacyStudies(component, value) {
         Repository.saveFinishAddingEfficacyStudies(component, value);
+
+        let hasTwoStrongStudies = EfficacyCalculationService.twoStrongStudiesExist(component);
+        if (value && !hasTwoStrongStudies) {
+            Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_COMPLETE);
+        }
     },
 
     /*

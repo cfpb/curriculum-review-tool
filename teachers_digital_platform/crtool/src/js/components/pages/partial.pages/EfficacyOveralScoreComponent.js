@@ -28,10 +28,14 @@ export default class EfficacyOveralScoreComponent extends React.Component {
         }
     }
 
+    isEditMode() {
+        return (this.props.currentPrintButton === C.START_PAGE || this.props.currentPrintButton === "");
+    }
+
     render() {
         return (
             <React.Fragment>
-                <div className={this.props.currentPrintButton === C.START_PAGE && "o-well u-mb30"}>
+                <div className={this.isEditMode() && "o-well u-mb30"}>
                     <DimensionIconTitleComponent {...this.props} dimensionTitle={this.props.dimensionName + " overall score"} />
                     <p className="lead-paragraph">
                         {this.props.dimensionLead}
@@ -122,7 +126,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            {this.props.currentPrintButton === C.START_PAGE &&
+                            {this.isEditMode() &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         List the strengths for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -131,7 +135,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                             }
                         </label>
 
-                        {this.props.currentPrintButton === C.START_PAGE &&
+                        {this.isEditMode() &&
                             <textarea className="a-text-input a-text-input__full"
                                 rows="6"
                                 id={this.props.dimensionKey + "assets-optional"}
@@ -140,7 +144,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                 onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
                             </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE &&
+                        {this.isEditMode() === false &&
                             this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])
                         }
                     </div>
@@ -150,7 +154,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            {this.props.currentPrintButton === C.START_PAGE &&
+                            {this.isEditMode() &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         List the weaknesses for this curriculum’s quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -159,7 +163,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                             }
                         </label>
 
-                        {this.props.currentPrintButton === C.START_PAGE &&
+                        {this.isEditMode() &&
                             <textarea className="a-text-input a-text-input__full"
                                 rows="6"
                                 id={this.props.dimensionKey + "gaps-optional"}
@@ -168,7 +172,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                 onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
                             </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE &&
+                        {this.isEditMode() === false &&
                             this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])
                         }
                     </div>
@@ -177,7 +181,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                            {this.props.currentPrintButton === C.START_PAGE &&
+                            {this.isEditMode() &&
                                 (
                                     <small className="a-label_helper a-label_helper__block">
                                         Add any final thoughts about the overall quality. Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
@@ -186,7 +190,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                             }
                         </label>
 
-                        {this.props.currentPrintButton === C.START_PAGE &&
+                        {this.isEditMode() &&
                             <textarea className="a-text-input a-text-input__full"
                                 rows="6"
                                 id={this.props.dimensionKey + "overall-notes-optional"}
@@ -195,7 +199,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                 onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
                             </textarea>
                         }
-                        {this.props.currentPrintButton !== C.START_PAGE &&
+                        {this.isEditMode() === false &&
                             this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])
                         }
                     </div>

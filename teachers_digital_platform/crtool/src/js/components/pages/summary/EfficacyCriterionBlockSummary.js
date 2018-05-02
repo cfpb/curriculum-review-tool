@@ -1,5 +1,6 @@
 import React from "react";
 
+import C from "../../../business.logic/constants";
 import CriterionComponent from "../../criterion/CriterionComponent";
 import CriterionEfficacyStudyComponent from "../../criterion/CriterionEfficacyStudyComponent";
 import { EfficacyContent } from "../../../content_data/efficacyContent";
@@ -17,10 +18,10 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
 
         return (
             <React.Fragment>
-                {this.props.efficacySummaryButton !== "complete" &&
+                {this.props.efficacyInProgress !== "complete" &&
                     <DimensionNotReviewedComponent dimensionTitle="Efficacy" dimensionName="Efficacy" {...this.props} />
                 }
-                {this.props.efficacySummaryButton === "complete" &&
+                {this.props.efficacyInProgress === "complete" &&
                     <div className={wrapperClasses}>
                         <DimensionIconTitleComponent
                             {...this.props}
@@ -33,7 +34,12 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
 
                         <CriterionEfficacyStudyComponent {...this.props} />
 
-                        {EfficacyContent.criterion.map((criterion, i) => <CriterionComponent key={i} criterionData={EfficacyContent.criterion[i]} {...this.props} />)}
+                        {
+                            this.props.criterionCompletionStatuses["efficacy-crt-question-2"] &&
+                            this.props.criterionCompletionStatuses["efficacy-crt-question-2"] === C.ICON_CHECK_ROUND &&
+
+                            EfficacyContent.criterion.map((criterion, i) => <CriterionComponent key={i} criterionData={EfficacyContent.criterion[i]} {...this.props} />)
+                        }
                     </div>
                 }
             </React.Fragment>
