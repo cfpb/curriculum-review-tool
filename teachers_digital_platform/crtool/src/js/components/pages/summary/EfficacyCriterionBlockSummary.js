@@ -37,7 +37,7 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
                         {
                             this.props.criterionCompletionStatuses["efficacy-crt-question-2"] &&
                             this.props.criterionCompletionStatuses["efficacy-crt-question-2"] === C.ICON_CHECK_ROUND &&
-                            
+
                             EfficacyContent.criterion.map((criterion, i) => <CriterionComponent key={i} criterionData={EfficacyContent.criterion[i]} {...this.props} />)
                         }
                     </div>
