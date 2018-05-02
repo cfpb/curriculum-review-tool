@@ -6,6 +6,9 @@ import SvgIcon from "../svgs/SvgIcon";
 export default class DistinctiveButton extends React.Component {
     handleOnClick() {
         this.props.distinctiveClicked(this.props.distinctive);
+
+        let main = document.getElementById("main");
+        main.scrollIntoView();
     }
 
     render() {

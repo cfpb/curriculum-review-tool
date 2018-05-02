@@ -26,7 +26,7 @@ export default class SummaryButton extends React.Component {
             );
         }
         else if (this.props.currentPage === C.CONTENT_PAGE &&
-            this.props.contentSummaryButton === C.STATUS_COMPLETE) {
+            this.props.contentInProgress === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to content summary
@@ -34,7 +34,7 @@ export default class SummaryButton extends React.Component {
             );
         }
         else if (this.props.currentPage === C.UTILITY_PAGE &&
-                 this.props.utilitySummaryButton === C.STATUS_COMPLETE) {
+                 this.props.utilityInProgress === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to utility summary
@@ -42,7 +42,7 @@ export default class SummaryButton extends React.Component {
             );
         }
         else if (this.props.currentPage === C.QUALITY_PAGE &&
-                 this.props.qualitySummaryButton === C.STATUS_COMPLETE) {
+                 this.props.qualityInProgress === C.STATUS_COMPLETE) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
                     Continue to quality summary

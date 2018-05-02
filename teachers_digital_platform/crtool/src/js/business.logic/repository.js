@@ -238,32 +238,6 @@ const Repository = {
     },
 
     /*
-     * Set the current criterion Summary Button status
-     */
-    setSummaryButtonEnabled(component, changedDistinctive, distinctiveStatus) {
-        switch(changedDistinctive) {
-        case C.CONTENT_PAGE:
-            localStorage.setItem(C.CONTENT_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({contentSummaryButton: distinctiveStatus});
-            break;
-        case C.UTILITY_PAGE:
-            localStorage.setItem(C.UTILITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({utilitySummaryButton: distinctiveStatus});
-            break;
-        case C.QUALITY_PAGE:
-            localStorage.setItem(C.QUALITY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({qualitySummaryButton: distinctiveStatus});
-            break;
-        case C.EFFICACY_PAGE:
-            localStorage.setItem(C.EFFICACY_SUMMARY_BUTTON_ENABLED, distinctiveStatus);
-            component.setState({efficacySummaryButton: distinctiveStatus});
-            break;
-        default:
-            break;
-        }
-    },
-
-    /*
      * Set the current Distinctive button status
      */
     setDistinctiveStatus(component, changedDistinctive, distinctiveStatus) {

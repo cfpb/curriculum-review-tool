@@ -275,10 +275,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
                     {
                         (
-                            (this.state.currentPage === C.CONTENT_PAGE && this.state.contentInProgress === C.STATUS_COMPLETE) ||
-                            (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityInProgress === C.STATUS_COMPLETE) ||
-                            (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityInProgress === C.STATUS_COMPLETE) ||
-                            (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyInProgress === C.STATUS_COMPLETE)
+                            (this.state.currentPage === C.CONTENT_PAGE && this.state.contentIsSummaryView) ||
+                            (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityIsSummaryView) ||
+                            (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityIsSummaryView) ||
+                            (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyIsSummaryView)
                         ) &&
 
                         <div class="l-full-width">
