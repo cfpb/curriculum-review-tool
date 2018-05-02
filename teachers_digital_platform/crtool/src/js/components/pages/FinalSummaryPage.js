@@ -137,10 +137,10 @@ export default class FinalSummaryPage extends React.Component {
                     </React.Fragment>
                 }
                 {this.props.finalSummaryShowEntireReview !== "true" &&
-                    <span>
+                    <React.Fragment>
                         <PrintOrSaveFinalSummary  {...this.props}/>
                         <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
-                    </span>
+                    </React.Fragment>
                 }
             </React.Fragment>
         );
