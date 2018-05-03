@@ -257,7 +257,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                     {
                         this.state.currentPage !== C.START_PAGE &&
                         <React.Fragment>
-                            <div className="h4">You're Reviewing: {this.state.curriculumTitle}</div>
+                            <div className="h4">You’re reviewing: <strong>{this.state.curriculumTitle}</strong></div>
                         </React.Fragment>
                     }
 
