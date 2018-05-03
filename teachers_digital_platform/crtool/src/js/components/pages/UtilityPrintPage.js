@@ -29,7 +29,7 @@ export default class UtilityPrintPage extends React.Component {
                     showBeneficial={false}
                     dimensionKey="utility-crt-"
                     dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
                     criterionNumber="1"
                     criterionName="Criterion 1: Materials to support cognitive development"
                     criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
@@ -43,8 +43,8 @@ export default class UtilityPrintPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="utility-crt-"
                     dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
                     criterionNumber="2"
                     criterionName="Criterion 2: Differentiated instruction for diverse populations"
                     criterionLead="Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency."
@@ -59,8 +59,8 @@ export default class UtilityPrintPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="utility-crt-"
                     dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
                     criterionNumber="3"
                     criterionName="Criterion 3: Quality materials for lesson planning"
                     criterionLead="Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects."
@@ -75,8 +75,8 @@ export default class UtilityPrintPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="utility-crt-"
                     dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
                     criterionNumber="4"
                     criterionName="Criterion 4: Materials to assess mastery"
                     criterionLead="Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery."
@@ -91,8 +91,8 @@ export default class UtilityPrintPage extends React.Component {
                     showBeneficial={true}
                     dimensionKey="utility-crt-"
                     dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for <em>essential</em> components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for <em>beneficial</em> components:</b>"
+                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
+                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
                     criterionNumber="5"
                     criterionName="Criterion 5: Instructional supports"
                     criterionLead="Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students."

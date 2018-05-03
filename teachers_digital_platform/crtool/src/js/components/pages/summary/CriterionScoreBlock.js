@@ -80,7 +80,7 @@ export default class CriterionScoreBlock extends React.Component {
     }
 
     renderEssential() {
-        let essentialAnswerTotalText = "<b>Your answers for <em>essential</em> components:</b>";
+        let essentialAnswerTotalText = "<b>Your answers for essential components:</b>";
         if (this.props.essentialAnsserTotalText !== undefined && this.props.essentailAnserTotalText !== "") {
             essentialAnswerTotalText = this.props.essentailAnserTotalText;
         }
@@ -97,7 +97,7 @@ export default class CriterionScoreBlock extends React.Component {
     }
 
     renderBeneficial() {
-        let beneficialAnswerTotalText = "<b>Your answers for <em>beneficial</em> components:</b>";
+        let beneficialAnswerTotalText = "<b>Your answers for beneficial components:</b>";
         if (this.props.beneficialAnswerTotalText !== undefined && this.props.beneficialAnswerTotalText !== "") {
             beneficialAnswerTotalText = this.props.beneficialAnswerTotalText;
         }
