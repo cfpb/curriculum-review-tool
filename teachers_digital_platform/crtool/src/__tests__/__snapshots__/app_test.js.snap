@@ -420,7 +420,7 @@ exports[`renders without crashing 1`] = `
             className="o-modal_footer"
           >
             <div
-              className="m-btn-group"
+              className="m-btn-group m-btn-group__wide"
             >
               <button
                 className="a-btn"
