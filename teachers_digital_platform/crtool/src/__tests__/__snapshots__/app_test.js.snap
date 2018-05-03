@@ -114,7 +114,7 @@ exports[`renders without crashing 1`] = `
   <div
     className="h4"
   >
-    You're Reviewing: 
+    You're reviewing: 
   </div>
   <ul
     className="o-dimension-selection-bar"
