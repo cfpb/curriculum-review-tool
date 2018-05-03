@@ -81,8 +81,8 @@ export default class CriterionScoreBlock extends React.Component {
 
     renderEssential() {
         let essentialAnswerTotalText = "<b>Your answers for essential components:</b>";
-        if (this.props.essentialAnsserTotalText !== undefined && this.props.essentailAnserTotalText !== "") {
-            essentialAnswerTotalText = this.props.essentailAnserTotalText;
+        if (this.props.essentialAnswerTotalText !== undefined && this.props.essentialAnswerTotalText !== "") {
+            essentialAnswerTotalText = this.props.essentialAnswerTotalText;
         }
 
         return (
