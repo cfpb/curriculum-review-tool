@@ -59,12 +59,12 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                         </li>
                     </ul>
                     <div className="m-curriculum-status_components">
-                        <p><b>Total number of essential components</b></p>
+                        <p><b>Your answers for essential components</b></p>
                         <ul className="m-component-list">
                         <li><b>{this.props.studyScore.essential_total_yes}</b> Yes</li>
                         <li><b>{this.props.studyScore.essential_total_no}</b> No</li>
                         </ul>
-                        <p><b>Total number of beneficial components</b></p>
+                        <p><b>Your answers for beneficial components</b></p>
                         <ul className="m-component-list">
                             <li><b>{this.props.studyScore.beneficial_total_yes}</b> Yes</li>
                             <li><b>{this.props.studyScore.beneficial_total_no}</b> No</li>
