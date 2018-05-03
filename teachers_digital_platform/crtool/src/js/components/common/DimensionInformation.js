@@ -19,8 +19,8 @@ export default class DimensionInformation extends React.Component {
                     <p className="lead-paragraph u-mb30">
                         {this.props.dimensionSummary}
                     </p>
-                    <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     {this.props.publicationDate !== "" && <p><strong>Date of publication:</strong> {this.props.publicationDate}</p>}
+                    <p><strong>Grade range:</strong> {this.props.gradeRange}</p>
                     <p><strong>Reviewed on:</strong> {this.renderReviewedOnDate()}</p>
                 </React.Fragment>
             );
