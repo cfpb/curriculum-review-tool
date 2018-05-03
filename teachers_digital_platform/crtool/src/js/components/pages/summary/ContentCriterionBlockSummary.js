@@ -24,7 +24,7 @@ export default class ContentBlockSummary extends React.Component {
                         <DimensionIconTitleComponent
                             {...this.props}
                             dimensionName="Content"
-                            dimensionTitle={"Content"}
+                            dimensionTitle={"Content criterion"}
                             isH1="true" />
                         <p className="lead-paragraph">
                             This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability.

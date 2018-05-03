@@ -24,7 +24,7 @@ export default class QualityCriterionBlockSummary extends React.Component {
                         <DimensionIconTitleComponent
                             {...this.props}
                             dimensionName="Quality"
-                            dimensionTitle={"Quality"}
+                            dimensionTitle={"Quality criterion"}
                             isH1="true" />
                         <p className="lead-paragraph">
                             The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access.
