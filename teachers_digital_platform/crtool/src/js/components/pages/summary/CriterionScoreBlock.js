@@ -52,7 +52,6 @@ export default class CriterionScoreBlock extends React.Component {
         }
     }
 
-
     renderExceeds() {
         if (this.props.showExceeds) {
             return (
@@ -173,22 +172,25 @@ export default class CriterionScoreBlock extends React.Component {
 
                         {this.renderExceeds()}
 
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.renderTextValue("icon", "meets")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.renderTextValue("text", "meets")} >
-                                        <div><strong>Meets</strong></div>
-                                        {this.renderMeetsText()}
+                        {this.props.hideMeets !== "true" &&
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.renderTextValue("icon", "meets")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.renderTextValue("text", "meets")} >
+                                            <div><strong>Meets</strong></div>
+                                            {this.renderMeetsText()}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        }
+
                         <li className="u-mb30">
                             <div className="m-form-field
                                             m-form-field__radio
