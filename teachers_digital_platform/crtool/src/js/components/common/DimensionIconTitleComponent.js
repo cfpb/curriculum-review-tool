@@ -25,7 +25,7 @@ export default class DimensionIconTitleComponent extends React.Component {
                     icon={this.getDimensionIcon()}
                     isLarge="true"
                     hasSpaceAfter="true" />
-                {this.props.dimensionTitle} criterion
+                {this.props.dimensionTitle}
             </h2>
         );
     }
