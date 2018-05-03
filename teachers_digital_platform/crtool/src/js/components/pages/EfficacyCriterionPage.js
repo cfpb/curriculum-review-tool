@@ -154,7 +154,7 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30">
                     <h4>This dimension has essential and beneficial components.</h4>
-                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may be more relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
+                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
                     <p>
                         <SaveWorkModal
                             buttonText="How can I save my work?"
@@ -211,7 +211,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]}
                             color="green"
                             hasSpaceAfter="true" />
-                        Criterion 2: Saving and investing
+                        Criterion 2: Scope of evidence
                     </h3>
                     <p className="lead-paragraph">
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?

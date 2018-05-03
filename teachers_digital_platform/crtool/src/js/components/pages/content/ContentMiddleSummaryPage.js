@@ -106,7 +106,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     criterionNumber="6"
                     criterionName="Criterion 6: Financial responsibility and money management"
                     criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
-                    criterionMeetsText="1 component was addressed"
+                    criterionExceedsText="1 component was addressed"
                     criterionDoesNotMeetText="0 components were addressed"
                     {...this.props} />
 
