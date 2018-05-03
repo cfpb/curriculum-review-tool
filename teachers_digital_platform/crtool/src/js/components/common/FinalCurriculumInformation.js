@@ -34,10 +34,10 @@ export default class FinalCurriculumInformation extends React.Component {
                         This summary shows the scores for all four dimensions.
                     </p>
                     {this.props.finalSummaryShowEntireReview !== "true" &&
-                        <span>
+                        <React.Fragment>
                             <SaveWorkInformation />
                             <PrintOrSaveFinalSummary {...this.props} />
-                        </span>
+                        </React.Fragment>
                     }
 
                     {
