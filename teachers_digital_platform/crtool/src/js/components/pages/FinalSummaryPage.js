@@ -44,12 +44,17 @@ export default class FinalSummaryPage extends React.Component {
                 {
                     this.props.currentPage !== C.START_PAGE &&
                     <React.Fragment>
-                        <div className="h4">You're Reviewing: {this.props.curriculumTitle}</div>
+                        <div className="h4">You're Reviewing: <strong>{this.props.curriculumTitle}</strong></div>
                     </React.Fragment>
                 }
 
                 {this.props.finalSummaryShowEntireReview !== "true" &&
-                    <DistinctiveMenuBar {...this.props} />
+                    <React.Fragment>
+                        <DistinctiveMenuBar {...this.props} />
+                        <hr className="hr
+                                        u-mb45
+                                        u-mt30" />
+                    </React.Fragment>
                 }
 
                 <FinalCurriculumInformation {...this.props} />
