@@ -16,7 +16,7 @@ export default class ContentBlockSummary extends React.Component {
         return (
             <React.Fragment>
                 {this.props.contentInProgress !== "complete" &&
-                    <DimensionNotReviewedComponent dimensionTitle="Content" dimensionName="Content" {...this.props} />
+                    <DimensionNotReviewedComponent dimensionTitle="Content criterion" dimensionName="Content" {...this.props} />
                 }
                 {this.props.contentInProgress === "complete" &&
                     <div className={wrapperClasses}>

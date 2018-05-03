@@ -19,7 +19,7 @@ export default class EfficacyCriterionBlockSummary extends React.Component {
         return (
             <React.Fragment>
                 {this.props.efficacyInProgress !== "complete" &&
-                    <DimensionNotReviewedComponent dimensionTitle="Efficacy" dimensionName="Efficacy" {...this.props} />
+                    <DimensionNotReviewedComponent dimensionTitle="Efficacy criterion" dimensionName="Efficacy" {...this.props} />
                 }
                 {this.props.efficacyInProgress === "complete" &&
                     <div className={wrapperClasses}>
