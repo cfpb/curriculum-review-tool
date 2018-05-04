@@ -74,7 +74,7 @@ const ContentMiddleCalculationService = {
     calculateFirstCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 2) {
+        } else if (criterionScore.essential_total_yes === 2) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -83,9 +83,9 @@ const ContentMiddleCalculationService = {
     },
 
     calculateSecondCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 7) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 7) {
+        } else if (criterionScore.essential_total_yes >= 5) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -105,9 +105,9 @@ const ContentMiddleCalculationService = {
     },
 
     calculateFourCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 6) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes > 6) {
+        } else if (criterionScore.essential_total_yes === 5) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;

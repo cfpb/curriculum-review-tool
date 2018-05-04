@@ -74,7 +74,7 @@ const ContentElementaryCalculationService = {
     calculateFirstCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes > 0) {
+        } else if (criterionScore.essential_total_yes === 1) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -85,7 +85,7 @@ const ContentElementaryCalculationService = {
     calculateSecondCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 3) {
+        } else if (criterionScore.essential_total_yes === 3) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -94,9 +94,9 @@ const ContentElementaryCalculationService = {
     },
 
     calculateThirdCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 5) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 5) {
+        } else if (criterionScore.essential_total_yes === 4) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -107,7 +107,7 @@ const ContentElementaryCalculationService = {
     calculateFourAndFiveCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes > 0) {
+        } else if (criterionScore.essential_total_yes === 1) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;

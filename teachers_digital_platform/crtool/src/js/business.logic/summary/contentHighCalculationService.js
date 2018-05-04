@@ -72,9 +72,9 @@ const ContentHighCalculationService = {
     },
 
     calculateFirstCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 5) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 5) {
+        } else if (criterionScore.essential_total_yes === 4) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -83,9 +83,9 @@ const ContentHighCalculationService = {
     },
 
     calculateSecondCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 8) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 8) {
+        } else if (criterionScore.essential_total_yes >= 6) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -96,7 +96,7 @@ const ContentHighCalculationService = {
     calculateThirdCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 3) {
+        } else if (criterionScore.essential_total_yes === 3) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -105,9 +105,9 @@ const ContentHighCalculationService = {
     },
 
     calculateFourCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 9) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes > 9) {
+        } else if (criterionScore.essential_total_yes >= 7) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -116,9 +116,9 @@ const ContentHighCalculationService = {
     },
 
     calculateFiveCriterion(criterionScore) {
-        if (criterionScore.all_essential_yes) {
+        if (criterionScore.essential_total_yes >= 6) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 6) {
+        } else if (criterionScore.essential_total_yes === 5) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
@@ -129,7 +129,7 @@ const ContentHighCalculationService = {
     calculateSixthCriterion(criterionScore) {
         if (criterionScore.all_essential_yes) {
             criterionScore.exceeds = true;
-        } else if (criterionScore.essential_total_yes >= 2) {
+        } else if (criterionScore.essential_total_yes === 2) {
             criterionScore.meets = true;
         } else {
             criterionScore.doesnotmeet = true;
