@@ -25,6 +25,11 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityInProgress: Repository.getUtilityInProgress(),
             efficacyInProgress: Repository.getEfficacyInProgress(),
 
+            contentIsDone: Repository.getContentIsDone(),
+            qualityIsDone: Repository.getQualityIsDone(),
+            utilityIsDone: Repository.getUtilityIsDone(),
+            efficacyIsDone: Repository.getEfficacyIsDone(),
+
             contentIsSummaryView: Repository.getContentViewSummary(),
             qualityIsSummaryView: Repository.getQualityViewSummary(),
             utilityIsSummaryView: Repository.getUtilityViewSummary(),
@@ -138,6 +143,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     handleSummaryButtonClick() {
         this.setDistinctiveCompletionDateNow(this.state.currentPage);
+        Repository.setDistinctiveDoneStatus(this, this.state.currentPage);
         Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
         this.setDimensionSummaryView(this.state.currentPage, true);
     }
@@ -196,6 +202,11 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityInProgress:this.state.utilityInProgress,
             qualityInProgress:this.state.qualityInProgress,
             efficacyInProgress:this.state.efficacyInProgress,
+
+            contentIsDone:this.state.contentIsDone,
+            qualityIsDone:this.state.qualityIsDone,
+            utilityIsDone:this.state.utilityIsDone,
+            efficacyIsDone:this.state.efficacyIsDone,
 
             contentIsSummaryView:this.state.contentIsSummaryView,
             utilityIsSummaryView:this.state.utilityIsSummaryView,
