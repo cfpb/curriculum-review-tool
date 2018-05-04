@@ -147,7 +147,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("strong", "text")}>
-                                        <div><strong>Strong {this.props.dimensionPage}</strong></div>
+                                        <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
                                         {this.props.strongText}
                                     </div>
                                 </div>
@@ -163,7 +163,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("moderate", "text")}>
-                                        <div><strong>Moderate {this.props.dimensionPage}</strong></div>
+                                        <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
                                         {this.props.moderateText}
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("limited", "text")}>
-                                        <div><strong>Limited {this.props.dimensionPage}</strong></div>
+                                        <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
                                         {this.props.limitedText}
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("strong", "text")}>
-                                        <div><strong>Strong {this.props.dimensionPage}</strong></div>
+                                        <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
                                         {this.props.strongText}
                                     </div>
                                 </div>
@@ -278,7 +278,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("moderate", "text")}>
-                                        <div><strong>Moderate {this.props.dimensionPage}</strong></div>
+                                        <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
                                         {this.props.moderateText}
                                     </div>
                                 </div>
@@ -294,7 +294,7 @@ export default class DimensionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className={this.criterionOveralScoreClassName("limited", "text")}>
-                                        <div><strong>Limited {this.props.dimensionPage}</strong></div>
+                                        <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
                                         {this.props.limitedText}
                                     </div>
                                 </div>
