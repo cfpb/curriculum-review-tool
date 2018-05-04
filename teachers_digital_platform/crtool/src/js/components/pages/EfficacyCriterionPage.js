@@ -83,14 +83,14 @@ export default class EfficacyCriterionPage extends React.Component {
         if (this.props.finishAddingEfficacyStudies) {
             return (
                 <button className="a-btn u-mb30" disabled >
-                    I’m done adding studies
+                    I’m done reviewing studies
                 </button>
             );
         } else {
             return (
                 <button className="a-btn u-mb30"
                     onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
-                    I’m done adding studies
+                    I’m done reviewing studies
                 </button>
             );
         }
@@ -134,6 +134,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <h3 className="h2">Instructions</h3>
                 <ul>
                     <li>Locate research studies that report on the impact of the curriculum.</li>
+                    <li>If there aren’t any studies to review, click “I’m done reviewing studies” to continue to the efficacy summary.</li>
                     <li>Review each study, paying particular attention to the following:
                         <ul>
                             <li>Citations, which indicate whether the study was recent</li>
@@ -142,13 +143,9 @@ export default class EfficacyCriterionPage extends React.Component {
                             <li>Results, which provide the findings</li>
                         </ul>
                     </li>
-                    <li>For <b>each study,</b> answer the questions in Criterion 1 to determine if it’s a strong study. Review all studies before moving onto Criterion 2.
-                        <ul>
-                            <li>If a study is strong, you’ll reference it when answering the questions in Criteria 2 and 3.</li>
-                            <li>If no studies meet the inclusion criteria (none were strong), you don’t need to complete Criteria 2 and 3 and can move on to the efficacy summary.</li>
-                        </ul>
-                    </li>
-                    <li>Complete Criteria 2 and 3 using all strong studies.</li>
+                    <li>Answer the questions in Criterion 1 to determine if it’s a strong study. <strong>Repeat this for each study</strong> before clicking “I’m done reviewing studies.”</li>
+                    <li>If there are two or more strong studies, complete Criteria 2 and 3 using all strong studies as reference.</li>
+                    <li>If there are fewer than two strong studies, you don’t need to complete Criteria 2 and 3 and can move on to the efficacy summary.</li>
                 </ul>
                 <div className="o-well
                                 u-mb30
