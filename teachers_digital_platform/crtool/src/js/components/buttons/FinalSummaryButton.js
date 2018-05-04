@@ -1,7 +1,5 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-
 export default class FinalSummaryButton extends React.Component {
 
     handleFinalSummaryButtonClick() {
@@ -9,10 +7,10 @@ export default class FinalSummaryButton extends React.Component {
     }
 
     render() {
-        if (this.props.contentInProgress === C.STATUS_COMPLETE ||
-            this.props.utilityInProgress === C.STATUS_COMPLETE ||
-            this.props.qualityInProgress === C.STATUS_COMPLETE ||
-            this.props.efficacyInProgress === C.STATUS_COMPLETE) {
+        if (this.props.contentIsDone ||
+            this.props.utilityIsDone ||
+            this.props.qualityIsDone ||
+            this.props.efficacyIsDone) {
                 return (
                     <div className="u-center">
                         <button className="a-btn a-btn__super" onClick={(e) => {this.handleFinalSummaryButtonClick()}}>Final summary</button>

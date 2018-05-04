@@ -65,6 +65,22 @@ const Repository = {
         return localStorage.getItem(C.EFFICACY_STATUS);
     },
 
+    getContentIsDone() {
+        return localStorage.getItem(C.CONTENT_IS_DONE);
+    },
+
+    getQualityIsDone() {
+        return localStorage.getItem(C.QUALITY_IS_DONE);
+    },
+
+    getUtilityIsDone() {
+        return localStorage.getItem(C.UTILITY_IS_DONE);
+    },
+
+    getEfficacyIsDone() {
+        return localStorage.getItem(C.EFFICACY_IS_DONE);
+    },
+
     getContentViewSummary() {
         return localStorage.getItem(C.CONTENT_SUMMARY_VIEW) || false;
     },
@@ -241,6 +257,33 @@ const Repository = {
         case C.EFFICACY_PAGE:
             localStorage.setItem(C.EFFICACY_STATUS, distinctiveStatus);
             component.setState({efficacyInProgress: distinctiveStatus});
+            break;
+        default:
+            break;
+        }
+    },
+
+    /*
+     * Set the current Distinctive Done status. Note: once a Distinctive
+     * has been marked Done it stays done
+     */
+    setDistinctiveDoneStatus(component, changedDistinctive) {
+        switch(changedDistinctive) {
+        case C.CONTENT_PAGE:
+            localStorage.setItem(C.CONTENT_IS_DONE, true);
+            component.setState({contentIsDone: true});
+            break;
+        case C.UTILITY_PAGE:
+            localStorage.setItem(C.UTILITY_IS_DONE, true);
+            component.setState({utilityIsDone: true});
+            break;
+        case C.QUALITY_PAGE:
+            localStorage.setItem(C.QUALITY_IS_DONE, true);
+            component.setState({qualityIsDone: true});
+            break;
+        case C.EFFICACY_PAGE:
+            localStorage.setItem(C.EFFICACY_IS_DONE, true);
+            component.setState({efficacyIsDone: true});
             break;
         default:
             break;

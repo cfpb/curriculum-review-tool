@@ -13,6 +13,16 @@ export default class DistinctiveMenuBar extends React.Component {
         this.props.handleFinalSummaryButtonClick();
     }
 
+    renderDimensionStatus(inProgress, isDone) {
+        if (isDone) {
+            return C.STATUS_COMPLETE;
+        } else if (inProgress === "complete" && isDone === null) {
+            return C.STATUS_IN_PROGRESS;
+        } else {
+            return inProgress;
+        }
+    }
+
     render() {
         const distinctiveProps = [
             {
@@ -23,7 +33,7 @@ export default class DistinctiveMenuBar extends React.Component {
                 icon: C.ICON_DOCUMENT,
                 distinctive: C.CONTENT_PAGE,
                 currentPage: this.props.currentPage,
-                inProgress: this.props.contentInProgress,
+                inProgress: this.renderDimensionStatus(this.props.contentInProgress, this.props.contentIsDone),
                 distinctiveClicked: this.props.distinctiveClicked.bind(this),
             },
             {
@@ -34,7 +44,7 @@ export default class DistinctiveMenuBar extends React.Component {
                 icon: C.ICON_SETTINGS,
                 distinctive: C.UTILITY_PAGE,
                 currentPage: this.props.currentPage,
-                inProgress: this.props.utilityInProgress,
+                inProgress: this.renderDimensionStatus(this.props.utilityInProgress, this.props.utilityIsDone),
                 distinctiveClicked: this.props.distinctiveClicked.bind(this),
             },
             {
@@ -45,7 +55,7 @@ export default class DistinctiveMenuBar extends React.Component {
                 icon: C.ICON_STAR,
                 distinctive: C.QUALITY_PAGE,
                 currentPage: this.props.currentPage,
-                inProgress: this.props.qualityInProgress,
+                inProgress: this.renderDimensionStatus(this.props.qualityInProgress, this.props.qualityIsDone),
                 distinctiveClicked: this.props.distinctiveClicked.bind(this),
             },
             {
@@ -56,7 +66,7 @@ export default class DistinctiveMenuBar extends React.Component {
                 icon: C.ICON_CREDIT_REPORT,
                 distinctive:  C.EFFICACY_PAGE,
                 currentPage: this.props.currentPage,
-                inProgress: this.props.efficacyInProgress,
+                inProgress: this.renderDimensionStatus(this.props.efficacyInProgress, this.props.efficacyIsDone),
                 distinctiveClicked: this.props.distinctiveClicked.bind(this),
             }
         ]
@@ -67,10 +77,10 @@ export default class DistinctiveMenuBar extends React.Component {
                     {distinctiveProps.map((distinctiveProps, i) => <DistinctiveButton key={i} {...distinctiveProps}/>)}
                 </ul>
                 <FinalSummaryButton handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
-                    contentInProgress={this.props.contentInProgress}
-                    utilityInProgress={this.props.utilityInProgress}
-                    qualityInProgress={this.props.qualityInProgress}
-                    efficacyInProgress={this.props.efficacyInProgress} />
+                    contentIsDone={this.props.contentIsDone}
+                    utilityIsDone={this.props.utilityIsDone}
+                    qualityIsDone={this.props.qualityIsDone}
+                    efficacyIsDone={this.props.efficacyIsDone} />
             </React.Fragment>
         );
     }

@@ -48,7 +48,6 @@ const CriterionCalculationService = {
     calculateCriterionGroupCompletion(component, alteredCriterionObjects, changedDistinctive, changedQuestion) {
         let criterionKey = UtilityService.getCriterionQuestionKey(changedQuestion);
 
-
         if (this.isCriterionGroupComplete(component, alteredCriterionObjects, criterionKey)) {
             // Use the ICON_CHECK_ROUND as complete state so we can just pass that
             // down and now have to add logic later
