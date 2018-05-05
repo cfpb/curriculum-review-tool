@@ -169,6 +169,7 @@ Array [
   />,
   <div
     className="block block__flush-top"
+    id="criterion_1"
   >
     <h3
       className="h2"
