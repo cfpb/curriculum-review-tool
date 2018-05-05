@@ -29,11 +29,13 @@ export default class FinalCurriculumInformation extends React.Component {
                                 block__flush-top
                                 block__padded-bottom
                                 block__border-bottom">
+                    <hr class="hr u-mb45 u-mt30" />
                     <h1>Final summary for {this.props.curriculumTitle}</h1>
                     <p className="lead-paragraph u-mb30">
                         This summary shows the scores for all four dimensions.
                     </p>
-                    {this.props.finalSummaryShowEntireReview !== "true" &&
+                    {
+                        this.props.finalSummaryShowEntireReview !== "true" &&
                         <React.Fragment>
                             <SaveWorkInformation />
                             <PrintOrSaveFinalSummary {...this.props} />
@@ -45,7 +47,6 @@ export default class FinalCurriculumInformation extends React.Component {
                         <React.Fragment>
                             <hr class="hr u-mb45 u-mt30" />
                             <h2>Curriculum information</h2>
-                            <p><strong>Curriculum title:</strong> {this.props.curriculumTitle}</p>
                         </React.Fragment>
                     }
 
