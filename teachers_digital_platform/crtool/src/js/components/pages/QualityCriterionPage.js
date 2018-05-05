@@ -123,20 +123,6 @@ export default class QualityCriterionPage extends React.Component {
                                                 No
                                             </label>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.1c"
-                                                name="quality-crt-question-1.1.1"
-                                                ref="quality-crt-question-1.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'na'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'na')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.1c">
-                                                N/A
-                                            </label>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="o-survey_component">
@@ -362,6 +348,7 @@ export default class QualityCriterionPage extends React.Component {
                                 <div className="o-survey_component">
                                     <div className="o-survey_question">
                                         <p>Do the materials include any special needs formats? (e.g., Braille)</p>
+                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
                                         <div className="m-form-field m-form-field__text u-mt30">
                                             <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.1">
                                                 Special needs formats include
@@ -380,10 +367,10 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
                                                 id="quality-crt-question-1.3.1a"
-                                                name="quality-crt-question-1.3.1"
-                                                ref="quality-crt-question-1.3.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1', 'yes')}} />
+                                                name="quality-crt-question-1.3.1_beneficial"
+                                                ref="quality-crt-question-1.3.1_beneficial"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1_beneficial"] === 'yes'}
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1_beneficial', 'yes')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.1a">
                                                 Yes
@@ -394,27 +381,13 @@ export default class QualityCriterionPage extends React.Component {
                                                         m-form-field__lg-target">
                                             <input className="a-radio" type="radio" value="0"
                                                 id="quality-crt-question-1.3.1b"
-                                                name="quality-crt-question-1.3.1"
-                                                ref="quality-crt-question-1.3.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1', 'no')}} />
+                                                name="quality-crt-question-1.3.1_beneficial"
+                                                ref="quality-crt-question-1.3.1_beneficial"
+                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1_beneficial"] === 'no'}
+                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1_beneficial', 'no')}} />
                                             <label className="a-label"
                                                 htmlFor="quality-crt-question-1.3.1b">
                                                 No
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.1c"
-                                                name="quality-crt-question-1.3.1"
-                                                ref="quality-crt-question-1.3.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1"] === 'na'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1', 'na')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.1c">
-                                                N/A
                                             </label>
                                         </div>
                                     </div>
