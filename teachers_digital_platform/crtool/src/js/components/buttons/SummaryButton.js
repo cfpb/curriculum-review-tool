@@ -72,7 +72,7 @@ export default class SummaryButton extends React.Component {
             } else {
                 return (
                     <button className="a-btn" disabled>
-                        Continue to summary
+                        Continue to {this.props.currentPage.toLowerCase()} summary
                     </button>
                 );
             }

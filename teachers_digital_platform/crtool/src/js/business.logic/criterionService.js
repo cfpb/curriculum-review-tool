@@ -127,6 +127,7 @@ const CriterionService = {
         if (efficacyStudyNumber !== undefined) {
             efficacyStudyCriterion.push(efficacyStudyNumber);
             Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
+            Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
 
             this.handleFinishAddingEfficacyStudies(component, false);
         }
@@ -162,6 +163,7 @@ const CriterionService = {
 
         efficacyStudyCriterion.splice(indexOfItemToRemove, 1);
         Repository.saveCriterionEfficacyStudies(component, efficacyStudyCriterion);
+        Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
 
         this.removeCriterionAnswersForStudy(component, efficacyStudyNumber);
     },
