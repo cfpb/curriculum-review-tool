@@ -55,7 +55,7 @@ export default class QualityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-1"]}
@@ -511,7 +511,7 @@ export default class QualityCriterionPage extends React.Component {
                     criterionKey="quality-crt-question-2"
                     criterionText="Criterion 2: Accuracy and timeliness"
                     {...this.props} >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_2">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]}
@@ -721,7 +721,7 @@ export default class QualityCriterionPage extends React.Component {
                     criterionKey="quality-crt-question-3"
                     criterionText="Criterion 3: Objectivity"
                     {...this.props} >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_3">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]}
@@ -1037,7 +1037,7 @@ export default class QualityCriterionPage extends React.Component {
                     criterionKey="quality-crt-question-4"
                     criterionText="Criterion 4: Visual appearance"
                     {...this.props} >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_4">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]}

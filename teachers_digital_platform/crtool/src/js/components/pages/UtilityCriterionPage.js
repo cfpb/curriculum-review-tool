@@ -55,7 +55,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]}
@@ -487,7 +487,7 @@ export default class UtilityCriterionPage extends React.Component {
                     criterionKey="utility-crt-question-2"
                     criterionText="Criterion 2: Differentiated instruction for diverse populations"
                     {...this.props} >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_2">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]}
@@ -1353,7 +1353,7 @@ export default class UtilityCriterionPage extends React.Component {
                     criterionKey="utility-crt-question-3"
                     criterionText="Criterion 3: Quality materials for lesson planning"
                     {...this.props} >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_3">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]}
@@ -1944,7 +1944,7 @@ export default class UtilityCriterionPage extends React.Component {
                     criterionKey="utility-crt-question-4"
                     criterionText="Criterion 4: Materials to assess mastery"
                     {...this.props}  >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_4">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-4"]}
@@ -2474,7 +2474,7 @@ export default class UtilityCriterionPage extends React.Component {
                     criterionKey="utility-crt-question-5"
                     criterionText="Criterion 5: Instructional supports"
                     {...this.props} >
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_5">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-5"]}

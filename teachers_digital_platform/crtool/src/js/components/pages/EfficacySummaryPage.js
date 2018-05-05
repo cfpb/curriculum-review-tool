@@ -38,7 +38,7 @@ export default class EfficacySummaryPage extends React.Component {
 
                 <hr class="hr u-mb45 u-mt30" />
 
-                <ViewEditResponseComponent criterionPage={C.EFFICACY_PAGE} {...this.props} />
+                <ViewEditResponseComponent criterionNumber="1" criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
 
                 <hr class="hr u-mb45 u-mt30" />

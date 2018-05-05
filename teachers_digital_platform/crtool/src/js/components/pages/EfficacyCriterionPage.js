@@ -161,7 +161,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.finishAddingEfficacyStudies && C.ICON_CHECK_ROUND}
