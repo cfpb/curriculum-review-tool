@@ -162,7 +162,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
+                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
@@ -171,7 +171,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
                     </p>
                     <p>
@@ -212,7 +212,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 2: Scope of evidence
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
                     </p>
                     <p>
@@ -275,7 +275,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 3: Impact
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence to support conclusions of consistent, strong, positive impact?
                     </p>
                     <p>

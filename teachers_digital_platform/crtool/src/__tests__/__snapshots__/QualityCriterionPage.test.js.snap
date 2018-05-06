@@ -162,7 +162,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -178,7 +178,7 @@ Array [
       Criterion 1: Accessibility
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials physically accessible to teachers and students in a typical school setting?
     </p>
@@ -1165,7 +1165,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -1181,7 +1181,7 @@ Array [
       Criterion 1: Accessibility
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials physically accessible to teachers and students in a typical school setting?
     </p>
@@ -1976,7 +1976,7 @@ Array [
       Criterion 2: Accuracy and timeliness
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials current and free of error?
     </p>
@@ -2340,7 +2340,7 @@ Array [
       Criterion 3: Objectivity
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are the curriculum materials objective?
     </p>
@@ -2864,7 +2864,7 @@ Array [
       Criterion 4: Visual appearance
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Is the visual appearance of the student materials conducive to learning?
     </p>
@@ -3611,7 +3611,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -3627,7 +3627,7 @@ Array [
       Criterion 1: Accessibility
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials physically accessible to teachers and students in a typical school setting?
     </p>
@@ -4422,7 +4422,7 @@ Array [
       Criterion 2: Accuracy and timeliness
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials current and free of error?
     </p>
@@ -4978,7 +4978,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -4994,7 +4994,7 @@ Array [
       Criterion 1: Accessibility
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials physically accessible to teachers and students in a typical school setting?
     </p>
@@ -5981,7 +5981,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -6010,7 +6010,7 @@ Array [
       Criterion 1: Accessibility
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Are curriculum materials physically accessible to teachers and students in a typical school setting?
     </p>

@@ -52,7 +52,7 @@ export default class ContentHighCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
+                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
@@ -61,7 +61,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 1: Earning, income, and careers
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for earning, income, and careers?
                     </p>
                     <ol className="m-list__unstyled">
@@ -329,7 +329,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
                     </p>
                     <ol className="m-list__unstyled">
@@ -726,7 +726,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 3: Spending
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for spending?
                     </p>
                     <ol className="m-list__unstyled">
@@ -924,7 +924,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 4: Borrowing and credit
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for borrowing and credit?
                     </p>
                     <ol className="m-list__unstyled">
@@ -1344,7 +1344,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 5: Managing financial risk
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
                     </p>
                     <ol className="m-list__unstyled">
@@ -1659,7 +1659,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 6: Financial responsibility and money management
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?
                     </p>
                     <ol className="m-list__unstyled">

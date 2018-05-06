@@ -165,7 +165,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -181,7 +181,7 @@ Array [
       Criterion 1: Earning, income, and careers
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for earning, income, and careers?
     </p>
@@ -596,7 +596,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -612,7 +612,7 @@ Array [
       Criterion 1: Earning, income, and careers
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for earning, income, and careers?
     </p>
@@ -832,7 +832,7 @@ Array [
       Criterion 2: Saving and investing
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for saving and investing?
     </p>
@@ -1192,7 +1192,7 @@ Array [
       Criterion 3: Spending
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for spending?
     </p>
@@ -1624,7 +1624,7 @@ Array [
       Criterion 4: Borrowing and credit
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for borrowing and credit?
     </p>
@@ -1810,7 +1810,7 @@ Array [
       Criterion 5: Managing financial risk
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
     </p>
@@ -2191,7 +2191,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -2207,7 +2207,7 @@ Array [
       Criterion 1: Earning, income, and careers
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for earning, income, and careers?
     </p>
@@ -2427,7 +2427,7 @@ Array [
       Criterion 2: Saving and investing
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for saving and investing?
     </p>
@@ -2982,7 +2982,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -2998,7 +2998,7 @@ Array [
       Criterion 1: Earning, income, and careers
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for earning, income, and careers?
     </p>
@@ -3413,7 +3413,7 @@ Array [
     className="hr u-mb30 u-mt30"
   />,
   <p
-    className="u-mb30"
+    className="u-mb60"
   >
     <strong>
       All questions are required, unless otherwise noted.
@@ -3442,7 +3442,7 @@ Array [
       Criterion 1: Earning, income, and careers
     </h3>
     <p
-      className="lead-paragraph"
+      className="lead-paragraph u-mb45 u-mt15"
     >
       Does the curriculum address grade-level appropriate topics for earning, income, and careers?
     </p>
