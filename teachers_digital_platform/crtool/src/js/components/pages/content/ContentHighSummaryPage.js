@@ -44,6 +44,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionExceedsText="5 or more components were addressed"
                     criterionMeetsText="4 components were addressed"
                     criterionDoesNotMeetText="Less than 4 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -57,6 +58,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionExceedsText="8 or more components were addressed"
                     criterionMeetsText="6 or 7 components were addressed"
                     criterionDoesNotMeetText="Less than 6 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -70,6 +72,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionExceedsText="All 4 components were addressed"
                     criterionMeetsText="3 components were addressed"
                     criterionDoesNotMeetText="Less than 3 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -83,6 +86,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionExceedsText="9 or more components were addressed"
                     criterionMeetsText="7 or 8 components were addressed"
                     criterionDoesNotMeetText="Less than 7 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -96,6 +100,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionExceedsText="6 or more components were addressed"
                     criterionMeetsText="5 components were addressed"
                     criterionDoesNotMeetText="Less than 5 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -109,6 +114,7 @@ export default class ContentHighSummaryPage extends React.Component {
                     criterionExceedsText="All 3 components were addressed"
                     criterionMeetsText="2 components were addressed"
                     criterionDoesNotMeetText="Less than 2 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <hr class="hr u-mb45 u-mt30" />
