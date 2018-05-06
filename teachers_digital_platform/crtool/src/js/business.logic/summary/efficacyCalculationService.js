@@ -91,7 +91,7 @@ const EfficacyCalculationService = {
         let count = 0;
         let criterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
         for (var score in criterionScores) {
-            if (score.includes("efficacy-crt-1") && criterionScores[score].all_essential_yes) {
+            if (score.indexOf("efficacy-crt-1") >= 0 && criterionScores[score].all_essential_yes) {
                 count += 1;
                 if (count === 2) {
                     return true;
@@ -206,11 +206,11 @@ const EfficacyCalculationService = {
         criterionScore.meets = false;
         criterionScore.doesnotmeet = false;
 
-        if (currentCriterionGroupName.includes("-1")) {
+        if (currentCriterionGroupName.indexOf("-1") >= 0) {
             criterionScore = this.calculateFirstCriterion(criterionScore, allCriterionAnswers);
-        } else if (currentCriterionGroupName.includes("-2")) {
+        } else if (currentCriterionGroupName.indexOf("-2") >= 0) {
             criterionScore = this.calculateSecondCriterion(criterionScore);
-        } else if (currentCriterionGroupName.includes("-3")) {
+        } else if (currentCriterionGroupName.indexOf("-3") >= 0) {
             criterionScore = this.calculateThirdCriterion(criterionScore);
         }
 

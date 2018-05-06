@@ -8,10 +8,10 @@ const QualityCalculationService = {
      */
     isQualityCriterionGroupComplete(component, currentCriterionGroupName, criterionScore, alteredCriterionObjects) {
 
-        if (currentCriterionGroupName.includes("quality-crt-1") ||
-            currentCriterionGroupName.includes("quality-crt-3")) {
+        if (currentCriterionGroupName.indexOf("quality-crt-1") >= 0 ||
+            currentCriterionGroupName.indexOf("quality-crt-3") >= 0) {
             criterionScore = this.calculateQualityCriterionWithExceeds(criterionScore);
-        } else if (currentCriterionGroupName.includes("quality-crt")) {
+        } else if (currentCriterionGroupName.indexOf("quality-crt") >= 0) {
             criterionScore = this.calculateQualityCriterion(criterionScore);
         }
 

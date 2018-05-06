@@ -27,7 +27,7 @@ export default class EfficacyCriterionPage extends React.Component {
     twoStrongStudiesExist() {
         let count = 0;
         for (var score in this.props.criterionScores) {
-            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes)
+            if (score.indexOf("efficacy-crt-1") >= 0 && this.props.criterionScores[score].all_essential_yes)
             {
                 count += 1;
                 if (count === 2) {
@@ -42,7 +42,7 @@ export default class EfficacyCriterionPage extends React.Component {
     twoCompleteStudiesExist() {
         let count = 0;
         for (var score in this.props.criterionScores) {
-            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].answered_all_complete)
+            if (score.indexOf("efficacy-crt-1") >= 0 && this.props.criterionScores[score].answered_all_complete)
             {
                 count += 1;
                 if (count === 2) {

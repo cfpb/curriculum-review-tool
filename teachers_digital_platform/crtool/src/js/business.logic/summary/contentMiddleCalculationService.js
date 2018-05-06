@@ -11,17 +11,17 @@ const ContentMiddleCalculationService = {
         criterionScore.meets = false;
         criterionScore.doesnotmeet = false;
 
-        if (currentCriterionGroupName.includes("crt-1")) {
+        if (currentCriterionGroupName.indexOf("crt-1") >= 0) {
             criterionScore = this.calculateFirstCriterion(criterionScore);
-        } else if (currentCriterionGroupName.includes("crt-2")) {
+        } else if (currentCriterionGroupName.indexOf("crt-2") >= 0) {
             criterionScore = this.calculateSecondCriterion(criterionScore);
-        } else if (currentCriterionGroupName.includes("crt-3")) {
+        } else if (currentCriterionGroupName.indexOf("crt-3") >= 0) {
             criterionScore = this.calculateThirdCriterion(criterionScore);
-        } else if (currentCriterionGroupName.includes("crt-4")) {
+        } else if (currentCriterionGroupName.indexOf("crt-4") >= 0) {
             criterionScore = this.calculateFourCriterion(criterionScore);
-        } else if (currentCriterionGroupName.includes("crt-5")) {
+        } else if (currentCriterionGroupName.indexOf("crt-5") >= 0) {
             criterionScore = this.calculateFiveCriterion(criterionScore);
-        } else if (currentCriterionGroupName.includes("crt-6")) {
+        } else if (currentCriterionGroupName.indexOf("crt-6") >= 0) {
             criterionScore = this.calculateSixthCriterion(criterionScore);
         }
 

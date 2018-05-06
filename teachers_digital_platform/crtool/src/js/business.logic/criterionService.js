@@ -16,7 +16,7 @@ const CriterionService = {
 
         Repository.saveCriterionAnswers(component, alteredCriterionObjects);
 
-        if (!changedQuestion.includes("optional") && !changedQuestion.includes("takeaway")) {
+        if (changedQuestion.indexOf("optional") === -1 && changedQuestion.indexOf("takeaway") === -1) {
             CriterionCalculationService.calculateCriterionGroupCompletion(component, alteredCriterionObjects, distinctive, changedQuestion);
             this.calculateDistinctiveCompletion(component, alteredCriterionObjects, distinctive);
         }
@@ -83,7 +83,7 @@ const CriterionService = {
         // Check all the criterion group statuses
         for (var statusKey in component.state.criterionCompletionStatuses) {
             if (UtilityService.isCriterionInDistinctive(statusKey, changedDistinctive) &&
-                !statusKey.includes("optional") &&
+                statusKey.indexOf("optional") === -1 &&
                 component.state.criterionCompletionStatuses[statusKey] !== C.ICON_CHECK_ROUND) {
                     return false;
             }
@@ -217,7 +217,7 @@ const CriterionService = {
         let newCriterionAnswers = {};
         for (var key in component.state.criterionAnswers) {
             let studyNumber = "#" + efficacyStudyNumber + "#";
-            if (!key.includes(studyNumber)) {
+            if (key.indexOf(studyNumber) === -1) {
                 newCriterionAnswers[key] = component.state.criterionAnswers[key]
             }
         }
@@ -231,7 +231,7 @@ const CriterionService = {
     removeCriterionAnswesForEfficacy2and3(component, namePart) {
         let newCriterionAnswers = {};
         for (var key in component.state.criterionAnswers) {
-            if (!key.includes("efficacy-crt")) {
+            if (key.indexOf("efficacy-crt") === -1) {
                 newCriterionAnswers[key] = component.state.criterionAnswers[key]
             }
         }

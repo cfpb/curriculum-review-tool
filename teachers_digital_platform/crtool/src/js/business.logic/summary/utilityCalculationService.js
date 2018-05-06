@@ -8,7 +8,7 @@ const UtilityCalculationService = {
      */
     isUtilityCriterionGroupComplete(currentCriterionGroupName, criterionScore) {
 
-        if (!currentCriterionGroupName.includes("utility-crt-1")) {
+        if (!currentCriterionGroupName.indexOf("utility-crt-1") >= 0) {
             criterionScore = this.calculateUtilityCriterionWithExceeds(criterionScore);
         } else {
             criterionScore = this.calculateUtilityCriterion(criterionScore);
