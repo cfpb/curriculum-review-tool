@@ -7,11 +7,11 @@ const UtilityService = {
     },
 
     isKeyInCriterion(key, currentCriterion) {
-        return key.startsWith(currentCriterion.toLowerCase());
+        return key.indexOf(currentCriterion.toLowerCase()) === 0; //startsWith
     },
 
     isCriterionInDistinctive(key, changedDistinctive) {
-        return key.startsWith(changedDistinctive.toLowerCase());
+        return key.indexOf(changedDistinctive.toLowerCase()) === 0; //startsWith
     },
 
     isRequiredCriterion(key) {
