@@ -44,6 +44,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionExceedsText="Both components were addressed"
                     criterionMeetsText="1 component was addressed"
                     criterionDoesNotMeetText="0 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -57,6 +58,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionExceedsText="All 4 components were addressed"
                     criterionMeetsText="3 components were addressed"
                     criterionDoesNotMeetText="Less than 3 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
 
@@ -71,6 +73,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionExceedsText="5 or more components were addressed"
                     criterionMeetsText="4 components were addressed"
                     criterionDoesNotMeetText="Less than 4 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -84,6 +87,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionExceedsText="Both components were addressed"
                     criterionMeetsText="1 component was addressed"
                     criterionDoesNotMeetText="0 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -97,6 +101,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionExceedsText="Both components were addressed"
                     criterionMeetsText="1 component was addressed"
                     criterionDoesNotMeetText="0 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <CriterionScoreBlock
@@ -109,6 +114,7 @@ export default class ContentElementarySummaryPage extends React.Component {
                     criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
                     criterionMeetsText="1 component was addressed"
                     criterionDoesNotMeetText="0 components were addressed"
+                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
                     {...this.props} />
 
                 <hr class="hr u-mb45 u-mt30" />
