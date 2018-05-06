@@ -55,6 +55,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
+                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
