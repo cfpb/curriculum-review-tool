@@ -71,7 +71,7 @@ Array [
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -502,7 +502,7 @@ Array [
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -2097,7 +2097,7 @@ Array [
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -2888,7 +2888,7 @@ Array [
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -3319,7 +3319,7 @@ Array [
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?

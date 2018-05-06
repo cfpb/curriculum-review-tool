@@ -41,16 +41,17 @@ export default class QualityCriterionPage extends React.Component {
                     <li>Read the lessons plans and supporting material for the curriculum.</li>
                     <li><strong>Answer all questions</strong> to continue to the summary page for the score on this dimension.</li>
                 </ul>
+                <p>
+                    <SaveWorkModal
+                        buttonText="How can I save my work?"
+                        hasIcon="false"
+                        hasUnderline="true" />
+                </p>
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
                     <h4>This dimension has essential and beneficial components.</h4>
                     <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                    <p>
-                        <SaveWorkModal
-                            buttonText="How can I save my work?"
-                            hasIcon="false" />
-                    </p>
                 </div>
                 <hr className="hr
                                 u-mb30

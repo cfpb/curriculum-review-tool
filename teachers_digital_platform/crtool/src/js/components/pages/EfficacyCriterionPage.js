@@ -147,16 +147,17 @@ export default class EfficacyCriterionPage extends React.Component {
                     <li>If there are two or more strong studies, complete Criteria 2 and 3 using all strong studies as reference.</li>
                     <li>If there are fewer than two strong studies, you don’t need to complete Criteria 2 and 3 and can move on to the efficacy summary.</li>
                 </ul>
+                <p>
+                    <SaveWorkModal
+                        buttonText="How can I save my work?"
+                        hasIcon="false"
+                        hasUnderline="true" />
+                </p>
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
                     <h4>This dimension has essential and beneficial components.</h4>
                     <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                    <p>
-                        <SaveWorkModal
-                            buttonText="How can I save my work?"
-                            hasIcon="false" />
-                    </p>
                 </div>
                 <hr className="hr
                                 u-mb30

@@ -46,7 +46,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <p>
                     <SaveWorkModal
                         buttonText="How can I save my work?"
-                        hasIcon="false" />
+                        hasIcon="false"
+                        hasUnderline="true" />
                 </p>
                 <hr className="hr
                                 u-mb30
