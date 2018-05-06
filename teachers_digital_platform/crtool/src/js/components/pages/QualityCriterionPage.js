@@ -39,7 +39,7 @@ export default class QualityCriterionPage extends React.Component {
                 <h3 className="h2">Instructions</h3>
                 <ul>
                     <li>Read the lessons plans and supporting material for the curriculum.</li>
-                    <li>Answer each of the following questions.</li>
+                    <li><strong>Answer all questions</strong> to continue to the summary page for the score on this dimension.</li>
                 </ul>
                 <div className="o-well
                                 u-mb30
