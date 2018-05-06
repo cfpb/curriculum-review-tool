@@ -39,22 +39,24 @@ export default class UtilityCriterionPage extends React.Component {
                 <h3 className="h2">Instructions</h3>
                 <ul>
                     <li>Read lessons plans and supporting materials for the curriculum.</li>
-                    <li>Answer each of the following questions.</li>
+                    <li><strong>Answer all questions</strong> to continue to the summary page for the score on this dimension.</li>
                 </ul>
+                <p>
+                    <SaveWorkModal
+                        buttonText="How can I save my work?"
+                        hasIcon="false"
+                        hasUnderline="true" />
+                </p>
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <h4>This dimension has essential and beneficial components.</h4>
-                    <p><strong>Essential components</strong> have been shown to positively impact student learning.<br /><strong>Beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.</p>
-                    <p>
-                        <SaveWorkModal
-                            buttonText="How can I save my work?"
-                            hasIcon="false" />
-                    </p>
+                    <h4>What’s a beneficial component?</h4>
+                    <p>While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These <strong>beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.</p>
                 </div>
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
+                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
@@ -2741,6 +2743,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt45" />
+                <p className="u-mb30"><strong>Be sure to answer all yes/no questions to continue.</strong></p>
             </React.Fragment>
         );
     }

@@ -62,10 +62,16 @@ Array [
     <li>
       Select “yes” for the components that are addressed, and “no” for those that are not.
     </li>
+    <li>
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
+    </li>
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -158,6 +164,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -408,6 +421,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -473,10 +493,16 @@ Array [
     <li>
       Select “yes” for the components that are addressed, and “no” for those that are not.
     </li>
+    <li>
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
+    </li>
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -569,6 +595,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -1983,6 +2016,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -2048,10 +2088,16 @@ Array [
     <li>
       Select “yes” for the components that are addressed, and “no” for those that are not.
     </li>
+    <li>
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
+    </li>
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -2144,6 +2190,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -2754,6 +2807,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -2819,10 +2879,16 @@ Array [
     <li>
       Select “yes” for the components that are addressed, and “no” for those that are not.
     </li>
+    <li>
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
+    </li>
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -2915,6 +2981,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -3165,6 +3238,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -3230,10 +3310,16 @@ Array [
     <li>
       Select “yes” for the components that are addressed, and “no” for those that are not.
     </li>
+    <li>
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
+    </li>
   </ul>,
   <p>
     <button
-      className="a-btn a-btn__link a-btn__no-line"
+      className="a-btn a-btn__link"
       onClick={[Function]}
     >
       How can I save my work?
@@ -3326,6 +3412,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -3589,5 +3682,12 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;

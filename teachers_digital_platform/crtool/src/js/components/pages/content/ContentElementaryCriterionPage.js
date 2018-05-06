@@ -41,15 +41,18 @@ export default class ContentElementaryCriterionPage extends React.Component {
                     <li>Read through the scope and sequence of the curriculum.</li>
                     <li>Skim the lesson plans, student materials, and assessments.</li>
                     <li>Select “yes” for the components that are addressed, and “no” for those that are not.</li>
+                    <li><strong>Answer all questions</strong> to continue to the summary page for the score on this dimension.</li>
                 </ul>
                 <p>
                     <SaveWorkModal
                         buttonText="How can I save my work?"
-                        hasIcon="false" />
+                        hasIcon="false"
+                        hasUnderline="true" />
                 </p>
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
+                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
@@ -973,6 +976,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt45" />
+                <p className="u-mb30"><strong>Be sure to answer all yes/no questions to continue.</strong></p>
             </React.Fragment>
         );
 

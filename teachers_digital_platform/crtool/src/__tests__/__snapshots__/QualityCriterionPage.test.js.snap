@@ -46,122 +46,128 @@ Array [
       Read the lessons plans and supporting material for the curriculum.
     </li>
     <li>
-      Answer each of the following questions.
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
     </li>
   </ul>,
+  <p>
+    <button
+      className="a-btn a-btn__link"
+      onClick={[Function]}
+    >
+      How can I save my work?
+    </button>
+    <div
+      aria-describedby="modal-save-work_desc"
+      aria-hidden="true"
+      aria-labelledby="modal-save-work_title"
+      className="o-modal"
+      id="modal-save-work"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                className="a-icon a-icon__large a-icon__space-before"
+              >
+                <svg
+                  class="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              className="h3"
+              id="modal-save-work_title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p>,
   <div
     className="o-well u-mb30 u-mt30"
   >
     <h4>
-      This dimension has essential and beneficial components.
+      What’s a beneficial component?
     </h4>
     <p>
+      While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
-        Essential components
+        beneficial components
       </strong>
-       have been shown to positively impact student learning.
-      <br />
-      <strong>
-        Beneficial components
-      </strong>
-       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
-    </p>
-    <p>
-      <button
-        className="a-btn a-btn__link a-btn__no-line"
-        onClick={[Function]}
-      >
-        How can I save my work?
-      </button>
-      <div
-        aria-describedby="modal-save-work_desc"
-        aria-hidden="true"
-        aria-labelledby="modal-save-work_title"
-        className="o-modal"
-        id="modal-save-work"
-        role="alertdialog"
-      >
-        <div
-          className="o-modal_backdrop"
-        />
-        <div
-          className="o-modal_container"
-        >
-          <form
-            className="o-modal_content"
-          >
-            <div
-              className="o-modal_body"
-            >
-              <button
-                className="o-modal_close a-btn a-btn__link"
-                onClick={[Function]}
-              >
-                Close
-                <span
-                  className="a-icon a-icon__large a-icon__space-before"
-                >
-                  <svg
-                    class="cf-icon-svg"
-                    viewBox="0 0 1000 1200"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <h1
-                className="h3"
-                id="modal-save-work_title"
-              >
-                Saving your work
-              </h1>
-              <div
-                id="modal-save-work_desc"
-              >
-                <p>
-                  This tool uses cookies to 
-                  <strong>
-                    temporarily
-                  </strong>
-                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
-                </p>
-                <p>
-                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
-                  <a
-                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    save the summary as a PDF
-                  </a>
-                  .
-                </p>
-                <p>
-                  You can only work on a single curriculum at a time
-                </p>
-              </div>
-            </div>
-            <div
-              className="o-modal_footer"
-            >
-              <button
-                className="a-btn"
-                onClick={[Function]}
-              >
-                Close
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.
     </p>
   </div>,
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -987,6 +993,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -1036,122 +1049,128 @@ Array [
       Read the lessons plans and supporting material for the curriculum.
     </li>
     <li>
-      Answer each of the following questions.
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
     </li>
   </ul>,
+  <p>
+    <button
+      className="a-btn a-btn__link"
+      onClick={[Function]}
+    >
+      How can I save my work?
+    </button>
+    <div
+      aria-describedby="modal-save-work_desc"
+      aria-hidden="true"
+      aria-labelledby="modal-save-work_title"
+      className="o-modal"
+      id="modal-save-work"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                className="a-icon a-icon__large a-icon__space-before"
+              >
+                <svg
+                  class="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              className="h3"
+              id="modal-save-work_title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p>,
   <div
     className="o-well u-mb30 u-mt30"
   >
     <h4>
-      This dimension has essential and beneficial components.
+      What’s a beneficial component?
     </h4>
     <p>
+      While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
-        Essential components
+        beneficial components
       </strong>
-       have been shown to positively impact student learning.
-      <br />
-      <strong>
-        Beneficial components
-      </strong>
-       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
-    </p>
-    <p>
-      <button
-        className="a-btn a-btn__link a-btn__no-line"
-        onClick={[Function]}
-      >
-        How can I save my work?
-      </button>
-      <div
-        aria-describedby="modal-save-work_desc"
-        aria-hidden="true"
-        aria-labelledby="modal-save-work_title"
-        className="o-modal"
-        id="modal-save-work"
-        role="alertdialog"
-      >
-        <div
-          className="o-modal_backdrop"
-        />
-        <div
-          className="o-modal_container"
-        >
-          <form
-            className="o-modal_content"
-          >
-            <div
-              className="o-modal_body"
-            >
-              <button
-                className="o-modal_close a-btn a-btn__link"
-                onClick={[Function]}
-              >
-                Close
-                <span
-                  className="a-icon a-icon__large a-icon__space-before"
-                >
-                  <svg
-                    class="cf-icon-svg"
-                    viewBox="0 0 1000 1200"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <h1
-                className="h3"
-                id="modal-save-work_title"
-              >
-                Saving your work
-              </h1>
-              <div
-                id="modal-save-work_desc"
-              >
-                <p>
-                  This tool uses cookies to 
-                  <strong>
-                    temporarily
-                  </strong>
-                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
-                </p>
-                <p>
-                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
-                  <a
-                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    save the summary as a PDF
-                  </a>
-                  .
-                </p>
-                <p>
-                  You can only work on a single curriculum at a time
-                </p>
-              </div>
-            </div>
-            <div
-              className="o-modal_footer"
-            >
-              <button
-                className="a-btn"
-                onClick={[Function]}
-              >
-                Close
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.
     </p>
   </div>,
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -3420,6 +3439,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -3469,122 +3495,128 @@ Array [
       Read the lessons plans and supporting material for the curriculum.
     </li>
     <li>
-      Answer each of the following questions.
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
     </li>
   </ul>,
+  <p>
+    <button
+      className="a-btn a-btn__link"
+      onClick={[Function]}
+    >
+      How can I save my work?
+    </button>
+    <div
+      aria-describedby="modal-save-work_desc"
+      aria-hidden="true"
+      aria-labelledby="modal-save-work_title"
+      className="o-modal"
+      id="modal-save-work"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                className="a-icon a-icon__large a-icon__space-before"
+              >
+                <svg
+                  class="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              className="h3"
+              id="modal-save-work_title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p>,
   <div
     className="o-well u-mb30 u-mt30"
   >
     <h4>
-      This dimension has essential and beneficial components.
+      What’s a beneficial component?
     </h4>
     <p>
+      While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
-        Essential components
+        beneficial components
       </strong>
-       have been shown to positively impact student learning.
-      <br />
-      <strong>
-        Beneficial components
-      </strong>
-       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
-    </p>
-    <p>
-      <button
-        className="a-btn a-btn__link a-btn__no-line"
-        onClick={[Function]}
-      >
-        How can I save my work?
-      </button>
-      <div
-        aria-describedby="modal-save-work_desc"
-        aria-hidden="true"
-        aria-labelledby="modal-save-work_title"
-        className="o-modal"
-        id="modal-save-work"
-        role="alertdialog"
-      >
-        <div
-          className="o-modal_backdrop"
-        />
-        <div
-          className="o-modal_container"
-        >
-          <form
-            className="o-modal_content"
-          >
-            <div
-              className="o-modal_body"
-            >
-              <button
-                className="o-modal_close a-btn a-btn__link"
-                onClick={[Function]}
-              >
-                Close
-                <span
-                  className="a-icon a-icon__large a-icon__space-before"
-                >
-                  <svg
-                    class="cf-icon-svg"
-                    viewBox="0 0 1000 1200"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <h1
-                className="h3"
-                id="modal-save-work_title"
-              >
-                Saving your work
-              </h1>
-              <div
-                id="modal-save-work_desc"
-              >
-                <p>
-                  This tool uses cookies to 
-                  <strong>
-                    temporarily
-                  </strong>
-                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
-                </p>
-                <p>
-                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
-                  <a
-                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    save the summary as a PDF
-                  </a>
-                  .
-                </p>
-                <p>
-                  You can only work on a single curriculum at a time
-                </p>
-              </div>
-            </div>
-            <div
-              className="o-modal_footer"
-            >
-              <button
-                className="a-btn"
-                onClick={[Function]}
-              >
-                Close
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.
     </p>
   </div>,
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -4774,6 +4806,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -4823,122 +4862,128 @@ Array [
       Read the lessons plans and supporting material for the curriculum.
     </li>
     <li>
-      Answer each of the following questions.
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
     </li>
   </ul>,
+  <p>
+    <button
+      className="a-btn a-btn__link"
+      onClick={[Function]}
+    >
+      How can I save my work?
+    </button>
+    <div
+      aria-describedby="modal-save-work_desc"
+      aria-hidden="true"
+      aria-labelledby="modal-save-work_title"
+      className="o-modal"
+      id="modal-save-work"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                className="a-icon a-icon__large a-icon__space-before"
+              >
+                <svg
+                  class="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              className="h3"
+              id="modal-save-work_title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p>,
   <div
     className="o-well u-mb30 u-mt30"
   >
     <h4>
-      This dimension has essential and beneficial components.
+      What’s a beneficial component?
     </h4>
     <p>
+      While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
-        Essential components
+        beneficial components
       </strong>
-       have been shown to positively impact student learning.
-      <br />
-      <strong>
-        Beneficial components
-      </strong>
-       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
-    </p>
-    <p>
-      <button
-        className="a-btn a-btn__link a-btn__no-line"
-        onClick={[Function]}
-      >
-        How can I save my work?
-      </button>
-      <div
-        aria-describedby="modal-save-work_desc"
-        aria-hidden="true"
-        aria-labelledby="modal-save-work_title"
-        className="o-modal"
-        id="modal-save-work"
-        role="alertdialog"
-      >
-        <div
-          className="o-modal_backdrop"
-        />
-        <div
-          className="o-modal_container"
-        >
-          <form
-            className="o-modal_content"
-          >
-            <div
-              className="o-modal_body"
-            >
-              <button
-                className="o-modal_close a-btn a-btn__link"
-                onClick={[Function]}
-              >
-                Close
-                <span
-                  className="a-icon a-icon__large a-icon__space-before"
-                >
-                  <svg
-                    class="cf-icon-svg"
-                    viewBox="0 0 1000 1200"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <h1
-                className="h3"
-                id="modal-save-work_title"
-              >
-                Saving your work
-              </h1>
-              <div
-                id="modal-save-work_desc"
-              >
-                <p>
-                  This tool uses cookies to 
-                  <strong>
-                    temporarily
-                  </strong>
-                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
-                </p>
-                <p>
-                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
-                  <a
-                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    save the summary as a PDF
-                  </a>
-                  .
-                </p>
-                <p>
-                  You can only work on a single curriculum at a time
-                </p>
-              </div>
-            </div>
-            <div
-              className="o-modal_footer"
-            >
-              <button
-                className="a-btn"
-                onClick={[Function]}
-              >
-                Close
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.
     </p>
   </div>,
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -5764,6 +5809,13 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
 
@@ -5813,122 +5865,128 @@ Array [
       Read the lessons plans and supporting material for the curriculum.
     </li>
     <li>
-      Answer each of the following questions.
+      <strong>
+        Answer all questions
+      </strong>
+       to continue to the summary page for the score on this dimension.
     </li>
   </ul>,
+  <p>
+    <button
+      className="a-btn a-btn__link"
+      onClick={[Function]}
+    >
+      How can I save my work?
+    </button>
+    <div
+      aria-describedby="modal-save-work_desc"
+      aria-hidden="true"
+      aria-labelledby="modal-save-work_title"
+      className="o-modal"
+      id="modal-save-work"
+      role="alertdialog"
+    >
+      <div
+        className="o-modal_backdrop"
+      />
+      <div
+        className="o-modal_container"
+      >
+        <form
+          className="o-modal_content"
+        >
+          <div
+            className="o-modal_body"
+          >
+            <button
+              className="o-modal_close a-btn a-btn__link"
+              onClick={[Function]}
+            >
+              Close
+              <span
+                className="a-icon a-icon__large a-icon__space-before"
+              >
+                <svg
+                  class="cf-icon-svg"
+                  viewBox="0 0 1000 1200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <h1
+              className="h3"
+              id="modal-save-work_title"
+            >
+              Saving your work
+            </h1>
+            <div
+              id="modal-save-work_desc"
+            >
+              <p>
+                This tool uses cookies to 
+                <strong>
+                  temporarily
+                </strong>
+                 save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
+              </p>
+              <p>
+                To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
+                <a
+                  href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  save the summary as a PDF
+                </a>
+                .
+              </p>
+              <p>
+                You can only work on a single curriculum at a time
+              </p>
+            </div>
+          </div>
+          <div
+            className="o-modal_footer"
+          >
+            <button
+              className="a-btn"
+              onClick={[Function]}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p>,
   <div
     className="o-well u-mb30 u-mt30"
   >
     <h4>
-      This dimension has essential and beneficial components.
+      What’s a beneficial component?
     </h4>
     <p>
+      While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
-        Essential components
+        beneficial components
       </strong>
-       have been shown to positively impact student learning.
-      <br />
-      <strong>
-        Beneficial components
-      </strong>
-       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Beneficial components are marked with a note; all others are essential. You must answer all components.
-    </p>
-    <p>
-      <button
-        className="a-btn a-btn__link a-btn__no-line"
-        onClick={[Function]}
-      >
-        How can I save my work?
-      </button>
-      <div
-        aria-describedby="modal-save-work_desc"
-        aria-hidden="true"
-        aria-labelledby="modal-save-work_title"
-        className="o-modal"
-        id="modal-save-work"
-        role="alertdialog"
-      >
-        <div
-          className="o-modal_backdrop"
-        />
-        <div
-          className="o-modal_container"
-        >
-          <form
-            className="o-modal_content"
-          >
-            <div
-              className="o-modal_body"
-            >
-              <button
-                className="o-modal_close a-btn a-btn__link"
-                onClick={[Function]}
-              >
-                Close
-                <span
-                  className="a-icon a-icon__large a-icon__space-before"
-                >
-                  <svg
-                    class="cf-icon-svg"
-                    viewBox="0 0 1000 1200"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <h1
-                className="h3"
-                id="modal-save-work_title"
-              >
-                Saving your work
-              </h1>
-              <div
-                id="modal-save-work_desc"
-              >
-                <p>
-                  This tool uses cookies to 
-                  <strong>
-                    temporarily
-                  </strong>
-                   save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.
-                </p>
-                <p>
-                  To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to 
-                  <a
-                    href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    save the summary as a PDF
-                  </a>
-                  .
-                </p>
-                <p>
-                  You can only work on a single curriculum at a time
-                </p>
-              </div>
-            </div>
-            <div
-              className="o-modal_footer"
-            >
-              <button
-                className="a-btn"
-                onClick={[Function]}
-              >
-                Close
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+       hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.
     </p>
   </div>,
   <hr
     className="hr u-mb30 u-mt30"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      All questions are required, unless otherwise noted.
+    </strong>
+  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -6767,5 +6825,12 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
+  <p
+    className="u-mb30"
+  >
+    <strong>
+      Be sure to answer all yes/no questions to continue.
+    </strong>
+  </p>,
 ]
 `;
