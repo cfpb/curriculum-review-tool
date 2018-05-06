@@ -69,7 +69,7 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     getMaxValueFromEfficacyItems() {
-        let studyComponents = Array.from(this.props.criterionEfficacyStudies);
+        let studyComponents = this.props.criterionEfficacyStudies;
         let maxNumber = Math.max.apply(Math, studyComponents);
         return maxNumber;
     }
