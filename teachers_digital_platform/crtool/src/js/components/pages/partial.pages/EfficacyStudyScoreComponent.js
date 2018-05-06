@@ -1,5 +1,7 @@
 import React from "react";
 
+import SvgIcon from "../../svgs/SvgIcon";
+
 export default class EfficacyStudyScoreComponent extends React.Component {
 
     criterionClassNameFor(level) {
@@ -19,7 +21,21 @@ export default class EfficacyStudyScoreComponent extends React.Component {
     }
 
     render() {
-        if (this.props.studyScore !== undefined && this.props.studyScore.answered_all_complete) {
+        if (this.props.studyScore !== undefined && !this.props.studyScore.answered_all_complete) {
+            return (
+                <div className="m-notification
+                                m-notification__visible
+                                m-notification__warning
+                                u-mb30">
+                    <SvgIcon icon="exclamation-mark-round" />
+                    <div className="m-notification_content">
+                        <div className="m-notification_message">
+                            <p>You must enter a study name and answer all yes/no questions for this study before it can be scored.</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else if (this.props.studyScore !== undefined && this.props.studyScore.answered_all_complete) {
             return (
                 <React.Fragment>
                 <h4 className="h2">Score for {this.props.studyScoreName}</h4>

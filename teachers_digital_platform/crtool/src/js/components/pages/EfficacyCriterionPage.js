@@ -39,21 +39,6 @@ export default class EfficacyCriterionPage extends React.Component {
         return false;
     }
 
-    twoCompleteStudiesExist() {
-        let count = 0;
-        for (var score in this.props.criterionScores) {
-            if (score.indexOf("efficacy-crt-1") >= 0 && this.props.criterionScores[score].answered_all_complete)
-            {
-                count += 1;
-                if (count === 2) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
 
