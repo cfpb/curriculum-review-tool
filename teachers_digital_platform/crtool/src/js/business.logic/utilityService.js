@@ -7,24 +7,24 @@ const UtilityService = {
     },
 
     isKeyInCriterion(key, currentCriterion) {
-        return key.startsWith(currentCriterion.toLowerCase());
+        return key.indexOf(currentCriterion.toLowerCase()) === 0; //startsWith
     },
 
     isCriterionInDistinctive(key, changedDistinctive) {
-        return key.startsWith(changedDistinctive.toLowerCase());
+        return key.indexOf(changedDistinctive.toLowerCase()) === 0; //startsWith
     },
 
     isRequiredCriterion(key) {
-        return !key.includes("optional");
+        return key.indexOf("optional") === -1;
     },
 
     isEssential(key) {
-        return !key.includes("beneficial");
+        return key.indexOf("beneficial") === -1;
     },
 
     getCriterionGroupName(currentCriterion) {
         let strippedCriterion = this.cleanCriterionKeyNames(currentCriterion);
-        if (strippedCriterion.includes(".")) {
+        if (strippedCriterion.indexOf(".") >= 0) {
             return (strippedCriterion.substring(0, strippedCriterion.lastIndexOf(".")));
         }
         return strippedCriterion;
@@ -38,7 +38,7 @@ const UtilityService = {
     getCriterionQuestionKey(changedCriterionQuestion) {
         //Need to grab enough of the name to get the first number (criterion number)
         let criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("-")+2);
-        if (criterionName.includes("#")) {
+        if (criterionName.indexOf("#") >= 0) {
             criterionName = changedCriterionQuestion.substring(0, changedCriterionQuestion.lastIndexOf("#")+1);
         }
         return criterionName;

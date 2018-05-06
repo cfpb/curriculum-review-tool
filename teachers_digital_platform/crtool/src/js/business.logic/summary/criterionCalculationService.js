@@ -24,17 +24,17 @@ const CriterionCalculationService = {
         criterionScore = BaseCalculationService.calculateDefaultCompletionForCriterionGroup(component, alteredCriterionObjects, currentCriterionGroupName, currentCriterion);
         isCriterionCompleteReturnValue = criterionScore.answered_all_complete;
 
-        if (currentCriterionGroupName.includes("quality")) {
+        if (currentCriterionGroupName.indexOf("quality") >= 0) {
             criterionScore = QualityCalculationService.isQualityCriterionGroupComplete(component, currentCriterionGroupName, criterionScore, alteredCriterionObjects);
-        } else if (currentCriterionGroupName.includes("utility")) {
+        } else if (currentCriterionGroupName.indexOf("utility") >= 0) {
             criterionScore = UtilityCalculationService.isUtilityCriterionGroupComplete(currentCriterionGroupName, criterionScore);
-        } else if (currentCriterionGroupName.includes("content-elementary")) {
+        } else if (currentCriterionGroupName.indexOf("content-elementary") >= 0) {
             criterionScore = ContentElementaryCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
-        } else if (currentCriterionGroupName.includes("content-middle")) {
+        } else if (currentCriterionGroupName.indexOf("content-middle") >= 0) {
             criterionScore = ContentMiddleCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
-        } else if (currentCriterionGroupName.includes("content-high")) {
+        } else if (currentCriterionGroupName.indexOf("content-high") >= 0) {
             criterionScore = ContentHighCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore);
-        } else if (currentCriterionGroupName.includes("efficacy")) {
+        } else if (currentCriterionGroupName.indexOf("efficacy") >= 0) {
             // criterionScore = EfficacyCalculationService.isContentCriterionGroupComplete(currentCriterionGroupName, criterionScore, component.state.criterionAnswers);
         }
 
@@ -61,17 +61,17 @@ const CriterionCalculationService = {
 
     setDimensionOverallScore(component, criterionKey) {
         let currentCriterionGroupName = UtilityService.getCriterionGroupName(criterionKey);
-        if (currentCriterionGroupName.includes("quality")) {
+        if (currentCriterionGroupName.indexOf("quality") >= 0) {
             QualityCalculationService.calculateOveralScore(component);
-        } else if (currentCriterionGroupName.includes("utility")) {
+        } else if (currentCriterionGroupName.indexOf("utility") >= 0) {
             UtilityCalculationService.calculateOveralScore(component);
-        } else if (currentCriterionGroupName.includes("content-elementary")) {
+        } else if (currentCriterionGroupName.indexOf("content-elementary") >= 0) {
             ContentElementaryCalculationService.calculateOveralScore(component);
-        } else if (currentCriterionGroupName.includes("content-middle")) {
+        } else if (currentCriterionGroupName.indexOf("content-middle") >= 0) {
             ContentMiddleCalculationService.calculateOveralScore(component);
-        } else if (currentCriterionGroupName.includes("content-high")) {
+        } else if (currentCriterionGroupName.indexOf("content-high") >= 0) {
             ContentHighCalculationService.calculateOveralScore(component);
-        } else if (currentCriterionGroupName.includes("efficacy")) {
+        } else if (currentCriterionGroupName.indexOf("efficacy") >= 0) {
             EfficacyCalculationService.calculateOveralScore(component);
         }
     },

@@ -27,7 +27,7 @@ export default class EfficacyCriterionPage extends React.Component {
     twoStrongStudiesExist() {
         let count = 0;
         for (var score in this.props.criterionScores) {
-            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].all_essential_yes)
+            if (score.indexOf("efficacy-crt-1") >= 0 && this.props.criterionScores[score].all_essential_yes)
             {
                 count += 1;
                 if (count === 2) {
@@ -42,7 +42,7 @@ export default class EfficacyCriterionPage extends React.Component {
     twoCompleteStudiesExist() {
         let count = 0;
         for (var score in this.props.criterionScores) {
-            if (score.includes("efficacy-crt-1") && this.props.criterionScores[score].answered_all_complete)
+            if (score.indexOf("efficacy-crt-1") >= 0 && this.props.criterionScores[score].answered_all_complete)
             {
                 count += 1;
                 if (count === 2) {
@@ -69,7 +69,7 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     getMaxValueFromEfficacyItems() {
-        let studyComponents = Array.from(this.props.criterionEfficacyStudies);
+        let studyComponents = this.props.criterionEfficacyStudies;
         let maxNumber = Math.max.apply(Math, studyComponents);
         return maxNumber;
     }
@@ -161,7 +161,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <div className="block block__flush-top">
+                <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
                             icon={this.props.finishAddingEfficacyStudies && C.ICON_CHECK_ROUND}

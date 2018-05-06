@@ -40,6 +40,4 @@ it('DistinctiveButton onHandleClick correctly invokes distinctiveClicked(name)',
   wrapper.find('button').simulate('click');
 
   expect("some distinctive value").toBe(distinctiveAnchorClickedValue);
-  console.log("local value: " + distinctiveAnchorClickedValue);
-  console.log("other value: " + "some distinctive value");
 });

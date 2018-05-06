@@ -9,34 +9,89 @@ const utilityProps = {
     currentPage:"UtilityCriterionPage",
     criterionAnswers: {},
     criterionNotes:{},
-    changeUtilityAnswer: _changeUtilityRadio.bind(this),
-    changeUtilityNotes:_changeUtilityNotes.bind(this),
-    setDistinctiveComplete:_handleSummaryButtonClick.bind(this),
+    changeUtilityAnswer:(() => { }),
+    changeUtilityNotes:(() => { }),
+    setDistinctiveComplete:(() => { }),
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
     setCriterionStatusToInStart:(() => {}),
 }
-
-beforeAll(() => {
-  result = renderer.create(
-    <UtilityCriterionPage {...utilityProps}/>,
-  );
-});
   
 afterAll(() => {
-  result.unmount();
+    result.unmount();
 });
 
 test ('Utility Criterion Page uses state to populate values', () => {
-  let tree = result.toJSON();
-  expect(tree).toMatchSnapshot();
+    // Act
+    result = renderer.create(
+      <UtilityCriterionPage {...utilityProps}/>,
+    );
+
+    // Assert
+    let tree = result.toJSON();
+    expect(tree).toMatchSnapshot();
 });
 
-function _changeUtilityRadio (key, checkedValue) {
-}
+test ('Utility Criterion one - four complete with svg check', () => {
+    // Arrange
+    let criterionCompletionStatuses = {"utility-crt-question-1":"check-round"};
+    criterionCompletionStatuses["utility-crt-question-2"]="check-round";
+    criterionCompletionStatuses["utility-crt-question-3"]="check-round";
+    criterionCompletionStatuses["utility-crt-question-4"]="check-round";
+    criterionCompletionStatuses["utility-crt-question-5"]="check-round";
 
-function _changeUtilityNotes (key, textValue) {
-}
+    // Act
+    result = renderer.create(
+        <UtilityCriterionPage {...utilityProps} criterionCompletionStatuses={criterionCompletionStatuses} />,
+    );
+    
+    // Assert
+    let tree = result.toJSON();
+    expect(tree).toMatchSnapshot();
+});
 
-function _handleSummaryButtonClick () {
-}
+test ('Utility Criterion criterion 2 was not clicked so it does not show', () => {
+    // Arrange
+    let criterionClickedTitles = {};
+
+    // Act
+    result = renderer.create(
+        <UtilityCriterionPage {...utilityProps} criterionClickedTitles={criterionClickedTitles} />,
+    );
+    
+    // Assert
+    let tree = result.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test ('Utility Criterion criterion 2 was clicked so it does show', () => {
+    // Arrange
+    let criterionClickedTitles = {"utility-crt-question-2":"clicked"};
+
+    // Act
+    result = renderer.create(
+        <UtilityCriterionPage {...utilityProps} criterionClickedTitles={criterionClickedTitles} />,
+    );
+    
+    // Assert
+    let tree = result.toJSON();
+    // snapshot contains the whole of criterion 2 so if something changes incorrectly we will know
+    expect(tree).toMatchSnapshot();
+});
+
+test ('Utility Criterion criterion 2 & 3 & 4 were clicked so they show', () => {
+    // Arrange
+    let criterionClickedTitles = {"utility-crt-question-2":"clicked"};
+    criterionClickedTitles["utility-crt-question-3"]="clicked";
+    criterionClickedTitles["utility-crt-question-4"]="clicked";
+    criterionClickedTitles["utility-crt-question-5"]="clicked";
+
+    // Act
+    result = renderer.create(
+        <UtilityCriterionPage {...utilityProps} criterionClickedTitles={criterionClickedTitles} />,
+    );
+    
+    // Assert
+    let tree = result.toJSON();
+    expect(tree).toMatchSnapshot();
+});

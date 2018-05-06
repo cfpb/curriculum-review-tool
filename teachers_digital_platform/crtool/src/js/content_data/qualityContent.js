@@ -10,7 +10,7 @@ export const QualityContent = {
                     indicatorText: "Web-based materials can be accessed using typical school technology and software; links are viewable and work. Paper-based materials are available for a moderate and clearly stated price..",
                     components: [
                         {
-                            showNaButton: true,
+                            showNaButton: false,
                             showBeneficialText: false,
                             criterionRefId: "quality-crt-question-1.1.1",
                             hasInlineHtml: true,
@@ -61,9 +61,9 @@ export const QualityContent = {
                     indicatorText: "Materials are available in alternate languages and include special needs formats (e.g., Braille).",
                     components: [
                         {
-                            showNaButton: true,
-                            showBeneficialText: false,
-                            criterionRefId: "quality-crt-question-1.3.1",
+                            showNaButton: false,
+                            showBeneficialText: true,
+                            criterionRefId: "quality-crt-question-1.3.1_beneficial",
                             hasInlineHtml: false,
                             componentText: "Do the materials include any special needs formats? (e.g., Braille)",
                             criterionTextRefId: "quality-crt-text-optional-1.3.1",

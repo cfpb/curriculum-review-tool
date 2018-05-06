@@ -8,10 +8,12 @@ export default class ViewEditResponseComponent extends React.Component {
         this.props.setDimensionSummaryView(this.props.criterionPage, false);
 
         //HACK: need to scroll to top of screen after we navigate.
+        let criterionNumber = this.props.criterionNumber;
         setTimeout(function(){
-            let main = document.getElementById("main");
-            main.scrollIntoView();
-        }, 100);
+            let criterionId = "criterion_" + criterionNumber;
+            let criterion = document.getElementById(criterionId);
+            criterion.scrollIntoView();
+        }, 100, criterionNumber);
     }
 
     render() {
