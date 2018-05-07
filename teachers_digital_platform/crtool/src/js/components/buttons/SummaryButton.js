@@ -15,67 +15,37 @@ export default class SummaryButton extends React.Component {
     }
 
     render() {
-        if ( (this.props.currentPage === C.CONTENT_PAGE && this.props.contentIsSummaryView) ||
-             (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityIsSummaryView) ||
-             (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityIsSummaryView) ||
-             (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyIsSummaryView) ) {
-            return (
-                <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(this.props.currentPage); e.preventDefault();}}>
-                    Print or save summary
-                </button>
-            );
-        }
-        else if (this.props.currentPage === C.CONTENT_PAGE &&
-            this.props.contentInProgress === C.STATUS_COMPLETE) {
-            return (
-                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to content summary
-                </button>
-            );
-        }
-        else if (this.props.currentPage === C.UTILITY_PAGE &&
-                 this.props.utilityInProgress === C.STATUS_COMPLETE) {
-            return (
-                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to utility summary
-                </button>
-            );
-        }
-        else if (this.props.currentPage === C.QUALITY_PAGE &&
-                 this.props.qualityInProgress === C.STATUS_COMPLETE) {
+        if (this.props.currentPage === undefined ||
+            this.props.currentPage === null ||
+            this.props.currentPage === C.FINAL_SUMMARY_PAGE ||
+            this.props.currentPage === C.START_PAGE) {
+            return (null);
+        } else if ( (this.props.currentPage === C.CONTENT_PAGE && this.props.contentIsSummaryView === true) ||
+                    (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityIsSummaryView === true) ||
+                    (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityIsSummaryView === true) ||
+                    (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyIsSummaryView === true) ) {
+           return (
+               <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(this.props.currentPage); e.preventDefault();}}>
+                   Print or save summary
+               </button>
+           );
+        } else if ((this.props.currentPage && this.props.currentPage !== C.START_PAGE) &&
+                   ((this.props.currentPage === C.CONTENT_PAGE && this.props.contentInProgress === C.STATUS_COMPLETE) ||
+                    (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityInProgress === C.STATUS_COMPLETE) ||
+                    (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) ||
+                    (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) )
+            ) {
             return (
                 <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to quality summary
+                    Continue to {this.props.currentPage.toLowerCase()} summary
                 </button>
             );
-        }
-        else if (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) {
+        } else {
             return (
-                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to efficacy summary
+                <button className="a-btn" disabled>
+                    Continue to {this.props.currentPage.toLowerCase()} summary
                 </button>
             );
-        }
-        else if (this.props.currentPage === C.EFFICACY_PAGE &&
-                 !this.props.finishAddingEfficacyStudies === true &&
-                 this.props.efficacyInProgress === C.STATUS_COMPLETE) {
-            return (
-                <button className="a-btn" onClick={(e) => {this.handleSummaryButtonClick()}} >
-                    Continue to efficacy summary
-                </button>
-            );
-        }
-        else {
-            if (this.props.currentPage === C.FINAL_SUMMARY_PAGE ||
-                this.props.currentPage === C.START_PAGE) {
-                return (null);
-            } else {
-                return (
-                    <button className="a-btn" disabled>
-                        Continue to {this.props.currentPage.toLowerCase()} summary
-                    </button>
-                );
-            }
         }
     }
 }
