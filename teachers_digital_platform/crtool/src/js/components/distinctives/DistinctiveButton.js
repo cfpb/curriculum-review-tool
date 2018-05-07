@@ -42,7 +42,11 @@ export default class DistinctiveButton extends React.Component {
                 </div>
             </button>
             <ul className="o-dimension-section-bar_dimension-details">
-                <li className="h6">{this.props.criterionText}</li><li className="h6">{this.props.estimateText}</li>
+                <li className="h6">{this.props.criterionText}</li>
+                <li className="h6">
+                    <span aria-hidden="true">{this.props.estimateText}</span>
+                    <span class="u-visually-hidden">{this.props.estimateTextScreenReader}</span>
+                </li>
             </ul>
         </li>
       );

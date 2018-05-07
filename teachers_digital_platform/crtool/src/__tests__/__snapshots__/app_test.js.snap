@@ -178,7 +178,16 @@ exports[`renders without crashing 1`] = `
         <li
           className="h6"
         >
-          est. time 60 min.
+          <span
+            aria-hidden="true"
+          >
+            est. time 60 min.
+          </span>
+          <span
+            class="u-visually-hidden"
+          >
+            estimated time 60 minutes
+          </span>
         </li>
       </ul>
     </li>
@@ -232,7 +241,16 @@ exports[`renders without crashing 1`] = `
         <li
           className="h6"
         >
-          est. time 60 min.
+          <span
+            aria-hidden="true"
+          >
+            est. time 60 min.
+          </span>
+          <span
+            class="u-visually-hidden"
+          >
+            estimated time 60 minutes
+          </span>
         </li>
       </ul>
     </li>
@@ -286,7 +304,16 @@ exports[`renders without crashing 1`] = `
         <li
           className="h6"
         >
-          est. time 30 min.
+          <span
+            aria-hidden="true"
+          >
+            est. time 30 min.
+          </span>
+          <span
+            class="u-visually-hidden"
+          >
+            estimated time 30 minutes
+          </span>
         </li>
       </ul>
     </li>
@@ -343,7 +370,16 @@ exports[`renders without crashing 1`] = `
         <li
           className="h6"
         >
-          est. time 30 min.
+          <span
+            aria-hidden="true"
+          >
+            est. time 30 min.
+          </span>
+          <span
+            class="u-visually-hidden"
+          >
+            estimated time 30 minutes
+          </span>
         </li>
       </ul>
     </li>
