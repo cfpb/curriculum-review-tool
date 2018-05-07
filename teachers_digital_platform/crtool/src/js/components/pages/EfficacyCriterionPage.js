@@ -137,8 +137,6 @@ export default class EfficacyCriterionPage extends React.Component {
                         </ul>
                     </li>
                     <li>Answer the questions in Criterion 1 to determine if it’s a strong study. <strong>Repeat this for each study</strong> before clicking “I’m done reviewing studies.”</li>
-                    <li>If there are two or more strong studies, complete Criteria 2 and 3 using all strong studies as reference.</li>
-                    <li>If there are fewer than two strong studies, you don’t need to complete Criteria 2 and 3 and can move on to the efficacy summary.</li>
                 </ul>
                 <p>
                     <SaveWorkModal
