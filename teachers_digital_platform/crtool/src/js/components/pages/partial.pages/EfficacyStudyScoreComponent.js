@@ -6,18 +6,24 @@ export default class EfficacyStudyScoreComponent extends React.Component {
 
     criterionClassNameFor(level) {
         let className = "m-form-field_radio-icon";
-        if (this.props.studyScore === undefined) {
-            return className;
-        }
+        let studyIsStrong = this.studyIsStrong();
 
-        let studyScore = this.props.studyScore;
-        if (level === "strong" && studyScore.all_essential_yes === true) {
+        if (level === "strong" && studyIsStrong) {
             className = className + " is-active";
-        } else if (level === "week" && studyScore.all_essential_yes === false) {
+        } else if (level === "week" && !studyIsStrong) {
             className = className + " is-active";
         }
 
         return className;
+    }
+
+    studyIsStrong() {
+        if (this.props.studyScore === undefined) {
+            return false;
+        }
+
+        let studyScore = this.props.studyScore;
+        return (studyScore.all_essential_yes === true);
     }
 
     render() {
@@ -51,7 +57,8 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className="m-form-field_radio-text is-active">
-                                        <div><strong>The study is strong.</strong></div>
+                                    { this.studyIsStrong() && <div><strong>The study is strong.</strong></div> }
+                                    { !this.studyIsStrong() && <div>The study is strong.</div> }
                                         All essential components were met.
                                     </div>
                                 </div>
@@ -67,7 +74,8 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className="m-form-field_radio-text">
-                                        <div><strong>The study is not strong.</strong></div>
+                                    { !this.studyIsStrong() && <div><strong>The study is not strong.</strong></div> }
+                                    { this.studyIsStrong() && <div>The study is not strong.</div> }
                                         Not all essential components were met.
                                     </div>
                                 </div>
