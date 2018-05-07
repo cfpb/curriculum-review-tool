@@ -39,21 +39,6 @@ export default class EfficacyCriterionPage extends React.Component {
         return false;
     }
 
-    twoCompleteStudiesExist() {
-        let count = 0;
-        for (var score in this.props.criterionScores) {
-            if (score.indexOf("efficacy-crt-1") >= 0 && this.props.criterionScores[score].answered_all_complete)
-            {
-                count += 1;
-                if (count === 2) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
     getEfficacyStudyItems() {
         let studyComponents = this.props.criterionEfficacyStudies;
 
@@ -113,6 +98,14 @@ export default class EfficacyCriterionPage extends React.Component {
                 </div>
             );
         }
+    }
+
+    summaryButtonIsEnabled() {
+        return ((this.props.currentPage && this.props.currentPage !== C.START_PAGE) &&
+                        ((this.props.currentPage === C.CONTENT_PAGE && this.props.contentInProgress === C.STATUS_COMPLETE) ||
+                        (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityInProgress === C.STATUS_COMPLETE) ||
+                        (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) ||
+                        (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) ));
     }
 
     render() {
@@ -339,9 +332,12 @@ export default class EfficacyCriterionPage extends React.Component {
                 </div>
                 </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
-                <hr className="hr
-                                u-mb30
-                                u-mt45" />
+                {
+                    this.summaryButtonIsEnabled() === false &&
+                        <hr className="hr
+                                        u-mb30
+                                        u-mt45" />
+                }
             </React.Fragment>
         );
     }

@@ -1,25 +1,47 @@
 import React from "react";
 
+import SvgIcon from "../../svgs/SvgIcon";
+
 export default class EfficacyStudyScoreComponent extends React.Component {
 
     criterionClassNameFor(level) {
         let className = "m-form-field_radio-icon";
-        if (this.props.studyScore === undefined) {
-            return className;
-        }
+        let studyIsStrong = this.studyIsStrong();
 
-        let studyScore = this.props.studyScore;
-        if (level === "strong" && studyScore.all_essential_yes === true) {
+        if (level === "strong" && studyIsStrong) {
             className = className + " is-active";
-        } else if (level === "week" && studyScore.all_essential_yes === false) {
+        } else if (level === "week" && !studyIsStrong) {
             className = className + " is-active";
         }
 
         return className;
     }
 
+    studyIsStrong() {
+        if (this.props.studyScore === undefined) {
+            return false;
+        }
+
+        let studyScore = this.props.studyScore;
+        return (studyScore.all_essential_yes === true);
+    }
+
     render() {
-        if (this.props.studyScore !== undefined && this.props.studyScore.answered_all_complete) {
+        if (this.props.studyScore !== undefined && !this.props.studyScore.answered_all_complete) {
+            return (
+                <div className="m-notification
+                                m-notification__visible
+                                m-notification__warning
+                                u-mb30">
+                    <SvgIcon icon="exclamation-mark-round" />
+                    <div className="m-notification_content">
+                        <div className="m-notification_message">
+                            <p>You must enter a study name and answer all yes/no questions for this study before it can be scored.</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else if (this.props.studyScore !== undefined && this.props.studyScore.answered_all_complete) {
             return (
                 <React.Fragment>
                 <h4 className="h2">Score for {this.props.studyScoreName}</h4>
@@ -35,7 +57,8 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className="m-form-field_radio-text is-active">
-                                        <div><strong>The study is strong.</strong></div>
+                                    { this.studyIsStrong() && <div><strong>The study is strong.</strong></div> }
+                                    { !this.studyIsStrong() && <div>The study is strong.</div> }
                                         All essential components were met.
                                     </div>
                                 </div>
@@ -51,7 +74,8 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
                                     <div className="m-form-field_radio-text">
-                                        <div><strong>The study is not strong.</strong></div>
+                                    { !this.studyIsStrong() && <div><strong>The study is not strong.</strong></div> }
+                                    { this.studyIsStrong() && <div>The study is not strong.</div> }
                                         Not all essential components were met.
                                     </div>
                                 </div>

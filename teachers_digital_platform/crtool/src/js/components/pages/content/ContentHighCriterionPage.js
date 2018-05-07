@@ -20,6 +20,14 @@ export default class ContentHighCriterionPage extends React.Component {
         this.props.initializeAnswerObjects(myObjects);
     }
 
+    summaryButtonIsEnabled() {
+        return ((this.props.currentPage && this.props.currentPage !== C.START_PAGE) &&
+                        ((this.props.currentPage === C.CONTENT_PAGE && this.props.contentInProgress === C.STATUS_COMPLETE) ||
+                        (this.props.currentPage === C.QUALITY_PAGE && this.props.qualityInProgress === C.STATUS_COMPLETE) ||
+                        (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) ||
+                        (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) ));
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -1815,9 +1823,12 @@ export default class ContentHighCriterionPage extends React.Component {
                 </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
-                <hr className="hr
-                                u-mb30
-                                u-mt45" />
+                {
+                    this.summaryButtonIsEnabled() === false &&
+                        <hr className="hr
+                                        u-mb30
+                                        u-mt45" />
+                }
                 <p className="u-mb30"><strong>Be sure to answer all yes/no questions to continue.</strong></p>
             </React.Fragment>
         );
