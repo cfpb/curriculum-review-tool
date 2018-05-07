@@ -145,6 +145,9 @@
                             <div class="a-select">
                                 <select id="tdp-crt_grade" onchange="onValuesChanged();">
                                     <option value="">Select grade range</option>
+                                    <option value="Elementary school">Elementary school</option>
+                                    <option value="Middle school">Middle school</option>
+                                    <option value="High school">High school</option>
                                 </select>
                             </div>
                         </div>
@@ -275,9 +278,6 @@
          * The below code manages the enabling/disabling of the submit button
          * Also manages the saving and setting of the Title, Date, & Grade Range
          */
-        const elementarySchool = "Elementary school";
-        const middleSchool = "Middle school";
-        const highSchool = "High school";
 
         var newReviewModalWindow = document.getElementById('modal-start-over');
         var saveWorkModalWindow = document.getElementById('modal-save-work');
@@ -290,24 +290,11 @@
          * Set the values based on localStorage
          */
         function setInitialFormValues() {
-            addOptionToGrade(elementarySchool);
-            addOptionToGrade(middleSchool);
-            addOptionToGrade(highSchool);
-
             document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle');
             document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate');
             document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange');
 
             setBeginReviewButtonEnabling();
-        }
-
-        /*
-         * Method for adding a single option to the existing gradeRange DOM element
-         */
-        function addOptionToGrade(optionText) {
-            var option = document.createElement( 'option' );
-            option.value = option.text = optionText;
-            gradeRange.add( option );
         }
 
         /*
@@ -324,9 +311,9 @@
             var selectedGradeValue = gradeRange.value;
 
             //check required fields have values
-            var isValidGradeSelected = selectedGradeValue === elementarySchool ||
-                                       selectedGradeValue === middleSchool ||
-                                       selectedGradeValue === highSchool;
+            var isValidGradeSelected = selectedGradeValue === "Elementary school" ||
+                                       selectedGradeValue === "Middle school" ||
+                                       selectedGradeValue === "High school";
             var isEnabled = isValidGradeSelected && document.getElementById('tdp-crt_title').value;
 
             document.getElementById('tdp-crt-begin-review-btn').disabled = !isEnabled;
