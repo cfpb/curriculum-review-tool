@@ -56,7 +56,7 @@ export default class QualityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
+                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
@@ -65,7 +65,7 @@ export default class QualityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 1: Accessibility
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
                     </p>
                     <ol className="m-list__unstyled">
@@ -521,7 +521,7 @@ export default class QualityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 2: Accuracy and timeliness
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials current and free of error?
                     </p>
                     <ol className="m-list__unstyled">
@@ -731,7 +731,7 @@ export default class QualityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 3: Objectivity
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Are the curriculum materials objective?
                     </p>
                     <ol className="m-list__unstyled">
@@ -1047,7 +1047,7 @@ export default class QualityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 4: Visual appearance
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Is the visual appearance of the student materials conducive to learning?
                     </p>
                     <ol className="m-list__unstyled">

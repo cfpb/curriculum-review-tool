@@ -56,7 +56,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb30"><strong>All questions are required, unless otherwise noted.</strong></p>
+                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
                     <h3 className="h2">
                         <SvgIcon
@@ -65,7 +65,7 @@ export default class UtilityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 1: Materials to support cognitive development
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Do the materials provide instructional suggestions designed to support the cognitive development of students’ financial capability?
                     </p>
                     <ol className="m-list__unstyled">
@@ -497,7 +497,7 @@ export default class UtilityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 2: Differentiated instruction for diverse populations
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.
                     </p>
                     <ol className="m-list__unstyled">
@@ -1363,7 +1363,7 @@ export default class UtilityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 3: Quality materials for lesson planning
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?
                     </p>
                     <ol className="m-list__unstyled">
@@ -1954,7 +1954,7 @@ export default class UtilityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 4: Materials to assess mastery
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?
                     </p>
                     <ol className="m-list__unstyled">
@@ -2484,7 +2484,7 @@ export default class UtilityCriterionPage extends React.Component {
                             hasSpaceAfter="true" />
                         Criterion 5: Instructional supports
                     </h3>
-                    <p className="lead-paragraph">
+                    <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?
                     </p>
                     <ol className="m-list__unstyled">
