@@ -77,6 +77,8 @@ export default class CustomerReviewToolComponent extends React.Component {
      */
     setDistinctiveCompletionDateNow(distinctiveName) {
         let distinctiveCompletionDates =  this.state.distinctiveCompletedDate;
+        console.log("setDistinctiveCompletionDateNow: + " + distinctiveName);
+        console.log(distinctiveCompletionDates[distinctiveName]);
         if (distinctiveCompletionDates[distinctiveName] === undefined ||
             distinctiveCompletionDates[distinctiveName] === "") {
 

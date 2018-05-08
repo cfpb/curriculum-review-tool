@@ -112,11 +112,19 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="h4"
+    class="h5 u-mb30"
   >
-    You’re reviewing: 
-    <strong />
+    You’re reviewing
   </div>
+  <h1 />
+  <p
+    className="lead-paragraph"
+  >
+    Select any dimension to start your review. We recommend starting with content and moving to utility, quality, and efficacy, but you can complete the four dimensions in any order.
+  </p>
+  <p>
+    You can complete all dimensions in one sitting or over the course of many sessions. You’ll be able to print or save  a summary for each dimension as you finish it, and then print or save a final summary for the overall review.
+  </p>
   <ul
     className="o-dimension-selection-bar"
   >

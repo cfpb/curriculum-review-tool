@@ -43,7 +43,7 @@ export default class DimensionScoreBlock extends React.Component {
                                 block__border-bottom">
                     <DimensionIconTitleComponent
                         {...this.props}
-                        dimensionTitle={this.props.dimensionName + " score"} />
+                        dimensionTitle={this.props.dimensionName  + " overall score"} />
                     <p className="u-mb30">
                         {this.props.dimensionLead}
                     </p>
@@ -132,7 +132,7 @@ export default class DimensionScoreBlock extends React.Component {
                                 block__border-bottom">
                     <DimensionIconTitleComponent
                         {...this.props}
-                        dimensionTitle={this.props.dimensionName + " score"} />
+                        dimensionTitle={this.props.dimensionName + " overall score"} />
                     <p className="u-mb30">
                         {this.props.dimensionLead}
                     </p>
