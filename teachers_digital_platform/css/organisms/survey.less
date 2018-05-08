@@ -76,6 +76,18 @@ li.o-survey {
     }
 }
 
+.o-survey_fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    & + & {
+        border-top: 1px solid @gray-10;
+        margin-top: unit( 30px / @base-font-size-px, em );
+        padding-top: unit( 30px / @base-font-size-px, em );
+    }
+}
+
 .o-survey_component {
     .respond-to-min(@bp-survey-columns, {
         display: flex;
@@ -85,12 +97,6 @@ li.o-survey {
     @media print {
         display: flex;
         justify-content: space-between;
-    }
-
-    & + & {
-        border-top: 1px solid @gray-10;
-        margin-top: unit( 30px / @base-font-size-px, em );
-        padding-top: unit( 30px / @base-font-size-px, em );
     }
 }
 
@@ -109,6 +115,8 @@ li.o-survey {
         margin-right: unit( 15px / @base-font-size-px, em );
     }
 }
+
+.o-survey_legend {}
 
 .o-survey_question-helper {
     color: @gray;
