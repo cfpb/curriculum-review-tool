@@ -27,7 +27,7 @@ export default class UtilityCriterionPage extends React.Component {
                         (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) ||
                         (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) ));
     }
-    
+
     render() {
         return (
             <React.Fragment>
@@ -59,7 +59,7 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30">
                     <h4>What’s a beneficial component?</h4>
-                    <p>While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These <strong>beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treat essential and beneficial components differently, but you’re still required to answer all beneficial components.</p>
+                    <p>While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These <strong>beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treats essential and beneficial components differently, but you’re still required to answer all beneficial components.</p>
                 </div>
                 <hr className="hr
                                 u-mb30
