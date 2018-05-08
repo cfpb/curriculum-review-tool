@@ -28,6 +28,26 @@ export default class CriterionScoreBlock extends React.Component {
         return textValue;
     }
 
+    renderAriaChecked(level) {
+        let criterionScore = this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber];
+        let isTrue = false;
+
+        if (level === "exceeds" && criterionScore !== undefined){
+            isTrue = criterionScore.exceeds;
+        } else if (level === "meets" && criterionScore !== undefined) {
+            isTrue = criterionScore.meets;
+        } else if (level === "doesnotmeet" && criterionScore !== undefined) {
+            isTrue = criterionScore.doesnotmeet;
+        }
+
+        let ariaChecked = "false";
+        if (isTrue) {
+            ariaChecked = "true";
+        }
+
+        return ariaChecked;
+    }
+
     renderExceedsText() {
         if (this.props.criterionExceedsText) {
             return (<div dangerouslySetInnerHTML={{__html: this.props.criterionExceedsText}} />);
@@ -64,7 +84,10 @@ export default class CriterionScoreBlock extends React.Component {
                                 <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                 <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                             </svg>
-                            <div className={this.renderTextValue("text", "exceeds")} >
+                            <div className={this.renderTextValue("text", "exceeds")}
+                                role="radio"
+                                aria-checked={this.renderAriaChecked("exceeds")}
+                                aria-disabled="true">
                                 <div><strong>Exceeds</strong></div>
                                 {this.props.criterionExceedsContent}
                                 {this.renderExceedsText()}
@@ -117,31 +140,42 @@ export default class CriterionScoreBlock extends React.Component {
 
     renderMyNotes() {
         if (this.props.currentPrintButton === C.START_PAGE) {
-            return this.renderNotesEditableVersion();
+            return (
+                <div className="m-form-field m-form-field__textarea">
+                    <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
+                        My notes
+                        &nbsp;<small className="a-label_helper">(optional)</small>
+                        {this.renderNotesHelperText()}
+                    </label>
+                    <textarea className="a-text-input a-text-input__full"
+                        rows="6"
+                        id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                        ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
+                        value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
+                        onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
+                    </textarea>
+                </div>
+            );
+        } else {
+            return (
+                <div className="m-form-field m-form-field__textarea">
+                    <div className="a-label a-label__heading">
+                        My notes
+                        &nbsp;<small className="a-label_helper">(optional)</small>
+                        {this.renderNotesHelperText()}
+                    </div>
+                    {this.renderNotesPrintVersion()}
+                </div>
+            );
         }
-        else {
-            return this.renderNotesPrintVersion();
-        }
-    }
-
-    renderNotesEditableVersion() {
-        return (
-            <textarea className="a-text-input a-text-input__full"
-                rows="6"
-                id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
-                ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
-                value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
-                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
-            </textarea>
-        );
     }
 
     renderNotesPrintVersion() {
         let notes = this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber];
         if (notes === undefined || notes === "") {
-            return (<p class="o-survey_question-helper">No information provided</p>);
+            return (<p className="o-survey_question-helper">No information provided</p>);
         } else {
-            return notes;
+            return (<p>{notes}</p>);
         }
     }
 
@@ -157,6 +191,10 @@ export default class CriterionScoreBlock extends React.Component {
         }
     }
 
+    generateUniqueId() {
+        return "radio_" + this.props.dimensionKey + this.props.criterionNumber;
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -164,9 +202,9 @@ export default class CriterionScoreBlock extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
-                <h3 className="h2">{this.props.criterionName}</h3>
+                <h3 className="h2" id={this.generateUniqueId()}>{this.props.criterionName}</h3>
                 <p className="u-mb30">{this.props.criterionLead}</p>
-                <div className="m-curriculum-status">
+                <div className="m-curriculum-status" role="radiogroup" aria-describedby={this.generateUniqueId()}>
                     <ul className="m-list__unstyled
                                     u-mb0">
 
@@ -182,7 +220,10 @@ export default class CriterionScoreBlock extends React.Component {
                                             <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                             <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                         </svg>
-                                        <div className={this.renderTextValue("text", "meets")} >
+                                        <div className={this.renderTextValue("text", "meets")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("meets")}
+                                            aria-disabled="true">
                                             <div><strong>Meets</strong></div>
                                             {this.renderMeetsText()}
                                         </div>
@@ -200,7 +241,10 @@ export default class CriterionScoreBlock extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.renderTextValue("text", "doesnotmeet")} >
+                                    <div className={this.renderTextValue("text", "doesnotmeet")}
+                                        role="radio"
+                                        aria-checked={this.renderAriaChecked("doesnotmeet")}
+                                        aria-disabled="true">
                                         <div><strong>Does not meet</strong></div>
                                         {this.renderDoesNotMeetText()}
                                     </div>
@@ -213,15 +257,7 @@ export default class CriterionScoreBlock extends React.Component {
                         {this.renderBeneficial()}
                     </div>
                 </div>
-                <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}>
-                        My notes
-                        &nbsp;<small className="a-label_helper">(optional)</small>
-                        {this.renderNotesHelperText()}
-                    </label>
-
-                    <p>{this.renderMyNotes()}</p>
-                </div>
+                {this.renderMyNotes()}
             </React.Fragment>
         );
     }
