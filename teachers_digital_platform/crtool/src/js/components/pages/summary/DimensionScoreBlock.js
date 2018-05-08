@@ -20,6 +20,18 @@ export default class DimensionScoreBlock extends React.Component {
         return className;
     }
 
+    renderAriaChecked(level) {
+        let ariaChecked = "false";
+        let dimensionScore = this.props.dimensionOverallScores[this.props.dimensionPage];
+
+        if (dimensionScore !== undefined && level === dimensionScore) {
+            ariaChecked = "true";
+        }
+
+        return ariaChecked;
+    }
+
+
     renderNotesPrintVersion(notes) {
         if (notes === undefined || notes === "") {
             return (<p class="o-survey_question-helper">No information provided</p>);
@@ -34,6 +46,10 @@ export default class DimensionScoreBlock extends React.Component {
         return isPrintMode;
     }
 
+    generateUniqueId() {
+        return "radio_" + this.props.dimensionKey + "overall";
+    }
+
     render() {
         if (this.isPrintMode() === true) {
             return (
@@ -43,83 +59,95 @@ export default class DimensionScoreBlock extends React.Component {
                                 block__border-bottom">
                     <DimensionIconTitleComponent
                         {...this.props}
-                        dimensionTitle={this.props.dimensionName  + " overall score"} />
+                        dimensionTitle={this.props.dimensionName  + " overall score"}
+                        id={this.generateUniqueId()} />
                     <p className="u-mb30">
                         {this.props.dimensionLead}
                     </p>
-                    <ul className="m-list__unstyled">
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("strong", "text")}>
-                                        <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.strongText}
+                    <div role="radiogroup" aria-describedby={this.generateUniqueId()}>
+                        <ul className="m-list__unstyled">
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("strong", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("strong")}
+                                            aria-disabled="true">
+                                            <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.strongText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("moderate", "text")}>
-                                        <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.moderateText}
+                            </li>
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("moderate", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("moderate")}
+                                            aria-disabled="true">
+                                            <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.moderateText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("limited", "text")}>
-                                        <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.limitedText}
+                            </li>
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("limited", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("limited")}
+                                            aria-disabled="true">
+                                            <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.limitedText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="m-form-field
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <div className="a-label a-label__heading">
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                        </label>
+                        </div>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <div className="a-label a-label__heading">
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                        </label>
+                        </div>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <div className="a-label a-label__heading">
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                        </label>
+                        </div>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
                     </div>
                 </div>
@@ -132,64 +160,76 @@ export default class DimensionScoreBlock extends React.Component {
                                 block__border-bottom">
                     <DimensionIconTitleComponent
                         {...this.props}
-                        dimensionTitle={this.props.dimensionName + " overall score"} />
+                        dimensionTitle={this.props.dimensionName + " overall score"}
+                        id={this.generateUniqueId()} />
                     <p className="u-mb30">
                         {this.props.dimensionLead}
                     </p>
-                    <ul className="m-list__unstyled">
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("strong", "text")}>
-                                        <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.strongText}
+                    <div role="radiogroup" aria-describedby={this.generateUniqueId()}>
+                        <ul className="m-list__unstyled">
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("strong", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("strong")}
+                                            aria-disabled="true">
+                                            <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.strongText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("moderate", "text")}>
-                                        <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.moderateText}
+                            </li>
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("moderate", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("moderate")}
+                                            aria-disabled="true">
+                                            <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.moderateText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("limited", "text")}>
-                                        <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.limitedText}
+                            </li>
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("limited", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("limited")}
+                                            aria-disabled="true">
+                                            <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.limitedText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -207,7 +247,7 @@ export default class DimensionScoreBlock extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -224,7 +264,7 @@ export default class DimensionScoreBlock extends React.Component {
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -247,67 +287,79 @@ export default class DimensionScoreBlock extends React.Component {
                     <DimensionIconTitleComponent
                         {...this.props}
                         dimensionTitle={this.props.dimensionName + " overall score"}
+                        id={this.generateUniqueId()}
                         isH1="true" />
                     <p className="lead-paragraph">
                         {this.props.dimensionLead}
                     </p>
-                    <ul className="m-list__unstyled">
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("strong", "text")}>
-                                        <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.strongText}
+                    <div role="radiogroup" aria-describedby={this.generateUniqueId()}>
+                        <ul className="m-list__unstyled">
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("strong")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("strong", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("strong")}
+                                            aria-disabled="true">
+                                            <div><strong>Strong {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.strongText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("moderate", "text")}>
-                                        <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.moderateText}
+                            </li>
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("moderate")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("moderate", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("moderate")}
+                                            aria-disabled="true">
+                                            <div><strong>Moderate {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.moderateText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className="u-mb30">
-                            <div className="m-form-field
-                                            m-form-field__radio
-                                            m-form-field__display">
-                                <div className="a-label">
-                                    <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
-                                        <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
-                                        <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
-                                    </svg>
-                                    <div className={this.criterionOveralScoreClassName("limited", "text")}>
-                                        <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
-                                        {this.props.limitedText}
+                            </li>
+                            <li className="u-mb30">
+                                <div className="m-form-field
+                                                m-form-field__radio
+                                                m-form-field__display">
+                                    <div className="a-label">
+                                        <svg className={this.criterionOveralScoreClassName("limited")} viewBox="0 0 22 22">
+                                            <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
+                                            <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
+                                        </svg>
+                                        <div className={this.criterionOveralScoreClassName("limited", "text")}
+                                            role="radio"
+                                            aria-checked={this.renderAriaChecked("limited")}
+                                            aria-disabled="true">
+                                            <div><strong>Limited {this.props.dimensionPage.toLowerCase()}</strong></div>
+                                            {this.props.limitedText}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <hr className="hr
                                     u-mb45
                                     u-mt30" />
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -325,7 +377,7 @@ export default class DimensionScoreBlock extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -342,7 +394,7 @@ export default class DimensionScoreBlock extends React.Component {
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export default class RadioButtonEditable extends React.Component {
@@ -12,7 +11,9 @@ export default class RadioButtonEditable extends React.Component {
             return null;
         } else {
             return (
-                <div className="m-form-field m-form-field__radio m-form-field__lg-target">
+                <div className="m-form-field
+                                m-form-field__radio
+                                m-form-field__lg-target">
                     <input className="a-radio" type="radio" value="0"
                         id={this.generateUniqueId()}
                         name={this.props.currentCriterionRefId}
