@@ -83,10 +83,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Income is money earned from employment and investments.</p>
                                             </legend>
                                         </div>
@@ -134,10 +134,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Various jobs and careers provide different levels of income and require different kinds of skills.</p>
                                             </legend>
                                         </div>
@@ -219,10 +219,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>One can save money in various ways, including at home in a piggy bank or at a commercial bank, credit union, or savings and loan institution.</p>
                                             </legend>
                                         </div>
@@ -258,10 +258,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Saving helps individuals act on future opportunities, meet short-term and long-term goals, and address financial emergencies.</p>
                                             </legend>
                                         </div>
@@ -309,10 +309,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Saving money in a bank or credit union allows the money to earn interest.</p>
                                             </legend>
                                         </div>
@@ -360,10 +360,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>The goal of savings is to set aside income for future spending, whereas the goal of investing is to increase wealth over time.</p>
                                             </legend>
                                         </div>
@@ -445,10 +445,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>People must make choices about and prioritize the goods and services they buy because they can’t have everything they want.</p>
                                             </legend>
                                         </div>
@@ -484,10 +484,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individual spending choices can be affected by a variety of factors, including family circumstances, price of goods and services, advertising, preferences, peer pressure, product quality, impact of purchase on self and others, etc.</p>
                                             </legend>
                                         </div>
@@ -535,10 +535,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individuals should know the numbers essential to count money.</p>
                                             </legend>
                                         </div>
@@ -574,10 +574,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individuals should understand and be able to use the different values of coins.</p>
                                             </legend>
                                         </div>
@@ -613,10 +613,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Making good spending choices involves systematic decision-making and planning, including comparing the benefits and costs of spending, asking questions, and comparison shopping.</p>
                                             </legend>
                                         </div>
@@ -652,10 +652,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>A budget is a plan for using income productively, including spending, sharing, and saving.</p>
                                             </legend>
                                         </div>
@@ -737,10 +737,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Borrowing from others is often referred to as obtaining credit. Credit is the use of someone else’s money for a fee; interest is the fee one pays for borrowing money through credit.</p>
                                             </legend>
                                         </div>
@@ -776,10 +776,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>When people use credit, they receive something of value now and agree to repay the lender over time, or at some date in the future, with interest.</p>
                                             </legend>
                                         </div>
@@ -861,10 +861,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Risk is the chance of loss or harm and is an unavoidable part of daily life.</p>
                                             </legend>
                                         </div>
@@ -900,10 +900,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individuals can choose to accept risk or protect themselves by avoiding risks or taking out insurance.</p>
                                             </legend>
                                         </div>
@@ -985,10 +985,10 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individuals could have various short- or long-term goals that could require them to save money.</p>
                                             </legend>
                                         </div>

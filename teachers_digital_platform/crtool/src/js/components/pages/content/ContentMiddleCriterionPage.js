@@ -83,10 +83,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Income can be acquired in a variety of ways, including through wages; salaries; commissions; interest, dividends, and capital appreciation on investments; money gifts; profits; and rental property.</p>
                                             </legend>
                                         </div>
@@ -134,10 +134,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Building human capital through various types of education and training can have differing opportunity costs.</p>
                                             </legend>
                                         </div>
@@ -173,10 +173,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Changes in the labor market or economic conditions can cause changes in worker’s income or unemployment.</p>
                                             </legend>
                                         </div>
@@ -258,10 +258,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Different people save money for different reasons, including large purchases (such as higher education, autos, and homes), retirement, and unexpected events.</p>
                                             </legend>
                                         </div>
@@ -297,10 +297,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>People’s choices about how much to save and for what to save are based on their preferences.</p>
                                             </legend>
                                         </div>
@@ -348,10 +348,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>The value of savings is affected by interest and compounding over time.</p>
                                             </legend>
                                         </div>
@@ -387,10 +387,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Interest can be calculated by multiplying the principal amount, the interest rate, and time of loan/investment.</p>
                                             </legend>
                                         </div>
@@ -438,10 +438,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Financial assets in which one might invest include stocks, bonds, mutual funds, real estate, and commodities.</p>
                                             </legend>
                                         </div>
@@ -477,10 +477,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>The rate of return on a financial investment consists of interest payments, dividends, and capital appreciation expressed as a percentage of the amount invested.</p>
                                             </legend>
                                         </div>
@@ -528,10 +528,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Federal agencies guarantee depositors’ savings in most commercial banks, savings banks, savings associations, and credit unions.</p>
                                             </legend>
                                         </div>
@@ -567,10 +567,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Increases or decreases in the rate of return from an investment vary according to the amount of risk. In general, a trade-off exists between the security of an investment and its expected rate of return.</p>
                                             </legend>
                                         </div>
@@ -652,10 +652,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individuals must make choices about and prioritize the goods and services they buy because they can’t have everything they want.</p>
                                             </legend>
                                         </div>
@@ -703,10 +703,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>A consumer should rely on sources beyond advertising claims to gather information about goods and services.</p>
                                             </legend>
                                         </div>
@@ -742,10 +742,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Consumers can use a variety of payment methods to make a purchase, and some payment methods are better than others.</p>
                                             </legend>
                                         </div>
@@ -781,10 +781,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>A budget helps one make good spending choices, and a good budget accounts for expenses, income, savings, and taxes.</p>
                                             </legend>
                                         </div>
@@ -820,10 +820,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individual spending goals and priorities can inform the creation of a budget.</p>
                                             </legend>
                                         </div>
@@ -905,10 +905,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>People can use credit to finance long-term purchases. The benefits of using credit in this way are spread out over a period of time, whereas the benefits of using credit to make daily purchases are short-lived and do not accumulate over time.</p>
                                             </legend>
                                         </div>
@@ -956,10 +956,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>People who apply for loans are told what the interest rate on the loan will be. An interest rate is the price of using someone else’s money, often expressed as an annual percentage rate.</p>
                                             </legend>
                                         </div>
@@ -995,10 +995,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Interest rates for loans ﬂuctuate based on changes in the market for loans as well as the risk of non-repayment.</p>
                                             </legend>
                                         </div>
@@ -1034,10 +1034,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Consumers can choose from a variety of credit sources.</p>
                                             </legend>
                                         </div>
@@ -1073,10 +1073,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Borrowers who use credit cards and do not pay the full balance when it is due pay much higher costs for their purchases; they can avoid interest charges by paying the entire balance within the grace period specified by the financial institution.</p>
                                             </legend>
                                         </div>
@@ -1124,10 +1124,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Your credit score is a number based on information from your credit history and assesses your credit risk.</p>
                                             </legend>
                                         </div>
@@ -1163,10 +1163,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Lenders make credit decisions based in part on consumer payment history. Credit bureaus record borrowers’ credit and payment histories and provide that information to lenders in credit reports.</p>
                                             </legend>
                                         </div>
@@ -1248,10 +1248,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Risk management strategies include risk avoidance, risk control, risk transfer through insurance, and risk mitigation through savings.</p>
                                             </legend>
                                         </div>
@@ -1299,10 +1299,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Individuals can choose to accept some risk, avoid or reduce risk, or transfer some risk by purchasing insurance. Each option has different costs and benefits.</p>
                                             </legend>
                                         </div>
@@ -1338,10 +1338,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Insurance is a product that allows people to pay a fee (called a premium) now to transfer the costs of potential loss to a third party.</p>
                                             </legend>
                                         </div>
@@ -1389,10 +1389,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Insurance premiums might vary based on the level of protection, insurer’s assessment of individual risk, deductible, and copayment.</p>
                                             </legend>
                                         </div>
@@ -1474,10 +1474,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>People perform basic financial tasks to manage money.</p>
                                             </legend>
                                         </div>
@@ -1513,10 +1513,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="o-survey_fieldset">
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
-                                            <legend class="o-survey_legend">
+                                            <legend className="o-survey_legend">
                                                 <p>Financial choices that people make have benefits, costs, and future consequences.</p>
                                             </legend>
                                         </div>
