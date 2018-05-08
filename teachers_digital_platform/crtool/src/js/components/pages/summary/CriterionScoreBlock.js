@@ -8,6 +8,20 @@ export default class CriterionScoreBlock extends React.Component {
         this.props.criterionAnswerChanged(this.props.dimensionPage, key, checkedValue);
     }
 
+    isPrintMode() {
+        let isPrintMode = false;
+        isPrintMode = this.props.currentPrintButton !== "" && this.props.currentPrintButton !== C.START_PAGE;
+        return isPrintMode;
+    }
+
+    renderTitle() {
+        if (this.isPrintMode() === true) {
+            return(<h2 id={this.generateUniqueId()}>{this.props.criterionName}</h2>);
+        } else {
+            return(<h3 className="h2" id={this.generateUniqueId()}>{this.props.criterionName}</h3>);
+        }
+    }
+
     renderTextValue(style, level) {
         let criterionScore = this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber];
         let isTrue = false;
@@ -202,7 +216,7 @@ export default class CriterionScoreBlock extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 <ViewEditResponseComponent criterionPage={this.props.dimensionPage} {...this.props} />
-                <h3 className="h2" id={this.generateUniqueId()}>{this.props.criterionName}</h3>
+                {this.renderTitle()}
                 <p className="u-mb30">{this.props.criterionLead}</p>
                 <div className="m-curriculum-status" role="radiogroup" aria-describedby={this.generateUniqueId()}>
                     <ul className="m-list__unstyled
