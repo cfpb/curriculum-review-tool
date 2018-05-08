@@ -11,9 +11,11 @@ export default class SaveWorkModal extends React.Component {
         this.state = {
             modalIsOpen: false
         };
-
+        
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleSaveWorkClickOutside = this.handleSaveWorkClickOutside.bind(this);
+        this.openSaveWorkModalDialog = this.openSaveWorkModalDialog.bind(this);
+        this.closeSaveWorkModalDialog = this.closeSaveWorkModalDialog.bind(this);
     }
 
     /* Click Outside setup */
@@ -72,7 +74,10 @@ export default class SaveWorkModal extends React.Component {
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     className="o-modal_container"
-                    onRequestClose={this.closeModal} >
+                    contentLabel="CFPB Modal Dialog"
+                    onRequestClose={this.closeSaveWorkModalDialog}
+                    shouldCloseOnOverlayClick={true} 
+                >
                     <div className="o-modal o-modal__visible"
                         id="modal-save-work"
                         aria-hidden="true"
