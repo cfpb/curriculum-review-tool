@@ -7,10 +7,7 @@ import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
 
 export default class FinalCurriculumInformation extends React.Component {
     renderReviewedOnDate() {
-        if (this.props.reviewedOnDate !== undefined) {
-            return this.props.reviewedOnDate;
-        }
-        return this.props.distinctiveCompletedDate[this.props.currentPage]
+        return this.props.distinctiveCompletedDate[C.FINAL_SUMMARY_PAGE]
     }
 
     isPrintMode() {

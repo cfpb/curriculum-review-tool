@@ -42,7 +42,7 @@ const Repository = {
      * Get data from localStorage
      */
     getCurrentPage() {
-        return localStorage.getItem(C.START_PAGE);
+        return localStorage.getItem(C.START_PAGE) || C.START_PAGE;
     },
 
     getPrintButtonPage() {
