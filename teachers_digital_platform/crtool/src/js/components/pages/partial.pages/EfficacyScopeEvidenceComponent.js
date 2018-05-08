@@ -23,7 +23,7 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
                 <h2>Based on your answers, the efficacy score for this curriculum is:</h2>
 
                 {this.props.currentPrintButton === C.START_PAGE &&
-                    <p><a href="https://s3.amazonaws.com/files.consumerfinance.gov/f/documents/Curricuum_Review_Tool_Efficacy_Scoring_Guide.pdf" target="_blank"> How efficacy is scored. <SvgIcon icon="document" hasSpaceBefore="true" /></a></p>
+                    <p><a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/files.consumerfinance.gov/f/documents/Curricuum_Review_Tool_Efficacy_Scoring_Guide.pdf"> How efficacy is scored. <SvgIcon icon="document" hasSpaceBefore="true" /></a></p>
                 }
 
                 <h3>Score for scope of evidence</h3>
