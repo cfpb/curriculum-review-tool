@@ -14,6 +14,9 @@ export default class StartOverModal extends React.Component {
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleStartOverClickOutside = this.handleStartOverClickOutside.bind(this);
+        this.clearLocalStorage = this.clearLocalStorage.bind(this);
+        this.openStartOverModalDialog = this.openStartOverModalDialog.bind(this);
+        this.closeStartOverModalDialog = this.closeStartOverModalDialog.bind(this);
     }
 
     /* Click Outside setup */
@@ -44,25 +47,27 @@ export default class StartOverModal extends React.Component {
     }
 
     /* Modal specific open dialog */
-    openstartOverModalDialog() {
+    openStartOverModalDialog() {
         this.setState({modalIsOpen: true});
     }
 
     /* Modal specific close dialog */
-    closestartOverModalDialog() {
+    closeStartOverModalDialog() {
         this.setState({modalIsOpen: false});
     }
 
     render() {
         return (
         <React.Fragment>
-            <button className="a-btn a-btn__link" onClick={(e) => {this.openstartOverModalDialog();}}>
+            <button className="a-btn a-btn__link" onClick={(e) => {this.openStartOverModalDialog();}}>
                 Start over with a new review
             </button>
             <Modal
                 isOpen={this.state.modalIsOpen}
                 className="o-modal_container"
-                onRequestClose={this.closeModal} >
+                contentLabel="CFPB Modal Dialog"
+                onRequestClose={this.closeStartOverModalDialog}
+                shouldCloseOnOverlayClick={true} >
                 <div className="o-modal o-modal__visible"
                     id="modal-start-over"
                     aria-hidden="true"
@@ -73,7 +78,7 @@ export default class StartOverModal extends React.Component {
                     <div className="o-modal_container">
                         <form className="o-modal_content" ref={this.setWrapperRef}>
                             <div className="o-modal_body">
-                                <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closestartOverModalDialog(); e.preventDefault();}}>
+                                <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog(); e.preventDefault();}}>
                                     Close
                                     <SvgIcon
                                         icon="x-round"
@@ -88,7 +93,7 @@ export default class StartOverModal extends React.Component {
                             <div className="o-modal_footer">
                                 <div className="m-btn-group m-btn-group__wide">
                                     <button className="a-btn" onClick={(e) => {this.clearLocalStorage()}} formAction={C.START_PAGE_RELATIVE_URL} >Yes</button>
-                                    <button className="a-btn a-btn__link" onClick={(e) => {this.closestartOverModalDialog(); e.preventDefault();}}>No, return to current review</button>
+                                    <button className="a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog(); e.preventDefault();}}>No, return to current review</button>
                                 </div>
                             </div>
                         </form>
