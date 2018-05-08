@@ -350,9 +350,9 @@
         function clearLocalStorage() {
             localStorage.clear();
 
-            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle');
-            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate');
-            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange');
+            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle') || "";
+            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate') || "";
+            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange') || "";
 
             closeNewReviewModalWindow();
             setBeginReviewButtonEnabling();

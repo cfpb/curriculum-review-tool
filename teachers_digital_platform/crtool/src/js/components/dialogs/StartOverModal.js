@@ -14,7 +14,6 @@ export default class StartOverModal extends React.Component {
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleStartOverClickOutside = this.handleStartOverClickOutside.bind(this);
-        this.clearLocalStorage = this.clearLocalStorage.bind(this);
         this.openStartOverModalDialog = this.openStartOverModalDialog.bind(this);
         this.closeStartOverModalDialog = this.closeStartOverModalDialog.bind(this);
     }
@@ -39,11 +38,6 @@ export default class StartOverModal extends React.Component {
         if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
             this.setState({modalIsOpen: false});
         }
-    }
-
-    /* Modal specific clearLocalStorage */
-    clearLocalStorage() {
-        this.props.clearLocalStorage();
     }
 
     /* Modal specific open dialog */
@@ -76,7 +70,7 @@ export default class StartOverModal extends React.Component {
                     aria-describedby="modal-start-over_desc">
                     <div className="o-modal_backdrop"></div>
                     <div className="o-modal_container">
-                        <form className="o-modal_content" ref={this.setWrapperRef}>
+                        <form className="o-modal_content" ref={this.setWrapperRef} action={C.START_PAGE_RELATIVE_URL} >
                             <div className="o-modal_body">
                                 <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog(); e.preventDefault();}}>
                                     Close
@@ -92,7 +86,7 @@ export default class StartOverModal extends React.Component {
                             </div>
                             <div className="o-modal_footer">
                                 <div className="m-btn-group m-btn-group__wide">
-                                    <button className="a-btn" onClick={(e) => {this.clearLocalStorage()}} formAction={C.START_PAGE_RELATIVE_URL} >Yes</button>
+                                    <button className="a-btn" onClick={(e) => {this.props.clearLocalStorage();}} formAction={C.START_PAGE_RELATIVE_URL} >Yes</button>
                                     <button className="a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog(); e.preventDefault();}}>No, return to current review</button>
                                 </div>
                             </div>
