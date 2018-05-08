@@ -27,7 +27,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityInProgress === C.STATUS_COMPLETE) ||
                         (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyInProgress === C.STATUS_COMPLETE) ));
     }
-    
+
     render() {
         return (
             <React.Fragment>
@@ -83,41 +83,45 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Income can be acquired in a variety of ways, including through wages; salaries; commissions; interest, dividends, and capital appreciation on investments; money gifts; profits; and rental property.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.1a"
-                                                name="content-middle-crt-question-1.1"
-                                                ref="content-middle-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Income can be acquired in a variety of ways, including through wages; salaries; commissions; interest, dividends, and capital appreciation on investments; money gifts; profits; and rental property.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.1b"
-                                                name="content-middle-crt-question-1.1"
-                                                ref="content-middle-crt-question-1.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.1b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-1.1a"
+                                                    name="content-middle-crt-question-1.1"
+                                                    ref="content-middle-crt-question-1.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-1.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-1.1b"
+                                                    name="content-middle-crt-question-1.1"
+                                                    ref="content-middle-crt-question-1.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-1.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -130,76 +134,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Building human capital through various types of education and training can have differing opportunity costs.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.2.1a"
-                                                name="content-middle-crt-question-1.2.1"
-                                                ref="content-middle-crt-question-1.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Building human capital through various types of education and training can have differing opportunity costs.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.2.1b"
-                                                name="content-middle-crt-question-1.2.1"
-                                                ref="content-middle-crt-question-1.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Changes in the labor market or economic conditions can cause changes in worker’s income or unemployment.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-1.2.2a"
-                                                name="content-middle-crt-question-1.2.2"
-                                                ref="content-middle-crt-question-1.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-1.2.2b"
-                                                name="content-middle-crt-question-1.2.2"
-                                                ref="content-middle-crt-question-1.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-1.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-1.2.1a"
+                                                    name="content-middle-crt-question-1.2.1"
+                                                    ref="content-middle-crt-question-1.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-1.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-1.2.1b"
+                                                    name="content-middle-crt-question-1.2.1"
+                                                    ref="content-middle-crt-question-1.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-1.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Changes in the labor market or economic conditions can cause changes in worker’s income or unemployment.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-1.2.2a"
+                                                    name="content-middle-crt-question-1.2.2"
+                                                    ref="content-middle-crt-question-1.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-1.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-1.2.2b"
+                                                    name="content-middle-crt-question-1.2.2"
+                                                    ref="content-middle-crt-question-1.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-1.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -246,76 +258,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Different people save money for different reasons, including large purchases (such as higher education, autos, and homes), retirement, and unexpected events.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.1.1a"
-                                                name="content-middle-crt-question-2.1.1"
-                                                ref="content-middle-crt-question-2.1.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.1.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Different people save money for different reasons, including large purchases (such as higher education, autos, and homes), retirement, and unexpected events.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.1.1b"
-                                                name="content-middle-crt-question-2.1.1"
-                                                ref="content-middle-crt-question-2.1.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.1.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>People’s choices about how much to save and for what to save are based on their preferences.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.1.2a"
-                                                name="content-middle-crt-question-2.1.2"
-                                                ref="content-middle-crt-question-2.1.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.1.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.1.2b"
-                                                name="content-middle-crt-question-2.1.2"
-                                                ref="content-middle-crt-question-2.1.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.1.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.1.1a"
+                                                    name="content-middle-crt-question-2.1.1"
+                                                    ref="content-middle-crt-question-2.1.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.1.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.1.1b"
+                                                    name="content-middle-crt-question-2.1.1"
+                                                    ref="content-middle-crt-question-2.1.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.1.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>People’s choices about how much to save and for what to save are based on their preferences.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.1.2a"
+                                                    name="content-middle-crt-question-2.1.2"
+                                                    ref="content-middle-crt-question-2.1.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.1.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.1.2b"
+                                                    name="content-middle-crt-question-2.1.2"
+                                                    ref="content-middle-crt-question-2.1.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.1.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -328,76 +348,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>The value of savings is affected by interest and compounding over time.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.2.1a"
-                                                name="content-middle-crt-question-2.2.1"
-                                                ref="content-middle-crt-question-2.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>The value of savings is affected by interest and compounding over time.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.2.1b"
-                                                name="content-middle-crt-question-2.2.1"
-                                                ref="content-middle-crt-question-2.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Interest can be calculated by multiplying the principal amount, the interest rate, and time of loan/investment.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.2.2a"
-                                                name="content-middle-crt-question-2.2.2"
-                                                ref="content-middle-crt-question-2.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio"  value="0"
-                                                id="content-middle-crt-question-2.2.2b"
-                                                name="content-middle-crt-question-2.2.2"
-                                                ref="content-middle-crt-question-2.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.2.1a"
+                                                    name="content-middle-crt-question-2.2.1"
+                                                    ref="content-middle-crt-question-2.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.2.1b"
+                                                    name="content-middle-crt-question-2.2.1"
+                                                    ref="content-middle-crt-question-2.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Interest can be calculated by multiplying the principal amount, the interest rate, and time of loan/investment.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.2.2a"
+                                                    name="content-middle-crt-question-2.2.2"
+                                                    ref="content-middle-crt-question-2.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio"  value="0"
+                                                    id="content-middle-crt-question-2.2.2b"
+                                                    name="content-middle-crt-question-2.2.2"
+                                                    ref="content-middle-crt-question-2.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -410,76 +438,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Financial assets in which one might invest include stocks, bonds, mutual funds, real estate, and commodities.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.3.1a"
-                                                name="content-middle-crt-question-2.3.1"
-                                                ref="content-middle-crt-question-2.3.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.3.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Financial assets in which one might invest include stocks, bonds, mutual funds, real estate, and commodities.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.3.1b"
-                                                name="content-middle-crt-question-2.3.1"
-                                                ref="content-middle-crt-question-2.3.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.3.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>The rate of return on a financial investment consists of interest payments, dividends, and capital appreciation expressed as a percentage of the amount invested.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.3.2a"
-                                                name="content-middle-crt-question-2.3.2"
-                                                ref="content-middle-crt-question-2.3.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.3.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.3.2b"
-                                                name="content-middle-crt-question-2.3.2"
-                                                ref="content-middle-crt-question-2.3.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.3.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.3.1a"
+                                                    name="content-middle-crt-question-2.3.1"
+                                                    ref="content-middle-crt-question-2.3.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.3.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.3.1b"
+                                                    name="content-middle-crt-question-2.3.1"
+                                                    ref="content-middle-crt-question-2.3.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.3.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>The rate of return on a financial investment consists of interest payments, dividends, and capital appreciation expressed as a percentage of the amount invested.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.3.2a"
+                                                    name="content-middle-crt-question-2.3.2"
+                                                    ref="content-middle-crt-question-2.3.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.3.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.3.2b"
+                                                    name="content-middle-crt-question-2.3.2"
+                                                    ref="content-middle-crt-question-2.3.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.3.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -492,76 +528,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Federal agencies guarantee depositors’ savings in most commercial banks, savings banks, savings associations, and credit unions.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.4.1a"
-                                                name="content-middle-crt-question-2.4.1"
-                                                ref="content-middle-crt-question-2.4.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.4.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Federal agencies guarantee depositors’ savings in most commercial banks, savings banks, savings associations, and credit unions.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.4.1b"
-                                                name="content-middle-crt-question-2.4.1"
-                                                ref="content-middle-crt-question-2.4.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.4.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Increases or decreases in the rate of return from an investment vary according to the amount of risk. In general, a trade-off exists between the security of an investment and its expected rate of return.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-2.4.2a"
-                                                name="content-middle-crt-question-2.4.2"
-                                                ref="content-middle-crt-question-2.4.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.4.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-2.4.2b"
-                                                name="content-middle-crt-question-2.4.2"
-                                                ref="content-middle-crt-question-2.4.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-2.4.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.4.1a"
+                                                    name="content-middle-crt-question-2.4.1"
+                                                    ref="content-middle-crt-question-2.4.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.4.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.4.1b"
+                                                    name="content-middle-crt-question-2.4.1"
+                                                    ref="content-middle-crt-question-2.4.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.4.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Increases or decreases in the rate of return from an investment vary according to the amount of risk. In general, a trade-off exists between the security of an investment and its expected rate of return.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-2.4.2a"
+                                                    name="content-middle-crt-question-2.4.2"
+                                                    ref="content-middle-crt-question-2.4.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.4.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-2.4.2b"
+                                                    name="content-middle-crt-question-2.4.2"
+                                                    ref="content-middle-crt-question-2.4.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-2.4.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -608,41 +652,45 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Individuals must make choices about and prioritize the goods and services they buy because they can’t have everything they want.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-3.1a"
-                                                name="content-middle-crt-question-3.1"
-                                                ref="content-middle-crt-question-3.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Individuals must make choices about and prioritize the goods and services they buy because they can’t have everything they want.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-3.1b"
-                                                name="content-middle-crt-question-3.1"
-                                                ref="content-middle-crt-question-3.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.1b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-3.1a"
+                                                    name="content-middle-crt-question-3.1"
+                                                    ref="content-middle-crt-question-3.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-3.1b"
+                                                    name="content-middle-crt-question-3.1"
+                                                    ref="content-middle-crt-question-3.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -655,146 +703,162 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>A consumer should rely on sources beyond advertising claims to gather information about goods and services.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-3.2.1a"
-                                                name="content-middle-crt-question-3.2.1"
-                                                ref="content-middle-crt-question-3.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>A consumer should rely on sources beyond advertising claims to gather information about goods and services.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-3.2.1b"
-                                                name="content-middle-crt-question-3.2.1"
-                                                ref="content-middle-crt-question-3.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Consumers can use a variety of payment methods to make a purchase, and some payment methods are better than others.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-3.2.2a"
-                                                name="content-middle-crt-question-3.2.2"
-                                                ref="content-middle-crt-question-3.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-3.2.2b"
-                                                name="content-middle-crt-question-3.2.2"
-                                                ref="content-middle-crt-question-3.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-3.2.1a"
+                                                    name="content-middle-crt-question-3.2.1"
+                                                    ref="content-middle-crt-question-3.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-3.2.1b"
+                                                    name="content-middle-crt-question-3.2.1"
+                                                    ref="content-middle-crt-question-3.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>A budget helps one make good spending choices, and a good budget accounts for expenses, income, savings, and taxes.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-3.2.3a"
-                                                name="content-middle-crt-question-3.2.3"
-                                                ref="content-middle-crt-question-3.2.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.3', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.3a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Consumers can use a variety of payment methods to make a purchase, and some payment methods are better than others.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-3.2.3b"
-                                                name="content-middle-crt-question-3.2.3"
-                                                ref="content-middle-crt-question-3.2.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.3', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.3b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Individual spending goals and priorities can inform the creation of a budget.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-3.2.4a"
-                                                name="content-middle-crt-question-3.2.4"
-                                                ref="content-middle-crt-question-3.2.4"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.4', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.4a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-3.2.4b"
-                                                name="content-middle-crt-question-3.2.4"
-                                                ref="content-middle-crt-question-3.2.4"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.4', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-3.2.4b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-3.2.2a"
+                                                    name="content-middle-crt-question-3.2.2"
+                                                    ref="content-middle-crt-question-3.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-3.2.2b"
+                                                    name="content-middle-crt-question-3.2.2"
+                                                    ref="content-middle-crt-question-3.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>A budget helps one make good spending choices, and a good budget accounts for expenses, income, savings, and taxes.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-3.2.3a"
+                                                    name="content-middle-crt-question-3.2.3"
+                                                    ref="content-middle-crt-question-3.2.3"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.3', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-3.2.3b"
+                                                    name="content-middle-crt-question-3.2.3"
+                                                    ref="content-middle-crt-question-3.2.3"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.3', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.3b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Individual spending goals and priorities can inform the creation of a budget.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-3.2.4a"
+                                                    name="content-middle-crt-question-3.2.4"
+                                                    ref="content-middle-crt-question-3.2.4"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.4', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.4a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-3.2.4b"
+                                                    name="content-middle-crt-question-3.2.4"
+                                                    ref="content-middle-crt-question-3.2.4"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.4', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-3.2.4b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -841,41 +905,45 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>People can use credit to finance long-term purchases. The benefits of using credit in this way are spread out over a period of time, whereas the benefits of using credit to make daily purchases are short-lived and do not accumulate over time.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.1a"
-                                                name="content-middle-crt-question-4.1"
-                                                ref="content-middle-crt-question-4.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>People can use credit to finance long-term purchases. The benefits of using credit in this way are spread out over a period of time, whereas the benefits of using credit to make daily purchases are short-lived and do not accumulate over time.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.1b"
-                                                name="content-middle-crt-question-4.1"
-                                                ref="content-middle-crt-question-4.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.1b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.1a"
+                                                    name="content-middle-crt-question-4.1"
+                                                    ref="content-middle-crt-question-4.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.1b"
+                                                    name="content-middle-crt-question-4.1"
+                                                    ref="content-middle-crt-question-4.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -888,146 +956,162 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>People who apply for loans are told what the interest rate on the loan will be. An interest rate is the price of using someone else’s money, often expressed as an annual percentage rate.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.2.1a"
-                                                name="content-middle-crt-question-4.2.1"
-                                                ref="content-middle-crt-question-4.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>People who apply for loans are told what the interest rate on the loan will be. An interest rate is the price of using someone else’s money, often expressed as an annual percentage rate.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.2.1b"
-                                                name="content-middle-crt-question-4.2.1"
-                                                ref="content-middle-crt-question-4.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Interest rates for loans ﬂuctuate based on changes in the market for loans as well as the risk of non-repayment.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.2.2a"
-                                                name="content-middle-crt-question-4.2.2"
-                                                ref="content-middle-crt-question-4.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.2.2b"
-                                                name="content-middle-crt-question-4.2.2"
-                                                ref="content-middle-crt-question-4.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.2.1a"
+                                                    name="content-middle-crt-question-4.2.1"
+                                                    ref="content-middle-crt-question-4.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.2.1b"
+                                                    name="content-middle-crt-question-4.2.1"
+                                                    ref="content-middle-crt-question-4.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Consumers can choose from a variety of credit sources.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.2.3a"
-                                                name="content-middle-crt-question-4.2.3"
-                                                ref="content-middle-crt-question-4.2.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.3"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.3', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.3a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Interest rates for loans ﬂuctuate based on changes in the market for loans as well as the risk of non-repayment.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.2.3b"
-                                                name="content-middle-crt-question-4.2.3"
-                                                ref="content-middle-crt-question-4.2.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.3"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.3', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.3b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Borrowers who use credit cards and do not pay the full balance when it is due pay much higher costs for their purchases; they can avoid interest charges by paying the entire balance within the grace period specified by the financial institution.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.2.4a"
-                                                name="content-middle-crt-question-4.2.4"
-                                                ref="content-middle-crt-question-4.2.4"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.4"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.4', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.4a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.2.4b"
-                                                name="content-middle-crt-question-4.2.4"
-                                                ref="content-middle-crt-question-4.2.4"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.2.4"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.4', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.2.4b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.2.2a"
+                                                    name="content-middle-crt-question-4.2.2"
+                                                    ref="content-middle-crt-question-4.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.2.2b"
+                                                    name="content-middle-crt-question-4.2.2"
+                                                    ref="content-middle-crt-question-4.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Consumers can choose from a variety of credit sources.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.2.3a"
+                                                    name="content-middle-crt-question-4.2.3"
+                                                    ref="content-middle-crt-question-4.2.3"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.3"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.3', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.2.3b"
+                                                    name="content-middle-crt-question-4.2.3"
+                                                    ref="content-middle-crt-question-4.2.3"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.3"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.3', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.3b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Borrowers who use credit cards and do not pay the full balance when it is due pay much higher costs for their purchases; they can avoid interest charges by paying the entire balance within the grace period specified by the financial institution.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.2.4a"
+                                                    name="content-middle-crt-question-4.2.4"
+                                                    ref="content-middle-crt-question-4.2.4"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.4"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.4', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.4a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.2.4b"
+                                                    name="content-middle-crt-question-4.2.4"
+                                                    ref="content-middle-crt-question-4.2.4"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.2.4"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.2.4', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.2.4b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -1040,76 +1124,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Your credit score is a number based on information from your credit history and assesses your credit risk.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.3.1a"
-                                                name="content-middle-crt-question-4.3.1"
-                                                ref="content-middle-crt-question-4.3.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.3.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Your credit score is a number based on information from your credit history and assesses your credit risk.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.3.1b"
-                                                name="content-middle-crt-question-4.3.1"
-                                                ref="content-middle-crt-question-4.3.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.3.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Lenders make credit decisions based in part on consumer payment history. Credit bureaus record borrowers’ credit and payment histories and provide that information to lenders in credit reports.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-4.3.2a"
-                                                name="content-middle-crt-question-4.3.2"
-                                                ref="content-middle-crt-question-4.3.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.3.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-4.3.2b"
-                                                name="content-middle-crt-question-4.3.2"
-                                                ref="content-middle-crt-question-4.3.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-4.3.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-4.3.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.3.1a"
+                                                    name="content-middle-crt-question-4.3.1"
+                                                    ref="content-middle-crt-question-4.3.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.3.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.3.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.3.1b"
+                                                    name="content-middle-crt-question-4.3.1"
+                                                    ref="content-middle-crt-question-4.3.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.3.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.3.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Lenders make credit decisions based in part on consumer payment history. Credit bureaus record borrowers’ credit and payment histories and provide that information to lenders in credit reports.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-4.3.2a"
+                                                    name="content-middle-crt-question-4.3.2"
+                                                    ref="content-middle-crt-question-4.3.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.3.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.3.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-4.3.2b"
+                                                    name="content-middle-crt-question-4.3.2"
+                                                    ref="content-middle-crt-question-4.3.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-4.3.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-4.3.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-4.3.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -1156,41 +1248,45 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Risk management strategies include risk avoidance, risk control, risk transfer through insurance, and risk mitigation through savings.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-5.1a"
-                                                name="content-middle-crt-question-5.1"
-                                                ref="content-middle-crt-question-5.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Risk management strategies include risk avoidance, risk control, risk transfer through insurance, and risk mitigation through savings.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-5.1b"
-                                                name="content-middle-crt-question-5.1"
-                                                ref="content-middle-crt-question-5.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.1b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-5.1a"
+                                                    name="content-middle-crt-question-5.1"
+                                                    ref="content-middle-crt-question-5.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-5.1b"
+                                                    name="content-middle-crt-question-5.1"
+                                                    ref="content-middle-crt-question-5.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -1203,76 +1299,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Individuals can choose to accept some risk, avoid or reduce risk, or transfer some risk by purchasing insurance. Each option has different costs and benefits.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-5.2.1a"
-                                                name="content-middle-crt-question-5.2.1"
-                                                ref="content-middle-crt-question-5.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Individuals can choose to accept some risk, avoid or reduce risk, or transfer some risk by purchasing insurance. Each option has different costs and benefits.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-5.2.1b"
-                                                name="content-middle-crt-question-5.2.1"
-                                                ref="content-middle-crt-question-5.2.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Insurance is a product that allows people to pay a fee (called a premium) now to transfer the costs of potential loss to a third party.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-5.2.2a"
-                                                name="content-middle-crt-question-5.2.2"
-                                                ref="content-middle-crt-question-5.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-5.2.2b"
-                                                name="content-middle-crt-question-5.2.2"
-                                                ref="content-middle-crt-question-5.2.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-5.2.1a"
+                                                    name="content-middle-crt-question-5.2.1"
+                                                    ref="content-middle-crt-question-5.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-5.2.1b"
+                                                    name="content-middle-crt-question-5.2.1"
+                                                    ref="content-middle-crt-question-5.2.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Insurance is a product that allows people to pay a fee (called a premium) now to transfer the costs of potential loss to a third party.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-5.2.2a"
+                                                    name="content-middle-crt-question-5.2.2"
+                                                    ref="content-middle-crt-question-5.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-5.2.2b"
+                                                    name="content-middle-crt-question-5.2.2"
+                                                    ref="content-middle-crt-question-5.2.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -1285,41 +1389,45 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Insurance premiums might vary based on the level of protection, insurer’s assessment of individual risk, deductible, and copayment.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-5.3a"
-                                                name="content-middle-crt-question-5.3"
-                                                ref="content-middle-crt-question-5.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.3"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.3', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.3a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Insurance premiums might vary based on the level of protection, insurer’s assessment of individual risk, deductible, and copayment.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-5.3b"
-                                                name="content-middle-crt-question-5.3"
-                                                ref="content-middle-crt-question-5.3"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-5.3"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.3', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-5.3b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-5.3a"
+                                                    name="content-middle-crt-question-5.3"
+                                                    ref="content-middle-crt-question-5.3"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.3"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.3', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-5.3b"
+                                                    name="content-middle-crt-question-5.3"
+                                                    ref="content-middle-crt-question-5.3"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-5.3"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-5.3', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-5.3b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -1366,76 +1474,84 @@ export default class ContentMiddleCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>People perform basic financial tasks to manage money.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-6.1.1a"
-                                                name="content-middle-crt-question-6.1.1"
-                                                ref="content-middle-crt-question-6.1.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-6.1.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>People perform basic financial tasks to manage money.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-6.1.1b"
-                                                name="content-middle-crt-question-6.1.1"
-                                                ref="content-middle-crt-question-6.1.1"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-6.1.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Financial choices that people make have benefits, costs, and future consequences.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="1"
-                                                id="content-middle-crt-question-6.1.2a"
-                                                name="content-middle-crt-question-6.1.2"
-                                                ref="content-middle-crt-question-6.1.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-6.1.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="content-middle-crt-question-6.1.2b"
-                                                name="content-middle-crt-question-6.1.2"
-                                                ref="content-middle-crt-question-6.1.2"
-                                                checked={this.props.criterionAnswers["content-middle-crt-question-6.1.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="content-middle-crt-question-6.1.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-6.1.1a"
+                                                    name="content-middle-crt-question-6.1.1"
+                                                    ref="content-middle-crt-question-6.1.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-6.1.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-6.1.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-6.1.1b"
+                                                    name="content-middle-crt-question-6.1.1"
+                                                    ref="content-middle-crt-question-6.1.1"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-6.1.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-6.1.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Financial choices that people make have benefits, costs, and future consequences.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="1"
+                                                    id="content-middle-crt-question-6.1.2a"
+                                                    name="content-middle-crt-question-6.1.2"
+                                                    ref="content-middle-crt-question-6.1.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-6.1.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-6.1.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="content-middle-crt-question-6.1.2b"
+                                                    name="content-middle-crt-question-6.1.2"
+                                                    ref="content-middle-crt-question-6.1.2"
+                                                    checked={this.props.criterionAnswers["content-middle-crt-question-6.1.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-6.1.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="content-middle-crt-question-6.1.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>

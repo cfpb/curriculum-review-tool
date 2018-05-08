@@ -87,166 +87,178 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>If there are <strong>paper-based materials:</strong></p>
-                                        <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
-                                        <div className="m-form-field m-form-field__text u-mt30">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.1">
-                                                Cost of materials per student
-                                                &nbsp;<small className="a-label_helper">(optional)</small>
-                                            </label>
-                                            <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-optional-1.1.1"
-                                                ref="quality-crt-text-optional-1.1.1"
-                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
-                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)}
-                                                placeholder="$" />
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>If there are <strong>paper-based materials:</strong></p>
+                                                <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
+                                            </legend>
+                                            <div className="m-form-field m-form-field__text u-mt30">
+                                                <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.1">
+                                                    Cost of materials per student
+                                                    &nbsp;<small className="a-label_helper">(optional)</small>
+                                                </label>
+                                                <input className="a-text-input a-text-input__full" type="text"
+                                                    id="quality-crt-text-optional-1.1.1"
+                                                    ref="quality-crt-text-optional-1.1.1"
+                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
+                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)}
+                                                    placeholder="$" />
+                                            </div>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.1a"
+                                                    name="quality-crt-question-1.1.1"
+                                                    ref="quality-crt-question-1.1.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.1b"
+                                                    name="quality-crt-question-1.1.1"
+                                                    ref="quality-crt-question-1.1.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.1a"
-                                                name="quality-crt-question-1.1.1"
-                                                ref="quality-crt-question-1.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.1a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>If there are <strong>links</strong>:</p>
+                                                <p>Do the links take the user to the appropriate, live website?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.1b"
-                                                name="quality-crt-question-1.1.1"
-                                                ref="quality-crt-question-1.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>If there are <strong>links</strong>:</p>
-                                        <p>Do the links take the user to the appropriate, live website?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.2a"
-                                                name="quality-crt-question-1.1.2"
-                                                ref="quality-crt-question-1.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.2b"
-                                                name="quality-crt-question-1.1.2"
-                                                ref="quality-crt-question-1.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.2b">
-                                                No
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.2c"
-                                                name="quality-crt-question-1.1.2"
-                                                ref="quality-crt-question-1.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'na'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'na')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.2c">
-                                                N/A
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.2a"
+                                                    name="quality-crt-question-1.1.2"
+                                                    ref="quality-crt-question-1.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.2b"
+                                                    name="quality-crt-question-1.1.2"
+                                                    ref="quality-crt-question-1.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.2c"
+                                                    name="quality-crt-question-1.1.2"
+                                                    ref="quality-crt-question-1.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.2"] === 'na'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.2', 'na')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.2c">
+                                                    N/A
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>If there are <strong>web-based materials:</strong></p>
-                                        <p>Can web-based material be accessed without purchasing specialized software?</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field m-form-field__text u-mt30">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.3">
-                                                Specialized software
-                                                &nbsp;<small className="a-label_helper">(optional)</small>
-                                            </label>
-                                            <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-optional-1.1.3"
-                                                ref="quality-crt-text-optional-1.1.3"
-                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
-                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.3', e.target.value)} />
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>If there are <strong>web-based materials:</strong></p>
+                                                <p>Can web-based material be accessed without purchasing specialized software?</p>
+                                                <p className="o-survey_question-helper">Beneficial, but not essential.</p>
+                                            </legend>
+                                            <div className="m-form-field m-form-field__text u-mt30">
+                                                <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.3">
+                                                    Specialized software
+                                                    &nbsp;<small className="a-label_helper">(optional)</small>
+                                                </label>
+                                                <input className="a-text-input a-text-input__full" type="text"
+                                                    id="quality-crt-text-optional-1.1.3"
+                                                    ref="quality-crt-text-optional-1.1.3"
+                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
+                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.3', e.target.value)} />
+                                            </div>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.3a"
+                                                    name="quality-crt-question-1.1.3_beneficial"
+                                                    ref="quality-crt-question-1.1.3_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.3_beneficial"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3_beneficial', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.3b"
+                                                    name="quality-crt-question-1.1.3_beneficial"
+                                                    ref="quality-crt-question-1.1.3_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.3_beneficial"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3_beneficial', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.3b">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.1.3c"
+                                                    name="quality-crt-question-1.1.3_beneficial"
+                                                    ref="quality-crt-question-1.1.3_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.1.3_beneficial"] === 'na'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3_beneficial', 'na')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.1.3c">
+                                                    N/A
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.3a"
-                                                name="quality-crt-question-1.1.3_beneficial"
-                                                ref="quality-crt-question-1.1.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.3_beneficial"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3_beneficial', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.3a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.3b"
-                                                name="quality-crt-question-1.1.3_beneficial"
-                                                ref="quality-crt-question-1.1.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.3_beneficial"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3_beneficial', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.3b">
-                                                No
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.1.3c"
-                                                name="quality-crt-question-1.1.3_beneficial"
-                                                ref="quality-crt-question-1.1.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.1.3_beneficial"] === 'na'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.1.3_beneficial', 'na')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.1.3c">
-                                                N/A
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -259,90 +271,98 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2.1a"
-                                                name="quality-crt-question-1.2.1"
-                                                ref="quality-crt-question-1.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2.1b"
-                                                name="quality-crt-question-1.2.1"
-                                                ref="quality-crt-question-1.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2.1c"
-                                                name="quality-crt-question-1.2.1"
-                                                ref="quality-crt-question-1.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'na'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'na')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2.1c">
-                                                N/A
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the materials free from limitations on use that might interfere with delivery in a classroom setting?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2.2a"
-                                                name="quality-crt-question-1.2.2"
-                                                ref="quality-crt-question-1.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.2.2b"
-                                                name="quality-crt-question-1.2.2"
-                                                ref="quality-crt-question-1.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.2.1a"
+                                                    name="quality-crt-question-1.2.1"
+                                                    ref="quality-crt-question-1.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.2.1b"
+                                                    name="quality-crt-question-1.2.1"
+                                                    ref="quality-crt-question-1.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.2.1c"
+                                                    name="quality-crt-question-1.2.1"
+                                                    ref="quality-crt-question-1.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.2.1"] === 'na'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.1', 'na')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.2.1c">
+                                                    N/A
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the materials free from limitations on use that might interfere with delivery in a classroom setting?</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.2.2a"
+                                                    name="quality-crt-question-1.2.2"
+                                                    ref="quality-crt-question-1.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.2.2b"
+                                                    name="quality-crt-question-1.2.2"
+                                                    ref="quality-crt-question-1.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -355,100 +375,108 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the materials include any special needs formats? (e.g., Braille)</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field m-form-field__text u-mt30">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.1">
-                                                Special needs formats include
-                                                &nbsp;<small className="a-label_helper">(optional)</small>
-                                            </label>
-                                            <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-optional-1.3.1"
-                                                ref="quality-crt-text-optional-1.3.1"
-                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
-                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.1', e.target.value)} />
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Do the materials include any special needs formats? (e.g., Braille)</p>
+                                                <p className="o-survey_question-helper">Beneficial, but not essential.</p>
+                                            </legend>
+                                            <div className="m-form-field m-form-field__text u-mt30">
+                                                <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.1">
+                                                    Special needs formats include
+                                                    &nbsp;<small className="a-label_helper">(optional)</small>
+                                                </label>
+                                                <input className="a-text-input a-text-input__full" type="text"
+                                                    id="quality-crt-text-optional-1.3.1"
+                                                    ref="quality-crt-text-optional-1.3.1"
+                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
+                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.1', e.target.value)} />
+                                            </div>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.3.1a"
+                                                    name="quality-crt-question-1.3.1_beneficial"
+                                                    ref="quality-crt-question-1.3.1_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.3.1_beneficial"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1_beneficial', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.3.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.3.1b"
+                                                    name="quality-crt-question-1.3.1_beneficial"
+                                                    ref="quality-crt-question-1.3.1_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.3.1_beneficial"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1_beneficial', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.3.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.1a"
-                                                name="quality-crt-question-1.3.1_beneficial"
-                                                ref="quality-crt-question-1.3.1_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1_beneficial"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1_beneficial', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.1a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the materials available in languages other than English?</p>
+                                                <p className="o-survey_question-helper">Beneficial, but not essential.</p>
+                                            </legend>
+                                            <div className="m-form-field m-form-field__text u-mt30">
+                                                <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.2">
+                                                    Languages included
+                                                    &nbsp;<small className="a-label_helper">(optional)</small>
+                                                </label>
+                                                <input className="a-text-input a-text-input__full" type="text"
+                                                    id="quality-crt-text-optional-1.3.2"
+                                                    ref="quality-crt-text-optional-1.3.2"
+                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
+                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.2', e.target.value)} />
+                                            </div>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.1b"
-                                                name="quality-crt-question-1.3.1_beneficial"
-                                                ref="quality-crt-question-1.3.1_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.1_beneficial"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.1_beneficial', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the materials available in languages other than English?</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                        <div className="m-form-field m-form-field__text u-mt30">
-                                            <label className="a-label a-label__heading" for="quality-crt-text-optional-1.3.2">
-                                                Languages included
-                                                &nbsp;<small className="a-label_helper">(optional)</small>
-                                            </label>
-                                            <input className="a-text-input a-text-input__full" type="text"
-                                                id="quality-crt-text-optional-1.3.2"
-                                                ref="quality-crt-text-optional-1.3.2"
-                                                value={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
-                                                onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.2', e.target.value)} />
-                                        </div>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.2a"
-                                                name="quality-crt-question-1.3.2_beneficial"
-                                                ref="quality-crt-question-1.3.2_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.2_beneficial"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.2_beneficial', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.3.2b"
-                                                name="quality-crt-question-1.3.2_beneficial"
-                                                ref="quality-crt-question-1.3.2_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.3.2_beneficial"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.2_beneficial', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.3.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.3.2a"
+                                                    name="quality-crt-question-1.3.2_beneficial"
+                                                    ref="quality-crt-question-1.3.2_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.3.2_beneficial"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.2_beneficial', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.3.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.3.2b"
+                                                    name="quality-crt-question-1.3.2_beneficial"
+                                                    ref="quality-crt-question-1.3.2_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.3.2_beneficial"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.3.2_beneficial', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.3.2b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -461,42 +489,46 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are written materials and physical products durable and reusable or easy to replace? (e.g., continued electronic access to materials at no additional cost)</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.4a"
-                                                name="quality-crt-question-1.4_beneficial"
-                                                ref="quality-crt-question-1.4_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.4_beneficial"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.4_beneficial', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.4a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are written materials and physical products durable and reusable or easy to replace? (e.g., continued electronic access to materials at no additional cost)</p>
+                                                <p className="o-survey_question-helper">Beneficial, but not essential.</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-1.4b"
-                                                name="quality-crt-question-1.4_beneficial"
-                                                ref="quality-crt-question-1.4_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-1.4_beneficial"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.4_beneficial', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-1.4b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.4a"
+                                                    name="quality-crt-question-1.4_beneficial"
+                                                    ref="quality-crt-question-1.4_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.4_beneficial"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.4_beneficial', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.4a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-1.4b"
+                                                    name="quality-crt-question-1.4_beneficial"
+                                                    ref="quality-crt-question-1.4_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-1.4_beneficial"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-1.4_beneficial', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-1.4b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -543,41 +575,45 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Have some or all of the materials been published or updated within the <strong>last three years</strong>?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.1a"
-                                                name="quality-crt-question-2.1"
-                                                ref="quality-crt-question-2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Have some or all of the materials been published or updated within the <strong>last three years</strong>?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.1b"
-                                                name="quality-crt-question-2.1"
-                                                ref="quality-crt-question-2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.1b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.1a"
+                                                    name="quality-crt-question-2.1"
+                                                    ref="quality-crt-question-2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.1b"
+                                                    name="quality-crt-question-2.1"
+                                                    ref="quality-crt-question-2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -590,76 +626,84 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the materials free of factual errors?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.2.1a"
-                                                name="quality-crt-question-2.2.1"
-                                                ref="quality-crt-question-2.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the materials free of factual errors?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.2.1b"
-                                                name="quality-crt-question-2.2.1"
-                                                ref="quality-crt-question-2.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the materials internally consistent such that none of the material contradicts another part of the material?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.2.2a"
-                                                name="quality-crt-question-2.2.2"
-                                                ref="quality-crt-question-2.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.2.2b"
-                                                name="quality-crt-question-2.2.2"
-                                                ref="quality-crt-question-2.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.2.1a"
+                                                    name="quality-crt-question-2.2.1"
+                                                    ref="quality-crt-question-2.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.2.1b"
+                                                    name="quality-crt-question-2.2.1"
+                                                    ref="quality-crt-question-2.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the materials internally consistent such that none of the material contradicts another part of the material?</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.2.2a"
+                                                    name="quality-crt-question-2.2.2"
+                                                    ref="quality-crt-question-2.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.2.2b"
+                                                    name="quality-crt-question-2.2.2"
+                                                    ref="quality-crt-question-2.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -672,41 +716,45 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the materials free of spelling, punctuation, formatting, grammatical, and layout errors?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.3a"
-                                                name="quality-crt-question-2.3"
-                                                ref="quality-crt-question-2.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.3', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.3a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the materials free of spelling, punctuation, formatting, grammatical, and layout errors?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-2.3b"
-                                                name="quality-crt-question-2.3"
-                                                ref="quality-crt-question-2.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.3', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-2.3b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.3a"
+                                                    name="quality-crt-question-2.3"
+                                                    ref="quality-crt-question-2.3"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.3', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-2.3b"
+                                                    name="quality-crt-question-2.3"
+                                                    ref="quality-crt-question-2.3"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-2.3"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-2.3', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-2.3b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -753,76 +801,84 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are interpretations or opinions clearly identified as such, rather than presented as facts?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.1.1a"
-                                                name="quality-crt-question-3.1.1"
-                                                ref="quality-crt-question-3.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.1.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are interpretations or opinions clearly identified as such, rather than presented as facts?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.1.1b"
-                                                name="quality-crt-question-3.1.1"
-                                                ref="quality-crt-question-3.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.1.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the materials often present differing viewpoints? (e.g., preferences for modes of savings)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.1.2a"
-                                                name="quality-crt-question-3.1.2"
-                                                ref="quality-crt-question-3.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.1.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.1.2b"
-                                                name="quality-crt-question-3.1.2"
-                                                ref="quality-crt-question-3.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.1.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.1.1a"
+                                                    name="quality-crt-question-3.1.1"
+                                                    ref="quality-crt-question-3.1.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.1.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.1.1b"
+                                                    name="quality-crt-question-3.1.1"
+                                                    ref="quality-crt-question-3.1.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.1.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.1.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Do the materials often present differing viewpoints? (e.g., preferences for modes of savings)</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.1.2a"
+                                                    name="quality-crt-question-3.1.2"
+                                                    ref="quality-crt-question-3.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.1.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.1.2b"
+                                                    name="quality-crt-question-3.1.2"
+                                                    ref="quality-crt-question-3.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.1.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.1.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.1.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -835,76 +891,84 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the materials reﬂect diversity in areas such as age, race/ethnicity, gender, and household income?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.2.1a"
-                                                name="quality-crt-question-3.2.1"
-                                                ref="quality-crt-question-3.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Do the materials reﬂect diversity in areas such as age, race/ethnicity, gender, and household income?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.2.1b"
-                                                name="quality-crt-question-3.2.1"
-                                                ref="quality-crt-question-3.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Is the content culturally sensitive? (e.g., examples are culturally relevant, free from stereotypes and derogatory terms)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.2.2a"
-                                                name="quality-crt-question-3.2.2"
-                                                ref="quality-crt-question-3.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.2.2b"
-                                                name="quality-crt-question-3.2.2"
-                                                ref="quality-crt-question-3.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.2.1a"
+                                                    name="quality-crt-question-3.2.1"
+                                                    ref="quality-crt-question-3.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.2.1b"
+                                                    name="quality-crt-question-3.2.1"
+                                                    ref="quality-crt-question-3.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Is the content culturally sensitive? (e.g., examples are culturally relevant, free from stereotypes and derogatory terms)</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.2.2a"
+                                                    name="quality-crt-question-3.2.2"
+                                                    ref="quality-crt-question-3.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.2.2b"
+                                                    name="quality-crt-question-3.2.2"
+                                                    ref="quality-crt-question-3.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -917,112 +981,124 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the authors and funders of development and dissemination clearly disclosed?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.3.1a"
-                                                name="quality-crt-question-3.3.1"
-                                                ref="quality-crt-question-3.3.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.3.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the authors and funders of development and dissemination clearly disclosed?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.3.1b"
-                                                name="quality-crt-question-3.3.1"
-                                                ref="quality-crt-question-3.3.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.3.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the materials abstain from promoting particular branded products or specific financial service providers? (e.g., free of slogans, logos, and statements promoting specific branded products or providers)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.3.2a"
-                                                name="quality-crt-question-3.3.2"
-                                                ref="quality-crt-question-3.3.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.3.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.3.2b"
-                                                name="quality-crt-question-3.3.2"
-                                                ref="quality-crt-question-3.3.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.3.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.3.1a"
+                                                    name="quality-crt-question-3.3.1"
+                                                    ref="quality-crt-question-3.3.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.3.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.3.1b"
+                                                    name="quality-crt-question-3.3.1"
+                                                    ref="quality-crt-question-3.3.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.3.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.3.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the authors’ credentials presented, and do the credentials demonstrate financial education expertise?</p>
-                                        <p className="o-survey_question-helper">Beneficial, but not essential.</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.3.3a"
-                                                name="quality-crt-question-3.3.3_beneficial"
-                                                ref="quality-crt-question-3.3.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.3_beneficial"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.3_beneficial', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.3.3a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Do the materials abstain from promoting particular branded products or specific financial service providers? (e.g., free of slogans, logos, and statements promoting specific branded products or providers)</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-3.3.3b"
-                                                name="quality-crt-question-3.3.3_beneficial"
-                                                ref="quality-crt-question-3.3.3_beneficial"
-                                                checked={this.props.criterionAnswers["quality-crt-question-3.3.3_beneficial"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.3_beneficial', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-3.3.3b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.3.2a"
+                                                    name="quality-crt-question-3.3.2"
+                                                    ref="quality-crt-question-3.3.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.3.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.3.2b"
+                                                    name="quality-crt-question-3.3.2"
+                                                    ref="quality-crt-question-3.3.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.3.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.3.2b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the authors’ credentials presented, and do the credentials demonstrate financial education expertise?</p>
+                                                <p className="o-survey_question-helper">Beneficial, but not essential.</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.3.3a"
+                                                    name="quality-crt-question-3.3.3_beneficial"
+                                                    ref="quality-crt-question-3.3.3_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.3.3_beneficial"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.3_beneficial', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.3.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-3.3.3b"
+                                                    name="quality-crt-question-3.3.3_beneficial"
+                                                    ref="quality-crt-question-3.3.3_beneficial"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-3.3.3_beneficial"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-3.3.3_beneficial', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-3.3.3b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>
@@ -1069,146 +1145,162 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are the visuals <strong>informative</strong> and <strong>related to the text</strong>?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.1a"
-                                                name="quality-crt-question-4.1.1"
-                                                ref="quality-crt-question-4.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are the visuals <strong>informative</strong> and <strong>related to the text</strong>?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.1b"
-                                                name="quality-crt-question-4.1.1"
-                                                ref="quality-crt-question-4.1.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Do the visuals focus on <strong>core concepts</strong>? (e.g., not prioritizing unimportant information because it is easier to display)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.2a"
-                                                name="quality-crt-question-4.1.2"
-                                                ref="quality-crt-question-4.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.2b"
-                                                name="quality-crt-question-4.1.2"
-                                                ref="quality-crt-question-4.1.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.1a"
+                                                    name="quality-crt-question-4.1.1"
+                                                    ref="quality-crt-question-4.1.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.1b"
+                                                    name="quality-crt-question-4.1.1"
+                                                    ref="quality-crt-question-4.1.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are visual displays clearly <strong>labeled</strong> and in <strong>close proximity to related text</strong>?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.3a"
-                                                name="quality-crt-question-4.1.3"
-                                                ref="quality-crt-question-4.1.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.3', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.3a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Do the visuals focus on <strong>core concepts</strong>? (e.g., not prioritizing unimportant information because it is easier to display)</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.3b"
-                                                name="quality-crt-question-4.1.3"
-                                                ref="quality-crt-question-4.1.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.3', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.3b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Is the content organized <strong>logically</strong> and <strong>consistently</strong>?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.4a"
-                                                name="quality-crt-question-4.1.4"
-                                                ref="quality-crt-question-4.1.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.4', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.4a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.1.4b"
-                                                name="quality-crt-question-4.1.4"
-                                                ref="quality-crt-question-4.1.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.4', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.1.4b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.2a"
+                                                    name="quality-crt-question-4.1.2"
+                                                    ref="quality-crt-question-4.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.2b"
+                                                    name="quality-crt-question-4.1.2"
+                                                    ref="quality-crt-question-4.1.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.2b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are visual displays clearly <strong>labeled</strong> and in <strong>close proximity to related text</strong>?</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.3a"
+                                                    name="quality-crt-question-4.1.3"
+                                                    ref="quality-crt-question-4.1.3"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.3', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.3b"
+                                                    name="quality-crt-question-4.1.3"
+                                                    ref="quality-crt-question-4.1.3"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.3"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.3', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.3b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Is the content organized <strong>logically</strong> and <strong>consistently</strong>?</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.4a"
+                                                    name="quality-crt-question-4.1.4"
+                                                    ref="quality-crt-question-4.1.4"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.4', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.4a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.1.4b"
+                                                    name="quality-crt-question-4.1.4"
+                                                    ref="quality-crt-question-4.1.4"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.1.4"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.1.4', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.1.4b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
@@ -1221,146 +1313,162 @@ export default class QualityCriterionPage extends React.Component {
                             </div>
                             <div className="o-survey_components">
                                 <h5 className="h3">Component</h5>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Is the text <strong>easy to read</strong>? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.1a"
-                                                name="quality-crt-question-4.2.1"
-                                                ref="quality-crt-question-4.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.1', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.1a">
-                                                Yes
-                                            </label>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Is the text <strong>easy to read</strong>? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.1b"
-                                                name="quality-crt-question-4.2.1"
-                                                ref="quality-crt-question-4.2.1"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.1', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.1b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are web-based materials organized in <strong>logical</strong> and manageable sections?</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.2a"
-                                                name="quality-crt-question-4.2.2"
-                                                ref="quality-crt-question-4.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.2', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.2a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.2b"
-                                                name="quality-crt-question-4.2.2"
-                                                ref="quality-crt-question-4.2.2"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.2', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.2b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.1a"
+                                                    name="quality-crt-question-4.2.1"
+                                                    ref="quality-crt-question-4.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.1', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.1a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.1b"
+                                                    name="quality-crt-question-4.2.1"
+                                                    ref="quality-crt-question-4.2.1"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.1"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.1', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.1b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Is the web-based presentation <strong>readable</strong>? (e.g., maximum of 60 characters per line, use of full screen)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.3a"
-                                                name="quality-crt-question-4.2.3"
-                                                ref="quality-crt-question-4.2.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.3', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.3a">
-                                                Yes
-                                            </label>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are web-based materials organized in <strong>logical</strong> and manageable sections?</p>
+                                            </legend>
                                         </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.3b"
-                                                name="quality-crt-question-4.2.3"
-                                                ref="quality-crt-question-4.2.3"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.3', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.3b">
-                                                No
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="o-survey_component">
-                                    <div className="o-survey_question">
-                                        <p>Are web-based materials <strong>easy to navigate</strong>? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)</p>
-                                    </div>
-                                    <div className="o-survey_answer">
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.4a"
-                                                name="quality-crt-question-4.2.4"
-                                                ref="quality-crt-question-4.2.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'yes'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.4', 'yes')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.4a">
-                                                Yes
-                                            </label>
-                                        </div>
-                                        <div className="m-form-field
-                                                        m-form-field__radio
-                                                        m-form-field__lg-target">
-                                            <input className="a-radio" type="radio" value="0"
-                                                id="quality-crt-question-4.2.4b"
-                                                name="quality-crt-question-4.2.4"
-                                                ref="quality-crt-question-4.2.4"
-                                                checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'no'}
-                                                onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.4', 'no')}} />
-                                            <label className="a-label"
-                                                htmlFor="quality-crt-question-4.2.4b">
-                                                No
-                                            </label>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.2a"
+                                                    name="quality-crt-question-4.2.2"
+                                                    ref="quality-crt-question-4.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.2', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.2a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.2b"
+                                                    name="quality-crt-question-4.2.2"
+                                                    ref="quality-crt-question-4.2.2"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.2"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.2', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.2b">
+                                                    No
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Is the web-based presentation <strong>readable</strong>? (e.g., maximum of 60 characters per line, use of full screen)</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.3a"
+                                                    name="quality-crt-question-4.2.3"
+                                                    ref="quality-crt-question-4.2.3"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.3', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.3a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.3b"
+                                                    name="quality-crt-question-4.2.3"
+                                                    ref="quality-crt-question-4.2.3"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.3"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.3', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.3b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset className="o-survey_fieldset">
+                                    <div className="o-survey_component">
+                                        <div className="o-survey_question">
+                                            <legend className="o-survey_legend">
+                                                <p>Are web-based materials <strong>easy to navigate</strong>? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)</p>
+                                            </legend>
+                                        </div>
+                                        <div className="o-survey_answer">
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.4a"
+                                                    name="quality-crt-question-4.2.4"
+                                                    ref="quality-crt-question-4.2.4"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.4', 'yes')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.4a">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div className="m-form-field
+                                                            m-form-field__radio
+                                                            m-form-field__lg-target">
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id="quality-crt-question-4.2.4b"
+                                                    name="quality-crt-question-4.2.4"
+                                                    ref="quality-crt-question-4.2.4"
+                                                    checked={this.props.criterionAnswers["quality-crt-question-4.2.4"] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged('quality-crt-question-4.2.4', 'no')}} />
+                                                <label className="a-label"
+                                                    htmlFor="quality-crt-question-4.2.4b">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
                         </li>
                     </ol>

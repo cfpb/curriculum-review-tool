@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import RadioButton from "../buttons/RadioButton";
@@ -50,33 +49,37 @@ export default class CriterionAnswerAreaEfficacyStudy extends React.Component {
 
     render() {
         return (
-            <div class="o-survey_component">
-                <div class="o-survey_question">
-                    {this.renderComponentText()}
-                    {this.showBeneficialText()}
-                    {this.renderTextFieldValue()}
+            <fieldset class="o-survey_fieldset">
+                <div class="o-survey_component">
+                    <div class="o-survey_question">
+                        <legend class="o-survey_legend">
+                            {this.renderComponentText()}
+                            {this.showBeneficialText()}
+                        </legend>
+                        {this.renderTextFieldValue()}
+                    </div>
+                    <div class="o-survey_answer">
+                        <RadioButton
+                            radioText="Yes"
+                            showButton="true"
+                            text={this.props.text}
+                            isChecked={this.props.studyAnswers[this.props.studyKey][this.props.componentData.criterionRefId.replace("_study_", this.props.studyKey)] === 'yes'}
+                            {...this.props} />
+                        <RadioButton
+                            radioText="No"
+                            showButton="true"
+                            text={this.props.text}
+                            isChecked={this.props.studyAnswers[this.props.studyKey][this.props.componentData.criterionRefId.replace("_study_", this.props.studyKey)] === 'no'}
+                            {...this.props} />
+                        <RadioButton
+                            radioText="N/A"
+                            showButton={this.props.componentData.showNaButton}
+                            text={this.props.text}
+                            isChecked={this.props.studyAnswers[this.props.studyKey][this.props.componentData.criterionRefId.replace("_study_", this.props.studyKey)] === 'na'}
+                            {...this.props} />
+                    </div>
                 </div>
-                <div class="o-survey_answer">
-                    <RadioButton
-                        radioText="Yes"
-                        showButton="true"
-                        text={this.props.text}
-                        isChecked={this.props.studyAnswers[this.props.studyKey][this.props.componentData.criterionRefId.replace("_study_", this.props.studyKey)] === 'yes'}
-                        {...this.props} />
-                    <RadioButton
-                        radioText="No"
-                        showButton="true"
-                        text={this.props.text}
-                        isChecked={this.props.studyAnswers[this.props.studyKey][this.props.componentData.criterionRefId.replace("_study_", this.props.studyKey)] === 'no'}
-                        {...this.props} />
-                    <RadioButton
-                        radioText="N/A"
-                        showButton={this.props.componentData.showNaButton}
-                        text={this.props.text}
-                        isChecked={this.props.studyAnswers[this.props.studyKey][this.props.componentData.criterionRefId.replace("_study_", this.props.studyKey)] === 'na'}
-                        {...this.props} />
-                </div>
-            </div>
+            </fieldset>
         );
     }
 }
