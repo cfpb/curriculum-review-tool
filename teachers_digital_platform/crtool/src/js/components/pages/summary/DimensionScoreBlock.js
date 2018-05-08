@@ -127,27 +127,27 @@ export default class DimensionScoreBlock extends React.Component {
                     </div>
                     <div className="m-form-field
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <div className="a-label a-label__heading">
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                        </label>
+                        </div>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <div className="a-label a-label__heading">
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                        </label>
+                        </div>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <div className="a-label a-label__heading">
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
-                        </label>
+                        </div>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"])}
                     </div>
                 </div>
@@ -229,7 +229,7 @@ export default class DimensionScoreBlock extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -247,7 +247,7 @@ export default class DimensionScoreBlock extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -264,7 +264,7 @@ export default class DimensionScoreBlock extends React.Component {
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -359,7 +359,7 @@ export default class DimensionScoreBlock extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -377,7 +377,7 @@ export default class DimensionScoreBlock extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -394,7 +394,7 @@ export default class DimensionScoreBlock extends React.Component {
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
