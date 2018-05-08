@@ -101,7 +101,7 @@
             <h2>Curriculum information</h2>
             <p>Enter the information for the curriculum you’re reviewing.</p>
         </div>
-        <form class="o-form">
+        <form class="o-form" method="GET" action="../../tdp/crt-survey">
             <div class="o-form_group">
                 <div class="m-form-field
                             m-form-field__text">
@@ -173,7 +173,7 @@
                 </div>
             </div>
             <div class="m-btn-group m-btn-group__wide">
-                <button id="tdp-crt-begin-review-btn" class="a-btn" type="submit" onclick="beginReviewButtonClick();" formaction="../../tdp/crt-survey">
+                <button id="tdp-crt-begin-review-btn" class="a-btn" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../../tdp/crt-survey">
                     Start review
                 </button>
                 <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
@@ -301,9 +301,9 @@
          * Set the values based on localStorage
          */
         function setInitialFormValues() {
-            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle');
-            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate');
-            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange');
+            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle') || "";
+            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate') || "";
+            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange') || "";
 
             setBeginReviewButtonEnabling();
         }
