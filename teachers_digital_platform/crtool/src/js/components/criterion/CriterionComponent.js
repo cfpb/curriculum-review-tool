@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import CriterionRow from "./CriterionRow";
@@ -29,10 +28,10 @@ export default class CriterionComponent extends React.Component {
                     }
                 </ol>
                 <div className="m-form-field m-form-field__textarea">
-                    <label className="a-label a-label__heading">
+                    <div className="a-label a-label__heading">
                         My notes
                         &nbsp;<small className="a-label_helper">(optional)</small>
-                    </label>
+                    </div>
                     <p>{this.renderMyNotes()}</p>
                 </div>
             </div>

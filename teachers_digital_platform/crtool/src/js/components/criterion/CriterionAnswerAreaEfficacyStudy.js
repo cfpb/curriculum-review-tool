@@ -6,7 +6,7 @@ export default class CriterionAnswerAreaEfficacyStudy extends React.Component {
 
     showBeneficialText() {
         if (this.props.componentData.showBeneficialText) {
-            return (<p class="o-survey_question-helper">Beneficial, but not essential.</p>);
+            return (<p className="o-survey_question-helper">Beneficial, but not essential.</p>);
         }
         return null;
     }
@@ -14,7 +14,7 @@ export default class CriterionAnswerAreaEfficacyStudy extends React.Component {
     renderComponentText() {
         let text = this.props.componentData.componentText;
         if (text === undefined || text === "") {
-            text = <p class="o-survey_question-helper">No information provided</p>;
+            text = <p className="o-survey_question-helper">No information provided</p>;
         }
         if (this.props.componentData.hasInlineHtml && text !== undefined) {
             return (<div className="u-mb15" dangerouslySetInnerHTML={{__html: text}} />);
@@ -30,7 +30,7 @@ export default class CriterionAnswerAreaEfficacyStudy extends React.Component {
 
             let text = this.props.criterionAnswers[this.props.componentData.criterionTextRefId];
             if (text === undefined || text === "") {
-                text = <p class="o-survey_question-helper">No information provided</p>;
+                text = <p className="o-survey_question-helper">No information provided</p>;
             }
             return (
                 <div className="m-form-field m-form-field__text u-mt30">
@@ -47,18 +47,22 @@ export default class CriterionAnswerAreaEfficacyStudy extends React.Component {
         }
     }
 
+    generateUniqueId() {
+        return "radio_" + this.props.componentData.criterionRefId;
+    }
+
     render() {
         return (
-            <fieldset class="o-survey_fieldset">
-                <div class="o-survey_component">
-                    <div class="o-survey_question">
-                        <legend class="o-survey_legend">
+            <fieldset className="o-survey_fieldset">
+                <div className="o-survey_component">
+                    <div className="o-survey_question">
+                        <legend className="o-survey_legend" id={this.generateUniqueId()}>
                             {this.renderComponentText()}
                             {this.showBeneficialText()}
                         </legend>
                         {this.renderTextFieldValue()}
                     </div>
-                    <div class="o-survey_answer">
+                    <div className="o-survey_answer" role="radiogroup" aria-describedby={this.generateUniqueId()}>
                         <RadioButton
                             radioText="Yes"
                             showButton="true"
