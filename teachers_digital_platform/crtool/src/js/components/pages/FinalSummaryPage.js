@@ -144,7 +144,7 @@ export default class FinalSummaryPage extends React.Component {
                 {this.props.finalSummaryShowEntireReview !== "true" &&
                     <React.Fragment>
                         <PrintOrSaveFinalSummary  {...this.props}/>
-                        <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage(); e.preventDefault();}}/>
+                        <StartOverModal clearLocalStorage={(e) => {this.props.clearLocalStorage();}}/>
                     </React.Fragment>
                 }
             </React.Fragment>

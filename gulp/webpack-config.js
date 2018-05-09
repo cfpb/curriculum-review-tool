@@ -22,7 +22,7 @@ const COMMON_MODULE_CONFIG = {
       options: {
         presets: [ [ 'env', {
           targets: {
-            browsers: BROWSER_LIST.LAST_2_IE_9_UP
+            browsers: BROWSER_LIST.LAST_2_IE_8_UP
           },
           debug: true
         } ] ]

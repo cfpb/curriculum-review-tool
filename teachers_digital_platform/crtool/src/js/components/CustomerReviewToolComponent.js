@@ -58,13 +58,12 @@ export default class CustomerReviewToolComponent extends React.Component {
      */
     clearLocalStorage() {
         Repository.resetApplicationData();
-
         this.navigateBackToStartPage();
     }
 
     navigateBackToStartPage() {
         let startPage = resolveUrl(window.location.href, C.START_PAGE_RELATIVE_URL);
-        window.location = startPage;
+        window.location.href = startPage;
     }
 
     openPrintPage() {
@@ -132,7 +131,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                 localStorage.setItem(C.START_PAGE, distinctiveName);
                 localStorage.setItem("currentPrintButton", "");
                 localStorage.setItem("finalSummaryShowEntireReview", "false");
-          },2000);
+          },3000);
         }
     }
 
