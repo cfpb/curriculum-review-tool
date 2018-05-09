@@ -24,11 +24,11 @@ urlpatterns = [
         TemplateView.as_view(template_name='teachers_digital_platform/prototypes/crt-print.html')
     ),
     url(
-        r'crt-survey/',
+        r'tool/',
         TemplateView.as_view(template_name='teachers_digital_platform/crt-survey.html')
     ),
     url(
-        r'crt-start/',
+        r'before-you-begin/',
         TemplateView.as_view(template_name='teachers_digital_platform/crt-start.html')       
     ),
 ]
