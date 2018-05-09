@@ -231,6 +231,7 @@
 {% block javascript scoped -%}
     <div class="o-modal"
         id="modal-start-over"
+        tabindex="0"
         aria-hidden="true"
         role="alertdialog"
         aria-labelledby="modal-start-over_title"
@@ -259,6 +260,7 @@
 
     <div class="o-modal"
         id="modal-save-work"
+        tabindex="0"
         aria-hidden="true"
         role="alertdialog"
         aria-labelledby="modal-save-work_title"
@@ -306,6 +308,15 @@
             document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange') || "";
 
             setBeginReviewButtonEnabling();
+
+            //Escape closes both modal dialogs
+            document.onkeydown = function(evt) {
+                evt = evt || window.event;
+                if (evt.keyCode == 27) {
+                    closeSaveWorkModalWindow();
+                    closeNewReviewModalWindow();
+                }
+            };
         }
 
         /*
@@ -365,6 +376,7 @@
         function openNewReviewModalWindow() {
             openingNewReviewModal = true;
             newReviewModalWindow.classList.add('o-modal__visible');
+            newReviewModalWindow.focus();
             document.addEventListener('click', newReviewOutsideClickListener);
         }
 
@@ -383,6 +395,7 @@
         function openSaveWorkModalWindow() {
             openingSaveWorkModal = true;
             saveWorkModalWindow.classList.add('o-modal__visible');
+            saveWorkModalWindow.focus();
             document.addEventListener('click', saveWorkOutsideClickListener);
         }
 
