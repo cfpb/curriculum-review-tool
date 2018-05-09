@@ -34,7 +34,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h2 className="h1">
+                <h2 className="h1" tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="document-round"
                         isLarge="true"
