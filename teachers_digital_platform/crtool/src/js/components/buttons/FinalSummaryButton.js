@@ -4,7 +4,7 @@ export default class FinalSummaryButton extends React.Component {
 
     handleFinalSummaryButtonClick() {
         this.props.handleFinalSummaryButtonClick();
-        
+
         //HACK: need to scroll to top of screen after we navigate.
         setTimeout(function(){
             let main = document.getElementById("main");

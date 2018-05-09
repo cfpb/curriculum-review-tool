@@ -7,11 +7,11 @@ import SvgIcon from "../svgs/SvgIcon";
 export default class SaveWorkModal extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             modalIsOpen: false
         };
-        
+
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleSaveWorkClickOutside = this.handleSaveWorkClickOutside.bind(this);
         this.openSaveWorkModalDialog = this.openSaveWorkModalDialog.bind(this);
@@ -76,7 +76,7 @@ export default class SaveWorkModal extends React.Component {
                     className="o-modal_container"
                     contentLabel="CFPB Modal Dialog"
                     onRequestClose={this.closeSaveWorkModalDialog}
-                    shouldCloseOnOverlayClick={true} 
+                    shouldCloseOnOverlayClick={true}
                 >
                     <div className="o-modal o-modal__visible"
                         id="modal-save-work"
