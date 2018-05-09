@@ -56,8 +56,8 @@ const C = {
     STATUS_COMPLETE: "complete",
     EFFICACY_SCOPE_EVIDENCE: "efficacy_scope_evidence",
 
-    START_PAGE_RELATIVE_URL: "../../tdp/crt-start/",
-    SURVEY_PAGE_RELATIVE_URL: "../../tdp/crt-survey/",
+    START_PAGE_RELATIVE_URL: "../before-you-begin/",
+    SURVEY_PAGE_RELATIVE_URL: "../tool/",
 
     GRADE_ELEMENTARY: "Elementary school",
     GRADE_MIDDLE: "Middle school",

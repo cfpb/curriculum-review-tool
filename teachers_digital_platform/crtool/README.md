@@ -24,4 +24,4 @@ root:~$ npm tests
 
 ## Viewing the code in the Main site:
 - After you turn the feature flag on navigate here:
- - [http://localhost:8000/tdp/prototypes/crt-survey-react/] - http://localhost:8000/tdp/prototypes/crt-survey-react/
+ - [http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/] - http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
