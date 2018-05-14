@@ -9,6 +9,7 @@ exports[`renders without crashing 1`] = `
   >
     <button
       className="a-btn a-btn__link a-btn__no-line"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       <span

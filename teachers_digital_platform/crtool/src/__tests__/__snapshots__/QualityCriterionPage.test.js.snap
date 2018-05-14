@@ -57,6 +57,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -1042,6 +1043,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -3622,6 +3624,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -5003,6 +5006,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -5988,6 +5992,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
