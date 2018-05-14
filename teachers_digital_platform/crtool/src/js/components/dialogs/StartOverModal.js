@@ -53,7 +53,7 @@ export default class StartOverModal extends React.Component {
     render() {
         return (
         <React.Fragment>
-            <button className="a-btn a-btn__link" onClick={(e) => {this.openStartOverModalDialog();}}>
+            <button className="a-btn a-btn__link" data-gtm_ignore="true" onClick={(e) => {this.openStartOverModalDialog();}}>
                 Start over with a new review
             </button>
             <Modal

@@ -62,6 +62,8 @@ const C = {
     GRADE_ELEMENTARY: "Elementary school",
     GRADE_MIDDLE: "Middle school",
     GRADE_HIGH: "High school",
+
+    ANALYTICS_DEBUG_ON: true,
 };
 
 export default C;

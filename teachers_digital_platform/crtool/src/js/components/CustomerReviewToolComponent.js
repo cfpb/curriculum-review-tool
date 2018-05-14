@@ -2,6 +2,7 @@ import React from "react";
 import resolveUrl from "resolve-url";
 
 import C from "../business.logic/constants";
+import Analytics from "../business.logic/analytics";
 import SaveWorkModal from "./dialogs/SaveWorkModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import FooterButtonAreaComponent from "./pages/partial.pages/FooterButtonAreaComponent";
@@ -117,6 +118,9 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveCurrentPage(this, distinctiveName);
 
         if (distinctiveName !== C.START_PAGE) {
+            
+            Analytics.sendEvent(Analytics.getDataLayerOptions( "Print", "User Chose to print " + distinctiveName ));
+
             this.openPrintPage();
 
             if (distinctiveName === C.FINAL_PRINT_PAGE || distinctiveName === C.FINAL_PRINT_EVERYTHING) {
