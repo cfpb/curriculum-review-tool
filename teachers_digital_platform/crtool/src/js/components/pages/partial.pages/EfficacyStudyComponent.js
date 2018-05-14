@@ -11,6 +11,7 @@ export default class EfficacyStudyComponent extends React.Component {
             return (
                 <div className="l-survey-top">
                     <button className="a-btn a-btn__link a-btn__no-line"
+                        data-gtm_ignore="true"
                         onClick={() => this.removeEfficacyStudy(this.props.studyCount)} >
                         Remove
                         <SvgIcon

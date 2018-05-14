@@ -179,6 +179,7 @@ export default class EfficacyCriterionPage extends React.Component {
 
                     <div className="u-mt15 u-mb30">
                         <button className="a-btn a-btn__link a-btn__no-line"
+                            data-gtm_ignore="true"
                             onClick={() => this.AddEfficacyStudy()}>
                             Review another study
                             <SvgIcon
