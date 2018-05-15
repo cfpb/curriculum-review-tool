@@ -165,8 +165,8 @@ export default class CriterionScoreBlock extends React.Component {
                         rows="6"
                         id={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
                         ref={this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber}
-                        value={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
-                        onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
+                        defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber]}
+                        onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "notes-optional-" + this.props.criterionNumber, e.target.value)} >
                     </textarea>
                 </div>
             );

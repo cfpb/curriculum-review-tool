@@ -9,7 +9,7 @@ const Analytics = {
 
     tagManagerIsLoaded: false,
   
-    EVENT_CATEGORY: 'Consumer Review Tool',
+    EVENT_CATEGORY: 'curriculum review tool interaction',
   
     /**
      * Get data layer object.

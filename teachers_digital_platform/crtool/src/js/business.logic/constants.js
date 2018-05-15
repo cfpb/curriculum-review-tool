@@ -16,6 +16,9 @@ const C = {
     FINAL_PRINT_EVERYTHING: "FINAL_PRINT_EVERYTHING",
     START_PAGE: "START",
 
+    FINAL_PRINT_ENTIRE_BUTTON_TEXT: "Print or save entire review",
+    FINAL_PRINT_BUTTON_TEXT: "Print or save this page",
+
     CONTENT_STATUS: "content_status",
     UTILITY_STATUS: "utility_status",
     QUALITY_STATUS: "quality_status",

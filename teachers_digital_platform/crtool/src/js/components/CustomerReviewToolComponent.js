@@ -53,6 +53,23 @@ export default class CustomerReviewToolComponent extends React.Component {
         };
     }
 
+    componentDidMount() {
+
+        //If we are on a print page we need to configure after print for data analytics
+        if (this.state.currentPrintButton === C.FINAL_PRINT_EVERYTHING) {
+            this.afterPrint(C.FINAL_PRINT_ENTIRE_BUTTON_TEXT);
+        } else if (this.state.currentPrintButton === C.FINAL_PRINT_PAGE) {
+            this.afterPrint(C.FINAL_PRINT_BUTTON_TEXT);
+        }
+    }
+
+    afterPrint(printButtonText) {
+        // Not positive the below method is 100% cross browser supported
+        window.onafterprint = function(evt) { 
+            Analytics.sendEvent(Analytics.getDataLayerOptions("print or save", printButtonText));
+        };
+    }
+
     /*
      * Remove all values frmo localStorage.
      * Used for starting a new review
@@ -105,8 +122,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
         if (newValue === "true" && showEverything === "true") {
             this.printButtonClicked(C.FINAL_PRINT_EVERYTHING);
+            Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", C.FINAL_PRINT_ENTIRE_BUTTON_TEXT));
         } else if (newValue === "true"){
             this.printButtonClicked(C.FINAL_PRINT_PAGE);
+            Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", C.FINAL_PRINT_BUTTON_TEXT));
         } else {
             this.resetPrintButtonState(C.START_PAGE);
         }
@@ -118,9 +137,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveCurrentPage(this, distinctiveName);
 
         if (distinctiveName !== C.START_PAGE) {
-            
-            Analytics.sendEvent(Analytics.getDataLayerOptions( "Print", "User Chose to print " + distinctiveName ));
-
             this.openPrintPage();
 
             if (distinctiveName === C.FINAL_PRINT_PAGE || distinctiveName === C.FINAL_PRINT_EVERYTHING) {
@@ -177,6 +193,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
         CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
+        Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + " : " + changedQuestion));
     }
 
     setCriterionStatusToInProgress(criterionKey) {

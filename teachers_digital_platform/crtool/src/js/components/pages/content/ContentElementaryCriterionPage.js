@@ -188,8 +188,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-elementary-crt-notes-optional-1"
                                     ref="content-elementary-crt-notes-optional-1"
-                                    value={this.props.criterionAnswers['content-elementary-crt-notes-optional-1']}
-                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-1', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-elementary-crt-notes-optional-1']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -414,8 +414,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-elementary-crt-notes-optional-2"
                                     ref="content-elementary-crt-notes-optional-2"
-                                    value={this.props.criterionAnswers['content-elementary-crt-notes-optional-2']}
-                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-2', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-elementary-crt-notes-optional-2']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -706,8 +706,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-elementary-crt-notes-optional-3"
                                     ref="content-elementary-crt-notes-optional-3"
-                                    value={this.props.criterionAnswers['content-elementary-crt-notes-optional-3']}
-                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-3', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-elementary-crt-notes-optional-3']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -830,8 +830,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-elementary-crt-notes-optional-4"
                                     ref="content-elementary-crt-notes-optional-4"
-                                    value={this.props.criterionAnswers['content-elementary-crt-notes-optional-4']}
-                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-4', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-elementary-crt-notes-optional-4']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -954,8 +954,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-elementary-crt-notes-optional-5"
                                     ref="content-elementary-crt-notes-optional-5"
-                                    value={this.props.criterionAnswers['content-elementary-crt-notes-optional-5']}
-                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-5', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-elementary-crt-notes-optional-5']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1039,8 +1039,8 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-elementary-crt-notes-optional-6"
                                     ref="content-elementary-crt-notes-optional-6"
-                                    value={this.props.criterionAnswers['content-elementary-crt-notes-optional-6']}
-                                    onChange={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-6', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-elementary-crt-notes-optional-6']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-elementary-crt-notes-optional-6', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

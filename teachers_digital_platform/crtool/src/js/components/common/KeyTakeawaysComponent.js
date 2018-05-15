@@ -23,8 +23,8 @@ export default class KeyTakeawaysComponent extends React.Component {
                 rows="6"
                 id="crt-key-takeaways"
                 ref="crt-key-takeaways"
-                value={this.props.criterionAnswers["crt-key-takeaways"]}
-                onChange={e=>this.props.criterionAnswerChanged("final", "crt-key-takeaways", e.target.value)} >
+                defaultValue={this.props.criterionAnswers["crt-key-takeaways"]}
+                onBlur={e=>this.props.criterionAnswerChanged("final", "crt-key-takeaways", e.target.value)} >
             </textarea>
         );
     }

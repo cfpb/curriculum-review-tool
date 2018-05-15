@@ -528,8 +528,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-1"
                                     ref="utility-crt-notes-optional-1"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-1']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-1', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-1']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1478,8 +1478,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-2"
                                     ref="utility-crt-notes-optional-2"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-2']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-2', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-2']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2122,8 +2122,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-3"
                                     ref="utility-crt-notes-optional-3"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-3']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-3']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2700,8 +2700,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-4"
                                     ref="utility-crt-notes-optional-4"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-4']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-4', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-4']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2984,8 +2984,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-5"
                                     ref="utility-crt-notes-optional-5"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-5']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-5', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-5']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

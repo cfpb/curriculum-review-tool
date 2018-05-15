@@ -250,8 +250,8 @@ export default class EfficacyCriterionPage extends React.Component {
                             rows="6"
                             id="efficacy-crt-notes-optional-2"
                             ref="efficacy-crt-notes-optional-2"
-                            value={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
-                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
+                            defaultValue={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
+                            onBlur={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -324,8 +324,8 @@ export default class EfficacyCriterionPage extends React.Component {
                             rows="6"
                             id="efficacy-crt-notes-optional-3"
                             ref="efficacy-crt-notes-optional-3"
-                            value={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
-                            onChange={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
+                            defaultValue={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
+                            onBlur={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
