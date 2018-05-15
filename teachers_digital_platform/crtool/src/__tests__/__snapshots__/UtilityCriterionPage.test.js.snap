@@ -917,10 +917,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -1881,10 +1881,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -3525,10 +3525,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-2"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -4664,10 +4664,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-3"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -5702,10 +5702,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-4"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -6182,10 +6182,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-5"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -7119,10 +7119,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -8763,10 +8763,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-2"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -9727,10 +9727,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -10704,10 +10704,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="utility-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
