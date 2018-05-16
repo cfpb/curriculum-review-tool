@@ -13,29 +13,7 @@ const Repository = {
      */
     resetApplicationData() {
         this.clearAllData();
-        this.saveCurrentPage(this, C.START_PAGE);
-        this.savePrintButtonPage(this, C.START_PAGE);
-        this.saveFinishAddingEfficacyStudies(this, false);
-
-        this.setDistinctiveStatus(this, C.CONTENT_PAGE, C.STATUS_IN_START);
-        this.setDistinctiveStatus(this, C.UTILITY_PAGE, C.STATUS_IN_START);
-        this.setDistinctiveStatus(this, C.QUALITY_PAGE, C.STATUS_IN_START);
-        this.setDistinctiveStatus(this, C.EFFICACY_PAGE, C.STATUS_IN_START);
-
-        this.setDistinctiveView(this, C.CONTENT_PAGE, false);
-        this.setDistinctiveView(this, C.UTILITY_PAGE, false);
-        this.setDistinctiveView(this, C.QUALITY_PAGE, false);
-        this.setDistinctiveView(this, C.EFFICACY_PAGE, false);
-
-        this.saveStudyAnsers(this, {});
-        this.saveCriterionScores(this, {});
-        this.saveCriterionAnswers(this, {});
-        this.setCriterionTitleLinkClicked(this, {});
-        this.saveCriterionEfficacyStudies(this, [0]);
-        this.savedimensionOverallScores(this, {});
-        this.saveDistinctiveCompletionDates(this, {});
-        this.saveFinalSummaryShowEntireReview(this, "");
-        this.saveCriterionGroupCompletionStatuses(this, {});
+        localStorage.setItem(C.START_PAGE, C.START_PAGE);
     },
 
     /*
@@ -117,6 +95,10 @@ const Repository = {
         return JSON.parse(localStorage.getItem("studyAnswers")) || {};
     },
 
+    getNumberFinalSummaryViews() {
+        return localStorage.getItem("numberFinalSummaryViews") || 0;
+    },
+
     getCriterionAnswers() {
         return JSON.parse(localStorage.getItem("criterionAnswers")) || {};
     },
@@ -173,6 +155,11 @@ const Repository = {
     saveStudyAnsers(component, alteredStudies) {
         localStorage.setItem("studyAnswers", JSON.stringify(alteredStudies));
         component.setState({studyAnswers: alteredStudies});
+    },
+
+    saveNumberFinalSummaryViews(component, count) {
+        localStorage.setItem("numberFinalSummaryViews", count);
+        component.setState({numberFinalSummaryViews: count});
     },
 
     /*

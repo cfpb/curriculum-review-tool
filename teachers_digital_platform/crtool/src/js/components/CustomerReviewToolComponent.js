@@ -47,6 +47,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             currentPrintButton: Repository.getPrintButtonPage(),
             dimensionOverallScores: Repository.getDimensionOverallScores(),
             criterionClickedTitles: Repository.getCriterionClickedTitles(),
+            numberFinalSummaryViews: Repository.getNumberFinalSummaryViews(),
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
             criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
@@ -173,6 +174,12 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setDistinctiveCompletionDateNow(C.FINAL_SUMMARY_PAGE);
         Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
 
+        let finalSummaryViews = Number(this.state.numberFinalSummaryViews) + 1;
+        Repository.saveNumberFinalSummaryViews(this, finalSummaryViews);
+
+        //Analytics number of times they clicked final summary button
+        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Final summary: clicked " + finalSummaryViews + " times"));
+
         //Analytics final summary button clicked
         Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Final summary"));
 
@@ -266,9 +273,11 @@ export default class CustomerReviewToolComponent extends React.Component {
     setCriterionTitleLinkClicked(criterionKey) {
         CriterionService.setCriterionTitleLinkClicked(this, criterionKey);
 
-        //Analytics criterion expandable clicked
-        let label = this.state.currentPage + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");
-        Analytics.sendEvent(Analytics.getDataLayerOptions("expandable opened", label));
+        if (criterionKey !== "efficacy-crt-question-2") {
+            //Analytics criterion expandable clicked
+            let label = this.state.currentPage + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");
+            Analytics.sendEvent(Analytics.getDataLayerOptions("expandable opened", label));
+        }
     }
 
     /* 
@@ -312,6 +321,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionAnswers:this.state.criterionAnswers,
             currentPrintButton:this.state.currentPrintButton,
             criterionClickedTitles:this.state.criterionClickedTitles,
+            numberFinalSummaryViews:this.state.numberFinalSummaryViews,
             criterionEfficacyStudies:this.state.criterionEfficacyStudies,
             criterionScores:this.state.criterionScores,
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
