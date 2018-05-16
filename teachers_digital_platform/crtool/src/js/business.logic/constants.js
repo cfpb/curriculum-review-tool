@@ -66,6 +66,9 @@ const C = {
     GRADE_MIDDLE: "Middle school",
     GRADE_HIGH: "High school",
 
+    LEARN_MORE_PDF_LINK: "https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf",
+    LEARN_MORE_LINK_TEXT: "Learn more about how the review was developed",
+
     ANALYTICS_DEBUG_ON: true,
 };
 

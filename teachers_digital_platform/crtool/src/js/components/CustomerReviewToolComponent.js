@@ -271,6 +271,14 @@ export default class CustomerReviewToolComponent extends React.Component {
         Analytics.sendEvent(Analytics.getDataLayerOptions("expandable opened", label));
     }
 
+    /* 
+     * Save Insturctions link clicked 
+     */
+    sendAnalyticsForLinkClick(link_text, link_url) {
+        //Analytics opened how to save your work
+        Analytics.sendEvent(Analytics.getDataLayerOptions(link_text, link_url, "Download"));
+    }
+
     setCriterionStatusToInStart(criterionKey) {
         CriterionService.setCriterionGroupCompletionStatuses(this, criterionKey, C.STATUS_IN_START);
     }
@@ -309,6 +317,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
             finalSummaryShowEntireReview:this.state.finalSummaryShowEntireReview,
 
+            sendAnalyticsForLinkClick:this.sendAnalyticsForLinkClick.bind(this),
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
             handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),
             resetPrintButtonState:this.resetPrintButtonState.bind(this),
@@ -343,7 +352,8 @@ export default class CustomerReviewToolComponent extends React.Component {
                     <div className="l-survey-top">
                         <SaveWorkModal
                             buttonText="Can I save my work?"
-                            hasIcon="true" />
+                            hasIcon="true" 
+                            {...applicationProps}/>
                     </div>
                     {
                         this.state.currentPage === C.START_PAGE &&

@@ -122,7 +122,7 @@ export default class EfficacyCriterionPage extends React.Component {
                     Efficacy
                 </h2>
                 <p className="lead-paragraph">
-                    The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
+                    The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
                 <h3 className="h2">Instructions</h3>
                 <ul>
@@ -142,7 +142,7 @@ export default class EfficacyCriterionPage extends React.Component {
                     <SaveWorkModal
                         buttonText="How can I save my work?"
                         hasIcon="false"
-                        hasUnderline="true" />
+                        hasUnderline="true" {...this.props} />
                 </p>
                 <div className="o-well
                                 u-mb30

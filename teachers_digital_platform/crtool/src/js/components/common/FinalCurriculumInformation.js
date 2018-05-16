@@ -34,7 +34,7 @@ export default class FinalCurriculumInformation extends React.Component {
                     {
                         this.props.finalSummaryShowEntireReview !== "true" &&
                         <React.Fragment>
-                            <SaveWorkInformation />
+                            <SaveWorkInformation {...this.props} />
                             <PrintOrSaveFinalSummary {...this.props} />
                         </React.Fragment>
                     }

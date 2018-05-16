@@ -54,12 +54,6 @@ export default class SaveWorkModal extends React.Component {
         this.setState({modalIsOpen: false});
     }
 
-    /* Save Insturctions link clicked */
-    saveInstructionsClicked() {
-        //Analytics opened how to save your work
-        Analytics.sendEvent(Analytics.getDataLayerOptions("", "", "Download"));
-    }
-
     render() {
         let currentIcon = "";
         let buttonClasses = "a-btn a-btn__link";
@@ -108,7 +102,7 @@ export default class SaveWorkModal extends React.Component {
                                     <h1 id="modal-save-work_title" className="h3">Saving your work</h1>
                                     <div id="modal-save-work_desc">
                                         <p>This tool uses cookies to <strong>temporarily</strong> save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.</p>
-                                        <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank" rel="noopener noreferrer" onClick={(e) => {this.saveInstructionsClicked();}}>save the summary as a PDF</a>.</p>
+                                        <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank" rel="noopener noreferrer" onClick={(e) => {this.props.sendAnalyticsForLinkClick("save the summary as a PDF", "https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/");}}>save the summary as a PDF</a>.</p>
                                         <p>You can only work on a single curriculum at a time</p>
                                     </div>
                                 </div>

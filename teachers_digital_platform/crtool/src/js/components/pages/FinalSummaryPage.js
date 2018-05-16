@@ -32,7 +32,7 @@ export default class FinalSummaryPage extends React.Component {
                 <div className="l-survey-top">
                     <SaveWorkModal
                         buttonText="Can I save my work?"
-                        hasIcon="true" />
+                        hasIcon="true" {...this.props} />
                 </div>
                 {
                     this.props.currentPage === C.START_PAGE &&

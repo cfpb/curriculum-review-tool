@@ -42,7 +42,7 @@ export default class QualityCriterionPage extends React.Component {
                     Quality
                 </h2>
                 <p className="lead-paragraph">
-                    The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
+                    The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
                 <h3 className="h2">Instructions</h3>
                 <ul>
@@ -53,7 +53,7 @@ export default class QualityCriterionPage extends React.Component {
                     <SaveWorkModal
                         buttonText="How can I save my work?"
                         hasIcon="false"
-                        hasUnderline="true" />
+                        hasUnderline="true" {...this.props} />
                 </p>
                 <div className="o-well
                                 u-mb30

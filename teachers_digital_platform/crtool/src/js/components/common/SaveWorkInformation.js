@@ -24,7 +24,7 @@ export default class SaveWorkInformation extends React.Component {
                             <SaveWorkModal
                                 buttonText="Learn more about how to save your work."
                                 hasIcon="false"
-                                hasUnderline="true" />
+                                hasUnderline="true" {...this.props} />
                         </p>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
                 <p>
                     Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
                 </p>
-                <SaveWorkInformation />
+                <SaveWorkInformation {...this.props} />
                 <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE, true); e.preventDefault();}}>
                     Print or save summary
                 </button>
