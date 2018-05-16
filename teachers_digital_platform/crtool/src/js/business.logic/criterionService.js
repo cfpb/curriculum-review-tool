@@ -1,4 +1,5 @@
 import C from "./constants";
+import Analytics from "./analytics";
 import Repository from "./repository";
 import UtilityService from "./utilityService";
 import CriterionCalculationService from "./summary/criterionCalculationService";
@@ -58,9 +59,45 @@ const CriterionService = {
     calculateDistinctiveCompletion(component, alteredCriterionObjects, changedDistinctive) {
         if (this.isDistinctiveComplete(component, alteredCriterionObjects, changedDistinctive)) {
             Repository.setDistinctiveStatus(component, changedDistinctive, C.STATUS_COMPLETE);
+
+            //Analytics dimension is done (all radio buttons in dimension have been clicked)
+            this.sendAnalyticsDimensionStatusHasChanged(component, changedDistinctive, C.STATUS_COMPLETE);
         }
         else {
             Repository.setDistinctiveStatus(component, changedDistinctive, C.STATUS_IN_PROGRESS);
+
+            //Analytics dimension is in progress 
+            this.sendAnalyticsDimensionStatusHasChanged(component, changedDistinctive, C.STATUS_IN_PROGRESS);
+        }
+    },
+
+    sendAnalyticsDimensionStatusHasChanged(component, changedDistinctive, newStatus) {
+        let actionText = "dimension in progress";
+        if (newStatus === C.STATUS_COMPLETE) { actionText = "dimension complete"; }
+
+        switch(changedDistinctive) {
+            case C.CONTENT_PAGE:
+                if (component.state.contentInProgress !== newStatus) {
+                    Analytics.sendEvent(Analytics.getDataLayerOptions(actionText, component.state.currentPage));
+                }
+                break;
+            case C.UTILITY_PAGE:
+                if (component.state.utilityInProgress !== newStatus) {
+                    Analytics.sendEvent(Analytics.getDataLayerOptions(actionText, component.state.currentPage));
+                }
+                break;
+            case C.QUALITY_PAGE:
+                if (component.state.qualityInProgress !== newStatus) {
+                    Analytics.sendEvent(Analytics.getDataLayerOptions(actionText, component.state.currentPage));
+                }
+                break;
+            case C.EFFICACY_PAGE:
+                if (component.state.efficacyInProgress !== newStatus) {
+                    Analytics.sendEvent(Analytics.getDataLayerOptions(actionText, component.state.currentPage));
+                }
+                break;
+            default:
+                break;
         }
     },
 
@@ -71,7 +108,7 @@ const CriterionService = {
     setCriterionGroupCompletionStatuses(component, criterion, status) {
         // Do not change if the current criterion group is already complete
         if (component.state.criterionCompletionStatuses[criterion] !== C.ICON_CHECK_ROUND) {
-            CriterionCalculationService.setCriterionGroupCompletionStatuses(component, criterion, status);
+            CriterionCalculationService.setCriterionGroupCompletionStatuses(component, criterion, status);          
         }
     },
 

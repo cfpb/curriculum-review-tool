@@ -25,7 +25,7 @@ export default class SummaryButton extends React.Component {
                     (this.props.currentPage === C.UTILITY_PAGE && this.props.utilityIsSummaryView === true) ||
                     (this.props.currentPage === C.EFFICACY_PAGE && this.props.efficacyIsSummaryView === true) ) {
            return (
-               <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(this.props.currentPage); e.preventDefault();}}>
+               <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(this.props.currentPage, true); e.preventDefault();}}>
                    Print or save summary
                </button>
            );

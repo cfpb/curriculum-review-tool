@@ -13,6 +13,7 @@ import PrintAndSummaryPages from "./pages/PrintAndSummaryPages";
 import DateTimeFormater from "../business.logic/dateTimeFormatter";
 import Repository from "../business.logic/repository";
 import CriterionService from "../business.logic/criterionService";
+import efficacyCalculationService from "../business.logic/summary/efficacyCalculationService";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -109,6 +110,9 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     distinctiveClicked(distinctiveName) {
         Repository.saveCurrentPage(this, distinctiveName);
+
+        //Analytics dimension button clicked
+        Analytics.sendEvent(Analytics.getDataLayerOptions("dimension selected", distinctiveName));
     }
 
     resetPrintButtonState(distinctiveName) {
@@ -120,21 +124,27 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveFinalSummaryShowEntireReview(this, newValue);
         this.setState({finalSummaryShowEntireReview: newValue});
 
+        //Analytics print finaly summary clicked
         if (newValue === "true" && showEverything === "true") {
-            this.printButtonClicked(C.FINAL_PRINT_EVERYTHING);
+            this.printButtonClicked(C.FINAL_PRINT_EVERYTHING, false);
             Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", C.FINAL_PRINT_ENTIRE_BUTTON_TEXT));
         } else if (newValue === "true"){
-            this.printButtonClicked(C.FINAL_PRINT_PAGE);
+            this.printButtonClicked(C.FINAL_PRINT_PAGE, false);
             Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", C.FINAL_PRINT_BUTTON_TEXT));
         } else {
             this.resetPrintButtonState(C.START_PAGE);
         }
     }
 
-    printButtonClicked(distinctiveName) {
+    printButtonClicked(distinctiveName, sendAnalytics) {
         //Set up navigation to load dimension print screen
         Repository.savePrintButtonPage(this, distinctiveName);
         Repository.saveCurrentPage(this, distinctiveName);
+
+        if (sendAnalytics !== undefined && sendAnalytics !== false) {
+            let label = distinctiveName + " Print or save summary";
+            Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", label));
+        } 
 
         if (distinctiveName !== C.START_PAGE) {
             this.openPrintPage();
@@ -158,6 +168,25 @@ export default class CustomerReviewToolComponent extends React.Component {
     handleFinalSummaryButtonClick() {
         this.setDistinctiveCompletionDateNow(C.FINAL_SUMMARY_PAGE);
         Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
+
+        //Analytics final summary button clicked
+        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Final summary"));
+
+        //Analytics overal score or not reviewed for each (content, utility, quality, efficacy)
+        Analytics.sendEvent(Analytics.getDataLayerOptions("overall score", 
+                            "content:" + this.getOveralScoreForDimension(C.CONTENT_PAGE) + ", " + 
+                            "utility:" + this.getOveralScoreForDimension(C.UTILITY_PAGE) + ", " + 
+                            "quality:" + this.getOveralScoreForDimension(C.QUALITY_PAGE) + ", " + 
+                            "efficacy:" + this.getOveralScoreForDimension(C.EFFICACY_PAGE)
+                            ));
+    }
+
+    getOveralScoreForDimension(dimensionName) {
+        if (this.state.dimensionOverallScores[dimensionName]) {
+            return this.state.dimensionOverallScores[dimensionName];
+        }
+
+        return "not reviewed";
     }
 
     handleSummaryButtonClick() {
@@ -165,6 +194,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.setDistinctiveDoneStatus(this, this.state.currentPage);
         Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
         this.setDimensionSummaryView(this.state.currentPage, true);
+
+        //Analytics click on "continue to {{dimension}} summary"
+        let label = "Continue to " + this.state.currentPage.toLowerCase() + " summary"
+        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", label));
     }
 
     initializeStudyAnsers(key, study) {
@@ -177,23 +210,49 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     initializeEfficacyStudies(efficacyStudyNumber) {
         CriterionService.initializeEfficacyStudies(this, efficacyStudyNumber);
+
+        //Analytics Review another study clicked
+        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Review another study"));
     }
 
     handleFinishAddingEfficacyStudies(value) {
         CriterionService.handleFinishAddingEfficacyStudies(this, value);
+        var numberOfStudies = this.state.criterionEfficacyStudies.length;
+
+        //Analytics number of studies
+        Analytics.sendEvent(Analytics.getDataLayerOptions("number of studies",numberOfStudies));
+
+        //Analytics individual study scores
+        Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", efficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
     }
 
     removeEfficacyStudy(efficacyStudyNumber) {
         CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
+        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Remove"));
     }
 
     studyAnswerChanged(studyKey, changedQuestion, newValue) {
         CriterionService.studyAnswerChanged(this, studyKey, changedQuestion, newValue);
+
+        //Analytics study criterion changed
+        this.sendAnalyticsForCriterionChanged(C.EFFICACY_PAGE, changedQuestion);
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
         CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
-        Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + " : " + changedQuestion));
+
+        //Analytics criterion changed
+        this.sendAnalyticsForCriterionChanged(distinctiveName, changedQuestion);
+    }
+
+    sendAnalyticsForCriterionChanged(distinctiveName, changedQuestion) {
+        let criterionNumber = changedQuestion.replace("-question", "").replace("-optional", "").replace("-crt", "");
+
+        if (changedQuestion.indexOf("notes") > 0) {
+            Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + " : " + criterionNumber));
+        } else {
+            Analytics.sendEvent(Analytics.getDataLayerOptions("criterion radio button", distinctiveName + " : " + criterionNumber));
+        }
     }
 
     setCriterionStatusToInProgress(criterionKey) {
@@ -202,6 +261,10 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     setCriterionTitleLinkClicked(criterionKey) {
         CriterionService.setCriterionTitleLinkClicked(this, criterionKey);
+
+        //Analytics criterion expandable clicked
+        let label = this.state.currentPage + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");
+        Analytics.sendEvent(Analytics.getDataLayerOptions("expandable opened", label));
     }
 
     setCriterionStatusToInStart(criterionKey) {
