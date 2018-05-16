@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 
 import C from "../../business.logic/constants";
+import Analytics from "../../business.logic/analytics";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class StartOverModal extends React.Component {
@@ -43,6 +44,9 @@ export default class StartOverModal extends React.Component {
     /* Modal specific open dialog */
     openStartOverModalDialog() {
         this.setState({modalIsOpen: true});
+
+        //Analytics opened start over with a new review
+        Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: Start over with a new review", "Starting over"));
     }
 
     /* Modal specific close dialog */

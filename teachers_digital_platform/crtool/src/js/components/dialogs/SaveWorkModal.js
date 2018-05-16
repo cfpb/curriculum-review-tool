@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 
 import C from "../../business.logic/constants";
+import Analytics from "../../business.logic/analytics";
 import SvgIcon from "../svgs/SvgIcon";
 
 export default class SaveWorkModal extends React.Component {
@@ -43,11 +44,20 @@ export default class SaveWorkModal extends React.Component {
     /* Modal specific open dialog */
     openSaveWorkModalDialog() {
         this.setState({modalIsOpen: true});
+
+        //Analytics opened how to save your work
+        Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: " + this.props.buttonText, "Saving your work"));
     }
 
     /* Modal specific close dialog */
     closeSaveWorkModalDialog() {
         this.setState({modalIsOpen: false});
+    }
+
+    /* Save Insturctions link clicked */
+    saveInstructionsClicked() {
+        //Analytics opened how to save your work
+        Analytics.sendEvent(Analytics.getDataLayerOptions("", "", "Download"));
     }
 
     render() {
@@ -98,7 +108,7 @@ export default class SaveWorkModal extends React.Component {
                                     <h1 id="modal-save-work_title" className="h3">Saving your work</h1>
                                     <div id="modal-save-work_desc">
                                         <p>This tool uses cookies to <strong>temporarily</strong> save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.</p>
-                                        <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank" rel="noopener noreferrer">save the summary as a PDF</a>.</p>
+                                        <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank" rel="noopener noreferrer" onClick={(e) => {this.saveInstructionsClicked();}}>save the summary as a PDF</a>.</p>
                                         <p>You can only work on a single curriculum at a time</p>
                                     </div>
                                 </div>

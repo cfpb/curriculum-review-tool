@@ -77,6 +77,10 @@ export default class CustomerReviewToolComponent extends React.Component {
      */
     clearLocalStorage() {
         Repository.resetApplicationData();
+
+        //Analytics clicked start over with new review
+        Analytics.sendEvent(Analytics.getDataLayerOptions("Starting over modal", "Yes"));
+
         this.navigateBackToStartPage();
     }
 

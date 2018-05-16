@@ -3,6 +3,7 @@
 
 {# HEAD items #}
 
+
 {% block title -%}
     Curriculum Review Tool | Consumer Financial Protection Bureau
 {%- endblock title %}
@@ -164,19 +165,17 @@
                             <h3 class="h4">Limitations around saving your work</h3>
                             <p>
                                 After you finish each dimension, we recommend you print the summary or save it as a PDF. Learn more about
-                                <button class="a-btn a-btn__link" onclick="openSaveWorkModalWindow();return false;">how to save your work.
-
-                                </button>
+                                <button class="a-btn a-btn__link push-analytics" onclick="openSaveWorkModalWindow();return false;">how to save your work</button>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="m-btn-group m-btn-group__wide">
-                <button id="tdp-crt-begin-review-btn" class="a-btn" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../tool">
+                <button id="tdp-crt-begin-review-btn" class="a-btn push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../tool">
                     Start review
                 </button>
-                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
+                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link push-analytics" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
             </div>
         </form>
     </div>
@@ -250,7 +249,7 @@
                 </div>
                 <div class="o-modal_footer">
                     <div class="m-btn-group m-btn-group__wide">
-                        <button class="a-btn" onclick="clearLocalStorage(); return false;">Yes</button>
+                        <button class="a-btn push-analytics" onclick="clearLocalStorage(); return false;">Yes</button>
                         <button class="a-btn a-btn__link" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
                     </div>
                 </div>
@@ -275,7 +274,7 @@
                     <h1 id="modal-save-work_title" class="h3">Saving your work</h1>
                     <div id="modal-save-work_desc">
                         <p>This tool uses cookies to <strong>temporarily</strong> save your work. To see answers you’ve already completed, you need to use the same computer and browser, and don’t clear your cookies.</p>
-                        <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" target="_blank" rel="noopener noreferrer">save the summary as a PDF</a>.</p>
+                        <p>To save a permanent copy of your work, please print the summary or save it as a PDF for every dimension as you complete it. You can also print or save a summary of the entire review. Learn how to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions/" class="push-download-analytics" target="_blank" rel="noopener noreferrer">save the summary as a PDF</a>.</p>
                         <p>You can only work on a single curriculum at a time</p>
                     </div>
                 </div>
@@ -286,6 +285,43 @@
         </div>
     </div>
 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- this is where we put our custom analytics -->
+    <!-- H5BP's Asynchronous Google Analytics snippet. -->
+    <script type="text/javascript">
+      var _gaq=[['_setAccount','UA-20466645-3'],['_setDomainName', '.consumerfinance.gov']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+      $(function(){
+            var prev_hash_val = location.hash;
+            _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
+            $(window).bind("hashchange", function (e) {
+                if(prev_hash_val != location.hash){
+                    prev_hash_val = location.hash;
+                    _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        // Tracks analytics for links on page clicked
+        $('button.push-analytics').click(function() {
+            var link_text = $(this).text();
+            category="curriculum review tool interaction";
+            action="link clicked: " + link_text;
+            label=link_text;
+            _gaq.push(['_trackEvent', category, action, label]);
+        });
+
+        // Tracks file downloads for the whole page
+        $('a[href$="zip"],a[href$="pdf"],a[href$="doc"],a[href$="docx"],a[href$="xls"],a[href$="xlsx"],a[href$="ppt"],a[href$="pptx"],a[href$="txt"],a[href$="csv"],a.push-download-analytics').click(function() {
+            var link_text = $(this).text();
+            var link_url = $(this).attr('href')
+            _gaq.push(['_trackEvent','Downloads', link_text, link_url]);
+        });
+    </script>
     <script>
         /**
          * The below code manages the enabling/disabling of the submit button
@@ -353,6 +389,22 @@
 
             var gradeRange = document.getElementById('tdp-crt_grade').value;
             localStorage.setItem('gradeRange', gradeRange);
+
+            recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange);
+        }
+
+        /*
+         * When user starts a new reveiw we need to send analytics for 
+         * Curriculum Title, Publication Date, & Grade Range
+         */
+        function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
+            var category="curriculum review tool interaction";
+            // Analytics curriculum title
+            _gaq.push(['_trackEvent', category, "curriculum title", curriculumTitle]);
+            // Analytics date of publication
+            _gaq.push(['_trackEvent', category, "date of publication", publicationDate]);
+            // Analytics grade range
+            _gaq.push(['_trackEvent', category, "grade range", gradeRange]);
         }
 
         /*
