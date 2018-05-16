@@ -56,7 +56,6 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     componentDidMount() {
-
         //If we are on a print page we need to configure after print for data analytics
         if (this.state.currentPrintButton === C.FINAL_PRINT_EVERYTHING) {
             this.afterPrint(C.FINAL_PRINT_ENTIRE_BUTTON_TEXT);
@@ -129,7 +128,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveFinalSummaryShowEntireReview(this, newValue);
         this.setState({finalSummaryShowEntireReview: newValue});
 
-        //Analytics print finaly summary clicked
+        //Analytics print final summary button clicked
         if (newValue === "true" && showEverything === "true") {
             this.printButtonClicked(C.FINAL_PRINT_EVERYTHING, false);
             Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", C.FINAL_PRINT_ENTIRE_BUTTON_TEXT));
@@ -146,7 +145,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.savePrintButtonPage(this, distinctiveName);
         Repository.saveCurrentPage(this, distinctiveName);
 
-        if (sendAnalytics !== undefined && sendAnalytics !== false) {
+        if (sendAnalytics !== undefined && sendAnalytics === true) {
             let label = distinctiveName + " Print or save summary";
             Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", label));
         } 
@@ -174,6 +173,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setDistinctiveCompletionDateNow(C.FINAL_SUMMARY_PAGE);
         Repository.saveCurrentPage(this, C.FINAL_SUMMARY_PAGE);
 
+        //Count number of times user clicked Final Summary
         let finalSummaryViews = Number(this.state.numberFinalSummaryViews) + 1;
         Repository.saveNumberFinalSummaryViews(this, finalSummaryViews);
 
@@ -239,6 +239,8 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     removeEfficacyStudy(efficacyStudyNumber) {
         CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
+
+        //Analytics use clicked remove efficacy study
         Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Remove"));
     }
 
@@ -259,6 +261,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     sendAnalyticsForCriterionChanged(distinctiveName, changedQuestion) {
         let criterionNumber = changedQuestion.replace("-question", "").replace("-optional", "").replace("-crt", "");
 
+        //Analytics we need to treat the notes fields different than the radio buttons
         if (changedQuestion.indexOf("notes") > 0) {
             Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + " : " + criterionNumber));
         } else {
@@ -273,6 +276,8 @@ export default class CustomerReviewToolComponent extends React.Component {
     setCriterionTitleLinkClicked(criterionKey) {
         CriterionService.setCriterionTitleLinkClicked(this, criterionKey);
 
+        // Since the efficacy page invokes this method for the efficacy-crt-question-2 
+        // for the user automatically if/when user completes studies and 2 are strong
         if (criterionKey !== "efficacy-crt-question-2") {
             //Analytics criterion expandable clicked
             let label = this.state.currentPage + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");
