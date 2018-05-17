@@ -47,12 +47,15 @@
 
     &_content {
       margin: 0 auto;
+      max-height: 90vh;
+      overflow-x: hidden;
+      overflow-y: auto;
 
       // This is not mobile-first to support a consistent appearance
       // across browsers that don’t support media-querries (IE8).
       max-width: 630px;
       .respond-to-max( @bp-xs-max, {
-          max-width: 270px;
+          max-width: none;
       } );
     }
 
