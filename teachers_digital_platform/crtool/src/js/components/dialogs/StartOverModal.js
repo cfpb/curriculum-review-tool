@@ -61,7 +61,13 @@ export default class StartOverModal extends React.Component {
                 className="o-modal_container"
                 contentLabel="CFPB Modal Dialog"
                 onRequestClose={this.closeStartOverModalDialog}
-                shouldCloseOnOverlayClick={true} >
+                shouldCloseOnOverlayClick={true}
+                style={{
+                    overlay: {
+                        backgroundColor: 'transparent',
+                        zIndex: '10'
+                    }
+                }}>
                 <div className="o-modal o-modal__visible"
                     id="modal-start-over"
                     aria-hidden="true"

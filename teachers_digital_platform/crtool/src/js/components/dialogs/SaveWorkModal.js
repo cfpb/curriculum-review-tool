@@ -77,7 +77,12 @@ export default class SaveWorkModal extends React.Component {
                     contentLabel="CFPB Modal Dialog"
                     onRequestClose={this.closeSaveWorkModalDialog}
                     shouldCloseOnOverlayClick={true}
-                >
+                    style={{
+                        overlay: {
+                            backgroundColor: 'transparent',
+                            zIndex: '10'
+                        }
+                    }}>
                     <div className="o-modal o-modal__visible"
                         id="modal-save-work"
                         aria-hidden="true"
