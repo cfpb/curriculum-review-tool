@@ -5,7 +5,7 @@ export default class PrintOrSaveFinalSummary extends React.Component {
         return (
             <div className="m-btn-group
                             m-btn-group__wide
-                            u-mb30">
+                            u-mb15">
                 <button className="a-btn a-btn__super" onClick={(e) => {this.props.setPrintFinalSummaryShowEntireReview("true", "false"); e.preventDefault();}}>
                     Print or save this page
                 </button>
