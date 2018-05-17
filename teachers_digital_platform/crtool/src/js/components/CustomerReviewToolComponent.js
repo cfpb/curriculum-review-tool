@@ -66,7 +66,7 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     afterPrint(printButtonText) {
         // Not positive the below method is 100% cross browser supported
-        window.onafterprint = function(evt) { 
+        window.onafterprint = function(evt) {
             Analytics.sendEvent(Analytics.getDataLayerOptions("print or save", printButtonText));
         };
     }
@@ -148,7 +148,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         if (sendAnalytics !== undefined && sendAnalytics === true) {
             let label = distinctiveName + " Print or save summary";
             Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", label));
-        } 
+        }
 
         if (distinctiveName !== C.START_PAGE) {
             this.openPrintPage();
@@ -184,10 +184,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Final summary"));
 
         //Analytics overal score or not reviewed for each (content, utility, quality, efficacy)
-        Analytics.sendEvent(Analytics.getDataLayerOptions("overall score", 
-                            "content:" + this.getOveralScoreForDimension(C.CONTENT_PAGE) + ", " + 
-                            "utility:" + this.getOveralScoreForDimension(C.UTILITY_PAGE) + ", " + 
-                            "quality:" + this.getOveralScoreForDimension(C.QUALITY_PAGE) + ", " + 
+        Analytics.sendEvent(Analytics.getDataLayerOptions("overall score",
+                            "content:" + this.getOveralScoreForDimension(C.CONTENT_PAGE) + ", " +
+                            "utility:" + this.getOveralScoreForDimension(C.UTILITY_PAGE) + ", " +
+                            "quality:" + this.getOveralScoreForDimension(C.QUALITY_PAGE) + ", " +
                             "efficacy:" + this.getOveralScoreForDimension(C.EFFICACY_PAGE)
                             ));
     }
@@ -276,7 +276,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     setCriterionTitleLinkClicked(criterionKey) {
         CriterionService.setCriterionTitleLinkClicked(this, criterionKey);
 
-        // Since the efficacy page invokes this method for the efficacy-crt-question-2 
+        // Since the efficacy page invokes this method for the efficacy-crt-question-2
         // for the user automatically if/when user completes studies and 2 are strong
         if (criterionKey !== "efficacy-crt-question-2") {
             //Analytics criterion expandable clicked
@@ -285,8 +285,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
-    /* 
-     * Save Insturctions link clicked 
+    /*
+     * Save Insturctions link clicked
      */
     sendAnalyticsForLinkClick(link_text, link_url) {
         //Analytics opened how to save your work
@@ -367,7 +367,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                     <div className="l-survey-top">
                         <SaveWorkModal
                             buttonText="Can I save my work?"
-                            hasIcon="true" 
+                            hasIcon="true"
                             {...applicationProps}/>
                     </div>
                     {

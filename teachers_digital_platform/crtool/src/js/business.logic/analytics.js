@@ -8,9 +8,9 @@ import C from "./constants";
 const Analytics = {
 
     tagManagerIsLoaded: false,
-  
+
     EVENT_CATEGORY: 'curriculum review tool interaction',
-  
+
     /**
      * Get data layer object.
      * @param {string} action Name of event.
@@ -29,7 +29,7 @@ const Analytics = {
         eventTimeout:  timeout || 500
       }
     },
-  
+
     /**
      * Initialize the Analytics module.
      */
@@ -52,7 +52,7 @@ const Analytics = {
         } )
       }
     },
-  
+
     /**
      * @name sendEvent
      * @kind function
@@ -64,7 +64,7 @@ const Analytics = {
     sendEvent: function( dataLayerOptions ) {
         if (C.ANALYTICS_DEBUG_ON) {
             console.log(dataLayerOptions);
-        } else {   
+        } else {
             var callback = dataLayerOptions.eventCallback;
             if ( Analytics.tagManagerIsLoaded ) {
                 window.dataLayer.push( dataLayerOptions );
@@ -73,12 +73,12 @@ const Analytics = {
             }
         }
     }
-  
+
     // sendEvents(array) for multiple events is here is required in future:
     // https://github.com/cfpb/college-costs/blob/master/src/disclosures/js/utils/Analytics.js#L77
-  
+
   }
-  
+
   Analytics.init()
-  
+
   export default Analytics

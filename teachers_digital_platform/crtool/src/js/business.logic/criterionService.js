@@ -66,7 +66,7 @@ const CriterionService = {
         else {
             Repository.setDistinctiveStatus(component, changedDistinctive, C.STATUS_IN_PROGRESS);
 
-            //Analytics dimension is in progress 
+            //Analytics dimension is in progress
             this.sendAnalyticsDimensionStatusHasChanged(component, changedDistinctive, C.STATUS_IN_PROGRESS);
         }
     },
@@ -108,7 +108,7 @@ const CriterionService = {
     setCriterionGroupCompletionStatuses(component, criterion, status) {
         // Do not change if the current criterion group is already complete
         if (component.state.criterionCompletionStatuses[criterion] !== C.ICON_CHECK_ROUND) {
-            CriterionCalculationService.setCriterionGroupCompletionStatuses(component, criterion, status);          
+            CriterionCalculationService.setCriterionGroupCompletionStatuses(component, criterion, status);
         }
     },
 
