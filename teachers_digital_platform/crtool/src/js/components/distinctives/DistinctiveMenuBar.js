@@ -80,11 +80,9 @@ export default class DistinctiveMenuBar extends React.Component {
                 <ul className="o-dimension-selection-bar">
                     {distinctiveProps.map((distinctiveProps, i) => <DistinctiveButton key={i} {...distinctiveProps}/>)}
                 </ul>
-                <FinalSummaryButton handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
-                    contentIsDone={this.props.contentIsDone}
-                    utilityIsDone={this.props.utilityIsDone}
-                    qualityIsDone={this.props.qualityIsDone}
-                    efficacyIsDone={this.props.efficacyIsDone} />
+                <FinalSummaryButton
+                    handleFinalSummaryButtonClick={this.handleFinalSummaryButtonClick.bind(this)}
+                    {...this.props} />
             </React.Fragment>
         );
     }
