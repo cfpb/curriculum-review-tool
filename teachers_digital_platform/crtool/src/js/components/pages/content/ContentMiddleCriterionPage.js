@@ -42,7 +42,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     Content
                 </h2>
                 <p className="lead-paragraph">
-                    This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
+                    This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
                 <h3 className="h2">Instructions</h3>
                 <ul>
@@ -55,7 +55,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     <SaveWorkModal
                         buttonText="How can I save my work?"
                         hasIcon="false"
-                        hasUnderline="true" />
+                        hasUnderline="true" {...this.props} />
                 </p>
                 <hr className="hr
                                 u-mb30
@@ -227,8 +227,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-middle-crt-notes-optional-1"
                                     ref="content-middle-crt-notes-optional-1"
-                                    value={this.props.criterionAnswers['content-middle-crt-notes-optional-1']}
-                                    onChange={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-1', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-1']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -621,8 +621,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-middle-crt-notes-optional-2"
                                     ref="content-middle-crt-notes-optional-2"
-                                    value={this.props.criterionAnswers['content-middle-crt-notes-optional-2']}
-                                    onChange={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-2', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-2']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -874,8 +874,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-middle-crt-notes-optional-3"
                                     ref="content-middle-crt-notes-optional-3"
-                                    value={this.props.criterionAnswers['content-middle-crt-notes-optional-3']}
-                                    onChange={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-3', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-3']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1217,8 +1217,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-middle-crt-notes-optional-4"
                                     ref="content-middle-crt-notes-optional-4"
-                                    value={this.props.criterionAnswers['content-middle-crt-notes-optional-4']}
-                                    onChange={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-4', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-4']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1443,8 +1443,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-middle-crt-notes-optional-5"
                                     ref="content-middle-crt-notes-optional-5"
-                                    value={this.props.criterionAnswers['content-middle-crt-notes-optional-5']}
-                                    onChange={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-5', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-5']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1567,8 +1567,8 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     rows="6"
                                     id="content-middle-crt-notes-optional-6"
                                     ref="content-middle-crt-notes-optional-6"
-                                    value={this.props.criterionAnswers['content-middle-crt-notes-optional-6']}
-                                    onChange={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-6', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-6']}
+                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-6', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

@@ -27,8 +27,8 @@ export default class QualitySummaryPage extends React.Component {
                 <p>
                     Then, review the overall score for the quality criteria and enter your thoughts about its strengths and weaknesses.
                 </p>
-                <SaveWorkInformation />
-                <button className="a-btn" onClick={(e) => {this.props.printButtonClicked(C.QUALITY_PAGE); e.preventDefault();}}>
+                <SaveWorkInformation {...this.props} />
+                <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.QUALITY_PAGE, true); e.preventDefault();}}>
                     Print or save summary
                 </button>
                 <DimensionInformation dimensionName={C.QUALITY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />

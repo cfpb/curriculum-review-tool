@@ -262,8 +262,8 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                 rows="6"
                                 id={this.props.dimensionKey + "assets-optional"}
                                 ref={this.props.dimensionKey + "assets-optional"}
-                                value={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
-                                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
+                                defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
+                                onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
                             </textarea>
                         }
                         {this.isEditMode() === false &&
@@ -290,8 +290,8 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                 rows="6"
                                 id={this.props.dimensionKey + "gaps-optional"}
                                 ref={this.props.dimensionKey + "gaps-optional"}
-                                value={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
-                                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
+                                defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
+                                onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
                             </textarea>
                         }
                         {this.isEditMode() === false &&
@@ -317,8 +317,8 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                 rows="6"
                                 id={this.props.dimensionKey + "overall-notes-optional"}
                                 ref={this.props.dimensionKey + "overall-notes-optional"}
-                                value={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
-                                onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
+                                defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
+                                onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
                             </textarea>
                         }
                         {this.isEditMode() === false &&
@@ -435,8 +435,8 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                     rows="6"
                                     id={this.props.dimensionKey + "assets-optional"}
                                     ref={this.props.dimensionKey + "assets-optional"}
-                                    value={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
-                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "assets-optional"]}
+                                    onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "assets-optional", e.target.value)} >
                                 </textarea>
                             }
                             {this.isEditMode() === false &&
@@ -463,8 +463,8 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                     rows="6"
                                     id={this.props.dimensionKey + "gaps-optional"}
                                     ref={this.props.dimensionKey + "gaps-optional"}
-                                    value={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
-                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"]}
+                                    onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "gaps-optional", e.target.value)} >
                                 </textarea>
                             }
                             {this.isEditMode() === false &&
@@ -490,8 +490,8 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                                     rows="6"
                                     id={this.props.dimensionKey + "overall-notes-optional"}
                                     ref={this.props.dimensionKey + "overall-notes-optional"}
-                                    value={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
-                                    onChange={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers[this.props.dimensionKey + "overall-notes-optional"]}
+                                    onBlur={e=>this.criterionAnswerChanged(this.props.dimensionKey + "overall-notes-optional", e.target.value)} >
                                 </textarea>
                             }
                             {this.isEditMode() === false &&

@@ -34,6 +34,7 @@ Array [
     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -81,6 +82,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -148,10 +150,10 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
+          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
-          onChange={[Function]}
+          onBlur={[Function]}
           type="text"
-          value={undefined}
         />
       </div>
     </div>
@@ -1202,10 +1204,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
+        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
     <div
@@ -1213,6 +1215,7 @@ Array [
     >
       <button
         className="a-btn a-btn__link a-btn__no-line"
+        data-gtm_ignore="true"
         onClick={[Function]}
       >
         Review another study
@@ -1278,6 +1281,7 @@ Array [
     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -1325,6 +1329,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -1405,10 +1410,10 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
+          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
-          onChange={[Function]}
+          onBlur={[Function]}
           type="text"
-          value={undefined}
         />
       </div>
     </div>
@@ -2459,10 +2464,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
+        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
     <div
@@ -2498,6 +2503,7 @@ Array [
     >
       <button
         className="a-btn a-btn__link a-btn__no-line"
+        data-gtm_ignore="true"
         onClick={[Function]}
       >
         Review another study
@@ -2766,10 +2772,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="efficacy-crt-notes-optional-2"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -2840,6 +2846,7 @@ Array [
     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -2887,6 +2894,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -2967,10 +2975,10 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
+          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
-          onChange={[Function]}
+          onBlur={[Function]}
           type="text"
-          value={undefined}
         />
       </div>
     </div>
@@ -4021,10 +4029,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
+        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
     <div
@@ -4060,6 +4068,7 @@ Array [
     >
       <button
         className="a-btn a-btn__link a-btn__no-line"
+        data-gtm_ignore="true"
         onClick={[Function]}
       >
         Review another study
@@ -4328,10 +4337,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="efficacy-crt-notes-optional-2"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -4634,10 +4643,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="efficacy-crt-notes-optional-3"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -4681,6 +4690,7 @@ Array [
     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -4728,6 +4738,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -4808,10 +4819,10 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
+          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
-          onChange={[Function]}
+          onBlur={[Function]}
           type="text"
-          value={undefined}
         />
       </div>
     </div>
@@ -5862,10 +5873,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
+        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
     <div
@@ -5873,6 +5884,7 @@ Array [
     >
       <button
         className="a-btn a-btn__link a-btn__no-line"
+        data-gtm_ignore="true"
         onClick={[Function]}
       >
         Review another study

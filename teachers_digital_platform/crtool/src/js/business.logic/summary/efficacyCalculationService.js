@@ -257,6 +257,27 @@ const EfficacyCalculationService = {
         return criterionScore;
     },
 
+    getAllEfficacyStudyScoresForAnalytics(component) {
+        let studyScores = "";
+        let count = 0;
+        for (var score in component.state.criterionScores) {
+            if (score.indexOf("efficacy-crt-1") >= 0)
+            {
+                if (count > 0) { studyScores += ", "; }
+
+                let currentScore = "Not reviewed";
+                if (component.state.criterionScores[score]) {
+                    currentScore = component.state.criterionScores[score].all_essential_yes ? "Strong" : "Not Strong";
+                }
+
+                studyScores += "Study " + count + " = " + currentScore;
+                count += 1;
+            }
+        }
+
+        return studyScores;
+    },
+
 }
 
 export default EfficacyCalculationService;

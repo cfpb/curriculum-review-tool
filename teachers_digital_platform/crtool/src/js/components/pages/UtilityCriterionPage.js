@@ -42,7 +42,7 @@ export default class UtilityCriterionPage extends React.Component {
                     Utility
                 </h2>
                 <p className="lead-paragraph">
-                    The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
+                    The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
                 <h3 className="h2">Instructions</h3>
                 <ul>
@@ -53,7 +53,7 @@ export default class UtilityCriterionPage extends React.Component {
                     <SaveWorkModal
                         buttonText="How can I save my work?"
                         hasIcon="false"
-                        hasUnderline="true" />
+                        hasUnderline="true" {...this.props} />
                 </p>
                 <div className="o-well
                                 u-mb30
@@ -528,8 +528,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-1"
                                     ref="utility-crt-notes-optional-1"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-1']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-1', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-1']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1478,8 +1478,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-2"
                                     ref="utility-crt-notes-optional-2"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-2']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-2', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-2']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2122,8 +2122,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-3"
                                     ref="utility-crt-notes-optional-3"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-3']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-3']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2700,8 +2700,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-4"
                                     ref="utility-crt-notes-optional-4"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-4']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-4', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-4']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -2984,8 +2984,8 @@ export default class UtilityCriterionPage extends React.Component {
                                     rows="6"
                                     id="utility-crt-notes-optional-5"
                                     ref="utility-crt-notes-optional-5"
-                                    value={this.props.criterionAnswers['utility-crt-notes-optional-5']}
-                                    onChange={e=>this.criterionAnswerChanged('utility-crt-notes-optional-5', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['utility-crt-notes-optional-5']}
+                                    onBlur={e=>this.criterionAnswerChanged('utility-crt-notes-optional-5', e.target.value)} >
                         </textarea>
                     </div>
                 </div>

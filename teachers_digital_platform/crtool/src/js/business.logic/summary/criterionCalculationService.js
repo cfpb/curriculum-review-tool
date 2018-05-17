@@ -1,4 +1,5 @@
 import C from "../constants";
+import Analytics from "../analytics";
 import Repository from "../repository";
 import UtilityService from "../utilityService";
 import QualityCalculationService from "../summary/qualityCalculationService";
@@ -53,6 +54,12 @@ const CriterionCalculationService = {
             // down and now have to add logic later
             this.setCriterionGroupCompletionStatuses(component, criterionKey, C.ICON_CHECK_ROUND);
             this.setDimensionOverallScore(component, criterionKey);
+
+            //Analytics all radio buttons in a criterion have been clicked
+            if (component.state.criterionCompletionStatuses[criterionKey] !== C.ICON_CHECK_ROUND) {
+                let label = changedDistinctive + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");;
+                Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", label));  
+            }
         }
         else {
             this.setCriterionGroupCompletionStatuses(component, criterionKey, C.STATUS_IN_PROGRESS);

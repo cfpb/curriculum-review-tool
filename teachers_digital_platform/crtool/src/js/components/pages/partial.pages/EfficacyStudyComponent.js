@@ -11,6 +11,7 @@ export default class EfficacyStudyComponent extends React.Component {
             return (
                 <div className="l-survey-top">
                     <button className="a-btn a-btn__link a-btn__no-line"
+                        data-gtm_ignore="true"
                         onClick={() => this.removeEfficacyStudy(this.props.studyCount)} >
                         Remove
                         <SvgIcon
@@ -78,8 +79,8 @@ export default class EfficacyStudyComponent extends React.Component {
                         <input className="a-text-input a-text-input__full" type="text"
                             id={this.generateStudyRefId("", "study")}
                             ref={this.generateStudyRefId("", "study")}
-                            value={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("", "study")]}
-                            onChange={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("", "study"), e.target.value)} />
+                            defaultValue={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("", "study")]}
+                            onBlur={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("", "study"), e.target.value)} />
                     </div>
                 </div>
                 <ol className="m-list__unstyled">
@@ -286,8 +287,8 @@ export default class EfficacyStudyComponent extends React.Component {
                                 rows="6"
                                 id={this.generateStudyRefId("1", "_notes_optional")}
                                 ref={this.generateStudyRefId("1", "_notes_optional")}
-                                value={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("1", "_notes_optional")]}
-                                onChange={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("1", "_notes_optional"), e.target.value)} >
+                                defaultValue={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("1", "_notes_optional")]}
+                                onBlur={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("1", "_notes_optional"), e.target.value)} >
                     </textarea>
                 </div>
                 <EfficacyStudyScoreComponent

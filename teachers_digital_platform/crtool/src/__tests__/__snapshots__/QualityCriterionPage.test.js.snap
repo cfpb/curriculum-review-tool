@@ -31,6 +31,7 @@ Array [
     The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -57,6 +58,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -173,11 +175,11 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
+                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
-                    onChange={[Function]}
+                    onBlur={[Function]}
                     placeholder="$"
                     type="text"
-                    value={undefined}
                   />
                 </div>
               </div>
@@ -938,10 +940,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -1016,6 +1018,7 @@ Array [
     The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -1042,6 +1045,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -1158,11 +1162,11 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
+                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
-                    onChange={[Function]}
+                    onBlur={[Function]}
                     placeholder="$"
                     type="text"
-                    value={undefined}
                   />
                 </div>
               </div>
@@ -1923,10 +1927,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -2319,10 +2323,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-2"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -2899,10 +2903,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-3"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -3545,10 +3549,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-4"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -3596,6 +3600,7 @@ Array [
     The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -3622,6 +3627,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -3738,11 +3744,11 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
+                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
-                    onChange={[Function]}
+                    onBlur={[Function]}
                     placeholder="$"
                     type="text"
-                    value={undefined}
                   />
                 </div>
               </div>
@@ -4503,10 +4509,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -4899,10 +4905,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-2"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -4977,6 +4983,7 @@ Array [
     The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -5003,6 +5010,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -5119,11 +5127,11 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
+                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
-                    onChange={[Function]}
+                    onBlur={[Function]}
                     placeholder="$"
                     type="text"
-                    value={undefined}
                   />
                 </div>
               </div>
@@ -5884,10 +5892,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,
@@ -5962,6 +5970,7 @@ Array [
     The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. 
     <a
       href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -5988,6 +5997,7 @@ Array [
   <p>
     <button
       className="a-btn a-btn__link"
+      data-gtm_ignore="true"
       onClick={[Function]}
     >
       How can I save my work?
@@ -6117,11 +6127,11 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
+                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
-                    onChange={[Function]}
+                    onBlur={[Function]}
                     placeholder="$"
                     type="text"
-                    value={undefined}
                   />
                 </div>
               </div>
@@ -6882,10 +6892,10 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
+        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
-        onChange={[Function]}
+        onBlur={[Function]}
         rows="6"
-        value={undefined}
       />
     </div>
   </div>,

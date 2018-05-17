@@ -42,7 +42,7 @@ export default class QualityCriterionPage extends React.Component {
                     Quality
                 </h2>
                 <p className="lead-paragraph">
-                    The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf">Learn more about how the review was developed</a>.
+                    The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
                 <h3 className="h2">Instructions</h3>
                 <ul>
@@ -53,7 +53,7 @@ export default class QualityCriterionPage extends React.Component {
                     <SaveWorkModal
                         buttonText="How can I save my work?"
                         hasIcon="false"
-                        hasUnderline="true" />
+                        hasUnderline="true" {...this.props} />
                 </p>
                 <div className="o-well
                                 u-mb30
@@ -102,8 +102,8 @@ export default class QualityCriterionPage extends React.Component {
                                                 <input className="a-text-input a-text-input__full" type="text"
                                                     id="quality-crt-text-optional-1.1.1"
                                                     ref="quality-crt-text-optional-1.1.1"
-                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
-                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)}
+                                                    defaultValue={this.props.criterionAnswers['quality-crt-text-optional-1.1.1']}
+                                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.1', e.target.value)}
                                                     placeholder="$" />
                                             </div>
                                         </div>
@@ -544,8 +544,8 @@ export default class QualityCriterionPage extends React.Component {
                                     rows="6"
                                     id="quality-crt-notes-optional-1"
                                     ref="quality-crt-notes-optional-1"
-                                    value={this.props.criterionAnswers['quality-crt-notes-optional-1']}
-                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-1', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['quality-crt-notes-optional-1']}
+                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-notes-optional-1', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -770,8 +770,8 @@ export default class QualityCriterionPage extends React.Component {
                                     rows="6"
                                     id="quality-crt-notes-optional-2"
                                     ref="quality-crt-notes-optional-2"
-                                    value={this.props.criterionAnswers['quality-crt-notes-optional-2']}
-                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-2', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['quality-crt-notes-optional-2']}
+                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-notes-optional-2', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1114,8 +1114,8 @@ export default class QualityCriterionPage extends React.Component {
                                     rows="6"
                                     id="quality-crt-notes-optional-3"
                                     ref="quality-crt-notes-optional-3"
-                                    value={this.props.criterionAnswers['quality-crt-notes-optional-3']}
-                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-3', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['quality-crt-notes-optional-3']}
+                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-notes-optional-3', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
@@ -1484,8 +1484,8 @@ export default class QualityCriterionPage extends React.Component {
                                     rows="6"
                                     id="quality-crt-notes-optional-4"
                                     ref="quality-crt-notes-optional-4"
-                                    value={this.props.criterionAnswers['quality-crt-notes-optional-4']}
-                                    onChange={e=>this.criterionAnswerChanged('quality-crt-notes-optional-4', e.target.value)} >
+                                    defaultValue={this.props.criterionAnswers['quality-crt-notes-optional-4']}
+                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-notes-optional-4', e.target.value)} >
                         </textarea>
                     </div>
                 </div>
