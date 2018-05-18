@@ -1,88 +1,12 @@
+//
+// Headings
+// Remove once https://github.com/cfpb/capital-framework/issues/783 is fixed and deployed.
+//
 
-.heading-1( @fs: @size-i ) {
-    @font-size: @fs;
-
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    font-weight: normal;
-    letter-spacing: initial;
-    line-height: 1.25;
-    text-shadow: none;
-    text-transform: none;
-}
-
-.heading-2( @fs: @size-ii ) {
-    @font-size: @fs;
-
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    font-weight: normal;
-    letter-spacing: initial;
-    line-height: 1.25;
-    text-shadow: none;
-    text-transform: none;
-}
-
-.heading-3( @fs: @size-iii )  {
-    @font-size: @fs;
-
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    font-weight: normal;
-    letter-spacing: initial;
-    line-height: 1.25;
-    text-shadow: none;
-    text-transform: none;
-}
-
-.heading-4( @fs: @size-iv )  {
-    @font-size: @fs;
-
-    margin-bottom: unit( 15px / @font-size, em );
-    font-size: unit( @font-size / @base-font-size-px, em );
-    font-weight: 500;
-    letter-spacing: initial;
-    line-height: 1.25;
-    text-shadow: none;
-    text-transform: none;
-}
-
-h1,
-.h1 {
-    .heading-1();
-
-    .respond-to-max( @bp-xs-max, {
-        .heading-2();
-    } );
-}
-
-h2,
-.h2 {
-    .heading-2();
-
-    .respond-to-max( @bp-xs-max, {
-        .heading-3();
-    } );
-}
-
-h3,
-.h3 {
-    .heading-3();
-
-    .respond-to-max( @bp-xs-max, {
-        .heading-4();
-    } );
-}
-
-h4,
+.h1,
+.h2,
+.h3,
 .h4 {
-    .heading-4();
-
-    .respond-to-max( @bp-xs-max, {
-        @h4-font-size-on-xs: @base-font-size-px;
-
-        margin-bottom: unit( 10px / @h4-font-size-on-xs, em );
-        font-size: unit( @h4-font-size-on-xs / @base-font-size-px, em );
-        line-height: unit( 18px / @h4-font-size-on-xs );
-    } );
+    text-shadow: none;
+    text-transform: none;
 }
