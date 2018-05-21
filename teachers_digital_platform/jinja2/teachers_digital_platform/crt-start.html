@@ -312,15 +312,28 @@
             category="curriculum review tool interaction";
             action="link clicked: " + link_text;
             label=link_text;
-            _gaq.push(['_trackEvent', category, action, label]);
+            sendAnalytics(action, link_text, category);
+            // _gaq.push(['_trackEvent', category, action, label]);
         });
 
         // Tracks file downloads for the whole page
         $('a[href$="zip"],a[href$="pdf"],a[href$="doc"],a[href$="docx"],a[href$="xls"],a[href$="xlsx"],a[href$="ppt"],a[href$="pptx"],a[href$="txt"],a[href$="csv"],a.push-download-analytics').click(function() {
             var link_text = $(this).text();
-            var link_url = $(this).attr('href')
-            _gaq.push(['_trackEvent','Downloads', link_text, link_url]);
+            var link_url = $(this).attr('href');
+            sendAnalytics(link_text, link_url, "Downloads");
+            // _gaq.push(['_trackEvent','Downloads', link_text, link_url]);
         });
+
+        function sendAnalytics(action, label, category) {
+            var data = {
+                event:         category || "curriculum review tool interaction",
+                action:        action,
+                label:         label || ''
+            }
+
+            // console.log(data);
+            _gaq.push(['_trackEvent', event, action, label]);
+        }
     </script>
     <script>
         /**
@@ -400,11 +413,16 @@
         function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
             var category="curriculum review tool interaction";
             // Analytics curriculum title
-            _gaq.push(['_trackEvent', category, "curriculum title", curriculumTitle]);
+            sendAnalytics("curriculum title", curriculumTitle, category);
+            // _gaq.push(['_trackEvent', category, "curriculum title", curriculumTitle]);
+
             // Analytics date of publication
-            _gaq.push(['_trackEvent', category, "date of publication", publicationDate]);
+            sendAnalytics("date of publication", publicationDate, category);
+            // _gaq.push(['_trackEvent', category, "date of publication", publicationDate]);
+            
             // Analytics grade range
-            _gaq.push(['_trackEvent', category, "grade range", gradeRange]);
+            sendAnalytics("grade range", gradeRange, category);
+            // _gaq.push(['_trackEvent', category, "grade range", gradeRange]);
         }
 
         /*
