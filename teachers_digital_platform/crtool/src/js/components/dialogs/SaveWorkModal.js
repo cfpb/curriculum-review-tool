@@ -50,8 +50,13 @@ export default class SaveWorkModal extends React.Component {
     }
 
     /* Modal specific close dialog */
-    closeSaveWorkModalDialog() {
+    closeSaveWorkModalDialog(linkText) {
         this.setState({modalIsOpen: false});
+
+        //Analytics opened start over with a new review
+        if (linkText !== undefined) {
+            Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: " + linkText, "Starting over"));
+        }
     }
 
     render() {
@@ -97,7 +102,7 @@ export default class SaveWorkModal extends React.Component {
                         <div className="o-modal_container">
                             <form className="o-modal_content" ref={this.setWrapperRef}>
                                 <div className="o-modal_body">
-                                    <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>
+                                    <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeSaveWorkModalDialog("Close"); e.preventDefault();}}>
                                         Close
                                         <SvgIcon
                                             icon="x-round"
@@ -112,7 +117,7 @@ export default class SaveWorkModal extends React.Component {
                                     </div>
                                 </div>
                                 <div className="o-modal_footer">
-                                    <button className="a-btn" onClick={(e) => {this.closeSaveWorkModalDialog(); e.preventDefault();}}>Close</button>
+                                    <button className="a-btn" onClick={(e) => {this.closeSaveWorkModalDialog("Close"); e.preventDefault();}}>Close</button>
                                 </div>
                             </form>
                         </div>

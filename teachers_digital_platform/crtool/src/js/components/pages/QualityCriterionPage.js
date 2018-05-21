@@ -209,8 +209,8 @@ export default class QualityCriterionPage extends React.Component {
                                                 <input className="a-text-input a-text-input__full" type="text"
                                                     id="quality-crt-text-optional-1.1.3"
                                                     ref="quality-crt-text-optional-1.1.3"
-                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
-                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.3', e.target.value)} />
+                                                    defaultValue={this.props.criterionAnswers['quality-crt-text-optional-1.1.3']}
+                                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.1.3', e.target.value)} />
                                             </div>
                                         </div>
                                         <div className="o-survey_answer">
@@ -390,8 +390,8 @@ export default class QualityCriterionPage extends React.Component {
                                                 <input className="a-text-input a-text-input__full" type="text"
                                                     id="quality-crt-text-optional-1.3.1"
                                                     ref="quality-crt-text-optional-1.3.1"
-                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
-                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.1', e.target.value)} />
+                                                    defaultValue={this.props.criterionAnswers['quality-crt-text-optional-1.3.1']}
+                                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.1', e.target.value)} />
                                             </div>
                                         </div>
                                         <div className="o-survey_answer">
@@ -441,8 +441,8 @@ export default class QualityCriterionPage extends React.Component {
                                                 <input className="a-text-input a-text-input__full" type="text"
                                                     id="quality-crt-text-optional-1.3.2"
                                                     ref="quality-crt-text-optional-1.3.2"
-                                                    value={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
-                                                    onChange={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.2', e.target.value)} />
+                                                    defaultValue={this.props.criterionAnswers['quality-crt-text-optional-1.3.2']}
+                                                    onBlur={e=>this.criterionAnswerChanged('quality-crt-text-optional-1.3.2', e.target.value)} />
                                             </div>
                                         </div>
                                         <div className="o-survey_answer">

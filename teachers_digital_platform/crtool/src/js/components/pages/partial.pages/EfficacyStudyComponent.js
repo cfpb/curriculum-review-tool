@@ -39,7 +39,9 @@ export default class EfficacyStudyComponent extends React.Component {
     }
 
     criterionStudyAnswerChanged(key, checkedValue) {
-        this.props.studyAnswerChanged(this.props.studyCount, key, checkedValue);
+        if (this.props.studyAnswers[this.props.studyCount][key] !== checkedValue) {
+            this.props.studyAnswerChanged(this.props.studyCount, key, checkedValue);
+        }
     }
 
     initializeAnswerObjects() {

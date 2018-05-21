@@ -50,8 +50,13 @@ export default class StartOverModal extends React.Component {
     }
 
     /* Modal specific close dialog */
-    closeStartOverModalDialog() {
+    closeStartOverModalDialog(linkText) {
         this.setState({modalIsOpen: false});
+
+        //Analytics opened start over with a new review
+        if (linkText !== undefined) {
+            Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: " + linkText, "Starting over"));
+        }
     }
 
     render() {
@@ -82,7 +87,7 @@ export default class StartOverModal extends React.Component {
                     <div className="o-modal_container">
                         <form className="o-modal_content" ref={this.setWrapperRef} action={C.START_PAGE_RELATIVE_URL} >
                             <div className="o-modal_body">
-                                <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog(); e.preventDefault();}}>
+                                <button className="o-modal_close a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog("Close"); e.preventDefault();}}>
                                     Close
                                     <SvgIcon
                                         icon="x-round"
@@ -97,7 +102,7 @@ export default class StartOverModal extends React.Component {
                             <div className="o-modal_footer">
                                 <div className="m-btn-group m-btn-group__wide">
                                     <button className="a-btn" onClick={(e) => {this.props.clearLocalStorage();}} formAction={C.START_PAGE_RELATIVE_URL} >Yes</button>
-                                    <button className="a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog(); e.preventDefault();}}>No, return to current review</button>
+                                    <button className="a-btn a-btn__link" onClick={(e) => {this.closeStartOverModalDialog("No, return to current review"); e.preventDefault();}}>No, return to current review</button>
                                 </div>
                             </div>
                         </form>

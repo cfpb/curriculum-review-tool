@@ -110,6 +110,11 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     setDimensionSummaryView(dimensionName, isSummaryView) {
         Repository.setDistinctiveView(this, dimensionName, isSummaryView);
+
+        //Analytics user clicked View or edit responses
+        if (isSummaryView === false) {
+            Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "View or edit responses"));
+        }
     }
 
     distinctiveClicked(distinctiveName) {
@@ -146,7 +151,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         Repository.saveCurrentPage(this, distinctiveName);
 
         if (sendAnalytics !== undefined && sendAnalytics === true) {
-            let label = distinctiveName + " Print or save summary";
+            let label = distinctiveName + ": Print or save summary";
             Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", label));
         }
 
@@ -179,9 +184,6 @@ export default class CustomerReviewToolComponent extends React.Component {
 
         //Analytics number of times they clicked final summary button
         Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Final summary: clicked " + finalSummaryViews + " times"));
-
-        //Analytics final summary button clicked
-        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Final summary"));
 
         //Analytics overal score or not reviewed for each (content, utility, quality, efficacy)
         Analytics.sendEvent(Analytics.getDataLayerOptions("overall score",
@@ -230,8 +232,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.handleFinishAddingEfficacyStudies(this, value);
         var numberOfStudies = this.state.criterionEfficacyStudies.length;
 
-        //Analytics number of studies
-        Analytics.sendEvent(Analytics.getDataLayerOptions("number of studies",numberOfStudies));
+        //Analytics I'm done reviewing studies
+        Analytics.sendEvent(Analytics.getDataLayerOptions("I'm done reviewing studies", "Number of studies: " + numberOfStudies));
 
         //Analytics individual study scores
         Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", efficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
@@ -245,27 +247,34 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     studyAnswerChanged(studyKey, changedQuestion, newValue) {
-        CriterionService.studyAnswerChanged(this, studyKey, changedQuestion, newValue);
-
         //Analytics study criterion changed
-        this.sendAnalyticsForCriterionChanged(C.EFFICACY_PAGE, changedQuestion);
+        if (newValue !== this.state.studyAnswers[changedQuestion]) {
+            this.sendAnalyticsForCriterionChanged(C.EFFICACY_PAGE, changedQuestion);
+        }
+
+        CriterionService.studyAnswerChanged(this, studyKey, changedQuestion, newValue);
     }
 
     criterionAnswerChanged(distinctiveName, changedQuestion, newValue) {
-        CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
-
         //Analytics criterion changed
-        this.sendAnalyticsForCriterionChanged(distinctiveName, changedQuestion);
+        if (newValue !== this.state.criterionAnswers[changedQuestion]) {
+            this.sendAnalyticsForCriterionChanged(distinctiveName, changedQuestion);
+        }
+
+        CriterionService.criterionAnswerChanged(this, distinctiveName, changedQuestion, newValue);
     }
 
     sendAnalyticsForCriterionChanged(distinctiveName, changedQuestion) {
-        let criterionNumber = changedQuestion.replace("-question", "").replace("-optional", "").replace("-crt", "");
+        let distinctiveNameLower = distinctiveName.toLowerCase();
+        let criterionNumber = changedQuestion.replace(distinctiveNameLower + "-", "").replace("-question", "").replace("-optional", "").replace("-crt", "").replace("crt-", "");
 
         //Analytics we need to treat the notes fields different than the radio buttons
-        if (changedQuestion.indexOf("notes") > 0) {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + " : " + criterionNumber));
+        if (changedQuestion.indexOf("notes") > 0 || 
+            changedQuestion.indexOf("text") > 0 ||
+            changedQuestion.indexOf("study") > 0) {
+            Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + ": " + criterionNumber));
         } else {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("criterion radio button", distinctiveName + " : " + criterionNumber));
+            Analytics.sendEvent(Analytics.getDataLayerOptions("criterion radio button", distinctiveName + ": " + criterionNumber));
         }
     }
 
@@ -280,7 +289,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         // for the user automatically if/when user completes studies and 2 are strong
         if (criterionKey !== "efficacy-crt-question-2") {
             //Analytics criterion expandable clicked
-            let label = this.state.currentPage + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");
+            let label = this.state.currentPage + ": " + criterionKey.replace(this.state.currentPage.toLowerCase() + "-", "").replace("-question", "").replace("-optional", "").replace("-crt", "").replace("crt-", "");
             Analytics.sendEvent(Analytics.getDataLayerOptions("expandable opened", label));
         }
     }
