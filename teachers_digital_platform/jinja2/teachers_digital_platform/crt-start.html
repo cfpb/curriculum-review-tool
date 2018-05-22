@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="{{ static('tdp/css/tdp.css') }}">
 {%- endblock css %}
 
-
 {# BODY items #}
 
 {% block header %}
@@ -239,7 +238,7 @@
         <div class="o-modal_container">
             <form class="o-modal_content">
                 <div class="o-modal_body">
-                    <button class="o-modal_close a-btn a-btn__link" onclick="closeNewReviewModalWindow();return false;">
+                    <button class="o-modal_close a-btn a-btn__link push-analytics" onclick="closeNewReviewModalWindow();return false;">
                         Close<span class="a-icon a-icon__large a-icon__space-before"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"></path></svg></span>
                     </button>
                     <h1 id="modal-start-over_title" class="h3">Starting over</h1>
@@ -250,7 +249,7 @@
                 <div class="o-modal_footer">
                     <div class="m-btn-group m-btn-group__wide">
                         <button class="a-btn push-analytics" onclick="clearLocalStorage(); return false;">Yes</button>
-                        <button class="a-btn a-btn__link" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
+                        <button class="a-btn a-btn__link push-analytics" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
                     </div>
                 </div>
             </form>
@@ -268,7 +267,7 @@
         <div class="o-modal_container">
             <form class="o-modal_content">
                 <div class="o-modal_body">
-                    <button class="o-modal_close a-btn a-btn__link"  onclick="closeSaveWorkModalWindow(); return false;">
+                    <button class="o-modal_close a-btn a-btn__link push-analytics"  onclick="closeSaveWorkModalWindow(); return false;">
                         Close<span class="a-icon a-icon__large a-icon__space-before"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"></path></svg></span>
                     </button>
                     <h1 id="modal-save-work_title" class="h3">Saving your work</h1>
@@ -279,32 +278,13 @@
                     </div>
                 </div>
                 <div class="o-modal_footer">
-                    <button class="a-btn" onclick="closeSaveWorkModalWindow(); return false;">Close</button>
+                    <button class="a-btn push-analytics" onclick="closeSaveWorkModalWindow(); return false;">Close</button>
                 </div>
             </form>
         </div>
     </div>
 
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- this is where we put our custom analytics -->
-    <!-- H5BP's Asynchronous Google Analytics snippet. -->
-    <script type="text/javascript">
-      var _gaq=[['_setAccount','UA-20466645-3'],['_setDomainName', '.consumerfinance.gov']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-      $(function(){
-            var prev_hash_val = location.hash;
-            _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
-            $(window).bind("hashchange", function (e) {
-                if(prev_hash_val != location.hash){
-                    prev_hash_val = location.hash;
-                    _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
-                }
-            });
-        });
-    </script>
     <script type="text/javascript">
         // Tracks analytics for links on page clicked
         $('button.push-analytics').click(function() {
@@ -312,15 +292,32 @@
             category="curriculum review tool interaction";
             action="link clicked: " + link_text;
             label=link_text;
-            _gaq.push(['_trackEvent', category, action, label]);
+            sendAnalytics(action, link_text, category);
         });
 
-        // Tracks file downloads for the whole page
-        $('a[href$="zip"],a[href$="pdf"],a[href$="doc"],a[href$="docx"],a[href$="xls"],a[href$="xlsx"],a[href$="ppt"],a[href$="pptx"],a[href$="txt"],a[href$="csv"],a.push-download-analytics').click(function() {
+        $(',a.push-download-analytics').click(function() {
             var link_text = $(this).text();
-            var link_url = $(this).attr('href')
-            _gaq.push(['_trackEvent','Downloads', link_text, link_url]);
+            var link_url = $(this).attr('href');
+            sendAnalytics(link_text, link_url, "Downloads");
         });
+
+        function sendAnalytics(action, label, category) {
+            var data = {
+                event:         category || "curriculum review tool interaction",
+                action:        action,
+                label:         label || ''
+            }
+
+            track(data.event, data.action, data.label);
+        }
+        
+        function track( event, action, label ) {
+            window.dataLayer.push( {
+                event: event,
+                action: action,
+                label: label
+            } );
+        }
     </script>
     <script>
         /**
@@ -400,11 +397,13 @@
         function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
             var category="curriculum review tool interaction";
             // Analytics curriculum title
-            _gaq.push(['_trackEvent', category, "curriculum title", curriculumTitle]);
+            sendAnalytics("curriculum title", curriculumTitle, category);
+
             // Analytics date of publication
-            _gaq.push(['_trackEvent', category, "date of publication", publicationDate]);
+            sendAnalytics("date of publication", publicationDate, category);
+            
             // Analytics grade range
-            _gaq.push(['_trackEvent', category, "grade range", gradeRange]);
+            sendAnalytics("grade range", gradeRange, category);
         }
 
         /*

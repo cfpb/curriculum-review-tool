@@ -37,6 +37,9 @@ const CriterionService = {
 
         Repository.saveStudyAnsers(component, alteredStudyAnswers);
         EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
+
+        //Analytics dimension is in progress
+        this.sendAnalyticsDimensionStatusHasChanged(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
     },
 
     /*

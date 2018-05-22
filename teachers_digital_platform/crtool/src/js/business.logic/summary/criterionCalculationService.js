@@ -56,8 +56,8 @@ const CriterionCalculationService = {
             this.setDimensionOverallScore(component, criterionKey);
 
             //Analytics all radio buttons in a criterion have been clicked
-            if (component.state.criterionCompletionStatuses[criterionKey] !== C.ICON_CHECK_ROUND) {
-                let label = changedDistinctive + " " + criterionKey.replace("-question", "").replace("-optional", "").replace("-crt", "");;
+            if (component.state.criterionCompletionStatuses[criterionKey] === C.ICON_CHECK_ROUND) {
+                let label = changedDistinctive + ": " + criterionKey.replace(changedDistinctive.toLowerCase() + "-", "").replace("-question", "").replace("-optional", "").replace("-crt", "").replace("crt-", "");
                 Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", label));  
             }
         }
