@@ -164,17 +164,17 @@
                             <h3 class="h4">Limitations around saving your work</h3>
                             <p>
                                 After you finish each dimension, we recommend you print the summary or save it as a PDF. Learn more about
-                                <button class="a-btn a-btn__link push-analytics" onclick="openSaveWorkModalWindow();return false;">how to save your work</button>
+                                <button class="a-btn a-btn__link link-push-analytics" onclick="openSaveWorkModalWindow();return false;">how to save your work</button>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="m-btn-group m-btn-group__wide">
-                <button id="tdp-crt-begin-review-btn" class="a-btn push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../tool">
+                <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../tool">
                     Start review
                 </button>
-                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link push-analytics" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
+                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link link-push-analytics" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
             </div>
         </form>
     </div>
@@ -238,7 +238,7 @@
         <div class="o-modal_container">
             <form class="o-modal_content">
                 <div class="o-modal_body">
-                    <button class="o-modal_close a-btn a-btn__link push-analytics" onclick="closeNewReviewModalWindow();return false;">
+                    <button class="o-modal_close a-btn a-btn__link link-push-analytics" onclick="closeNewReviewModalWindow();return false;">
                         Close<span class="a-icon a-icon__large a-icon__space-before"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"></path></svg></span>
                     </button>
                     <h1 id="modal-start-over_title" class="h3">Starting over</h1>
@@ -248,8 +248,8 @@
                 </div>
                 <div class="o-modal_footer">
                     <div class="m-btn-group m-btn-group__wide">
-                        <button class="a-btn push-analytics" onclick="clearLocalStorage(); return false;">Yes</button>
-                        <button class="a-btn a-btn__link push-analytics" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
+                        <button class="a-btn start-over-push-analytics" onclick="clearLocalStorage(); return false;">Yes</button>
+                        <button class="a-btn a-btn__link start-over-push-analytics" onclick="closeNewReviewModalWindow(); return false;">No, return to current review</button>
                     </div>
                 </div>
             </form>
@@ -267,7 +267,7 @@
         <div class="o-modal_container">
             <form class="o-modal_content">
                 <div class="o-modal_body">
-                    <button class="o-modal_close a-btn a-btn__link push-analytics"  onclick="closeSaveWorkModalWindow(); return false;">
+                    <button class="o-modal_close a-btn a-btn__link save-work-push-analytics"  onclick="closeSaveWorkModalWindow(); return false;">
                         Close<span class="a-icon a-icon__large a-icon__space-before"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm261.8 692.2c19.4 19.6 19.3 51.3-.3 70.7-19.5 19.3-50.9 19.3-70.4 0L499.6 676.6 308 868.1c-19.6 19.4-51.3 19.3-70.7-.3-19.3-19.5-19.3-50.9 0-70.4l191.6-191.5-191.6-191.6c-19.3-19.8-18.9-51.4.9-70.7 19.4-18.9 50.4-18.9 69.8 0l191.6 191.5 191.5-191.5c19.6-19.4 51.3-19.3 70.7.3 19.3 19.5 19.3 50.9 0 70.4L570.3 605.9l191.5 191.5z"></path></svg></span>
                     </button>
                     <h1 id="modal-save-work_title" class="h3">Saving your work</h1>
@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <div class="o-modal_footer">
-                    <button class="a-btn push-analytics" onclick="closeSaveWorkModalWindow(); return false;">Close</button>
+                    <button class="a-btn save-work-push-analytics" onclick="closeSaveWorkModalWindow(); return false;">Close</button>
                 </div>
             </form>
         </div>
@@ -286,26 +286,60 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
+
+        var category="curriculum review tool interaction";
+    
         // Tracks analytics for links on page clicked
-        $('button.push-analytics').click(function() {
-            var link_text = $(this).text();
-            category="curriculum review tool interaction";
-            action="link clicked: " + link_text;
-            label=link_text;
-            sendAnalytics(action, link_text, category);
+        $('button.button-push-analytics').click(function() {
+            var link_text = $(this).text().trim();
+            var action="button clicked: " + link_text;
+            buttonLinkClicked(action, link_text);
         });
 
-        $(',a.push-download-analytics').click(function() {
-            var link_text = $(this).text();
+        $('button.link-push-analytics').click(function() {
+            var link_text = $(this).text().trim();
+            var action="link clicked: " + link_text;
+            buttonLinkClicked(action, link_text);
+        });
+
+        $('button.button-push-analytics').click(function() {
+            var link_text = $(this).text().trim();
+            var action="button clicked";
+            buttonLinkClicked(action, link_text);
+        });
+
+        $('button.save-work-push-analytics').click(function() {
+            var action = "save work modal"
+            var label = $(this).text().trim();
+            modelButtonClicked(action, label);
+        });
+
+        $('button.start-over-push-analytics').click(function() {
+            var action = "starting over modal"
+            var label = $(this).text().trim();
+            modelButtonClicked(action, label);
+        });
+
+        $('a.push-download-analytics').click(function() {
+            var link_text = $(this).text().trim();
             var link_url = $(this).attr('href');
             sendAnalytics(link_text, link_url, "Downloads");
         });
 
+        function buttonLinkClicked(action, link_text) {
+            var label=link_text;
+            sendAnalytics(action, link_text, category);
+        }
+
+        function modelButtonClicked(action, label) {
+            sendAnalytics(action, label, category);
+        }
+
         function sendAnalytics(action, label, category) {
             var data = {
                 event:         category || "curriculum review tool interaction",
-                action:        action,
-                label:         label || ''
+                action:        action.trim(),
+                label:         label || ""
             }
 
             track(data.event, data.action, data.label);
@@ -397,9 +431,10 @@
         function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
             var category="curriculum review tool interaction";
             // Analytics curriculum title
-            sendAnalytics("curriculum title", curriculumTitle, category);
+            sendAnalytics("curriculum title", curriculumTitle.trim(), category);
 
             // Analytics date of publication
+            publicationDate = publicationDate ? publicationDate.trim() : "unspecified";
             sendAnalytics("date of publication", publicationDate, category);
             
             // Analytics grade range
