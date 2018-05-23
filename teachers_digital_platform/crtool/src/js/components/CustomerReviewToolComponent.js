@@ -108,12 +108,13 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
     }
 
-    setDimensionSummaryView(dimensionName, isSummaryView) {
+    setDimensionSummaryView(dimensionName, isSummaryView, criterionNumber) {
         Repository.setDistinctiveView(this, dimensionName, isSummaryView);
 
         //Analytics user clicked View or edit responses
         if (isSummaryView === false) {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "View or edit responses"));
+            let eventLabel = dimensionName + " criterion " + criterionNumber;
+            Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: View or edit responses", eventLabel));
         }
     }
 
@@ -206,7 +207,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         this.setDistinctiveCompletionDateNow(this.state.currentPage);
         Repository.setDistinctiveDoneStatus(this, this.state.currentPage);
         Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
-        this.setDimensionSummaryView(this.state.currentPage, true);
+        this.setDimensionSummaryView(this.state.currentPage, true, "");
 
         //Analytics click on "continue to {{dimension}} summary"
         let label = "Continue to " + this.state.currentPage.toLowerCase() + " summary"
@@ -233,7 +234,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         var numberOfStudies = this.state.criterionEfficacyStudies.length;
 
         //Analytics I'm done reviewing studies
-        Analytics.sendEvent(Analytics.getDataLayerOptions("I'm done reviewing studies", "Number of studies: " + numberOfStudies));
+        Analytics.sendEvent(Analytics.getDataLayerOptions('I\'m done reviewing studies', 'Number of studies: ' + numberOfStudies));
 
         //Analytics individual study scores
         Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", efficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
@@ -271,7 +272,10 @@ export default class CustomerReviewToolComponent extends React.Component {
         //Analytics we need to treat the notes fields different than the radio buttons
         if (changedQuestion.indexOf("notes") > 0 || 
             changedQuestion.indexOf("text") > 0 ||
-            changedQuestion.indexOf("study") > 0) {
+            changedQuestion.indexOf("study") > 0 ||
+            changedQuestion.indexOf("gaps") > 0 ||
+            changedQuestion.indexOf("assets") > 0 ||
+            changedQuestion.indexOf("takeaways") > 0) {
             Analytics.sendEvent(Analytics.getDataLayerOptions("text box completed", distinctiveName + ": " + criterionNumber));
         } else {
             Analytics.sendEvent(Analytics.getDataLayerOptions("criterion radio button", distinctiveName + ": " + criterionNumber));
