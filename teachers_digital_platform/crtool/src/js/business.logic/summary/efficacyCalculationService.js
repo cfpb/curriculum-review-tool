@@ -102,6 +102,20 @@ const EfficacyCalculationService = {
         return false;
     },
 
+    /*
+     * We need to know if a study exists that was started but not finished
+     */
+    unfinishedEfficacyStudyExists() {
+        let criterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
+        for (var score in criterionScores) {
+            if (score.indexOf("efficacy-crt-1") >= 0 && criterionScores[score].answered_all_complete === false) {
+                return true;
+            }
+        }
+
+        return false;
+    },
+
     scoreScoeOfEvidenceIsLarge(component, hasTwoStrongStudies) {
         let criterionScore = component.state.criterionScores["efficacy-crt-2"];
         if (criterionScore === undefined) {

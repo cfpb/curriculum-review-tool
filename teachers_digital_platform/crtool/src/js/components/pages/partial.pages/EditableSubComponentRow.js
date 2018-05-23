@@ -2,6 +2,7 @@
 import React from "react";
 
 import RadioButtonEditable from "../../buttons/RadioButtonEditable";
+import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 
 export default class EditableSubComponentRow extends React.Component {
 
@@ -48,6 +49,7 @@ export default class EditableSubComponentRow extends React.Component {
                             {...this.props} />
                     </div>
                 </div>
+                <FieldLevelErrorMessageComponent fieldId={this.props.currentCriterionRefId} {...this.props} />
             </fieldset>
         );
     }

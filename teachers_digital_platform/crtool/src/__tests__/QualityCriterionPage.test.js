@@ -15,6 +15,8 @@ const qualityProps = {
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
     setCriterionStatusToInStart:(() => {}),
+    renderFormLevelErrorMessage:(() => {}),
+    showErrorsForCurrentPage:(() => {}),
 }
 
 afterAll(() => {

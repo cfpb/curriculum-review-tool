@@ -43,36 +43,52 @@ const Repository = {
         return localStorage.getItem(C.EFFICACY_STATUS);
     },
 
+    getContentShowErrors() {
+        return localStorage.getItem(C.CONTENT_SHOW_ERRORS) === "true";
+    },
+
+    getQualityShowErrors() {
+        return localStorage.getItem(C.QUALITY_SHOW_ERRORS) === "true";
+    },
+
+    getUtilityShowErrors() {
+        return localStorage.getItem(C.UTILITY_SHOW_ERRORS) === "true";
+    },
+
+    getEfficacyShowErrors() {
+        return localStorage.getItem(C.EFFICACY_SHOW_ERRORS) === "true";
+    },
+
     getContentIsDone() {
-        return localStorage.getItem(C.CONTENT_IS_DONE);
+        return localStorage.getItem(C.CONTENT_IS_DONE) === "true";
     },
 
     getQualityIsDone() {
-        return localStorage.getItem(C.QUALITY_IS_DONE);
+        return localStorage.getItem(C.QUALITY_IS_DONE) === "true";
     },
 
     getUtilityIsDone() {
-        return localStorage.getItem(C.UTILITY_IS_DONE);
+        return localStorage.getItem(C.UTILITY_IS_DONE) === "true";
     },
 
     getEfficacyIsDone() {
-        return localStorage.getItem(C.EFFICACY_IS_DONE);
+        return localStorage.getItem(C.EFFICACY_IS_DONE) === "true";
     },
 
     getContentViewSummary() {
-        return localStorage.getItem(C.CONTENT_SUMMARY_VIEW) || false;
+        return localStorage.getItem(C.CONTENT_SUMMARY_VIEW) === "true";
     },
 
     getQualityViewSummary() {
-        return localStorage.getItem(C.QUALITY_SUMMARY_VIEW) || false;
+        return localStorage.getItem(C.QUALITY_SUMMARY_VIEW) === "true";
     },
 
     getUtilityViewSummary() {
-        return localStorage.getItem(C.UTILITY_SUMMARY_VIEW) || false;
+        return localStorage.getItem(C.UTILITY_SUMMARY_VIEW) === "true";
     },
 
     getEfficacyViewSummary() {
-        return localStorage.getItem(C.EFFICACY_SUMMARY_VIEW) || false;
+        return localStorage.getItem(C.EFFICACY_SUMMARY_VIEW) === "true";
     },
 
     getCurriculumTitle() {
@@ -108,7 +124,7 @@ const Repository = {
     },
 
     getFinishAddingEfficacyStudies() {
-        return localStorage.getItem("finishAddingEfficacyStudies");
+        return localStorage.getItem("finishAddingEfficacyStudies") === "true";
     },
 
     getDistinctiveCompletedDate() {
@@ -160,6 +176,26 @@ const Repository = {
     saveNumberFinalSummaryViews(component, count) {
         localStorage.setItem("numberFinalSummaryViews", count);
         component.setState({numberFinalSummaryViews: count});
+    },
+
+    saveContentShowErrors(component, value) {
+        localStorage.setItem(C.CONTENT_SHOW_ERRORS, value);
+        component.setState({contentShowErrors: value});
+    },
+    
+    saveQualityShowErrors(component, value) {
+        localStorage.setItem(C.QUALITY_SHOW_ERRORS, value);
+        component.setState({qualityShowErrors: value});
+    },
+    
+    saveUtilityShowErrors(component, value) {
+        localStorage.setItem(C.UTILITY_SHOW_ERRORS, value);
+        component.setState({utilityShowErrors: value});
+    },
+    
+    saveEfficacyShowErrors(component, value) {
+        localStorage.setItem(C.EFFICACY_SHOW_ERRORS, value);
+        component.setState({efficacyShowErrors: value});
     },
 
     /*

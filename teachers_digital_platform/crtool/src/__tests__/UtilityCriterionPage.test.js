@@ -15,6 +15,8 @@ const utilityProps = {
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
     setCriterionStatusToInStart:(() => {}),
+    renderFormLevelErrorMessage:(() => {}),
+    showErrorsForCurrentPage:(() => {}),
 }
   
 afterAll(() => {

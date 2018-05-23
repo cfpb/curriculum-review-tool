@@ -65,16 +65,16 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     renderDoneAddingStoriesButton() {
-        if (this.props.finishAddingEfficacyStudies) {
+        if (this.props.finishAddingEfficacyStudies !== true) {
             return (
-                <button className="a-btn u-mb30" disabled >
+                <button className="a-btn u-mb30"
+                    onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
                     I’m done reviewing studies
                 </button>
             );
         } else {
             return (
-                <button className="a-btn u-mb30"
-                    onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
+                <button className="a-btn u-mb30" disabled >
                     I’m done reviewing studies
                 </button>
             );
@@ -82,7 +82,7 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     renderWarningContinueWithout2and3() {
-        if (!this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist()) {
+        if (this.props.finishAddingEfficacyStudies !== true || this.twoStrongStudiesExist() === true) {
             return (null);
         } else {
             return (
@@ -153,7 +153,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
+                {this.props.renderFormLevelErrorMessage()}
                 <div className="block block__flush-top" id="criterion_1">
                     <h2>
                         <SvgIcon
