@@ -234,7 +234,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         var numberOfStudies = this.state.criterionEfficacyStudies.length;
 
         //Analytics I'm done reviewing studies
-        Analytics.sendEvent(Analytics.getDataLayerOptions('I\'m done reviewing studies', 'Number of studies: ' + numberOfStudies));
+        Analytics.sendEvent(Analytics.getDataLayerOptions("I'm done reviewing studies", "Number of studies: " + numberOfStudies));
 
         //Analytics individual study scores
         Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", efficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));

@@ -53,9 +53,9 @@ export default class SaveWorkModal extends React.Component {
     closeSaveWorkModalDialog(linkText) {
         this.setState({modalIsOpen: false});
 
-        //Analytics opened start over with a new review
+        //Analytics closed save work modal
         if (linkText !== undefined) {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: " + linkText, "Starting over"));
+            Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: " + linkText, "Saving your work"));
         }
     }
 
