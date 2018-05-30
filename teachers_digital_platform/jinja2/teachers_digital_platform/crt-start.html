@@ -174,7 +174,7 @@
                 <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../tool">
                     Start review
                 </button>
-                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link link-push-analytics" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
+                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
             </div>
         </form>
     </div>
@@ -290,12 +290,6 @@
         var category="curriculum review tool interaction";
     
         // Tracks analytics for links on page clicked
-        $('button.button-push-analytics').click(function() {
-            var link_text = $(this).text().trim();
-            var action="button clicked: " + link_text;
-            buttonLinkClicked(action, link_text);
-        });
-
         $('button.link-push-analytics').click(function() {
             var link_text = $(this).text().trim();
             var action="link clicked: " + link_text;
@@ -464,6 +458,9 @@
             newReviewModalWindow.classList.add('o-modal__visible');
             newReviewModalWindow.focus();
             document.addEventListener('click', newReviewOutsideClickListener);
+
+            // Analytics Send start over with new review modal opened
+            sendAnalytics("link clicked: Start over with a new review", "Starting over");
         }
 
         /*
