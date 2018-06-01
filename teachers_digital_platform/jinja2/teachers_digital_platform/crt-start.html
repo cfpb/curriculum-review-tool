@@ -454,6 +454,9 @@
          */
         var openingNewReviewModal = false;
         function openNewReviewModalWindow() {
+            //Allow screen readers to see dialog
+            openingNewReviewModal.setAttribute("aria-hidden", "false");
+
             openingNewReviewModal = true;
             newReviewModalWindow.classList.add('o-modal__visible');
             newReviewModalWindow.focus();
@@ -467,6 +470,9 @@
          * Close New Review Warning Modal Dialog
          */
         function closeNewReviewModalWindow() {
+            //Hide from screen readers 
+            openingNewReviewModal.setAttribute("aria-hidden", "true");
+
             newReviewModalWindow.classList.remove('o-modal__visible');
             document.removeEventListener('click', newReviewOutsideClickListener);
         }
@@ -476,6 +482,9 @@
          */
         var openingSaveWorkModal = false;
         function openSaveWorkModalWindow() {
+            //Allow screen readers to see dialog
+            openingSaveWorkModal.setAttribute("aria-hidden", "false");
+
             openingSaveWorkModal = true;
             saveWorkModalWindow.classList.add('o-modal__visible');
             saveWorkModalWindow.focus();
@@ -486,6 +495,9 @@
          * Close Save Work Warning Modal Dialog
          */
         function closeSaveWorkModalWindow() {
+            //Hide from screen readers
+            openingSaveWorkModal.setAttribute("aria-hidden", "true");
+
             saveWorkModalWindow.classList.remove('o-modal__visible');
             document.removeEventListener('click', saveWorkOutsideClickListener);
         }
