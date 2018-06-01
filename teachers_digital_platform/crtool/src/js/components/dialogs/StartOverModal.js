@@ -43,6 +43,10 @@ export default class StartOverModal extends React.Component {
 
     /* Modal specific open dialog */
     openStartOverModalDialog() {
+        //Allow screen readers to see dialog
+        document.getElementById("modal-save-work").setAttribute("aria-hidden", "false");
+
+        //Show dialog
         this.setState({modalIsOpen: true});
 
         //Analytics opened start over with a new review
@@ -51,6 +55,10 @@ export default class StartOverModal extends React.Component {
 
     /* Modal specific close dialog */
     closeStartOverModalDialog(linkText) {
+        //Allow screen readers to see dialog
+        document.getElementById("modal-save-work").setAttribute("aria-hidden", "true");
+
+        //Hide dialog
         this.setState({modalIsOpen: false});
 
         //Analytics close start over with a new review
