@@ -43,9 +43,6 @@ export default class SaveWorkModal extends React.Component {
 
     /* Modal specific open dialog */
     openSaveWorkModalDialog() {
-        //Allow screen readers to see dialog
-        document.getElementById("modal-save-work").setAttribute("aria-hidden", "false");
-
         //Show dialog
         this.setState({modalIsOpen: true});
 
@@ -55,9 +52,6 @@ export default class SaveWorkModal extends React.Component {
 
     /* Modal specific close dialog */
     closeSaveWorkModalDialog(linkText) {
-        //Hide from screen readers 
-        document.getElementById("modal-save-work").setAttribute("aria-hidden", "true");
-
         //Hide dialog
         this.setState({modalIsOpen: false});
 
@@ -102,7 +96,7 @@ export default class SaveWorkModal extends React.Component {
                     }}>
                     <div className="o-modal o-modal__visible"
                         id="modal-save-work"
-                        aria-hidden="true"
+                        aria-hidden="false"
                         role="alertdialog"
                         aria-labelledby="modal-save-work_title"
                         aria-describedby="modal-save-work_desc">
