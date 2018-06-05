@@ -24,13 +24,20 @@ function _genericCopy( src, dest ) {
     } ) );
 }
 
-gulp.task( 'copy:icons', () => {
-  const icons = configCopy.icons;
-  return _genericCopy( icons.src, icons.dest );
-} );
+module.exports = {
+    copyIcons: () => {
+        const icons = configCopy.icons;
+        return _genericCopy( icons.src, icons.dest );
+    }
+};
 
-gulp.task( 'copy',
-  [
-    'copy:icons'
-  ]
-);
+// gulp.task( 'copy:icons', () => {
+//   const icons = configCopy.icons;
+//   return _genericCopy( icons.src, icons.dest );
+// } );
+
+// gulp.task( 'copy',
+//     gulp.series(
+//         'copy:icons'
+//     )
+// );
