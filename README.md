@@ -1,3 +1,8 @@
+# 3 Projects 
+ - Customer Review Tool 
+ - Building Blocks
+ - Interactive Search
+
 #### CFPB Open Source Project Template Instructions
 
 1. Create a new project.
