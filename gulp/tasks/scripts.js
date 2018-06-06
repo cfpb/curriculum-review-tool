@@ -42,8 +42,14 @@ function scriptsModern() {
                          configFile.scripts.entrypoint, configFile.scripts.dest );
 }
 
-gulp.task( 'scripts:modern', scriptsModern );
+module.exports = {
+    scriptsModern: scriptsModern
+}
 
-gulp.task( 'scripts', [
-  'scripts:modern'
-] );
+// gulp.task( 'scripts:modern', scriptsModern );
+
+// gulp.task( 'scripts', 
+//     gulp.series(     
+//     'scripts:modern'
+//     )
+// );

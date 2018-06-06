@@ -150,7 +150,6 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
-          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
           onBlur={[Function]}
           type="text"
@@ -1204,7 +1203,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
-        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
         onBlur={[Function]}
         rows="6"
@@ -1410,7 +1408,6 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
-          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
           onBlur={[Function]}
           type="text"
@@ -2464,7 +2461,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
-        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
         onBlur={[Function]}
         rows="6"
@@ -2772,7 +2768,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="efficacy-crt-notes-optional-2"
         onBlur={[Function]}
         rows="6"
@@ -2975,7 +2970,6 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
-          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
           onBlur={[Function]}
           type="text"
@@ -4029,7 +4023,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
-        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
         onBlur={[Function]}
         rows="6"
@@ -4337,7 +4330,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="efficacy-crt-notes-optional-2"
         onBlur={[Function]}
         rows="6"
@@ -4643,7 +4635,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="efficacy-crt-notes-optional-3"
         onBlur={[Function]}
         rows="6"
@@ -4819,7 +4810,6 @@ Array [
         </label>
         <input
           className="a-text-input a-text-input__full"
-          defaultValue={undefined}
           id="efficacy-crt-question-#0#study"
           onBlur={[Function]}
           type="text"
@@ -5873,7 +5863,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full u-mb30"
-        defaultValue={undefined}
         id="efficacy-crt-question-1#0#_notes_optional"
         onBlur={[Function]}
         rows="6"

@@ -2,10 +2,9 @@
 
 const gulp = require( 'gulp' );
 
-gulp.task( 'default',
-  [
-    'lint',
-    'test',
-    'build'
-  ]
-);
+// gulp.task( 'default',
+//     gulp.series(    
+//         'lint',
+//         'build'
+//     )
+// );

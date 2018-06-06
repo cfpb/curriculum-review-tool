@@ -31,40 +31,56 @@ function _genericLintJS( src ) {
     .on( 'error', handleErrors );
 }
 
-/**
- * Lints the build process js files for errors.
- */
-gulp.task( 'lint:build', () => _genericLintJS( config.lint.build ) );
+module.exports = {
+    build: () => _genericLintJS( config.lint.build ),
+    tests: () => _genericLintJS( config.lint.tests ),
+    scripts: () => _genericLintJS( config.lint.js ),
+    styles: () => {
+        gulp.src( config.lint.css )
+          .pipe( gulpStylelint( {
+            reporters: [
+              { formatter: 'string', console: true }
+            ]
+        } ) );
+    }
+}
 
-/**
- * Lints the test js files for errors.
- */
-gulp.task( 'lint:tests', () => _genericLintJS( config.lint.tests ) );
+// /**
+//  * Lints the build process js files for errors.
+//  */
+// gulp.task( 'lint:build', () => _genericLintJS( config.lint.build ) );
 
-/**
- * Lints the source js files for errors.
- */
-gulp.task( 'lint:scripts', () => _genericLintJS( config.lint.js ) );
+// /**
+//  * Lints the test js files for errors.
+//  */
+// gulp.task( 'lint:tests', () => _genericLintJS( config.lint.tests ) );
 
-/**
- * Lints the source Less files for errors.
- */
+// /**
+//  * Lints the source js files for errors.
+//  */
+// gulp.task( 'lint:scripts', () => _genericLintJS( config.lint.js ) );
 
-gulp.task( 'lint:styles', () => {
-  gulp.src( config.lint.css )
-    .pipe( gulpStylelint( {
-      reporters: [
-        { formatter: 'string', console: true }
-      ]
-    } ) );
-} );
+// /**
+//  * Lints the source Less files for errors.
+//  */
 
-/**
- * Lints all the js files for errors
- */
-gulp.task( 'lint', [
-  'lint:build',
-  'lint:tests',
-  'lint:scripts',
-  'lint:styles'
-] );
+// gulp.task( 'lint:styles', () => {
+//   gulp.src( config.lint.css )
+//     .pipe( gulpStylelint( {
+//       reporters: [
+//         { formatter: 'string', console: true }
+//       ]
+//     } ) );
+// } );
+
+// /**
+//  * Lints all the js files for errors
+//  */
+// gulp.task( 'lint', 
+//     gulp.series(        
+//         'lint:build',
+//         'lint:tests',
+//         'lint:scripts',
+//         'lint:styles'
+//     )
+// );
