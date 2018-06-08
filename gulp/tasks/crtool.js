@@ -2,24 +2,9 @@
 
 const gulp = require( 'gulp' );
 const run = require( 'gulp-run' );
+const spawn = require( 'child_process' ).spawn;
 
-gulp.task( 'crtool:chdir-down', () => {
-  process.chdir( 'teachers_digital_platform/crtool' );
-} );
-
-gulp.task( 'crtool:build', () => {
-  return run( 'npm run build' ).exec();
-} );
-
-gulp.task( 'crtool:chdir-up', () => {
-  process.chdir( '../..' );
-} );
-
-gulp.task( 'crtool',
-  [
-    'crtool:chdir-down',
-    'crtool:build',
-    'crtool:chdir-up',
-    'test'
-  ]
-);
+gulp.task('crtool', function(done) {
+    spawn('npm', ['run', 'build'], { cwd: 'teachers_digital_platform/crtool/', stdio: 'inherit' })
+      .on('close', done);
+});
