@@ -26,7 +26,7 @@ setup(
     description='Teachers digital platform',
     long_description=long_description,
     license='CC0',
-    version_format='{tag}.dev{commitcount}+{gitsha}',
+    version_format='{tag}',
     include_package_data=True,
     packages=find_packages(),
     package_data={
