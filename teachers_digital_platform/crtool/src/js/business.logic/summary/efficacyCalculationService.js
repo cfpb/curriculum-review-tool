@@ -275,6 +275,10 @@ const EfficacyCalculationService = {
             }
         }
 
+        if (studyScores === "") {
+            return "Study 0 = Not Strong";
+        }
+
         return studyScores;
     },
 
