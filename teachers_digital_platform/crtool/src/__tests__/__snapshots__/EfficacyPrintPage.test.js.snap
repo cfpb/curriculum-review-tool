@@ -1,0 +1,472 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Efficacy Print Page renders correctly 1`] = `
+Array [
+  <div
+    className="h5"
+  >
+    CFPB curriculum review tool
+  </div>,
+  <h1>
+    Efficacy
+     summary for 
+    
+  </h1>,
+  <p
+    className="lead-paragraph u-mb30"
+  >
+    The efficacy dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access.
+  </p>,
+  <p>
+    <strong>
+      Date of publication:
+    </strong>
+     
+  </p>,
+  <p>
+    <strong>
+      Grade range:
+    </strong>
+     
+  </p>,
+  <p>
+    <strong>
+      Reviewed on:
+    </strong>
+     
+  </p>,
+  <h2>
+    Based on your answers, the efficacy score for this curriculum is:
+  </h2>,
+  <h3>
+    Score for scope of evidence
+  </h3>,
+  <div
+    className="m-curriculum-status"
+  >
+    <ul
+      className="m-list__unstyled u-mb0"
+    >
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              Large body of evidence
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              Moderate body of evidence
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              Small body of evidence
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>,
+  <hr
+    className="hr u-mb30 u-mt30"
+  />,
+  <div
+    className="block block__flush-top block__padded-bottom block__border-bottom"
+  >
+    <h2
+      className={false}
+      id={undefined}
+    >
+      <span
+        className="a-icon a-icon__large a-icon__space-after"
+      >
+        <svg
+          class="cf-icon-svg"
+          viewBox="0 0 1000 1200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M409.2 723.3c-12.5-14.7-34.6-16.5-49.3-3.9-14.5 12.3-16.4 34-4.4 48.7L443.6 874c6.6 8 16.5 12.6 26.9 12.6 1 0 2 0 3-.1 11.4-1 21.6-7.5 27.3-17.4l157.7-273.2c9.6-16.8 3.7-38.2-13.1-47.7-16.6-9.5-37.8-3.8-47.5 12.7L465.3 790.7l-56.1-67.4z"
+          />
+          <path
+            d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm71.8 165.2h1.5l176.9 170.8H571.8V270.4zm179 222.1v405.2c0 22.1-17.9 40-40 40H290.3c-22.1 0-40-17.9-40-40V310.4c0-22.1 17.9-40 40-40h235.2v186.5c0 16.9 13.7 30.5 30.6 30.6h194.7v5z"
+          />
+        </svg>
+      </span>
+      Efficacy overall score
+    </h2>
+    <p
+      className="u-mb30"
+    >
+      How does this curriculum meet the criteria for efficacy:
+    </p>
+    <ul
+      className="m-list__unstyled"
+    >
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              <div>
+                <strong>
+                  Strong evidence of efficacy
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              <div>
+                <strong>
+                  Moderate evidence of efficacy
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              <div>
+                <strong>
+                  Mixed evidence of efficacy
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              <div>
+                <strong>
+                  Limited evidence of efficacy
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="u-mb30"
+      >
+        <div
+          className="m-form-field m-form-field__radio m-form-field__display"
+        >
+          <div
+            className="a-label"
+          >
+            <svg
+              className="m-form-field_radio-icon"
+              viewBox="0 0 22 22"
+            >
+              <circle
+                className="m-form-field_radio-icon-stroke"
+                cx="11"
+                cy="11"
+                r="10"
+              />
+              <circle
+                className="m-form-field_radio-icon-fill"
+                cx="11"
+                cy="11"
+                r="7"
+              />
+            </svg>
+            <div
+              className="m-form-field_radio-text"
+            >
+              <div>
+                <strong>
+                  Not enough information
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      className="m-form-field u-mb30"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="utility-crt-assets"
+      >
+        Assets  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+      </label>
+      <p
+        class="o-survey_question-helper"
+      >
+        No information provided
+      </p>
+    </div>
+    <div
+      className="m-form-field u-mb30"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="utility-crt-gaps"
+      >
+        Gaps  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+      </label>
+      <p
+        class="o-survey_question-helper"
+      >
+        No information provided
+      </p>
+    </div>
+    <div
+      className="m-form-field"
+    >
+      <label
+        className="a-label a-label__heading"
+        htmlFor="utility-crt-overall-notes"
+      >
+        Overall notes  
+        <small
+          className="a-label_helper"
+        >
+          (optional)
+        </small>
+      </label>
+      <p
+        class="o-survey_question-helper"
+      >
+        No information provided
+      </p>
+    </div>
+  </div>,
+  <div
+    className="block block__flush-top block__padded-bottom block__border-bottom"
+  >
+    <h2
+      className={false}
+      id={undefined}
+    >
+      <span
+        className="a-icon a-icon__large a-icon__space-after"
+      >
+        <svg
+          class="cf-icon-svg"
+          viewBox="0 0 1000 1200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M409.2 723.3c-12.5-14.7-34.6-16.5-49.3-3.9-14.5 12.3-16.4 34-4.4 48.7L443.6 874c6.6 8 16.5 12.6 26.9 12.6 1 0 2 0 3-.1 11.4-1 21.6-7.5 27.3-17.4l157.7-273.2c9.6-16.8 3.7-38.2-13.1-47.7-16.6-9.5-37.8-3.8-47.5 12.7L465.3 790.7l-56.1-67.4z"
+          />
+          <path
+            d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm71.8 165.2h1.5l176.9 170.8H571.8V270.4zm179 222.1v405.2c0 22.1-17.9 40-40 40H290.3c-22.1 0-40-17.9-40-40V310.4c0-22.1 17.9-40 40-40h235.2v186.5c0 16.9 13.7 30.5 30.6 30.6h194.7v5z"
+          />
+        </svg>
+      </span>
+      Efficacy criterion
+    </h2>
+    <p>
+      <em>
+        Dimension not reviewed
+      </em>
+    </p>
+  </div>,
+]
+`;
