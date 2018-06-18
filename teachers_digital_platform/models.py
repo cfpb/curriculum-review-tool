@@ -1,12 +1,16 @@
+from django import forms
 from django.db import models
 
-from wagtail.core.models import Page
-from wagtail.search import index
-from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
+from modelcluster.fields import ParentalKey, ParentalManyToManyField
+
+from wagtail.wagtailcore.models import Page
+from wagtail.wagtailsearch import index
+from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
 from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtaildocs.models import Document
-from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
+from wagtail.wagtailimages.models import Image
+from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel, ImageChooserPanel
 
 
 class ActivityIndexPage(Page):
@@ -25,7 +29,18 @@ class ActivityIndexPage(Page):
 @register_snippet
 class ActivityBuildingBlock(models.Model):
     title = models.CharField(max_length=255)
-    icon = models.ImageField()
+    icon = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
+
+    panels = [
+        FieldPanel('title'),
+        ImageChooserPanel('icon'),
+    ]
+
+    def __str__(self):
+        return self.title
 
 
 @register_snippet
@@ -109,22 +124,22 @@ class ActivityPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    building_blocks = models.ManyToManyField(ActivityBuildingBlock, blank=True, null=True)
+    building_blocks = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=True)
     # Primary Focus
-    school_subject = models.ManyToManyField(ActivitySchoolSubject, blank=True, null=True)
-    topic = models.ManyToManyField(ActivityTopic, blank=True, null=True)
+    school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=True)
+    topic = ParentalManyToManyField('teachers_digital_platform.ActivityTopic', blank=True)
     # Audience
-    grade_range = models.ForeignKey(ActivityGradeRange, blank=True, null=True)
-    age = models.ForeignKey(ActivityAge, blank=True, null=True)
-    special_populations = models.ManyToManyField(ActivitySpecialPopulations, blank=True, null=True)
+    grade_range = models.ForeignKey(ActivityGradeRange, blank=True)
+    age = models.ForeignKey(ActivityAge, blank=True)
+    special_populations = ParentalManyToManyField('teachers_digital_platform.ActivitySpecialPopulations', blank=True)
     # Activity Characteristics
-    activity_type = models.ForeignKey(ActivityType, blank=True, null=True)
-    teaching_strategies = models.ManyToManyField(ActivityTeachingStrategies, blank=True, null=True)
-    blooms_taxonomy_level = models.ForeignKey(ActivityBloomsTaxonomyLevel, blank=True, null=True)
+    activity_type = models.ForeignKey(ActivityType, blank=True)
+    teaching_strategies = ParentalManyToManyField('teachers_digital_platform.ActivityTeachingStrategies', blank=True)
+    blooms_taxonomy_level = models.ForeignKey(ActivityBloomsTaxonomyLevel, blank=True)
     activity_length = models.ForeignKey(ActivityLength, blank=True, null=True)
     # Standards taught
-    jumpstart_national_standards = models.ForeignKey(ActivityJumpstartNatStandards, blank=True, null=True)
-    council_for_economic_education = models.ForeignKey(ActivityCouncilForEconEd, blank=True, null=True)
+    jumpstart_national_standards = models.ForeignKey(ActivityJumpstartNatStandards, blank=True)
+    council_for_economic_education = models.ForeignKey(ActivityCouncilForEconEd, blank=True)
 
     content_panels = Page.content_panels = [
         FieldPanel('title'),
@@ -142,11 +157,11 @@ class ActivityPage(Page):
             ],
             heading="Download activities",
         ),
-        FieldPanel('building_blocks'),
+        FieldPanel('building_blocks', widget=forms.CheckboxSelectMultiple),
         MultiFieldPanel(
             [
-                FieldPanel('school_subject'),
-                FieldPanel('topic'),
+                FieldPanel('school_subject', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('topic', widget=forms.CheckboxSelectMultiple),
             ],
             heading="Primary focus",
         ),
@@ -154,14 +169,14 @@ class ActivityPage(Page):
             [
                 FieldPanel('grade_range'),
                 FieldPanel('age'),
-                FieldPanel('special_populations'),
+                FieldPanel('special_populations', widget=forms.CheckboxSelectMultiple),
             ],
             heading="Audience",
         ),
         MultiFieldPanel(
             [
                 FieldPanel('activity_type'),
-                FieldPanel('teaching_strategies'),
+                FieldPanel('teaching_strategies', widget=forms.CheckboxSelectMultiple),
                 FieldPanel('blooms_taxonomy_level'),
                 FieldPanel('activity_length'),
             ],
