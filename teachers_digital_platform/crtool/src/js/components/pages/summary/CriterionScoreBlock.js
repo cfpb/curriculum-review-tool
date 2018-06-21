@@ -15,11 +15,7 @@ export default class CriterionScoreBlock extends React.Component {
     }
 
     renderTitle() {
-        if (this.isPrintMode() === true) {
-            return(<h2 id={this.generateUniqueId()}>{this.props.criterionName}</h2>);
-        } else {
-            return(<h3 className="h2" id={this.generateUniqueId()}>{this.props.criterionName}</h3>);
-        }
+        return(<h2 id={this.generateUniqueId()}>{this.props.criterionName}</h2>);
     }
 
     renderTextValue(style, level) {

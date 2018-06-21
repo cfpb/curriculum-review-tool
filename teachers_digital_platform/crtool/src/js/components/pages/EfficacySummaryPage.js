@@ -16,13 +16,13 @@ export default class EfficacySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h2 className="h1" tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="credit-report-round"
                         isLarge="true"
                         hasSpaceAfter="true" />
                     Efficacy summary
-                </h2>
+                </h1>
                 <p className="lead-paragraph">
                     Review the scores and your notes for each efficacy criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
                 </p>
