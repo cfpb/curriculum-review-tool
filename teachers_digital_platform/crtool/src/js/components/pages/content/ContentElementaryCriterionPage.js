@@ -819,7 +819,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="crt-notes-optional-4">
+                        <label className="a-label a-label__heading" htmlFor="content-elementary-crt-notes-optional-4">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
