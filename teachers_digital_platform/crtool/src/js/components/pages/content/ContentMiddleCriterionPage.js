@@ -34,17 +34,17 @@ export default class ContentMiddleCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h2 className="h1" tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="document-round"
                         isLarge="true"
                         hasSpaceAfter="true" />
                     Content
-                </h2>
+                </h1>
                 <p className="lead-paragraph">
                     This dimension assesses whether the curriculum content helps students develop knowledge, skills, and behaviors that are important for financial capability. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
-                <h3 className="h2">Instructions</h3>
+                <h2>Instructions</h2>
                 <ul>
                     <li>Read through the scope and sequence of the curriculum.</li>
                     <li>Skim the lesson plans, student materials, and assessments.</li>
@@ -62,27 +62,27 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                 u-mt30" />
                 <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-1"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Earning, income, and careers
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for earning, income, and careers?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.1</h4>
+                                <h3>1.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -126,14 +126,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.2</h4>
+                                <h3>1.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>People can change their income by acquiring more education, work experience, and skills.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -237,27 +237,27 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     criterionText="Criterion 2: Saving and investing"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_2">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-2"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Saving and Investing
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.1</h4>
+                                <h3>2.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>People save for the future, and might have different goals for saving and make different choices about how to save.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -340,14 +340,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.2</h4>
+                                <h3>2.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Time, interest rates, and inﬂation all affect the value of savings.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -430,14 +430,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.3</h4>
+                                <h3>2.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Investments involve purchase of financial assets to increase wealth.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -520,14 +520,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.4</h4>
+                                <h3>2.4</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Some investment strategies have greater or less risk and corresponding expected rate of return.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -631,27 +631,27 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     criterionText="Criterion 3: Spending"
                     {...this.props}  >
                 <div className="block block__flush-top" id="criterion_3">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-3"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Spending
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for spending?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.1</h4>
+                                <h3>3.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>People choose to buy some goods or services over others.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -695,14 +695,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.2</h4>
+                                <h3>3.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Individuals who are active and aware consumers can make more informed choices.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -884,27 +884,27 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     criterionText="Criterion 4: Borrowing and credit"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_4">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-4"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Borrowing and credit
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for borrowing and credit?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.1</h4>
+                                <h3>4.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Credit allows people to purchase goods and services now that must be paid for in the future.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -948,14 +948,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.2</h4>
+                                <h3>4.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Different credit options have different costs.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1116,14 +1116,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.3</h4>
+                                <h3>4.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Lenders and others can access your credit history to make decisions about lending or extending lines of credit, accepting applications for rental housing, and determining if you are a good candidate for a job.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1227,27 +1227,27 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     criterionText="Criterion 5: Managing financial risk"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_5">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-5"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 5: Managing financial risk
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">5.1</h4>
+                                <h3>5.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>People make choices to protect themselves from financial risks.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1291,14 +1291,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">5.2</h4>
+                                <h3>5.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p> Insurance allows people to pay a fee now in order to avoid the possibility of later risk.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1381,14 +1381,14 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">5.3</h4>
+                                <h3>5.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>The cost of insurance is inﬂuenced by individual behavior and a range of other factors.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1453,27 +1453,27 @@ export default class ContentMiddleCriterionPage extends React.Component {
                     criterionText="Criterion 6: Financial responsibility and money management"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_6">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["content-middle-crt-question-6"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 6: Financial responsibility and money management
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">6.1</h4>
+                                <h3>6.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Financial responsibility involves planning for the future.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">

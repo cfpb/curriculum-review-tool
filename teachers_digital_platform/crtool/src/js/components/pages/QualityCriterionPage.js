@@ -34,17 +34,17 @@ export default class QualityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h2 className="h1" tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="star-round"
                         isLarge="true"
                         hasSpaceAfter="true" />
                     Quality
-                </h2>
+                </h1>
                 <p className="lead-paragraph">
                     The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
-                <h3 className="h2">Instructions</h3>
+                <h2>Instructions</h2>
                 <ul>
                     <li>Read the lessons plans and supporting material for the curriculum.</li>
                     <li><strong>Answer all questions</strong> to continue to the summary page for the score on this dimension.</li>
@@ -58,7 +58,7 @@ export default class QualityCriterionPage extends React.Component {
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <h4>What’s a beneficial component?</h4>
+                    <h3 class="h4">What’s a beneficial component?</h3>
                     <p>While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These <strong>beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treats essential and beneficial components differently, but you’re still required to answer all beneficial components.</p>
                 </div>
                 <hr className="hr
@@ -66,27 +66,27 @@ export default class QualityCriterionPage extends React.Component {
                                 u-mt30" />
                 <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-1"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Accessibility
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.1</h4>
+                                <h3>1.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Web-based materials can be accessed using typical school technology and software; links are viewable and work. Paper-based materials are available for a moderate and clearly stated price.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -263,14 +263,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.2</h4>
+                                <h3>1.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Copyright limitations on use are minimal and clearly stated.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -367,14 +367,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.3</h4>
+                                <h3>1.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials are available in alternate languages and include special needs formats (e.g., Braille).</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -481,14 +481,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.4</h4>
+                                <h3>1.4</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Written materials and physical products are durable and reusable or easy to replace.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -554,27 +554,27 @@ export default class QualityCriterionPage extends React.Component {
                     criterionText="Criterion 2: Accuracy and timeliness"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_2">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-2"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Accuracy and timeliness
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials current and free of error?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.1</h4>
+                                <h3>2.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials are revised regularly and the date of publication or revision is clearly stated.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -618,14 +618,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.2</h4>
+                                <h3>2.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials do not contain factual errors or internal inconsistencies.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -708,14 +708,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.3</h4>
+                                <h3>2.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials do not contain errors.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -780,27 +780,27 @@ export default class QualityCriterionPage extends React.Component {
                     criterionText="Criterion 3: Objectivity"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_3">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-3"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Objectivity
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are the curriculum materials objective?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.1</h4>
+                                <h3>3.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials differentiate between fact and interpretation, and discuss differing viewpoints.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -883,14 +883,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.2</h4>
+                                <h3>3.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials show diversity. Text, illustrations, and activities are culturally sensitive.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -973,14 +973,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.3</h4>
+                                <h3>3.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Materials do not promote branded products, and do explicitly identify funders and authors.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1124,27 +1124,27 @@ export default class QualityCriterionPage extends React.Component {
                     criterionText="Criterion 4: Visual appearance"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_4">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["quality-crt-question-4"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Visual appearance
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the visual appearance of the student materials conducive to learning?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.1</h4>
+                                <h3>4.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>The design supports learning rather than distracts.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1305,14 +1305,14 @@ export default class QualityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.2</h4>
+                                <h3>4.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>The formatting is clear and easy to read.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">

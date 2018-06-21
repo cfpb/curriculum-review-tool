@@ -5,8 +5,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="EfficacyCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -27,7 +26,7 @@ Array [
       </svg>
     </span>
     Efficacy
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -42,11 +41,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Locate research studies that report on the impact of the curriculum.
@@ -116,11 +113,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Strength of study (inclusion criteria)
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -166,20 +161,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.
           </p>
@@ -187,11 +180,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -327,20 +320,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.
           </p>
@@ -348,11 +339,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -422,20 +413,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.
           </p>
@@ -443,11 +432,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -588,20 +577,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.
           </p>
@@ -609,11 +596,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -998,20 +985,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The data are analyzed using appropriate statistical techniques.
           </p>
@@ -1019,11 +1004,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1093,20 +1078,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.6
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Evidence of impact is recent enough to be relevant.
           </p>
@@ -1114,11 +1097,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1252,8 +1235,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="EfficacyCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -1274,7 +1256,7 @@ Array [
       </svg>
     </span>
     Efficacy
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -1289,11 +1271,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Locate research studies that report on the impact of the curriculum.
@@ -1363,9 +1343,7 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       <span
         className="a-icon a-icon__green a-icon__space-after"
       >
@@ -1380,7 +1358,7 @@ Array [
         </svg>
       </span>
       Criterion 1: Strength of study (inclusion criteria)
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -1426,20 +1404,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.
           </p>
@@ -1447,11 +1423,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1587,20 +1563,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.
           </p>
@@ -1608,11 +1582,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1682,20 +1656,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.
           </p>
@@ -1703,11 +1675,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1848,20 +1820,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.
           </p>
@@ -1869,11 +1839,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2258,20 +2228,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The data are analyzed using appropriate statistical techniques.
           </p>
@@ -2279,11 +2247,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2353,20 +2321,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.6
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Evidence of impact is recent enough to be relevant.
           </p>
@@ -2374,11 +2340,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2532,11 +2498,9 @@ Array [
   <div
     className="block block__flush-top"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 2: Scope of evidence
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -2556,20 +2520,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             There is sufficient research to judge efficacy.
           </p>
@@ -2577,11 +2539,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2656,20 +2618,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The studies examine the range of participants and settings for which the curriculum was designed.
           </p>
@@ -2677,11 +2637,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2817,8 +2777,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="EfficacyCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -2839,7 +2798,7 @@ Array [
       </svg>
     </span>
     Efficacy
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -2854,11 +2813,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Locate research studies that report on the impact of the curriculum.
@@ -2928,9 +2885,7 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       <span
         className="a-icon a-icon__green a-icon__space-after"
       >
@@ -2945,7 +2900,7 @@ Array [
         </svg>
       </span>
       Criterion 1: Strength of study (inclusion criteria)
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -2991,20 +2946,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.
           </p>
@@ -3012,11 +2965,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3152,20 +3105,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.
           </p>
@@ -3173,11 +3124,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3247,20 +3198,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.
           </p>
@@ -3268,11 +3217,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3413,20 +3362,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.
           </p>
@@ -3434,11 +3381,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3823,20 +3770,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The data are analyzed using appropriate statistical techniques.
           </p>
@@ -3844,11 +3789,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3918,20 +3863,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.6
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Evidence of impact is recent enough to be relevant.
           </p>
@@ -3939,11 +3882,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4097,11 +4040,9 @@ Array [
   <div
     className="block block__flush-top"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 2: Scope of evidence
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -4121,20 +4062,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             There is sufficient research to judge efficacy.
           </p>
@@ -4142,11 +4081,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4221,20 +4160,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The studies examine the range of participants and settings for which the curriculum was designed.
           </p>
@@ -4242,11 +4179,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4347,11 +4284,9 @@ Array [
   <div
     className="block block__flush-top"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 3: Impact
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -4371,20 +4306,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Positive impacts are statistically significant and substantively important.
           </p>
@@ -4392,11 +4325,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4466,20 +4399,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Findings are consistent across studies and context; there is evidence of positive effects with no overriding contrary evidence.
           </p>
@@ -4487,11 +4418,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4661,8 +4592,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="EfficacyCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -4683,7 +4613,7 @@ Array [
       </svg>
     </span>
     Efficacy
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -4698,11 +4628,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Locate research studies that report on the impact of the curriculum.
@@ -4772,9 +4700,7 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       <span
         className="a-icon a-icon__green a-icon__space-after"
       >
@@ -4789,7 +4715,7 @@ Array [
         </svg>
       </span>
       Criterion 1: Strength of study (inclusion criteria)
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -4835,20 +4761,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.
           </p>
@@ -4856,11 +4780,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4996,20 +4920,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.
           </p>
@@ -5017,11 +4939,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5091,20 +5013,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.
           </p>
@@ -5112,11 +5032,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5257,20 +5177,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.
           </p>
@@ -5278,11 +5196,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5667,20 +5585,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             The data are analyzed using appropriate statistical techniques.
           </p>
@@ -5688,11 +5604,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5762,20 +5678,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.6
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Evidence of impact is recent enough to be relevant.
           </p>
@@ -5783,11 +5697,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >

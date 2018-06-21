@@ -88,14 +88,14 @@ export default class EfficacyStudyComponent extends React.Component {
                 <ol className="m-list__unstyled">
                     <li className="o-survey">
                         <div className="o-survey_number">
-                            <h4 className="h3">1.1</h4>
+                            <h3>1.1</h3>
                         </div>
                         <div className="o-survey_indicator">
-                            <h5 className="h3">Indicator</h5>
+                            <h4 className="h3">Indicator</h4>
                             <p>The study uses a rigorous design, such as a randomized controlled trial (RCT) or quasi-experimental (non-random) design, with a comparison group.</p>
                         </div>
                         <div className="o-survey_components">
-                            <h5 className="h3">Component</h5>
+                            <h4 className="h3">Component</h4>
                             <EditableSubComponentRow
                                 componentText="Does the study use a comparison group? (e.g., state averages, students not participating in the intervention)"
                                 showBeneficialText="false"
@@ -118,14 +118,14 @@ export default class EfficacyStudyComponent extends React.Component {
                     </li>
                     <li className="o-survey">
                         <div className="o-survey_number">
-                            <h4 className="h3">1.2</h4>
+                            <h3>1.2</h3>
                         </div>
                         <div className="o-survey_indicator">
-                            <h5 className="h3">Indicator</h5>
+                            <h4 className="h3">Indicator</h4>
                             <p>Study procedures and implementation are thoroughly described, including the practices or curricula the treatment and comparison groups receive.</p>
                         </div>
                         <div className="o-survey_components">
-                            <h5 className="h3">Component</h5>
+                            <h4 className="h3">Component</h4>
                             <EditableSubComponentRow
                                 componentText="Does the study adequately describe the intervention received by the treated students and (if applicable) the materials/practices delivered to the comparison students?"
                                 showBeneficialText="false"
@@ -139,14 +139,14 @@ export default class EfficacyStudyComponent extends React.Component {
                     </li>
                     <li className="o-survey">
                         <div className="o-survey_number">
-                            <h4 className="h3">1.3</h4>
+                            <h3>1.3</h3>
                         </div>
                         <div className="o-survey_indicator">
-                            <h5 className="h3">Indicator</h5>
+                            <h4 className="h3">Indicator</h4>
                             <p>Study is carried out well, with minimal overall and differential attrition, and there were no viable alternative explanations for the findings other than possible initial differences between groups.</p>
                         </div>
                         <div className="o-survey_components">
-                            <h5 className="h3">Component</h5>
+                            <h4 className="h3">Component</h4>
                             <EditableSubComponentRow
                                 componentText="Is the study free of possible alternative explanations other than possible initial differences between groups?"
                                 showBeneficialText="true"
@@ -169,14 +169,14 @@ export default class EfficacyStudyComponent extends React.Component {
                     </li>
                     <li className="o-survey">
                         <div className="o-survey_number">
-                            <h4 className="h3">1.4</h4>
+                            <h3>1.4</h3>
                         </div>
                         <div className="o-survey_indicator">
-                            <h5 className="h3">Indicator</h5>
+                            <h4 className="h3">Indicator</h4>
                             <p>The study outcome measures are valid and reliable, and outcome data are collected the same way across subjects.</p>
                         </div>
                         <div className="o-survey_components">
-                            <h5 className="h3">Component</h5>
+                            <h4 className="h3">Component</h4>
 
                             <EditableSubComponentRow
                                 componentText="Is there at least one student-level outcome?"
@@ -236,14 +236,14 @@ export default class EfficacyStudyComponent extends React.Component {
                     </li>
                     <li className="o-survey">
                         <div className="o-survey_number">
-                            <h4 className="h3">1.5</h4>
+                            <h3>1.5</h3>
                         </div>
                         <div className="o-survey_indicator">
-                            <h5 className="h3">Indicator</h5>
+                            <h4 className="h3">Indicator</h4>
                             <p>The data are analyzed using appropriate statistical techniques.</p>
                         </div>
                         <div className="o-survey_components">
-                            <h5 className="h3">Component</h5>
+                            <h4 className="h3">Component</h4>
                             <EditableSubComponentRow
                                 componentText="Is the analysis performed using appropriate statistical techniques? (e.g., correct test of significance, correct level of analysis)"
                                 showBeneficialText="false"
@@ -257,14 +257,14 @@ export default class EfficacyStudyComponent extends React.Component {
                     </li>
                     <li className="o-survey">
                         <div className="o-survey_number">
-                            <h4 className="h3">1.6</h4>
+                            <h3>1.6</h3>
                         </div>
                         <div className="o-survey_indicator">
-                            <h5 className="h3">Indicator</h5>
+                            <h4 className="h3">Indicator</h4>
                             <p>Evidence of impact is recent enough to be relevant.</p>
                         </div>
                         <div className="o-survey_components">
-                            <h5 className="h3">Component</h5>
+                            <h4 className="h3">Component</h4>
                             <EditableSubComponentRow
                                 componentText="Was the study performed in the last 10 years?"
                                 showBeneficialText="false"

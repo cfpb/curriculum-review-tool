@@ -114,17 +114,17 @@ export default class EfficacyCriterionPage extends React.Component {
                 <hr className="hr
                             u-mb45
                             u-mt30" />
-                <h2 className="h1" tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="credit-report-round"
                         isLarge="true"
                         hasSpaceAfter="true" />
                     Efficacy
-                </h2>
+                </h1>
                 <p className="lead-paragraph">
                     The efficacy dimension assesses the measurable impact the curriculum has had on students by looking at high-quality studies that have been done about its effectiveness. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
-                <h3 className="h2">Instructions</h3>
+                <h2>Instructions</h2>
                 <ul>
                     <li>Locate research studies that report on the impact of the curriculum.</li>
                     <li>If there aren’t any studies to review, click “I’m done reviewing studies” to continue to the efficacy summary.</li>
@@ -155,13 +155,13 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mt30" />
                 <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.finishAddingEfficacyStudies && C.ICON_CHECK_ROUND}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
                     </p>
@@ -197,13 +197,13 @@ export default class EfficacyCriterionPage extends React.Component {
                     hideCriterion={!this.twoStrongStudiesExist() || !this.props.finishAddingEfficacyStudies}
                     {...this.props}  >
                 <div className="block block__flush-top">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Scope of evidence
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
                     </p>
@@ -260,13 +260,13 @@ export default class EfficacyCriterionPage extends React.Component {
                     criterionText="Criterion 3: Impact"
                     {...this.props} >
                 <div className="block block__flush-top">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Impact
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence to support conclusions of consistent, strong, positive impact?
                     </p>
