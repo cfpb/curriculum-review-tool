@@ -381,7 +381,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-assets"
+        htmlFor="efficacy-crt-assets-optional"
       >
         Assets  
         <small
@@ -401,7 +401,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-gaps"
+        htmlFor="efficacy-crt-gaps-optional"
       >
         Gaps  
         <small
@@ -421,7 +421,7 @@ Array [
     >
       <label
         className="a-label a-label__heading"
-        htmlFor="utility-crt-overall-notes"
+        htmlFor="efficacy-crt-overall-notes-optional"
       >
         Overall notes  
         <small

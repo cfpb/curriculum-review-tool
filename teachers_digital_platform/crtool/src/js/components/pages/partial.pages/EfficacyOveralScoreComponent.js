@@ -130,7 +130,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                     </ul>
                     <div className="m-form-field
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                         </label>
@@ -138,14 +138,14 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                     </div>
                     <div className="m-form-field
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                         </label>
                         {this.renderNotesPrintVersion(this.props.criterionAnswers[this.props.dimensionKey + "gaps-optional"])}
                     </div>
                     <div className="m-form-field">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                         </label>
@@ -245,7 +245,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                             Assets
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             {this.isEditMode() &&
@@ -273,7 +273,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                     <div className="m-form-field
                                     m-form-field__textarea
                                     u-mb30">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                             Gaps
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             {this.isEditMode() &&
@@ -300,7 +300,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                     </div>
                     <div className="m-form-field
                                     m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                        <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                             Overall notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             {this.isEditMode() &&
@@ -418,7 +418,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <div className="m-form-field
                                         m-form-field__textarea
                                         u-mb30">
-                            <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets"} >
+                            <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "assets-optional"} >
                                 Assets
                                 &nbsp;<small className="a-label_helper">(optional)</small>
                                 {this.isEditMode() &&
@@ -446,7 +446,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         <div className="m-form-field
                                         m-form-field__textarea
                                         u-mb30">
-                            <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps"} >
+                            <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "gaps-optional"} >
                                 Gaps
                                 &nbsp;<small className="a-label_helper">(optional)</small>
                                 {this.isEditMode() &&
@@ -473,7 +473,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
                         </div>
                         <div className="m-form-field
                                         m-form-field__textarea">
-                            <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes"} >
+                            <label className="a-label a-label__heading" htmlFor={this.props.dimensionKey + "overall-notes-optional"} >
                                 Overall notes
                                 &nbsp;<small className="a-label_helper">(optional)</small>
                                 {this.isEditMode() &&

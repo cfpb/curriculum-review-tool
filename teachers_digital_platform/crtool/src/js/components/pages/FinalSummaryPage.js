@@ -119,7 +119,7 @@ export default class FinalSummaryPage extends React.Component {
                     <EfficacyOveralScoreComponent
                         dimensionPage={C.EFFICACY_PAGE}
                         dimensionName="Efficacy"
-                        dimensionKey="utility-crt-"
+                        dimensionKey="efficacy-crt-"
                         dimensionLead="How does this curriculum meet the criteria for efficacy:"
                         isFinalSummary="true"
                         {...this.props} />

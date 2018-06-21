@@ -173,7 +173,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset className="o-survey_fieldset">    
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
@@ -212,7 +212,7 @@ export default class ContentHighCriterionPage extends React.Component {
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset className="o-survey_fieldset">    
+                                <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
@@ -1440,7 +1440,7 @@ export default class ContentHighCriterionPage extends React.Component {
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="crt-notes-optional-4">
+                        <label className="a-label a-label__heading" htmlFor="content-high-crt-notes-optional-4">
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">

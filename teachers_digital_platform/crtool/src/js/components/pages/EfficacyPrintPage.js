@@ -30,7 +30,7 @@ export default class EfficacyPrintPage extends React.Component {
                 <EfficacyOveralScoreComponent
                     dimensionPage={C.UTILITY_PAGE}
                     dimensionName="Efficacy"
-                    dimensionKey="utility-crt-"
+                    dimensionKey="efficacy-crt-"
                     dimensionLead="How does this curriculum meet the criteria for efficacy:"
                     {...this.props} />
 
