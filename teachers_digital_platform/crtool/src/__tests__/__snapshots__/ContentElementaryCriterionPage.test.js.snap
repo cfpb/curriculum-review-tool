@@ -5,8 +5,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="Content_dimensionTitle"
     tabindex="0"
   >
@@ -35,7 +34,7 @@ Array [
       </svg>
     </span>
     Content
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -50,11 +49,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read through the scope and sequence of the curriculum.
@@ -95,11 +92,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Earning, income, and careers
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -114,20 +109,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.
           </p>
@@ -135,11 +128,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -209,20 +202,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People can change their income by acquiring more education, work experience, and skills.
           </p>
@@ -230,11 +221,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -372,8 +363,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="Content_dimensionTitle"
     tabindex="0"
   >
@@ -402,7 +392,7 @@ Array [
       </svg>
     </span>
     Content
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -417,11 +407,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read through the scope and sequence of the curriculum.
@@ -462,11 +450,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Earning, income, and careers
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -481,20 +467,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.
           </p>
@@ -502,11 +486,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -576,20 +560,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People can change their income by acquiring more education, work experience, and skills.
           </p>
@@ -597,11 +579,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -698,11 +680,9 @@ Array [
     className="block block__flush-top"
     id="criterion_2"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 2: Saving and investing
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -717,20 +697,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People save for the future, and might have different goals for saving and make different choices about how to save.
           </p>
@@ -738,11 +716,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -873,20 +851,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Compound interest affects the value of savings.
           </p>
@@ -894,11 +870,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -968,20 +944,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Investments involve purchase of financial assets to increase wealth.
           </p>
@@ -989,11 +963,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1090,11 +1064,9 @@ Array [
     className="block block__flush-top"
     id="criterion_3"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 3: Spending
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -1109,20 +1081,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People choose to buy some goods or services over others.
           </p>
@@ -1130,11 +1100,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1265,20 +1235,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Individuals who are active and aware consumers can make more informed choices.
           </p>
@@ -1286,11 +1254,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1570,11 +1538,9 @@ Array [
     className="block block__flush-top"
     id="criterion_4"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 4: Borrowing and credit
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -1589,20 +1555,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Borrowing allows people to purchase goods and services now that must be paid for in the future.
           </p>
@@ -1610,11 +1574,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1772,11 +1736,9 @@ Array [
     className="block block__flush-top"
     id="criterion_5"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 5: Managing financial risk
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -1791,20 +1753,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             5.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People make choices to protect themselves from financial risks.
           </p>
@@ -1812,11 +1772,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2015,8 +1975,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="Content_dimensionTitle"
     tabindex="0"
   >
@@ -2045,7 +2004,7 @@ Array [
       </svg>
     </span>
     Content
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -2060,11 +2019,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read through the scope and sequence of the curriculum.
@@ -2105,11 +2062,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Earning, income, and careers
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -2124,20 +2079,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.
           </p>
@@ -2145,11 +2098,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2219,20 +2172,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People can change their income by acquiring more education, work experience, and skills.
           </p>
@@ -2240,11 +2191,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2341,11 +2292,9 @@ Array [
     className="block block__flush-top"
     id="criterion_2"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 2: Saving and investing
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -2360,20 +2309,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People save for the future, and might have different goals for saving and make different choices about how to save.
           </p>
@@ -2381,11 +2328,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2516,20 +2463,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Compound interest affects the value of savings.
           </p>
@@ -2537,11 +2482,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2611,20 +2556,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Investments involve purchase of financial assets to increase wealth.
           </p>
@@ -2632,11 +2575,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2774,8 +2717,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="Content_dimensionTitle"
     tabindex="0"
   >
@@ -2804,7 +2746,7 @@ Array [
       </svg>
     </span>
     Content
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -2819,11 +2761,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read through the scope and sequence of the curriculum.
@@ -2864,11 +2804,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Earning, income, and careers
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -2883,20 +2821,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.
           </p>
@@ -2904,11 +2840,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2978,20 +2914,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People can change their income by acquiring more education, work experience, and skills.
           </p>
@@ -2999,11 +2933,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3141,8 +3075,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="Content_dimensionTitle"
     tabindex="0"
   >
@@ -3171,7 +3104,7 @@ Array [
       </svg>
     </span>
     Content
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -3186,11 +3119,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read through the scope and sequence of the curriculum.
@@ -3231,9 +3162,7 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       <span
         className="a-icon a-icon__green a-icon__space-after"
       >
@@ -3248,7 +3177,7 @@ Array [
         </svg>
       </span>
       Criterion 1: Earning, income, and careers
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -3263,20 +3192,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.
           </p>
@@ -3284,11 +3211,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3358,20 +3285,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             People can change their income by acquiring more education, work experience, and skills.
           </p>
@@ -3379,11 +3304,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >

@@ -34,17 +34,17 @@ export default class UtilityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h2 className="h1" tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="settings-round"
                         isLarge="true"
                         hasSpaceAfter="true" />
                     Utility
-                </h2>
+                </h1>
                 <p className="lead-paragraph">
                     The utility dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge. Evaluation criteria are based on research and major national and state education standards. <a target="_blank" rel="noopener noreferrer" href={C.LEARN_MORE_PDF_LINK} onClick={(e) => {this.props.sendAnalyticsForLinkClick(C.LEARN_MORE_LINK_TEXT, C.LEARN_MORE_PDF_LINK);}}>{C.LEARN_MORE_LINK_TEXT}</a>.
                 </p>
-                <h3 className="h2">Instructions</h3>
+                <h2>Instructions</h2>
                 <ul>
                     <li>Read lessons plans and supporting materials for the curriculum.</li>
                     <li><strong>Answer all questions</strong> to continue to the summary page for the score on this dimension.</li>
@@ -58,7 +58,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <h4>What’s a beneficial component?</h4>
+                    <h3 class="h4">What’s a beneficial component?</h3>
                     <p>While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These <strong>beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treats essential and beneficial components differently, but you’re still required to answer all beneficial components.</p>
                 </div>
                 <hr className="hr
@@ -66,27 +66,27 @@ export default class UtilityCriterionPage extends React.Component {
                                 u-mt30" />
                 <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
                 <div className="block block__flush-top" id="criterion_1">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-1"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Materials to support cognitive development
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do the materials provide instructional suggestions designed to support the cognitive development of students’ financial capability?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.1</h4>
+                                <h3>1.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes a balanced focus on concepts, procedures, and application</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -208,14 +208,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.2</h4>
+                                <h3>1.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Requires higher-order skills like analysis, synthesis, and evaluation</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -376,14 +376,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.3</h4>
+                                <h3>1.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Promotes development of executive functioning</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -466,14 +466,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">1.4</h4>
+                                <h3>1.4</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Encourages students to use specialized financial vocabulary</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -538,27 +538,27 @@ export default class UtilityCriterionPage extends React.Component {
                     criterionText="Criterion 2: Differentiated instruction for diverse populations"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_2">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-2"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Differentiated instruction for diverse populations
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.1</h4>
+                                <h3>2.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Attends to a diversity of students’ needs</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -956,14 +956,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.2</h4>
+                                <h3>2.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Addresses the needs of students with limited exposure to financial institutions</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1086,14 +1086,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.3</h4>
+                                <h3>2.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes application activities that connect financial concepts to relevant, real-life contexts for students</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1350,14 +1350,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.4</h4>
+                                <h3>2.4</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Integrates technology in ways that deepen student engagement</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1416,14 +1416,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">2.5</h4>
+                                <h3>2.5</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Provides opportunities for hands-on, experiential learning</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1488,27 +1488,27 @@ export default class UtilityCriterionPage extends React.Component {
                     criterionText="Criterion 3: Quality materials for lesson planning"
                     {...this.props} >
                 <div className="block block__flush-top" id="criterion_3">
-                    <h3 className="h2">
+                    <h2>
                         <SvgIcon
                             icon={this.props.criterionCompletionStatuses["utility-crt-question-3"]}
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Quality materials for lesson planning
-                    </h3>
+                    </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.1</h4>
+                                <h3>3.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Connects objectives with lesson plans, activities, assessments, teacher notes, and resources and identifies target settings and users</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1796,20 +1796,20 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.2</h4>
+                                <h3>3.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Clearly specifies learning goals</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
                                                 <p>Do the materials provide <strong>instructional goals</strong> for each lesson?</p>
-                                            
+
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -1848,14 +1848,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.3</h4>
+                                <h3>3.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Logically sequences content, with content deepening over time</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -1993,14 +1993,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.4</h4>
+                                <h3>3.4</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Aligns with existing standards integrating financial education lessons</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2045,14 +2045,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">3.5</h4>
+                                <h3>3.5</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Helps teachers integrate financial education into other subjects as appropriate</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2145,14 +2145,14 @@ export default class UtilityCriterionPage extends React.Component {
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.1</h4>
+                                <h3>4.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes formative assessments that measure students’ progress, produce data to inform instruction, and align to the summative assessments measuring students’ final performance</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2275,14 +2275,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.2</h4>
+                                <h3>4.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Assesses knowledge, higher-order and analytic skills, and application</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2365,14 +2365,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.3</h4>
+                                <h3>4.3</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Provides clear performance descriptors and scoring rubrics to assist teachers in evaluating performance</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2417,14 +2417,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.4</h4>
+                                <h3>4.4</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes a variety of assessment tools</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2508,14 +2508,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.5</h4>
+                                <h3>4.5</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Assessment methods are accessible, unbiased, and valid.</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2638,14 +2638,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">4.6</h4>
+                                <h3>4.6</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes activities that encourage students to summarize and synthesize their learning</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2723,14 +2723,14 @@ export default class UtilityCriterionPage extends React.Component {
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">5.1</h4>
+                                <h3>5.1</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes tools to help teachers grasp the content communicated within lessons</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
@@ -2828,14 +2828,14 @@ export default class UtilityCriterionPage extends React.Component {
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h4 className="h3">5.2</h4>
+                                <h3>5.2</h3>
                             </div>
                             <div className="o-survey_indicator">
-                                <h5 className="h3">Indicator</h5>
+                                <h4 className="h3">Indicator</h4>
                                 <p>Includes notes to guide instructional delivery and support for activities requiring higher-order thinking</p>
                             </div>
                             <div className="o-survey_components">
-                                <h5 className="h3">Component</h5>
+                                <h4 className="h3">Component</h4>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">

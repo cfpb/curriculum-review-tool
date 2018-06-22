@@ -5,8 +5,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="UtilityCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -29,7 +28,7 @@ Array [
       </svg>
     </span>
     Utility
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -44,11 +43,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read lessons plans and supporting materials for the curriculum.
@@ -72,9 +69,11 @@ Array [
   <div
     className="o-well u-mb30 u-mt30"
   >
-    <h4>
+    <h3
+      class="h4"
+    >
       What’s a beneficial component?
-    </h4>
+    </h3>
     <p>
       While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
@@ -97,11 +96,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Materials to support cognitive development
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -116,20 +113,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes a balanced focus on concepts, procedures, and application
           </p>
@@ -137,11 +132,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -345,20 +340,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Requires higher-order skills like analysis, synthesis, and evaluation
           </p>
@@ -366,11 +359,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -639,20 +632,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Promotes development of executive functioning
           </p>
@@ -660,11 +651,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -803,20 +794,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Encourages students to use specialized financial vocabulary
           </p>
@@ -824,11 +813,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -970,8 +959,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="UtilityCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -994,7 +982,7 @@ Array [
       </svg>
     </span>
     Utility
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -1009,11 +997,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read lessons plans and supporting materials for the curriculum.
@@ -1037,9 +1023,11 @@ Array [
   <div
     className="o-well u-mb30 u-mt30"
   >
-    <h4>
+    <h3
+      class="h4"
+    >
       What’s a beneficial component?
-    </h4>
+    </h3>
     <p>
       While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
@@ -1062,11 +1050,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Materials to support cognitive development
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -1081,20 +1067,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes a balanced focus on concepts, procedures, and application
           </p>
@@ -1102,11 +1086,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1310,20 +1294,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Requires higher-order skills like analysis, synthesis, and evaluation
           </p>
@@ -1331,11 +1313,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1604,20 +1586,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Promotes development of executive functioning
           </p>
@@ -1625,11 +1605,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1768,20 +1748,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Encourages students to use specialized financial vocabulary
           </p>
@@ -1789,11 +1767,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -1894,11 +1872,9 @@ Array [
     className="block block__flush-top"
     id="criterion_2"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 2: Differentiated instruction for diverse populations
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -1913,20 +1889,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Attends to a diversity of students’ needs
           </p>
@@ -1934,11 +1908,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2612,20 +2586,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Addresses the needs of students with limited exposure to financial institutions
           </p>
@@ -2633,11 +2605,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -2846,20 +2818,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes application activities that connect financial concepts to relevant, real-life contexts for students
           </p>
@@ -2867,11 +2837,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3293,20 +3263,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Integrates technology in ways that deepen student engagement
           </p>
@@ -3314,11 +3282,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3412,20 +3380,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Provides opportunities for hands-on, experiential learning
           </p>
@@ -3433,11 +3399,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -3538,11 +3504,9 @@ Array [
     className="block block__flush-top"
     id="criterion_3"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 3: Quality materials for lesson planning
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -3557,20 +3521,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Connects objectives with lesson plans, activities, assessments, teacher notes, and resources and identifies target settings and users
           </p>
@@ -3578,11 +3540,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4070,20 +4032,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Clearly specifies learning goals
           </p>
@@ -4091,11 +4051,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4169,20 +4129,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Logically sequences content, with content deepening over time
           </p>
@@ -4190,11 +4148,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4427,20 +4385,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Aligns with existing standards integrating financial education lessons
           </p>
@@ -4448,11 +4404,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4531,20 +4487,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             3.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Helps teachers integrate financial education into other subjects as appropriate
           </p>
@@ -4552,11 +4506,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4696,20 +4650,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes formative assessments that measure students’ progress, produce data to inform instruction, and align to the summative assessments measuring students’ final performance
           </p>
@@ -4717,11 +4669,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -4930,20 +4882,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Assesses knowledge, higher-order and analytic skills, and application
           </p>
@@ -4951,11 +4901,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5086,20 +5036,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Provides clear performance descriptors and scoring rubrics to assist teachers in evaluating performance
           </p>
@@ -5107,11 +5055,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5190,20 +5138,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes a variety of assessment tools
           </p>
@@ -5211,11 +5157,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5355,20 +5301,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Assessment methods are accessible, unbiased, and valid.
           </p>
@@ -5376,11 +5320,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5589,20 +5533,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             4.6
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes activities that encourage students to summarize and synthesize their learning
           </p>
@@ -5610,11 +5552,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5734,20 +5676,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             5.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes tools to help teachers grasp the content communicated within lessons
           </p>
@@ -5755,11 +5695,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -5922,20 +5862,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             5.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes notes to guide instructional delivery and support for activities requiring higher-order thinking
           </p>
@@ -5943,11 +5881,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -6209,8 +6147,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="UtilityCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -6233,7 +6170,7 @@ Array [
       </svg>
     </span>
     Utility
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -6248,11 +6185,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read lessons plans and supporting materials for the curriculum.
@@ -6276,9 +6211,11 @@ Array [
   <div
     className="o-well u-mb30 u-mt30"
   >
-    <h4>
+    <h3
+      class="h4"
+    >
       What’s a beneficial component?
-    </h4>
+    </h3>
     <p>
       While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
@@ -6301,11 +6238,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Materials to support cognitive development
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -6320,20 +6255,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes a balanced focus on concepts, procedures, and application
           </p>
@@ -6341,11 +6274,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -6549,20 +6482,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Requires higher-order skills like analysis, synthesis, and evaluation
           </p>
@@ -6570,11 +6501,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -6843,20 +6774,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Promotes development of executive functioning
           </p>
@@ -6864,11 +6793,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -7007,20 +6936,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Encourages students to use specialized financial vocabulary
           </p>
@@ -7028,11 +6955,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -7133,11 +7060,9 @@ Array [
     className="block block__flush-top"
     id="criterion_2"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 2: Differentiated instruction for diverse populations
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -7152,20 +7077,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Attends to a diversity of students’ needs
           </p>
@@ -7173,11 +7096,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -7851,20 +7774,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Addresses the needs of students with limited exposure to financial institutions
           </p>
@@ -7872,11 +7793,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -8085,20 +8006,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes application activities that connect financial concepts to relevant, real-life contexts for students
           </p>
@@ -8106,11 +8025,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -8532,20 +8451,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Integrates technology in ways that deepen student engagement
           </p>
@@ -8553,11 +8470,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -8651,20 +8568,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             2.5
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Provides opportunities for hands-on, experiential learning
           </p>
@@ -8672,11 +8587,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -8818,8 +8733,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="UtilityCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -8842,7 +8756,7 @@ Array [
       </svg>
     </span>
     Utility
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -8857,11 +8771,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read lessons plans and supporting materials for the curriculum.
@@ -8885,9 +8797,11 @@ Array [
   <div
     className="o-well u-mb30 u-mt30"
   >
-    <h4>
+    <h3
+      class="h4"
+    >
       What’s a beneficial component?
-    </h4>
+    </h3>
     <p>
       While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
@@ -8910,11 +8824,9 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       Criterion 1: Materials to support cognitive development
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -8929,20 +8841,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes a balanced focus on concepts, procedures, and application
           </p>
@@ -8950,11 +8860,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -9158,20 +9068,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Requires higher-order skills like analysis, synthesis, and evaluation
           </p>
@@ -9179,11 +9087,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -9452,20 +9360,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Promotes development of executive functioning
           </p>
@@ -9473,11 +9379,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -9616,20 +9522,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Encourages students to use specialized financial vocabulary
           </p>
@@ -9637,11 +9541,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -9783,8 +9687,7 @@ Array [
   <hr
     className="hr u-mb45 u-mt30"
   />,
-  <h2
-    className="h1"
+  <h1
     id="UtilityCriterionPage_dimensionTitle"
     tabindex="0"
   >
@@ -9807,7 +9710,7 @@ Array [
       </svg>
     </span>
     Utility
-  </h2>,
+  </h1>,
   <p
     className="lead-paragraph"
   >
@@ -9822,11 +9725,9 @@ Array [
     </a>
     .
   </p>,
-  <h3
-    className="h2"
-  >
+  <h2>
     Instructions
-  </h3>,
+  </h2>,
   <ul>
     <li>
       Read lessons plans and supporting materials for the curriculum.
@@ -9850,9 +9751,11 @@ Array [
   <div
     className="o-well u-mb30 u-mt30"
   >
-    <h4>
+    <h3
+      class="h4"
+    >
       What’s a beneficial component?
-    </h4>
+    </h3>
     <p>
       While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These 
       <strong>
@@ -9875,9 +9778,7 @@ Array [
     className="block block__flush-top"
     id="criterion_1"
   >
-    <h3
-      className="h2"
-    >
+    <h2>
       <span
         className="a-icon a-icon__green a-icon__space-after"
       >
@@ -9892,7 +9793,7 @@ Array [
         </svg>
       </span>
       Criterion 1: Materials to support cognitive development
-    </h3>
+    </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
     >
@@ -9907,20 +9808,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.1
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Includes a balanced focus on concepts, procedures, and application
           </p>
@@ -9928,11 +9827,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -10136,20 +10035,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.2
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Requires higher-order skills like analysis, synthesis, and evaluation
           </p>
@@ -10157,11 +10054,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -10430,20 +10327,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.3
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Promotes development of executive functioning
           </p>
@@ -10451,11 +10346,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
@@ -10594,20 +10489,18 @@ Array [
         <div
           className="o-survey_number"
         >
-          <h4
-            className="h3"
-          >
+          <h3>
             1.4
-          </h4>
+          </h3>
         </div>
         <div
           className="o-survey_indicator"
         >
-          <h5
+          <h4
             className="h3"
           >
             Indicator
-          </h5>
+          </h4>
           <p>
             Encourages students to use specialized financial vocabulary
           </p>
@@ -10615,11 +10508,11 @@ Array [
         <div
           className="o-survey_components"
         >
-          <h5
+          <h4
             className="h3"
           >
             Component
-          </h5>
+          </h4>
           <fieldset
             className="o-survey_fieldset"
           >
