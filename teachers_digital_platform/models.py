@@ -1,9 +1,17 @@
+
+
 from django import forms
 from django.db import models
+from django.utils import timezone
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
-from wagtail.wagtailcore.models import Page
+from wagtail.wagtailadmin.edit_handlers import (
+    FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
+    TabbedInterface
+)
+
+from wagtail.wagtailcore.models import Page, PageManager
 from wagtail.wagtailsearch import index
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
@@ -13,105 +21,125 @@ from wagtail.wagtailimages.models import Image
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
-class ActivityIndexPage(Page):
+from v1.models import CFGOVPage, CFGOVPageManager
+
+
+class ActivityIndexPage(CFGOVPage):
     """
     A model for the Activity Search page.
     """
-    intro = RichTextField(blank=True)
-    alert = RichTextField(blank=True)
 
-    content_panels = Page.content_panels + [
+    objects = CFGOVPageManager()
+
+    intro = RichTextField(blank=True)
+    #  alert = RichTextField(blank=True)  # Move this to a StreamField
+
+    content_panels = CFGOVPage.content_panels + [
         FieldPanel('intro'),
-        FieldPanel('alert'),
+        #  FieldPanel('alert'),
     ]
 
 
-@register_snippet
-class ActivityBuildingBlock(models.Model):
+class BaseActivityTaxonomy(models.Model):
+    """ A base class for all activity snippets"""
     title = models.CharField(max_length=255)
-    icon = models.ForeignKey(
-        'wagtailimages.Image', null=True, blank=True,
-        on_delete=models.SET_NULL, related_name='+'
-    )
 
     panels = [
         FieldPanel('title'),
-        ImageChooserPanel('icon'),
     ]
 
     def __str__(self):
         return self.title
 
-
-@register_snippet
-class ActivitySchoolSubject(models.Model):
-    title = models.CharField(max_length=255)
-
-
-@register_snippet
-class ActivityTopic(models.Model):
-    title = models.CharField(max_length=255)
+    class Meta:
+        abstract = True
+        ordering = ['title']
 
 
 @register_snippet
-class ActivityGradeLevel(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityBuildingBlock(BaseActivityTaxonomy):
+    icon = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
+
+    panels = BaseActivityTaxonomy.panels + [
+        ImageChooserPanel('icon'),
+    ]
 
 
 @register_snippet
-class ActivityAgeRange(models.Model):
-    title = models.CharField(max_length=255)
+class ActivitySchoolSubject(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivitySpecialPopulations(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityTopic(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivityType(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityGradeLevel(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivityTeachingStrategies(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityAgeRange(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivityBloomsTaxonomyLevel(models.Model):
-    title = models.CharField(max_length=255)
+class ActivitySpecialPopulation(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivityDuration(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityType(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivityJumpstartNatStandards(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityTeachingStrategy(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
 @register_snippet
-class ActivityCouncilForEconEd(models.Model):
-    title = models.CharField(max_length=255)
+class ActivityBloomsTaxonomyLevel(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
 
 
-class ActivityPage(Page):
+@register_snippet
+class ActivityDuration(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
+
+
+@register_snippet
+class ActivityJumpStartCoalition(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
+
+
+@register_snippet
+class ActivityCouncilForEconEd(BaseActivityTaxonomy):
+    panels = BaseActivityTaxonomy.panels
+
+
+class ActivityPage(CFGOVPage):
     """
     A model for the Activity Detail page.
     """
-    published_date = models.DateField('Published date')
-    summary = models.TextField('Summary', max_length=500)
-    big_idea = RichTextField('Big idea', blank=True)
-    essential_questions = RichTextField('Essential questions', blank=True)
-    objectives = RichTextField('Objectives', blank=True)
-    what_students_will_do = RichTextField('What students will do', blank=True)
+
+    objects = CFGOVPageManager()
+
+    date = models.DateField('Updated', default=timezone.now)
+    summary = models.TextField('Summary', blank=False)
+    big_idea = RichTextField('Big idea', blank=False)
+    essential_questions = RichTextField('Essential questions', blank=False)
+    objectives = RichTextField('Objectives', blank=False)
+    what_students_will_do = RichTextField('What students will do', blank=False)
     activity_file = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
-        blank=True,
+        blank=False,
         on_delete=models.SET_NULL,
         related_name='+'
     )
@@ -122,25 +150,24 @@ class ActivityPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    building_blocks = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=True)
-    # Primary Focus
-    school_subjects = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=True)
-    topics = ParentalManyToManyField('teachers_digital_platform.ActivityTopic', blank=True)
+    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)  # make sure this looks good.
+    school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
+    topic = ParentalManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
     # Audience
-    grade_levels = models.ForeignKey(ActivityGradeLevel, blank=True)
-    age_range = models.ForeignKey(ActivityAgeRange, blank=True)
-    special_populations = ParentalManyToManyField('teachers_digital_platform.ActivitySpecialPopulations', blank=True)
+    grade_level = ParentalManyToManyField('teachers_digital_platform.ActivityGradeLevel', blank=False)
+    age_range = ParentalManyToManyField('teachers_digital_platform.ActivityAgeRange', blank=False)
+    special_population = ParentalManyToManyField('teachers_digital_platform.ActivitySpecialPopulation', blank=True)
     # Activity Characteristics
-    activity_type = models.ForeignKey(ActivityType, blank=True)
-    teaching_strategies = ParentalManyToManyField('teachers_digital_platform.ActivityTeachingStrategies', blank=True)
-    blooms_taxonomy_level = models.ForeignKey(ActivityBloomsTaxonomyLevel, blank=True)
-    activity_duration = models.ForeignKey(ActivityDuration, blank=True, null=True)
+    activity_type = ParentalManyToManyField('teachers_digital_platform.ActivityType', blank=False)
+    teaching_strategy = ParentalManyToManyField('teachers_digital_platform.ActivityTeachingStrategy', blank=False)
+    blooms_taxonomy_level = ParentalManyToManyField('teachers_digital_platform.ActivityBloomsTaxonomyLevel', blank=False)
+    activity_duration = models.ForeignKey(ActivityDuration, blank=False, on_delete=models.PROTECT)
     # Standards taught
-    jumpstart_national_standards = models.ForeignKey(ActivityJumpstartNatStandards, blank=True)
-    council_for_economic_education = models.ForeignKey(ActivityCouncilForEconEd, blank=True)
+    jump_start_coalition = ParentalManyToManyField('teachers_digital_platform.ActivityJumpStartCoalition', blank=True)
+    council_for_economic_education = ParentalManyToManyField('teachers_digital_platform.ActivityCouncilForEconEd', blank=True)
 
-    content_panels = Page.content_panels + [
-        FieldPanel('published_date'),
+    content_panels = CFGOVPage.content_panels + [
+        FieldPanel('date'),
         FieldPanel('summary'),
         FieldPanel('big_idea'),
         FieldPanel('essential_questions'),
@@ -151,59 +178,63 @@ class ActivityPage(Page):
                 DocumentChooserPanel('activity_file'),
                 DocumentChooserPanel('handout_file'),
             ],
-            heading="Download activities",
+            heading="Download activity",
         ),
-        FieldPanel('building_blocks', widget=forms.CheckboxSelectMultiple),
+        FieldPanel('building_block', widget=forms.CheckboxSelectMultiple),
+        FieldPanel('school_subject', widget=forms.CheckboxSelectMultiple),
+        FieldPanel('topic', widget=forms.CheckboxSelectMultiple),
+
         MultiFieldPanel(
             [
-                FieldPanel('school_subjects', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('topics', widget=forms.CheckboxSelectMultiple),
-            ],
-            heading="Primary focus",
-        ),
-        MultiFieldPanel(
-            [
-                FieldPanel('grade_levels'),
-                FieldPanel('age_range'),
-                FieldPanel('special_populations', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('grade_level', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('age_range', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('special_population', widget=forms.CheckboxSelectMultiple),
             ],
             heading="Audience",
         ),
         MultiFieldPanel(
             [
-                FieldPanel('activity_type'),
-                FieldPanel('teaching_strategies', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('blooms_taxonomy_level'),
+                FieldPanel('activity_type', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('teaching_strategy', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('blooms_taxonomy_level', widget=forms.CheckboxSelectMultiple),
                 FieldPanel('activity_duration'),
             ],
             heading="Activity characteristics",
         ),
         MultiFieldPanel(
             [
-                FieldPanel('jumpstart_national_standards'),
-                FieldPanel('council_for_economic_education'),
+                FieldPanel('jump_start_coalition', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('council_for_economic_education', widget=forms.CheckboxSelectMultiple),
             ],
-            heading="Standards taught",
+            heading="National standards",
         ),
     ]
 
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='General Content'),
+        ObjectList(CFGOVPage.sidefoot_panels, heading='Sidebar/Footer'),
+        ObjectList(CFGOVPage.settings_panels, heading='Configuration'),
+    ])
+
+    # admin use only
     search_fields = Page.search_fields + [
         index.SearchField('summary'),
         index.SearchField('big_idea'),
         index.SearchField('essential_questions'),
         index.SearchField('objectives'),
         index.SearchField('what_students_will_do'),
-        index.FilterField('published_date'),
-        index.FilterField('building_blocks'),
-        index.FilterField('school_subjects'),
-        index.FilterField('topics'),
-        index.FilterField('grade_levels'),
+        index.FilterField('date'),
+        index.FilterField('building_block'),
+        index.FilterField('school_subject'),
+        index.FilterField('topic'),
+        index.FilterField('grade_level'),
         index.FilterField('age_range'),
-        index.FilterField('special_populations'),
+        index.FilterField('special_population'),
         index.FilterField('activity_type'),
-        index.FilterField('teaching_strategies'),
+        index.FilterField('teaching_strategy'),
         index.FilterField('blooms_taxonomy_level'),
         index.FilterField('activity_duration'),
-        index.FilterField('jumpstart_national_standards'),
+        index.FilterField('jump_start_coalition'),
         index.FilterField('council_for_economic_education'),
     ]
+
