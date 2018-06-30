@@ -24,6 +24,15 @@ export default class EfficacyStudyScoreComponent extends React.Component {
         return (studyScore.all_essential_yes === true);
     }
 
+    generateClassNameForScore(isActive) {
+        let className = "m-form-field_radio-text";
+        if (isActive) {
+            className += " is-active";
+        }
+
+        return className;
+    }
+
     render() {
         if (this.props.studyScore !== undefined && this.props.studyScore.answered_all_complete) {
             return (
@@ -40,7 +49,7 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text is-active">
+                                    <div className={this.generateClassNameForScore(this.studyIsStrong())}>
                                     { this.studyIsStrong() && <div><strong>The study is strong.</strong></div> }
                                     { !this.studyIsStrong() && <div>The study is strong.</div> }
                                         All essential components were met.
@@ -57,7 +66,7 @@ export default class EfficacyStudyScoreComponent extends React.Component {
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className="m-form-field_radio-text">
+                                    <div className={this.generateClassNameForScore(!this.studyIsStrong())}>
                                     { !this.studyIsStrong() && <div><strong>The study is not strong.</strong></div> }
                                     { this.studyIsStrong() && <div>The study is not strong.</div> }
                                         Not all essential components were met.
