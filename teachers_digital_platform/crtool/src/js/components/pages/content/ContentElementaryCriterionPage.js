@@ -4,6 +4,7 @@ import C from "../../../business.logic/constants";
 import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
+import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 
 export default class ContentElementaryCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -60,7 +61,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
+                {this.props.renderFormLevelErrorMessage()}
                 <div className="block block__flush-top" id="criterion_1">
                     <h2>
                         <SvgIcon
@@ -68,6 +69,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Earning, income, and careers
+                        {this.props.criterionCompletionStatuses["content-elementary-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for earning, income, and careers?
@@ -121,6 +123,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-1.1" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -172,6 +175,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-1.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -204,6 +208,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
+                        {this.props.criterionCompletionStatuses["content-elementary-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
@@ -257,6 +262,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-2.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -296,6 +302,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-2.1.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -347,6 +354,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-2.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -398,6 +406,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-2.3" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -430,6 +439,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Spending
+                        {this.props.criterionCompletionStatuses["content-elementary-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for spending?
@@ -483,6 +493,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-3.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -522,6 +533,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-3.1.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -573,6 +585,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-3.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -612,6 +625,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-3.2.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -651,6 +665,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-3.2.3" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -690,6 +705,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-3.2.4" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -722,6 +738,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Borrowing and credit
+                        {this.props.criterionCompletionStatuses["content-elementary-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for borrowing and credit?
@@ -775,6 +792,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-4.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -814,6 +832,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-4.1.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -846,6 +865,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 5: Managing financial risk
+                        {this.props.criterionCompletionStatuses["content-elementary-crt-question-5"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
@@ -899,6 +919,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-5.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -938,6 +959,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-5.1.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -970,6 +992,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 6: Financial responsibility and money management
+                        {this.props.criterionCompletionStatuses["content-elementary-crt-question-6"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?
@@ -1023,6 +1046,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="content-elementary-crt-question-6.1" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1055,7 +1079,6 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                         u-mb30
                                         u-mt45" />
                 }
-                <p className="u-mb30"><strong>Be sure to answer all yes/no questions to continue.</strong></p>
             </React.Fragment>
         );
 

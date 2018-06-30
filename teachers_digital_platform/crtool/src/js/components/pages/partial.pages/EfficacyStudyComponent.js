@@ -2,6 +2,7 @@ import React from "react";
 
 import EfficacyStudyScoreComponent from "./EfficacyStudyScoreComponent";
 import EditableSubComponentRow from "./EditableSubComponentRow";
+import EfficacyStudyNameComponent from "../../common/EfficacyStudyNameComponent";
 import SvgIcon from "../../svgs/SvgIcon";
 
 export default class EfficacyStudyComponent extends React.Component {
@@ -71,19 +72,10 @@ export default class EfficacyStudyComponent extends React.Component {
             <React.Fragment>
                 <div className="u-mt45 u-mb30">
                     {this.showRemoveButton()}
-                    <div className="m-form-field m-form-field__text">
-                        <label className="a-label a-label__heading" for={this.generateStudyRefId("", "study")}>
-                            Study name
-                            <small className="a-label_helper a-label_helper__block">
-                                Enter name of study you’re reviewing
-                            </small>
-                        </label>
-                        <input className="a-text-input a-text-input__full" type="text"
-                            id={this.generateStudyRefId("", "study")}
-                            ref={this.generateStudyRefId("", "study")}
-                            defaultValue={this.props.studyAnswers[this.props.studyCount][this.generateStudyRefId("", "study")]}
-                            onBlur={e=>this.criterionStudyAnswerChanged(this.generateStudyRefId("", "study"), e.target.value)} />
-                    </div>
+                    <EfficacyStudyNameComponent 
+                        criterionStudyAnswerChanged={this.criterionStudyAnswerChanged.bind(this)} 
+                        generateStudyRefId={this.generateStudyRefId.bind(this)}
+                        {...this.props} />
                 </div>
                 <ol className="m-list__unstyled">
                     <li className="o-survey">

@@ -15,6 +15,8 @@ const contentProps = {
     initializeAnswerObjects:(() => { }),
     criterionCompletionStatuses:(() => {}),
     setCriterionStatusToInStart:(() => {}),
+    renderFormLevelErrorMessage:(() => {}),
+    showErrorsForCurrentPage:(() => {}),
 }
     
 afterAll(() => {

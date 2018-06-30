@@ -18,13 +18,13 @@ export default class CriterionLinkWrapper extends React.Component {
 
     renderCriterionTitle() {
         if (this.props.hideCriterion) {
-            return (null);
+            return (<div id={this.props.criterionKey}></div>);
         }else if (this.props.criterionClickedTitles !== undefined &&
                   this.props.criterionClickedTitles[this.props.criterionKey] === "clicked") {
             return (this.props.children);
         }else {
             return(
-                <div className="block block__flush-top">
+                <div id={this.props.criterionKey} className="block block__flush-top">
                     <h3 className="h2">
                         <button className="a-btn
                                             a-btn__heading

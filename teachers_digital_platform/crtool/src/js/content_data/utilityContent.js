@@ -264,7 +264,7 @@ export const UtilityContent = {
                         {
                             showNaButton: true,
                             showBeneficialText: false,
-                            criterionRefId: "utility-crt-question-2.3.1",
+                            criterionRefId: "utility-crt-question-2.4",
                             hasInlineHtml: false,
                             componentText: "If technology is used, does the use of technology add value? (e.g., online assessments that direct students to questions at the correct level)",
                         },
@@ -277,7 +277,7 @@ export const UtilityContent = {
                         {
                             showNaButton: false,
                             showBeneficialText: false,
-                            criterionRefId: "utility-crt-question-2.3.1",
+                            criterionRefId: "utility-crt-question-2.5",
                             hasInlineHtml: true,
                             componentText: "Do student activities and supporting materials provide opportunities for students to <strong>practice</strong> their learning in real-world contexts?",
                         },

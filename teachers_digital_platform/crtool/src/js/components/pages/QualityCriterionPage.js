@@ -4,6 +4,7 @@ import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
+import FieldLevelErrorMessageComponent from "../common/FieldLevelErrorMessageComponent";
 
 export default class QualityCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -64,7 +65,7 @@ export default class QualityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
+                {this.props.renderFormLevelErrorMessage()}
                 <div className="block block__flush-top" id="criterion_1">
                     <h2>
                         <SvgIcon
@@ -72,6 +73,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Accessibility
+                        {this.props.criterionCompletionStatuses["quality-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
@@ -94,6 +96,9 @@ export default class QualityCriterionPage extends React.Component {
                                                 <p>If there are <strong>paper-based materials:</strong></p>
                                                 <p>Are paper-based materials available at no cost or for a clearly stated price?</p>
                                             </legend>
+
+
+
                                             <div className="m-form-field m-form-field__text u-mt30">
                                                 <label className="a-label a-label__heading" for="quality-crt-text-optional-1.1.1">
                                                     Cost of materials per student
@@ -138,6 +143,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -192,6 +198,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.1.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -258,6 +265,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.1.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -323,6 +331,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -362,6 +371,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.2.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -425,6 +435,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.3.1_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -476,6 +487,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.3.2_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -528,6 +540,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-1.4_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -560,6 +573,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Accuracy and timeliness
+                        {this.props.criterionCompletionStatuses["quality-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials current and free of error?
@@ -613,6 +627,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-2.1" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -664,6 +679,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-2.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -703,6 +719,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-2.2.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -754,6 +771,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-2.3" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -786,6 +804,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Objectivity
+                        {this.props.criterionCompletionStatuses["quality-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are the curriculum materials objective?
@@ -839,6 +858,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -878,6 +898,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.1.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -929,6 +950,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -968,6 +990,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.2.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1019,6 +1042,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.3.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1058,6 +1082,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.3.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1098,6 +1123,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-3.3.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1130,6 +1156,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Visual appearance
+                        {this.props.criterionCompletionStatuses["quality-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the visual appearance of the student materials conducive to learning?
@@ -1183,6 +1210,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1222,6 +1250,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.1.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1261,6 +1290,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.1.3" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1300,6 +1330,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.1.4" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1351,6 +1382,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1390,6 +1422,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.2.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1429,6 +1462,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.2.3" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1468,6 +1502,7 @@ export default class QualityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="quality-crt-question-4.2.4" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1498,7 +1533,6 @@ export default class QualityCriterionPage extends React.Component {
                                         u-mb30
                                         u-mt45" />
                 }
-                <p className="u-mb30"><strong>Be sure to answer all yes/no questions to continue.</strong></p>
             </React.Fragment>
         );
     }
