@@ -73,6 +73,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Materials to support cognitive development
+                        {this.props.criterionCompletionStatuses["utility-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do the materials provide instructional suggestions designed to support the cognitive development of students’ financial capability?
@@ -555,6 +556,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Differentiated instruction for diverse populations
+                        {this.props.criterionCompletionStatuses["utility-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.
@@ -1526,6 +1528,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Quality materials for lesson planning
+                        {this.props.criterionCompletionStatuses["utility-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?
@@ -2183,6 +2186,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Materials to assess mastery
+                        {this.props.criterionCompletionStatuses["utility-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h3>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?
@@ -2773,6 +2777,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 5: Instructional supports
+                        {this.props.criterionCompletionStatuses["utility-crt-question-5"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h3>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?

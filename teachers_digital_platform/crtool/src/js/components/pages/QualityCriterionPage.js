@@ -73,6 +73,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Accessibility
+                        {this.props.criterionCompletionStatuses["quality-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
@@ -572,6 +573,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Accuracy and timeliness
+                        {this.props.criterionCompletionStatuses["quality-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials current and free of error?
@@ -802,6 +804,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Objectivity
+                        {this.props.criterionCompletionStatuses["quality-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are the curriculum materials objective?
@@ -1153,6 +1156,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Visual appearance
+                        {this.props.criterionCompletionStatuses["quality-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the visual appearance of the student materials conducive to learning?

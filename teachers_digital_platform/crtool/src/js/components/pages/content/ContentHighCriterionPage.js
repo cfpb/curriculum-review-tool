@@ -69,6 +69,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Earning, income, and careers
+                        {this.props.criterionCompletionStatuses["content-high-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for earning, income, and careers?
@@ -367,6 +368,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Saving and investing
+                        {this.props.criterionCompletionStatuses["content-high-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for saving and investing?
@@ -809,6 +811,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Spending
+                        {this.props.criterionCompletionStatuses["content-high-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for spending?
@@ -1027,6 +1030,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Borrowing and credit
+                        {this.props.criterionCompletionStatuses["content-high-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for borrowing and credit?
@@ -1497,6 +1501,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 5: Managing financial risk
+                        {this.props.criterionCompletionStatuses["content-high-crt-question-5"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?
@@ -1847,6 +1852,7 @@ export default class ContentHighCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 6: Financial responsibility and money management
+                        {this.props.criterionCompletionStatuses["content-high-crt-question-6"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?

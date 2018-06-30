@@ -1347,6 +1347,11 @@ Array [
         </svg>
       </span>
       Criterion 1: Strength of study (inclusion criteria)
+      <span
+        class="u-fc-gray"
+      >
+         (complete)
+      </span>
     </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
@@ -2855,6 +2860,11 @@ Array [
         </svg>
       </span>
       Criterion 1: Strength of study (inclusion criteria)
+      <span
+        class="u-fc-gray"
+      >
+         (complete)
+      </span>
     </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
@@ -4635,6 +4645,11 @@ Array [
         </svg>
       </span>
       Criterion 1: Strength of study (inclusion criteria)
+      <span
+        class="u-fc-gray"
+      >
+         (complete)
+      </span>
     </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"

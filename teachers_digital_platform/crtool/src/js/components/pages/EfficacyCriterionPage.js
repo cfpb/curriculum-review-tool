@@ -161,6 +161,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
+                        {this.props.finishAddingEfficacyStudies && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
@@ -203,6 +204,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Scope of evidence
+                        {this.props.criterionCompletionStatuses["efficacy-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
@@ -266,6 +268,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Impact
+                        {this.props.criterionCompletionStatuses["efficacy-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence to support conclusions of consistent, strong, positive impact?
