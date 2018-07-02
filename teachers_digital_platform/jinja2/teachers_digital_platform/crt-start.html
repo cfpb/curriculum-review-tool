@@ -316,7 +316,7 @@
 
         $('button.start-over-close-push-analytics').click(function() {
             var action = "Starting over modal"
-            var label = "Starting over";
+            var label = $(this).text().trim();
             modelButtonClicked(action, label);
         });
 
@@ -341,7 +341,7 @@
                 action:        action.trim(),
                 label:         label || ""
             }
-
+            
             track(data.event, data.action, data.label);
         }
 

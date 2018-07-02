@@ -57,7 +57,7 @@ export default class StartOverModal extends React.Component {
 
         //Analytics close start over with a new review
         if (linkText !== undefined) {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("Starting over modal", "Starting over"));
+            Analytics.sendEvent(Analytics.getDataLayerOptions("Starting over modal", linkText));
         }
     }
 

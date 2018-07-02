@@ -116,6 +116,15 @@ const EfficacyCalculationService = {
         return false;
     },
 
+    /* 
+     * There is a need to know if I'm done reviewing studies button is clicked with out any studies
+     * being answered. (Skipped).  Once a study is started it must be finished.
+     */
+    EfficacyStudiesAreBeingSkipped() {
+        let efficacyStudiesAreBeingSkipped = Repository.getCriterionScores()["efficacy-crt-1"];
+        return efficacyStudiesAreBeingSkipped === undefined;
+    },
+
     scoreScoeOfEvidenceIsLarge(component, hasTwoStrongStudies) {
         let criterionScore = component.state.criterionScores["efficacy-crt-2"];
         if (criterionScore === undefined) {

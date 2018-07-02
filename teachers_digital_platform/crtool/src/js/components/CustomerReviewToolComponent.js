@@ -220,10 +220,6 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     currentDimensionHasErrors() {
-        if (this.state.currentPage === C.EFFICACY_PAGE && this.efficacyDimensionHasErrors()) {
-            return true;
-        }
-
         if ( (this.state.currentPage === C.CONTENT_PAGE && this.state.contentInProgress === C.STATUS_COMPLETE)  ||
              (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityInProgress === C.STATUS_COMPLETE)  ||
              (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityInProgress === C.STATUS_COMPLETE)  ||
@@ -232,12 +228,6 @@ export default class CustomerReviewToolComponent extends React.Component {
         }
 
         return true;
-    }
-
-    efficacyDimensionHasErrors() {
-        // If any studies are started but not completed it has errors
-        // If two strong studies exist and criterion 2 or 3 are not complete it has errors
-        return false;
     }
 
     handleSummaryButtonClick() {
@@ -299,18 +289,22 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.handleFinishAddingEfficacyStudies(this, value);
         var numberOfStudies = this.state.criterionEfficacyStudies.length;
 
-        if (EfficacyCalculationService.unfinishedEfficacyStudyExists()) {
-            this.handleSummaryButtonClickPostEvent(true);
-        }
-
         //Analytics I'm done reviewing studies
         Analytics.sendEvent(Analytics.getDataLayerOptions("I am done reviewing studies", "Number of studies: " + numberOfStudies));
 
-        //Analytics Efficacy Criterion 1 is now complete 
-        Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", "Efficacy: 1"));  
-
-        //Analytics individual study scores
-        Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", EfficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
+        if (EfficacyCalculationService.unfinishedEfficacyStudyExists()) {
+            this.handleSummaryButtonClickPostEvent(true);
+        } else {
+            
+            //Analytics Efficacy Criterion 1 is now complete 
+            let efficacyStudiesAreBeingSkipped = EfficacyCalculationService.EfficacyStudiesAreBeingSkipped();
+            if (efficacyStudiesAreBeingSkipped) {
+                Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", "Efficacy: 1"));  
+            }
+            
+            //Analytics individual study scores
+            Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", EfficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
+        }
     }
 
     removeEfficacyStudy(efficacyStudyNumber) {
