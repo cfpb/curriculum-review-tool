@@ -3,7 +3,7 @@ import React from "react";
 export default class RadioButtonEditable extends React.Component {
 
     generateUniqueId() {
-        return this.props.currentCriterionRefId + "_" + this.props.uniqueId;
+        return this.props.currentCriterionRefId.replace("_beneficial", "") + this.props.uniqueId;
     }
 
     render() {

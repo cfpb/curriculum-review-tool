@@ -57,7 +57,7 @@ export default class SaveWorkModal extends React.Component {
 
         //Analytics closed save work modal
         if (linkText !== undefined) {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: " + linkText, "Saving your work"));
+            Analytics.sendEvent(Analytics.getDataLayerOptions("save work modal", linkText));
         }
     }
 

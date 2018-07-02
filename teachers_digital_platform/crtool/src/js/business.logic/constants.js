@@ -39,6 +39,11 @@ const C = {
     QUALITY_CRITERION_IS_COMPLETE: "quality_is_complete",
     EFFICACY_CRITERION_IS_COMPLETE: "efficacy_is_complete",
 
+    CONTENT_SHOW_ERRORS: "contentShowErrors",
+    UTILITY_SHOW_ERRORS: "utilityShowErrors",
+    QUALITY_SHOW_ERRORS: "qualityShowErrors",
+    EFFICACY_SHOW_ERRORS: "efficacyShowErrors",
+
     ICON_CHECK_ROUND: "check-round",
     ICON_CREDIT_REPORT: "credit-report",
     ICON_CREDIT_REPORT_ROUND: "credit-report-round",

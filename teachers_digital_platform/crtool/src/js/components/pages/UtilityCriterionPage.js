@@ -4,6 +4,7 @@ import C from "../../business.logic/constants";
 import SvgIcon from "../svgs/SvgIcon";
 import SaveWorkModal from "../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "./CriterionLinkWrapper";
+import FieldLevelErrorMessageComponent from "../common/FieldLevelErrorMessageComponent";
 
 export default class UtilityCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -64,7 +65,7 @@ export default class UtilityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
+                {this.props.renderFormLevelErrorMessage()}
                 <div className="block block__flush-top" id="criterion_1">
                     <h2>
                         <SvgIcon
@@ -72,6 +73,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Materials to support cognitive development
+                        {this.props.criterionCompletionStatuses["utility-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do the materials provide instructional suggestions designed to support the cognitive development of students’ financial capability?
@@ -125,6 +127,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -164,6 +167,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.1.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -203,6 +207,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.1.3" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -254,6 +259,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -293,6 +299,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.2.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -332,6 +339,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.2.3" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -371,6 +379,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.2.4" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -422,6 +431,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.3.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -461,6 +471,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.3.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -512,6 +523,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-1.4" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -544,6 +556,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Differentiated instruction for diverse populations
+                        {this.props.criterionCompletionStatuses["utility-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.
@@ -597,6 +610,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -636,6 +650,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -675,6 +690,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.3" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -714,6 +730,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.4" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -753,6 +770,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.5" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -792,6 +810,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.6" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -832,6 +851,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.7_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -872,6 +892,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.8_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -912,6 +933,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.9_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -951,6 +973,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.1.10" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1002,6 +1025,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1041,6 +1065,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.2.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1081,6 +1106,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.2.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1132,6 +1158,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.3.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1171,6 +1198,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.3.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1211,6 +1239,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.3.3_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1251,6 +1280,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.3.4_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1291,6 +1321,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.3.5_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1345,6 +1376,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.3.6_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1411,6 +1443,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.4_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1462,6 +1495,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-2.5" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1494,6 +1528,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Quality materials for lesson planning
+                        {this.props.criterionCompletionStatuses["utility-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?
@@ -1547,6 +1582,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1595,6 +1631,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1634,6 +1671,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.3" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1673,6 +1711,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.4" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1712,6 +1751,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.5" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1751,6 +1791,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.6" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1791,6 +1832,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.1.7_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1843,6 +1885,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -1894,6 +1937,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.3.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1934,6 +1978,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.3.2_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -1988,6 +2033,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.3.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2040,6 +2086,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.4_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2106,6 +2153,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-3.5_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2138,6 +2186,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Materials to assess mastery
+                        {this.props.criterionCompletionStatuses["utility-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h3>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?
@@ -2191,6 +2240,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2230,6 +2280,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.1.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2270,6 +2321,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.1.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2321,6 +2373,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2360,6 +2413,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.2.2" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2412,6 +2466,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2463,6 +2518,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.4.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2503,6 +2559,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.4.2_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2554,6 +2611,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.5.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2593,6 +2651,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.5.2" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2633,6 +2692,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.5.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2684,6 +2744,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-4.6" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2716,6 +2777,7 @@ export default class UtilityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 5: Instructional supports
+                        {this.props.criterionCompletionStatuses["utility-crt-question-5"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h3>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?
@@ -2769,6 +2831,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-5.1.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2823,6 +2886,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-5.1.2_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2874,6 +2938,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-5.2.1" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2914,6 +2979,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-5.2.2_beneficial" {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
@@ -2968,6 +3034,7 @@ export default class UtilityCriterionPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <FieldLevelErrorMessageComponent fieldId="utility-crt-question-5.2.3_beneficial" {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
@@ -2999,7 +3066,6 @@ export default class UtilityCriterionPage extends React.Component {
                                         u-mb30
                                         u-mt45" />
                 }
-                <p className="u-mb30"><strong>Be sure to answer all yes/no questions to continue.</strong></p>
             </React.Fragment>
         );
     }

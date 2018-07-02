@@ -65,16 +65,16 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     renderDoneAddingStoriesButton() {
-        if (this.props.finishAddingEfficacyStudies) {
+        if (this.props.finishAddingEfficacyStudies !== true) {
             return (
-                <button className="a-btn u-mb30" disabled >
+                <button className="a-btn u-mb30"
+                    onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
                     I’m done reviewing studies
                 </button>
             );
         } else {
             return (
-                <button className="a-btn u-mb30"
-                    onClick={() => this.props.handleFinishAddingEfficacyStudies(true)} >
+                <button className="a-btn u-mb30" disabled >
                     I’m done reviewing studies
                 </button>
             );
@@ -82,7 +82,7 @@ export default class EfficacyCriterionPage extends React.Component {
     }
 
     renderWarningContinueWithout2and3() {
-        if (!this.props.finishAddingEfficacyStudies || this.twoStrongStudiesExist()) {
+        if (this.props.finishAddingEfficacyStudies !== true || this.twoStrongStudiesExist() === true) {
             return (null);
         } else {
             return (
@@ -153,7 +153,7 @@ export default class EfficacyCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb30
                                 u-mt30" />
-                <p className="u-mb60"><strong>All questions are required, unless otherwise noted.</strong></p>
+                {this.props.renderFormLevelErrorMessage()}
                 <div className="block block__flush-top" id="criterion_1">
                     <h2>
                         <SvgIcon
@@ -161,6 +161,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Strength of study (inclusion criteria)
+                        {this.props.finishAddingEfficacyStudies && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
@@ -203,6 +204,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Scope of evidence
+                        {this.props.criterionCompletionStatuses["efficacy-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
@@ -266,6 +268,7 @@ export default class EfficacyCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Impact
+                        {this.props.criterionCompletionStatuses["efficacy-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is there enough evidence to support conclusions of consistent, strong, positive impact?

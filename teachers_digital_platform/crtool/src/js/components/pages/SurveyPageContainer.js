@@ -14,47 +14,65 @@ import QualitySummaryPage from "./QualitySummaryPage";
 import EfficacyCriterionPage from "./EfficacyCriterionPage";
 import EfficacySummaryPage from "./EfficacySummaryPage";
 import StartCriterionPage from "./StartCriterionPage";
+import FormLevelErrorMessageComponent from "../common/FormLevelErrrorMessageComponent";
 
 export default class SurveyPageContainer extends React.Component {
+    renderFormLevelErrorMessage() {
+        if (this.props.showErrorsForCurrentPage()) {
+            return (
+                <div id="form-level-errror-messaging">
+                    <FormLevelErrorMessageComponent {...this.props} />
+                </div>
+            );
+        } else {
+            return <div id="form-level-errror-messaging" ></div>;
+        }
+    }
+
     render() {
+        const applicationProps = {
+            ...this.props,
+            renderFormLevelErrorMessage:this.renderFormLevelErrorMessage.bind(this),
+        }
+
         if (this.props.currentPage === C.CONTENT_PAGE) {
             if (this.props.contentIsSummaryView === true) {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
-                    return (<ContentElementarySummaryPage {...this.props} />);
+                    return (<ContentElementarySummaryPage {...applicationProps} />);
                 } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
-                    return (<ContentMiddleSummaryPage {...this.props} />);
+                    return (<ContentMiddleSummaryPage {...applicationProps} />);
                 } else {
-                    return (<ContentHighSummaryPage {...this.props} />);
+                    return (<ContentHighSummaryPage {...applicationProps} />);
                 }
             } else {
                 if (this.props.gradeRange === C.GRADE_ELEMENTARY) {
-                    return (<ContentElementaryCriterionPage {...this.props} />);
+                    return (<ContentElementaryCriterionPage {...applicationProps} />);
                 } else if (this.props.gradeRange === C.GRADE_MIDDLE) {
-                    return (<ContentMiddleCriterionPage {...this.props} />);
+                    return (<ContentMiddleCriterionPage {...applicationProps} />);
                 } else {
-                    return (<ContentHighCriterionPage {...this.props} />);
+                    return (<ContentHighCriterionPage {...applicationProps} />);
                 }
             }
         } else if (this.props.currentPage === C.UTILITY_PAGE) {
             if (this.props.utilityIsSummaryView === true) {
-                return (<UtilitySummaryPage {...this.props} />);
+                return (<UtilitySummaryPage {...applicationProps} />);
             } else {
-                return (<UtilityCriterionPage {...this.props} /> );
+                return (<UtilityCriterionPage {...applicationProps} /> );
             }
         } else if (this.props.currentPage === C.QUALITY_PAGE) {
             if (this.props.qualityIsSummaryView === true) {
-                return (<QualitySummaryPage {...this.props} />);
+                return (<QualitySummaryPage {...applicationProps} />);
             } else {
-                return (<QualityCriterionPage {...this.props} />);
+                return (<QualityCriterionPage {...applicationProps} />);
             }
         } else if (this.props.currentPage === C.EFFICACY_PAGE) {
             if (this.props.efficacyIsSummaryView === true) {
-                return (<EfficacySummaryPage {...this.props} />);
+                return (<EfficacySummaryPage {...applicationProps} />);
             } else {
-                return (<EfficacyCriterionPage {...this.props} />);
+                return (<EfficacyCriterionPage {...applicationProps} />);
             }
         } else {
-            return (<StartCriterionPage  {...this.props} />);
+            return (<StartCriterionPage  {...applicationProps} />);
         }
     }
 }

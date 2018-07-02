@@ -45,7 +45,7 @@ const CriterionService = {
     /*
      * Efficacy Survey is complicated.  User can have mulitple studies and
      * if any of them change then other Criterion must start over.
-     * Also they must hide and "I'm done adding studies" must be re-enabled
+     * Also they must hide and "I'm done reviewing studies" must be re-enabled
      */
     resetEfficacyCriterionOnStudyChange(component) {
         this.handleFinishAddingEfficacyStudies(component, false);
@@ -63,6 +63,8 @@ const CriterionService = {
         if (this.isDistinctiveComplete(component, alteredCriterionObjects, changedDistinctive)) {
             Repository.setDistinctiveStatus(component, changedDistinctive, C.STATUS_COMPLETE);
 
+            this.setShowErrorsFalse(component, changedDistinctive);
+
             //Analytics dimension is done (all radio buttons in dimension have been clicked)
             this.sendAnalyticsDimensionStatusHasChanged(component, changedDistinctive, C.STATUS_COMPLETE);
         }
@@ -71,6 +73,25 @@ const CriterionService = {
 
             //Analytics dimension is in progress
             this.sendAnalyticsDimensionStatusHasChanged(component, changedDistinctive, C.STATUS_IN_PROGRESS);
+        }
+    },
+
+    setShowErrorsFalse(component, changedDistinctive) {
+        switch(changedDistinctive) {
+            case C.CONTENT_PAGE:
+                Repository.saveContentShowErrors(component, false);
+                break;
+            case C.UTILITY_PAGE:
+                Repository.saveUtilityShowErrors(component, false);
+                break;
+            case C.QUALITY_PAGE:
+                Repository.saveQualityShowErrors(component, false);
+                break;
+            case C.EFFICACY_PAGE:
+                Repository.saveEfficacyShowErrors(component, false);
+                break;
+            default:
+                break;
         }
     },
 
@@ -177,11 +198,19 @@ const CriterionService = {
      * Click Finish Adding Studies, set followup states.
      */
     handleFinishAddingEfficacyStudies(component, value) {
-        Repository.saveFinishAddingEfficacyStudies(component, value);
-
-        let hasTwoStrongStudies = EfficacyCalculationService.twoStrongStudiesExist(component);
-        if (value && !hasTwoStrongStudies) {
-            Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_COMPLETE);
+        // If a study was started but not finished we must show the unfinished parts as errors
+        if (EfficacyCalculationService.unfinishedEfficacyStudyExists() && value) {
+            Repository.saveEfficacyShowErrors(component, true);
+            Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
+        } else {   
+            // If all studies are good we need to move forward with a clean state
+            Repository.saveEfficacyShowErrors(component, false);
+            Repository.saveFinishAddingEfficacyStudies(component, value);
+            
+            let hasTwoStrongStudies = EfficacyCalculationService.twoStrongStudiesExist(component);
+            if (value && !hasTwoStrongStudies) {
+                Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_COMPLETE);
+            }
         }
     },
 
@@ -193,8 +222,8 @@ const CriterionService = {
         this.removeCriterionScoresForStudy(component, efficacyStudyNumber);
         this.removeStudyAnswers(component, efficacyStudyNumber);
 
-        this.handleFinishAddingEfficacyStudies(component, false);
         this.removeCriterionEfficacyStudy(component, efficacyStudyNumber);
+        this.handleFinishAddingEfficacyStudies(component, false);
     },
 
     removeCriterionEfficacyStudy(component, efficacyStudyNumber) {

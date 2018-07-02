@@ -13,7 +13,7 @@ import PrintAndSummaryPages from "./pages/PrintAndSummaryPages";
 import DateTimeFormater from "../business.logic/dateTimeFormatter";
 import Repository from "../business.logic/repository";
 import CriterionService from "../business.logic/criterionService";
-import efficacyCalculationService from "../business.logic/summary/efficacyCalculationService";
+import EfficacyCalculationService from "../business.logic/summary/efficacyCalculationService";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -31,6 +31,11 @@ export default class CustomerReviewToolComponent extends React.Component {
             qualityIsDone: Repository.getQualityIsDone(),
             utilityIsDone: Repository.getUtilityIsDone(),
             efficacyIsDone: Repository.getEfficacyIsDone(),
+
+            contentShowErrors: Repository.getContentShowErrors(),
+            qualityShowErrors: Repository.getQualityShowErrors(),
+            utilityShowErrors: Repository.getUtilityShowErrors(),
+            efficacyShowErrors: Repository.getEfficacyShowErrors(),
 
             contentIsSummaryView: Repository.getContentViewSummary(),
             qualityIsSummaryView: Repository.getQualityViewSummary(),
@@ -203,15 +208,66 @@ export default class CustomerReviewToolComponent extends React.Component {
         return "not reviewed";
     }
 
+    showErrorsForCurrentPage() {
+        if ( (this.state.currentPage === C.CONTENT_PAGE && this.state.contentShowErrors) ||
+             (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityShowErrors)  ||
+             (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityShowErrors)  ||
+             (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyShowErrors) ) {
+            return true;
+        }
+
+        return false;
+    }
+
+    currentDimensionHasErrors() {
+        if ( (this.state.currentPage === C.CONTENT_PAGE && this.state.contentInProgress === C.STATUS_COMPLETE)  ||
+             (this.state.currentPage === C.QUALITY_PAGE && this.state.qualityInProgress === C.STATUS_COMPLETE)  ||
+             (this.state.currentPage === C.UTILITY_PAGE && this.state.utilityInProgress === C.STATUS_COMPLETE)  ||
+             (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyInProgress === C.STATUS_COMPLETE) ) {
+            return false;
+        }
+
+        return true;
+    }
+
     handleSummaryButtonClick() {
-        this.setDistinctiveCompletionDateNow(this.state.currentPage);
-        Repository.setDistinctiveDoneStatus(this, this.state.currentPage);
-        Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
-        this.setDimensionSummaryView(this.state.currentPage, true, "");
+        if (this.currentDimensionHasErrors()) {
+            if (this.state.currentPage === C.CONTENT_PAGE) {
+                Repository.saveContentShowErrors(this, true);
+            } else if (this.state.currentPage === C.QUALITY_PAGE) {
+                Repository.saveQualityShowErrors(this, true);
+            } else if (this.state.currentPage === C.UTILITY_PAGE) {
+                Repository.saveUtilityShowErrors(this, true);
+            } else if (this.state.currentPage === C.EFFICACY_PAGE) {
+                Repository.saveEfficacyShowErrors(this, true);
+            }
+            
+            this.handleSummaryButtonClickPostEvent(true);
+        } else {   
+            this.setDistinctiveCompletionDateNow(this.state.currentPage);
+            Repository.setDistinctiveDoneStatus(this, this.state.currentPage);
+            Repository.setDistinctiveStatus(this, this.state.currentPage, C.STATUS_COMPLETE);
+            this.setDimensionSummaryView(this.state.currentPage, true, "");
+            
+            this.handleSummaryButtonClickPostEvent(false);
+        }
 
         //Analytics click on "continue to {{dimension}} summary"
         let label = "Continue to " + this.state.currentPage.toLowerCase() + " summary"
         Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", label));
+    }
+
+    handleSummaryButtonClickPostEvent(hasErrors) {
+        //HACK: need to scroll to top of screen after we navigate.
+        setTimeout(function(){
+            let element = document.getElementById("main");
+
+            if (hasErrors) {
+                element = document.getElementById("form-level-errror-messaging");
+            }
+
+            element.scrollIntoView();
+        }, 100);
     }
 
     initializeStudyAnsers(key, study) {
@@ -236,11 +292,19 @@ export default class CustomerReviewToolComponent extends React.Component {
         //Analytics I'm done reviewing studies
         Analytics.sendEvent(Analytics.getDataLayerOptions("I am done reviewing studies", "Number of studies: " + numberOfStudies));
 
-        //Analytics Efficacy Criterion 1 is now complete 
-        Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", "Efficacy: 1"));  
-
-        //Analytics individual study scores
-        Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", efficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
+        if (EfficacyCalculationService.unfinishedEfficacyStudyExists()) {
+            this.handleSummaryButtonClickPostEvent(true);
+        } else {
+            
+            //Analytics Efficacy Criterion 1 is now complete 
+            let efficacyStudiesAreBeingSkipped = EfficacyCalculationService.EfficacyStudiesAreBeingSkipped();
+            if (efficacyStudiesAreBeingSkipped) {
+                Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", "Efficacy: 1"));  
+            }
+            
+            //Analytics individual study scores
+            Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", EfficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
+        }
     }
 
     removeEfficacyStudy(efficacyStudyNumber) {
@@ -333,6 +397,11 @@ export default class CustomerReviewToolComponent extends React.Component {
             utilityIsDone:this.state.utilityIsDone,
             efficacyIsDone:this.state.efficacyIsDone,
 
+            contentShowErrors:this.state.contentShowErrors,
+            qualityShowErrors:this.state.qualityShowErrors,
+            utilityShowErrors:this.state.utilityShowErrors,
+            efficacyShowErrors:this.state.efficacyShowErrors,
+
             contentIsSummaryView:this.state.contentIsSummaryView,
             utilityIsSummaryView:this.state.utilityIsSummaryView,
             qualityIsSummaryView:this.state.qualityIsSummaryView,
@@ -348,6 +417,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             criterionCompletionStatuses:this.state.criterionCompletionStatuses,
             finalSummaryShowEntireReview:this.state.finalSummaryShowEntireReview,
 
+            showErrorsForCurrentPage:this.showErrorsForCurrentPage.bind(this),
             sendAnalyticsForLinkClick:this.sendAnalyticsForLinkClick.bind(this),
             handleSummaryButtonClick:this.handleSummaryButtonClick.bind(this),
             handleFinalSummaryButtonClick:this.handleFinalSummaryButtonClick.bind(this),

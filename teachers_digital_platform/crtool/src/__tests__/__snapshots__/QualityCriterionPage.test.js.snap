@@ -80,13 +80,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
-  <p
-    className="u-mb60"
-  >
-    <strong>
-      All questions are required, unless otherwise noted.
-    </strong>
-  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -938,6 +931,7 @@ Array [
   </div>,
   <div
     className="block block__flush-top"
+    id="quality-crt-question-2"
   >
     <h3
       className="h2"
@@ -966,13 +960,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
-  <p
-    className="u-mb30"
-  >
-    <strong>
-      Be sure to answer all yes/no questions to continue.
-    </strong>
-  </p>,
 ]
 `;
 
@@ -1056,13 +1043,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
-  <p
-    className="u-mb60"
-  >
-    <strong>
-      All questions are required, unless otherwise noted.
-    </strong>
-  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -3515,13 +3495,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
-  <p
-    className="u-mb30"
-  >
-    <strong>
-      Be sure to answer all yes/no questions to continue.
-    </strong>
-  </p>,
 ]
 `;
 
@@ -3605,13 +3578,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
-  <p
-    className="u-mb60"
-  >
-    <strong>
-      All questions are required, unless otherwise noted.
-    </strong>
-  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -4851,6 +4817,7 @@ Array [
   </div>,
   <div
     className="block block__flush-top"
+    id="quality-crt-question-3"
   >
     <h3
       className="h2"
@@ -4879,13 +4846,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
-  <p
-    className="u-mb30"
-  >
-    <strong>
-      Be sure to answer all yes/no questions to continue.
-    </strong>
-  </p>,
 ]
 `;
 
@@ -4969,13 +4929,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
-  <p
-    className="u-mb60"
-  >
-    <strong>
-      All questions are required, unless otherwise noted.
-    </strong>
-  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -5827,6 +5780,7 @@ Array [
   </div>,
   <div
     className="block block__flush-top"
+    id="quality-crt-question-2"
   >
     <h3
       className="h2"
@@ -5855,13 +5809,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
-  <p
-    className="u-mb30"
-  >
-    <strong>
-      Be sure to answer all yes/no questions to continue.
-    </strong>
-  </p>,
 ]
 `;
 
@@ -5945,13 +5892,6 @@ Array [
   <hr
     className="hr u-mb30 u-mt30"
   />,
-  <p
-    className="u-mb60"
-  >
-    <strong>
-      All questions are required, unless otherwise noted.
-    </strong>
-  </p>,
   <div
     className="block block__flush-top"
     id="criterion_1"
@@ -5971,6 +5911,11 @@ Array [
         </svg>
       </span>
       Criterion 1: Accessibility
+      <span
+        class="u-fc-gray"
+      >
+         (complete)
+      </span>
     </h2>
     <p
       className="lead-paragraph u-mb45 u-mt15"
@@ -6816,6 +6761,7 @@ Array [
   </div>,
   <div
     className="block block__flush-top"
+    id="quality-crt-question-2"
   >
     <h3
       className="h2"
@@ -6844,12 +6790,5 @@ Array [
   <hr
     className="hr u-mb30 u-mt45"
   />,
-  <p
-    className="u-mb30"
-  >
-    <strong>
-      Be sure to answer all yes/no questions to continue.
-    </strong>
-  </p>,
 ]
 `;

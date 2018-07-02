@@ -22,6 +22,8 @@ const efficacyProps = {
     setCriterionStatusToInStart:(() => {}),
     setCriterionTitleLinkClicked:(() => {}),
     initializeStudyAnsers:(() => {}),
+    renderFormLevelErrorMessage:(() => {}),
+    showErrorsForCurrentPage:(() => {}),
 }
 
 afterAll(() => {
