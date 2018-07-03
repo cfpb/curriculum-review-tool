@@ -6,7 +6,7 @@ from django.utils import timezone
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
-#from mptt.models import MPTTModel, TreeForeignKey
+from mptt.models import MPTTModel, TreeForeignKey
 
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
@@ -83,28 +83,20 @@ class ActivitySchoolSubject(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-class ActivityTopic(BaseActivityTaxonomy):  #try adding MPTTModel
-    # parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
-    #
-    # class MPTTMeta:
-    #     order_insertion_by = ['title']
-    #
-    # panels = BaseActivityTaxonomy.panels + [
-    #     FieldPanel('parent')
-    # ]
-    panels = BaseActivityTaxonomy.panels
+class ActivityTopic(MPTTModel):
+    title = models.CharField(max_length=255, unique=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
-class ActivitySubTopic(BaseActivityTaxonomy):
-    parent = models.ForeignKey(
-        ActivityTopic,
-        null=True,
-        blank=True,
-        default=None,
-        related_name='subtopics')
+    class MPTTMeta:
+        order_insertion_by = ['title']
 
     panels = BaseActivityTaxonomy.panels + [
-        FieldPanel('parent'),
+        FieldPanel('title'),
+        FieldPanel('parent')
     ]
+
+    def __str__(self):
+        return self.title
 
 
 class ActivityGradeLevel(BaseActivityTaxonomy):
@@ -171,7 +163,7 @@ class ActivityPage(CFGOVPage):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)  # make sure this looks good.
+    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)
     school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
     topic = ParentalManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
     # Audience

@@ -1,9 +1,12 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
+from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.utils.html import format_html, format_html_join
+
+from mptt.admin import MPTTModelAdmin
 
 from wagtail.contrib.modeladmin.options import (
     ModelAdmin, ModelAdminGroup, modeladmin_register
@@ -13,7 +16,7 @@ from wagtail.wagtailcore import hooks
 from wagtail.wagtailcore.whitelist import attribute_rule
 
 from teachers_digital_platform.models import (
-    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivitySubTopic, ActivityGradeLevel, ActivityAgeRange,
+    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
     ActivitySpecialPopulation, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
     ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
 )
@@ -31,16 +34,13 @@ class ActivitySchoolSubjectModelAdmin(ModelAdmin):
     menu_label = 'School Subject'
 
 
-class ActivityTopicModelAdmin(ModelAdmin):
+class ActivityTopicModelAdmin(MPTTModelAdmin):
     model = ActivityTopic
     menu_icon = 'list-ul'
     menu_label = 'Topic'
 
 
-class ActivitySubTopicModelAdmin(ModelAdmin):
-    model = ActivitySubTopic
-    menu_icon = 'list-ul'
-    menu_label = 'Sub-topic'
+admin.site.register(ActivityTopic, ActivityTopicModelAdmin)
 
 
 class ActivityGradeLevelModelAdmin(ModelAdmin):
@@ -84,6 +84,7 @@ class ActivityDurationtModelAdmin(ModelAdmin):
     menu_icon = 'list-ul'
     menu_label = 'Activity duration'
 
+
 class ActivityJumpStartCoalitionModelAdmin(ModelAdmin):
     model = ActivityJumpStartCoalition
     menu_icon = 'list-ul'
@@ -103,8 +104,6 @@ class MyModelAdminGroup(ModelAdminGroup):
     items = (
         ActivityBuildingBlockModelAdmin,
         ActivitySchoolSubjectModelAdmin,
-        ActivityTopicModelAdmin,
-        ActivitySubTopicModelAdmin,
         ActivityGradeLevelModelAdmin,
         ActivityAgeRangeModelAdmin,
         ActivitySpecialPopulationModelAdmin,
