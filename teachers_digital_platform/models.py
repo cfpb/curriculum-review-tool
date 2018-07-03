@@ -6,6 +6,9 @@ from django.utils import timezone
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
+from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
+
+
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
     TabbedInterface
@@ -21,7 +24,7 @@ from wagtail.wagtailimages.models import Image
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
-from v1.models import CFGOVPage, CFGOVPageManager
+from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
 
 
 class ActivityIndexPage(CFGOVPage):
@@ -49,10 +52,12 @@ class ActivityIndexPage(CFGOVPage):
 
 class BaseActivityTaxonomy(models.Model):
     """ A base class for all activity snippets"""
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, unique=True)
+    weight = models.IntegerField(default=0)
 
     panels = [
         FieldPanel('title'),
+        FieldPanel('weight'),
     ]
 
     def __str__(self):
@@ -60,13 +65,12 @@ class BaseActivityTaxonomy(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ['title']
+        ordering = ['weight', 'title']
 
 
-@register_snippet
 class ActivityBuildingBlock(BaseActivityTaxonomy):
     icon = models.ForeignKey(
-        'wagtailimages.Image',
+        'v1.CFGOVImage',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -78,57 +82,60 @@ class ActivityBuildingBlock(BaseActivityTaxonomy):
     ]
 
 
-@register_snippet
 class ActivitySchoolSubject(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
-class ActivityTopic(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
+class ActivityTopic(MPTTModel):
+    title = models.CharField(max_length=255, unique=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+    weight = models.IntegerField(default=0)
+
+    class MPTTMeta:
+        order_insertion_by = ['weight', 'title']
+
+    panels = BaseActivityTaxonomy.panels + [
+        FieldPanel('title'),
+        FieldPanel('parent'),
+        FieldPanel('weight')
+    ]
+
+    def __str__(self):
+        return self.title
 
 
-@register_snippet
 class ActivityGradeLevel(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityAgeRange(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivitySpecialPopulation(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityType(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityTeachingStrategy(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityBloomsTaxonomyLevel(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityDuration(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityJumpStartCoalition(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-@register_snippet
 class ActivityCouncilForEconEd(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
@@ -161,9 +168,9 @@ class ActivityPage(CFGOVPage):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)  # make sure this looks good.
+    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)
     school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
-    topic = ParentalManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
+    topic = TreeManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
     # Audience
     grade_level = ParentalManyToManyField('teachers_digital_platform.ActivityGradeLevel', blank=False)
     age_range = ParentalManyToManyField('teachers_digital_platform.ActivityAgeRange', blank=False)
@@ -174,7 +181,11 @@ class ActivityPage(CFGOVPage):
     blooms_taxonomy_level = ParentalManyToManyField('teachers_digital_platform.ActivityBloomsTaxonomyLevel', blank=False)
     activity_duration = models.ForeignKey(ActivityDuration, blank=False, on_delete=models.PROTECT)
     # Standards taught
-    jump_start_coalition = ParentalManyToManyField('teachers_digital_platform.ActivityJumpStartCoalition', blank=True)
+    jump_start_coalition = ParentalManyToManyField(
+        'teachers_digital_platform.ActivityJumpStartCoalition',
+        blank=True,
+        verbose_name='Jump$tart Coalition'
+    )
     council_for_economic_education = ParentalManyToManyField('teachers_digital_platform.ActivityCouncilForEconEd', blank=True)
 
     content_panels = CFGOVPage.content_panels + [
