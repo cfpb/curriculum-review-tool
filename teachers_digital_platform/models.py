@@ -1,5 +1,3 @@
-
-
 from django import forms
 from django.db import models
 from django.utils import timezone
@@ -8,6 +6,7 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 
+from teachers_digital_platform.fields import ParentalTreeManyToManyField
 
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
@@ -170,7 +169,7 @@ class ActivityPage(CFGOVPage):
     )
     building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)
     school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
-    topic = TreeManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
+    topic = ParentalTreeManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
     # Audience
     grade_level = ParentalManyToManyField('teachers_digital_platform.ActivityGradeLevel', blank=False)
     age_range = ParentalManyToManyField('teachers_digital_platform.ActivityAgeRange', blank=False)
@@ -184,9 +183,13 @@ class ActivityPage(CFGOVPage):
     jump_start_coalition = ParentalManyToManyField(
         'teachers_digital_platform.ActivityJumpStartCoalition',
         blank=True,
-        verbose_name='Jump$tart Coalition'
+        verbose_name='Jump$tart Coalition',
     )
-    council_for_economic_education = ParentalManyToManyField('teachers_digital_platform.ActivityCouncilForEconEd', blank=True)
+    council_for_economic_education = ParentalManyToManyField(
+        'teachers_digital_platform.ActivityCouncilForEconEd',
+        blank=True,
+        verbose_name='Council for Economic Education',
+    )
 
     content_panels = CFGOVPage.content_panels + [
         FieldPanel('date'),

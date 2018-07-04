@@ -88,7 +88,7 @@ class ActivityDurationtModelAdmin(ModelAdmin):
 class ActivityJumpStartCoalitionModelAdmin(ModelAdmin):
     model = ActivityJumpStartCoalition
     menu_icon = 'list-ul'
-    menu_label = 'JumpStart Coalition'
+    menu_label = 'Jump$tart Coalition'
 
 
 class ActivityCouncilForEconEdModelAdmin(ModelAdmin):
