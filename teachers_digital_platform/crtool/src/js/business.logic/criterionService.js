@@ -195,11 +195,14 @@ const CriterionService = {
     },
 
     /*
-     * Click Finish Adding Studies, set followup states.
+     * Click Finish Adding Studies, set followup states. This method is
+     * also used each time a study value is changed.  Once the efficacyShowError 
+     * is turned on it should stay on till studies are changed.
      */
     handleFinishAddingEfficacyStudies(component, value) {
         // If a study was started but not finished we must show the unfinished parts as errors
-        if (EfficacyCalculationService.unfinishedEfficacyStudyExists() && value) {
+        // NOTE: Once the efficacyShowErrors is set to true, it should stay set to true
+        if (EfficacyCalculationService.unfinishedEfficacyStudyExists() && (component.state.efficacyShowErrors || value)) {
             Repository.saveEfficacyShowErrors(component, true);
             Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
         } else {   
