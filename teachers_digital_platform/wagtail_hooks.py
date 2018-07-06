@@ -114,37 +114,3 @@ class MyModelAdminGroup(ModelAdminGroup):
         ActivityJumpStartCoalitionModelAdmin,
         ActivityCouncilForEconEdModelAdmin,
     )
-
-
-def editor_js():
-    js_files = [
-        'js/html_editor.js',
-    ]
-    js_includes = format_html_join(
-        '\n', '<script src="{0}{1}"></script>',
-        ((settings.STATIC_URL, filename) for filename in js_files)
-    )
-
-    return js_includes + format_html(
-        """
-        <script>
-            registerHalloPlugin('editHtmlButton');
-            registerHalloPlugin('answermodule');
-        </script>
-        """
-    )
-
-
-
-def whitelister_element_rules():
-    allow_html_class = attribute_rule({'class': True})
-
-    allowed_tags = ['aside', 'table', 'tr', 'th', 'td', 'tbody', 'thead',
-                    'tfoot', 'col', 'colgroup']
-
-    return {tag: allow_html_class for tag in allowed_tags}
-
-
-hooks.register('insert_editor_js', editor_js)
-hooks.register(
-    'construct_whitelister_element_rules', whitelister_element_rules)
