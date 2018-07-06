@@ -103,7 +103,7 @@ export const UtilityContent = {
         },
         {
             title: "Criterion 2: Differentiated instruction for diverse populations",
-            leadParagraph: "Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.",
+            leadParagraph: "Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ socioeconomic circumstances, special education needs, and English language proficiency.",
             notesRefId: "utility-crt-notes-optional-2",
             rows: [
                 {
