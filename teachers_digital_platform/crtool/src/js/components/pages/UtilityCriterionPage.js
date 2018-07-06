@@ -559,7 +559,7 @@ export default class UtilityCriterionPage extends React.Component {
                         {this.props.criterionCompletionStatuses["utility-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
-                        Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ race, ethnicity, gender, socioeconomic circumstances, special education needs, and English language proficiency.
+                        Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ socioeconomic circumstances, special education needs, and English language proficiency.
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
