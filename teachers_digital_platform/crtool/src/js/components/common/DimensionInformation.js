@@ -14,7 +14,7 @@ export default class DimensionInformation extends React.Component {
         if (this.props.currentPrintButton !== C.START_PAGE && this.props.currentPrintButton !== "") {
             return (
                 <React.Fragment>
-                    <div className="h5">CFPB curriculum review tool</div>
+                    <div className="h5">BCFP curriculum review tool</div>
                     <h1>{this.props.dimensionName} summary for {this.props.curriculumTitle}</h1>
                     <p className="lead-paragraph u-mb30">
                         {this.props.dimensionSummary}

@@ -26,7 +26,7 @@ export default class FinalCurriculumInformation extends React.Component {
                                 block__flush-top
                                 block__padded-bottom
                                 block__border-bottom">
-                    <div className="h5">CFPB curriculum review tool</div>
+                    <div className="h5">BCFP curriculum review tool</div>
                     <h1>Final summary for {this.props.curriculumTitle}</h1>
                     <p className="lead-paragraph u-mb30">
                         This summary shows the scores for all four dimensions.
