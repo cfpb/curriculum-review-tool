@@ -10,8 +10,8 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, Fiel
 from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtaildocs.models import Document
 from wagtail.wagtailimages.models import Image
-from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel, ImageChooserPanel
+
 
 class ActivityIndexPage(Page):
     """
