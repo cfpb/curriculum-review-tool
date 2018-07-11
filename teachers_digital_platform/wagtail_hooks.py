@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.utils.html import format_html, format_html_join
 
-from mptt.admin import DraggableMPTTAdmin
+from mptt.admin import MPTTModelAdmin
 
 from wagtail.contrib.modeladmin.options import (
     ModelAdmin, ModelAdminGroup, modeladmin_register
@@ -34,7 +34,7 @@ class ActivitySchoolSubjectModelAdmin(ModelAdmin):
     menu_label = 'School Subject'
 
 
-class ActivityTopicModelAdmin(DraggableMPTTAdmin):
+class ActivityTopicModelAdmin(MPTTModelAdmin):
     model = ActivityTopic
     menu_icon = 'list-ul'
     menu_label = 'Topic'
