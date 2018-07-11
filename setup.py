@@ -9,8 +9,6 @@ except (IOError, ImportError):
 
 install_requires = [
     'Django>=1.8,<1.12',
-    'django-mptt==0.9.0',
-    'django-js-asset==1.1.0',
 ]
 
 
