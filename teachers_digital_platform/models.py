@@ -6,8 +6,6 @@ from django.utils import timezone
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
-#from mptt.models import MPTTModel, TreeForeignKey
-
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
     TabbedInterface
@@ -23,7 +21,7 @@ from wagtail.wagtailimages.models import Image
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
-from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
+from v1.models import CFGOVPage, CFGOVPageManager
 
 
 class ActivityIndexPage(CFGOVPage):
@@ -51,7 +49,7 @@ class ActivityIndexPage(CFGOVPage):
 
 class BaseActivityTaxonomy(models.Model):
     """ A base class for all activity snippets"""
-    title = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=255)
 
     panels = [
         FieldPanel('title'),
@@ -65,9 +63,10 @@ class BaseActivityTaxonomy(models.Model):
         ordering = ['title']
 
 
+@register_snippet
 class ActivityBuildingBlock(BaseActivityTaxonomy):
     icon = models.ForeignKey(
-        'v1.CFGOVImage',
+        'wagtailimages.Image',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -79,66 +78,57 @@ class ActivityBuildingBlock(BaseActivityTaxonomy):
     ]
 
 
+@register_snippet
 class ActivitySchoolSubject(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-class ActivityTopic(BaseActivityTaxonomy):  #try adding MPTTModel
-    # parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
-    #
-    # class MPTTMeta:
-    #     order_insertion_by = ['title']
-    #
-    # panels = BaseActivityTaxonomy.panels + [
-    #     FieldPanel('parent')
-    # ]
+@register_snippet
+class ActivityTopic(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
-class ActivitySubTopic(BaseActivityTaxonomy):
-    parent = models.ForeignKey(
-        ActivityTopic,
-        null=True,
-        blank=True,
-        default=None,
-        related_name='subtopics')
 
-    panels = BaseActivityTaxonomy.panels + [
-        FieldPanel('parent'),
-    ]
-
-
+@register_snippet
 class ActivityGradeLevel(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityAgeRange(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivitySpecialPopulation(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityType(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityTeachingStrategy(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityBloomsTaxonomyLevel(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityDuration(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityJumpStartCoalition(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
+@register_snippet
 class ActivityCouncilForEconEd(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
