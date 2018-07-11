@@ -93,7 +93,7 @@ class ActivityTopic(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['weight', 'title']
 
-    panels = [
+    panels = BaseActivityTaxonomy.panels + [
         FieldPanel('title'),
         FieldPanel('parent'),
         FieldPanel('weight')
