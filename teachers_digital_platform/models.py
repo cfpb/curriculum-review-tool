@@ -29,7 +29,6 @@ class ActivityIndexPage(CFGOVPage):
     A model for the Activity Search page.
     """
 
-    subpage_types = ['teachers_digital_platform.ActivityPage']
     objects = CFGOVPageManager()
 
     intro = RichTextField(blank=True)
@@ -39,12 +38,6 @@ class ActivityIndexPage(CFGOVPage):
         FieldPanel('intro'),
         #  FieldPanel('alert'),
     ]
-
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='General Content'),
-        ObjectList(CFGOVPage.sidefoot_panels, heading='Sidebar/Footer'),
-        ObjectList(CFGOVPage.settings_panels, heading='Configuration'),
-    ])
 
 
 class BaseActivityTaxonomy(models.Model):
@@ -66,11 +59,8 @@ class BaseActivityTaxonomy(models.Model):
 @register_snippet
 class ActivityBuildingBlock(BaseActivityTaxonomy):
     icon = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
     )
 
     panels = BaseActivityTaxonomy.panels + [
@@ -137,8 +127,7 @@ class ActivityPage(CFGOVPage):
     """
     A model for the Activity Detail page.
     """
-    parent_page_types = [ActivityIndexPage]
-    subpage_types = []
+
     objects = CFGOVPageManager()
 
     date = models.DateField('Updated', default=timezone.now)
