@@ -102,6 +102,7 @@ class ActivityPage(Page):
     """
     A model for the Activity Detail page.
     """
+    title = models.CharField(max_length=255)
     published_date = models.DateField('Published date')
     updated_date = models.DateField('Updated date')
     summary = models.TextField('Summary', max_length=500)
@@ -191,6 +192,7 @@ class ActivityPage(Page):
     ]
 
     search_fields = Page.search_fields + [
+        index.SearchField('title'),
         index.SearchField('summary'),
         index.SearchField('big_idea'),
         index.SearchField('essential_questions'),
