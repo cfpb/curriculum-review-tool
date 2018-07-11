@@ -106,9 +106,12 @@ const EfficacyCalculationService = {
      * We need to know if a study exists that was started but not finished
      */
     unfinishedEfficacyStudyExists() {
-        let criterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
-        for (var score in criterionScores) {
-            if (score.indexOf("efficacy-crt-1") >= 0 && criterionScores[score].answered_all_complete === false) {
+        // Since studies can be added and removed we must use the index from StudyAnswers to know which ones still exist
+        let allCriterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
+        for (var idx in Repository.getStudyAnswers()) {
+            let criterionScoreName = "efficacy-crt-1-" + idx;
+            if (allCriterionScores[criterionScoreName] !== undefined && 
+                allCriterionScores[criterionScoreName].answered_all_complete === false) {
                 return true;
             }
         }
@@ -116,12 +119,45 @@ const EfficacyCalculationService = {
         return false;
     },
 
+    /*
+     * We need to know if a study exists that was started but not finished, and how many
+     */
+    getCountOfUnfinishedEfficacyStudies() {
+        let allCriterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
+        let count = 0;
+        for (var idx in Repository.getStudyAnswers()) {
+
+            let criterionScoreName = "efficacy-crt-1-" + idx;
+            if (allCriterionScores[criterionScoreName] === undefined ||
+                allCriterionScores[criterionScoreName].answered_all_complete === false) {
+
+                count += 1;
+            }
+        }
+
+        return count;
+    },
+
+    /*
+     * Is first study started.  You do not have to fill out any studies but once you start one you must finish it
+     */
+    firstStudyStarted() {
+        let criterionScores = Repository.getCriterionScores(); // component.state does not reflect current change
+    
+        //Once you start the first study the criterionScore is created. So if its undefined it has not been started
+        if (criterionScores["efficacy-crt-1-0"] === undefined) {
+            return false;
+        }
+
+        return true;
+    },    
+
     /* 
      * There is a need to know if I'm done reviewing studies button is clicked with out any studies
      * being answered. (Skipped).  Once a study is started it must be finished.
      */
-    EfficacyStudiesAreBeingSkipped() {
-        let efficacyStudiesAreBeingSkipped = Repository.getCriterionScores()["efficacy-crt-1"];
+    efficacyStudiesAreBeingSkipped() {
+        let efficacyStudiesAreBeingSkipped = Repository.getCriterionScores()["efficacy-crt-1-0"];
         return efficacyStudiesAreBeingSkipped === undefined;
     },
 

@@ -287,24 +287,43 @@ export default class CustomerReviewToolComponent extends React.Component {
 
     handleFinishAddingEfficacyStudies(value) {
         CriterionService.handleFinishAddingEfficacyStudies(this, value);
-        var numberOfStudies = this.state.criterionEfficacyStudies.length;
 
-        //Analytics I'm done reviewing studies
-        Analytics.sendEvent(Analytics.getDataLayerOptions("I am done reviewing studies", "Number of studies: " + numberOfStudies));
+        //Analytics Efficacy number of completed studies
+        this.sendCompletedStudiesAnalytics();
 
+        //Do not send analytics if studies are unfinished or skipped. If unfinished exist form/field errors will show
         if (EfficacyCalculationService.unfinishedEfficacyStudyExists()) {
             this.handleSummaryButtonClickPostEvent(true);
-        } else {
+        } else if (EfficacyCalculationService.efficacyStudiesAreBeingSkipped() ||
+                   EfficacyCalculationService.unfinishedEfficacyStudyExists() === false) {
             
-            //Analytics Efficacy Criterion 1 is now complete 
-            let efficacyStudiesAreBeingSkipped = EfficacyCalculationService.EfficacyStudiesAreBeingSkipped();
-            if (efficacyStudiesAreBeingSkipped) {
+            let efficacyStudiesAreBeingSkipped = EfficacyCalculationService.efficacyStudiesAreBeingSkipped();
+            if (efficacyStudiesAreBeingSkipped === false) {
+                //Analytics Efficacy Criterion 1 is now complete 
                 Analytics.sendEvent(Analytics.getDataLayerOptions("completed criterion", "Efficacy: 1"));  
-            }
             
-            //Analytics individual study scores
-            Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", EfficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
+                //Analytics individual study scores
+                Analytics.sendEvent(Analytics.getDataLayerOptions("study scores", EfficacyCalculationService.getAllEfficacyStudyScoresForAnalytics(this)));
+            }
         }
+    }
+
+    sendCompletedStudiesAnalytics() {
+        let numberOfStudies = this.state.criterionEfficacyStudies.length;
+        let numberOfUnfinishedStudies = EfficacyCalculationService.getCountOfUnfinishedEfficacyStudies();
+        let completedStudies = numberOfStudies - numberOfUnfinishedStudies;
+
+        //If efficacy studies are being skipped then we do not want to send Analytics 0 were completed
+        if (EfficacyCalculationService.efficacyStudiesAreBeingSkipped()) {
+            completedStudies = 0;
+        }
+
+        //Analytics I'm done reviewing studies
+        let actionLabel = "Number of studies completed: " + completedStudies;
+        if (EfficacyCalculationService.efficacyStudiesAreBeingSkipped() === false && numberOfUnfinishedStudies > 0) {
+            actionLabel += "; Number of studies incomplete: " + numberOfUnfinishedStudies;
+        }
+        Analytics.sendEvent(Analytics.getDataLayerOptions("I am done reviewing studies", actionLabel));
     }
 
     removeEfficacyStudy(efficacyStudyNumber) {
