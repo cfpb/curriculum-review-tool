@@ -1,0 +1,20 @@
+{% extends 'layout-full.html' %}
+
+{% block metadescription %}
+Activity Index Page
+{% endblock metadescription %}
+
+{% block content_main %}
+<h1>{{ page.title }}</h1>
+{{ page.intro | richtext }}
+
+<br>
+<ul>
+    {% for activity in activities %}
+        <h2>{{ activity.title }}</h2>
+        <ul>
+            <li>{{ activity.summary }}</li>
+        </ul>
+        {% endfor %}
+</ul>
+{% endblock content_main %}

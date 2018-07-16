@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
+from flags.decorators import flag_check
+from flags.state import flag_enabled
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -96,21 +98,21 @@ class ActivityCouncilForEconEdModelAdmin(ModelAdmin):
     menu_icon = 'list-ul'
     menu_label = 'Council for Economic Education'
 
-
-@modeladmin_register
-class MyModelAdminGroup(ModelAdminGroup):
-    menu_label = 'Activity search'
-    menu_icon = 'list-ul'
-    items = (
-        ActivityBuildingBlockModelAdmin,
-        ActivitySchoolSubjectModelAdmin,
-        ActivityGradeLevelModelAdmin,
-        ActivityAgeRangeModelAdmin,
-        ActivitySpecialPopulationModelAdmin,
-        ActivityTypeModelAdmin,
-        ActivityTeachingStrategyModelAdmin,
-        ActivityBloomsTaxonomyLevelModelAdmin,
-        ActivityDurationtModelAdmin,
-        ActivityJumpStartCoalitionModelAdmin,
-        ActivityCouncilForEconEdModelAdmin,
-    )
+if flag_enabled('TDP_SEARCH_INTERFACE'):
+    @modeladmin_register
+    class MyModelAdminGroup(ModelAdminGroup):
+        menu_label = 'Activity search'
+        menu_icon = 'list-ul'
+        items = (
+            ActivityBuildingBlockModelAdmin,
+            ActivitySchoolSubjectModelAdmin,
+            ActivityGradeLevelModelAdmin,
+            ActivityAgeRangeModelAdmin,
+            ActivitySpecialPopulationModelAdmin,
+            ActivityTypeModelAdmin,
+            ActivityTeachingStrategyModelAdmin,
+            ActivityBloomsTaxonomyLevelModelAdmin,
+            ActivityDurationtModelAdmin,
+            ActivityJumpStartCoalitionModelAdmin,
+            ActivityCouncilForEconEdModelAdmin,
+        )

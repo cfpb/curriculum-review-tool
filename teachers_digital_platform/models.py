@@ -1,6 +1,13 @@
 from django import forms
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
+from flags.decorators import (
+    flag_check,
+    flag_required,
+)
+
+from flags.state import flag_enabled
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
@@ -32,8 +39,7 @@ class ActivityIndexPage(CFGOVPage):
     """
 
     subpage_types = ['teachers_digital_platform.ActivityPage']
-    objects = CFGOVPageManager()
-
+    objects = CFGOVPageManager() 
     intro = RichTextField(blank=True)
     #  alert = RichTextField(blank=True)  # Move this to a StreamField
 
@@ -47,7 +53,19 @@ class ActivityIndexPage(CFGOVPage):
         ObjectList(CFGOVPage.sidefoot_panels, heading='Sidebar/Footer'),
         ObjectList(CFGOVPage.settings_panels, heading='Configuration'),
     ])
+    @classmethod
+    def can_create_at(cls, parent):
+        # You can only create one of these!
+        return super(ActivityIndexPage, cls).can_create_at(parent) \
+            and not cls.objects.exists() and flag_enabled('TDP_SEARCH_INTERFACE')
 
+    def get_activities(self):
+        return ActivityPage.objects.live().child_of(self)
+
+    def get_context(self, request):
+        context = super(ActivityIndexPage, self).get_context(request)
+        context['activities'] = self.get_activities().all()
+        return context
 
 class BaseActivityTaxonomy(models.Model):
     """ A base class for all activity snippets"""
@@ -87,7 +105,7 @@ class ActivitySchoolSubject(BaseActivityTaxonomy):
 
 class ActivityTopic(MPTTModel):
     title = models.CharField(max_length=255, unique=True)
-    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='parents')
     weight = models.IntegerField(default=0)
 
     class MPTTMeta:
@@ -143,6 +161,12 @@ class ActivityPage(CFGOVPage):
     """
     A model for the Activity Detail page.
     """
+
+    @classmethod
+    def can_create_at(cls, parent):
+        return super(ActivityPage, cls).can_create_at(parent) \
+         and flag_enabled('TDP_SEARCH_INTERFACE')
+
     parent_page_types = [ActivityIndexPage]
     subpage_types = []
     objects = CFGOVPageManager()
@@ -190,7 +214,6 @@ class ActivityPage(CFGOVPage):
         blank=True,
         verbose_name='Council for Economic Education',
     )
-
     content_panels = CFGOVPage.content_panels + [
         FieldPanel('date'),
         FieldPanel('summary'),
