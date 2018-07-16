@@ -171,17 +171,13 @@
                                 </div>
                                 <div class="layout-row u-mb15">
                                     <h5 class="h6">Age range:</h5>
-                                    {% for age in activity.age_range.all() %}
                                     <span>
-                                        {{ age }} <br> <!--Is this correct?-->
+                                        {{ activity.age_range.all()|join(", ") }}
                                     </span>
-                                    {% endfor %}
                                 </div>
                                 <div class="layout-row u-mb15">
                                     <h5 class="h6">Bloom’s Taxonomy level:</h5>
-                                    {% for tax_level in activity.blooms_taxonomy_level.all() %}
-                                    <span>{{ tax_level }}</span>
-                                    {% endfor %}
+                                    <span>{{ activity.blooms_taxonomy_level.all()|join(", ") }}</span>
                                 </div>
                             </div>
                             <div>
