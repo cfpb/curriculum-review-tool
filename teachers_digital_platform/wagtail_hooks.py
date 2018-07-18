@@ -96,7 +96,6 @@ class ActivityCouncilForEconEdModelAdmin(ModelAdmin):
     menu_icon = 'list-ul'
     menu_label = 'Council for Economic Education'
 
-
 @modeladmin_register
 class MyModelAdminGroup(ModelAdminGroup):
     menu_label = 'Activity search'
