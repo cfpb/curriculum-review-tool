@@ -98,7 +98,7 @@ class ActivityCouncilForEconEdModelAdmin(ModelAdmin):
 
 @modeladmin_register
 class MyModelAdminGroup(ModelAdminGroup):
-    menu_label = 'Activity search'
+    menu_label = 'TDP Activity'
     menu_icon = 'list-ul'
     items = (
         ActivityBuildingBlockModelAdmin,

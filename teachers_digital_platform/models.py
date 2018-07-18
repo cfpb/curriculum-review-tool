@@ -61,6 +61,9 @@ class ActivityIndexPage(CFGOVPage):
         context['activities'] = self.get_activities().all()
         return context
 
+    class Meta:
+        verbose_name = "TDP Activity search page"
+
 class BaseActivityTaxonomy(models.Model):
     """ A base class for all activity snippets"""
     title = models.CharField(max_length=255, unique=True)
@@ -274,3 +277,5 @@ class ActivityPage(CFGOVPage):
         index.FilterField('council_for_economic_education'),
     ]
 
+    class Meta:
+        verbose_name = "TDP Activity page"
