@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title -%}
+    {{ page.title }} | Consumer Financial Protection Bureau
+{%- endblock title %}
+
+{% block pre_content scoped -%}
+    <div class="content_wrapper">
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559.6 1200" class="cf-icon-svg"><path d="M494.5 1090.7c-17.3 0-33.8-6.8-46-19L19 642.1c-25.4-25.4-25.4-66.5 0-91.9l429.5-429.5c25.6-25.1 66.8-24.8 91.9.8 24.8 25.3 24.8 65.8 0 91.1L156.9 596.2l383.6 383.6c25.4 25.4 25.4 66.5.1 91.9-12.3 12.2-28.8 19-46.1 19z"></path></svg>
+            <a class="breadcrumbs_link" href="/data-research/research-reports/">
+                Breadcrumb link
+            </a>
+        </nav>
+    </div>
+{%- endblock %}
+
+{% block content_main scoped %}
+    <h1>{{ page.title | striptags }}</h1>
+    <div class="meta">
+        <span class="a-date">
+            Updated
+            <span class="datetime">
+                <time class="datetime_date" datetime="{{ page.date.strftime("%Y-%m-%d") }}">
+                    {{ page.date.strftime("%b %d, %Y") }}
+                </time>
+            </span>
+        </span>
+    </div>
+    <div class="lead-paragraph u-mb45">
+        <p>{{ page.summary | striptags | safe }}</p>
+    </div>
+    <h2 class="u-mt45">Big idea</h2>
+    {{ page.big_idea|richtext }}
+    <h2 class="u-mt45">Essential questions</h2>
+    {{ page.essential_questions|richtext }}
+    <h2 class="u-mt45">Objectives</h2>
+    {{ page.objectives|richtext }}
+    <h2 class="u-mt45">What students will do</h2>
+    {{ page.what_students_will_do|richtext }}
+    <div class="o-well u-mt45">
+        <h2>Download activity</h2>
+        <div class="u-mb30">
+            <p>This activity includes teacher materials and the student activity.</p>
+            <p>
+                <a class="a-link a-link__icon" target="_blank" rel="noopener noreferrer" href="{{ page.activity_file.url }}">
+                    <span class="a-link_text">Download {{ page.activity_file.title | striptags | safe }}</span>
+                    <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span>
+                </a>
+            </p>
+
+            {% if page.handout_file %}
+                <p>The handout is required reading material for students.</p>
+                <p>
+                    <a class="a-link a-link__icon" target="_blank" rel="noopener noreferrer" href="{{ page.handout_file.url }}">
+                        <span class="a-link_text">Download {{ page.handout_file.title | striptags | safe }}</span>
+                        <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span>
+                    </a>
+                </p>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock content_main %}
+
+{% block content_sidebar scoped %}
+    <h3>Key information for this activity</h3>
+
+    {% if page.building_block %}
+        <h4>Building block</h4>
+        <ul class="m-list m-list__unstyled">
+            {% for block_item in page.building_block.all() %}
+                <li class="m-list_item">{{ block_item.title }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if page.school_subject %}
+        <h4>School subject</h4>
+        <p>{{ page.school_subject.all() | join(', ') }}</p>
+    {% endif %}
+
+    {% if page.topic %}
+        <h4>Topic</h4>
+        <p>{{ page.topic.all() | join(', ') }}</p>
+    {% endif %}
+
+    <div class="content_line u-mt30 u-mb30"></div>
+
+    {% if page.grade_level or page.age_range or page.special_population %}
+        <h4>Audience</h4>
+        {% if page.grade_level %}<p><strong>Grade level:</strong> {{ page.grade_level.all() | join(', ') }}</p>{% endif %}
+        {% if page.age_range %}<p><strong>Age range:</strong> {{ page.age_range.all() | join(', ') }}</p>{% endif %}
+        {% if page.special_population %}<p><strong>Special population:</strong> {{ page.special_population.all() | join(', ') }}</p>{% endif %}
+        <div class="content_line u-mt30 u-mb30"></div>
+    {% endif %}
+
+    {% if page.activity_type or page.teaching_strategy or page.blooms_taxonomy_level or page.activity_duration %}
+        <h4>Activity characteristics</h4>
+        {% if page.activity_type %}<p><strong>Activity type:</strong> {{ page.activity_type.all() | join(', ') }}</p>{% endif %}
+        {% if page.teaching_strategy %}<p><strong>Teaching strategy:</strong> {{ page.teaching_strategy.all() | join(', ') }}</p>{% endif %}
+        {% if page.blooms_taxonomy_level %}<p><strong>Bloom’s Taxonomy level:</strong> {{ page.blooms_taxonomy_level.all() | join(', ') }}</p>{% endif %}
+        {% if page.activity_duration %}<p><strong>Activity duration:</strong> {{page.activity_duration}}</p>{% endif %}
+        <div class="content_line u-mt30 u-mb30"></div>
+    {% endif %}
+
+    {% if page.grade_level or page.age_range or page.special_population %}
+        <h4>National standards</h4>
+        {% if page.jump_start_coalition %}<p><strong><span aria-hidden="true">Jump$tart</span><span class="u-visually-hidden">JumpStart</span> National Standards:</strong> {{ page.jump_start_coalition.all() | join(', ') }}</p>{% endif %}
+        {% if page.council_for_economic_education %}<p><strong>Council for Economic Education:</strong> {{ page.council_for_economic_education.all() | join(', ') }}</p>{% endif %}
+    {% endif %}
+{% endblock content_sidebar %}

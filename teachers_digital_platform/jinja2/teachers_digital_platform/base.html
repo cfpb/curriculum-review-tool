@@ -34,13 +34,15 @@
 {# BODY items #}
 
 {% block content_main scoped %}
-    <h1>Hello, world!</h1>
-
-    <p>This is the <code>content_main</code> block.</p>
+    <div class="block block__flush-top">
+        Title and content go here.
+    </div>
 {% endblock content_main %}
 
 {% block content_sidebar scoped %}
-    <code>content_sidebar</code>
+    <div class="block block__flush-top">
+        Sidebar content goes here.
+    </div>
 {% endblock content_sidebar %}
 
 {% block javascript scoped -%}
