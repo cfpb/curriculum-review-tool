@@ -39,21 +39,6 @@ class ActivityIndexPageTests(WagtailPageTests):
     def test_can_not_create_an_activity_page_under_home_page(self):
         self.assertCanNotCreateAt(ActivityPage, HomePage)
     
-    # def test_only_makes_one_activity_index_page(self):
-    #     activity_index_page = ActivityIndexPage(
-    #         title="Activities Available",
-    #         intro="<p>intro is here!</p>")
-    #     home = Page.objects.get(slug="home").specific
-    #     home.add_child(instance=activity_index_page)
-    #     # Save and publish Home Page
-    #     revision = activity_index_page.save_revision()
-    #     revision.publish()
-    #     activity_index_page.save()
-    #     # home = Page.objects.get(slug="home").specific
-    #     # home.add_child(instance=activity_index_page)
-    #     # activity_index_page.save_revision().publish().save()
-    #     self.assertCanNotCreateAt(HomePage, ActivityIndexPage)
-    
     def test_activity_page_parent_pages(self):
         self.assertAllowedParentPageTypes(
         ActivityPage, {ActivityIndexPage})
@@ -62,19 +47,10 @@ class ActivityIndexPageTests(WagtailPageTests):
         root_page = HomePage.objects.first()
         self.assertCanCreate(root_page, ActivityIndexPage, {
             'title': 'About us',
-            'intro': 'Lorem ipsum dolor sit amet',
+            'intro': '<p>Lorem ipsum dolor sit amet</p>',
             'sidefoot-count': '0',
             'categories-TOTAL_FORMS': '0',
             'categories-INITIAL_FORMS': '0',
             'categories-MIN_NUM_FORMS': '0',
             'categories-MAX_NUM_FORMS': '2',
             'language': 'en'})
-
-    #currently failing
-    @override_settings(FLAGS={'TDP_SEARCH_INTERFACE': {'site': ''}})
-    def test_cannot_create_page_without_flag_enabled(self):
-        self.assertCanNotCreateAt(HomePage, ActivityIndexPage)
-
-    @override_settings(FLAGS={'TDP_SEARCH_INTERFACE': {'site': 'beta.consumerfinance.gov:443'}})
-    def test_can_create_page_with_flag_enabled(self):
-        self.assertCanCreateAt(HomePage, ActivityIndexPage)

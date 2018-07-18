@@ -2,12 +2,6 @@ from django import forms
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
-from flags.decorators import (
-    flag_check,
-    flag_required,
-)
-
-from flags.state import flag_enabled
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
@@ -57,7 +51,7 @@ class ActivityIndexPage(CFGOVPage):
     def can_create_at(cls, parent):
         # You can only create one of these!
         return super(ActivityIndexPage, cls).can_create_at(parent) \
-            and not cls.objects.exists() and flag_enabled('TDP_SEARCH_INTERFACE')
+            and not cls.objects.exists()
 
     def get_activities(self):
         return ActivityPage.objects.live().child_of(self)
@@ -161,12 +155,6 @@ class ActivityPage(CFGOVPage):
     """
     A model for the Activity Detail page.
     """
-
-    @classmethod
-    def can_create_at(cls, parent):
-        return super(ActivityPage, cls).can_create_at(parent) \
-         and flag_enabled('TDP_SEARCH_INTERFACE')
-
     parent_page_types = [ActivityIndexPage]
     subpage_types = []
     objects = CFGOVPageManager()
