@@ -99,7 +99,7 @@ class ActivitySchoolSubject(BaseActivityTaxonomy):
 
 class ActivityTopic(MPTTModel):
     title = models.CharField(max_length=255, unique=True)
-    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='parents')
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
     weight = models.IntegerField(default=0)
 
     class MPTTMeta:
