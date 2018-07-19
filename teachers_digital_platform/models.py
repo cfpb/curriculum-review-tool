@@ -16,7 +16,8 @@ from wagtail.wagtailadmin.edit_handlers import (
 
 from wagtail.wagtailcore.models import Page, PageManager
 from wagtail.wagtailsearch import index
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailcore.fields import RichTextField, StreamField
+from wagtail.wagtailcore import blocks
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
 from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtaildocs.models import Document
@@ -36,10 +37,13 @@ class ActivityIndexPage(CFGOVPage):
     objects = CFGOVPageManager() 
     intro = RichTextField(blank=True)
     #  alert = RichTextField(blank=True)  # Move this to a StreamField
-
+    alert = StreamField([
+        ('heading', blocks.RichTextBlock()),
+        ('paragraph', blocks.CharBlock()),
+    ])
     content_panels = CFGOVPage.content_panels + [
         FieldPanel('intro'),
-        #  FieldPanel('alert'),
+        StreamFieldPanel('alert')
     ]
 
     edit_handler = TabbedInterface([
