@@ -16,7 +16,8 @@ from wagtail.wagtailadmin.edit_handlers import (
 
 from wagtail.wagtailcore.models import Page, PageManager
 from wagtail.wagtailsearch import index
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailcore.fields import RichTextField, StreamField
+from wagtail.wagtailcore import blocks
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
 from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtaildocs.models import Document
@@ -36,10 +37,13 @@ class ActivityIndexPage(CFGOVPage):
     objects = CFGOVPageManager() 
     intro = RichTextField(blank=True)
     #  alert = RichTextField(blank=True)  # Move this to a StreamField
-
+    alert = StreamField([
+        ('heading', blocks.RichTextBlock()),
+        ('paragraph', blocks.CharBlock()),
+    ])
     content_panels = CFGOVPage.content_panels + [
         FieldPanel('intro'),
-        #  FieldPanel('alert'),
+        StreamFieldPanel('alert')
     ]
 
     edit_handler = TabbedInterface([
@@ -102,7 +106,7 @@ class ActivitySchoolSubject(BaseActivityTaxonomy):
 
 class ActivityTopic(MPTTModel):
     title = models.CharField(max_length=255, unique=True)
-    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='parents')
     weight = models.IntegerField(default=0)
 
     class MPTTMeta:
@@ -158,6 +162,11 @@ class ActivityPage(CFGOVPage):
     """
     A model for the Activity Detail page.
     """
+
+    @classmethod
+    def can_create_at(cls, parent):
+        return super(ActivityPage, cls).can_create_at(parent)
+
     parent_page_types = [ActivityIndexPage]
     subpage_types = []
     objects = CFGOVPageManager()
