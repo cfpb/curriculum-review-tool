@@ -33,6 +33,7 @@ setup(
     packages=find_packages(),
     package_data={
         'teachers_digital_platform': [
+            'fixtures/tdp_initial_data.json',
             'jinja2/teachers_digital_platform/*',
             'jinja2/teachers_digital_platform/prototypes/*',
             'static/tdp/css/*',
