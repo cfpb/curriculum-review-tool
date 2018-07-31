@@ -43,7 +43,6 @@
   },
   "jest": {
     "testURL": "http://localhost/",
-    "testEnvironment": "node",
     "setupTestFrameworkScriptFile": "./src/jest/setup.js"
   }
 }
