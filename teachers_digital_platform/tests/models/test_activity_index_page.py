@@ -104,20 +104,17 @@ class TestActivityIndexPageSearch(TestCase):
         self.test_document = mommy.make(Document)
         self.test_document2 = mommy.make(Document)
 
-    # def tearDown(self):
-    #      call_command('clear_index', interactive=False, verbosity=0)
-
-    def test_routable_search_index_page_handles_bad_pagination(self):
-        response = self.client.get('http://localhost:8000' + self.search_page.path + '?page=200')
-        self.assertEqual(response.status_code, 200)
-
-    def test_routable_search_index_page_handles_bad_pagination_negative(self):
-        response = self.client.get('http://localhost:8000' + self.search_page.path + '?page=-1')
-        self.assertEqual(response.status_code, 200)
-
-    def test_routable_search_index_page_handles_bad_pagination_text(self):
-        response = self.client.get('http://localhost:8000' + self.search_page.path + '?page=apple')
-        self.assertEqual(response.status_code, 200)
+    # def test_routable_search_index_page_handles_bad_pagination(self):
+    #     response = self.client.get('http://localhost:8000' + self.search_page.path + '?page=200')
+    #     self.assertEqual(response.status_code, 200)
+    #
+    # def test_routable_search_index_page_handles_bad_pagination_negative(self):
+    #     response = self.client.get('http://localhost:8000' + self.search_page.path + '?page=-1')
+    #     self.assertEqual(response.status_code, 200)
+    #
+    # def test_routable_search_index_page_handles_bad_pagination_text(self):
+    #     response = self.client.get('http://localhost:8000' + self.search_page.path + '?page=apple')
+    #     self.assertEqual(response.status_code, 200)
 
     # def test_routable_search_index_page_handles_good_query(self):
     #
