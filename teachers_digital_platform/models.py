@@ -1,19 +1,31 @@
 from django import forms
-from django.db import models
-from django.utils import timezone
 from django.conf import settings
+from django.db import models
+from django.http import Http404
+from django.template.response import TemplateResponse
+from django.utils import timezone
+
+from flags.decorators import flag_check
+
+from haystack.inputs import Clean
+from haystack.query import SearchQuerySet
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
+from mptt.querysets import TreeQuerySet
 
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
+
+import sys, math
 
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
     TabbedInterface
 )
 
+
+from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
 from wagtail.wagtailcore.models import Page, PageManager
 from wagtail.wagtailsearch import index
 from wagtail.wagtailcore.fields import RichTextField
@@ -27,7 +39,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
 
 
-class ActivityIndexPage(CFGOVPage):
+class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
     """
     A model for the Activity Search page.
     """
@@ -39,7 +51,6 @@ class ActivityIndexPage(CFGOVPage):
 
     content_panels = CFGOVPage.content_panels + [
         FieldPanel('intro'),
-        #  FieldPanel('alert'),
     ]
 
     edit_handler = TabbedInterface([
@@ -47,19 +58,239 @@ class ActivityIndexPage(CFGOVPage):
         ObjectList(CFGOVPage.sidefoot_panels, heading='Sidebar/Footer'),
         ObjectList(CFGOVPage.settings_panels, heading='Configuration'),
     ])
+
     @classmethod
     def can_create_at(cls, parent):
         # You can only create one of these!
         return super(ActivityIndexPage, cls).can_create_at(parent) \
             and not cls.objects.exists()
 
-    def get_activities(self):
-        return ActivityPage.objects.live().child_of(self)
+    def get_base_search_query_set(self):
+        # build initial SearchQuerySet and specify facets
+        sqs = SearchQuerySet().models(ActivityPage) \
+            .facet('building_block') \
+            .facet('school_subject') \
+            .facet('topic') \
+            .facet('grade_level') \
+            .facet('age_range') \
+            .facet('special_population') \
+            .facet('activity_type') \
+            .facet('teaching_strategy') \
+            .facet('blooms_taxonomy_level') \
+            .facet('activity_duration') \
+            .facet('jump_start_coalition') \
+            .facet('council_for_economic_education')
+        return sqs
+
+    def get_selected_facets(self, request):
+        # get active facets values
+        facet_names = (
+            'building_block',
+            'school_subject',
+            'topic',
+            'grade_level',
+            'age_range',
+            'special_population',
+            'activity_type',
+            'teaching_strategy',
+            'blooms_taxonomy_level',
+            'activity_duration',
+            'jump_start_coalition',
+            'council_for_economic_education',
+        )
+        selected_facets = {'facet_values': {}, 'queries': {}}
+        for facet in facet_names:
+            selected_facets['facet_values'][facet] = map(int, request.GET.getlist(facet+'[]'))
+
+        # build out facet_queries based on active_face_values
+        for facet_name, facet_value in selected_facets['facet_values'].items():
+            if facet_value:
+                facet_value = map(str, facet_value)
+                narrow_query = (" OR " + facet_name + "_exact:").join(facet_value)
+                selected_facets['queries'][facet_name] = facet_name + '_exact:' + narrow_query
+        return selected_facets
+
+
 
     def get_context(self, request):
         context = super(ActivityIndexPage, self).get_context(request)
-        context['activities'] = self.get_activities().all()
+        clean_query = Clean(request.GET.get('q', ''))
+        context['search_query'] = clean_query
+        selected_facets = self.get_selected_facets(request)
+        context['selected_facets'] = selected_facets
         return context
+
+    @route(r'^$')
+    @flag_check('TDP_SEARCH_INTERFACE', True)
+    def search(self, request, *args, **kwargs):
+        context = self.get_context(request)
+        sqs = self.get_base_search_query_set()
+        selected_facets = context['selected_facets']
+        clean_query = context['search_query']
+
+        # Apply search query if it exists, but don't apply facets
+        if clean_query:
+            sqs = sqs.filter(content=clean_query).order_by('-_score', '-date')
+        else:
+            sqs = sqs.order_by('-date')
+
+        facet_counts = self.get_facet_counts(sqs)
+        facets = self.get_search_facets(facet_counts, selected_facets, sqs)
+
+        # apply all the active facet values to our search results
+        for field, facet_narrow_query in selected_facets['queries'].items():
+            sqs = sqs.narrow(facet_narrow_query)
+
+        # Set-up pagination
+        page_number = request.GET.get('page','1')
+        if page_number.isdigit():
+            page_number = int(page_number)
+        else:
+            page_number = 1
+
+        total_results = sqs.count()
+        results_per_page = 10
+        total_pages = int(math.ceil(float(total_results) / results_per_page))
+        if not (1 <= page_number <= total_pages):
+            page_number = 1
+
+        # limit the results to the activites on the current page
+        sqs = sqs[((page_number - 1) * results_per_page):((page_number - 1) * results_per_page) + results_per_page]
+
+        activities = [activity.object for activity in sqs]
+
+        context.update({
+            'facet_counts': facet_counts,
+            'facets': facets,
+            'activities': activities,
+            'total_results': total_results,
+            'results_per_page': results_per_page,
+            'total_pages': total_pages,
+            'page_number': page_number
+        })
+        return TemplateResponse(
+            request,
+            self.get_template(request),
+            context)
+
+    def get_facet_counts(self, sqs):
+        return sqs.facet_counts()
+
+    def get_search_facets(self, facet_counts, selected_facets, sqs):
+        facets = {}
+        # load the facets that will be displayed on the sidebar
+        if 'fields' in facet_counts:
+            facets = self.get_facet_values(selected_facets, sqs)
+        return facets
+
+    def get_facet_values(self, selected_facets, search_query_set):
+        """Get a list of titles from ids"""
+        facet_queries = selected_facets['queries']
+        selected_facet_values = selected_facets['facet_values']
+        facet_values = {}
+        facet_class_map = {
+            'building_block': {'class': 'ActivityBuildingBlock', 'nested': False},
+            'school_subject': {'class': 'ActivitySchoolSubject', 'nested': False},
+            'topic': {'class': 'ActivityTopic', 'nested': True},
+            'grade_level': {'class': 'ActivityGradeLevel', 'nested': False},
+            'age_range': {'class': 'ActivityAgeRange', 'nested': False},
+            'special_population': {'class': 'ActivitySpecialPopulation', 'nested': False},
+            'activity_type': {'class': 'ActivityType', 'nested': False},
+            'teaching_strategy': {'class': 'ActivityTeachingStrategy', 'nested': False},
+            'blooms_taxonomy_level': {'class': 'ActivityBloomsTaxonomyLevel', 'nested': False},
+            'activity_duration': {'class': 'ActivityDuration', 'nested': False},
+            'jump_start_coalition': {'class': 'ActivityJumpStartCoalition', 'nested': False},
+            'council_for_economic_education': {'class': 'ActivityCouncilForEconEd', 'nested': False},
+        }
+
+        for facet_name, facet_info in facet_class_map.items():
+            other_facet_queries = (facet_query for facet_query_name, facet_query in facet_queries.items() if facet_name != facet_query_name)
+            results = search_query_set
+            nested = facet_info['nested']
+            facet_class = facet_info['class']
+
+            for other_facet_query in other_facet_queries:
+                results = results.narrow(other_facet_query)
+
+            facet_counts = results.facet_counts()
+            if 'fields' in facet_counts and facet_name in facet_counts['fields']:
+                fvalues = [value[0] for value in facet_counts['fields'][facet_name]]
+                if not nested:
+                    final_facets = []
+                    facet_values[facet_name] = eval(facet_class).objects.filter(pk__in=fvalues).values('id', 'title')
+                    for facet_value in facet_values[facet_name]:
+                        if facet_value['id'] in selected_facet_values[facet_name]:
+                            facet_value['selected'] = True
+                        else:
+                            facet_value['selected'] = False
+                        final_facets.append(facet_value)
+                    facet_values[facet_name] = final_facets
+                else:
+                    facet_values[facet_name] = self.get_nested_facet_values(facet_class, fvalues, selected_facet_values[facet_name])
+
+        return facet_values
+
+    def get_nested_facet_values(self, facet_class, fvalues, selected_facet_values):
+
+        nested_facet_values = eval(facet_class).objects.filter(pk__in=fvalues).values('id', 'title', 'parent')
+        values = {}
+        for nested_facet in nested_facet_values:
+            is_selected = False
+            if nested_facet['id'] in selected_facet_values:
+                is_selected = True
+            if nested_facet['parent']:
+                parent_facet = self.get_parent_facet(facet_class, nested_facet['parent'], {nested_facet['id']: {
+                    'id': nested_facet['id'],
+                    'title': nested_facet['title'],
+                    'parent': nested_facet['parent'],
+                    'selected': is_selected,
+                }}, selected_facet_values)
+                values = self.merge_dict(values, parent_facet)
+            else:
+                values[nested_facet['id']] = {'id': nested_facet['id'], 'title': nested_facet['title'], 'parent': nested_facet['parent'], 'selected': is_selected}
+        # Sort values by root level weight
+        values_list = []
+        roots = eval(facet_class).objects.filter(parent=None).values('id')
+        for root in roots:
+            if root['id'] in values:
+                values_list.append(values[root['id']])
+        return values_list
+
+    def get_parent_facet(self, facet_class, parent, children, selected_facet_values):
+        values = {}
+        parent_object = eval(facet_class).objects.get(pk=parent)
+        is_selected = False
+        if parent_object.id in selected_facet_values:
+            is_selected = True
+        if parent_object.parent:
+            new_children = {'id': parent_object.id, 'title': parent_object.title, 'parent': parent_object.parent.id, 'children': children, 'selected': is_selected}
+            values = self.get_parent_facet(facet_class, parent_object.parent.id, {parent_object.id: new_children})
+        else:
+            values[parent_object.id] = {
+                'id': parent_object.id,
+                'title': parent_object.title,
+                'parent': None,
+                'children': children,
+                'selected': is_selected
+            }
+        return values
+
+    def merge_dict(self, a, b, path=None):
+        "merges b into a"
+        if path is None: path = []
+        for key in b:
+            if key in a:
+                if isinstance(a[key], dict) and isinstance(b[key], dict):
+                    self.merge_dict(a[key], b[key], path + [str(key)])
+                elif a[key] == b[key]:
+                    pass  # same leaf value
+                else:
+
+                    raise Exception('Conflict at %s' % '.'.join(path + [str(key)]))
+            else:
+                a[key] = b[key]
+        return a
+
 
     class Meta:
         verbose_name = "TDP Activity search page"
