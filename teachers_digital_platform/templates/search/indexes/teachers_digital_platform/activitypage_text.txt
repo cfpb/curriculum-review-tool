@@ -1,0 +1,14 @@
+{{ object.title|striptags|safe }}
+{{ object.summary|striptags|safe }}
+
+{% for school_subject in object.school_subject.all %}
+{{ school_subject.title|striptags|safe }}
+{% endfor %}
+
+{% for topic in object.topic.all %}
+{{ topic.title|striptags|safe }}
+{% endfor %}
+
+{% for building_block in object.building_block.all %}
+{{ building_block.title|striptags|safe }}
+{% endfor %}

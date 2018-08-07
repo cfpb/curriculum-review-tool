@@ -9,6 +9,7 @@ except (IOError, ImportError):
 
 install_requires = [
     'Django>=1.8,<1.12',
+    'django-haystack',
     'django-mptt==0.9.0',
     'django-js-asset==1.1.0',
 ]
@@ -39,6 +40,7 @@ setup(
             'static/tdp/css/*',
             'static/tdp/js/*',
             'static/tdp/fonts/*',
+            'fixtures/tdp_initial_data.json'
         ],
     },
     install_requires=install_requires,

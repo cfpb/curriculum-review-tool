@@ -680,7 +680,7 @@
     {
         "fields": {
             "weight": 2,
-            "title": "Standard III. Using credit"
+            "title": "Standard III. Saving"
         },
         "model": "teachers_digital_platform.activitycouncilforeconed",
         "pk": 3
@@ -688,7 +688,7 @@
     {
         "fields": {
             "weight": 3,
-            "title": "Standard IV. Saving"
+            "title": "Standard IV. Using credit"
         },
         "model": "teachers_digital_platform.activitycouncilforeconed",
         "pk": 4
