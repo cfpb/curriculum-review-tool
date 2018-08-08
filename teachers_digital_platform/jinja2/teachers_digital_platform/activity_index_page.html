@@ -478,25 +478,25 @@
             {% if pager_next %}<a href="{{ page.url}}?{{ pager_next }}">{% endif %}<button class="a-btn m-pagination_btn-next" {% if not pager_next %}disabled=""{% endif %}>Next<span class="a-btn_icon a-btn_icon__on-right cf-icon cf-icon__after cf-icon-right"></span></button>{% if pager_next %}</a>{% endif %}
             <form class="m-pagination_form" action="{{ page.url }}#content_main">
                 <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
-                {% for facet in selected_facets.facet_values.building_block if facet.selected %}
+                {% for facet in selected_facets.facet_values.building_block %}
                     <input type="hidden" name="building_block[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.school_subject if facet.selected %}
+                {% for facet in selected_facets.facet_values.school_subject %}
                     <input type="hidden" name="school_subject[]" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.topic %}
                     <input type="hidden" name="topic[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.grade_level if facet.selected %}
+                {% for facet in selected_facets.facet_values.grade_level %}
                     <input type="hidden" name="grade_level[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.age_range if facet.selected %}
+                {% for facet in selected_facets.facet_values.age_range %}
                     <input type="hidden" name="age_range[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.special_population if facet.selected %}
+                {% for facet in selected_facets.facet_values.special_population %}
                     <input type="hidden" name="special_population[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.activity_type if facet.selected %}
+                {% for facet in selected_facets.facet_values.activity_type %}
                     <input type="hidden" name="activity_type[]" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.teaching_strategy %}
