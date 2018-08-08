@@ -355,7 +355,12 @@
     <section class="content_main">
         <a id="content_main"></a>
         <div class="filters-applied">
+            {% if selected_facets.queries or search_query %}
             Filters Applied:
+            <ul>
+            {% if search_query %}
+            <li>Keyword: "{{ search_query }}"</li>
+            {% endif %}
             {% for facet in facets.building_block if facet.selected %}
                 <li>{{ facet.title }}</li>
             {% endfor %}
@@ -397,9 +402,11 @@
             {% for facet in facets.council_for_economic_education if facet.selected %}
                 <li>{{ facet.title }}</li>
             {% endfor %}
+            </ul>
             <a href="{{ page.url }}"> Clear all filters</a>
+            {% endif %}
         </div>
-        <h2>Title</h2>
+        <h2>Confirming title and notification</h2>
         <ul class="m-list__unstyled">
             {% for result in activities %}
                 {% if result %}
@@ -519,7 +526,10 @@
 {% block javascript %}
     {{ super() }}
     <script type="text/javascript">
-        /* Replicate jquery's .closest() functionality */
+        /*
+            Replicate jQuery's .closest() functionality
+            Credit: https://stackoverflow.com/a/24107550
+        */
         function closest(el, selector) {
             var matchesFn;
 
@@ -548,13 +558,13 @@
 
         /* Use vanilla JS instead of jQuery */
         document.addEventListener("DOMContentLoaded", function(event) {
-
+            // Hide the apply filters submit button in the sidebar
             var submit_buttons = document.querySelectorAll(".filter-panel__apply-filters")
             var i;
             for (i = 0; i < submit_buttons.length; i++) {
                 submit_buttons[i].style.display = "none";
             }
-
+            // Make facets auto-submit on change
             var checkboxes = document.querySelectorAll(".content_sidebar  > .filter-panel form input[type=checkbox]")
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].addEventListener("change", function(){

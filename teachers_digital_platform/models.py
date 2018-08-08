@@ -122,7 +122,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
 
     def get_context(self, request):
         context = super(ActivityIndexPage, self).get_context(request)
-        clean_query = Clean(request.GET.get('q', ''))
+        clean_query = str(Clean(request.GET.get('q', '')))
         context['search_query'] = clean_query
         selected_facets = self.get_selected_facets(request)
         context['selected_facets'] = selected_facets
@@ -159,7 +159,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             page_number = 1
 
         total_results = sqs.count()
-        results_per_page = 1
+        results_per_page = 5
         total_pages = int(math.ceil(float(total_results) / results_per_page))
         if not (1 <= page_number <= total_pages):
             page_number = 1
