@@ -50,7 +50,7 @@
             <h3>Search</h3>
             <p>Search for activities by key terms or concepts.</p>
             <div class="layout-row">
-                <form method="GET" action="{{ page.url }}">
+                <form method="GET" action="{{ page.url }}#content_main">
                     <div class="flex-all typeahead-portal">
                         <section class="typeahead flex-all">
                             <div class="m-btn-inside-input input-contains-label">
@@ -63,7 +63,7 @@
                 </form>
             </div>
             <h3>Filter results by</h3>
-            <form method="GET" action="{{ page.url }}">
+            <form method="GET" action="{{ page.url }}#content_main">
                 <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
                 <input type="hidden" name="page" inputmode="numeric" value="1">
                 <p>Narrow your search by selecting specific activity features.</p>
@@ -146,7 +146,7 @@
                     </div>
                 </section>
                 {% endif %}
-                <h4>Audience</h4>
+                {% if facets.grade_level or facets.age_range or facets.special_population %}<h4>Audience</h4>{% endif %}
                 {% if facets.grade_level %}
                 <section class="o-expandable">
                     <div class="o-expandable_header o-expandable_target">
@@ -213,7 +213,7 @@
                     </div>
                 </section>
                 {% endif %}
-                <h4>Activity characteristics</h4>
+                {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}<h4>Activity characteristics</h4>{% endif %}
                 {% if facets.activity_type %}
                 <section class="o-expandable">
                     <div class="o-expandable_header o-expandable_target">
@@ -302,7 +302,7 @@
                     </div>
                 </section>
                 {% endif %}
-                <h4>National standards</h4>
+                {% if facets.council_for_economic_education or facets.jump_start_coalition %}<h4>National standards</h4>{% endif %}
                 {% if facets.council_for_economic_education %}
                 <section class="o-expandable">
                     <div class="o-expandable_header o-expandable_target">
@@ -347,12 +347,58 @@
                     </div>
                 </section>
                 {% endif %}
-                <input type="submit" value="Apply Filters"> | <a href="{{ page.url }}"> Clear all filters</a>
+                <div class="filter-panel__apply-filters"><input type="submit" value="Apply Filters"> | <a href="{{ page.url }}"> Clear all filters</a></div>
             </form>
         </section>
     </aside>
 
     <section class="content_main">
+        <a id="content_main"></a>
+        <div class="filters-applied">
+            Filters Applied:
+            {% for facet in facets.building_block if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.school_subject if facet.selected%}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.topic %}
+                {% if facet.selected %}<li>{{ facet.title }}</li>{% endif %}
+                {% if facet.children %}
+                    {% for id, facet_child in facet.children.items() if facet_child.selected %}
+                        <li>{{ facet_child.title }}</li>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            {% for facet in facets.grade_level if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.age_range if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.special_population if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.activity_type if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.teaching_strategy if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.blooms_taxonomy_level if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.activity_duration if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.jump_start_coalition if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            {% for facet in facets.council_for_economic_education if facet.selected %}
+                <li>{{ facet.title }}</li>
+            {% endfor %}
+            <a href="{{ page.url }}"> Clear all filters</a>
+        </div>
         <h2>Title</h2>
         <ul class="m-list__unstyled">
             {% for result in activities %}
@@ -421,29 +467,29 @@
         </ul>
         {% if total_results > 0 %}
         <nav class="m-pagination" role="navigation" aria-label="Pagination">
-            <button type="submit" class="a-btn m-pagination_btn-prev" {% if page_number == 1 %}disabled=""{% endif %}><span class="a-btn_icon a-btn_icon__on-left cf-icon cf-icon__before cf-icon-left"></span>Previous</button>
-            <button class="a-btn m-pagination_btn-next" {% if page_number == total_pages %}disabled=""{% endif %}>Next<span class="a-btn_icon a-btn_icon__on-right cf-icon cf-icon__after cf-icon-right"></span></button>
-            <form class="m-pagination_form" action="{{ page.url }}">
+            {% if pager_previous %}<a href="{{ page.url}}?{{ pager_previous }}">{% endif %}<button class="a-btn m-pagination_btn-prev" {% if not pager_previous %}disabled=""{% endif %}><span class="a-btn_icon a-btn_icon__on-left cf-icon cf-icon__before cf-icon-left"></span>Previous</button>{% if pager_previous %}</a>{% endif %}
+            {% if pager_next %}<a href="{{ page.url}}?{{ pager_next }}">{% endif %}<button class="a-btn m-pagination_btn-next" {% if not pager_next %}disabled=""{% endif %}>Next<span class="a-btn_icon a-btn_icon__on-right cf-icon cf-icon__after cf-icon-right"></span></button>{% if pager_next %}</a>{% endif %}
+            <form class="m-pagination_form" action="{{ page.url }}#content_main">
                 <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
-                {% for facet in selected_facets.facet_values.building_block %}
+                {% for facet in selected_facets.facet_values.building_block if facet.selected %}
                     <input type="hidden" name="building_block[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.school_subject %}
+                {% for facet in selected_facets.facet_values.school_subject if facet.selected %}
                     <input type="hidden" name="school_subject[]" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.topic %}
                     <input type="hidden" name="topic[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.grade_level %}
+                {% for facet in selected_facets.facet_values.grade_level if facet.selected %}
                     <input type="hidden" name="grade_level[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.age_range %}
+                {% for facet in selected_facets.facet_values.age_range if facet.selected %}
                     <input type="hidden" name="age_range[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.special_population %}
+                {% for facet in selected_facets.facet_values.special_population if facet.selected %}
                     <input type="hidden" name="special_population[]" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.activity_type %}
+                {% for facet in selected_facets.facet_values.activity_type if facet.selected %}
                     <input type="hidden" name="activity_type[]" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.teaching_strategy %}
@@ -469,3 +515,63 @@
     </section>
 </div>
 {% endblock %}
+
+{% block javascript %}
+    {{ super() }}
+    <script type="text/javascript">
+        /* Replicate jquery's .closest() functionality */
+        function closest(el, selector) {
+            var matchesFn;
+
+            // find vendor prefix
+            ['matches','webkitMatchesSelector','mozMatchesSelector','msMatchesSelector','oMatchesSelector'].some(function(fn) {
+                if (typeof document.body[fn] == 'function') {
+                    matchesFn = fn;
+                    return true;
+                }
+                return false;
+            })
+
+            var parent;
+
+            // traverse parents
+            while (el) {
+                parent = el.parentElement;
+                if (parent && parent[matchesFn](selector)) {
+                    return parent;
+                }
+                el = parent;
+            }
+
+            return null;
+        }
+
+        /* Use vanilla JS instead of jQuery */
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            var submit_buttons = document.querySelectorAll(".filter-panel__apply-filters")
+            var i;
+            for (i = 0; i < submit_buttons.length; i++) {
+                submit_buttons[i].style.display = "none";
+            }
+
+            var checkboxes = document.querySelectorAll(".content_sidebar  > .filter-panel form input[type=checkbox]")
+            for (i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].addEventListener("change", function(){
+                    facet_form = closest(this, "form")
+                    facet_form.submit();
+                });
+            }
+        });
+
+        /* jQuery code
+        Note: requires <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+        $(document).ready(function(){
+            $('.filter-panel__apply-filters').hide();
+            $(".content_sidebar > .filter-panel form input:checkbox").change(function() {
+                $(this).closest('form').submit();
+            });
+        });
+        */
+    </script>
+{% endblock javascript %}

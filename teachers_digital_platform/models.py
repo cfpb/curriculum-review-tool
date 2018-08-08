@@ -100,7 +100,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         )
         selected_facets = {'facet_values': {}, 'queries': {}}
         for facet in facet_names:
-            selected_facets['facet_values'][facet] = map(int, request.GET.getlist(facet+'[]'))
+            selected_facets['facet_values'][facet] = [int(value) for value in request.GET.getlist(facet+'[]') if value.isdigit()]
 
         # build out facet_queries based on active_face_values
         for facet_name, facet_value in selected_facets['facet_values'].items():
@@ -110,6 +110,14 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                 selected_facets['queries'][facet_name] = facet_name + '_exact:' + narrow_query
         return selected_facets
 
+    def build_search_querystring(self, q, facet_values):
+        query_list = []
+        if q:
+            query_list.append("q=" + str(q))
+        for facet_name, values in facet_values.items():
+            query_list.extend([facet_name + "[]=" + str(value) for value in values])
+        if query_list:
+            return "&".join(query_list)
 
 
     def get_context(self, request):
@@ -118,6 +126,8 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         context['search_query'] = clean_query
         selected_facets = self.get_selected_facets(request)
         context['selected_facets'] = selected_facets
+        query_string = self.build_search_querystring(clean_query, selected_facets['facet_values'])
+        context['query_string'] = query_string
         return context
 
     @route(r'^$')
@@ -149,10 +159,17 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             page_number = 1
 
         total_results = sqs.count()
-        results_per_page = 10
+        results_per_page = 1
         total_pages = int(math.ceil(float(total_results) / results_per_page))
         if not (1 <= page_number <= total_pages):
             page_number = 1
+
+        pager_previous = None
+        pager_next = None
+        if page_number > 1:
+            pager_previous = context['query_string'] + "&page=" + str(page_number-1) + "#content_main"
+        if page_number < total_pages:
+            pager_next = context['query_string'] + "&page=" + str(page_number + 1) + "#content_main"
 
         # limit the results to the activites on the current page
         sqs = sqs[((page_number - 1) * results_per_page):((page_number - 1) * results_per_page) + results_per_page]
@@ -166,7 +183,9 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             'total_results': total_results,
             'results_per_page': results_per_page,
             'total_pages': total_pages,
-            'page_number': page_number
+            'page_number': page_number,
+            'pager_previous': pager_previous,
+            'pager_next': pager_next,
         })
         return TemplateResponse(
             request,
