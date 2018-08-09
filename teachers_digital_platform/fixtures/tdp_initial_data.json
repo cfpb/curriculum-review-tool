@@ -1,7 +1,6 @@
 [
     {
         "fields": {
-            "icon": null,
             "weight": 0,
             "title": "Executive function"
         },
@@ -10,7 +9,6 @@
     },
     {
         "fields": {
-            "icon": null,
             "weight": 1,
             "title": "Financial habits and norms"
         },
@@ -19,7 +17,6 @@
     },
     {
         "fields": {
-            "icon": null,
             "weight": 2,
             "title": "Financial knowledge and decision-making skills"
         },
