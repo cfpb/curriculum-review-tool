@@ -1,0 +1,32 @@
+[
+    {
+        "fields": {
+            "icon": null,
+            "weight": 0,
+            "title": "Executive function",
+            "svg_icon": "settings"
+        },
+        "model": "teachers_digital_platform.activitybuildingblock",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "icon": null,
+            "weight": 1,
+            "title": "Financial habits and norms",
+            "svg_icon": "split"
+        },
+        "model": "teachers_digital_platform.activitybuildingblock",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "icon": null,
+            "weight": 2,
+            "title": "Financial knowledge and decision-making skills",
+            "svg_icon": "piggy-bank-check"
+        },
+        "model": "teachers_digital_platform.activitybuildingblock",
+        "pk": 3
+    }
+]
