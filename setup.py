@@ -40,7 +40,8 @@ setup(
             'static/tdp/css/*',
             'static/tdp/js/*',
             'static/tdp/fonts/*',
-            'fixtures/tdp_initial_data.json'
+            'fixtures/tdp_initial_data.json',
+            'fixtures/tdp_updated_building_blocks.json'
         ],
     },
     install_requires=install_requires,

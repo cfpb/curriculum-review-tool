@@ -333,16 +333,20 @@ class BaseActivityTaxonomy(models.Model):
 
 
 class ActivityBuildingBlock(BaseActivityTaxonomy):
-    icon = models.ForeignKey(
-        'v1.CFGOVImage',
+    options = (
+        ('settings', 'Executive function'),
+        ('split', 'Financial habits and norms'),
+        ('piggy-bank-check', 'Financial knowledge and decision making'),
+    )
+    svg_icon = models.CharField(
         null=True,
         blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
+        max_length=60,
+        choices=options,
     )
 
     panels = BaseActivityTaxonomy.panels + [
-        ImageChooserPanel('icon'),
+        FieldPanel('svg_icon'),
     ]
 
 
@@ -432,6 +436,13 @@ class ActivityPage(CFGOVPage):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    handout_file_2 = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
     building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)
     school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
     topic = ParentalTreeManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
@@ -466,6 +477,7 @@ class ActivityPage(CFGOVPage):
             [
                 DocumentChooserPanel('activity_file'),
                 DocumentChooserPanel('handout_file'),
+                DocumentChooserPanel('handout_file_2'),
             ],
             heading="Download activity",
         ),
@@ -526,6 +538,36 @@ class ActivityPage(CFGOVPage):
         index.FilterField('jump_start_coalition'),
         index.FilterField('council_for_economic_education'),
     ]
+
+    def get_topics_list(self, parent=None):
+        """Get a hierarchical list of this activity's topics"""
+        if parent:
+            descendants = set(parent.get_descendants()) & set(self.topic.all())
+            children = parent.get_children()
+            children_list = []
+            if descendants:
+                for child in children:
+                    if set(child.get_descendants()) & set(self.topic.all()):
+                        children_list.append(child.title + " (" + self.get_topics_list(child) + ")")
+                    elif child in self.topic.all():
+                        children_list.append(child.title)
+
+                if children_list:
+                    return parent.title + " (" + ', '.join(children_list) + ")"
+            else:
+                return parent.title
+        else:
+            topic_list = []
+            topic_ids = [topic.id for topic in self.topic.all()]
+            qs = ActivityTopic.objects.filter(id__in=topic_ids).get_ancestors(True)
+            parents = ActivityTopic.objects.filter(parent=None) & qs
+            for parent in parents:
+                topic_list.append(self.get_topics_list(parent))
+
+            if topic_list:
+                return ', '.join(topic_list)
+            else:
+                return ''
 
     class Meta:
         verbose_name = "TDP Activity page"
