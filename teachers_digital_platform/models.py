@@ -540,11 +540,12 @@ class ActivityPage(CFGOVPage):
     ]
 
     def get_topics_list(self, parent=None):
-        """Get a hierarchical list of this activity's topics"""
+        """Get a hierarchical list of this activity's topics."""
         if parent:
             descendants = set(parent.get_descendants()) & set(self.topic.all())
             children = parent.get_children()
             children_list = []
+            # If this parent has descendants that are in self.topic, add its children.
             if descendants:
                 for child in children:
                     if set(child.get_descendants()) & set(self.topic.all()):
@@ -554,15 +555,17 @@ class ActivityPage(CFGOVPage):
 
                 if children_list:
                     return parent.title + " (" + ', '.join(children_list) + ")"
+            # Otherwise, just add the parent.
             else:
                 return parent.title
         else:
+            # If this is the first call, build a list of root topics and recurse through their children.
             topic_list = []
             topic_ids = [topic.id for topic in self.topic.all()]
-            qs = ActivityTopic.objects.filter(id__in=topic_ids).get_ancestors(True)
-            parents = ActivityTopic.objects.filter(parent=None) & qs
-            for parent in parents:
-                topic_list.append(self.get_topics_list(parent))
+            ancestors = ActivityTopic.objects.filter(id__in=topic_ids).get_ancestors(True)
+            roots = ActivityTopic.objects.filter(parent=None) & ancestors
+            for root_topic in roots:
+                topic_list.append(self.get_topics_list(root_topic))
 
             if topic_list:
                 return ', '.join(topic_list)
