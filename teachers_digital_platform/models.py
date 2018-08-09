@@ -504,8 +504,8 @@ class ActivityPage(CFGOVPage):
         ),
         MultiFieldPanel(
             [
-                FieldPanel('jump_start_coalition', widget=forms.CheckboxSelectMultiple),
                 FieldPanel('council_for_economic_education', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('jump_start_coalition', widget=forms.CheckboxSelectMultiple),
             ],
             heading="National standards",
         ),

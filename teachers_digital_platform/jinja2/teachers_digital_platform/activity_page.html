@@ -107,9 +107,9 @@
         <div class="content_line u-mt30 u-mb30"></div>
     {% endif %}
 
-    {% if page.grade_level or page.age_range or page.special_population %}
+    {% if page.jump_start_coalition or page.council_for_economic_education %}
         <h4>National standards</h4>
-        {% if page.jump_start_coalition %}<p><strong><span aria-hidden="true">Jump$tart</span><span class="u-visually-hidden">JumpStart</span> National Standards:</strong> {{ page.jump_start_coalition.all() | join(', ') }}</p>{% endif %}
         {% if page.council_for_economic_education %}<p><strong>Council for Economic Education:</strong> {{ page.council_for_economic_education.all() | join(', ') }}</p>{% endif %}
+        {% if page.jump_start_coalition %}<p><strong><span aria-hidden="true">Jump$tart</span><span class="u-visually-hidden">JumpStart</span> National Standards:</strong> {{ page.jump_start_coalition.all() | join(', ') }}</p>{% endif %}
     {% endif %}
 {% endblock content_sidebar %}
