@@ -5,7 +5,7 @@ from django.db import migrations, models
 from django.core import serializers
 
 fixture_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../fixtures'))
-fixture_filename = 'tdp_initial_data.json'
+fixture_filename = 'tdp_updated_council_for_ed_data.json'
 
 
 def load_fixture(apps, schema_editor):
@@ -20,17 +20,6 @@ def load_fixture(apps, schema_editor):
 def unload_fixture(apps, schema_editor):
     """Brutally deleting all entries for these models..."""
     model_names = [
-        "ActivityBuildingBlock",
-        "ActivitySchoolSubject",
-        "ActivityTopic",
-        "ActivityGradeLevel",
-        "ActivityAgeRange",
-        "ActivitySpecialPopulation",
-        "ActivityType",
-        "ActivityTeachingStrategy",
-        "ActivityBloomsTaxonomyLevel",
-        "ActivityDuration",
-        "ActivityJumpStartCoalition",
         "ActivityCouncilForEconEd",
     ]
     for model_name in model_names:

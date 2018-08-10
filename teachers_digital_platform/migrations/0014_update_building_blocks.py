@@ -21,17 +21,6 @@ def unload_fixture(apps, schema_editor):
     """Brutally deleting all entries for these models..."""
     model_names = [
         "ActivityBuildingBlock",
-        "ActivitySchoolSubject",
-        "ActivityTopic",
-        "ActivityGradeLevel",
-        "ActivityAgeRange",
-        "ActivitySpecialPopulation",
-        "ActivityType",
-        "ActivityTeachingStrategy",
-        "ActivityBloomsTaxonomyLevel",
-        "ActivityDuration",
-        "ActivityJumpStartCoalition",
-        "ActivityCouncilForEconEd",
     ]
     for model_name in model_names:
         MyModel = apps.get_model("teachers_digital_platform", model_name)
