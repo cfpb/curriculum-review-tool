@@ -354,56 +354,58 @@
 
     <section class="content_main">
         <a id="content_main"></a>
-        <div class="filters-applied">
+        <div class="filters_applied">
             {% if selected_facets.queries or search_query %}
-            Filters Applied:
-            <ul>
-            {% if search_query %}
-            <li>Keyword: "{{ search_query }}"</li>
-            {% endif %}
-            {% for facet in facets.building_block if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.school_subject if facet.selected%}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.topic %}
-                {% if facet.selected %}<li>{{ facet.title }}</li>{% endif %}
-                {% if facet.children %}
-                    {% for id, facet_child in facet.children.items() if facet_child.selected %}
-                        <li>{{ facet_child.title }}</li>
-                    {% endfor %}
+            <span class="filters_applied-label">
+                Filters applied:
+            </span>
+            <div id="filter-tag-container">
+                {% if search_query %}
+                <span class="filter-tag">Keyword: "{{ search_query }}"</span>
                 {% endif %}
-            {% endfor %}
-            {% for facet in facets.grade_level if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.age_range if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.special_population if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.activity_type if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.teaching_strategy if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.blooms_taxonomy_level if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.activity_duration if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.jump_start_coalition if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            {% for facet in facets.council_for_economic_education if facet.selected %}
-                <li>{{ facet.title }}</li>
-            {% endfor %}
-            </ul>
-            <a href="{{ page.url }}"> Clear all filters</a>
+                {% for facet in facets.building_block if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.school_subject if facet.selected%}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.topic %}
+                    {% if facet.selected %}<span class="filter-tag">{{ facet.title }}</span>{% endif %}
+                    {% if facet.children %}
+                        {% for id, facet_child in facet.children.items() if facet_child.selected %}
+                            <span class="filter-tag">{{ facet_child.title }}</span>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                {% for facet in facets.grade_level if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.age_range if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.special_population if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.activity_type if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.teaching_strategy if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.blooms_taxonomy_level if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.activity_duration if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.jump_start_coalition if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+                {% for facet in facets.council_for_economic_education if facet.selected %}
+                    <span class="filter-tag">{{ facet.title }}</span>
+                {% endfor %}
+            </div>
+            <a href="{{ page.url }}"><button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"> Clear all filters</button></a>
             {% endif %}
         </div>
         <h2>Confirming title and notification</h2>
