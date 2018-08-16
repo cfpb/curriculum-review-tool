@@ -1,53 +1,50 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
+
 from django import forms
 from django.conf import settings
 from django.db import models
-from django.http import Http404
 from django.template.response import TemplateResponse
 from django.utils import timezone
 
 from flags.decorators import flag_check
 
-from haystack.inputs import Clean
 from haystack.query import SearchQuerySet
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
-
-from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
-from mptt.querysets import TreeQuerySet
 
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 
 import sys, math
 
 from wagtail.wagtailadmin.edit_handlers import (
-    FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, StreamFieldPanel,
+    FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel, ObjectList, StreamFieldPanel,
     TabbedInterface
 )
-
 
 from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
 from wagtail.wagtailcore.models import Page, PageManager
 from wagtail.wagtailsearch import index
 from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
-from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtaildocs.models import Document
 from wagtail.wagtailimages.models import Image
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
 
+from teachers_digital_platform.models import (
+    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
+    ActivitySpecialPopulation, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
+    ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
+)
 
 class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
     """
     A model for the Activity Search page.
     """
-
     subpage_types = ['teachers_digital_platform.ActivityPage']
-    objects = CFGOVPageManager() 
+    objects = CFGOVPageManager()
     intro = RichTextField(blank=True)
-    #  alert = RichTextField(blank=True)  # Move this to a StreamField
 
     content_panels = CFGOVPage.content_panels + [
         FieldPanel('intro'),
@@ -118,84 +115,6 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             query_list.extend([facet_name + "=" + str(value) for value in values])
         if query_list:
             return "&".join(query_list)
-
-
-    def get_context(self, request):
-        context = super(ActivityIndexPage, self).get_context(request)
-        search_query = str(request.GET.get('q', ''))
-        context['search_query'] = search_query
-        selected_facets = self.get_selected_facets(request)
-        context['selected_facets'] = selected_facets
-        query_string = self.build_search_querystring(search_query, selected_facets['facet_values'])
-        context['query_string'] = query_string
-        return context
-
-    @route(r'^$')
-    @flag_check('TDP_SEARCH_INTERFACE', True)
-    def search(self, request, *args, **kwargs):
-        context = self.get_context(request)
-        sqs = self.get_base_search_query_set()
-        selected_facets = context['selected_facets']
-        clean_query = context['search_query']
-
-        # Apply search query if it exists, but don't apply facets
-        if clean_query:
-            sqs = sqs.filter(content=clean_query).order_by('-_score', '-date')
-        else:
-            sqs = sqs.order_by('-date')
-
-        facet_counts = self.get_facet_counts(sqs)
-        facets = self.get_search_facets(facet_counts, selected_facets, sqs)
-
-        # apply all the active facet values to our search results
-        for field, facet_narrow_query in selected_facets['queries'].items():
-            sqs = sqs.narrow(facet_narrow_query)
-
-        # Set-up pagination
-        page_number = request.GET.get('page', '1')
-        if page_number.isdigit():
-            page_number = int(page_number)
-        else:
-            page_number = 1
-
-        total_results = sqs.count()
-        results_per_page = 10
-        total_pages = int(math.ceil(float(total_results) / results_per_page))
-        if not (1 <= page_number <= total_pages):
-            page_number = 1
-
-        pager_previous = None
-        pager_next = None
-        query_string = context['query_string']
-
-        if not query_string:
-            query_string = 'q='
-
-        if page_number > 1:
-            pager_previous = query_string + "&page=" + str(page_number-1) + "#content_main"
-        if page_number < total_pages:
-            pager_next = query_string + "&page=" + str(page_number+1) + "#content_main"
-
-        # limit the results to the activites on the current page
-        sqs = sqs[((page_number - 1) * results_per_page):((page_number - 1) * results_per_page) + results_per_page]
-
-        activities = [activity.object for activity in sqs]
-
-        context.update({
-            'facet_counts': facet_counts,
-            'facets': facets,
-            'activities': activities,
-            'total_results': total_results,
-            'results_per_page': results_per_page,
-            'total_pages': total_pages,
-            'page_number': page_number,
-            'pager_previous': pager_previous,
-            'pager_next': pager_next,
-        })
-        return TemplateResponse(
-            request,
-            self.get_template(request),
-            context)
 
     def get_facet_counts(self, sqs):
         return sqs.facet_counts()
@@ -315,102 +234,86 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         return a
 
 
+    def get_context(self, request):
+        context = super(ActivityIndexPage, self).get_context(request)
+        search_query = str(request.GET.get('q', ''))
+        context['search_query'] = search_query
+        selected_facets = self.get_selected_facets(request)
+        context['selected_facets'] = selected_facets
+        query_string = self.build_search_querystring(search_query, selected_facets['facet_values'])
+        context['query_string'] = query_string
+        return context
+
+    @route(r'^$')
+    @flag_check('TDP_SEARCH_INTERFACE', True)
+    def search(self, request, *args, **kwargs):
+        context = self.get_context(request)
+        sqs = self.get_base_search_query_set()
+        selected_facets = context['selected_facets']
+        clean_query = context['search_query']
+
+        # Apply search query if it exists, but don't apply facets
+        if clean_query:
+            sqs = sqs.filter(content=clean_query).order_by('-_score', '-date')
+        else:
+            sqs = sqs.order_by('-date')
+
+        facet_counts = self.get_facet_counts(sqs)
+        facets = self.get_search_facets(facet_counts, selected_facets, sqs)
+
+        # apply all the active facet values to our search results
+        for field, facet_narrow_query in selected_facets['queries'].items():
+            sqs = sqs.narrow(facet_narrow_query)
+
+        # Set-up pagination
+        page_number = request.GET.get('page', '1')
+        if page_number.isdigit():
+            page_number = int(page_number)
+        else:
+            page_number = 1
+
+        total_results = sqs.count()
+        results_per_page = 10
+        total_pages = int(math.ceil(float(total_results) / results_per_page))
+        if not (1 <= page_number <= total_pages):
+            page_number = 1
+
+        pager_previous = None
+        pager_next = None
+        query_string = context['query_string']
+
+        if not query_string:
+            query_string = 'q='
+
+        if page_number > 1:
+            pager_previous = query_string + "&page=" + str(page_number-1) + "#content_main"
+        if page_number < total_pages:
+            pager_next = query_string + "&page=" + str(page_number+1) + "#content_main"
+
+        # limit the results to the activites on the current page
+        sqs = sqs[((page_number - 1) * results_per_page):((page_number - 1) * results_per_page) + results_per_page]
+
+        activities = [activity.object for activity in sqs]
+
+        context.update({
+            'facet_counts': facet_counts,
+            'facets': facets,
+            'activities': activities,
+            'total_results': total_results,
+            'results_per_page': results_per_page,
+            'total_pages': total_pages,
+            'page_number': page_number,
+            'pager_previous': pager_previous,
+            'pager_next': pager_next,
+        })
+        return TemplateResponse(
+            request,
+            self.get_template(request),
+            context)
+
+
     class Meta:
         verbose_name = "TDP Activity search page"
-
-class BaseActivityTaxonomy(models.Model):
-    """ A base class for all activity snippets"""
-    title = models.CharField(max_length=255, unique=True)
-    weight = models.IntegerField(default=0)
-
-    panels = [
-        FieldPanel('title'),
-        FieldPanel('weight'),
-    ]
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        abstract = True
-        ordering = ['weight', 'title']
-
-
-class ActivityBuildingBlock(BaseActivityTaxonomy):
-    options = (
-        ('settings', 'Executive function'),
-        ('split', 'Financial habits and norms'),
-        ('piggy-bank-check', 'Financial knowledge and decision making'),
-    )
-    svg_icon = models.CharField(
-        null=True,
-        blank=True,
-        max_length=60,
-        choices=options,
-    )
-
-    panels = BaseActivityTaxonomy.panels + [
-        FieldPanel('svg_icon'),
-    ]
-
-
-class ActivitySchoolSubject(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityTopic(MPTTModel):
-    title = models.CharField(max_length=255, unique=True)
-    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
-    weight = models.IntegerField(default=0)
-
-    class MPTTMeta:
-        order_insertion_by = ['weight', 'title']
-
-    panels = [
-        FieldPanel('title'),
-        FieldPanel('parent'),
-        FieldPanel('weight')
-    ]
-
-    def __str__(self):
-        return self.title
-
-
-class ActivityGradeLevel(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityAgeRange(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivitySpecialPopulation(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityType(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityTeachingStrategy(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityBloomsTaxonomyLevel(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityDuration(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityJumpStartCoalition(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
-
-class ActivityCouncilForEconEd(BaseActivityTaxonomy):
-    panels = BaseActivityTaxonomy.panels
-
 
 class ActivityPage(CFGOVPage):
     """
