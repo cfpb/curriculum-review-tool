@@ -30,19 +30,19 @@
     <div class="o-well u-mt45">
         <h2>Download activity</h2>
         <div class="u-mb30">
-            <p>This activity includes teacher materials.</p>
+            <h3 class="h5">Teacher guide</h3>
             <p>
                 <a class="a-link a-link__icon" target="_blank" rel="noopener noreferrer" href="{{ page.activity_file.url }}">
-                    <span class="a-link_text">Download {{ page.activity_file.title | striptags | safe }}</span>
+                    <span class="a-link_text">{{ page.activity_file.title | striptags | safe }}</span>
                     <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span>
                 </a>
             </p>
 
             {% if page.handout_file %}
-                <p>This activity includes student materials.</p>
+                <h3 class="h5">Student materials</h3>
                 <p>
                     <a class="a-link a-link__icon" target="_blank" rel="noopener noreferrer" href="{{ page.handout_file.url }}">
-                        <span class="a-link_text">Download {{ page.handout_file.title | striptags | safe }}</span>
+                        <span class="a-link_text">{{ page.handout_file.title | striptags | safe }}</span>
                         <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span>
                     </a>
                 </p>
@@ -50,7 +50,15 @@
             {% if page.handout_file_2 %}
                 <p>
                     <a class="a-link a-link__icon" target="_blank" rel="noopener noreferrer" href="{{ page.handout_file_2.url }}">
-                        <span class="a-link_text">Download {{ page.handout_file_2.title | striptags | safe }}</span>
+                        <span class="a-link_text">{{ page.handout_file_2.title | striptags | safe }}</span>
+                        <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span>
+                    </a>
+                </p>
+            {% endif %}
+            {% if page.handout_file_3 %}
+                <p>
+                    <a class="a-link a-link__icon" target="_blank" rel="noopener noreferrer" href="{{ page.handout_file_3.url }}">
+                        <span class="a-link_text">{{ page.handout_file_3.title | striptags | safe }}</span>
                         <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span>
                     </a>
                 </p>
@@ -78,38 +86,38 @@
         </ul>
     {% endif %}
 
-    {% if page.school_subject %}
+    {% if page.school_subject.all() %}
         <h4>School subject</h4>
         <p>{{ page.school_subject.all() | join(', ') }}</p>
     {% endif %}
 
-    {% if page.topic %}
+    {% if page.topic.all() %}
         <h4>Topic</h4>
         <p>{{ page.get_topics_list() }}</p>
     {% endif %}
 
     <div class="content_line u-mt30 u-mb30"></div>
 
-    {% if page.grade_level or page.age_range or page.special_population %}
+    {% if page.grade_level.all() or page.age_range.all() or page.special_population.all() %}
         <h4>Audience</h4>
-        {% if page.grade_level %}<p><strong>Grade level:</strong> {{ page.grade_level.all() | join(', ') }}</p>{% endif %}
-        {% if page.age_range %}<p><strong>Age range:</strong> {{ page.age_range.all() | join(', ') }}</p>{% endif %}
-        {% if page.special_population %}<p><strong>Special population:</strong> {{ page.special_population.all() | join(', ') }}</p>{% endif %}
+        {% if page.grade_level.all() %}<p><strong>Grade level:</strong> {{ page.grade_level.all() | join(', ') }}</p>{% endif %}
+        {% if page.age_range.all() %}<p><strong>Age range:</strong> {{ page.age_range.all() | join(', ') }}</p>{% endif %}
+        {% if page.special_population.all() %}<p><strong>Special population:</strong> {{ page.special_population.all() | join(', ') }}</p>{% endif %}
         <div class="content_line u-mt30 u-mb30"></div>
     {% endif %}
 
-    {% if page.activity_type or page.teaching_strategy or page.blooms_taxonomy_level or page.activity_duration %}
+    {% if page.activity_type.all() or page.teaching_strategy.all() or page.blooms_taxonomy_level.all() or page.activity_duration %}
         <h4>Activity characteristics</h4>
-        {% if page.activity_type %}<p><strong>Activity type:</strong> {{ page.activity_type.all() | join(', ') }}</p>{% endif %}
-        {% if page.teaching_strategy %}<p><strong>Teaching strategy:</strong> {{ page.teaching_strategy.all() | join(', ') }}</p>{% endif %}
-        {% if page.blooms_taxonomy_level %}<p><strong>Bloom’s Taxonomy level:</strong> {{ page.blooms_taxonomy_level.all() | join(', ') }}</p>{% endif %}
+        {% if page.activity_type.all() %}<p><strong>Activity type:</strong> {{ page.activity_type.all() | join(', ') }}</p>{% endif %}
+        {% if page.teaching_strategy.all() %}<p><strong>Teaching strategy:</strong> {{ page.teaching_strategy.all() | join(', ') }}</p>{% endif %}
+        {% if page.blooms_taxonomy_level.all() %}<p><strong>Bloom’s Taxonomy level:</strong> {{ page.blooms_taxonomy_level.all() | join(', ') }}</p>{% endif %}
         {% if page.activity_duration %}<p><strong>Activity duration:</strong> {{page.activity_duration}}</p>{% endif %}
         <div class="content_line u-mt30 u-mb30"></div>
     {% endif %}
 
-    {% if page.jump_start_coalition or page.council_for_economic_education %}
+    {% if page.jump_start_coalition.all() or page.council_for_economic_education.all() %}
         <h4>National standards</h4>
-        {% if page.council_for_economic_education %}<p><strong>Council for Economic Education:</strong> {{ page.council_for_economic_education.all() | join(', ') }}</p>{% endif %}
-        {% if page.jump_start_coalition %}<p><strong><span aria-hidden="true">Jump$tart</span><span class="u-visually-hidden">JumpStart</span> National Standards:</strong> {{ page.jump_start_coalition.all() | join(', ') }}</p>{% endif %}
+        {% if page.council_for_economic_education.all() %}<p><strong>Council for Economic Education:</strong> {{ page.council_for_economic_education.all() | join(', ') }}</p>{% endif %}
+        {% if page.jump_start_coalition.all() %}<p><strong><span aria-hidden="true">Jump$tart</span><span class="u-visually-hidden">JumpStart</span> National Standards:</strong> {{ page.jump_start_coalition.all() | join(', ') }}</p>{% endif %}
     {% endif %}
 {% endblock content_sidebar %}

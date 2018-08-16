@@ -68,18 +68,18 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
     def get_base_search_query_set(self):
         # build initial SearchQuerySet and specify facets
         sqs = SearchQuerySet().models(ActivityPage) \
-            .facet('building_block') \
-            .facet('school_subject') \
-            .facet('topic') \
-            .facet('grade_level') \
-            .facet('age_range') \
-            .facet('special_population') \
-            .facet('activity_type') \
-            .facet('teaching_strategy') \
-            .facet('blooms_taxonomy_level') \
-            .facet('activity_duration') \
-            .facet('jump_start_coalition') \
-            .facet('council_for_economic_education')
+            .facet('building_block', size=10) \
+            .facet('school_subject', size=25) \
+            .facet('topic', size=25) \
+            .facet('grade_level', size=10) \
+            .facet('age_range', size=10) \
+            .facet('special_population', size=10) \
+            .facet('activity_type', size=10) \
+            .facet('teaching_strategy', size=25) \
+            .facet('blooms_taxonomy_level', size=25) \
+            .facet('activity_duration', size=10) \
+            .facet('jump_start_coalition', size=25) \
+            .facet('council_for_economic_education', size=25)
         return sqs
 
     def get_selected_facets(self, request):
@@ -100,7 +100,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         )
         selected_facets = {'facet_values': {}, 'queries': {}}
         for facet in facet_names:
-            selected_facets['facet_values'][facet] = [int(value) for value in request.GET.getlist(facet+'[]') if value.isdigit()]
+            selected_facets['facet_values'][facet] = [int(value) for value in request.GET.getlist(facet) if value.isdigit()]
 
         # build out facet_queries based on active_face_values
         for facet_name, facet_value in selected_facets['facet_values'].items():
@@ -115,18 +115,18 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         if q:
             query_list.append("q=" + str(q))
         for facet_name, values in facet_values.items():
-            query_list.extend([facet_name + "[]=" + str(value) for value in values])
+            query_list.extend([facet_name + "=" + str(value) for value in values])
         if query_list:
             return "&".join(query_list)
 
 
     def get_context(self, request):
         context = super(ActivityIndexPage, self).get_context(request)
-        clean_query = str(Clean(request.GET.get('q', '')))
-        context['search_query'] = clean_query
+        search_query = str(request.GET.get('q', ''))
+        context['search_query'] = search_query
         selected_facets = self.get_selected_facets(request)
         context['selected_facets'] = selected_facets
-        query_string = self.build_search_querystring(clean_query, selected_facets['facet_values'])
+        query_string = self.build_search_querystring(search_query, selected_facets['facet_values'])
         context['query_string'] = query_string
         return context
 
@@ -152,24 +152,29 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             sqs = sqs.narrow(facet_narrow_query)
 
         # Set-up pagination
-        page_number = request.GET.get('page','1')
+        page_number = request.GET.get('page', '1')
         if page_number.isdigit():
             page_number = int(page_number)
         else:
             page_number = 1
 
         total_results = sqs.count()
-        results_per_page = 5
+        results_per_page = 10
         total_pages = int(math.ceil(float(total_results) / results_per_page))
         if not (1 <= page_number <= total_pages):
             page_number = 1
 
         pager_previous = None
         pager_next = None
+        query_string = context['query_string']
+
+        if not query_string:
+            query_string = 'q='
+
         if page_number > 1:
-            pager_previous = context['query_string'] + "&page=" + str(page_number-1) + "#content_main"
+            pager_previous = query_string + "&page=" + str(page_number-1) + "#content_main"
         if page_number < total_pages:
-            pager_next = context['query_string'] + "&page=" + str(page_number + 1) + "#content_main"
+            pager_next = query_string + "&page=" + str(page_number+1) + "#content_main"
 
         # limit the results to the activites on the current page
         sqs = sqs[((page_number - 1) * results_per_page):((page_number - 1) * results_per_page) + results_per_page]
@@ -246,7 +251,6 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                     facet_values[facet_name] = final_facets
                 else:
                     facet_values[facet_name] = self.get_nested_facet_values(facet_class, fvalues, selected_facet_values[facet_name])
-
         return facet_values
 
     def get_nested_facet_values(self, facet_class, fvalues, selected_facet_values):
@@ -427,21 +431,33 @@ class ActivityPage(CFGOVPage):
         null=True,
         blank=False,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name='+',
+        verbose_name='Teacher guide'
     )
+    # TODO: to figure out how to use Document choosers on ManyToMany fields
     handout_file = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name='+',
+        verbose_name='Student file 1'
     )
     handout_file_2 = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name='+',
+        verbose_name='Student file 2'
+    )
+    handout_file_3 = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Student file 3'
     )
     building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)
     school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
@@ -478,6 +494,7 @@ class ActivityPage(CFGOVPage):
                 DocumentChooserPanel('activity_file'),
                 DocumentChooserPanel('handout_file'),
                 DocumentChooserPanel('handout_file_2'),
+                DocumentChooserPanel('handout_file_3'),
             ],
             heading="Download activity",
         ),

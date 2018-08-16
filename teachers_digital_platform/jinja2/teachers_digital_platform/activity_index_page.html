@@ -1,5 +1,27 @@
 {% extends 'layout-1-3.html' %}
 
+{% macro build_nested_facets(facets, type, is_child=False) %}
+    <ul class="m-list__unstyled{% if is_child: %} children{% endif %}">
+        {% for facet in facets %}
+            {% if facet.children %}
+                <div class="aggregation-branch">
+                    <li class="parent m-form-field m-form-field__checkbox body-copy">
+                        <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                        <label class="toggle a-label" for="{{ type }}--{{ facet.title | trim | slugify}}"></label>
+                        <button class="a-btn a-btn__link" title="{{ facet.title }}"><span>{{ facet.title }}</span><span class="cf-icon cf-icon-down"></span></button>
+                    </li>
+                    {{ build_nested_facets(facet.children.values(), type, True) }}
+                </div>
+                {% else %}
+                <li class=" m-form-field m-form-field__checkbox body-copy">
+                    <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                    <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
 {% block css -%}
     {{ super() }}
 
@@ -7,13 +29,13 @@
 {%- endblock css %}
 
 {% block body_content scoped %}
-<div class="wrapper content_wrapper {% block content_wrapper_modifiers -%}{%- endblock %}">
+<div class="tdp-activity-search wrapper content_wrapper l-sidebar-1-2 {% block content_wrapper_modifiers -%}{%- endblock %}">
     <section class="m-hero">
         <div class="m-hero_wrapper">
             <div class="m-hero_text">
                 <h1 class="m-hero_heading">{{ page.title | striptags }}</h1>
                 {{ page.intro | richtext }}
-                <div class="m-notification m-notification__visible m-notification__warning">
+                <div class="m-notification m-notification__visible m-notification__warning u-mt30 u-mb10">
                     <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg></span>
                     <div class="m-notification_content">
                         <div class="m-notification_message">
@@ -42,35 +64,36 @@
             }
         </style>
     </section>
-
+    <hr class="u-mb0 u-ml15 u-mr15" />
     <aside class="content_sidebar">
-        <section class="filter-panel">
+        <section class="o-filter-panel">
             <h2>Find activities</h2>
             <p>Search for financial education topics relevant to your class, then filter to narrow the results.</p>
             <h3>Search</h3>
             <p>Search for activities by key terms or concepts.</p>
             <div class="layout-row">
-                <form method="GET" action="{{ page.url }}#content_main">
+                <form class="keyword-search-form" method="GET" action="{{ page.url }}#content_main">
                     <div class="flex-all typeahead-portal">
                         <section class="typeahead flex-all">
                             <div class="m-btn-inside-input input-contains-label">
                                 <label class="input-contains-label_before input-contains-label_before__search"></label>
-                                <input type="text" autocomplete="off" class="a-text-input" placeholder="Enter your search term(s)" aria-label="The term to search for" id="searchText" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
+                                <input type="text" autocomplete="off" class="a-text-input" placeholder="Search term(s)" aria-label="The term to search for" id="searchText" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
                             </div>
                         </section>
                         <button type="submit" class="a-btn flex-fixed">Search</button>
                     </div>
                 </form>
             </div>
-            <h3>Filter results by</h3>
+            <h3 class="u-mt30">Filter results by</h3>
             <form method="GET" action="{{ page.url }}#content_main">
                 <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
                 <input type="hidden" name="page" inputmode="numeric" value="1">
                 <p>Narrow your search by selecting specific activity features.</p>
                 {% if facets.building_block %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Building block</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Building block</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -81,7 +104,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.building_block %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="building-block--{{ facet.title | trim | slugify}}" name="building_block[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="building-block--{{ facet.title | trim | slugify}}" name="building_block" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="building-block--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -90,9 +113,10 @@
                 </section>
                 {% endif %}
                 {% if facets.school_subject %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">School subject</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">School subject</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -103,7 +127,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.school_subject %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="school-subject--{{ facet.title | trim | slugify}}" name="school_subject[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="school-subject--{{ facet.title | trim | slugify}}" name="school_subject" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="school-subject--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -112,9 +136,10 @@
                 </section>
                 {% endif %}
                 {% if facets.topic %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Topic</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Topic</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -122,35 +147,16 @@
                         </span>
                     </div>
                     <div>
-                        <ul class="m-list__unstyled">
-                           {% for facet in facets.topic %}
-                            <div class="aggregation-branch">
-                                <li class="parent m-form-field m-form-field__checkbox body-copy">
-                                    <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="topic--{{ facet.title | trim | slugify}}" name="topic[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                                    <label class="toggle a-label" for="topic--{{ facet.title | trim | slugify}}"></label>
-                                    <button class="a-btn a-btn__link" title="{{ facet.title }}"><span>{{ facet.title }}</span><span class="cf-icon cf-icon-down"></span></button>
-                                </li>
-                                {% if facet.children %}
-                                <ul class="children m-list__unstyled">
-                                    {% for id, facet_child in facet.children.items() %}
-                                    <li class="m-form-field m-form-field__checkbox">
-                                        <input type="checkbox" class="a-checkbox" aria-label="{{ facet_child.title }}" id="topic--{{ facet.title | trim | slugify}}--{{ facet_child.title | trim | slugify}}" name="topic[]" value="{{ facet_child.id }}"{% if facet_child.selected  %} checked="checked"{% endif %}>
-                                        <label class="a-label" for="topic--{{ facet.title | trim | slugify}}--{{ facet_child.title | trim | slugify}}">{{ facet_child.title }}</label>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                {% endif %}
-                            </div>
-                            {% endfor %}
-                        </ul>
+                        {{ build_nested_facets(facets.topic, 'topic') }}
                     </div>
                 </section>
                 {% endif %}
-                {% if facets.grade_level or facets.age_range or facets.special_population %}<h4>Audience</h4>{% endif %}
+                {% if facets.grade_level or facets.age_range or facets.special_population %}<h3 class="u-mt45">Audience</h3>{% endif %}
                 {% if facets.grade_level %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Grade level</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Grade level</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -161,7 +167,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.grade_level %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="grade-level--{{ facet.title | trim | slugify}}" name="grade_level[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="grade-level--{{ facet.title | trim | slugify}}" name="grade_level" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="grade-level--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -170,9 +176,10 @@
                 </section>
                 {% endif %}
                 {% if facets.age_range %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Age range</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Age range</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -183,7 +190,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.age_range %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="age_range--{{ facet.title | trim | slugify}}" name="age_range[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="age_range--{{ facet.title | trim | slugify}}" name="age_range" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="age_range--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -192,9 +199,10 @@
                 </section>
                 {% endif %}
                 {% if facets.special_population %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Special population</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Special population</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -205,7 +213,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.special_population %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="special-population--{{ facet.title | trim | slugify}}" name="special_population[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="special-population--{{ facet.title | trim | slugify}}" name="special_population" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="special-population--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -213,11 +221,12 @@
                     </div>
                 </section>
                 {% endif %}
-                {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}<h4>Activity characteristics</h4>{% endif %}
+                {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}<h3 class="u-mt45">Activity characteristics</h3>{% endif %}
                 {% if facets.activity_type %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Activity type</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Activity type</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -228,7 +237,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.activity_type %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="activity-type--{{ facet.title | trim | slugify}}" name="activity_type[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="activity-type--{{ facet.title | trim | slugify}}" name="activity_type" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="activity-type--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -237,9 +246,10 @@
                 </section>
                 {% endif %}
                 {% if facets.teaching_strategy %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Teaching strategy</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Teaching strategy</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -250,7 +260,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.teaching_strategy %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="teaching-strategy--{{ facet.title | trim | slugify}}" name="teaching_strategy[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="teaching-strategy--{{ facet.title | trim | slugify}}" name="teaching_strategy" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="teaching-strategy--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -259,9 +269,10 @@
                 </section>
                 {% endif %}
                 {% if facets.blooms_taxonomy_level %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Bloom's Taxonomy level</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Bloom's Taxonomy level</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -272,7 +283,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.blooms_taxonomy_level %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="blooms-taxonomy-level--{{ facet.title | trim | slugify}}" name="blooms_taxonomy_level[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="blooms-taxonomy-level--{{ facet.title | trim | slugify}}" name="blooms_taxonomy_level" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="blooms-taxonomy-level--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -281,9 +292,10 @@
                 </section>
                 {% endif %}
                 {% if facets.activity_duration %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Activity duration</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Activity duration</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -294,7 +306,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.activity_duration %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="activity-duration--{{ facet.title | trim | slugify}}" name="activity_duration[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="activity-duration--{{ facet.title | trim | slugify}}" name="activity_duration" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="activity-duration--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -302,11 +314,12 @@
                     </div>
                 </section>
                 {% endif %}
-                {% if facets.council_for_economic_education or facets.jump_start_coalition %}<h4>National standards</h4>{% endif %}
+                {% if facets.council_for_economic_education or facets.jump_start_coalition %}<h3 class="u-mt45">National standards</h3>{% endif %}
                 {% if facets.council_for_economic_education %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Council for Economic Education</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Council for Economic Education</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -317,7 +330,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.council_for_economic_education %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="council-for-economic-education--{{ facet.title | trim | slugify}}" name="council_for_economic_education[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="council-for-economic-education--{{ facet.title | trim | slugify}}" name="council_for_economic_education" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="council-for-economic-education--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -326,9 +339,10 @@
                 </section>
                 {% endif %}
                 {% if facets.jump_start_coalition %}
-                <section class="o-expandable">
+                <hr />
+                <section class="o-expandable u-mb15">
                     <div class="o-expandable_header o-expandable_target">
-                        <h4 class="o-expandable_header-left o-expandable_label">Jump$tart Coalition</h4>
+                        <h4 class="o-expandable_header-left o-expandable_label u-mb10">Jump$tart Coalition</h4>
                         <span class="o-expandable_header-right o-expandable_link">
                             <button class="a-btn a-btn__link o-expandable_cue o-expandable_cue-close">Hide
                                 <span class="cf-icon cf-icon-minus-round"></span>
@@ -339,7 +353,7 @@
                         <ul class="m-list__unstyled">
                             {% for facet in facets.jump_start_coalition %}
                             <li class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="jump-start-coalition--{{ facet.title | trim | slugify}}" name="jump_start_coalition[]" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="jump-start-coalition--{{ facet.title | trim | slugify}}" name="jump_start_coalition" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="jump-start-coalition--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </li>
                             {% endfor %}
@@ -405,69 +419,14 @@
                     <span class="filter-tag">{{ facet.title }}</span>
                 {% endfor %}
             </div>
-            <a href="{{ page.url }}"><button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"> Clear all filters</button></a>
+            <a href="{{ page.url }}#content_main"><button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"> Clear all filters</button></a>
             {% endif %}
         </div>
-        <h2>Confirming title and notification</h2>
+        <h2 class="u-mt30">Confirming title and notification</h2>
         <ul class="m-list__unstyled">
             {% for result in activities %}
                 {% if result %}
-                <li>
-                        <div class="o-well">
-                            <h3><a href="{{ result.url }}">{{ result.title }}</a></h3>
-                            {%for level in result.grade_level.all() %}
-                            <p>
-                                <span class="a-icon a-icon__large a-icon__space-after">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm329.9 449.4l-68.7 63.5-69.3 64.1 27.5 138.5 9.1 45.9c10.1 50.9-18.7 71.9-64 46.5l-164.1-91.8-164.1 91.8c-45.3 25.4-74.1 4.4-64-46.5l9.1-45.9 9.1-45.9 18.4-92.6-69.3-64.1-34.4-31.8-34.4-31.8c-38.1-35.3-27.1-69.1 24.4-75.2l93-11 93.8-11.1L441.3 329l19.6-42.5c21.8-47.2 57.4-47.2 79.1 0l19.6 42.5 59.2 128.2 93.8 11.1 93 11c51.4 6.2 62.4 40.1 24.3 75.3z"/></svg>
-                                </span>
-                                <strong>Ideal for
-                                    {{ level }}
-                                </strong>
-
-                            </p>
-                            {% endfor %}
-                            <p>{{ result.summary }}</p>
-                            <div>
-                                <div>
-                                    <h4 class="h5">Key information</h4>
-                                    <div class="layout-row u-mb15">
-                                        <h5 class="h6">Topic:</h5><span>
-                                            {% for topic in result.topic.all() %}
-                                            {{ topic }} <!--How should we handle this????-->
-                                            {%endfor %}
-                                        </span>
-                                    </div>
-                                    <div class="layout-row u-mb15">
-                                        <h5 class="h6">Age range:</h5>
-                                        {% for age in result.age_range.all() %}
-                                        <span>
-                                            {{ age }} <br> <!--Is this correct?-->
-                                        </span>
-                                        {% endfor %}
-                                    </div>
-                                    <div class="layout-row u-mb15">
-                                        <h5 class="h6">Bloom’s Taxonomy level:</h5>
-                                        {% for tax_level in result.blooms_taxonomy_level.all() %}
-                                        <span>{{ tax_level }}</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="h5">Building block</h4>
-                                    <ul class="m-list__unstyled">
-                                        {% for block in result.building_block.all() %}
-                                        <li>
-                                            <span class="a-icon a-icon__large a-icon__space-after">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm353.1 537.2c0 11-8.9 21.5-19.7 23.4l-60.1 10.4c-1.1.2-2.1.3-3.2.3-6.5 24.9-16.4 48.8-29.5 71 .8.8 1.5 1.6 2.1 2.5l35.2 49.8c6.3 9 5.2 22.7-2.6 30.5l-51.2 51.2c-7.8 7.8-21.5 9-30.5 2.6l-49.8-35.2c-.9-.6-1.7-1.3-2.5-2.1-22.2 13.1-46.1 23-71 29.5 0 1.1-.1 2.1-.3 3.2l-10.4 60.1c-1.9 10.8-12.4 19.7-23.4 19.7h-72.4c-11 0-21.5-8.9-23.4-19.7L430 879.5c-.2-1.1-.3-2.1-.3-3.2-24.9-6.5-48.8-16.4-71-29.5-.8.8-1.6 1.5-2.5 2.1l-49.9 35.2c-9 6.3-22.7 5.2-30.5-2.6l-51.2-51.2c-7.8-7.8-9-21.5-2.6-30.5l35.2-49.8c.6-.9 1.3-1.7 2.1-2.5-13.1-22.2-23-46.1-29.4-71-1.1 0-2.1-.1-3.2-.3l-60.1-10.4c-10.8-1.9-19.7-12.4-19.7-23.4V570c0-11 8.9-21.5 19.7-23.4l60.1-10.4c1.1-.2 2.2-.2 3.2-.2 6.5-24.9 16.4-48.8 29.5-71-.8-.8-1.5-1.6-2.1-2.5l-35.2-49.9c-6.3-9-5.2-22.7 2.6-30.5l51.1-51.2c7.8-7.8 21.5-9 30.5-2.6l49.9 35.2c.9.6 1.7 1.3 2.5 2.1 22.2-13.1 46.1-23 71-29.5 0-1.1.1-2.1.2-3.2l10.4-60.1c1.9-10.8 12.4-19.7 23.4-19.7h72.4c11 0 21.5 8.9 23.4 19.7L570 333c.2 1.1.3 2.1.3 3.2 24.9 6.5 48.8 16.4 71 29.5.8-.8 1.6-1.5 2.5-2.1l49.8-35.2c9-6.3 22.7-5.2 30.5 2.6l51.2 51.2c7.8 7.8 9 21.5 2.6 30.5l-35.2 49.8c-.6.9-1.3 1.7-2.1 2.5 13 22.2 22.9 46.1 29.4 71 1.1 0 2.1.1 3.2.3l60.1 10.4c10.9 1.8 19.8 12.3 19.8 23.3v72.4z"/><circle cx="500" cy="606.2" r="120.2"/></svg>
-                                            </span>
-                                            {{ block }}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                <li>{% include "activity_search_result.html" %}</li>
                 {% endif %}
             {% else %}
             <li> No results found.</li>
@@ -481,40 +440,40 @@
             <form class="m-pagination_form" action="{{ page.url }}#content_main">
                 <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
                 {% for facet in selected_facets.facet_values.building_block %}
-                    <input type="hidden" name="building_block[]" value="{{ facet }}">
+                    <input type="hidden" name="building_block" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.school_subject %}
-                    <input type="hidden" name="school_subject[]" value="{{ facet }}">
+                    <input type="hidden" name="school_subject" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.topic %}
-                    <input type="hidden" name="topic[]" value="{{ facet }}">
+                    <input type="hidden" name="topic" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.grade_level %}
-                    <input type="hidden" name="grade_level[]" value="{{ facet }}">
+                    <input type="hidden" name="grade_level" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.age_range %}
-                    <input type="hidden" name="age_range[]" value="{{ facet }}">
+                    <input type="hidden" name="age_range" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.special_population %}
-                    <input type="hidden" name="special_population[]" value="{{ facet }}">
+                    <input type="hidden" name="special_population" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.activity_type %}
-                    <input type="hidden" name="activity_type[]" value="{{ facet }}">
+                    <input type="hidden" name="activity_type" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.teaching_strategy %}
-                    <input type="hidden" name="teaching_strategy[]" value="{{ facet }}">
+                    <input type="hidden" name="teaching_strategy" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.blooms_taxonomy_level %}
-                    <input type="hidden" name="blooms_taxonomy_level[]" value="{{ facet }}">
+                    <input type="hidden" name="blooms_taxonomy_level" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.activity_duration %}
-                    <input type="hidden" name="activity_duration[]" value="{{ facet }}">
+                    <input type="hidden" name="activity_duration" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.jump_start_coalition %}
-                    <input type="hidden" name="jump_start_coalition[]" value="{{ facet }}">
+                    <input type="hidden" name="jump_start_coalition" value="{{ facet }}">
                 {% endfor %}
                 {% for facet in selected_facets.facet_values.council_for_economic_education %}
-                    <input type="hidden" name="council_for_economic_education[]" value="{{ facet }}">
+                    <input type="hidden" name="council_for_economic_education" value="{{ facet }}">
                 {% endfor %}
                 <label class="m-pagination_label" for="m-pagination_current-page">Page<span class="u-visually-hidden">number {{ page_number }} out</span><input class="m-pagination_current-page" id="m-pagination_current-page" name="page" type="number" min="1" max="{{ total_pages }}" pattern="[0-9]*" inputmode="numeric" value="{{ '{0:,}'.format(page_number) }}">of&nbsp;<span>{{ '{0:,}'.format(total_pages) }}</span></label>
                 <button class="a-btn a-btn__link m-pagination_btn-submit" id="m-pagination_btn-submit" type="submit">Go</button>
@@ -567,7 +526,7 @@
                 submit_buttons[i].style.display = "none";
             }
             // Make facets auto-submit on change
-            var checkboxes = document.querySelectorAll(".content_sidebar  > .filter-panel form input[type=checkbox]")
+            var checkboxes = document.querySelectorAll(".content_sidebar  > .o-filter-panel form input[type=checkbox]")
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].addEventListener("change", function(){
                     facet_form = closest(this, "form")
@@ -580,7 +539,7 @@
         Note: requires <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
         $(document).ready(function(){
             $('.filter-panel__apply-filters').hide();
-            $(".content_sidebar > .filter-panel form input:checkbox").change(function() {
+            $(".content_sidebar > .o-filter-panel form input:checkbox").change(function() {
                 $(this).closest('form').submit();
             });
         });
