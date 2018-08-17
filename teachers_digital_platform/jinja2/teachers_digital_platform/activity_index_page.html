@@ -32,13 +32,19 @@
                 background-color: transparent;
             }
             .m-hero_image-wrapper {
-                margin-top: 0;
+                display: none;
             }
-            .m-hero_image {
-                background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg');
-                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg',
-                    sizingMethod='scale');
+            @media only all and (min-width: 37.5625em) {
+                .m-hero_image-wrapper {
+                    display: inline-block;
+                    margin-top: 0;
+                }
+                .m-hero_image {
+                    background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg');
+                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                        src='https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg',
+                        sizingMethod='scale');
+                }
             }
         </style>
     </section>
