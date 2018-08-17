@@ -30,9 +30,9 @@
   "dependencies": {
     "amortize": "0.4.0",
     "autoprefixer": "7.1.6",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
-    "babel-preset-env": "1.6.1",
+    "babel-core": "7.0.0-beta.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-env": "^7.0.0-beta.3",
     "browser-sync": "2.18.13",
     "cf-atomic-component": "1.5.4",
     "cf-buttons": "4.5.1",
