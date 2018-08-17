@@ -486,6 +486,12 @@
 
 {% block javascript %}
     {{ super() }}
+
+    {# Conditional comment used to block IE8 and under from receiving JS #}
+    <!--[if gt IE 8]><!-->
+        <script src="{{ static('tdp/js/tdp.js') }}"></script>
+    <!--<![endif]-->
+
     <script type="text/javascript">
         /*
             Replicate jQuery's .closest() functionality
