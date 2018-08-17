@@ -10,7 +10,7 @@
                         <label class="toggle a-label" for="{{ type }}--{{ facet.title | trim | slugify}}"></label>
                         <button class="a-btn a-btn__link" title="{{ facet.title }}"><span>{{ facet.title }}</span><span class="cf-icon cf-icon-down"></span></button>
                     </li>
-                    {{ build_nested_facets(facet.children.values(), type, True) }}
+                    {{ build_nested_facets(facet.children, type, True) }}
                 </div>
                 {% else %}
                 <li class=" m-form-field m-form-field__checkbox body-copy">
@@ -369,7 +369,7 @@
     <section class="content_main">
         <a id="content_main"></a>
         <div class="filters_applied">
-            {% if selected_facets.queries or search_query %}
+            {% if page.results.facet_queries or search_query %}
             <span class="filters_applied-label">
                 Filters applied:
             </span>
@@ -386,7 +386,7 @@
                 {% for facet in facets.topic %}
                     {% if facet.selected %}<span class="filter-tag">{{ facet.title }}</span>{% endif %}
                     {% if facet.children %}
-                        {% for id, facet_child in facet.children.items() if facet_child.selected %}
+                        {% for facet_child in facet.children if facet_child.selected %}
                             <span class="filter-tag">{{ facet_child.title }}</span>
                         {% endfor %}
                     {% endif %}
@@ -439,40 +439,40 @@
             {% if pager_next %}<a href="{{ page.url}}?{{ pager_next }}">{% endif %}<button class="a-btn m-pagination_btn-next" {% if not pager_next %}disabled=""{% endif %}>Next<span class="a-btn_icon a-btn_icon__on-right cf-icon cf-icon__after cf-icon-right"></span></button>{% if pager_next %}</a>{% endif %}
             <form class="m-pagination_form" action="{{ page.url }}#content_main">
                 <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
-                {% for facet in selected_facets.facet_values.building_block %}
+                {% for facet in page.results.selected_facets.building_block %}
                     <input type="hidden" name="building_block" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.school_subject %}
+                {% for facet in page.results.selected_facets.school_subject %}
                     <input type="hidden" name="school_subject" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.topic %}
+                {% for facet in page.results.selected_facets.topic %}
                     <input type="hidden" name="topic" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.grade_level %}
+                {% for facet in page.results.selected_facets.grade_level %}
                     <input type="hidden" name="grade_level" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.age_range %}
+                {% for facet in page.results.selected_facets.age_range %}
                     <input type="hidden" name="age_range" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.special_population %}
+                {% for facet in page.results.selected_facets.special_population %}
                     <input type="hidden" name="special_population" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.activity_type %}
+                {% for facet in page.results.selected_facets.activity_type %}
                     <input type="hidden" name="activity_type" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.teaching_strategy %}
+                {% for facet in page.results.selected_facets.teaching_strategy %}
                     <input type="hidden" name="teaching_strategy" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.blooms_taxonomy_level %}
+                {% for facet in page.results.selected_facets.blooms_taxonomy_level %}
                     <input type="hidden" name="blooms_taxonomy_level" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.activity_duration %}
+                {% for facet in page.results.selected_facets.activity_duration %}
                     <input type="hidden" name="activity_duration" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.jump_start_coalition %}
+                {% for facet in page.results.selected_facets.jump_start_coalition %}
                     <input type="hidden" name="jump_start_coalition" value="{{ facet }}">
                 {% endfor %}
-                {% for facet in selected_facets.facet_values.council_for_economic_education %}
+                {% for facet in page.results.selected_facets.council_for_economic_education %}
                     <input type="hidden" name="council_for_economic_education" value="{{ facet }}">
                 {% endfor %}
                 <label class="m-pagination_label" for="m-pagination_current-page">Page<span class="u-visually-hidden">number {{ page_number }} out</span><input class="m-pagination_current-page" id="m-pagination_current-page" name="page" type="number" min="1" max="{{ total_pages }}" pattern="[0-9]*" inputmode="numeric" value="{{ '{0:,}'.format(page_number) }}">of&nbsp;<span>{{ '{0:,}'.format(total_pages) }}</span></label>
