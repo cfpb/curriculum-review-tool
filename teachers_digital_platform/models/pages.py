@@ -3,6 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django import forms
 from django.conf import settings
+from django.core.paginator import InvalidPage, Paginator
 from django.db import models
 from django.template.response import TemplateResponse
 from django.utils import timezone
@@ -64,6 +65,13 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         # You can only create one of these!
         return super(ActivityIndexPage, cls).can_create_at(parent) \
             and not cls.objects.exists()
+
+    def get_template(self, request):
+        template = 'teachers_digital_platform/activity_index_page.html'
+        if 'partial' in request.GET:
+            template = 'teachers_digital_platform/activity_search_facets_and_results.html'
+        return template
+
 
     @route(r'^$')
     @flag_check('TDP_SEARCH_INTERFACE', True)
@@ -146,52 +154,29 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         for facet_narrow_query in facet_queries.values():
             sqs = sqs.narrow(facet_narrow_query)
 
-        # Set-up pagination
-        page_number = request.GET.get('page', '1')
-        if page_number.isdigit():
-            page_number = int(page_number)
-        else:
-            page_number = 1
-
+        results = [activity.object for activity in sqs]
         total_results = sqs.count()
-        results_per_page = 10
-        total_pages = int(math.ceil(float(total_results) / results_per_page))
-        if not (1 <= page_number <= total_pages):
-            page_number = 1
-
-        pager_previous = None
-        pager_next = None
-        query_string = query_string
-
-        if not query_string:
-            query_string = 'q='
-
-        if page_number > 1:
-            pager_previous = query_string + "&page=" + str(page_number-1) + "#content_main"
-        if page_number < total_pages:
-            pager_next = query_string + "&page=" + str(page_number+1) + "#content_main"
-
-        # limit the results to the activites on the current page
-        sqs = sqs[((page_number - 1) * results_per_page):((page_number - 1) * results_per_page) + results_per_page]
-
-        activities = [activity.object for activity in sqs]
 
         payload.update({
-            'results': activities,
+            'results': results,
             'total_results': total_results,
         })
         self.results = payload
         context = self.get_context(request)
+        results_per_page = validate_results_per_page(request)
+        paginator = Paginator(payload['results'], results_per_page)
+        current_page = validate_page_number(request, paginator)
+        paginated_page = paginator.page(current_page)
+
         context.update({
             'facet_counts': facet_counts,
             'facets': all_facets,
-            'activities': activities,
+            'activities': paginated_page,
             'total_results': total_results,
             'results_per_page': results_per_page,
-            'total_pages': total_pages,
-            'page_number': page_number,
-            'pager_previous': pager_previous,
-            'pager_next': pager_next,
+            'current_page': current_page,
+            'paginator': paginator,
+            'show_filters': bool(facet_queries),
         })
         return TemplateResponse(
             request,
@@ -387,7 +372,11 @@ class ActivityPage(CFGOVPage):
     ]
 
     def get_topics_list(self, parent=None):
-        """Get a hierarchical list of this activity's topics."""
+        """
+        Get a hierarchical list of this activity's topics.
+
+        parent: ActivityTopic
+        """
         if parent:
             descendants = set(parent.get_descendants()) & set(self.topic.all())
             children = parent.get_children()
@@ -421,3 +410,35 @@ class ActivityPage(CFGOVPage):
 
     class Meta:
         verbose_name = "TDP Activity page"
+
+def validate_results_per_page(request):
+    """
+    A utility for parsing the requested number of results per page.
+
+    This should catch an invalid number of results and always return
+    a valid number of results, defaulting to 10.
+    """
+    raw_results = request.GET.get('results')
+    if raw_results in ['25', '50']:
+        return int(raw_results)
+    else:
+        return 3
+
+
+def validate_page_number(request, paginator):
+    """
+    A utility for parsing a pagination request.
+
+    This should catch invalid page numbers and always return
+    a valid page number, defaulting to 1.
+    """
+    raw_page = request.GET.get('page', 1)
+    try:
+        page_number = int(raw_page)
+    except ValueError:
+        page_number = 1
+    try:
+        paginator.page(page_number)
+    except InvalidPage:
+        page_number = 1
+    return page_number

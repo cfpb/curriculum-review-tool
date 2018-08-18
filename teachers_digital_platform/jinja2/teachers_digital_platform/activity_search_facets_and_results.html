@@ -1,0 +1,343 @@
+{% import 'atoms/tag.html' as tag %}
+{% import 'molecules/pagination.html' as pagination with context %}
+{% from 'organisms/expandable.html' import expandable with context %}
+
+{% macro build_nested_facets(facets, type, is_child=False) %}
+    <ul class="m-list__unstyled{% if is_child: %} children{% endif %}">
+        {% for facet in facets %}
+            {% if facet.children %}
+                <div class="aggregation-branch">
+                    <li class="parent m-form-field m-form-field__checkbox body-copy">
+                        <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                        <label class="toggle a-label" for="{{ type }}--{{ facet.title | trim | slugify}}"></label>
+                        <button class="a-btn a-btn__link" title="{{ facet.title }}"><span>{{ facet.title }}</span><span class="cf-icon cf-icon-down"></span></button>
+                    </li>
+                    {{ build_nested_facets(facet.children, type, True) }}
+                </div>
+                {% else %}
+                <li class=" m-form-field m-form-field__checkbox body-copy">
+                    <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                    <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+<aside class="content_sidebar">
+    <section class="o-filter-panel">
+        <h2>Find activities</h2>
+        <p>Search for financial education topics relevant to your class, then filter to narrow the results.</p>
+        <h3>Search</h3>
+        <p>Search for activities by key terms or concepts.</p>
+        <div class="layout-row">
+            <form class="keyword-search-form" method="GET" action="{{ page.url }}#content_main">
+                <div class="flex-all typeahead-portal">
+                    <section class="typeahead flex-all">
+                        <div class="m-btn-inside-input input-contains-label">
+                            <label class="input-contains-label_before input-contains-label_before__search"></label>
+                            <input type="text" autocomplete="off" class="a-text-input" placeholder="Search term(s)" aria-label="The term to search for" id="searchText" name="q" value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
+                        </div>
+                    </section>
+                    <button type="submit" class="a-btn flex-fixed">Search</button>
+                </div>
+            </form>
+        </div>
+        <h3 class="u-mt30">Filter results by</h3>
+        <form action="." method="get" data-js-hook="behavior_change-filter">
+            <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
+            <input type="hidden" name="page" inputmode="numeric" value="1">
+            <p>Narrow your search by selecting specific activity features.</p>
+            {% if facets.building_block %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Building block',
+                    'is_expanded': true,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.building_block %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="building-block--{{ facet.title | trim | slugify}}" name="building_block" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="building-block--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.school_subject %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'School subject',
+                    'is_expanded': true,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.school_subject %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="school-subject--{{ facet.title | trim | slugify}}" name="school_subject" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="school-subject--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.topic %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Topic',
+                    'is_expanded': true,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    {{ build_nested_facets(facets.topic, 'topic') }}
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.grade_level or facets.age_range or facets.special_population %}<h3 class="u-mt45">Audience</h3>{% endif %}
+            {% if facets.grade_level %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Grade level',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.grade_level %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="grade-level--{{ facet.title | trim | slugify}}" name="grade_level" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="grade-level--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.age_range %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Age range',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.age_range %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="age_range--{{ facet.title | trim | slugify}}" name="age_range" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="age_range--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.special_population %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Special population',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.special_population %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="special-population--{{ facet.title | trim | slugify}}" name="special_population" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="special-population--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}<h3 class="u-mt45">Activity characteristics</h3>{% endif %}
+            {% if facets.activity_type %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Activity type',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.activity_type %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="activity-type--{{ facet.title | trim | slugify}}" name="activity_type" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="activity-type--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.teaching_strategy %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Teaching strategy',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.teaching_strategy %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="teaching-strategy--{{ facet.title | trim | slugify}}" name="teaching_strategy" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="teaching-strategy--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.blooms_taxonomy_level %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Bloom\'s Taxonomy level',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.blooms_taxonomy_level %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="blooms-taxonomy-level--{{ facet.title | trim | slugify}}" name="blooms_taxonomy_level" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="blooms-taxonomy-level--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.activity_duration %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Activity duration',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.activity_duration %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="activity-duration--{{ facet.title | trim | slugify}}" name="activity_duration" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="activity-duration--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.council_for_economic_education or facets.jump_start_coalition %}<h3 class="u-mt45">National standards</h3>{% endif %}
+            {% if facets.council_for_economic_education %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Council for Economic Education',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.council_for_economic_education %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="council-for-economic-education--{{ facet.title | trim | slugify}}" name="council_for_economic_education" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="council-for-economic-education--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            {% if facets.jump_start_coalition %}
+            <hr />
+                {% set expandable_settings = {
+                    'label': 'Jump$tart Coalition',
+                    'is_expanded': false,
+                    'is_midtone': true,
+                    'hide_cue_label': true
+                } %}
+                {% call() expandable(expandable_settings) %}
+                <div>
+                    <ul class="m-list__unstyled">
+                        {% for facet in facets.jump_start_coalition %}
+                        <li class="m-form-field m-form-field__checkbox">
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="jump-start-coalition--{{ facet.title | trim | slugify}}" name="jump_start_coalition" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="jump-start-coalition--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endcall %}
+            {% endif %}
+            <div class="filter-panel__apply-filters"><input type="submit" value="Apply Filters"> | <a href="{{ page.url }}"> Clear all filters</a></div>
+        </form>
+    </section>
+</aside>
+<section id="tdp-search-results" class="content_main">
+    <a id="content_main"></a>
+    {% if show_filters %}
+    <div class="filters_applied">
+        <span class="filters_applied-label">
+            Filters applied:
+        </span>
+        <div class="filters_tags">
+            {% for facet_name, facet_items in facets.items() %}
+                {% for facet in facet_items %}
+                    {% if facet.selected %}
+                        {{ tag.render({
+                            'label': facet.title,
+                            'value': facet.id,
+                            'behavior': 'clear-filter'
+                        }) }}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"
+                data-js-hook="behavior_clear-all">
+            Clear all filters
+        </button>
+    </div>
+    {% endif %}
+    <h2 class="u-mt30">Confirming title and notification</h2>
+    <ul class="m-list__unstyled">
+        {% for result in activities %}
+            {% if result %}
+            <li>{% include "activity_search_result.html" %}</li>
+            {% endif %}
+        {% else %}
+        <li> No results found.</li>
+        {% endfor %}
+
+    </ul>
+    <div class="results_paginator">
+        {{ pagination.render( paginator.num_pages, current_page, '', '', 'Previous', 'Next' ) }}
+    </div>
+</section>

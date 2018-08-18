@@ -10,7 +10,7 @@ const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
 
 
 // Constants
-const COMMON_BUNDLE_NAME = 'tdp.js';
+//const COMMON_BUNDLE_NAME = 'tdp.js';
 
 // Commmon webpack 'module' option used in each configuration.
 // Runs code through Babel and uses global supported browser list.
@@ -54,9 +54,9 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
 } );
 
 
-const COMMON_CHUNK_CONFIG = new webpack.optimize.CommonsChunkPlugin( {
-  name: COMMON_BUNDLE_NAME
-} );
+//const COMMON_CHUNK_CONFIG = new webpack.optimize.CommonsChunkPlugin( {
+//  name: COMMON_BUNDLE_NAME
+//} );
 
 
 const commonConf = {
@@ -73,11 +73,11 @@ const modernConf = {
   cache: true,
   module: COMMON_MODULE_CONFIG,
   output: {
-    filename: '[name]'
+    filename: 'tdp.js'
   },
   plugins: [
     // COMMON_UGLIFY_CONFIG,
-    COMMON_CHUNK_CONFIG
+    // COMMON_CHUNK_CONFIG
   ]
 };
 
