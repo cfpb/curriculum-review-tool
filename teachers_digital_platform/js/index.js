@@ -14,6 +14,15 @@
 //
 // app.init();
 
+
+const search = require( './search' );
+const closest = require( './util/dom-traverse' ).closest;
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 
-cfExpandables.init();
+const app = {
+  init: () => {
+    cfExpandables.init();
+  }
+};
+
+window.addEventListener( 'load', app.init );
