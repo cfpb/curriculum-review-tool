@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+from functools import partial
+
 from django import forms
 from django.conf import settings
 from django.core.paginator import InvalidPage, Paginator
@@ -422,7 +424,7 @@ def validate_results_per_page(request):
     if raw_results in ['25', '50']:
         return int(raw_results)
     else:
-        return 3
+        return 10
 
 
 def validate_page_number(request, paginator):

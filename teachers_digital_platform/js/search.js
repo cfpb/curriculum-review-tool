@@ -4,6 +4,8 @@ const behavior = require( './util/behavior' );
 const utils = require( './search-utils' );
 const closest = require( './util/dom-traverse' ).closest;
 const find = require( './util/dom-traverse' ).queryOne;
+const cfExpandables = require( 'cf-expandables/src/Expandable' );
+
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
 let searchRequest = {};
@@ -13,8 +15,6 @@ let searchRequest = {};
  */
 function init() {
   // Override search form submission
-  behavior.attach( 'submit-search', 'submit', handleSubmit );
-  behavior.attach( 'change-filter', 'change', handleFilter );
   attachHandlers();
 }
 
@@ -22,8 +22,16 @@ function init() {
  * Attach search results handlers
  */
 function attachHandlers() {
+  behavior.attach( 'submit-search', 'submit', handleSubmit );
+  behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
+  var submitButtons = document.querySelectorAll( '.filter-panel__apply-filters' );
+  var i;
+  for ( i = 0; i < submitButtons.length; i++ ) {
+    submitButtons[i].style.display = 'none';
+  }
+  cfExpandables.init();
 }
 
 /**
@@ -111,21 +119,17 @@ function handleFilter( event ) {
   // Update the filter query params in the URL
   utils.updateUrl( baseUrl, searchParams );
   utils.showLoading( searchContainer );
-  searchRequest = fetch( searchUrl, ( err, data ) => {
-    console.log('NSB');
-    console.log(data);
-    utils.hideLoading( searchContainer );
-    if ( err !== null ) {
-      // TODO: Add message banner above search results
-      return console.error( utils.handleError( err ).msg );
-    }
-    searchContainer.innerHTML = data;
-    // Update the query params in the URL
-    utils.updateUrl( baseUrl, searchParams );
-    // Reattach event handlers after tags are reloaded
-    attachHandlers();
-    return data;
-  } );
+  searchRequest = fetch( searchUrl )
+    .then( response => {
+      return response.text();
+    } )
+    .then( data => {
+      utils.hideLoading( searchContainer );
+      searchContainer.innerHTML = data;
+      utils.updateUrl( baseUrl, searchParams );
+      attachHandlers();
+      return data;
+    } );
 }
 
 // Provide the no-JS experience to browsers without `replaceState`
