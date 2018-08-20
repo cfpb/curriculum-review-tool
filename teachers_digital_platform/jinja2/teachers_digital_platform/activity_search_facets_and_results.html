@@ -24,25 +24,24 @@
     </ul>
 {% endmacro %}
 
+{% macro  build_nested_filter_tags(facets, type) %}
+    {% for facet in facets %}
+        {% if facet.selected %}
+            {% set input_id = '#' + type | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
+            {{ tag.render({
+                'label': facet.title,
+                'value': input_id,
+                'behavior': 'clear-filter'
+            }) }}
+        {% endif %}
+        {% if facet.children %}
+            {{ build_nested_filter_tags(facet.children, type) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
 <aside class="content_sidebar">
     <section class="o-filter-panel">
-        <h2>Find activities</h2>
-        <p>Search for financial education topics relevant to your class, then filter to narrow the results.</p>
-        <h3>Search</h3>
-        <p>Search for activities by key terms or concepts.</p>
-        <div class="layout-row">
-            <form class="keyword-search-form" method="GET" action="{{ page.url }}#content_main">
-                <div class="flex-all typeahead-portal">
-                    <section class="typeahead flex-all">
-                        <div class="m-btn-inside-input input-contains-label">
-                            <label class="input-contains-label_before input-contains-label_before__search"></label>
-                            <input type="text" autocomplete="off" class="a-text-input" placeholder="Search term(s)" aria-label="The term to search for" id="searchText" name="q" value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
-                        </div>
-                    </section>
-                    <button type="submit" class="a-btn flex-fixed">Search</button>
-                </div>
-            </form>
-        </div>
         <h3 class="u-mt30">Filter results by</h3>
         <form action="." method="get" data-js-hook="behavior_change-filter">
             <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
@@ -309,15 +308,20 @@
         </span>
         <div class="filters_tags">
             {% for facet_name, facet_items in facets.items() %}
-                {% for facet in facet_items %}
-                    {% if facet.selected %}
-                        {{ tag.render({
-                            'label': facet.title,
-                            'value': facet.id,
-                            'behavior': 'clear-filter'
-                        }) }}
-                    {% endif %}
-                {% endfor %}
+                {% if facet_name == 'topic'%}
+                    {{ build_nested_filter_tags(facet_items, facet_name) }}
+                {% else %}
+                    {% for facet in facet_items %}
+                        {% if facet.selected %}
+                            {% set input_id = '#' + facet_name | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
+                            {{ tag.render({
+                                'label': facet.title,
+                                'value': input_id,
+                                'behavior': 'clear-filter'
+                            }) }}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             {% endfor %}
         </div>
         <button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"

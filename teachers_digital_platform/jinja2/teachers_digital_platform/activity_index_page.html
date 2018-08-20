@@ -43,6 +43,23 @@
         </style>
     </section>
     <hr class="u-mb0 u-ml15 u-mr15" />
+    <h2>Find activities</h2>
+    <p>Search for financial education topics relevant to your class, then filter to narrow the results.</p>
+    <h3>Search</h3>
+    <p>Search for activities by key terms or concepts.</p>
+    <div class="layout-row">
+        <form class="keyword-search-form" action="{{ page.url }}#content_main" method="get" data-js-hook="behavior_submit-search">
+            <div class="flex-all typeahead-portal">
+                <section class="typeahead flex-all">
+                    <div class="m-btn-inside-input input-contains-label">
+                        <label class="input-contains-label_before input-contains-label_before__search"></label>
+                        <input type="text" autocomplete="off" class="a-text-input" placeholder="Enter your search term(s)" aria-label="The term to search for" id="searchText" name="q" value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
+                    </div>
+                </section>
+                <button type="submit" class="a-btn flex-fixed">Search</button>
+            </div>
+        </form>
+    </div>
     <div id="tdp-search-facets-and-results">
         {% include 'activity_search_facets_and_results.html' %}
     </div>
