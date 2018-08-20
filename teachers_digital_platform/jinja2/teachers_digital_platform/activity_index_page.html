@@ -28,23 +28,11 @@
             </div>
         </div>
         <style>
-            .m-hero {
-                background-color: transparent;
-            }
-            .m-hero_image-wrapper {
-                display: none;
-            }
-            @media only all and (min-width: 37.5625em) {
-                .m-hero_image-wrapper {
-                    display: inline-block;
-                    margin-top: 0;
-                }
-                .m-hero_image {
-                    background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg');
-                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                        src='https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg',
-                        sizingMethod='scale');
-                }
+            .m-hero_image {
+                background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg');
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src='https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg',
+                    sizingMethod='scale');
             }
         </style>
     </section>
@@ -53,21 +41,20 @@
     <p>Search for financial education topics relevant to your class, then filter to narrow the results.</p>
     <h3>Search</h3>
     <p>Search for activities by key terms or concepts.</p>
-    <div class="layout-row">
-        <form class="keyword-search-form" action="." method="get" data-js-hook="behavior_submit-search">
-            <div class="flex-all typeahead-portal">
-                <section class="typeahead flex-all">
-                    <div class="m-btn-inside-input input-contains-label">
-                        <label class="input-contains-label_before input-contains-label_before__search"></label>
-                        <input type="text" autocomplete="off" class="a-text-input" placeholder="Enter your search term(s)"
-                               aria-label="The term to search for" id="searchText" name="q"
-                               value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
-                    </div>
-                </section>
-                <button type="submit" class="a-btn flex-fixed">Search</button>
-            </div>
-        </form>
-    </div>
+    <form class="u-mt30" method="get" action="." data-js-hook="behavior_submit-search">
+        <div class="o-form__input-w-btn">
+            <div class="o-form__input-w-btn_input-container">
+                <div class="m-btn-inside-input input-contains-label">
+                    <label for="searchText" class="input-contains-label_before input-contains-label_before__search"></label>
+                    <label for="searchText" class="input-contains-label_after input-contains-label_after__clear u-hidden"></label>
+                    <input id="searchText" type="text" autocomplete="off" class="a-text-input" name="q"
+                            placeholder="Enter your search term(s)"
+                            aria-label="The term to search for"
+                            value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
+                </div>
+            </div><div class="o-form__input-w-btn_btn-container"><button class="a-btn">Search</button></div>
+        </div>
+    </form>
     <div id="tdp-search-facets-and-results">
         {% include 'activity_search_facets_and_results.html' %}
     </div>
@@ -82,4 +69,3 @@
         <script src="{{ static('tdp/js/tdp.js') }}"></script>
     <!--<![endif]-->
 {% endblock javascript %}
-
