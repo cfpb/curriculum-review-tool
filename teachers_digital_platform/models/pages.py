@@ -147,9 +147,16 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                     else:
                         all_facets[facet] = self.get_flat_facets(class_name, narrowed_facets, narrowed_selected_facets)
 
+        # List all facet blocks that need to be expanded
+        always_expanded = {'building_block', 'topic', 'school_subject'}
+        conditionally_expanded = {facet_name for facet_name, facet_items in all_facets.items() if any(
+            facet['selected'] is True for facet in facet_items)}
+        expanded_facets = always_expanded.union(set(conditionally_expanded))
+
         payload.update({
-           'facet_counts': facet_counts,
-           'all_facets': all_facets,
+            'facet_counts': facet_counts,
+            'all_facets': all_facets,
+            'expanded_facets': expanded_facets,
         })
 
         # Apply all the active facet values to our search results
