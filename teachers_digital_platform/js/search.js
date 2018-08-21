@@ -26,11 +26,6 @@ function attachHandlers() {
   behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
-  var submitButtons = document.querySelectorAll( '.filter-panel__apply-filters' );
-  var i;
-  for ( i = 0; i < submitButtons.length; i++ ) {
-    submitButtons[i].style.display = 'none';
-  }
   cfExpandables.init();
 }
 
@@ -83,13 +78,28 @@ function handleSubmit( event ) {
   if ( event instanceof Event ) {
     event.preventDefault();
   }
-  const filters = document.querySelectorAll( 'input:checked' );
   const searchField = find( 'input[name=q]' );
-  const searchTerms = utils.getSearchValues( searchField, filters );
+  const searchTerms = utils.getSearchValues( searchField, [] );
   const baseUrl = window.location.href.split( '?' )[0];
   const searchParams = utils.serializeFormFields( searchTerms );
-  const searchUrl = utils.buildSearchResultsURL( baseUrl, searchParams );
-  window.location.assign( searchUrl );
+  const searchUrl = utils.buildSearchResultsURL(
+    baseUrl, searchParams, { partial: true }
+  );
+  const searchContainer = find( '#tdp-search-facets-and-results' );
+  // Update the filter query params in the URL
+  utils.updateUrl( baseUrl, searchParams );
+  utils.showLoading( searchContainer );
+  searchRequest = fetch( searchUrl )
+    .then( response => {
+      return response.text();
+    } )
+    .then( data => {
+      utils.hideLoading( searchContainer );
+      searchContainer.innerHTML = data;
+      utils.updateUrl( baseUrl, searchParams );
+      attachHandlers();
+      return data;
+    } );
   return searchUrl;
 }
 

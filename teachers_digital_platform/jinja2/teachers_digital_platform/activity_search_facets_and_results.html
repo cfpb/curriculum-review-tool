@@ -49,9 +49,14 @@
             <p>Narrow your search by selecting specific activity features.</p>
             {% if facets.building_block %}
             <hr />
+                {% if 'building_block' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Building block',
-                    'is_expanded': true,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -70,9 +75,14 @@
             {% endif %}
             {% if facets.school_subject %}
             <hr />
+                {% if 'school_subject' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'School subject',
-                    'is_expanded': true,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -91,9 +101,14 @@
             {% endif %}
             {% if facets.topic %}
             <hr />
+                {% if 'topic' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Topic',
-                    'is_expanded': true,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -106,9 +121,14 @@
             {% if facets.grade_level or facets.age_range or facets.special_population %}<h3 class="u-mt45">Audience</h3>{% endif %}
             {% if facets.grade_level %}
             <hr />
+                {% if 'grade_level' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Grade level',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -127,9 +147,14 @@
             {% endif %}
             {% if facets.age_range %}
             <hr />
+                {% if 'age_range' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Age range',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -138,8 +163,8 @@
                     <ul class="m-list__unstyled">
                         {% for facet in facets.age_range %}
                         <li class="m-form-field m-form-field__checkbox">
-                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="age_range--{{ facet.title | trim | slugify}}" name="age_range" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                            <label class="a-label" for="age_range--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                            <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="age-range--{{ facet.title | trim | slugify}}" name="age_range" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                            <label class="a-label" for="age-range--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                         </li>
                         {% endfor %}
                     </ul>
@@ -148,9 +173,14 @@
             {% endif %}
             {% if facets.special_population %}
             <hr />
+                {% if 'special_population' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Special population',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -170,9 +200,14 @@
             {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}<h3 class="u-mt45">Activity characteristics</h3>{% endif %}
             {% if facets.activity_type %}
             <hr />
+                {% if 'activity_type' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Activity type',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -191,9 +226,14 @@
             {% endif %}
             {% if facets.teaching_strategy %}
             <hr />
+                {% if 'teaching_strategy' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Teaching strategy',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -212,9 +252,14 @@
             {% endif %}
             {% if facets.blooms_taxonomy_level %}
             <hr />
+                {% if 'blooms_taxonomy_level' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Bloom\'s Taxonomy level',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -233,9 +278,14 @@
             {% endif %}
             {% if facets.activity_duration %}
             <hr />
+                {% if 'activity_duration' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Activity duration',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -255,9 +305,14 @@
             {% if facets.council_for_economic_education or facets.jump_start_coalition %}<h3 class="u-mt45">National standards</h3>{% endif %}
             {% if facets.council_for_economic_education %}
             <hr />
+                {% if 'council_for_economic_education' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Council for Economic Education',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -276,9 +331,14 @@
             {% endif %}
             {% if facets.jump_start_coalition %}
             <hr />
+                {% if 'jump_start_coalition' in page.results.expanded_facets %}
+                    {% set is_expanded = true %}
+                {% else %}
+                    {% set is_expanded = false %}
+                {% endif %}
                 {% set expandable_settings = {
                     'label': 'Jump$tart Coalition',
-                    'is_expanded': false,
+                    'is_expanded': is_expanded,
                     'is_midtone': true,
                     'hide_cue_label': true
                 } %}
@@ -295,42 +355,47 @@
                 </div>
                 {% endcall %}
             {% endif %}
-            <div class="filter-panel__apply-filters"><input type="submit" value="Apply Filters"> | <a href="{{ page.url }}"> Clear all filters</a></div>
         </form>
     </section>
 </aside>
 <section id="tdp-search-results" class="content_main">
     <a id="content_main"></a>
-    {% if show_filters %}
-    <div class="filters_applied">
-        <span class="filters_applied-label">
-            Filters applied:
-        </span>
-        <div class="filters_tags">
-            {% for facet_name, facet_items in facets.items() %}
-                {% if facet_name == 'topic'%}
-                    {{ build_nested_filter_tags(facet_items, facet_name) }}
-                {% else %}
-                    {% for facet in facet_items %}
-                        {% if facet.selected %}
-                            {% set input_id = '#' + facet_name | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
-                            {{ tag.render({
-                                'label': facet.title,
-                                'value': input_id,
-                                'behavior': 'clear-filter'
-                            }) }}
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
+    {% if activities %}
+    <div class="results_header">
+        <div class="results_count">
+            <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
         </div>
-        <button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"
-                data-js-hook="behavior_clear-all">
-            Clear all filters
-        </button>
+        {% if show_filters %}
+        <div class="filters_applied">
+            <span class="filters_applied-label">
+                Filters applied:
+            </span>
+            <div class="filters_tags">
+                {% for facet_name, facet_items in facets.items() %}
+                    {% if facet_name == 'topic'%}
+                        {{ build_nested_filter_tags(facet_items, facet_name) }}
+                    {% else %}
+                        {% for facet in facet_items %}
+                            {% if facet.selected %}
+                                {% set input_id = '#' + facet_name | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
+                                {{ tag.render({
+                                    'label': facet.title,
+                                    'value': input_id,
+                                    'behavior': 'clear-filter'
+                                }) }}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"
+                    data-js-hook="behavior_clear-all">
+                Clear all filters
+            </button>
+        </div>
+        {% endif %}
     </div>
     {% endif %}
-    <h2 class="u-mt30">Confirming title and notification</h2>
     <ul class="m-list__unstyled">
         {% for result in activities %}
             {% if result %}
