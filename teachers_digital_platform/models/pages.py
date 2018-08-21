@@ -421,10 +421,10 @@ def validate_results_per_page(request):
     a valid number of results, defaulting to 10.
     """
     raw_results = request.GET.get('results')
-    if raw_results in ['25', '50']:
+    if raw_results in ['10', '25', '50']:
         return int(raw_results)
     else:
-        return 10
+        return 5
 
 
 def validate_page_number(request, paginator):

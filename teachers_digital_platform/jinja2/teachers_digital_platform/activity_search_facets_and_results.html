@@ -303,7 +303,7 @@
     {% if activities %}
     <div class="results_header">
         <div class="results_count">
-            <h3>Showing {{ activities | length }}  results</h3>
+            <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
         </div>
         {% if show_filters %}
         <div class="filters_applied">
