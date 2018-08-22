@@ -36,7 +36,7 @@ setup(
         'teachers_digital_platform': [
             'jinja2/teachers_digital_platform/*',
             'jinja2/teachers_digital_platform/prototypes/*',
-            'templates/*',
+            'templates/search/indexes/teachers_digital_platform/*',
             'static/tdp/css/*',
             'static/tdp/js/*',
             'static/tdp/fonts/*',
