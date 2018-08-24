@@ -9,7 +9,7 @@
                 <div class="aggregation-branch">
                     <li class="parent m-form-field m-form-field__checkbox body-copy">
                         <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                        <label class="toggle a-label" for="{{ type }}--{{ facet.title | trim | slugify}}"></label>
+                        <label class="toggle a-label{% if facet.child_selected  and not facet.selected %} indeterminate{% endif %}" for="{{ type }}--{{ facet.title | trim | slugify}}"></label>
                         <button class="a-btn a-btn__link" title="{{ facet.title }}"><span>{{ facet.title }}</span><span class="cf-icon cf-icon-down"></span></button>
                     </li>
                     {{ build_nested_facets(facet.children, type, True) }}

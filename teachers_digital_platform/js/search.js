@@ -90,10 +90,10 @@ function handleSubmit( event ) {
   utils.updateUrl( baseUrl, searchParams );
   utils.showLoading( searchContainer );
   searchRequest = fetch( searchUrl )
-    .then( response => {
+    .then( function( response ) {
       return response.text();
     } )
-    .then( data => {
+    .then( function( data ) {
       utils.hideLoading( searchContainer );
       searchContainer.innerHTML = data;
       utils.updateUrl( baseUrl, searchParams );
@@ -117,6 +117,33 @@ function handleFilter( event ) {
   try {
     searchRequest.abort();
   } catch ( err ) { }
+  if ( event.target.parentElement.parentElement.classList.contains( 'aggregation-branch' ) ) {
+    // Check all children if parent is checked.
+    const children = event.target.parentElement.parentElement.querySelectorAll(
+      ':scope>ul.children input[type=checkbox]'
+    );
+    for ( var i = 0; i < children.length; i++ ) {
+      children[i].checked = event.target.checked;
+    }
+  } else if ( event.target.parentElement.parentElement.classList.contains( 'children' ) ) {
+    const children = event.target.parentElement.parentElement.querySelectorAll(
+      ':scope>li>input[type=checkbox]'
+    );
+    const checkedChildren = event.target.parentElement.parentElement.querySelectorAll(
+      ':scope>li>input[type=checkbox]:checked'
+    );
+    const parentCheckbox = event.target.parentElement.parentElement.parentElement.querySelector(
+      ':scope.aggregation-branch>li.parent>input[type=checkbox]'
+    );
+    if ( children.length === checkedChildren.length && children.length > 0 ) {
+      // Check parent if all children are checked (TODO: maybe we shouldn't do this?).
+      parentCheckbox.checked = true;
+    } else {
+      // Uncheck parent if not all children are checked.
+      parentCheckbox.checked = false;
+    }
+  }
+
   const searchContainer = find( '#tdp-search-facets-and-results' );
   const filters = document.querySelectorAll( 'input:checked' );
   const searchField = find( 'input[name=q]' );
@@ -130,10 +157,10 @@ function handleFilter( event ) {
   utils.updateUrl( baseUrl, searchParams );
   utils.showLoading( searchContainer );
   searchRequest = fetch( searchUrl )
-    .then( response => {
+    .then( function( response ) {
       return response.text();
     } )
-    .then( data => {
+    .then( function( data ) {
       utils.hideLoading( searchContainer );
       searchContainer.innerHTML = data;
       utils.updateUrl( baseUrl, searchParams );

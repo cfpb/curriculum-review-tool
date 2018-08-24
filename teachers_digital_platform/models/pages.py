@@ -213,23 +213,32 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             final_facets = []
             root_facets = [root_facet for root_facet in flat_final_facets if root_facet['parent'] == None]
             for root_facet in root_facets:
+                children_list = self.get_nested_facets(class_name, narrowed_facets, selected_facets, root_facet['id'])
+                child_selected = any(
+                    child['selected'] is True or child['child_selected'] is True for child in children_list
+                )
                 final_facets.append(
                     {
                         'selected': root_facet['selected'],
+                        'child_selected': child_selected,
                         'id': root_facet['id'],
                         'title': root_facet['title'],
                         'parent': root_facet['parent'],
-                        'children': self.get_nested_facets(class_name, narrowed_facets, selected_facets, root_facet['id'])
+                        'children': children_list
                     })
             return final_facets
         else:
             children = [
                 {
-                    'selected': result['id'] in selected_facets,
+                    'selected': result['id'] in selected_facets or result['parent'] in selected_facets,
                     'id': result['id'],
                     'title': result['title'],
                     'parent': result['parent'],
-                    'children': self.get_nested_facets(class_name, narrowed_facets, selected_facets, result['id'])
+                    'children': self.get_nested_facets(class_name, narrowed_facets, selected_facets, result['id']),
+                    'child_selected': any(
+                        child['selected'] is True or child['child_selected'] is True for child in
+                        self.get_nested_facets(class_name, narrowed_facets, selected_facets, result['id'])
+                    )
                 } for result in eval(class_name).objects.filter(pk__in=narrowed_facets).filter(parent_id=parent).values('id', 'title', 'parent')]
             return children
 
