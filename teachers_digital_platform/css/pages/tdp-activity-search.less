@@ -19,8 +19,45 @@
 
     .content_sidebar {
         display: inline-block;
-        padding: 45px 15px;
+        padding: 45px 15px 0;
         border: 1px solid #b4b5b6;
         background-color: #f7f8f9;
+
+        .o-expandable {
+            padding-bottom: 15px;
+            border-bottom: 1px solid #b4b5b6;
+            margin-bottom: 15px;
+        }
+
+        .o-expandable_target,
+        .o-expandable_content {
+            border: 0;
+            padding: 0;
+
+            &::before,
+            &::after {
+                border: 0;
+                padding: 0;
+            }
+        }
+
+        .filter-section {
+            border-top: 1px solid #b4b5b6;
+            padding-top: 15px;
+
+            .o-expandable:last-child {
+                border: 0;
+            }
+        }
+    }
+
+    .content_main {
+        border: 0;
+        border-top: 1px solid #b4b5b6;
+        padding-top: 0;
+
+        &::after {
+            border: 0;
+        }
     }
 }
