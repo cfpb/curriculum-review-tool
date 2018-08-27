@@ -18,8 +18,6 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 
-import sys, math, ast
-
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel, ObjectList, StreamFieldPanel,
     TabbedInterface
@@ -223,7 +221,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                         'id': root_facet['id'],
                         'title': root_facet['title'],
                         'parent': root_facet['parent'],
-                        'children': self.get_nested_facets(class_name, narrowed_facets, selected_facets, root_facet['id'])
+                        'children': self.get_nested_facets(class_object, narrowed_facets, selected_facets, root_facet['id'])
                     })
             return final_facets
         else:
