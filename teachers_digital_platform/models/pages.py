@@ -18,7 +18,7 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 
-import sys, math
+import sys, math, ast
 
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel, ObjectList, StreamFieldPanel,
@@ -80,18 +80,18 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
     def search(self, request, *args, **kwargs):
 
         facet_map = (
-            ('building_block', ('ActivityBuildingBlock', False, 10)),
-            ('school_subject', ('ActivitySchoolSubject', False, 25)),
-            ('topic', ('ActivityTopic', True, 25)),
-            ('grade_level', ('ActivityGradeLevel', False, 10)),
-            ('age_range', ('ActivityAgeRange', False, 10)),
-            ('special_population', ('ActivitySpecialPopulation', False, 10)),
-            ('activity_type', ('ActivityType', False, 10)),
-            ('teaching_strategy', ('ActivityTeachingStrategy', False, 25)),
-            ('blooms_taxonomy_level', ('ActivityBloomsTaxonomyLevel', False, 25)),
-            ('activity_duration', ('ActivityDuration', False, 10)),
-            ('jump_start_coalition', ('ActivityJumpStartCoalition', False, 25)),
-            ('council_for_economic_education', ('ActivityCouncilForEconEd', False, 25)),
+            ('building_block', (ActivityBuildingBlock, False, 10)),
+            ('school_subject', (ActivitySchoolSubject, False, 25)),
+            ('topic', (ActivityTopic, True, 25)),
+            ('grade_level', (ActivityGradeLevel, False, 10)),
+            ('age_range', (ActivityAgeRange, False, 10)),
+            ('special_population', (ActivitySpecialPopulation, False, 10)),
+            ('activity_type', (ActivityType, False, 10)),
+            ('teaching_strategy', (ActivityTeachingStrategy, False, 25)),
+            ('blooms_taxonomy_level', (ActivityBloomsTaxonomyLevel, False, 25)),
+            ('activity_duration', (ActivityDuration, False, 10)),
+            ('jump_start_coalition', (ActivityJumpStartCoalition, False, 25)),
+            ('council_for_economic_education', (ActivityCouncilForEconEd, False, 25)),
         )
         search_query = request.GET.get('q', '')  # haystack cleans this string
         sqs = SearchQuerySet().models(ActivityPage)
@@ -133,7 +133,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
         all_facets = {}
         if 'fields' in facet_counts:
             for facet, facet_config in facet_map:
-                class_name, is_nested, max_facet_count = facet_config
+                class_object, is_nested, max_facet_count = facet_config
                 all_facets_sqs = sqs
                 other_facet_queries = [facet_query for facet_query_name, facet_query in facet_queries.items() if facet != facet_query_name]
                 for other_facet_query in other_facet_queries:
@@ -143,9 +143,9 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                     narrowed_facets = [value[0] for value in narrowed_facet_counts['fields'][facet]]
                     narrowed_selected_facets = selected_facets[facet] if facet in selected_facets else []
                     if is_nested:
-                        all_facets[facet] = self.get_nested_facets(class_name, narrowed_facets, narrowed_selected_facets)
+                        all_facets[facet] = self.get_nested_facets(class_object, narrowed_facets, narrowed_selected_facets)
                     else:
-                        all_facets[facet] = self.get_flat_facets(class_name, narrowed_facets, narrowed_selected_facets)
+                        all_facets[facet] = self.get_flat_facets(class_object, narrowed_facets, narrowed_selected_facets)
 
         # List all facet blocks that need to be expanded
         always_expanded = {'building_block', 'topic', 'school_subject'}
@@ -192,16 +192,16 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             self.get_template(request),
             context)
 
-    def get_flat_facets(self, class_name, narrowed_facets, selected_facets):
+    def get_flat_facets(self, class_object, narrowed_facets, selected_facets):
         final_facets = [
             {
                 'selected': result['id'] in selected_facets,
                 'id': result['id'],
                 'title': result['title'],
-             } for result in eval(class_name).objects.filter(pk__in=narrowed_facets).values('id', 'title')]
+             } for result in class_object.objects.filter(pk__in=narrowed_facets).values('id', 'title')]
         return final_facets
 
-    def get_nested_facets(self, class_name, narrowed_facets, selected_facets, parent=None):
+    def get_nested_facets(self, class_object, narrowed_facets, selected_facets, parent=None):
         if not parent:
             flat_final_facets = [
                {
@@ -209,10 +209,14 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                    'id': result['id'],
                    'title': result['title'],
                    'parent': result['parent'],
-               } for result in eval(class_name).objects.filter(pk__in=narrowed_facets).get_ancestors(True).values('id', 'title', 'parent')]
+               } for result in class_object.objects.filter(pk__in=narrowed_facets).get_ancestors(True).values('id', 'title', 'parent')]
             final_facets = []
             root_facets = [root_facet for root_facet in flat_final_facets if root_facet['parent'] == None]
             for root_facet in root_facets:
+                children_list = self.get_nested_facets(class_object, narrowed_facets, selected_facets, root_facet['id'])
+                child_selected = any(
+                    child['selected'] is True or child['child_selected'] is True for child in children_list
+                )
                 final_facets.append(
                     {
                         'selected': root_facet['selected'],
@@ -229,8 +233,12 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                     'id': result['id'],
                     'title': result['title'],
                     'parent': result['parent'],
-                    'children': self.get_nested_facets(class_name, narrowed_facets, selected_facets, result['id'])
-                } for result in eval(class_name).objects.filter(pk__in=narrowed_facets).filter(parent_id=parent).values('id', 'title', 'parent')]
+                    'children': self.get_nested_facets(class_object, narrowed_facets, selected_facets, result['id']),
+                    'child_selected': any(
+                        child['selected'] is True or child['child_selected'] is True for child in
+                        self.get_nested_facets(class_object, narrowed_facets, selected_facets, result['id'])
+                    )
+                } for result in class_object.objects.filter(pk__in=narrowed_facets).filter(parent_id=parent).values('id', 'title', 'parent')]
             return children
 
     class Meta:
