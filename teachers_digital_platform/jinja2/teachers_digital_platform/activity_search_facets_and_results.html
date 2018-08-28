@@ -3,21 +3,26 @@
 {% from 'organisms/expandable.html' import expandable with context %}
 
 {% macro build_nested_facets(facets, type, is_child=False) %}
-    <ul class="m-list__unstyled{% if is_child: %} children{% endif %}">
+    <ul class="m-list m-list__unstyled">
         {% for facet in facets %}
             {% if facet.children %}
-                <div class="aggregation-branch">
-                    <li class="parent m-form-field m-form-field__checkbox body-copy">
-                        <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                        <label class="toggle a-label" for="{{ type }}--{{ facet.title | trim | slugify}}"></label>
-                        <button class="a-btn a-btn__link" title="{{ facet.title }}"><span>{{ facet.title }}</span><span class="cf-icon cf-icon-down"></span></button>
-                    </li>
+                <li>
+                    <div class="m-form-field m-form-field__checkbox">
+                        <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                        <label class="a-label toggle" for="{{ type }}--{{ facet.title | trim | slugify}}">
+                        </label><button class="a-btn a-btn__link" title="{{ facet.title }}">
+                            <span>{{ facet.title }}</span>
+                            <span class="cf-icon cf-icon-down"></span>
+                        </button>
+                    </div>
                     {{ build_nested_facets(facet.children, type, True) }}
-                </div>
-                {% else %}
-                <li class=" m-form-field m-form-field__checkbox body-copy">
-                    <input type="checkbox" aria-label="{{ facet.title }}" class="a-checkbox" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                    <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                </li>
+            {% else %}
+                <li>
+                    <div class="m-form-field m-form-field__checkbox">
+                        <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                        <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                    </div>
                 </li>
             {% endif %}
         {% endfor %}
@@ -121,9 +126,7 @@
                 'hide_cue_label': true
             } %}
             {% call() expandable(expandable_settings) %}
-            <div>
-                {{ build_nested_facets(facets.topic, 'topic') }}
-            </div>
+            {{ build_nested_facets(facets.topic, 'topic') }}
             {% endcall %}
         {% endif %}
         {% if facets.building_block or facets.school_subject or facets.topic %}
