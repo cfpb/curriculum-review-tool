@@ -3,7 +3,7 @@
 {% from 'organisms/expandable.html' import expandable with context %}
 
 {% macro build_nested_facets(facets, type, is_child=False) %}
-    <ul class="m-list m-list__unstyled u-mt15">
+    <ul class="m-list m-list__unstyled {% if not is_child %}u-mt15{% endif %}">
         {% for facet in facets %}
             {% if facet.children %}
                 <li>
@@ -18,7 +18,7 @@
                     {{ build_nested_facets(facet.children, type, True) }}
                 </li>
             {% else %}
-                <li>
+                <li class="u-hide-on-sm">
                     <div class="m-form-field m-form-field__checkbox">
                         <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                         <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
