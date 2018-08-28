@@ -3,7 +3,7 @@
 {% from 'organisms/expandable.html' import expandable with context %}
 
 {% macro build_nested_facets(facets, type, is_child=False) %}
-    <ul class="m-list m-list__unstyled">
+    <ul class="m-list m-list__unstyled u-mt15">
         {% for facet in facets %}
             {% if facet.children %}
                 <li>
@@ -47,13 +47,13 @@
 
 <aside class="content_sidebar content__flush-top-on-small content__flush-sides-on-small filters">
     <h3>Filter results by</h3>
-    <p>Narrow your search by selecting specific activity features.</p>
+    <p class="u-hide-on-sm">Narrow your search by selecting specific activity features.</p>
     <form action="." method="get" data-js-hook="behavior_change-filter">
         <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
         <input type="hidden" name="page" inputmode="numeric" value="1">
 
         {% if facets.building_block or facets.school_subject or facets.topic %}
-            <div class="filter-section">
+            <div class="filter-section filter-section__first">
         {% endif %}
         {% if facets.building_block %}
             {% if 'building_block' in page.results.expanded_facets %}
@@ -133,7 +133,7 @@
             </div>
         {% endif %}
         {% if facets.grade_level or facets.age_range or facets.special_population %}
-            <h3>Audience</h3>
+            <h3 class="u-hide-on-sm u-mt15">Audience</h3>
             <div class="filter-section">
         {% endif %}
         {% if facets.grade_level %}
@@ -227,8 +227,8 @@
             </div>
         {% endif %}
         {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}
-            <h3>Activity characteristics</h3>
-            <div class="filter-section">
+            <h3 class="u-hide-on-sm u-mt15">Activity characteristics</h3>
+            <div class="filter-section u-hide-on-sm">
         {% endif %}
         {% if facets.activity_type %}
             {% if 'activity_type' in page.results.expanded_facets %}
@@ -350,8 +350,8 @@
             </div>
         {% endif %}
         {% if facets.council_for_economic_education or facets.jump_start_coalition %}
-            <h3>National standards</h3>
-            <div class="filter-section">
+            <h3 class="u-hide-on-sm u-mt15">National standards</h3>
+            <div class="filter-section u-hide-on-sm">
         {% endif %}
         {% if facets.council_for_economic_education %}
             {% if 'council_for_economic_education' in page.results.expanded_facets %}
@@ -416,7 +416,7 @@
         {% endif %}
     </form>
 </aside>
-<section id="tdp-search-results" class="content_main content__flush-all-on-small content__flush-bottom">
+<section id="tdp-search-results" class="results content_main content__flush-all-on-small content__flush-bottom">
     <a id="content_main"></a>
     {% if activities %}
     <div class="results_header">
@@ -424,11 +424,11 @@
             <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
         </div>
         {% if show_filters %}
-        <div class="filters_applied">
-            <span class="filters_applied-label">
-                Filters applied:
+        <div class="results_filters">
+            <span class="results_filters-label">
+                Filters applied
             </span>
-            <div class="filters_tags">
+            <div class="results_filters-tags">
                 {% for facet_name, facet_items in facets.items() %}
                     {% if facet_name == 'topic'%}
                         {{ build_nested_filter_tags(facet_items, facet_name) }}
@@ -445,26 +445,34 @@
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
+                <button class="a-btn a-btn__link a-btn__warning a-micro-copy results_filters-clear u-mb10"
+                        data-js-hook="behavior_clear-all">
+                    Clear all filters
+                </button>
             </div>
-            <button class="a-btn a-btn__link a-btn__warning a-micro-copy filters_clear"
-                    data-js-hook="behavior_clear-all">
-                Clear all filters
-            </button>
         </div>
         {% endif %}
     </div>
     {% endif %}
-    <ul class="m-list__unstyled">
-        {% for result in activities %}
-            {% if result %}
-            <li>{% include "activity_search_result.html" %}</li>
-            {% endif %}
-        {% else %}
-        <li> No results found.</li>
-        {% endfor %}
+    <div class="results_list">
+        <ul class="m-list__unstyled">
+            {% for result in activities %}
+                {% if result %}
+                <li class="u-mb30">{% include "activity_search_result.html" %}</li>
+                {% endif %}
+            {% else %}
+            <li> No results found.</li>
+            {% endfor %}
 
-    </ul>
-    <div class="results_paginator">
+        </ul>
+    </div>
+    <div class="results_footer">
         {{ pagination.render( paginator.num_pages, current_page, '', '', 'Previous', 'Next' ) }}
+        <div class="o-well">
+            Activities align with the My Money Five principles introduced by the Congressionally chartered
+            <a class="a-link a-link__icon-after-text" href="">
+                <span class="a-link_text">Federal Financial Literacy and Education Commission</span>
+                <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790.1 1200" class="cf-icon-svg"><path d="M740.1 178.8H449.5c-27.6 0-50 22.4-50 50s22.4 50 50 50h169.9L518.2 379.9c-14.7-6.2-30.5-9.4-46.4-9.4H120c-66.2.1-119.9 53.8-120 120v351.8c.1 66.2 53.8 119.9 120 120h351.8c66.2-.1 119.9-53.8 120-120V490.6c0-12.6-2-25-5.8-37l104.1-104.1v169.9c0 27.6 22.4 50 50 50s50-22.4 50-50V228.8c0-27.7-22.4-50-50-50zM491.8 842.3c-.1 11-9 19.9-20 20H120c-11-.1-19.9-9-20-20V490.6c.1-11 9-19.9 20-20h307.5L267 631.1c-19.4 19.6-19.3 51.3.3 70.7 19.5 19.3 50.9 19.3 70.4 0l154-154 .1 294.5z"/></svg></span></a>.
+        </div>
     </div>
 </section>

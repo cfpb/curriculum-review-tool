@@ -1,0 +1,21 @@
+//
+// Hide on screen sizes or print
+//
+
+.u-hide-on-xs {
+    .respond-to-max(@bp-xs-max, {
+        display: none !important;
+    });
+}
+
+.u-hide-on-sm {
+    .respond-to-max(@bp-sm-max, {
+        display: none !important;
+    });
+}
+
+.u-hide-on-print {
+    @media print {
+        display: none !important;
+    }
+}

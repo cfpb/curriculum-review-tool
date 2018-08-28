@@ -17,16 +17,29 @@
         });
     }
 
+    .m-pagination {
+        margin-bottom: unit( 45px / @base-font-size-px, em );
+    }
+
+    .o-well {
+        max-width: 100%;
+    }
+
     .content_sidebar {
-        display: inline-block;
-        padding: 45px 15px 0;
+        padding: unit( 15px / @base-font-size-px, em ) unit( 15px / @base-font-size-px, em ) 0;
         border: 1px solid #b4b5b6;
         background-color: #f7f8f9;
+        margin-bottom: unit( 30px / @base-font-size-px, em );
+
+        .respond-to-min(@bp-med-min, {
+            margin-bottom: 0;
+            padding-top: unit( 45px / @base-font-size-px, em )
+        });
 
         .o-expandable {
-            padding-bottom: 15px;
+            padding-bottom: unit( 15px / @base-font-size-px, em );
             border-bottom: 1px solid #b4b5b6;
-            margin-bottom: 15px;
+            margin-bottom: unit( 15px / @base-font-size-px, em );
         }
 
         .o-expandable_target,
@@ -43,11 +56,18 @@
 
         .filter-section {
             border-top: 1px solid #b4b5b6;
-            padding-top: 15px;
+            padding-top: unit( 15px / @base-font-size-px, em );
 
             .o-expandable:last-child {
                 border: 0;
+                margin-bottom: 0;
             }
+        }
+
+        .filter-section__first {
+            .respond-to-max(@bp-sm-max, {
+                border-top: 0;
+            });
         }
 
         .o-form_group {
@@ -61,11 +81,119 @@
 
     .content_main {
         border: 0;
-        border-top: 1px solid #b4b5b6;
-        padding-top: 0;
 
         &::after {
             border: 0;
         }
+    }
+
+    .results {
+        padding-top: 0;
+    }
+
+    .results_count {
+        padding: unit( 15px / @base-font-size-px, em ) unit( 15px / @base-font-size-px, em ) 0 unit( 15px / @base-font-size-px, em );
+        border: 1px solid #b4b5b6;
+        background-color: #e2efd8;
+
+        .respond-to-min(@bp-med-min, {
+            border-left: 0;
+            padding-left: unit( 30px / @base-font-size-px, em );
+            padding-right: unit( 30px / @base-font-size-px, em );
+        });
+    }
+
+    .results_filters {
+        display: flex;
+        padding-top: unit( 15px / @base-font-size-px, em );
+
+        .respond-to-min(@bp-med-min, {
+            border-left: 0;
+            padding-left: unit( 30px / @base-font-size-px, em );
+            padding-right: unit( 30px / @base-font-size-px, em );
+        });
+
+        .a-tag {
+            background-color: #e2efd8;
+        }
+    }
+
+    .results_filters-label {
+        flex-shrink: 0;
+        line-height: 2.25;
+        margin-right: unit( 30px / @base-font-size-px, em );
+    }
+
+    .results_list {
+        padding: unit( 15px / @base-font-size-px, em ) 0;
+
+        .respond-to-min(@bp-med-min, {
+            padding-left: unit( 30px / @base-font-size-px, em );
+        });
+
+        li {
+            max-width: 100%;
+        }
+    }
+
+    .results_footer {
+        .respond-to-min(@bp-med-min, {
+            padding-left: unit( 30px / @base-font-size-px, em );
+        });
+    }
+
+    .layout-row > * {
+        display: inline-block;
+    }
+
+    .activity {
+        background: #fff;
+        border: 1px solid #babbdd;
+        box-sizing: border-box;
+        padding: unit( 30px / @base-font-size-px, em ) unit( 15px / @base-font-size-px, em );
+
+        .respond-to-min(@bp-med-min, {
+            padding: unit( 30px / @base-font-size-px, em );
+        });
+
+        h3,
+        h4,
+        h5,
+        h6,
+        li,
+        p {
+            max-width: 100%;
+        }
+    }
+
+    .activity_for {
+        font-weight: 500;
+    }
+
+    .activity_meta-wrapper {
+        justify-content: space-between;
+
+        div:first-child {
+            margin-bottom: unit( 30px / @base-font-size-px, em );
+        }
+
+        .respond-to-min(@bp-sm-min, {
+            display: flex;
+
+            div:first-child {
+                flex-basis: 60%;
+                margin-bottom: 0;
+                padding-right: unit( 30px / @base-font-size-px, em );
+            }
+
+            div:last-child {
+                flex-basis: 40%;
+            }
+        });
+    }
+
+    .activity_meta-key {
+        margin: 0;
+        text-transform: none;
     }
 }
