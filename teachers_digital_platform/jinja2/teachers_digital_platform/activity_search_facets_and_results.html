@@ -3,19 +3,30 @@
 {% from 'organisms/expandable.html' import expandable with context %}
 
 {% macro build_nested_facets(facets, type, is_child=False) %}
-    <ul class="m-list m-list__unstyled {% if not is_child %}u-mt15{% endif %}">
+    <ul class="m-list m-list__unstyled{% if not is_child %} u-mt15{% else %} o-expandable-facets_content{% endif %}">
         {% for facet in facets %}
             {% if facet.children %}
-                <li>
+                <li class="o-expandable-facets">
                     <div class="m-form-field m-form-field__checkbox">
                         <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                         <label class="a-label toggle" for="{{ type }}--{{ facet.title | trim | slugify}}">
                             <span class="u-visually-hidden">{{ facet.title }}</span>
                             <span class="u-hide-on-med u-hide-on-lg u-hide-on-xl" aria-hidden="true">{{ facet.title }}</span>
-                        </label><button class="a-btn a-btn__link u-hide-on-xs u-hide-on-sm">
+                        </label><button class="a-btn a-btn__link u-hide-on-xs u-hide-on-sm o-expandable-facets_target">
                             <span class="u-visually-hidden">Expand children</span>
                             <span aria-hidden="true">{{ facet.title }}</span>
-                            <span class="cf-icon cf-icon-down"></span>
+                            <span class="o-expandable-facets_cue o-expandable-facets_cue-open">
+                                <span class="u-visually-hidden">
+                                    {{ _('Show') }}
+                                </span>
+                                {{ svg_icon('chevron-down') }}
+                            </span>
+                            <span class="o-expandable-facets_cue o-expandable-facets_cue-close">
+                                <span class="u-visually-hidden">
+                                    {{ _('Hide') }}
+                                </span>
+                                {{ svg_icon('chevron-up') }}
+                            </span>
                         </button>
                     </div>
                     {{ build_nested_facets(facet.children, type, True) }}
