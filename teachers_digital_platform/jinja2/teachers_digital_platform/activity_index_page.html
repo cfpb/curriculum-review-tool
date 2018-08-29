@@ -1,4 +1,4 @@
-{% extends 'layout-1-3.html' %}
+{% extends 'layout-full.html' %}
 
 {% block css -%}
     {{ super() }}
@@ -7,63 +7,59 @@
 {%- endblock css %}
 
 {% block body_content scoped %}
-<div class="tdp-activity-search wrapper content_wrapper l-sidebar-1-2 {% block content_wrapper_modifiers -%}{%- endblock %}">
-    <section class="m-hero">
-        <div class="m-hero_wrapper">
-            <div class="m-hero_text">
-                <h1 class="m-hero_heading">{{ page.title | striptags }}</h1>
-                {{ page.intro | richtext }}
-                <div class="m-notification m-notification__visible m-notification__warning u-mt30 u-mb10">
-                    <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg></span>
-                    <div class="m-notification_content">
-                        <div class="m-notification_message">
-                            <h2 class="h4">Currently, there are only activities for high school.</h2>
-                            <p>Activities for elementary and middle school are being developed and will be available at a later time.</p>
+<div class="tdp-activity-search wrapper content_wrapper {% block content_wrapper_modifiers -%}{%- endblock %}">
+    <div class="content_main content__1-3">
+        <section class="m-hero">
+            <div class="m-hero_wrapper">
+                <div class="m-hero_text">
+                    <h1 class="m-hero_heading">{{ page.title | striptags }}</h1>
+                    {{ page.intro | richtext }}
+                    <div class="m-notification m-notification__visible m-notification__warning u-mt30 u-mb10">
+                        <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg></span>
+                        <div class="m-notification_content">
+                            <div class="m-notification_message">
+                                <h2 class="h4">Currently, there are only activities for high school.</h2>
+                                <p>Activities for elementary and middle school are being developed and will be available at a later time.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="m-hero_image-wrapper">
+                    <div class="m-hero_image"></div>
+                </div>
             </div>
-            <div class="m-hero_image-wrapper">
-                <div class="m-hero_image"></div>
-            </div>
-        </div>
-        <style>
-            .m-hero {
-                background-color: transparent;
-            }
-            .m-hero_image-wrapper {
-                margin-top: 0;
-            }
-            .m-hero_image {
-                background-image: url('https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg');
-                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src='https://s3.amazonaws.com/files.consumerfinance.gov/f/images/Auto_small_screen_hero.original.jpg',
-                    sizingMethod='scale');
-            }
-        </style>
-    </section>
-    <hr class="u-mb0 u-ml15 u-mr15" />
-    <h2>Find activities</h2>
-    <p>Search for financial education topics relevant to your class, then filter to narrow the results.</p>
-    <h3>Search</h3>
-    <p>Search for activities by key terms or concepts.</p>
-    <div class="layout-row">
-        <form class="keyword-search-form" action="." method="get" data-js-hook="behavior_submit-search">
-            <div class="flex-all typeahead-portal">
-                <section class="typeahead flex-all">
-                    <div class="m-btn-inside-input input-contains-label">
-                        <label class="input-contains-label_before input-contains-label_before__search"></label>
-                        <input type="text" autocomplete="off" class="a-text-input" placeholder="Enter your search term(s)"
-                               aria-label="The term to search for" id="searchText" name="q"
-                               value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
+            <style>
+                .m-hero_image {
+                    background-image: url('{{ static('tdp/img/search-landing-hero.jpg') }}');
+                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                        src='{{ static('tdp/img/search-landing-hero.jpg') }}',
+                        sizingMethod='scale');
+                }
+            </style>
+        </section>
+        <div class="block block__padded-top block__border-top u-mt0 u-mb30">
+            <h2>Search for activities</h2>
+            <form class="u-mt30" method="get" action="." data-js-hook="behavior_submit-search">
+                <div class="o-form__input-w-btn">
+                    <div class="o-form__input-w-btn_input-container">
+                        <div class="m-btn-inside-input input-contains-label">
+                            <label for="searchText" class="input-contains-label_before input-contains-label_before__search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880.6 1200" class="cf-icon-svg"><path d="M860.1 879.2L645.7 664.8c90.8-136.8 76-323-44.6-443.5-137.5-137.5-360.5-137.5-498 0s-137.5 360.5 0 498c118.5 118.4 303.9 137 443.5 44.6L761 978.3c27.3 27.3 71.7 27.3 99 0s27.4-71.8.1-99.1zm-508-116.9C191.4 762 61.3 631.5 61.6 470.8c.3-160.7 130.8-290.8 291.5-290.5s290.8 130.8 290.5 291.5c-.2 118.2-71.9 224.6-181.5 269.1-34.9 14.2-72.3 21.5-110 21.4z"></path></svg></label>
+                            <label for="searchText" class="input-contains-label_after input-contains-label_after__clear u-hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880.6 1200" class="cf-icon-svg"><path d="M860.1 879.2L645.7 664.8c90.8-136.8 76-323-44.6-443.5-137.5-137.5-360.5-137.5-498 0s-137.5 360.5 0 498c118.5 118.4 303.9 137 443.5 44.6L761 978.3c27.3 27.3 71.7 27.3 99 0s27.4-71.8.1-99.1zm-508-116.9C191.4 762 61.3 631.5 61.6 470.8c.3-160.7 130.8-290.8 291.5-290.5s290.8 130.8 290.5 291.5c-.2 118.2-71.9 224.6-181.5 269.1-34.9 14.2-72.3 21.5-110 21.4z"></path></svg></label>
+                            <input id="searchText" type="text" autocomplete="off" class="a-text-input" name="q"
+                                    placeholder="Enter your search term(s)"
+                                    aria-label="The term to search for"
+                                    value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
+                        </div>
                     </div>
-                </section>
-                <button type="submit" class="a-btn flex-fixed">Search</button>
-            </div>
-        </form>
-    </div>
-    <div id="tdp-search-facets-and-results">
-        {% include 'activity_search_facets_and_results.html' %}
+                    <div class="o-form__input-w-btn_btn-container">
+                        <button class="a-btn">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="tdp-search-facets-and-results">
+            {% include 'activity_search_facets_and_results.html' %}
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -76,4 +72,3 @@
         <script src="{{ static('tdp/js/tdp.js') }}"></script>
     <!--<![endif]-->
 {% endblock javascript %}
-
