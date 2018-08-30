@@ -9,6 +9,7 @@ if flag_enabled('TDP_SEARCH_INTERFACE'):
         text = indexes.CharField(document=True, use_template=True)
         date = indexes.DateTimeField(model_attr='date')
         summary = indexes.CharField(model_attr='summary')
+        live = indexes.BooleanField(model_attr='live')
 
         big_idea = indexes.CharField(model_attr='big_idea')
         essential_questions = indexes.CharField(model_attr='essential_questions')

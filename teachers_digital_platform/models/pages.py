@@ -92,7 +92,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             ('council_for_economic_education', (ActivityCouncilForEconEd, False, 25)),
         )
         search_query = request.GET.get('q', '')  # haystack cleans this string
-        sqs = SearchQuerySet().models(ActivityPage)
+        sqs = SearchQuerySet().models(ActivityPage).filter(live=True)
         # Load selected facets
         selected_facets = {}
         facet_queries = {}
