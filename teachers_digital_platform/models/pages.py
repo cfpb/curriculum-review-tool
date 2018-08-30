@@ -401,7 +401,7 @@ class ActivityPage(CFGOVPage):
             if descendants:
                 for child in children:
                     if set(child.get_descendants()) & set(self.topic.all()):
-                        children_list.append(child.title + " (" + self.get_topics_list(child) + ")")
+                        children_list.append(self.get_topics_list(child))
                     elif child in self.topic.all():
                         children_list.append(child.title)
 

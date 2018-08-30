@@ -6,7 +6,7 @@
     <ul class="m-list m-list__unstyled {% if not is_child %}u-mt15{% endif %}">
         {% for facet in facets %}
             {% if facet.children %}
-                <li>
+                <li {% if is_child %}class="u-hide-on-xs u-hide-on-sm"{% endif %}>
                     <div class="m-form-field m-form-field__checkbox">
                         <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                         <label class="a-label toggle{% if facet.child_selected and not facet.selected %} indeterminate{% endif %}" for="{{ type }}--{{ facet.title | trim | slugify}}">
@@ -21,7 +21,7 @@
                     {{ build_nested_facets(facet.children, type, True) }}
                 </li>
             {% else %}
-                <li class="u-hide-on-xs u-hide-on-sm">
+                <li {% if is_child %}class="u-hide-on-xs u-hide-on-sm"{% endif %}>
                     <div class="m-form-field m-form-field__checkbox">
                         <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                         <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
