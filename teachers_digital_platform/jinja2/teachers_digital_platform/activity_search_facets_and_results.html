@@ -6,10 +6,10 @@
     <ul class="m-list m-list__unstyled{% if not is_child %} u-mt15{% else %} o-expandable-facets_content{% endif %}">
         {% for facet in facets %}
             {% if facet.children %}
-                <li class="o-expandable-facets">
+                <li class="o-expandable-facets{% if is_child %} u-hide-on-xs u-hide-on-sm{% endif %}">
                     <div class="m-form-field m-form-field__checkbox">
                         <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                        <label class="a-label toggle" for="{{ type }}--{{ facet.title | trim | slugify}}">
+                        <label class="a-label toggle{% if facet.child_selected and not facet.selected %} indeterminate{% endif %}" for="{{ type }}--{{ facet.title | trim | slugify}}">
                             <span class="u-visually-hidden">{{ facet.title }}</span>
                             <span class="u-hide-on-med u-hide-on-lg u-hide-on-xl" aria-hidden="true">{{ facet.title }}</span>
                         </label><button class="a-btn a-btn__link u-hide-on-xs u-hide-on-sm o-expandable-facets_target">
@@ -32,7 +32,7 @@
                     {{ build_nested_facets(facet.children, type, True) }}
                 </li>
             {% else %}
-                <li class="u-hide-on-xs u-hide-on-sm">
+                <li {% if is_child %}class="u-hide-on-xs u-hide-on-sm"{% endif %}>
                     <div class="m-form-field m-form-field__checkbox">
                         <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="{{ type }}--{{ facet.title | trim | slugify}}" name="{{ type }}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                         <label class="a-label" for="{{ type }}--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
