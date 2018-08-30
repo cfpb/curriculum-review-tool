@@ -35,7 +35,7 @@ from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
 
 from teachers_digital_platform.models import (
     ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivitySpecialPopulation, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
+    ActivityStudentCharacteristics, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
     ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
 )
 
@@ -83,7 +83,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             ('topic', (ActivityTopic, True, 25)),
             ('grade_level', (ActivityGradeLevel, False, 10)),
             ('age_range', (ActivityAgeRange, False, 10)),
-            ('special_population', (ActivitySpecialPopulation, False, 10)),
+            ('student_characteristics', (ActivityStudentCharacteristics, False, 10)),
             ('activity_type', (ActivityType, False, 10)),
             ('teaching_strategy', (ActivityTeachingStrategy, False, 25)),
             ('blooms_taxonomy_level', (ActivityBloomsTaxonomyLevel, False, 25)),
@@ -296,7 +296,7 @@ class ActivityPage(CFGOVPage):
     # Audience
     grade_level = ParentalManyToManyField('teachers_digital_platform.ActivityGradeLevel', blank=False)
     age_range = ParentalManyToManyField('teachers_digital_platform.ActivityAgeRange', blank=False)
-    special_population = ParentalManyToManyField('teachers_digital_platform.ActivitySpecialPopulation', blank=True)
+    student_characteristics = ParentalManyToManyField('teachers_digital_platform.ActivityStudentCharacteristics', blank=True)
     # Activity Characteristics
     activity_type = ParentalManyToManyField('teachers_digital_platform.ActivityType', blank=False)
     teaching_strategy = ParentalManyToManyField('teachers_digital_platform.ActivityTeachingStrategy', blank=False)
@@ -337,7 +337,7 @@ class ActivityPage(CFGOVPage):
             [
                 FieldPanel('grade_level', widget=forms.CheckboxSelectMultiple),
                 FieldPanel('age_range', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('special_population', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('student_characteristics', widget=forms.CheckboxSelectMultiple),
             ],
             heading="Audience",
         ),
@@ -378,7 +378,7 @@ class ActivityPage(CFGOVPage):
         index.FilterField('topic'),
         index.FilterField('grade_level'),
         index.FilterField('age_range'),
-        index.FilterField('special_population'),
+        index.FilterField('student_characteristics'),
         index.FilterField('activity_type'),
         index.FilterField('teaching_strategy'),
         index.FilterField('blooms_taxonomy_level'),

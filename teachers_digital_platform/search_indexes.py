@@ -22,7 +22,7 @@ if flag_enabled('TDP_SEARCH_INTERFACE'):
         # Audience
         grade_level = indexes.MultiValueField(model_attr='grade_level', faceted=True)
         age_range = indexes.MultiValueField(model_attr='age_range', faceted=True)
-        special_population = indexes.MultiValueField(model_attr='special_population', faceted=True)
+        student_characteristics = indexes.MultiValueField(model_attr='student_characteristics', faceted=True)
         # Activity Characteristics
         activity_type = indexes.MultiValueField(model_attr='activity_type', faceted=True)
         teaching_strategy = indexes.MultiValueField(model_attr='teaching_strategy', faceted=True)
@@ -47,8 +47,8 @@ if flag_enabled('TDP_SEARCH_INTERFACE'):
         def prepare_age_range(self, obj):
             return [item.id for item in obj.age_range.all()]
 
-        def prepare_special_population(self, obj):
-            return [item.id for item in obj.special_population.all()]
+        def prepare_student_characteristics(self, obj):
+            return [item.id for item in obj.student_characteristics.all()]
 
         def prepare_activity_type(self, obj):
             return [item.id for item in obj.activity_type.all()]

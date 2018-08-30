@@ -98,11 +98,11 @@
 
     <div class="content_line u-mt30 u-mb30"></div>
 
-    {% if page.grade_level.all() or page.age_range.all() or page.special_population.all() %}
+    {% if page.grade_level.all() or page.age_range.all() or page.student_characteristics.all() %}
         <h4>Audience</h4>
         {% if page.grade_level.all() %}<p><strong>Grade level:</strong> {{ page.grade_level.all() | join(', ') }}</p>{% endif %}
         {% if page.age_range.all() %}<p><strong>Age range:</strong> {{ page.age_range.all() | join(', ') }}</p>{% endif %}
-        {% if page.special_population.all() %}<p><strong>Special population:</strong> {{ page.special_population.all() | join(', ') }}</p>{% endif %}
+        {% if page.student_characteristics.all() %}<p><strong>Student characteristics:</strong> {{ page.student_characteristics.all() | join(', ') }}</p>{% endif %}
         <div class="content_line u-mt30 u-mb30"></div>
     {% endif %}
 
