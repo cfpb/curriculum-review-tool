@@ -47,7 +47,7 @@ function clearFilter( event ) {
   // Uncheck the filter checkbox
   checkbox.checked = false;
   if ( event instanceof Event ) {
-    handleFilter( event );
+    handleFilter( event, checkbox );
   }
 }
 
@@ -90,10 +90,10 @@ function handleSubmit( event ) {
   utils.updateUrl( baseUrl, searchParams );
   utils.showLoading( searchContainer );
   searchRequest = fetch( searchUrl )
-    .then( response => {
+    .then( function( response ) {
       return response.text();
     } )
-    .then( data => {
+    .then( function( data ) {
       utils.hideLoading( searchContainer );
       searchContainer.innerHTML = data;
       utils.updateUrl( baseUrl, searchParams );
@@ -107,8 +107,9 @@ function handleSubmit( event ) {
  * Handle filter change events.
  *
  * @param {Event} event Click event
+ * @param {DOMElement} target DOM element
  */
-function handleFilter( event ) {
+function handleFilter( event, target = null ) {
   if ( event instanceof Event ) {
     event.preventDefault();
   }
@@ -117,6 +118,28 @@ function handleFilter( event ) {
   try {
     searchRequest.abort();
   } catch ( err ) { }
+  target = target ? target : event.target;
+  const wrapperLI = target.parentElement.parentElement;
+  if ( wrapperLI && wrapperLI.tagName.toLowerCase() === 'li' ) {
+
+    // Check all children if parent is checked.
+    const children = wrapperLI.querySelectorAll(
+      ':scope>ul>li input[type=checkbox]'
+    );
+    for ( var i = 0; i < children.length; i++ ) {
+      children[i].checked = target.checked;
+    }
+
+    // If this is a child checkbox, update the parent checkbox.
+    const parentUL = wrapperLI.parentElement.parentElement.parentElement;
+    if ( parentUL && parentUL.tagName.toLowerCase() === 'ul' ) {
+      const parentCheckbox = wrapperLI.parentElement.parentElement.querySelector(
+        ':scope>div>input[type=checkbox]'
+      );
+      _updateParentFilter( parentCheckbox );
+    }
+  }
+
   const searchContainer = find( '#tdp-search-facets-and-results' );
   const filters = document.querySelectorAll( 'input:checked' );
   const searchField = find( 'input[name=q]' );
@@ -130,16 +153,46 @@ function handleFilter( event ) {
   utils.updateUrl( baseUrl, searchParams );
   utils.showLoading( searchContainer );
   searchRequest = fetch( searchUrl )
-    .then( response => {
+    .then( function( response ) {
       return response.text();
     } )
-    .then( data => {
+    .then( function( data ) {
       utils.hideLoading( searchContainer );
       searchContainer.innerHTML = data;
       utils.updateUrl( baseUrl, searchParams );
       attachHandlers();
       return data;
     } );
+}
+
+/**
+ * Traverse parents and update there checkbox values.
+ *
+ * @param {DOMElement} element DOM element
+ */
+function _updateParentFilter( element ) {
+
+  var children = element.parentElement.parentElement.querySelectorAll(
+    ':scope>ul>li input[type=checkbox]'
+  );
+  var checkedChildren = element.parentElement.parentElement.querySelectorAll(
+    ':scope>ul>li input[type=checkbox]:checked'
+  );
+  if ( children ) {
+    if ( children.length === checkedChildren.length ) {
+      // Check parent if all children are checked (TODO: maybe we shouldn't do this?).
+      element.checked = true;
+    } else {
+      element.checked = false;
+    }
+  }
+  // Loop through ancestors and make sure they are checked or unchecked
+  var parentCheckbox = element.parentElement.parentElement.parentElement.parentElement.querySelector(
+    ':scope>div>input[type=checkbox]'
+  );
+  if ( parentCheckbox ) {
+    _updateParentFilter( parentCheckbox );
+  }
 }
 
 // Provide the no-JS experience to browsers without `replaceState`

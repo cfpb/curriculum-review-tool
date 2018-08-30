@@ -218,16 +218,17 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
                 final_facets.append(
                     {
                         'selected': root_facet['selected'],
+                        'child_selected': child_selected,
                         'id': root_facet['id'],
                         'title': root_facet['title'],
                         'parent': root_facet['parent'],
-                        'children': self.get_nested_facets(class_object, narrowed_facets, selected_facets, root_facet['id'])
+                        'children': children_list
                     })
             return final_facets
         else:
             children = [
                 {
-                    'selected': result['id'] in selected_facets,
+                    'selected': result['id'] in selected_facets or result['parent'] in selected_facets,
                     'id': result['id'],
                     'title': result['title'],
                     'parent': result['parent'],
@@ -400,7 +401,7 @@ class ActivityPage(CFGOVPage):
             if descendants:
                 for child in children:
                     if set(child.get_descendants()) & set(self.topic.all()):
-                        children_list.append(child.title + " (" + self.get_topics_list(child) + ")")
+                        children_list.append(self.get_topics_list(child))
                     elif child in self.topic.all():
                         children_list.append(child.title)
 
