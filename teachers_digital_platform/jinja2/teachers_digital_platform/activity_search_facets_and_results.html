@@ -135,7 +135,7 @@
         {% if facets.building_block or facets.school_subject or facets.topic %}
             </div>
         {% endif %}
-        {% if facets.grade_level or facets.age_range or facets.special_population %}
+        {% if facets.grade_level or facets.age_range or facets.student_characteristics %}
             <h3 class="u-hide-on-xs u-hide-on-sm u-mt15">Audience</h3>
             <div class="filter-section">
         {% endif %}
@@ -197,14 +197,14 @@
             </div>
             {% endcall %}
         {% endif %}
-        {% if facets.special_population %}
-            {% if 'special_population' in page.results.expanded_facets %}
+        {% if facets.student_characteristics %}
+            {% if 'student_characteristics' in page.results.expanded_facets %}
                 {% set is_expanded = true %}
             {% else %}
                 {% set is_expanded = false %}
             {% endif %}
             {% set expandable_settings = {
-                'label': 'Special population',
+                'label': 'Student characteristics',
                 'is_expanded': is_expanded,
                 'is_midtone': true,
                 'hide_cue_label': true
@@ -213,10 +213,10 @@
             <div class="o-form_group u-mt15">
                 <fieldset class="o-form_fieldset">
                     <ul class="m-list m-list__unstyled">
-                        {% for facet in facets.special_population %}
+                        {% for facet in facets.student_characteristics %}
                         <li>
                             <div class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="special-population--{{ facet.title | trim | slugify}}" name="special_population" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="special-population--{{ facet.title | trim | slugify}}" name="student_characteristics" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
                                 <label class="a-label" for="special-population--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </div>
                         </li>
@@ -226,7 +226,7 @@
             </div>
             {% endcall %}
         {% endif %}
-        {% if facets.grade_level or facets.age_range or facets.special_population %}
+        {% if facets.grade_level or facets.age_range or facets.student_characteristics %}
             </div>
         {% endif %}
         {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}

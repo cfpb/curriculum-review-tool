@@ -17,7 +17,7 @@ from wagtail.wagtailcore.whitelist import attribute_rule
 
 from teachers_digital_platform.models import (
     ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivitySpecialPopulation, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
+    ActivityStudentCharacteristics, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
     ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
 )
 
@@ -55,10 +55,10 @@ class ActivityAgeRangeModelAdmin(ModelAdmin):
     menu_label = 'Age range'
 
 
-class ActivitySpecialPopulationModelAdmin(ModelAdmin):
-    model = ActivitySpecialPopulation
+class ActivityStudentCharacteristicsModelAdmin(ModelAdmin):
+    model = ActivityStudentCharacteristics
     menu_icon = 'list-ul'
-    menu_label = 'Special population'
+    menu_label = 'Student characteristics'
 
 
 class ActivityTypeModelAdmin(ModelAdmin):
@@ -105,7 +105,7 @@ class MyModelAdminGroup(ModelAdminGroup):
         ActivitySchoolSubjectModelAdmin,
         ActivityGradeLevelModelAdmin,
         ActivityAgeRangeModelAdmin,
-        ActivitySpecialPopulationModelAdmin,
+        ActivityStudentCharacteristicsModelAdmin,
         ActivityTypeModelAdmin,
         ActivityTeachingStrategyModelAdmin,
         ActivityBloomsTaxonomyLevelModelAdmin,
