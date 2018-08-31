@@ -1,7 +1,8 @@
 {% extends 'content-base.html' %}
+{% from 'organisms/expandable.html' import expandable with context %}
 
 {% block title -%}
-    The journey to financial well-being
+    The journey to adult financial well-being
 {%- endblock title %}
 
 {% block css -%}
@@ -29,26 +30,22 @@
         <div class="o-tour_screen o-tour_screen__intro">
             <div class="wrapper content_wrapper">
                 <div class="o-tour_content">
-                    <div class="intro-block">
-                        <div class="content-l">
-                            <div class="content-l_col content-l_col-2-3">
-                                <h1>
-                                    The journey to financial well-being
-                                </h1>
-                                <p class="lead-paragraph">
-                                    As children grow, their ability to manage money and understand financial concepts grows with them. Financial capability stems from three interconnected building blocks of youth development. Understand how the building blocks work together to help young people achieve financial capability and learn strategies for teaching them in your classroom.
-                                </p>
-                                <p>
-                                    This tour highlights four steps on the journey to adult financial well-being. These parts provide an innovate approach to financial education to help educators help their students.
-                                </p>
-                                <a href="#stop-1" class="a-btn">
-                                    Start your tour
-                                </a>
-                            </div>
-                            <div class="content-l_col content-l_col-1-3">
-                                <div class="img"></div>
-                            </div>
-                        </div>
+                    <div class="o-tour_content-text o-tour_content-text__intro">
+                        <h1>
+                            The journey to adult financial well-being
+                        </h1>
+                        <p class="lead-paragraph">
+                            Research from the Bureau of Consumer Financial Protection shows that the attitudes, skills, and habits adults need to make informed financial decisions and achieve financial peace of mind begin to develop in youth.
+                        </p>
+                        <p>
+                            The four stops on this tour describe important steps on the journey to adult financial well-being, while highlighting the role financial education plays in helping young people successfully navigate their way.
+                        </p>
+                        <a class="a-btn a-btn__super" href="#stop-1">
+                            Start your tour
+                        </a>
+                    </div>
+                    <div class="o-tour_content-image o-tour_content-image__intro">
+                        ILLUSTRATION
                     </div>
                 </div>
             </div>
@@ -56,34 +53,241 @@
         <div class="o-tour_screen o-tour_screen__one" id="stop-1">
             <div class="wrapper content_wrapper">
                 <div class="o-tour_content">
-                    <div class="">
-                        Tour stop 1 of 4
+                    <div class="o-tour_content-image">
+                        ILLUSTRATION
                     </div>
-                    <h2 class="h1">
-                        Adult financial well-being
-                    </h2>
-                    <p class="lead-paragraph">
-                        A key measure of success for financial literacy education is the degree to which it improves financial well-being.
-                    </p>
-                    <p>
-                            But for many adults, financial well-being is more than the ability to do their taxes, track their spending, or balance a checking account. It’s the ability to make informed choices. This ability often relies on attitudes, skills, and habits developed during youth.
-                    </p>
-                    <p>
-                        That’s where you come in.
-                    </p>
-                    <a href="#stop-2" class="a-btn">
-                        Next stop: Nuturing youth financial capability
-
-                    </a>
-                    <a class="a-link a-link__icon" href="#stop-2">
-                        <span class="a-link_text">Next stop: Nuturing youth financial capability</span>
-                        <span class="a-icon">arrow-down-round</span>
-                    </a>
+                    <div class="o-tour_content-text">
+                        <div class="h5">
+                            Tour stop 1 of 4
+                        </div>
+                        <h2>
+                            Adult financial well-being
+                        </h2>
+                        <p class="h4">
+                            People with the same income, opportunities, or education can have very different levels of adult financial well-being.
+                        </p>
+                        <p>
+                            That’s because achieving financial well-being as an adult is about more than how much money you make or whether you’re able to do your taxes, balance your checkbook, or pay your bills. It’s about having control over your money and being able to make choices that allow you to enjoy life.
+                        </p>
+                        <p>
+                            Since financial well-being is the ultimate measure of success for financial literacy education, educators are vital to this journey.
+                        </p>
+                        <p>
+                            That’s where you come in.
+                        </p>
+                        <a class="a-link a-link__icon" href="#stop-2">
+                            <span class="a-link_text">Next stop: Nuturing youth financial capability</span>
+                            <span class="a-icon">{{ svg_icon('arrow-down-round') }}</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="o-tour_screen o-tour_screen__two" id="stop-2">
+            <div class="wrapper content_wrapper">
+                <div class="o-tour_content">
+                    <div class="o-tour_content-image">
+                        ILLUSTRATION
+                    </div>
+                    <div class="o-tour_content-text">
+                        <div class="h5">
+                            Tour stop 2 of 4
+                        </div>
+                        <h2>
+                            Youth financial capability
+                        </h2>
+                        <p class="h4">
+                            As children grow, their ability to manage money and understand financial concepts grows with them.
+                        </p>
+                        <p>
+                            Youth financial capability grows over time and is a key stepping-stone on the path to adult financial well-being. By understanding how, when, and where youth acquire the building blocks of financial capability, educators can select relevant programs and introduce innovative financial education strategies to nurture this development.
+                        </p>
+                        <p>
+                            You play a critical role in helping youth acquire these building blocks.
+                        </p>
+                        <a class="a-link a-link__icon" href="#stop-3">
+                            <span class="a-link_text">Next stop: The building blocks of financial capability</span>
+                            <span class="a-icon">{{ svg_icon('arrow-down-round') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o-tour_screen o-tour_screen__three" id="stop-3">
+            <div class="wrapper content_wrapper">
+                <div class="o-tour_content">
+                    <div class="o-tour_content-image">
+                        ILLUSTRATION
+                    </div>
+                    <div class="o-tour_content-text">
+                        <div class="h5">
+                            Tour stop 3 of 4
+                        </div>
+                        <h2>
+                            The building blocks of youth financial capability
+                        </h2>
+                        <p class="h4">
+                            Financial capability stems from three interconnected building blocks that support and encourage the development of additional skills and capabilities.
+                        </p>
+                        <p>
+                            These building blocks provide a framework for youth financial literacy education and help define how students learn the skills and knowledge they need to achieve financial well-being as adults. They go beyond traditional financial education by fostering a holistic and interdisciplinary approach to teaching financial literacy in all grade levels and subject areas.
+                        </p>
 
-
+                        <ul class="o-tour_expandable-list">
+                            <li>
+                                {% set expandable_settings = {
+                                    'label': 'Executive function',
+                                    'is_expanded': false,
+                                    'is_midtone': true,
+                                    'hide_cue_label': false
+                                } %}
+                                {% call() expandable(expandable_settings) %}
+                                    <div class="h6">
+                                        What is this building block?
+                                    </div>
+                                    <p>
+                                        Executive function is the ability to plan ahead, remember information, multitask, solve problems, and control impulses.
+                                    </p>
+                                    <div class="h6">
+                                        Why is it important?
+                                    </div>
+                                    <p>
+                                        Executive function lays the foundation for financial capability. The associated skills help you save money, set financial goals, make buying and saving decisions, stick to a budget, and resist impulses.
+                                    </p>
+                                    <div class="h6">
+                                        When do young people develop it?
+                                    </div>
+                                    <p>
+                                        Development of this building block begins during early childhood and increases in complexity throughout childhood and adolescence, as a young person’s brain evolves, and their cognitive abilities mature. Executive function continues to develop into adulthood.
+                                    </p>
+                                    <div class="h6">
+                                        How is it fostered in the classroom?
+                                    </div>
+                                    <p>
+                                        Effective strategies for fostering executive function allow students to practice patience, planning, problem-solving, and other foundational skills and cognitive processes.
+                                    </p>
+                                {% endcall %}
+                            </li>
+                            <li>
+                                {% set expandable_settings = {
+                                    'label': 'Financial habits and norms',
+                                    'is_expanded': false,
+                                    'is_midtone': true,
+                                    'hide_cue_label': false
+                                } %}
+                                {% call() expandable(expandable_settings) %}
+                                    <div class="h6">
+                                        What is this building block?
+                                    </div>
+                                    <p>
+                                        Financial habits and norms are the values, standards, routine practices, and rules to live by that you use to navigate your daily financial activities.
+                                    </p>
+                                    <div class="h6">
+                                        Why is it important?
+                                    </div>
+                                    <p>
+                                        Financial habits and norms help guide your day-to-day behaviors and money management routines for spending and saving. They shape the way you carry out common financial tasks.
+                                    </p>
+                                    <div class="h6">
+                                        When do young people develop it?
+                                    </div>
+                                    <p>
+                                        During middle childhood, this building block becomes more well-developed through observation of peers and the world around them, as well as their own direct experiences with money. Financial habits and norms continue to evolve through adolescence and into adulthood.
+                                    </p>
+                                    <div class="h6">
+                                        How is it fostered in the classroom?
+                                    </div>
+                                    <p>
+                                        Effective strategies for fostering financial habits and norms allow youth to draw meaning and connections from hands-on and real-world scenarios and experiences and apply them to their own set of practices.
+                                    </p>
+                                {% endcall %}
+                            </li>
+                            <li>
+                                {% set expandable_settings = {
+                                    'label': 'Financial knowledge and decision-making skills',
+                                    'is_expanded': false,
+                                    'is_midtone': true,
+                                    'hide_cue_label': false
+                                } %}
+                                {% call() expandable(expandable_settings) %}
+                                    <div class="h6">
+                                        What is this building block?
+                                    </div>
+                                    <p>
+                                        Financial knowledge and decision-making skills include familiarity with financial facts and concepts along with competency in research and analysis.
+                                    </p>
+                                    <div class="h6">
+                                        Why is it important?
+                                    </div>
+                                    <p>
+                                        Financial knowledge and decision-making skills help you identify times when you need credible financial information, process and compare the information you find, and lay out steps to act on that information.
+                                    </p>
+                                    <div class="h6">
+                                        When do young people develop it?
+                                    </div>
+                                    <p>
+                                        During adolescence, development of this building block is at its height, as young people have more direct experiences with money and the financial world and are more engaged in complex tasks and decision making. Financial knowledge and decision making continues to develop into adulthood.
+                                    </p>
+                                    <div class="h6">
+                                        How is it fostered in the classroom?
+                                    </div>
+                                    <p>
+                                        Effective strategies for fostering this building block help youth find and evaluate financial information and recognize when they should seek out more information before making financial decisions.
+                                    </p>
+                                {% endcall %}
+                            </li>
+                        </ul>
+                        <p>
+                            Introducing activities that develop the knowledge, skills, and behaviors of each building block helps better prepare youth for financial success.
+                        </p>
+                        <a class="a-link a-link__icon" href="#stop-4">
+                            <span class="a-link_text">Next stop: Integrating the building blocks</span>
+                            <span class="a-icon">{{ svg_icon('arrow-down-round') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o-tour_screen o-tour_screen__four" id="stop-4">
+            <div class="wrapper content_wrapper">
+                <div class="o-tour_content">
+                    <div class="o-tour_content-image">
+                        ILLUSTRATION
+                    </div>
+                    <div class="o-tour_content-text">
+                        <div class="h5">
+                            Tour stop 4 of 4
+                        </div>
+                        <h2>
+                            The building blocks in the classroom
+                        </h2>
+                        <p class="h4">
+                            Integrating the building blocks of financial capability throughout K–12 education represents a promising opportunity to reach young people at pivotal points in their development and in their financial lives.
+                        </p>
+                        <p>
+                            Educators working in schools, after-school programs, and community organizations can implement research-based strategies and provide supports and opportunities to help youth build a rich foundation for adult financial capability.
+                        </p>
+                        <p>
+                            Ready to implement the building blocks in the classroom?
+                        </p>
+                        <p>
+                            <a class="a-link" href="#">Search for activities</a>
+                        </p>
+                        <p>
+                            <a class="a-link" href="#">Teach the building blocks of financial capability</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock body_content %}
+
+{% block javascript %}
+    {{ super() }}
+
+    {# Conditional comment used to block IE8 and under from receiving JS #}
+    <!--[if gt IE 8]><!-->
+        <script src="{{ static('tdp/js/tdp.js') }}"></script>
+    <!--<![endif]-->
+{% endblock javascript %}
