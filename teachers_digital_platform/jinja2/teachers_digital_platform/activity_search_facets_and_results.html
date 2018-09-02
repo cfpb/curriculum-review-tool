@@ -12,7 +12,7 @@
                         <label class="a-label toggle{% if facet.child_selected and not facet.selected %} indeterminate{% endif %}" for="{{ type }}--{{ facet.title | trim | slugify}}">
                             <span class="u-visually-hidden">{{ facet.title }}</span>
                             <span class="u-hide-on-med u-hide-on-lg u-hide-on-xl" aria-hidden="true">{{ facet.title }}</span>
-                        </label><button class="a-btn a-btn__link u-hide-on-xs u-hide-on-sm o-expandable-facets_target">
+                        </label><button class="a-btn a-btn__link u-hide-on-xs u-hide-on-sm o-expandable-facets_target" type="button">
                             <span class="u-visually-hidden">Expand children</span>
                             <span aria-hidden="true">{{ facet.title }}</span>
                             <span class="o-expandable-facets_cue o-expandable-facets_cue-open">

@@ -15,7 +15,7 @@ const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).close
 
 const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
-const ExpandableTransition = require( 'cf-expandables/src/ExpandableTransition' );
+const ExpandableTransition = require( 'cf-expandables/node_modules/cf-atomic-component/src/utilities/transition/ExpandableTransition' );
 
 const ExpandableFacets = Organism.extend( {
   ui: {
@@ -49,12 +49,19 @@ const ExpandableFacets = Organism.extend( {
  * Initialize a new expandable.
  */
 function initialize() {
+  const customClasses = {
+    BASE_CLASS:   'o-expandable-facets_content__transition',
+    EXPANDED:     'o-expandable-facets_content__expanded',
+    COLLAPSED:    'o-expandable-facets_content__collapsed',
+    OPEN_DEFAULT: 'o-expandable-facets_content__onload-open'
+  };
+
   const transition = new ExpandableTransition(
-    this.ui.content
+    this.ui.content, customClasses
   );
   this.transition = transition.init();
 
-  if ( contains( this.ui.content, ExpandableTransition.CLASSES.EXPANDED ) ) {
+  if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
     addClass( this.ui.target, this.classes.targetExpanded );
   } else {
     addClass( this.ui.target, this.classes.targetCollapsed );
@@ -118,13 +125,8 @@ function toggleTargetState( element ) {
 }
 
 module.exports = ExpandableFacets;
-console.log('Russ');
 
 /**
  * Find .o-expandable-facets, add `is-open` class.
  * Find .o-expandable-facets_target and add a click handler to toggle classes on .o-expandable-facets between `is-open` and `is-closed`.
  */
-
-
-
-

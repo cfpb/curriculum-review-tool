@@ -23,6 +23,7 @@ const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const app = {
   init: () => {
     cfExpandables.init();
+    expandableFacets.init();
   }
 };
 
