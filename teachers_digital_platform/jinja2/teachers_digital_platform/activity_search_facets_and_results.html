@@ -216,8 +216,8 @@
                         {% for facet in facets.student_characteristics %}
                         <li>
                             <div class="m-form-field m-form-field__checkbox">
-                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="special-population--{{ facet.title | trim | slugify}}" name="student_characteristics" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
-                                <label class="a-label" for="special-population--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
+                                <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title}}" id="student-characteristics--{{ facet.title | trim | slugify}}" name="student_characteristics" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                                <label class="a-label" for="student-characteristics--{{ facet.title | trim | slugify}}">{{ facet.title }}</label>
                             </div>
                         </li>
                         {% endfor %}
