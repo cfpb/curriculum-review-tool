@@ -22,7 +22,8 @@ const ExpandableFacets = Organism.extend( {
     base:    '.o-expandable-facets',
     target:  '.o-expandable-facets_target',
     content: '.o-expandable-facets_content',
-    header:  '.o-expandable_header'
+    header:  '.o-expandable_header',
+    facetCheckbox:'.o-expandable-facets_checkbox'
   },
 
   classes: {
@@ -61,12 +62,6 @@ function initialize() {
   );
   this.transition = transition.init();
 
-  if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
-    addClass( this.ui.target, this.classes.targetExpanded );
-  } else {
-    addClass( this.ui.target, this.classes.targetCollapsed );
-  }
-
   const expandableGroup = closest(
     this.ui.target, '.' + this.classes.group
   );
@@ -79,6 +74,11 @@ function initialize() {
       'accordionActivated',
       _accordionActivatedHandler.bind( this )
     );
+  }
+
+  if ( this.ui.facetCheckbox.hasAttribute('checked') ) {
+    this.transition.toggleExpandable();
+    this.toggleTargetState( this.ui.target );
   }
 }
 
