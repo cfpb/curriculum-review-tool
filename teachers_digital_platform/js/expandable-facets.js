@@ -49,14 +49,6 @@ const ExpandableFacets = Organism.extend( {
  * Initialize a new expandable.
  */
 function initialize() {
-<<<<<<< HEAD
-  const transition = new ExpandableTransition(
-    this.ui.content
-  );
-  this.transition = transition.init();
-
-  if ( contains( this.ui.content, ExpandableTransition.CLASSES.EXPANDED ) ) {
-=======
   const customClasses = {
     BASE_CLASS:   'o-expandable-facets_content__transition',
     EXPANDED:     'o-expandable-facets_content__expanded',
@@ -70,7 +62,6 @@ function initialize() {
   this.transition = transition.init();
 
   if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
->>>>>>> f201a79e9a6e1e8f60fb83c912605655a6951847
     addClass( this.ui.target, this.classes.targetExpanded );
   } else {
     addClass( this.ui.target, this.classes.targetCollapsed );
