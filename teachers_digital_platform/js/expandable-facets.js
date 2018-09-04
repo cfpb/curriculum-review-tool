@@ -62,6 +62,12 @@ function initialize() {
   );
   this.transition = transition.init();
 
+  if ( contains( this.ui.content, customClasses.OPEN_DEFAULT ) ) {
+    addClass( this.ui.target, this.classes.targetExpanded );
+  } else {
+    addClass( this.ui.target, this.classes.targetCollapsed );
+  }
+
   const expandableGroup = closest(
     this.ui.target, '.' + this.classes.group
   );
