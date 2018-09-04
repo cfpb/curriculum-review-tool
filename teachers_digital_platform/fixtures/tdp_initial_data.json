@@ -2,30 +2,6 @@
     {
         "fields": {
             "weight": 0,
-            "title": "Executive function"
-        },
-        "model": "teachers_digital_platform.activitybuildingblock",
-        "pk": 1
-    },
-    {
-        "fields": {
-            "weight": 1,
-            "title": "Financial habits and norms"
-        },
-        "model": "teachers_digital_platform.activitybuildingblock",
-        "pk": 2
-    },
-    {
-        "fields": {
-            "weight": 2,
-            "title": "Financial knowledge and decision-making skills"
-        },
-        "model": "teachers_digital_platform.activitybuildingblock",
-        "pk": 3
-    },
-    {
-        "fields": {
-            "weight": 0,
             "title": "CTE (Career and Technical Education)"
         },
         "model": "teachers_digital_platform.activityschoolsubject",

@@ -1,0 +1,140 @@
+// Tour
+
+.o-tour {}
+
+.o-tour_screen {
+    position: relative;
+
+    &::before {
+        .respond-to-min(@bp-med-min, {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 50%;
+            right: 0;
+        });
+    }
+}
+
+.o-tour_content {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: unit( 30px / @base-font-size-px, em ) 0;
+    position: relative;
+    z-index: 1;
+
+    .respond-to-min(@bp-sm-min, {
+        padding: unit( 45px / @base-font-size-px, em ) unit( 15px / @base-font-size-px, em );
+    });
+
+    .respond-to-min(@bp-med-min, {
+        display: flex;
+        height: 100vh;
+        padding: unit( 45px / @base-font-size-px, em ) unit( 0px / @base-font-size-px, em );
+    });
+}
+
+.o-tour_content-intro {
+    display: flex;
+    margin: 0 unit( 15px / @base-font-size-px, em );
+}
+
+.o-tour_content-text,
+.o-tour_content-image {
+    margin: 0 unit( 15px / @base-font-size-px, em );
+
+    .respond-to-min(@bp-med-min, {
+        flex-basis: 50%;
+    });
+}
+
+.o-tour_content-text {
+    .respond-to-min(@bp-med-min, {
+        order: 1;
+        overflow: auto;
+        margin-right: unit( 30px / @base-font-size-px, em );
+    });
+
+    &__intro {
+        .respond-to-min(@bp-med-min, {
+            flex-basis: 66%;
+        });
+    }
+}
+
+
+.o-tour_content-image {
+    margin-bottom: unit( 30px / @base-font-size-px, em );
+
+    .respond-to-min(@bp-med-min, {
+        margin-bottom: 0;
+        margin-left: unit( 30px / @base-font-size-px, em );
+        order: 2;
+    });
+
+    &__intro {
+        display: none;
+
+        .respond-to-min(@bp-med-min, {
+            display: block;
+            flex-basis: 34%;
+        });
+    }
+}
+
+.o-tour_expandable-list {
+    border-top: 1px solid @gray-40;
+    list-style-type: none;
+    margin: unit( 30px / @base-font-size-px, em ) 0;
+    padding-left: 0;
+
+    li {
+        border-bottom: 1px solid @gray-40;
+        list-style-type: none;
+        margin: 0;
+    }
+}
+
+.o-tour_screen__intro {
+    .o-tour_content {
+        height: initial;
+        min-height: ~"calc( 100vh - 108px )";
+
+        .respond-to-min(@bp-med-min, {
+            min-height: ~"calc( 100vh - 226px )";
+        });
+    }
+}
+
+.o-tour_screen__one {
+    background: @pacific-20;
+
+    &::before {
+        background: @pacific-40;
+    }
+}
+
+.o-tour_screen__two {
+    background: @teal-20;
+
+    &::before {
+        background: @teal-40;
+    }
+}
+
+.o-tour_screen__three {
+    background: @gray-5;
+
+    &::before {
+        background: @gray-10;
+    }
+}
+
+.o-tour_screen__four {
+    background: @green-20;
+
+    &::before {
+        background: @green-40;
+    }
+}

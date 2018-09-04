@@ -5,7 +5,7 @@ from teachers_digital_platform.models import ActivityIndexPage
 from teachers_digital_platform.models import ActivityPage
 from teachers_digital_platform.models import (
     ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivitySpecialPopulation, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
+    ActivityStudentCharacteristics, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
     ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
 )
 from v1.models import HomePage
@@ -135,7 +135,7 @@ class TestActivityIndexPageSearch(TestCase):
     #         topic=ActivityTopic.objects.filter(pk__in=[6, 11]).all(),
     #         grade_level=ActivityGradeLevel.objects.filter(pk__in=[2]).all(),
     #         age_range=ActivityAgeRange.objects.filter(pk__in=[2]).all(),
-    #         special_population=[],
+    #         student_characteristics=[],
     #         activity_type=ActivityType.objects.filter(pk__in=[1, 2, 3]).all(),
     #         teaching_strategy=ActivityTeachingStrategy.objects.filter(pk__in=[6, 7]).all(),
     #         blooms_taxonomy_level=ActivityBloomsTaxonomyLevel.objects.filter(pk__in=[6]).all(),
@@ -174,7 +174,7 @@ class TestActivityIndexPageSearch(TestCase):
     #         topic=ActivityTopic.objects.filter(pk__in=[6, 11]).all(),
     #         grade_level=ActivityGradeLevel.objects.filter(pk__in=[2]).all(),
     #         age_range=ActivityAgeRange.objects.filter(pk__in=[2]).all(),
-    #         special_population=[],
+    #         student_characteristics=[],
     #         activity_type=ActivityType.objects.filter(pk__in=[1, 2, 3]).all(),
     #         teaching_strategy=ActivityTeachingStrategy.objects.filter(pk__in=[6, 7]).all(),
     #         blooms_taxonomy_level=ActivityBloomsTaxonomyLevel.objects.filter(pk__in=[6]).all(),

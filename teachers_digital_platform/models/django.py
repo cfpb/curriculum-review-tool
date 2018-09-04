@@ -73,7 +73,7 @@ class ActivityAgeRange(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 
-class ActivitySpecialPopulation(BaseActivityTaxonomy):
+class ActivityStudentCharacteristics(BaseActivityTaxonomy):
     panels = BaseActivityTaxonomy.panels
 
 

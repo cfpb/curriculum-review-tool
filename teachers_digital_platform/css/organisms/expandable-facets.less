@@ -16,7 +16,15 @@
     }
 }
 
-.o-expandable-facets_target {}
+.o-expandable-facets_target {
+  &.is-closed > .o-expandable-facets_cue-open {
+    display: inline-block;
+  }
+
+  &.is-open > .o-expandable-facets_cue-close {
+    display: inline-block;
+  }
+}
 
 .o-expandable-facets_cue {
     display: none;
@@ -26,4 +34,9 @@
 
 .o-expandable-facets_cue-close {}
 
-.o-expandable-facets_content {}
+.o-expandable-facets_content {
+    &.o-expandable-facets_content__collapsed {
+        display: none;
+    }
+
+}

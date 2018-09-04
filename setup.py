@@ -39,6 +39,7 @@ setup(
             'templates/search/indexes/teachers_digital_platform/*',
             'static/tdp/css/*',
             'static/tdp/js/*',
+            'static/tdp/img/*',
             'static/tdp/fonts/*',
             'fixtures/tdp_initial_data.json',
             'fixtures/tdp_updated_council_for_ed_data.json',
