@@ -63,7 +63,6 @@
     }
 }
 
-
 .o-tour_content-image {
     margin-bottom: unit( 30px / @base-font-size-px, em );
 
@@ -77,7 +76,8 @@
         display: none;
 
         .respond-to-min(@bp-med-min, {
-            display: block;
+            align-items: center;
+            display: flex;
             flex-basis: 34%;
         });
     }
@@ -94,6 +94,16 @@
         list-style-type: none;
         margin: 0;
     }
+}
+
+.o-tour_line {
+    background: orange;
+    height: 60%;
+    margin-left: ~"calc( 8% - 100px )";
+    position: fixed;
+    text-align: center;
+    width: 200px;
+    z-index: -1;
 }
 
 .o-tour_screen__intro {

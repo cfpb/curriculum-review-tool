@@ -9,6 +9,7 @@
     {{ super() }}
 
     <link rel="stylesheet" href="{{ static('tdp/css/tdp.css') }}">
+    <link rel="stylesheet" href="{{ static('tdp/css/aos.css') }}">
 {%- endblock css %}
 
 {% block pre_content scoped -%}
@@ -45,6 +46,11 @@
                         </a>
                     </div>
                     <div class="o-tour_content-image o-tour_content-image__intro">
+                        <div class="o-tour_line">LINE 1</div>
+                        <div class="o-tour_line" data-aos="fade" data-aos-duration="1000" data-aos-anchor="#stop-1">LINE 2</div>
+                        <div class="o-tour_line" data-aos="fade" data-aos-duration="1000" data-aos-anchor="#stop-2">LINE 3</div>
+                        <div class="o-tour_line" data-aos="fade" data-aos-duration="1000" data-aos-anchor="#stop-3">LINE 4</div>
+                        <div class="o-tour_line" data-aos="fade" data-aos-duration="1000" data-aos-anchor="#stop-4">LINE 5</div>
                         ILLUSTRATION
                     </div>
                 </div>
@@ -289,5 +295,6 @@
     {# Conditional comment used to block IE8 and under from receiving JS #}
     <!--[if gt IE 8]><!-->
         <script src="{{ static('tdp/js/tdp.js') }}"></script>
+        <script src="{{ static('tdp/js/aos.js') }}"></script>
     <!--<![endif]-->
 {% endblock javascript %}

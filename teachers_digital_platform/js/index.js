@@ -14,6 +14,7 @@
 //
 // app.init();
 
+const bbTool = require( './bb-tool' );
 const scroll = require( './scroll' );
 const search = require( './search' );
 const closest = require( './util/dom-traverse' ).closest;
@@ -23,6 +24,7 @@ const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const app = {
   init: () => {
     cfExpandables.init();
+    bbTool.init();
     expandableFacets.init();
     scroll.init();
   }
