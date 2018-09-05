@@ -19,11 +19,12 @@ const ExpandableTransition = require( 'cf-atomic-component/src/utilities/transit
 
 const ExpandableFacets = Organism.extend( {
   ui: {
-    base:    '.o-expandable-facets',
-    target:  '.o-expandable-facets_target',
-    content: '.o-expandable-facets_content',
-    header:  '.o-expandable_header',
-    facetCheckbox:'.o-expandable-facets_checkbox'
+    base:           '.o-expandable-facets',
+    target:         '.o-expandable-facets_target',
+    content:        '.o-expandable-facets_content',
+    header:         '.o-expandable_header',
+    facetCheckbox:  '.o-expandable-facets_checkbox',
+    facetLabel:     '.o-expandable-facets_checkbox ~ .a-label'
   },
 
   classes: {
@@ -82,7 +83,8 @@ function initialize() {
     );
   }
 
-  if ( this.ui.facetCheckbox.hasAttribute('checked') ) {
+  if ( this.ui.facetCheckbox.hasAttribute( 'checked' ) ||
+    contains( this.ui.facetLabel, 'indeterminate' ) ) {
     this.transition.toggleExpandable();
     this.toggleTargetState( this.ui.target );
   }
