@@ -17,11 +17,13 @@
 
 const search = require( './search' );
 const closest = require( './util/dom-traverse' ).closest;
+const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 
 const app = {
   init: () => {
     cfExpandables.init();
+    expandableFacets.init();
   }
 };
 

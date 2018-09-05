@@ -4,6 +4,7 @@ const behavior = require( './util/behavior' );
 const utils = require( './search-utils' );
 const closest = require( './util/dom-traverse' ).closest;
 const find = require( './util/dom-traverse' ).queryOne;
+const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 
 
@@ -27,6 +28,7 @@ function attachHandlers() {
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
   cfExpandables.init();
+  expandableFacets.init();
 }
 
 /**
