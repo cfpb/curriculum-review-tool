@@ -29,6 +29,7 @@
   "homepage": "https://github.com/cfpb/django-satellite-app#readme",
   "dependencies": {
     "amortize": "0.4.0",
+    "aos": "^3.0.0-beta.5",
     "autoprefixer": "7.1.6",
     "babel-core": "7.0.0-beta.3",
     "babel-loader": "7.1.5",
@@ -84,6 +85,7 @@
     "psi": "3.0.0",
     "require-dir": "0.3.2",
     "sauce-connect-tunnel": "0.2.1",
+    "smoothscroll-polyfill": "^0.4.3",
     "timelinejs": "2.35.6",
     "uglifyjs-webpack-plugin": "1.0.1",
     "vinyl-named": "1.1.0",

@@ -14,16 +14,22 @@
 //
 // app.init();
 
+// External modules
+const AOS = require( 'aos/dist/aos' );
+const cfExpandables = require( 'cf-expandables/src/Expandable' );
 
+// internal modules
+const scroll = require( './scroll' );
 const search = require( './search' );
 const closest = require( './util/dom-traverse' ).closest;
 const expandableFacets = require( './expandable-facets' );
-const cfExpandables = require( 'cf-expandables/src/Expandable' );
 
 const app = {
   init: () => {
+    AOS.init();
     cfExpandables.init();
     expandableFacets.init();
+    scroll.init();
   }
 };
 
