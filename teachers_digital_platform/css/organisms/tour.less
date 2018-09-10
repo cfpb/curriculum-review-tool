@@ -134,6 +134,7 @@
         max-width: unit( 370px / @base-font-size-px, em );
     });
 }
+
 .o-tour_illustration__intro {
     fill: #96c4ed;
 }
@@ -170,7 +171,7 @@
 .o-tour_line-image {
     height: 50vh;
     margin-bottom: 24vh;
-    margin-left: ~"calc( 75% - 8px )";
+    margin-left: ~'calc( 75% - 8px )';
     position: sticky;
     top: 25vh;
     width: 222px;
@@ -185,10 +186,10 @@
 
     .o-tour_content {
         height: initial;
-        min-height: ~"calc( 100vh - 108px )";
+        min-height: ~'calc( 100vh - 108px )';
 
         .respond-to-min(@bp-med-min, {
-            min-height: ~"calc( 100vh - 226px )";
+            min-height: ~'calc( 100vh - 226px )';
         });
     }
 }
