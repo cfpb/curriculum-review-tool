@@ -18,7 +18,7 @@
 const AOS = require( 'aos/dist/aos' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 
-// internal modules
+// Internal modules
 const scroll = require( './scroll' );
 const search = require( './search' );
 const closest = require( './util/dom-traverse' ).closest;
