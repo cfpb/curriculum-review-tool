@@ -6,6 +6,7 @@ const closest = require( './util/dom-traverse' ).closest;
 const find = require( './util/dom-traverse' ).queryOne;
 const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
+const tdpAnalytics = require( './tdp-analytics');
 
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
