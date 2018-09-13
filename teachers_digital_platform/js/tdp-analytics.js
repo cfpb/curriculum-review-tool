@@ -17,7 +17,7 @@ const find = require( './util/dom-traverse' ).queryOne;
 const sendEvent = ( action, label, category ) => {
   category = category || 'TDP Search Tool';
   const eventData = Analytics.getDataLayerOptions( action, label, category );
-  console.log( action, label );
+  // console.log( action, label );
   Analytics.sendEvent( eventData );
   return eventData;
 };
@@ -74,13 +74,13 @@ const handleExpandableClick = event => {
     return;
   }
   const action = `${ getExpandableState( expandable ) } filter`;
-  let section = find( 'span.o-expandable_label', expandable );
-  section = section ? section : find( 'span[aria-hidden=true]', expandable );
-  if ( !section ) {
+  let label = find( 'span.o-expandable_label', expandable );
+  label = label ? label : find( 'span[aria-hidden=true]', expandable );
+  if ( !label ) {
     return;
   }
-  section = section.textContent.trim();
-  return sendEvent( action, section );
+  label = label.textContent.trim();
+  return sendEvent( action, label );
 };
 
 /**
@@ -95,8 +95,31 @@ const handleFilterClick = event => {
     return;
   }
   const action = checkbox.checked ? 'filter' : 'remove filter';
-  const section = checkbox.getAttribute( 'aria-label' );
-  return sendEvent( action, section );
+  const label = checkbox.getAttribute( 'aria-label' );
+  return sendEvent( action, label );
+};
+
+/**
+ * handleClearFilterClick - Listen for clear filter clicks and report to GA.
+ *
+ * @param {event} event Click event
+ * @returns {object} Event data
+ */
+const handleClearFilterClick = event => {
+  // Continue only if the X icon was clicked and not the parent button
+  let target = event.target.tagName.toLowerCase();
+  if ( target !== 'svg' && target !== 'path' ) {
+    return;
+  }
+  target = closest( event.target, '.a-tag[data-js-hook=behavior_clear-filter]' );
+
+  if ( !target ) {
+    return;
+  }
+  const action = 'remove filter';
+  const label = target.textContent.trim();
+
+  return sendEvent( action, label );
 };
 
 /**
@@ -139,12 +162,12 @@ const handlePaginationClick = event => {
   }
 
   const action = isNextButton ? 'next page' : 'previous page';
-  let section = paginator.href.match( /\?.*page=(\d+)/ );
-  if ( !section ) {
+  let label = paginator.href.match( /\?.*page=(\d+)/ );
+  if ( !label ) {
     return;
   }
-  section = isNextButton ? parseInt( section[1], 10 ) - 1 : parseInt( section[1], 10 ) + 1;
-  return sendEvent( action, section );
+  label = isNextButton ? parseInt( label[1], 10 ) - 1 : parseInt( label[1], 10 ) + 1;
+  return sendEvent( action, label );
 };
 
 /**
@@ -163,12 +186,12 @@ const getClearBtn = event => {
 };
 
 /**
- * handleClearClick - Listen for clear all filters clicks and report to GA.
+ * handleClearAllClick - Listen for clear all filters clicks and report to GA.
  *
  * @param {event} event Click event
  * @returns {object} Event data
  */
-const handleClearClick = event => {
+const handleClearAllClick = event => {
   const clearBtn = getClearBtn( event );
   if ( !clearBtn ) {
     return;
@@ -183,8 +206,8 @@ const handleClearClick = event => {
     tagNames[i] = tags[i].textContent.trim();
   }
   const action = 'clear all filters';
-  const section = tagNames.join( '|' );
-  return sendEvent( action, section );
+  const label = tagNames.join( '|' );
+  return sendEvent( action, label );
 };
 
 /**
@@ -202,6 +225,10 @@ const bindAnalytics = () => {
   } );
 
   bindEvent( searchContent, {
+    click: handleClearFilterClick
+  } );
+
+  bindEvent( searchContent, {
     click: handlePaginationClick
   } );
 };
@@ -213,8 +240,9 @@ module.exports = {
   getExpandableState,
   handleExpandableClick,
   handleFilterClick,
+  handleClearFilterClick,
   handlePaginationClick,
-  handleClearClick,
+  handleClearAllClick,
   sendEvent,
   bindAnalytics
 };

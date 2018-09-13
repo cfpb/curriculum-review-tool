@@ -61,7 +61,7 @@ function clearFilter( event ) {
  */
 function clearFilters( event ) {
   // Handle Analytics here before tags vanish.
-  tdpAnalytics.handleClearClick( event );
+  tdpAnalytics.handleClearAllClick( event );
 
   const filterIcons = document.querySelectorAll( '.a-tag svg' );
   filterIcons.forEach( filterIcon => {
