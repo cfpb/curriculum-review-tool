@@ -18,7 +18,7 @@ const sendEvent = ( action, label, category ) => {
   category = category || 'TDP Search Tool';
   const eventData = Analytics.getDataLayerOptions( action, label, category );
   console.log( action, label );
-  //Analytics.sendEvent( eventData );
+  Analytics.sendEvent( eventData );
   return eventData;
 };
 
@@ -31,8 +31,8 @@ const sendEvent = ( action, label, category ) => {
  */
 const getExpandable = event => {
   let el = closest( event.target, '.o-expandable_header' );
-  el = !el ? closest( event.target, '.o-expandable-facets_target' ) : el;
-  el = !el ? event.target : el;
+  el = el ? el : closest( event.target, '.o-expandable-facets_target' );
+  el = el ? el : event.target;
 
   if (
     el.classList.contains( 'o-expandable_header' ) ||
@@ -75,29 +75,13 @@ const handleExpandableClick = event => {
   }
   const action = `${ getExpandableState( expandable ) } filter`;
   let section = find( 'span.o-expandable_label', expandable );
-  section = !section ? find( 'span[aria-hidden=true]', expandable ) : section;
-  if (!section ) {
+  section = section ? section : find( 'span[aria-hidden=true]', expandable );
+  if ( !section ) {
     return;
   }
   section = section.textContent.trim();
   return sendEvent( action, section );
 };
-
-/**
- * getFilter - Find the checkbox filter the user clicked.
- *
- * @param {event} event Click event
- *
- * @returns {DOMNode|null} The checkbox div or null if it's not a checkbox
- */
-const getFilter = event => {
-  const el = closest( event.target, '.m-form-field__checkbox' ) || event.target;
-  if ( el.classList.contains( 'm-form-field__checkbox' ) ) {
-    return el;
-  }
-  return null;
-};
-
 
 /**
  * handleFilterClick - Listen for filter clicks and report to GA.
@@ -106,13 +90,8 @@ const getFilter = event => {
  * @returns {object} Event data
  */
 const handleFilterClick = event => {
-  const checkboxFilter = getFilter( event );
-  let checkbox = find( 'input[type=checkbox]', checkboxFilter );
-  const button = find ('button.o-expandable-facets_target', checkboxFilter );
-  if ( button ) {
-    checkbox = event.target === checkbox ? event.target : null;
-  }
-  if ( !checkboxFilter || !checkbox ) {
+  const checkbox = event.target;
+  if ( !checkbox.classList.contains( 'a-checkbox' ) ) {
     return;
   }
   const action = checkbox.checked ? 'filter' : 'remove filter';
@@ -143,7 +122,7 @@ const getPaginator = event => {
  */
 const handlePaginationClick = event => {
   const paginator = getPaginator( event );
-  if ( !paginator) {
+  if ( !paginator ) {
     return;
   }
 
@@ -164,12 +143,12 @@ const handlePaginationClick = event => {
   if ( !section ) {
     return;
   }
-  section = isNextButton ? parseInt(section[1]) - 1 : parseInt(section[1]) + 1;
+  section = isNextButton ? parseInt( section[1], 10 ) - 1 : parseInt( section[1], 10 ) + 1;
   return sendEvent( action, section );
 };
 
 /**
- * getClearBtn - Find the paginator the user clicked.
+ * getClearBtn - Find the clear all filters button.
  *
  * @param {event} event Click event
  *
@@ -184,28 +163,35 @@ const getClearBtn = event => {
 };
 
 /**
- * handleClearClick - Listen for pagination clicks and report to GA.
+ * handleClearClick - Listen for clear all filters clicks and report to GA.
  *
  * @param {event} event Click event
  * @returns {object} Event data
  */
 const handleClearClick = event => {
   const clearBtn = getClearBtn( event );
-  const wrapper = clearBtn.parentElement;
-  const tags = find( '.a-tag', clearBtn.parentElement );
-  console.log( clearBtn, wrapper, tags );
-  if ( !clearBtn || !tags ) {
+  if ( !clearBtn ) {
     return;
   }
-
-
-}
+  const tagsWrapper = clearBtn.parentElement;
+  const tags = tagsWrapper.querySelectorAll( ':scope > .a-tag' );
+  if ( !tags || tags.length === 0 ) {
+    return;
+  }
+  var tagNames = [];
+  for ( var i = 0; i < tags.length; i++ ) {
+    tagNames[i] = tags[i].textContent.trim();
+  }
+  const action = 'clear all filters';
+  const section = tagNames.join( '|' );
+  return sendEvent( action, section );
+};
 
 /**
  * bindAnalytics - Set up analytics reporting.
  */
 const bindAnalytics = () => {
-  const searchContent = find( '#tdp-search-facets-and-results');
+  const searchContent = find( '#tdp-search-facets-and-results' );
 
   bindEvent( searchContent, {
     click: handleExpandableClick
@@ -218,28 +204,17 @@ const bindAnalytics = () => {
   bindEvent( searchContent, {
     click: handlePaginationClick
   } );
-
-  bindEvent( searchContent, {
-    click: handleClearClick
-  } );
 };
-
-/**
- * Initialize search functionality.
- */
-function init() {
-  // Override search form submission
-  bindAnalytics();
-}
-
 
 module.exports = {
   getExpandable,
-  getFilter,
+  getPaginator,
+  getClearBtn,
   getExpandableState,
   handleExpandableClick,
   handleFilterClick,
   handlePaginationClick,
+  handleClearClick,
   sendEvent,
   bindAnalytics
 };
