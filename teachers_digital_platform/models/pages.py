@@ -72,11 +72,12 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             template = 'teachers_digital_platform/activity_search_facets_and_results.html'
         return template
 
-
     @route(r'^$')
     @flag_check('TDP_SEARCH_INTERFACE', True)
     def search(self, request, *args, **kwargs):
+        return self.serve(request, *args, **kwargs)
 
+    def get_context(self, request, *args, **kwargs):
         facet_map = (
             ('building_block', (ActivityBuildingBlock, False, 10)),
             ('school_subject', (ActivitySchoolSubject, False, 25)),
@@ -161,12 +162,12 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             'total_results': total_results,
         })
         self.results = payload
-        context = self.get_context(request)
         results_per_page = validate_results_per_page(request)
         paginator = Paginator(payload['results'], results_per_page)
         current_page = validate_page_number(request, paginator)
         paginated_page = paginator.page(current_page)
 
+        context = super(ActivityIndexPage, self).get_context(request)
         context.update({
             'facet_counts': facet_counts,
             'facets': all_facets,
@@ -177,10 +178,7 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             'paginator': paginator,
             'show_filters': bool(facet_queries),
         })
-        return TemplateResponse(
-            request,
-            self.get_template(request),
-            context)
+        return context
 
     def get_flat_facets(self, class_object, narrowed_facets, selected_facets):
         final_facets = [
@@ -424,14 +422,13 @@ def validate_results_per_page(request):
     A utility for parsing the requested number of results per page.
 
     This should catch an invalid number of results and always return
-    a valid number of results, defaulting to 10.
+    a valid number of results, defaulting to 5.
     """
     raw_results = request.GET.get('results')
     if raw_results in ['10', '25', '50']:
         return int(raw_results)
     else:
         return 5
-
 
 def validate_page_number(request, paginator):
     """
