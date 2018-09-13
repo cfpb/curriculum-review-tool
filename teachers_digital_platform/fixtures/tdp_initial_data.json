@@ -399,7 +399,7 @@
             "weight": 0,
             "title": "English language learner (ELL)"
         },
-        "model": "teachers_digital_platform.activityspecialpopulation",
+        "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 1
     },
     {
@@ -407,7 +407,7 @@
             "weight": 0,
             "title": "Free and reduced lunch (FRL)"
         },
-        "model": "teachers_digital_platform.activityspecialpopulation",
+        "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 2
     },
     {
@@ -415,7 +415,7 @@
             "weight": 0,
             "title": "Rural communities"
         },
-        "model": "teachers_digital_platform.activityspecialpopulation",
+        "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 3
     },
     {
@@ -423,7 +423,7 @@
             "weight": 0,
             "title": "Special education (SPED)"
         },
-        "model": "teachers_digital_platform.activityspecialpopulation",
+        "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 4
     },
     {
@@ -431,7 +431,7 @@
             "weight": 0,
             "title": "Urban communities"
         },
-        "model": "teachers_digital_platform.activityspecialpopulation",
+        "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 5
     },
     {
