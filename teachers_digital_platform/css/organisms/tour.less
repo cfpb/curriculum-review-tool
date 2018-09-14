@@ -62,7 +62,6 @@
         align-items: center;
         display: flex;
         order: 1;
-        overflow: auto;
         margin-right: unit( 30px / @base-font-size-px, em );
     });
 
@@ -76,7 +75,8 @@
 
 .o-tour_content-holder {
     .respond-to-min(@bp-med-min, {
-        min-height: 75vh;
+        height: 75vh;
+        overflow: auto;
     });
 }
 
