@@ -68,7 +68,6 @@
     &__intro {
         .respond-to-min(@bp-med-min, {
             display: block;
-            flex-basis: 66%;
         });
     }
 }
@@ -119,8 +118,7 @@
         display: none;
 
         .respond-to-min(@bp-med-min, {
-            display: block;
-            flex-basis: 34%;
+            display: flex;
         });
     }
 }
@@ -137,6 +135,8 @@
 
 .o-tour_illustration__intro {
     fill: #96c4ed;
+    position: relative;
+    top: unit( -70px / @base-font-size-px, em );
 }
 
 .o-tour_expandable-list {
@@ -197,6 +197,10 @@
 .o-tour_screen__one::before,
 .o-tour_screen__one .o-tour_content-image::before {
     background: #ffc372;
+}
+
+.o-tour_line-intro {
+    fill: #96c4ed;
 }
 
 .o-tour_line-one {
