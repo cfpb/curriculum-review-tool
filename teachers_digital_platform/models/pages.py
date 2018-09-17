@@ -102,13 +102,6 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             if facet in request.GET and request.GET.get(facet):
                 selected_facets[facet] = [int(value) for value in request.GET.getlist(facet) if value.isdigit()]
                 facet_queries[facet] = facet + '_exact:' + (" OR " + facet + "_exact:").join([str(value) for value in selected_facets[facet]])
-        # Build query string
-        query_string = "&".join(
-            [str(facet_name) + "=" + ("&" + str(facet_name)+"=").join(map(str, facet_values))
-             for facet_name, facet_values in selected_facets.items()]
-        )
-        if search_query:
-            query_string = "q=" + str(search_query) + "&" + query_string
 
         payload = {
             'search_query': search_query,
@@ -117,7 +110,6 @@ class ActivityIndexPage(RoutablePageMixin, CFGOVPage):
             'selected_facets': selected_facets,
             'facet_queries': facet_queries,
             'all_facets': {},
-            'query_string': query_string
         }
 
         # Apply search query if it exists, but don't apply facets
