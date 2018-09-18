@@ -61,7 +61,7 @@
 
 <a class="skip-filters u-visually-hidden" href="#tdp-search-results">Skip to search results</a>
 
-<aside class="content_sidebar content__flush-top-on-small content__flush-sides-on-small filters">
+<aside class="content_sidebar content__flush-top-on-small content__flush-sides-on-small filters{% if not activities %} no-results{% endif %}">
     <h3>Filter results by</h3>
     <p class="u-hide-on-xs u-hide-on-sm">Narrow your search by selecting specific activity features.</p>
     <form action="." method="get" data-js-hook="behavior_change-filter">
@@ -432,13 +432,20 @@
         {% endif %}
     </form>
 </aside>
-<section id="tdp-search-results" class="results content_main content__flush-all-on-small content__flush-bottom" tabindex="-1">
+<section id="tdp-search-results" class="results content_main content__flush-all-on-small content__flush-bottom{% if not activities %} no-results{% endif %}" tabindex="-1">
     <a id="content_main"></a>
-    {% if activities %}
+
     <div class="results_header">
+        {% if activities %}
         <div class="results_count">
             <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
         </div>
+        {% else %}
+        <div class="results_count no-results">
+            <h3>No results match your search.</h3>
+            <p>Try adjusting your filters or searching for different terms.</p>
+        </div>
+        {% endif %}
         {% if show_filters %}
         <div class="results_filters">
             <span class="results_filters-label">
@@ -469,18 +476,17 @@
         </div>
         {% endif %}
     </div>
-    {% endif %}
     <div class="results_list">
+        {% if activities %}
         <ul class="m-list__unstyled">
             {% for result in activities %}
                 {% if result %}
                 <li class="u-mb30">{% include "activity_search_result.html" %}</li>
                 {% endif %}
-            {% else %}
-            <li> No results found.</li>
             {% endfor %}
 
         </ul>
+        {% endif %}
     </div>
     <div class="results_footer">
         {{ pagination.render( paginator.num_pages, current_page, '', '', 'Previous', 'Next' ) }}
