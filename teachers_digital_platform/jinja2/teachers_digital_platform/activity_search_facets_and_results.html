@@ -59,9 +59,9 @@
     {% endfor %}
 {% endmacro %}
 
-<a class="skip-filters u-visually-hidden" href="#tdp-search-results">Skip to search results</a>
+<a class="skip-filters u-visually-hidden{% if not activities %} skip-filters__hidden{% endif %}" href="#tdp-search-results">Skip to search results</a>
 
-<aside class="content_sidebar content__flush-top-on-small content__flush-sides-on-small filters{% if not activities %} no-results{% endif %}">
+<aside class="content_sidebar content__flush-top-on-small content__flush-sides-on-small filters{% if not activities %} filters__hidden{% endif %}">
     <h3>Filter results by</h3>
     <p class="u-hide-on-xs u-hide-on-sm">Narrow your search by selecting specific activity features.</p>
     <form action="." method="get" data-js-hook="behavior_change-filter">
@@ -432,48 +432,47 @@
         {% endif %}
     </form>
 </aside>
-<section id="tdp-search-results" class="results content_main content__flush-all-on-small content__flush-bottom{% if not activities %} no-results{% endif %}" tabindex="-1">
+<section id="tdp-search-results" class="content_main content__flush-all-on-small content__flush-bottom results{% if not activities %} results__full{% endif %}" tabindex="-1">
     <a id="content_main"></a>
-
     <div class="results_header">
         {% if activities %}
-        <div class="results_count">
-            <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
-        </div>
+            <div class="results_count">
+                <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
+            </div>
         {% else %}
-        <div class="results_count no-results">
-            <h3>No results match your search.</h3>
-            <p>Try adjusting your filters or searching for different terms.</p>
-        </div>
+            <div class="results_count results_count__empty">
+                <h3>No results match your search.</h3>
+                <p class="u-mb15">Try adjusting your filters or searching for different terms.</p>
+            </div>
         {% endif %}
         {% if show_filters %}
-        <div class="results_filters">
-            <span class="results_filters-label">
-                Filters applied
-            </span>
-            <div class="results_filters-tags">
-                {% for facet_name, facet_items in facets.items() %}
-                    {% if facet_name == 'topic'%}
-                        {{ build_nested_filter_tags(facet_items, facet_name) }}
-                    {% else %}
-                        {% for facet in facet_items %}
-                            {% if facet.selected %}
-                                {% set input_id = '#' + facet_name | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
-                                {{ tag.render({
-                                    'label': facet.title,
-                                    'value': input_id,
-                                    'behavior': 'clear-filter'
-                                }) }}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                {% endfor %}
-                <button class="a-btn a-btn__link a-btn__warning a-micro-copy results_filters-clear u-mb10"
-                        data-js-hook="behavior_clear-all">
-                    Clear all filters
-                </button>
+            <div class="results_filters">
+                <span class="results_filters-label">
+                    Filters applied
+                </span>
+                <div class="results_filters-tags">
+                    {% for facet_name, facet_items in facets.items() %}
+                        {% if facet_name == 'topic'%}
+                            {{ build_nested_filter_tags(facet_items, facet_name) }}
+                        {% else %}
+                            {% for facet in facet_items %}
+                                {% if facet.selected %}
+                                    {% set input_id = '#' + facet_name | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
+                                    {{ tag.render({
+                                        'label': facet.title,
+                                        'value': input_id,
+                                        'behavior': 'clear-filter'
+                                    }) }}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    <button class="a-btn a-btn__link a-btn__warning a-micro-copy results_filters-clear u-mb10"
+                            data-js-hook="behavior_clear-all">
+                        Clear all filters
+                    </button>
+                </div>
             </div>
-        </div>
         {% endif %}
     </div>
     <div class="results_list">
