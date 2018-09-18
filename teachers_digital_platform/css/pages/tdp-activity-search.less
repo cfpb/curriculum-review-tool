@@ -32,6 +32,10 @@
         width: initial;
     }
 
+    .skip-filters__hidden {
+        display: none;
+    }
+
     .content_sidebar {
         padding: unit( 15px / @base-font-size-px, em ) unit( 15px / @base-font-size-px, em ) 0;
         border: 1px solid @gray-40;
@@ -90,6 +94,10 @@
         }
     }
 
+    .filters__hidden {
+        display: none;
+    }
+
     .content_main {
         border: 0;
 
@@ -112,6 +120,11 @@
             padding-left: unit( 30px / @base-font-size-px, em );
             padding-right: unit( 30px / @base-font-size-px, em );
         });
+    }
+
+    .results_count__empty {
+        background-color: @red-20;
+        border-left: 1px solid @gray-40;
     }
 
     .results_filters {
@@ -150,6 +163,18 @@
     .results_footer {
         .respond-to-min(@bp-med-min, {
             padding-left: unit( 30px / @base-font-size-px, em );
+        });
+    }
+
+    .results__full {
+        margin-right: 0;
+        width: 100%;
+
+        .respond-to-min(@bp-med-min, {
+            .results_list,
+            .results_footer {
+                padding-left: 0;
+            }
         });
     }
 
