@@ -16,7 +16,7 @@ const scroll = {
         event.preventDefault();
 
         // Scroll smoothly to the target.
-        target.scrollIntoView( { behavior: 'smooth' } );
+        target.scrollIntoView( { behavior: 'smooth', block: 'start' } );
 
         // Update url hash.
         if ( history.pushState ) {
