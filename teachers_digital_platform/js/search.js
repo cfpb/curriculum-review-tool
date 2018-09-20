@@ -82,7 +82,7 @@ function clearFilters( event ) {
  * Handle keyword search form submission.
  *
  * @param {Event} event Click event
- * @returns {String} New page URL with search terms.
+ * @returns {object} XMLHttpRequest object
  */
 function handleSubmit( event ) {
   if ( event instanceof Event ) {
@@ -94,7 +94,12 @@ function handleSubmit( event ) {
   return data;
 }
 
-function fetchSearchResults( filters=[] ) {
+/**
+ * fetch search results based on filters and keywords.
+ *
+ * @param {NodeList} filters List of filter checkboxes
+ */
+function fetchSearchResults( filters = [] ) {
   const searchContainer = find( '#tdp-search-facets-and-results' );
   const baseUrl = window.location.href.split( '?' )[0];
   const searchField = find( 'input[name=q]' );
@@ -118,7 +123,7 @@ function fetchSearchResults( filters=[] ) {
     // Reattach event handlers after tags are reloaded
     attachHandlers();
     return data;
-    } );
+  } );
 }
 
 /**
@@ -126,6 +131,7 @@ function fetchSearchResults( filters=[] ) {
  *
  * @param {Event} event Click event
  * @param {DOMElement} target DOM element
+ * @returns {object} XMLHttpRequest object
  */
 function handleFilter( event, target = null ) {
   if ( event instanceof Event ) {

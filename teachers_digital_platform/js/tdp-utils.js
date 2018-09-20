@@ -7,8 +7,6 @@ const xhr = require( './util/ajax-request' ).ajaxRequest;
  *
  * @param {string} url URL to request
  * @param {function} cb  Success/failure callback
- *
- * @returns {object} XMLHttpRequest object
  */
 function fetch( url, cb ) {
   xhr( 'GET', url, {
