@@ -26,12 +26,30 @@ function init() {
  * Attach search results handlers
  */
 function attachHandlers() {
+  addDataGtmIgnore();
   behavior.attach( 'submit-search', 'submit', handleSubmit );
   behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
   cfExpandables.init();
   expandableFacets.init();
+}
+
+/**
+ * Ignore analytics for previous and next pagination buttons
+ */
+function addDataGtmIgnore() {
+  const ignoreBtns = [
+    'a.m-pagination_btn-next',
+    'a.m-pagination_btn-prev'
+  ];
+
+  for ( var i = 0; i < ignoreBtns.length; i++ ) {
+    const btn = document.querySelector( ignoreBtns[i] );
+    if ( btn ) {
+      btn.setAttribute( 'data-gtm_ignore', 'true' );
+    }
+  }
 }
 
 /**
