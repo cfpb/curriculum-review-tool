@@ -435,9 +435,16 @@
 <section id="tdp-search-results" class="content_main content__flush-all-on-small content__flush-bottom results{% if not activities %} results__full{% endif %}" tabindex="-1">
     <a id="content_main"></a>
     <div class="results_header">
-        {% if activities %}
+        {% if page.results.total_results and page.results.total_results > 0 %}
             <div class="results_count">
-                <h3>Showing {{ activities | length }} of {{ page.results.total_results }}  results</h3>
+                <h3>
+                    {% if page.results.total_activities > page.results.total_results %}
+                        Showing {{ page.results.total_results }}
+                        match{% if page.results.total_results > 1 %}es{% endif %}
+                        out of
+                    {% endif %}
+                    {{ page.results.total_activities }} activities
+                </h3>
             </div>
         {% else %}
             <div class="results_count results_count__empty">
