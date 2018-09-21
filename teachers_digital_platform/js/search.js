@@ -82,22 +82,22 @@ function clearFilters( event ) {
  * Handle keyword search form submission.
  *
  * @param {Event} event Click event
- * @returns {object} XMLHttpRequest object
+ * @returns {String} New page URL with search terms
  */
 function handleSubmit( event ) {
   if ( event instanceof Event ) {
     event.preventDefault();
   }
-  const filters = document.querySelectorAll( 'input:checked' );
   // fetch search results without applying filters when searching
-  const data = fetchSearchResults();
-  return data;
+  const searchUrl = fetchSearchResults();
+  return searchUrl;
 }
 
 /**
  * fetch search results based on filters and keywords.
  *
  * @param {NodeList} filters List of filter checkboxes
+ * @returns {String} New page URL with search terms
  */
 function fetchSearchResults( filters = [] ) {
   const searchContainer = find( '#tdp-search-facets-and-results' );
@@ -124,6 +124,7 @@ function fetchSearchResults( filters = [] ) {
     attachHandlers();
     return data;
   } );
+  return searchUrl;
 }
 
 /**
@@ -131,7 +132,7 @@ function fetchSearchResults( filters = [] ) {
  *
  * @param {Event} event Click event
  * @param {DOMElement} target DOM element
- * @returns {object} XMLHttpRequest object
+ * @returns {String} New page URL with search terms
  */
 function handleFilter( event, target = null ) {
   if ( event instanceof Event ) {
@@ -165,8 +166,8 @@ function handleFilter( event, target = null ) {
   }
 
   const filters = document.querySelectorAll( 'input:checked' );
-  const data = fetchSearchResults( filters );
-  return data;
+  const searchUrl = fetchSearchResults( filters );
+  return searchUrl;
 }
 
 /**
