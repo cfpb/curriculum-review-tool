@@ -1,11 +1,6 @@
-## Instructions to run
-1. Clone `git clone git@github.com:atuggle/tdp-prototype.git`
-2. *NPM install*
-3. *NPM start*
-4. Navigate to localhost:3000
-
-
-
-## Individual npm installs:
-* npm i -S redux
-* npm i -S redux-persist
+## Installing the REACT CRTool
+- Clone the repository inside the `develop-apps` folder of the cfgov-refresh repository located here: `cfgov-refresh/develop-apps`
+- Execute the following script file at the root of this repository
+```console
+root:~$ ./setup.sh
+```
