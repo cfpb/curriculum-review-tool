@@ -7,6 +7,8 @@ const find = require( './util/dom-traverse' ).queryOne;
 const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const tdpAnalytics = require( './tdp-analytics' );
+const fetch = require( './tdp-utils' ).fetch;
+require( 'element-qsa-scope' );
 
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
@@ -63,7 +65,9 @@ function clearFilters( event ) {
   // Handle Analytics here before tags vanish.
   tdpAnalytics.handleClearAllClick( event );
 
-  const filterIcons = document.querySelectorAll( '.a-tag svg' );
+  let filterIcons = document.querySelectorAll( '.a-tag svg' );
+  // IE doesn't support forEach w/ node lists so convert it to an array.
+  filterIcons = Array.prototype.slice.call( filterIcons );
   filterIcons.forEach( filterIcon => {
     const target = closest( filterIcon, 'button' );
     clearFilter( {
@@ -78,34 +82,48 @@ function clearFilters( event ) {
  * Handle keyword search form submission.
  *
  * @param {Event} event Click event
- * @returns {String} New page URL with search terms.
+ * @returns {String} New page URL with search terms
  */
 function handleSubmit( event ) {
   if ( event instanceof Event ) {
     event.preventDefault();
   }
-  const searchField = find( 'input[name=q]' );
-  const searchTerms = utils.getSearchValues( searchField, [] );
+  // fetch search results without applying filters when searching
+  const searchUrl = fetchSearchResults();
+  return searchUrl;
+}
+
+/**
+ * fetch search results based on filters and keywords.
+ *
+ * @param {NodeList} filters List of filter checkboxes
+ * @returns {String} New page URL with search terms
+ */
+function fetchSearchResults( filters = [] ) {
+  const searchContainer = find( '#tdp-search-facets-and-results' );
   const baseUrl = window.location.href.split( '?' )[0];
+  const searchField = find( 'input[name=q]' );
+  const searchTerms = utils.getSearchValues( searchField, filters );
   const searchParams = utils.serializeFormFields( searchTerms );
+
   const searchUrl = utils.buildSearchResultsURL(
     baseUrl, searchParams, { partial: true }
   );
-  const searchContainer = find( '#tdp-search-facets-and-results' );
-  // Update the filter query params in the URL
   utils.updateUrl( baseUrl, searchParams );
   utils.showLoading( searchContainer );
-  searchRequest = fetch( searchUrl )
-    .then( function( response ) {
-      return response.text();
-    } )
-    .then( function( data ) {
-      utils.hideLoading( searchContainer );
-      searchContainer.innerHTML = data;
-      utils.updateUrl( baseUrl, searchParams );
-      attachHandlers();
-      return data;
-    } );
+  searchRequest = fetch( searchUrl, ( err, data ) => {
+    utils.hideLoading( searchContainer );
+    if ( err !== null ) {
+      // TODO: Add message banner above search results
+      return console.error( utils.handleError( err ).msg );
+    }
+    searchContainer.innerHTML = data;
+    // Update the query params in the URL
+    utils.updateUrl( baseUrl, searchParams );
+    // Reattach event handlers after tags are reloaded
+    attachHandlers();
+    return data;
+  } );
   return searchUrl;
 }
 
@@ -114,6 +132,7 @@ function handleSubmit( event ) {
  *
  * @param {Event} event Click event
  * @param {DOMElement} target DOM element
+ * @returns {String} New page URL with search terms
  */
 function handleFilter( event, target = null ) {
   if ( event instanceof Event ) {
@@ -146,29 +165,9 @@ function handleFilter( event, target = null ) {
     }
   }
 
-  const searchContainer = find( '#tdp-search-facets-and-results' );
   const filters = document.querySelectorAll( 'input:checked' );
-  const searchField = find( 'input[name=q]' );
-  const searchTerms = utils.getSearchValues( searchField, filters );
-  const baseUrl = window.location.href.split( '?' )[0];
-  const searchParams = utils.serializeFormFields( searchTerms );
-  const searchUrl = utils.buildSearchResultsURL(
-    baseUrl, searchParams, { partial: true }
-  );
-  // Update the filter query params in the URL
-  utils.updateUrl( baseUrl, searchParams );
-  utils.showLoading( searchContainer );
-  searchRequest = fetch( searchUrl )
-    .then( function( response ) {
-      return response.text();
-    } )
-    .then( function( data ) {
-      utils.hideLoading( searchContainer );
-      searchContainer.innerHTML = data;
-      utils.updateUrl( baseUrl, searchParams );
-      attachHandlers();
-      return data;
-    } );
+  const searchUrl = fetchSearchResults( filters );
+  return searchUrl;
 }
 
 /**

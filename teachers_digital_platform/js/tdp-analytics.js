@@ -4,6 +4,7 @@ const Analytics = require( './Analytics' );
 const closest = require( './util/dom-traverse' ).closest;
 const bindEvent = require( './util/dom-events' ).bindEvent;
 const find = require( './util/dom-traverse' ).queryOne;
+require( 'element-qsa-scope' );
 
 /* eslint-disable consistent-return */
 

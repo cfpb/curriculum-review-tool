@@ -13,6 +13,8 @@ function getSearchValues( searchEl, filterEls ) {
   const field = {};
   field[searchEl.name] = searchEl.value;
   fields.push( field );
+  // IE doesn't support forEach w/ node lists so convert it to an array.
+  filterEls = Array.prototype.slice.call( filterEls );
   filterEls.forEach( input => {
     const field = {};
     field[input.name] = input.value;

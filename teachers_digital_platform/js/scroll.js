@@ -4,10 +4,12 @@ const smoothscroll = require( 'smoothscroll-polyfill' );
 
 const scroll = {
   init: () => {
-    const jumplinks = document.querySelectorAll( '[data-scroll]' );
+    let jumplinks = document.querySelectorAll( '[data-scroll]' );
 
     smoothscroll.polyfill();
 
+    // IE doesn't support forEach w/ node lists so convert it to an array.
+    jumplinks = Array.prototype.slice.call( jumplinks );
     jumplinks.forEach( function( jumplink ) {
       jumplink.addEventListener( 'click', function( event ) {
         const target = document.querySelector( jumplink.hash );

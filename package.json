@@ -48,6 +48,7 @@
     "cf-tables": "4.2.1",
     "cf-typography": "4.6.0",
     "del": "3.0.0",
+    "element-qsa-scope": "1.1.0",
     "es5-shim": "4.5.9",
     "glob-all": "3.1.0",
     "gulp": "3.9.1",
