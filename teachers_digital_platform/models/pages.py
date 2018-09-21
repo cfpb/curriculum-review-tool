@@ -90,6 +90,7 @@ class ActivityIndexPage(CFGOVPage):
         )
         search_query = request.GET.get('q', '')  # haystack cleans this string
         sqs = SearchQuerySet().models(ActivityPage).filter(live=True)
+        total_activities = sqs.count()
         # Load selected facets
         selected_facets = {}
         facet_queries = {}
@@ -104,6 +105,7 @@ class ActivityIndexPage(CFGOVPage):
             'search_query': search_query,
             'results': [],
             'total_results': 0,
+            'total_activities': total_activities,
             'selected_facets': selected_facets,
             'facet_queries': facet_queries,
             'all_facets': {},
