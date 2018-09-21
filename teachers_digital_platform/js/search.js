@@ -41,10 +41,10 @@ function attachHandlers() {
 function addDataGtmIgnore() {
   const ignoreBtns = [
     'a.m-pagination_btn-next',
-    'a.m-pagination_btn-prev',
+    'a.m-pagination_btn-prev'
   ];
 
-  for (var i = 0; i < ignoreBtns.length; i++) {
+  for ( var i = 0; i < ignoreBtns.length; i++ ) {
     const btn = document.querySelector( ignoreBtns[i] );
     if ( btn ) {
       btn.setAttribute( 'data-gtm_ignore', 'true' );
