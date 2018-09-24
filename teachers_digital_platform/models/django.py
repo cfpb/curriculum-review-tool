@@ -28,8 +28,8 @@ class BaseActivityTaxonomy(models.Model):
 class ActivityBuildingBlock(BaseActivityTaxonomy):
     options = (
         ('settings', 'Executive function'),
-        ('split', 'Financial habits and norms'),
-        ('piggy-bank-check', 'Financial knowledge and decision making'),
+        ('split', 'Financial knowledge and decision making'),
+        ('piggy-bank-check', 'Financial habits and norms'),
     )
     svg_icon = models.CharField(
         null=True,
