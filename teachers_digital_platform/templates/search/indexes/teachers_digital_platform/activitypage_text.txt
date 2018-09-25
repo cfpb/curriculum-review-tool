@@ -12,3 +12,37 @@
 {% for building_block in object.building_block.all %}
 {{ building_block.title|striptags|safe }}
 {% endfor %}
+
+{% for grade_level in object.grade_level.all %}
+{{ grade_level.title|striptags|safe }}
+{% endfor %}
+
+{% for age_range in object.age_range.all %}
+{{ age_range.title|striptags|safe }}
+{% endfor %}
+
+{% for student_characteristics in object.student_characteristics.all %}
+{{ student_characteristics.title|striptags|safe }}
+{% endfor %}
+
+{% for activity_type in object.activity_type.all %}
+{{ activity_type.title|striptags|safe }}
+{% endfor %}
+
+{% for teaching_strategy in object.teaching_strategy.all %}
+{{ teaching_strategy.title|striptags|safe }}
+{% endfor %}
+
+{% for blooms_taxonomy_level in object.blooms_taxonomy_level.all %}
+{{ blooms_taxonomy_level.title|striptags|safe }}
+{% endfor %}
+
+{{ object.activity_duration.title|striptags|safe }}
+
+{% for jump_start_coalition in object.jump_start_coalition.all %}
+{{ jump_start_coalition.title|striptags|safe }}
+{% endfor %}
+
+{% for council_for_economic_education in object.council_for_economic_education.all %}
+{{ council_for_economic_education.title|striptags|safe }}
+{% endfor %}
