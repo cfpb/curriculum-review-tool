@@ -202,10 +202,7 @@ function _updateParentFilter( element ) {
     ':scope>ul>li input[type=checkbox]:checked'
   );
   if ( children ) {
-    if ( children.length === checkedChildren.length ) {
-      // Check parent if all children are checked (TODO: maybe we shouldn't do this?).
-      element.checked = true;
-    } else {
+    if ( children.length !== checkedChildren.length ) {
       element.checked = false;
     }
   }
