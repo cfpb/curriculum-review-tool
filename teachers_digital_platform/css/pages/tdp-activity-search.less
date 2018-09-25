@@ -44,7 +44,7 @@
 
         .respond-to-min(@bp-med-min, {
             margin-bottom: 0;
-            padding-top: unit( 45px / @base-font-size-px, em )
+            padding-top: unit( 30px / @base-font-size-px, em )
         });
 
         .o-expandable {
@@ -72,11 +72,6 @@
         .filter-section {
             border-top: 1px solid @gray-40;
             padding-top: unit( 15px / @base-font-size-px, em );
-
-            .o-expandable:last-child {
-                border: 0;
-                margin-bottom: 0;
-            }
         }
 
         .filter-section__first {
@@ -229,6 +224,7 @@
     }
 
     .activity_meta-key {
+        font-size: unit( @base-font-size-px / 16 * 100, % );
         margin: 0;
         text-transform: none;
     }
