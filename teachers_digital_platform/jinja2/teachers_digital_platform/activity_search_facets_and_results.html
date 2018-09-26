@@ -62,7 +62,7 @@
 <a class="skip-filters u-visually-hidden{% if not activities %} skip-filters__hidden{% endif %}" href="#tdp-search-results">Skip to search results</a>
 
 <aside class="content_sidebar content__flush-top-on-small content__flush-sides-on-small filters{% if not activities %} filters__hidden{% endif %}">
-    <h3>Filter results by</h3>
+    <h3 class="h2">Filter results by</h3>
     <p class="u-hide-on-xs u-hide-on-sm">Narrow your search by selecting specific activity features.</p>
     <form action="." method="get" data-js-hook="behavior_change-filter">
         <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
@@ -149,7 +149,7 @@
             </div>
         {% endif %}
         {% if facets.grade_level or facets.age_range or facets.student_characteristics %}
-            <h3 class="u-hide-on-xs u-hide-on-sm u-mt15">Audience</h3>
+            <h3 class="u-hide-on-xs u-hide-on-sm u-mt45">Audience</h3>
             <div class="filter-section">
         {% endif %}
         {% if facets.grade_level %}
@@ -243,7 +243,7 @@
             </div>
         {% endif %}
         {% if facets.activity_type or facets.teaching_strategy or facets.blooms_taxonomy_level or facets.activity_duration %}
-            <h3 class="u-hide-on-xs u-hide-on-sm u-mt15">Activity characteristics</h3>
+            <h3 class="u-hide-on-xs u-hide-on-sm u-mt45">Activity characteristics</h3>
             <div class="filter-section u-hide-on-xs u-hide-on-sm">
         {% endif %}
         {% if facets.activity_type %}
@@ -366,7 +366,7 @@
             </div>
         {% endif %}
         {% if facets.council_for_economic_education or facets.jump_start_coalition %}
-            <h3 class="u-hide-on-xs u-hide-on-sm u-mt15">National standards</h3>
+            <h3 class="u-hide-on-xs u-hide-on-sm u-mt45">National standards</h3>
             <div class="filter-section u-hide-on-xs u-hide-on-sm">
         {% endif %}
         {% if facets.council_for_economic_education %}

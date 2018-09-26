@@ -31,35 +31,30 @@
 {% block body_content scoped %}
 <div class="tdp-activity-search wrapper content_wrapper {% block content_wrapper_modifiers -%}{%- endblock %}">
     <div class="content_main content__1-3">
-        <section class="m-hero">
-            <div class="m-hero_wrapper">
-                <div class="m-hero_text">
-                    <h1 class="m-hero_heading">{{ page.title | striptags }}</h1>
-                    {{ page.intro | richtext }}
-                    <div class="m-notification m-notification__visible m-notification__warning u-mt30 u-mb10">
-                        <span class="a-icon">{{ svg_icon('warning-round') }}</span>
-                        <div class="m-notification_content">
-                            <div class="m-notification_message">
-                                <h2 class="h4">Currently, there are only activities for high school.</h2>
-                                <p>Activities for elementary and middle school are being developed and will be available at a later time.</p>
-                            </div>
+        <section class="m-search-hero">
+            <div class="m-search-hero_text">
+                <h1 class="m-hero_heading">{{ page.title | striptags }}</h1>
+                {{ page.intro | richtext }}
+                <div class="m-notification m-notification__visible m-notification__warning u-mt30">
+                    <span class="a-icon">{{ svg_icon('warning-round') }}</span>
+                    <div class="m-notification_content">
+                        <div class="m-notification_message">
+                            <h2 class="h4">Currently, there are only activities for high school.</h2>
+                            <p>Activities for elementary and middle school are being developed and will be available at a later time.</p>
                         </div>
                     </div>
                 </div>
-                <div class="m-hero_image-wrapper">
-                    <div class="m-hero_image"></div>
-                </div>
             </div>
-            <style>
-                .m-hero_image {
-                    background-image: url('{{ static('tdp/img/search-landing-hero.jpg') }}');
-                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                        src='{{ static('tdp/img/search-landing-hero.jpg') }}',
-                        sizingMethod='scale');
-                }
-            </style>
+            <div class="m-search-hero_image-wrapper">
+                <img class="m-search-hero_image"
+                    srcset="{{ static('tdp/img/search-landing-hero.jpg') }},
+                        {{ static('tdp/img/search-landing-hero-2x.jpg') }} 2x"
+                    src="{{ static('tdp/img/search-landing-hero-2x.jpg') }}"
+                    width="498"
+                    alt="">
+            </div>
         </section>
-        <div class="block block__padded-top block__border-top u-mt0 u-mb30">
+        <div class="block block__padded-top block__border-top u-mt45 u-mb30">
             <h2>Search for activities</h2>
             <form class="u-mt30" method="get" action="." data-js-hook="behavior_submit-search">
                 <div class="o-form__input-w-btn">
