@@ -1,0 +1,28 @@
+//
+// Search hero
+//
+
+.m-search-hero {
+    .respond-to-min(@bp-sm-min, {
+        display: flex;
+    });
+}
+
+.m-search-hero_text {
+    .respond-to-min(@bp-med-min, {
+        flex-basis: 60%;
+    });
+}
+
+.m-search-hero_image-wrapper {
+    display: none;
+
+    .respond-to-min(@bp-med-min, {
+        box-sizing: border-box;
+        display: block;
+        flex-basis: 40%;
+        padding-left: unit( 30px / @base-font-size-px, em );
+    });
+}
+
+.m-search-hero_image {}
