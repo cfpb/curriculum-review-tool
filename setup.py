@@ -8,7 +8,7 @@ except (IOError, ImportError):
 
 
 install_requires = [
-    'Django>=1.8,<1.12',
+    'Django>=1.11,<1.12',
     'django-haystack',
     'django-mptt==0.9.0',
     'django-js-asset==1.1.0',
@@ -52,10 +52,7 @@ setup(
     },
     classifiers=[
         'Framework :: Django',
-        'Framework :: Django :: 1.10',
         'Framework :: Django :: 1.11',
-        'Framework :: Django :: 1.8',
-        'Framework :: Django :: 1.9',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'License :: Public Domain',
         'Programming Language :: Python',
