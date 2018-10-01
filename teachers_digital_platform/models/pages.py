@@ -3,6 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 from functools import partial
 
+import requests
 from django import forms
 from django.conf import settings
 from django.core.paginator import InvalidPage, Paginator
@@ -119,22 +120,7 @@ class ActivityIndexPage(CFGOVPage):
 
         # Get all facets and their counts
         facet_counts = sqs.facet_counts()
-        all_facets = {}
-        if 'fields' in facet_counts:
-            for facet, facet_config in facet_map:
-                class_object, is_nested, max_facet_count = facet_config
-                all_facets_sqs = sqs
-                other_facet_queries = [facet_query for facet_query_name, facet_query in facet_queries.items() if facet != facet_query_name]
-                for other_facet_query in other_facet_queries:
-                    all_facets_sqs = all_facets_sqs.narrow(str(other_facet_query))
-                narrowed_facet_counts = all_facets_sqs.facet_counts()
-                if 'fields' in narrowed_facet_counts and facet in narrowed_facet_counts['fields']:
-                    narrowed_facets = [value[0] for value in narrowed_facet_counts['fields'][facet]]
-                    narrowed_selected_facets = selected_facets[facet] if facet in selected_facets else []
-                    if is_nested:
-                        all_facets[facet] = self.get_nested_facets(class_object, narrowed_facets, narrowed_selected_facets)
-                    else:
-                        all_facets[facet] = self.get_flat_facets(class_object, narrowed_facets, narrowed_selected_facets)
+        all_facets = self.get_all_facets(facet_map, sqs, facet_counts, facet_queries, selected_facets)
 
         # List all facet blocks that need to be expanded
         always_expanded = {'building_block', 'topic', 'school_subject'}
@@ -177,6 +163,26 @@ class ActivityIndexPage(CFGOVPage):
             'show_filters': bool(facet_queries),
         })
         return context
+
+    def get_all_facets(self, facet_map, sqs, facet_counts, facet_queries, selected_facets):
+        all_facets = {}
+        if 'fields' in facet_counts:
+            for facet, facet_config in facet_map:
+                class_object, is_nested, max_facet_count = facet_config
+                all_facets_sqs = sqs
+                other_facet_queries = [facet_query for facet_query_name, facet_query in facet_queries.items() if facet != facet_query_name]
+                for other_facet_query in other_facet_queries:
+                    all_facets_sqs = all_facets_sqs.narrow(str(other_facet_query))
+                narrowed_facet_counts = all_facets_sqs.facet_counts()
+                if 'fields' in narrowed_facet_counts and facet in narrowed_facet_counts['fields']:
+                    narrowed_facets = [value[0] for value in narrowed_facet_counts['fields'][facet]]
+                    narrowed_selected_facets = selected_facets[facet] if facet in selected_facets else []
+                    if is_nested:
+                        all_facets[facet] = self.get_nested_facets(class_object, narrowed_facets, narrowed_selected_facets)
+                    else:
+                        all_facets[facet] = self.get_flat_facets(class_object, narrowed_facets, narrowed_selected_facets)
+        return all_facets
+
 
     def get_flat_facets(self, class_object, narrowed_facets, selected_facets):
         final_facets = [
@@ -427,7 +433,6 @@ def validate_results_per_page(request):
         return int(raw_results)
     else:
         return 5
-
 
 def validate_page_number(request, paginator):
     """
