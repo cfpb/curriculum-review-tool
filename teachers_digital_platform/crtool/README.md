@@ -1,7 +1,7 @@
-# CR-Tool built using React - embeded in a django form
+# Curriculum Review Tool
 
 **Description**:  
-- The Customer Review Tool is a web application that allows a teacher to asses the finacial merits of thier curriculum.  The assesment is made accross 4 dimensions "Content", "Quality", "Utility", & "Efficacy".  Once they are done responding to the questions in those dimensions they can print or save as PDF.
+- The Curriculum Review Tool is a web application that allows a teacher to assess the merits of a financial education curriculum.  The assesment is made accross 4 dimensions "Content", "Quality", "Utility", & "Efficacy".  Once they are done responding to the questions in those dimensions they can print or save as PDF.
 - Below is a view of the 4 Dimensions used
 ![](Documentation/DimensionButtons.png)
 - Let it be known of the 4 Dimensions above the Content Dimension has 3 different views based on grade range. Depending the user selection on the start page the Content Dimension will present a different set of questions.
@@ -10,23 +10,23 @@
     - Middle School Content
     - High School Content
 
-# Development Notes
+### Development Notes
 - **Application Break Down**:
   - There are two web forms to this application:
     - [../teachers_digital_platform/jinja2/teachers_digital_platform/crt-start.html](../jinja2/teachers_digital_platform/crt-start.html)
-        - This page is a standard Django template that uses JavaScript to store values in localStorage before redirecting you to the other page.
+        - This page is a jinja2 template that uses JavaScript to store values in localStorage before redirecting you to the other page.
     - [../teachers_digital_platform/jinja2/teachers_digital_platform/crt-survey.html](../jinja2/teachers_digital_platform/crt-survey.html)
         - This page is an empty template that initates the REACT application that handles the rest of the application.
     - Information is shared between the above two pages via localStorage.
-- **Decisions Made**
-    - `To use REACT`: There is a requirement to not refresh the page or past back.
-    - `To NOT use REDUX`: The application does not need to send any information to the server since we are using localStorage.  REDUX appeared to over complicate this application because it is so simple
-    - `To use localStorage`: There is a requirement to not send data to the server.  localStorage was the best solution that allows us to meet that requirement and still persist your data for extended amount of time. (NOTE: all localStorage has been implemented in the [teachers_digital_platform/crtool/src/js/business.logic/repository.js](src/js/business.logic/repository.js) file in an effort to make changing this in the future easier)
 
-  - **Technology stack**: Implemented using REACT with webpack.
+- **Technology stack**: Implemented using REACT with webpack.
     - Used the `create react app` when creating the initial app
-      - https://github.com/facebook/create-react-app/blob/master/README.md#getting-started
+        - https://github.com/facebook/create-react-app/blob/master/README.md#getting-started
     - This is important because it will now have a webpack.config.js.  Instead we have a package.json and the node_modules folder has defaults set up for us.
+    - It should be known we did not use `REDUX` for this application
+    - `Uses localStorage`: All localStorage has been implemented in the [teachers_digital_platform/crtool/src/js/business.logic/repository.js](src/js/business.logic/repository.js) file. This abstraction allows the backend to be changed in the future by editing one file.
+    - **Setup**: All the code for this tool has been implemented in the  [crtool](../crtool/) folder. (Except for the jina2 templates)
+        - This tool even has its own node modules and scripts 
 
 ## Installing the REACT CRTool
 - Clone the repository inside the `develop-apps` folder of the cfgov-refresh repository located here: `cfgov-refresh/develop-apps`
