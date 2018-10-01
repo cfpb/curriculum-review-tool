@@ -127,7 +127,7 @@ class TestActivityIndexPageSearch(TestCase):
         response = self.search_page.serve(my_request)
         response.render()
         # Assert
-        self.assertTrue('<h3>No results match your search.</h3>' in response.content)
+        self.assertTrue(b'<h3>No results match your search.</h3>' in response.content)
 
     @mock.patch('teachers_digital_platform.models.pages.SearchQuerySet.models')
     def test_search_get_all_facets_with_building_block_filter(self, mock_sqs):
