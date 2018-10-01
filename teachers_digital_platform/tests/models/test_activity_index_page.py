@@ -10,6 +10,7 @@ from teachers_digital_platform.models import (
     ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
 )
 import mock
+from model_mommy import mommy
 from v1.models import HomePage
 from django.test import RequestFactory, TestCase, override_settings
 from haystack.models import SearchResult
@@ -90,7 +91,7 @@ class TestActivityIndexPageSearch(TestCase):
     def test_activity_index_page_renders_with_query_parameters(self):
         # Arrange
         my_request = self.search_page.dummy_request()
-        my_request.environ["QUERY_STRING"]="?q=&building_block=1"
+        my_request.environ["QUERY_STRING"]="q=&building_block=1"
         # Act
         response = self.search_page.serve(my_request)
         response.render()
@@ -121,7 +122,7 @@ class TestActivityIndexPageSearch(TestCase):
     def test_search_index_page_handles_bad_query(self):  
         # Arrange
         my_request = self.search_page.dummy_request()
-        my_request.environ["QUERY_STRING"]="?q=voldemort"
+        my_request.environ["QUERY_STRING"]="q=voldemort"
         activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')
         # Act
         response = self.search_page.serve(my_request)
@@ -169,10 +170,12 @@ class TestActivityIndexPageSearch(TestCase):
         )
 
     def create_activity_detail_page(self, title='title', slug='slug'):
-        return ActivityPage(
+        activity_page = ActivityPage(
             live=True, 
-            title='Planning for future savings',
-            slug='planning-future-savings',
+            title=title,
+            slug=slug,
+            path=slug,
+            activity_file=mommy.make(Document),
             date="2018-07-31",
             summary="Students will discuss short-term and long-term goals and what\r\nmakes a goal SMART. They\u2019ll then create a short-term savings goal\r\nand make a plan to meet that goal.",
             big_idea="<p>Saving money is essential to a positive\u00a0financial future.</p>",
@@ -192,6 +195,7 @@ class TestActivityIndexPageSearch(TestCase):
             council_for_economic_education=ActivityCouncilForEconEd.objects.filter(pk__in=[4]).all(),
             jump_start_coalition=ActivityJumpStartCoalition.objects.filter(pk__in=[1]).all()
         )
+        return activity_page
 
 # print_to_file(response.content, 'response.html')
 def print_to_file(text, filename):
