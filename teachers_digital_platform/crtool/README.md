@@ -48,6 +48,7 @@ root:~$ ./setup.sh
     root:~$ npm test
     ``` 
 - Reconstruct snapshot data for the tests
+    - This will be needed if the content ever changes and the snapshot test fail for that reason.  You will also need this while writing new tests for any new pages where the non functional screen is in flux.
     ```console
     root:~$ npm test -- -u
     ``` 
