@@ -153,6 +153,45 @@ class TestActivityIndexPageSearch(TestCase):
         # Assert
         self.assertTrue('building_block' in actual_all_facets)
 
+    @mock.patch('teachers_digital_platform.models.pages.SearchQuerySet.models')
+    def test_search_get_all_facets_with_topic_block_is_nested_filter(self, mock_sqs):
+        # Arrange
+        facet_counts = {
+            'dates': {},
+            'fields': {
+                    'topic':'4',
+                },
+                'queries': {}
+            }
+        selected_facets = {u'topic': [1]}
+        facet_queries = {'topic':'topic_exact'}
+        facet_map = self.create_facet_map()
+        mock_sqs.facet_counts.return_value = facet_counts
+        # Act
+        actual_all_facets = self.search_page.get_all_facets(facet_map, mock_sqs, facet_counts, facet_queries, selected_facets)
+        # Assert
+        self.assertTrue('topic' in actual_all_facets)
+
+    def test_get_topics_list_returns_correct_topic_list_for_parent(self):
+        # Arrange
+        my_request = self.search_page.dummy_request()
+        my_request.environ["QUERY_STRING"]="q=voldemort"
+        activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')
+        # Act 
+        actual_topics_list = activity_page.get_topics_list(self.search_page)
+        # Assert
+        self.assertTrue('activities' in actual_topics_list)
+
+    def test_get_topics_list_returns_correct_topic_list_no_parent(self):
+        # Arrange
+        my_request = self.search_page.dummy_request()
+        my_request.environ["QUERY_STRING"]="q=voldemort"
+        activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')
+        # Act 
+        actual_topics_list = activity_page.get_topics_list(None)
+        # Assert
+        self.assertTrue('Save and Invest (Saving for short-term goals)' in actual_topics_list)
+
     def create_facet_map(self):
         return (
             ('building_block', (ActivityBuildingBlock, False, 10)),
