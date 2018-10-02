@@ -1,5 +1,7 @@
 {% extends 'layout-full.html' %}
 
+{% import 'templates/render_block.html' as render_block with context %}
+
 {% block css -%}
     {{ super() }}
 
@@ -33,8 +35,11 @@
     <div class="content_main content__1-3">
         <section class="m-search-hero">
             <div class="m-search-hero_text">
-                <h1 class="m-hero_heading">{{ page.title | striptags }}</h1>
-                {{ page.intro | richtext }}
+                {% for block in page.header -%}
+                    {% if block.block_type != 'hero' %}
+                        {{ render_block.render(block, loop.index) }}
+                    {% endif %}
+                {%- endfor %}
                 <div class="m-notification m-notification__visible m-notification__warning u-mt30">
                     <span class="a-icon">{{ svg_icon('warning-round') }}</span>
                     <div class="m-notification_content">

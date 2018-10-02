@@ -27,11 +27,12 @@ from wagtail.wagtailadmin.edit_handlers import (
 from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
 from wagtail.wagtailcore.models import Page, PageManager
 from wagtail.wagtailsearch import index
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtaildocs.models import Document
 from wagtail.wagtailimages.models import Image
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 
+from v1.atomic_elements import molecules
 from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
 
 from teachers_digital_platform.models import (
@@ -50,10 +51,13 @@ class ActivityIndexPage(CFGOVPage):
 
     objects = CFGOVPageManager()
 
-    intro = RichTextField(blank=True)
+    header = StreamField([
+        ('text_introduction', molecules.TextIntroduction()),
+    ], blank=True)
+
     results = {}
     content_panels = CFGOVPage.content_panels + [
-        FieldPanel('intro'),
+        StreamFieldPanel('header'),
     ]
 
     edit_handler = TabbedInterface([
