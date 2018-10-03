@@ -77,20 +77,39 @@ root:~$ ./setup.sh
     3) Final Print/Summary pages
         - These pages are where every thing in the tool is presented in a NON editable fasion for printing or saving as PDF from the print menu.
 
-## Editing Content #
+## Content Overview
+- Content is any text that is unique to a given Dimension showing up after you click a Dimension button.
 - Master content can be found here:
   - [../src/js/content_data/](src/js/content_data)
-  - NOTE: unfortunately time got away from us and the ...CriterionPage.js files did not pull the content from the master location since they were developed before the master content_data folder was created. We look forward to refactoring this out so every thing pulls from the json files in the content_data folder.
+- To better understand what the content is, take a moment to look at the JavaScript files located in the above linked content_data folder.
+- REACT code imports a JavaScript file from the content_data folder (i.e. [utilityContent.js](src/js/content_data/utilityContent.js)) and loops through the objects passing the content down to the REACT components to display to the screen.
+    - NOTE: unfortunately time got away from us and the ...CriterionPage.js & ...PrintPage.js files did not pull the content from the master location since they were developed before the master content_data folder was created. We look forward to refactoring this out so every thing pulls from the json files in the content_data folder.
+    - The ...PrintPage.js files are a step closer to pulling data from the content_data folder in that they already reuse other REACT components (this makes more sense when you look at the actual file)
+    - The ...CriterionPage.js files are rather large and have all the content and html located in the same file.
 
-### How to edit `Content` Break down ##
-1. Start by editing the json files in the [../src/js/content_data/](src/js/content_data) folder.
-2. Dimension Survey pages has content in TWO different locations:
-    - ../src/js/components/pages/**/*CriterionPage.js
+### How to edit `Content`
+- The easiest way to change content is do a Find in Files for the text you want to change, change it in all locations it shows up and submit a PR.
+    - The functionality of this tool is not affected by the content changing.
+- Before starting the steps below it is important to understand there are 3 different types of content for each Dimension
+    - Dimension Criterion
+    - Dimension Print
+    - Dimension Summary
+        - Only the Summary/Print have content in one location
+#### Steps
+1. Start by editing the JavaScript files in the [../src/js/content_data/](src/js/content_data) folder. (Find in Files the text you want to change and take note where it shows up)
+2. Both Criterion & Print pages have content in TWO different locations. The content_data folder & in their repective location below
+    - Criterion Pages:
+    (../src/js/components/pages/**/*CriterionPage.js)
         - ContentElementaryCriterionPage.js
         - ContentMiddleCriterionPage.js
         - ContentHighCriterionPage.js
         - QualityCriterionPage.js
         - UtilityCriterionPage.js
         - EfficacyCriterionPage.js
-    - ../src/js/content_data
-        - This is where all pages should pull their content from.  Pending a refactor of the CriterionPages.
+    - Print Pages (../src/js/components/pages/**/*PrintPage.js)
+        - ContentElementaryPrintPage.js
+        - ContentMiddlePrintPage.js
+        - ContentHighPrintPage.js
+        - QualityPrintPage.js
+        - UtilityPrintPage.js
+        - EfficacyPrintPage.js
