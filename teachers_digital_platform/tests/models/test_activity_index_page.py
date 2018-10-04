@@ -1,26 +1,31 @@
 from django.test import RequestFactory, TestCase, override_settings
 
+import mock
+from model_mommy import mommy
+from scripts import _atomic_helpers as atomic
+from teachers_digital_platform.models import (
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityIndexPage,
+    ActivityJumpStartCoalition,
+    ActivityPage,
+    ActivitySchoolSubject,
+    ActivityStudentCharacteristics,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
+)
+from wagtail.tests.utils import WagtailPageTests
 from wagtail.wagtailcore.blocks import StreamValue
 from wagtail.wagtailcore.models import Site
 from wagtail.wagtaildocs.models import Document
-from wagtail.tests.utils import WagtailPageTests
 
-from v1.tests.wagtail_pages.helpers import publish_page
-
-from scripts import _atomic_helpers as atomic
-
-from teachers_digital_platform.models import ActivityIndexPage
-from teachers_digital_platform.models import ActivityPage
-from teachers_digital_platform.models import (
-    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic,
-    ActivityGradeLevel, ActivityAgeRange, ActivityStudentCharacteristics,
-    ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
-    ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
-)
-
-import mock
-from model_mommy import mommy
 from v1.models import HomePage
+from v1.tests.wagtail_pages.helpers import publish_page
 
 
 @override_settings(

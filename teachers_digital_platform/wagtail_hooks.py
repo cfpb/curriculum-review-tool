@@ -3,18 +3,24 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 from mptt.admin import DraggableMPTTAdmin
-
-from wagtail.contrib.modeladmin.options import (
-    ModelAdmin, ModelAdminGroup, modeladmin_register
-)
-
 from teachers_digital_platform.models import (
-    ActivityBuildingBlock, ActivitySchoolSubject,
-    ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivityStudentCharacteristics, ActivityType,
-    ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
-    ActivityDuration, ActivityJumpStartCoalition,
-    ActivityCouncilForEconEd
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityJumpStartCoalition,
+    ActivitySchoolSubject,
+    ActivityStudentCharacteristics,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
+)
+from wagtail.contrib.modeladmin.options import (
+    ModelAdmin,
+    ModelAdminGroup,
+    modeladmin_register,
 )
 
 
