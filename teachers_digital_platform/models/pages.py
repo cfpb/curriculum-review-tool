@@ -1,45 +1,32 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-from functools import partial
-
-import requests
 from django import forms
-from django.conf import settings
 from django.core.paginator import InvalidPage, Paginator
 from django.db import models
-from django.template.response import TemplateResponse
 from django.utils import timezone
-
-from flags.decorators import flag_check
-
 from haystack.query import SearchQuerySet
 
-from modelcluster.fields import ParentalKey, ParentalManyToManyField
-
-from teachers_digital_platform.fields import ParentalTreeManyToManyField
-
 from wagtail.wagtailadmin.edit_handlers import (
-    FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel, ObjectList, StreamFieldPanel,
-    TabbedInterface
+    FieldPanel, MultiFieldPanel, ObjectList, StreamFieldPanel, TabbedInterface
 )
-
-from wagtail.contrib.wagtailroutablepage.models import RoutablePageMixin, route
-from wagtail.wagtailcore.models import Page, PageManager
-from wagtail.wagtailsearch import index
 from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtaildocs.models import Document
-from wagtail.wagtailimages.models import Image
+from wagtail.wagtailcore.models import Page
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
+from wagtail.wagtailsearch import index
+
+from modelcluster.fields import ParentalManyToManyField
+from teachers_digital_platform.fields import ParentalTreeManyToManyField
+from teachers_digital_platform.models import (
+    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
+    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
+    ActivityJumpStartCoalition, ActivitySchoolSubject,
+    ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
+    ActivityType
+)
 
 from v1.atomic_elements import molecules
-from v1.models import CFGOVPage, CFGOVPageManager, CFGOVImage
-
-from teachers_digital_platform.models import (
-    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivityStudentCharacteristics, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
-    ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
-)
+from v1.models import CFGOVPage, CFGOVPageManager
 
 
 class ActivityIndexPage(CFGOVPage):
@@ -75,7 +62,7 @@ class ActivityIndexPage(CFGOVPage):
     def get_template(self, request):
         template = 'teachers_digital_platform/activity_index_page.html'
         if 'partial' in request.GET:
-            template = 'teachers_digital_platform/activity_search_facets_and_results.html'
+            template = 'teachers_digital_platform/activity_search_facets_and_results.html'  # noqa: E501
         return template
 
     def get_context(self, request, *args, **kwargs):
@@ -85,13 +72,13 @@ class ActivityIndexPage(CFGOVPage):
             ('topic', (ActivityTopic, True, 25)),
             ('grade_level', (ActivityGradeLevel, False, 10)),
             ('age_range', (ActivityAgeRange, False, 10)),
-            ('student_characteristics', (ActivityStudentCharacteristics, False, 10)),
+            ('student_characteristics', (ActivityStudentCharacteristics, False, 10)),  # noqa: E501
             ('activity_type', (ActivityType, False, 10)),
             ('teaching_strategy', (ActivityTeachingStrategy, False, 25)),
-            ('blooms_taxonomy_level', (ActivityBloomsTaxonomyLevel, False, 25)),
+            ('blooms_taxonomy_level', (ActivityBloomsTaxonomyLevel, False, 25)),  # noqa: E501
             ('activity_duration', (ActivityDuration, False, 10)),
             ('jump_start_coalition', (ActivityJumpStartCoalition, False, 25)),
-            ('council_for_economic_education', (ActivityCouncilForEconEd, False, 25)),
+            ('council_for_economic_education', (ActivityCouncilForEconEd, False, 25)),  # noqa: E501
         )
         search_query = request.GET.get('q', '')  # haystack cleans this string
         sqs = SearchQuerySet().models(ActivityPage).filter(live=True)
@@ -103,8 +90,14 @@ class ActivityIndexPage(CFGOVPage):
         for facet, facet_config in facet_map:
             sqs = sqs.facet(str(facet), size=facet_config[2])
             if facet in request.GET and request.GET.get(facet):
-                selected_facets[facet] = [int(value) for value in request.GET.getlist(facet) if value.isdigit()]
-                facet_queries[facet] = facet + '_exact:' + (" OR " + facet + "_exact:").join([str(value) for value in selected_facets[facet]])
+                selected_facets[facet] = [
+                    int(value) for value in request.GET.getlist(facet)
+                    if value.isdigit()
+                ]
+                facet_queries[facet] = facet + '_exact:' + (
+                    " OR " + facet + "_exact:").join(
+                    [str(value) for value in selected_facets[facet]]
+                )
 
         payload = {
             'search_query': search_query,
@@ -118,18 +111,22 @@ class ActivityIndexPage(CFGOVPage):
 
         # Apply search query if it exists, but don't apply facets
         if search_query:
-            sqs = sqs.filter(content=search_query).order_by('-_score', '-date')
+            sqs = sqs.filter(content=search_query).order_by('-_score', '-date')  # noqa: E501
         else:
             sqs = sqs.order_by('-date')
 
         # Get all facets and their counts
         facet_counts = sqs.facet_counts()
-        all_facets = self.get_all_facets(facet_map, sqs, facet_counts, facet_queries, selected_facets)
+        all_facets = self.get_all_facets(facet_map, sqs, facet_counts, facet_queries, selected_facets)  # noqa: E501
 
         # List all facet blocks that need to be expanded
         always_expanded = {'building_block', 'topic', 'school_subject'}
-        conditionally_expanded = {facet_name for facet_name, facet_items in all_facets.items() if any(
-            facet['selected'] is True for facet in facet_items)}
+        conditionally_expanded = {
+            facet_name for facet_name, facet_items in all_facets.items()
+            if any(
+                facet['selected'] is True for facet in facet_items
+            )
+        }
         expanded_facets = always_expanded.union(set(conditionally_expanded))
 
         payload.update({
@@ -168,25 +165,35 @@ class ActivityIndexPage(CFGOVPage):
         })
         return context
 
-    def get_all_facets(self, facet_map, sqs, facet_counts, facet_queries, selected_facets):
+    def get_all_facets(self, facet_map, sqs, facet_counts, facet_queries, selected_facets):  # noqa: E501
         all_facets = {}
         if 'fields' in facet_counts:
             for facet, facet_config in facet_map:
                 class_object, is_nested, max_facet_count = facet_config
                 all_facets_sqs = sqs
-                other_facet_queries = [facet_query for facet_query_name, facet_query in facet_queries.items() if facet != facet_query_name]
+                other_facet_queries = [
+                    facet_query for facet_query_name, facet_query in facet_queries.items()  # noqa: E501
+                    if facet != facet_query_name
+                ]
                 for other_facet_query in other_facet_queries:
-                    all_facets_sqs = all_facets_sqs.narrow(str(other_facet_query))
+                    all_facets_sqs = all_facets_sqs.narrow(str(other_facet_query))  # noqa: E501
                 narrowed_facet_counts = all_facets_sqs.facet_counts()
-                if 'fields' in narrowed_facet_counts and facet in narrowed_facet_counts['fields']:
-                    narrowed_facets = [value[0] for value in narrowed_facet_counts['fields'][facet]]
-                    narrowed_selected_facets = selected_facets[facet] if facet in selected_facets else []
+                if 'fields' in narrowed_facet_counts and facet in narrowed_facet_counts['fields']:  # noqa: E501
+                    narrowed_facets = [value[0] for value in narrowed_facet_counts['fields'][facet]]  # noqa: E501
+                    narrowed_selected_facets = selected_facets[facet] if facet in selected_facets else []  # noqa: E501
                     if is_nested:
-                        all_facets[facet] = self.get_nested_facets(class_object, narrowed_facets, narrowed_selected_facets)
+                        all_facets[facet] = self.get_nested_facets(
+                            class_object,
+                            narrowed_facets,
+                            narrowed_selected_facets
+                        )
                     else:
-                        all_facets[facet] = self.get_flat_facets(class_object, narrowed_facets, narrowed_selected_facets)
+                        all_facets[facet] = self.get_flat_facets(
+                            class_object,
+                            narrowed_facets,
+                            narrowed_selected_facets
+                        )
         return all_facets
-
 
     def get_flat_facets(self, class_object, narrowed_facets, selected_facets):
         final_facets = [
@@ -194,10 +201,10 @@ class ActivityIndexPage(CFGOVPage):
                 'selected': result['id'] in selected_facets,
                 'id': result['id'],
                 'title': result['title'],
-             } for result in class_object.objects.filter(pk__in=narrowed_facets).values('id', 'title')]
+             } for result in class_object.objects.filter(pk__in=narrowed_facets).values('id', 'title')]  # noqa: E501
         return final_facets
 
-    def get_nested_facets(self, class_object, narrowed_facets, selected_facets, parent=None):
+    def get_nested_facets(self, class_object, narrowed_facets, selected_facets, parent=None):  # noqa: E501
         if not parent:
             flat_final_facets = [
                {
@@ -205,13 +212,13 @@ class ActivityIndexPage(CFGOVPage):
                    'id': result['id'],
                    'title': result['title'],
                    'parent': result['parent'],
-               } for result in class_object.objects.filter(pk__in=narrowed_facets).get_ancestors(True).values('id', 'title', 'parent')]
+               } for result in class_object.objects.filter(pk__in=narrowed_facets).get_ancestors(True).values('id', 'title', 'parent')]  # noqa: E501
             final_facets = []
-            root_facets = [root_facet for root_facet in flat_final_facets if root_facet['parent'] == None]
+            root_facets = [root_facet for root_facet in flat_final_facets if root_facet['parent'] == None]  # noqa: E501
             for root_facet in root_facets:
-                children_list = self.get_nested_facets(class_object, narrowed_facets, selected_facets, root_facet['id'])
+                children_list = self.get_nested_facets(class_object, narrowed_facets, selected_facets, root_facet['id'])  # noqa: E501
                 child_selected = any(
-                    child['selected'] is True or child['child_selected'] is True for child in children_list
+                    child['selected'] is True or child['child_selected'] is True for child in children_list  # noqa: E501
                 )
                 final_facets.append(
                     {
@@ -226,20 +233,21 @@ class ActivityIndexPage(CFGOVPage):
         else:
             children = [
                 {
-                    'selected': result['id'] in selected_facets or result['parent'] in selected_facets,
+                    'selected': result['id'] in selected_facets or result['parent'] in selected_facets,  # noqa: E501
                     'id': result['id'],
                     'title': result['title'],
                     'parent': result['parent'],
-                    'children': self.get_nested_facets(class_object, narrowed_facets, selected_facets, result['id']),
+                    'children': self.get_nested_facets(class_object, narrowed_facets, selected_facets, result['id']),  # noqa: E501
                     'child_selected': any(
-                        child['selected'] is True or child['child_selected'] is True for child in
-                        self.get_nested_facets(class_object, narrowed_facets, selected_facets, result['id'])
+                        child['selected'] is True or child['child_selected'] is True for child in  # noqa: E501
+                        self.get_nested_facets(class_object, narrowed_facets, selected_facets, result['id'])  # noqa: E501
                     )
-                } for result in class_object.objects.filter(pk__in=narrowed_facets).filter(parent_id=parent).values('id', 'title', 'parent')]
+                } for result in class_object.objects.filter(pk__in=narrowed_facets).filter(parent_id=parent).values('id', 'title', 'parent')]  # noqa: E501
             return children
 
     class Meta:
         verbose_name = "TDP Activity search page"
+
 
 class ActivityPage(CFGOVPage):
     """
@@ -254,7 +262,7 @@ class ActivityPage(CFGOVPage):
     big_idea = RichTextField('Big idea', blank=False)
     essential_questions = RichTextField('Essential questions', blank=False)
     objectives = RichTextField('Objectives', blank=False)
-    what_students_will_do = RichTextField('What students will do', blank=False)
+    what_students_will_do = RichTextField('What students will do', blank=False)  # noqa: E501
     activity_file = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
@@ -288,18 +296,18 @@ class ActivityPage(CFGOVPage):
         related_name='+',
         verbose_name='Student file 3'
     )
-    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)
-    school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)
-    topic = ParentalTreeManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)
+    building_block = ParentalManyToManyField('teachers_digital_platform.ActivityBuildingBlock', blank=False)  # noqa: E501
+    school_subject = ParentalManyToManyField('teachers_digital_platform.ActivitySchoolSubject', blank=False)  # noqa: E501
+    topic = ParentalTreeManyToManyField('teachers_digital_platform.ActivityTopic', blank=False)  # noqa: E501
     # Audience
-    grade_level = ParentalManyToManyField('teachers_digital_platform.ActivityGradeLevel', blank=False)
-    age_range = ParentalManyToManyField('teachers_digital_platform.ActivityAgeRange', blank=False)
-    student_characteristics = ParentalManyToManyField('teachers_digital_platform.ActivityStudentCharacteristics', blank=True)
+    grade_level = ParentalManyToManyField('teachers_digital_platform.ActivityGradeLevel', blank=False)  # noqa: E501
+    age_range = ParentalManyToManyField('teachers_digital_platform.ActivityAgeRange', blank=False)  # noqa: E501
+    student_characteristics = ParentalManyToManyField('teachers_digital_platform.ActivityStudentCharacteristics', blank=True)  # noqa: E501
     # Activity Characteristics
-    activity_type = ParentalManyToManyField('teachers_digital_platform.ActivityType', blank=False)
-    teaching_strategy = ParentalManyToManyField('teachers_digital_platform.ActivityTeachingStrategy', blank=False)
-    blooms_taxonomy_level = ParentalManyToManyField('teachers_digital_platform.ActivityBloomsTaxonomyLevel', blank=False)
-    activity_duration = models.ForeignKey(ActivityDuration, blank=False, on_delete=models.PROTECT)
+    activity_type = ParentalManyToManyField('teachers_digital_platform.ActivityType', blank=False)  # noqa: E501
+    teaching_strategy = ParentalManyToManyField('teachers_digital_platform.ActivityTeachingStrategy', blank=False)  # noqa: E501
+    blooms_taxonomy_level = ParentalManyToManyField('teachers_digital_platform.ActivityBloomsTaxonomyLevel', blank=False)  # noqa: E501
+    activity_duration = models.ForeignKey(ActivityDuration, blank=False, on_delete=models.PROTECT)  # noqa: E501
     # Standards taught
     jump_start_coalition = ParentalManyToManyField(
         'teachers_digital_platform.ActivityJumpStartCoalition',
@@ -333,25 +341,25 @@ class ActivityPage(CFGOVPage):
 
         MultiFieldPanel(
             [
-                FieldPanel('grade_level', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('grade_level', widget=forms.CheckboxSelectMultiple),  # noqa: E501
                 FieldPanel('age_range', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('student_characteristics', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('student_characteristics', widget=forms.CheckboxSelectMultiple),  # noqa: E501
             ],
             heading="Audience",
         ),
         MultiFieldPanel(
             [
-                FieldPanel('activity_type', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('teaching_strategy', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('blooms_taxonomy_level', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('activity_type', widget=forms.CheckboxSelectMultiple),  # noqa: E501
+                FieldPanel('teaching_strategy', widget=forms.CheckboxSelectMultiple),  # noqa: E501
+                FieldPanel('blooms_taxonomy_level', widget=forms.CheckboxSelectMultiple),  # noqa: E501
                 FieldPanel('activity_duration'),
             ],
             heading="Activity characteristics",
         ),
         MultiFieldPanel(
             [
-                FieldPanel('council_for_economic_education', widget=forms.CheckboxSelectMultiple),
-                FieldPanel('jump_start_coalition', widget=forms.CheckboxSelectMultiple),
+                FieldPanel('council_for_economic_education', widget=forms.CheckboxSelectMultiple),  # noqa: E501
+                FieldPanel('jump_start_coalition', widget=forms.CheckboxSelectMultiple),  # noqa: E501
             ],
             heading="National standards",
         ),
@@ -392,10 +400,10 @@ class ActivityPage(CFGOVPage):
         parent: ActivityTopic
         """
         if parent:
-            descendants = set(parent.get_descendants()) & set(self.topic.all())
+            descendants = set(parent.get_descendants()) & set(self.topic.all())  # noqa: E501
             children = parent.get_children()
             children_list = []
-            # If this parent has descendants that are in self.topic, add its children.
+            # If this parent has descendants in self.topic, add its children.
             if descendants:
                 for child in children:
                     if set(child.get_descendants()) & set(self.topic.all()):
@@ -404,15 +412,15 @@ class ActivityPage(CFGOVPage):
                         children_list.append(child.title)
 
                 if children_list:
-                    return parent.title + " (" + ', '.join(children_list) + ")"
+                    return parent.title + " (" + ', '.join(children_list) + ")"  # noqa: E501
             # Otherwise, just add the parent.
             else:
                 return parent.title
         else:
-            # If this is the first call, build a list of root topics and recurse through their children.
+            # Build root list of topics and recurse their children.
             topic_list = []
             topic_ids = [topic.id for topic in self.topic.all()]
-            ancestors = ActivityTopic.objects.filter(id__in=topic_ids).get_ancestors(True)
+            ancestors = ActivityTopic.objects.filter(id__in=topic_ids).get_ancestors(True)  # noqa: E501
             roots = ActivityTopic.objects.filter(parent=None) & ancestors
             for root_topic in roots:
                 topic_list.append(self.get_topics_list(root_topic))
@@ -424,6 +432,7 @@ class ActivityPage(CFGOVPage):
 
     class Meta:
         verbose_name = "TDP Activity page"
+
 
 def validate_results_per_page(request):
     """
@@ -437,6 +446,7 @@ def validate_results_per_page(request):
         return int(raw_results)
     else:
         return 5
+
 
 def validate_page_number(request, paginator):
     """
