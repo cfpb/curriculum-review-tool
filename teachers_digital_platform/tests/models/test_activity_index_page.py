@@ -1,33 +1,31 @@
 from django.test import RequestFactory, TestCase, override_settings
-from django.http import Http404, HttpRequest, HttpResponse
 
 from wagtail.wagtailcore.blocks import StreamValue
-from wagtail.wagtailcore.models import Page, Site
+from wagtail.wagtailcore.models import Site
 from wagtail.wagtaildocs.models import Document
 from wagtail.tests.utils import WagtailPageTests
-from v1.tests.wagtail_pages.helpers import publish_page
 
+from v1.tests.wagtail_pages.helpers import publish_page
 
 from scripts import _atomic_helpers as atomic
 
 from teachers_digital_platform.models import ActivityIndexPage
 from teachers_digital_platform.models import ActivityPage
 from teachers_digital_platform.models import (
-    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivityStudentCharacteristics, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic,
+    ActivityGradeLevel, ActivityAgeRange, ActivityStudentCharacteristics,
+    ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
     ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
 )
 
 import mock
 from model_mommy import mommy
 from v1.models import HomePage
-from haystack.models import SearchResult
-from haystack.query import SearchQuerySet
+
 
 @override_settings(
     FLAGS={'TDP_SEARCH_INTERFACE': {'boolean': True}}
 )
-
 class ActivityIndexPageTests(WagtailPageTests):
     @classmethod
     def setUpClass(self):
@@ -44,7 +42,9 @@ class ActivityIndexPageTests(WagtailPageTests):
 
     def test_activity_page_parent_pages(self):
         self.assertAllowedParentPageTypes(
-        ActivityPage, {ActivityIndexPage})
+            ActivityPage,
+            {ActivityIndexPage}
+        )
 
     def test_can_create_activity_index_page(self):
         ROOT_PAGE = HomePage.objects.first()
@@ -75,7 +75,7 @@ class TestActivityIndexPageSearch(TestCase):
             title='Search for activities',
             slug='search'
         )
-        self.search_page.header = StreamValue(self.search_page.header.stream_block, [atomic.text_introduction], True)
+        self.search_page.header = StreamValue(self.search_page.header.stream_block, [atomic.text_introduction], True)  # noqa: E501
         publish_page(child=self.search_page)
 
     def get_request(self, path='', data={}):
@@ -95,7 +95,7 @@ class TestActivityIndexPageSearch(TestCase):
     def test_activity_index_page_renders_with_query_parameters(self):
         # Arrange
         my_request = self.search_page.dummy_request()
-        my_request.environ["QUERY_STRING"]="q=&building_block=1"
+        my_request.environ["QUERY_STRING"] = "q=&building_block=1"
         # Act
         response = self.search_page.serve(my_request)
         response.render()
@@ -115,22 +115,18 @@ class TestActivityIndexPageSearch(TestCase):
         request = self.get_request(data={'partial': 'true'})
         self.assertEqual(
             self.search_page.get_template(request),
-            'teachers_digital_platform/activity_search_facets_and_results.html')
+            'teachers_digital_platform/activity_search_facets_and_results.html')  # noqa: E501
         # Act - Should return partial results even if no value is provided
         request = self.get_request(data={'partial': ''})
         # Assert
         self.assertEqual(
             self.search_page.get_template(request),
-            'teachers_digital_platform/activity_search_facets_and_results.html')
+            'teachers_digital_platform/activity_search_facets_and_results.html')  # noqa: E501
 
-    def test_search_index_page_handles_bad_query(self):  
+    def test_search_index_page_handles_bad_query(self):
         # Arrange
         my_request = self.search_page.dummy_request()
-        my_request.environ["QUERY_STRING"]="q=voldemort"
-        activity_page = self.create_activity_detail_page(
-            title='Planning for future savings',
-            slug='planning-future-savings'
-        )
+        my_request.environ["QUERY_STRING"] = "q=voldemort"
         # Act
         response = self.search_page.serve(my_request)
         response.render()
@@ -159,30 +155,30 @@ class TestActivityIndexPageSearch(TestCase):
         self.assertTrue('building_block' in actual_all_facets)
 
     @mock.patch('teachers_digital_platform.models.pages.SearchQuerySet.models')
-    def test_search_get_all_facets_with_topic_block_is_nested_filter(self, mock_sqs):
+    def test_search_get_all_facets_with_topic_block_is_nested_filter(self, mock_sqs):  # noqa: E501
         # Arrange
         facet_counts = {
             'dates': {},
             'fields': {
-                    'topic':'4',
-                },
-                'queries': {}
-            }
+                'topic': ['4'],
+            },
+            'queries': {}
+        }
         selected_facets = {u'topic': [1]}
-        facet_queries = {'topic':'topic_exact'}
+        facet_queries = {'topic': 'topic_exact'}
         facet_map = self.create_facet_map()
         mock_sqs.facet_counts.return_value = facet_counts
         # Act
-        actual_all_facets = self.search_page.get_all_facets(facet_map, mock_sqs, facet_counts, facet_queries, selected_facets)
+        actual_all_facets = self.search_page.get_all_facets(facet_map, mock_sqs, facet_counts, facet_queries, selected_facets)  # noqa: E501
         # Assert
         self.assertTrue('topic' in actual_all_facets)
 
     def test_get_topics_list_returns_correct_topic_list_for_parent(self):
         # Arrange
         my_request = self.search_page.dummy_request()
-        my_request.environ["QUERY_STRING"]="q=voldemort"
-        activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')
-        # Act 
+        my_request.environ["QUERY_STRING"] = "q=voldemort"
+        activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')  # noqa: E501
+        # Act
         actual_topics_list = activity_page.get_topics_list(self.search_page)
         # Assert
         self.assertTrue('activities' in actual_topics_list)
@@ -190,12 +186,12 @@ class TestActivityIndexPageSearch(TestCase):
     def test_get_topics_list_returns_correct_topic_list_no_parent(self):
         # Arrange
         my_request = self.search_page.dummy_request()
-        my_request.environ["QUERY_STRING"]="q=voldemort"
-        activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')
-        # Act 
+        my_request.environ["QUERY_STRING"] = "q=voldemort"
+        activity_page = self.create_activity_detail_page(title='Planning for future savings', slug='planning-future-savings')  # noqa: E501
+        # Act
         actual_topics_list = activity_page.get_topics_list(None)
         # Assert
-        self.assertTrue('Save and Invest (Saving for short-term goals)' in actual_topics_list)
+        self.assertTrue('Save and Invest (Saving for short-term goals)' in actual_topics_list)  # noqa: E501
 
     def create_facet_map(self):
         return (

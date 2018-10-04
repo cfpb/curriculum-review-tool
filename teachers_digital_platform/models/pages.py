@@ -425,6 +425,7 @@ class ActivityPage(CFGOVPage):
     class Meta:
         verbose_name = "TDP Activity page"
 
+
 def validate_results_per_page(request):
     """
     A utility for parsing the requested number of results per page.
@@ -437,6 +438,7 @@ def validate_results_per_page(request):
         return int(raw_results)
     else:
         return 5
+
 
 def validate_page_number(request, paginator):
     """
