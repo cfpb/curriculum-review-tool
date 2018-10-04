@@ -9,7 +9,8 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "test": "gulp test",
+    "test": "npm run test-crtool && npm run test-js",
+    "test-crtool": "gulp test",
     "test-js": "jest teachers_digital_platform/js --coverage",
     "watch": "gulp watch",
     "postinstall": "cd teachers_digital_platform/crtool && npm install"
@@ -100,6 +101,7 @@
     "cucumber": "3.0.6",
     "jasmine-reporters": "2.2.1",
     "jasmine-spec-reporter": "4.2.1",
+    "jest": "^23.6.0",
     "jsdoc": "3.5.5",
     "jsdom": "11.3.0",
     "jsdom-global": "3.0.2",
@@ -112,5 +114,8 @@
     "sinon": "4.0.2",
     "snyk": "1.25.0",
     "wcag": "0.3.0"
+  },
+  "jest": {
+    "testURL": "http://localhost"
   }
 }
