@@ -1,4 +1,5 @@
 from haystack import indexes
+
 from teachers_digital_platform.models import ActivityPage
 
 
