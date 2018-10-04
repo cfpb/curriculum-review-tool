@@ -1,5 +1,3 @@
-'use strict';
-
 const behavior = require( './util/behavior' );
 const utils = require( './search-utils' );
 const closest = require( './util/dom-traverse' ).closest;

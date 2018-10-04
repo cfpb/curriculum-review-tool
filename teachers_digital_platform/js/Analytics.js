@@ -1,5 +1,3 @@
-'use strict';
-
 const isArray = require( './util/type-checkers' ).isArray;
 const EventObserver = require( './util/EventObserver' );
 

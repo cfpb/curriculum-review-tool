@@ -1,5 +1,3 @@
-'use strict';
-
 const smoothscroll = require( 'smoothscroll-polyfill' );
 
 const scroll = {

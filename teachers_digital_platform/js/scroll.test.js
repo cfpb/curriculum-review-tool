@@ -1,5 +1,3 @@
-'use strict';
-
 const scroll = require( './scroll.js' );
 
 const HTML_SNIPPET = `

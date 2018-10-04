@@ -1,5 +1,3 @@
-'use strict';
-
 const Analytics = require( './Analytics.js' );
 
 /* eslint-disable max-lines-per-function, no-undefined */

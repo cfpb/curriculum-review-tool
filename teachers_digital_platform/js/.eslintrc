@@ -7,3 +7,5 @@ rules:
   global-require: 0
   max-nested-callbacks: 0
   max-statements: 0
+parserOptions:
+  sourceType: module

@@ -1,6 +1,3 @@
-'use strict';
-
-
 /**
  * Get the search form field's values.
  *
