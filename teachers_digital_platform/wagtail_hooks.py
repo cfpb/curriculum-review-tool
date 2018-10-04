@@ -9,9 +9,12 @@ from wagtail.contrib.modeladmin.options import (
 )
 
 from teachers_digital_platform.models import (
-    ActivityBuildingBlock, ActivitySchoolSubject, ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
-    ActivityStudentCharacteristics, ActivityType, ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
-    ActivityDuration, ActivityJumpStartCoalition, ActivityCouncilForEconEd
+    ActivityBuildingBlock, ActivitySchoolSubject,
+    ActivityTopic, ActivityGradeLevel, ActivityAgeRange,
+    ActivityStudentCharacteristics, ActivityType,
+    ActivityTeachingStrategy, ActivityBloomsTaxonomyLevel,
+    ActivityDuration, ActivityJumpStartCoalition,
+    ActivityCouncilForEconEd
 )
 
 
