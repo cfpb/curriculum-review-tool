@@ -2,8 +2,6 @@
    Expandable Facets Organism
    ========================================================================== */
 
-'use strict';
-
 // polyfill for ie9 compatibility
 require( 'classlist-polyfill' );
 

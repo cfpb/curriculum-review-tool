@@ -1,5 +1,3 @@
-'use strict';
-
 
 // Required modules.
 const standardType = require( './standard-type' );

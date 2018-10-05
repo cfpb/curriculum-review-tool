@@ -1,4 +1,4 @@
-const scroll = require( './scroll.js' );
+const scroll = require( '../js/scroll.js' );
 
 const HTML_SNIPPET = `
   <a class="one" href="#one" data-scroll>one</a>

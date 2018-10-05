@@ -1,5 +1,3 @@
-'use strict';
-
 
 /**
  * Shortcut for binding event listeners to elements.

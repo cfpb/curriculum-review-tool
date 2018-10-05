@@ -1,5 +1,3 @@
-'use strict';
-
 const Analytics = require( './Analytics' );
 const closest = require( './util/dom-traverse' ).closest;
 const bindEvent = require( './util/dom-events' ).bindEvent;

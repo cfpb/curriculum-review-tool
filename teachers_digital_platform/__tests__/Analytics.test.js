@@ -1,4 +1,4 @@
-const Analytics = require( './Analytics.js' );
+const Analytics = require( '../js/Analytics.js' );
 
 /* eslint-disable max-lines-per-function, no-undefined */
 describe( 'Analytics', () => {

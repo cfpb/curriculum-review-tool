@@ -1,5 +1,3 @@
-'use strict';
-
 // Your app's JavaScript may look something like this -- or it may not.
 //
 // const module1 = require( './module1.js' );

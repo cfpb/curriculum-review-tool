@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Initiates an ajax request when passed a type, url,
  * and an optional opts object.

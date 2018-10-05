@@ -1,5 +1,3 @@
-'use strict';
-
 const xhr = require( './util/ajax-request' ).ajaxRequest;
 
 /**
