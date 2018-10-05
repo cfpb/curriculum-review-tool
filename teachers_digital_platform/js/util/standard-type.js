@@ -1,6 +1,3 @@
-'use strict';
-
-
 /**
  * @constant
  * @type {string}

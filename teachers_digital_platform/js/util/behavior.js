@@ -1,6 +1,3 @@
-'use strict';
-
-
 /* ==========================================================================
    Dom Behaviors
    Behaviors are functionality that can be shared between different pieces
