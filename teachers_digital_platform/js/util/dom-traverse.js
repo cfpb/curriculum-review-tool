@@ -1,4 +1,3 @@
-
 const typeCheckers = require( './type-checkers' );
 
 /**

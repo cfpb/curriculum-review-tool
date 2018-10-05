@@ -1,4 +1,3 @@
-
 /**
  * @constant
  * @type {string}

@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Javascript Type Checkers
    Various utility functions to check Javascript types and primitives.

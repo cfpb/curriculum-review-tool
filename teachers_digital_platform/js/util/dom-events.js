@@ -1,4 +1,3 @@
-
 /**
  * Shortcut for binding event listeners to elements.
  * @param  {HTMLNode} elem   The element to attach the event listener to.
