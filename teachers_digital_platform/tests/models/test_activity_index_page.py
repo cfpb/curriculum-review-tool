@@ -40,7 +40,7 @@ class ActivityIndexPageTests(WagtailPageTests):
     def test_activity_page_parent_pages(self):
         self.assertAllowedParentPageTypes(
             ActivityPage,
-            {ActivityIndexPage}
+            {ActivityIndexPage, HomePage}
         )
 
     def test_can_create_activity_index_page(self):

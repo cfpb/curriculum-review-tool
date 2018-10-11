@@ -26,7 +26,7 @@ from teachers_digital_platform.models import (
 )
 
 from v1.atomic_elements import molecules
-from v1.models import CFGOVPage, CFGOVPageManager
+from v1.models import CFGOVPage, CFGOVPageManager, HomePage
 
 
 class ActivityIndexPage(CFGOVPage):
@@ -253,7 +253,8 @@ class ActivityPage(CFGOVPage):
     """
     A model for the Activity Detail page.
     """
-    parent_page_types = [ActivityIndexPage]
+    # Allow Activity pages to exist under the ActivityIndexPage or the Trash
+    parent_page_types = [ActivityIndexPage, HomePage]
     subpage_types = []
     objects = CFGOVPageManager()
 
