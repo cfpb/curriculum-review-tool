@@ -110,5 +110,6 @@ class ActivityPageIndex(indexes.SearchIndex, indexes.Indexable):
 
     def index_queryset(self, using=None):
         """Only index descendants of the Activity Search page"""
+        # This is safe because ActivityIndexPage is a singleton
         search_page = ActivityIndexPage.objects.get()
         return self.get_model().objects.live().descendant_of(search_page)
