@@ -6,8 +6,6 @@ const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const tdpAnalytics = require( './tdp-analytics' );
 const fetch = require( './tdp-utils' ).fetch;
-require( 'element-qsa-scope' );
-
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
 let searchRequest = {};
@@ -177,20 +175,24 @@ function handleFilter( event, target = null ) {
   if ( wrapperLI && wrapperLI.tagName.toLowerCase() === 'li' ) {
 
     // Check all children if parent is checked.
-    const children = wrapperLI.querySelectorAll(
-      ':scope>ul>li input[type=checkbox]'
+    const checkboxes = wrapperLI.querySelectorAll(
+      'ul>li input[type=checkbox]'
     );
-    for ( var i = 0; i < children.length; i++ ) {
-      children[i].checked = target.checked;
+    for ( var i = 0; i < checkboxes.length; i++ ) {
+      if ( wrapperLI.contains( checkboxes[i] ) === true && checkboxes[i] !== target ) {
+        checkboxes[i].checked = target.checked;
+      }
     }
-
     // If this is a child checkbox, update the parent checkbox.
+    const parentLI = wrapperLI.parentElement.parentElement;
     const parentUL = wrapperLI.parentElement.parentElement.parentElement;
     if ( parentUL && parentUL.tagName.toLowerCase() === 'ul' ) {
-      const parentCheckbox = wrapperLI.parentElement.parentElement.querySelector(
-        ':scope>div>input[type=checkbox]'
+      const parentCheckbox = parentLI.querySelector(
+        'div>input[type=checkbox]'
       );
-      _updateParentFilter( parentCheckbox );
+      if ( parentCheckbox && parentCheckbox.parentElement.parentElement === parentLI ) {
+        _updateParentFilter( parentCheckbox );
+      }
     }
   }
 
@@ -205,23 +207,33 @@ function handleFilter( event, target = null ) {
  * @param {DOMElement} element DOM element
  */
 function _updateParentFilter( element ) {
+  const wrapper = element.parentElement.parentElement;
+  var checkboxes = wrapper.querySelectorAll(
+    'ul>li input[type=checkbox]'
+  );
 
-  var children = element.parentElement.parentElement.querySelectorAll(
-    ':scope>ul>li input[type=checkbox]'
-  );
-  var checkedChildren = element.parentElement.parentElement.querySelectorAll(
-    ':scope>ul>li input[type=checkbox]:checked'
-  );
+  var children = [];
+  var checkedChildren = [];
+  for ( var i = 0; i < checkboxes.length; i++ ) {
+    if ( wrapper.contains( checkboxes[i] ) === true) {
+      children.push( checkboxes[i] );
+      if ( checkboxes[i].checked === true) {
+        checkedChildren.push( checkboxes[i] );
+      }
+    }
+  }
+
   if ( children ) {
     if ( children.length !== checkedChildren.length ) {
       element.checked = false;
     }
   }
   // Loop through ancestors and make sure they are checked or unchecked
-  var parentCheckbox = element.parentElement.parentElement.parentElement.parentElement.querySelector(
-    ':scope>div>input[type=checkbox]'
+  const parentWrapper = wrapper.parentElement.parentElement;
+  var parentCheckbox = parentWrapper.querySelector(
+    'div>input[type=checkbox]'
   );
-  if ( parentCheckbox ) {
+  if ( parentCheckbox && parentCheckbox.parentElement === parentWrapper) {
     _updateParentFilter( parentCheckbox );
   }
 }
