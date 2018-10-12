@@ -2,7 +2,6 @@ const Analytics = require( './Analytics' );
 const closest = require( './util/dom-traverse' ).closest;
 const bindEvent = require( './util/dom-events' ).bindEvent;
 const find = require( './util/dom-traverse' ).queryOne;
-require( 'element-qsa-scope' );
 
 /* eslint-disable consistent-return */
 
@@ -196,13 +195,18 @@ const handleClearAllClick = event => {
     return;
   }
   const tagsWrapper = clearBtn.parentElement;
-  const tags = tagsWrapper.querySelectorAll( ':scope > .a-tag' );
+  const tags = tagsWrapper.querySelectorAll( '.a-tag' );
   if ( !tags || tags.length === 0 ) {
     return;
   }
   var tagNames = [];
   for ( var i = 0; i < tags.length; i++ ) {
-    tagNames[i] = tags[i].textContent.trim();
+    if ( tagsWrapper.contains( tags[i] ) ) {
+      tagNames[i] = tags[i].textContent.trim();
+    }
+  }
+  if ( tagNames.length === 0 ) {
+    return;
   }
   const action = 'clear all filters';
   const label = tagNames.join( '|' );
