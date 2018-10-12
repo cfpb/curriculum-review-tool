@@ -211,30 +211,6 @@ describe( 'The TDP search page', () => {
     expect( numFilters ).toEqual( 2 );
   } );
 
-// TODO: Figure out how to test nested filters
-//   it( 'should check nested filter when parent filter is clicked', () => {
-//    const mockXHR = {
-//      open: jest.fn(),
-//      send: jest.fn(),
-//      readyState: 4,
-//      status: 200,
-//      onreadystatechange: jest.fn(),
-//      responseText: []
-//    };
-//    global.XMLHttpRequest = jest.fn( () => mockXHR );
-//    const parent_checkbox = document.querySelector( '#topic--earn' );
-//    const form = document.querySelector( 'form#filter-form' );
-//
-//    let numChecked = document.querySelectorAll( '.o-expandable-facets .a-checkbox:checked' ).length;
-//    expect( numChecked ).toEqual( 1 );
-//
-//    //parent_checkbox.checked = true;
-//    simulateEvent( 'change', parent_checkbox, { 'target': { 'checked': true } } );
-//    //simulateEvent( 'change-filter', form );
-//    numChecked = document.querySelectorAll( '.o-expandable-facets .a-checkbox:checked' ).length;
-//    expect( numChecked ).toEqual( 3 );
-//  } );
-
   it( 'should clear all filters when the `clear all` link is clicked', () => {
     const mockXHR = {
       open: jest.fn(),
@@ -255,6 +231,37 @@ describe( 'The TDP search page', () => {
     expect( numFilters ).toEqual( 0 );
 
     mockXHR.onreadystatechange();
+  } );
+
+  it( 'should check nested filter when parent filter is clicked', () => {
+    const mockXHR = {
+      open: jest.fn(),
+      send: jest.fn(),
+      readyState: 4,
+      status: 200,
+      onreadystatechange: jest.fn(),
+      responseText: []
+    };
+    global.XMLHttpRequest = jest.fn( () => mockXHR );
+    const parentCheckbox = document.querySelector( '#topic--earn' );
+    const form = document.querySelector( 'form#filter-form' );
+
+    let numChecked = document.querySelectorAll( '.o-expandable-facets .a-checkbox:checked' ).length;
+    expect( numChecked ).toEqual( 1 );
+
+    parentCheckbox.checked = true;
+    simulateEvent( 'change', parentCheckbox );
+    numChecked = document.querySelectorAll( '.o-expandable-facets .a-checkbox:checked' ).length;
+    expect( numChecked ).toEqual( 3 );
+    expect( window.location.href).toEqual( 'http://localhost/?q=executive&building_block=1&topic=1&topic=4&topic=2');
+
+    const childCheckbox = document.querySelector( '#topic--getting-paid' );
+    childCheckbox.checked = false;
+    simulateEvent( 'change', childCheckbox );
+    numChecked = document.querySelectorAll( '.o-expandable-facets .a-checkbox:checked' ).length;
+    expect( numChecked ).toEqual( 1 );
+    expect( window.location.href).toEqual( 'http://localhost/?q=executive&building_block=1&topic=2');
+
   } );
 
   it( 'should handle errors when the server is down', done => {
