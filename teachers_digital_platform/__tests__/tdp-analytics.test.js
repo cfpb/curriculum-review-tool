@@ -1,8 +1,6 @@
 const BASE_JS_PATH = '../js/';
 const simulateEvent = require( `${ BASE_JS_PATH }util/simulate-event.js` ).simulateEvent;
 const tdpAnalytics = require( `${ BASE_JS_PATH }tdp-analytics.js` );
-let spy;
-
 
 const HTML_SNIPPET = `
 
@@ -141,6 +139,45 @@ const HTML_SNIPPET = `
       </div>
 
     </form>
+    <nav class="m-pagination" role="navigation" aria-label="Pagination">
+        <a class="a-btn
+                  m-pagination_btn-prev"
+           href="?page=21#pagination_content">
+            <span class="a-btn_icon a-btn_icon__on-left">{% include icons/left.svg %}</span>
+            Newer
+        </a>
+        <a class="a-btn
+                  m-pagination_btn-next"
+           href="?page=23#pagination_content">
+            <span class="a-btn_icon a-btn_icon__on-right">{% include icons/right.svg %}</span>
+            Older
+        </a>
+        <form class="m-pagination_form"
+              action="#pagination_content">
+            <label class="m-pagination_label"
+                   for="m-pagination_current-page">
+                Page
+                <span class="u-visually-hidden">
+                    number 22 out
+                </span>
+                <input class="m-pagination_current-page"
+                       id="m-pagination_current-page"
+                       name="page"
+                       type="number"
+                       min="1"
+                       max="149"
+                       pattern="[0-9]*"
+                       inputmode="numeric"
+                       value="22">
+                of 149
+            </label>
+            <button class="a-btn
+                           a-btn__link
+                           m-pagination_btn-submit"
+                    id="m-pagination_btn-submit"
+                    type="submit">Go</button>
+        </form>
+    </nav>
   </div>
 `;
 
@@ -167,7 +204,6 @@ describe( 'The TDP custom analytics', () => {
       responseText: []
     };
     global.XMLHttpRequest = jest.fn( () => mockXHR );
-    spy = jest.spyOn( tdpAnalytics, 'sendEvent' );
   } );
 
   it( 'should not throw any errors on bind', () => {
@@ -175,12 +211,46 @@ describe( 'The TDP custom analytics', () => {
   } );
 
 
-  it( 'should clear a filter when its X icon is clicked', () => {
+  it( 'should send an analytics event when a filter clear icon is clicked', () => {
     const clearIcon = document.querySelector( '.results_filters svg' );
+    const spy = jest.fn();
 
     tdpAnalytics.bindAnalytics( spy );
 
     simulateEvent( 'click', clearIcon );
+
+    expect( spy ).toHaveBeenCalled();
+  } );
+
+  it( 'should NOT send an analytics event when a filter is clicked (but not its clear icon)', () => {
+    const filterTag = document.querySelector( '.results_filters .a-tag' );
+    const spy = jest.fn();
+
+    tdpAnalytics.bindAnalytics( spy );
+
+    simulateEvent( 'click', filterTag );
+
+    expect( spy ).not.toHaveBeenCalled();
+  } );
+
+  it( 'should send an analytics event when a pagination button is clicked', () => {
+    const paginationButton = document.querySelector( '.m-pagination_btn-next' );
+    const spy = jest.fn();
+
+    tdpAnalytics.bindAnalytics( spy );
+
+    simulateEvent( 'click', paginationButton );
+
+    expect( spy ).toHaveBeenCalled();
+  } );
+
+  it( 'should send an analytics event when an expandable is clicked', () => {
+    const expandable = document.querySelector( '.o-expandable_header' );
+    const spy = jest.fn();
+
+    tdpAnalytics.bindAnalytics( spy );
+
+    simulateEvent( 'click', expandable );
 
     expect( spy ).toHaveBeenCalled();
   } );
