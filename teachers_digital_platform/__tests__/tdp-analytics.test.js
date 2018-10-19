@@ -145,7 +145,6 @@ const HTML_SNIPPET = `
 `;
 
 const xhr = global.XMLHttpRequest;
-global.console = { error: jest.fn(), log: jest.fn() };
 
 describe( 'The TDP custom analytics', () => {
 
@@ -178,14 +177,11 @@ describe( 'The TDP custom analytics', () => {
 
   it( 'should clear a filter when its X icon is clicked', () => {
     const clearIcon = document.querySelector( '.results_filters svg' );
-    tdpAnalytics.bindAnalytics();
-    const clickSpy = jest.spyOn( tdpAnalytics, 'handleClearFilterClick' );
 
-    //let evt = new MouseEvent( 'click' );
+    tdpAnalytics.bindAnalytics( spy );
+
     simulateEvent( 'click', clearIcon );
-    // evt.target = clearIcon;
-    //clearIcon.dispatchEvent( evt );
-    expect( clickSpy ).toHaveBeenCalled();
+
     expect( spy ).toHaveBeenCalled();
   } );
 
@@ -275,4 +271,3 @@ describe( 'The TDP custom analytics', () => {
 //  } );
 
 } );
-

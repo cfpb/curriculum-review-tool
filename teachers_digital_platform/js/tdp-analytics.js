@@ -15,7 +15,6 @@ const find = require( './util/dom-traverse' ).queryOne;
 const sendEvent = ( action, label, category ) => {
   category = category || 'TDP Search Tool';
   const eventData = Analytics.getDataLayerOptions( action, label, category );
-  // console.log( action, label );
   Analytics.sendEvent( eventData );
   return eventData;
 };
@@ -66,7 +65,7 @@ const getExpandableState = expandable => {
  * @param {event} event Click event
  * @returns {object} Event data
  */
-const handleExpandableClick = event => {
+const handleExpandableClick = ( event, sendEventMethod ) => {
   const expandable = getExpandable( event );
   if ( !expandable ) {
     return;
@@ -78,6 +77,11 @@ const handleExpandableClick = event => {
     return;
   }
   label = label.textContent.trim();
+
+  if ( sendEventMethod ) {
+    return sendEventMethod( action, label );
+  }
+
   return sendEvent( action, label );
 };
 
@@ -87,13 +91,18 @@ const handleExpandableClick = event => {
  * @param {event} event Click event
  * @returns {object} Event data
  */
-const handleFilterClick = event => {
+const handleFilterClick = ( event, sendEventMethod ) => {
   const checkbox = event.target;
   if ( !checkbox.classList.contains( 'a-checkbox' ) ) {
     return;
   }
   const action = checkbox.checked ? 'filter' : 'remove filter';
   const label = checkbox.getAttribute( 'aria-label' );
+
+  if ( sendEventMethod ) {
+    return sendEventMethod( action, label );
+  }
+
   return sendEvent( action, label );
 };
 
@@ -103,7 +112,7 @@ const handleFilterClick = event => {
  * @param {event} event Click event
  * @returns {object} Event data
  */
-const handleClearFilterClick = event => {
+const handleClearFilterClick = ( event, sendEventMethod ) => {
   // Continue only if the X icon was clicked and not the parent button
   let target = event.target.tagName.toLowerCase();
   if ( target !== 'svg' && target !== 'path' ) {
@@ -116,6 +125,10 @@ const handleClearFilterClick = event => {
   }
   const action = 'remove filter';
   const label = target.textContent.trim();
+
+  if ( sendEventMethod ) {
+    return sendEventMethod( action, label );
+  }
 
   return sendEvent( action, label );
 };
@@ -141,7 +154,7 @@ const getPaginator = event => {
  * @param {event} event Click event
  * @returns {object} Event data
  */
-const handlePaginationClick = event => {
+const handlePaginationClick = ( event, sendEventMethod ) => {
   const paginator = getPaginator( event );
   if ( !paginator ) {
     return;
@@ -154,7 +167,7 @@ const handlePaginationClick = event => {
   if (
     !paginator.href ||
     isDisabled ||
-    ( !isNextButton && !isPrevButton )
+     !isNextButton && !isPrevButton
   ) {
     return;
   }
@@ -165,6 +178,12 @@ const handlePaginationClick = event => {
     return;
   }
   label = isNextButton ? parseInt( label[1], 10 ) - 1 : parseInt( label[1], 10 ) + 1;
+
+
+  if ( sendEventMethod ) {
+    return sendEventMethod( action, label );
+  }
+
   return sendEvent( action, label );
 };
 
@@ -189,7 +208,7 @@ const getClearBtn = event => {
  * @param {event} event Click event
  * @returns {object} Event data
  */
-const handleClearAllClick = event => {
+const handleClearAllClick = ( event, sendEventMethod ) => {
   const clearBtn = getClearBtn( event );
   if ( !clearBtn ) {
     return;
@@ -210,29 +229,34 @@ const handleClearAllClick = event => {
   }
   const action = 'clear all filters';
   const label = tagNames.join( '|' );
+
+  if ( sendEventMethod ) {
+    return sendEventMethod( action, label );
+  }
+
   return sendEvent( action, label );
 };
 
 /**
  * bindAnalytics - Set up analytics reporting.
  */
-const bindAnalytics = () => {
+const bindAnalytics = sendEventMethod => {
   const searchContent = find( '#tdp-search-facets-and-results' );
 
   bindEvent( searchContent, {
-    click: handleExpandableClick
+    click: event => handleExpandableClick( event, sendEventMethod )
   } );
 
   bindEvent( searchContent, {
-    click: handleFilterClick
+    click: event => handleFilterClick( event, sendEventMethod )
   } );
 
   bindEvent( searchContent, {
-    click: handleClearFilterClick
+    click: event => handleClearFilterClick( event, sendEventMethod )
   } );
 
   bindEvent( searchContent, {
-    click: handlePaginationClick
+    click: event => handlePaginationClick( event, sendEventMethod )
   } );
 };
 
