@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build --debug && mkdir -p ../static/tdp/js && mv build/static/**/main*.js ../static/tdp/js/crtool.react.v1.js && mv build/static/js/main*.map ../static/tdp/js/",
-    "test": "jest",
+    "test": "jest --coverage",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
