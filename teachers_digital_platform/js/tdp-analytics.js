@@ -221,7 +221,7 @@ const handleClearAllClick = ( event, sendEventMethod ) => {
   var tagNames = [];
   for ( var i = 0; i < tags.length; i++ ) {
     if ( tagsWrapper.contains( tags[i] ) ) {
-      tagNames[i] = tags[i].textContent.trim();
+      tagNames.push( tags[i].textContent.trim() );
     }
   }
   if ( tagNames.length === 0 ) {
