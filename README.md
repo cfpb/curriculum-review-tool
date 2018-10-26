@@ -51,48 +51,71 @@ The searchable interface serves as a end-point for a teacher who has learned mor
 Once they've learned about how to incorporated financial education into their classroom through the [Building Blocks](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/learn/) tool, they can now put those ideas into action through utilizing activities and handouts from this searchable interface.
 
 
-  - **Technology stack**: Python, Django, Wagtail, Jinja2 template, inline SVG images, CSS, and JS.
+  - **Technology stack**: Python, Django, Wagtail, Elasticsearch, Jinja2 template, inline SVG images, CSS, and JS.
   - **Status**: Beta
   - **Live site**: [searchable interface](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/teach/activities/)
 
-**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
+**Screenshot**:
 
-![](https://raw.githubusercontent.com/cfpb/open-source-project-template/master/screenshot.png)
+![](https://raw.githubusercontent.com/cfpb/teachers-digital-platform/master/screenshot.png)
 
 
 ### Models
 
 **TDPActivityPage**:
-Extends: CFGOVPage
+
+- **Extends**: CFGOVPage
+- **Description**: A TDP Activity Page is used to populate search results in the TDPActivityIndexPage 
+and provide detail pages for various classroom activities. This model has many metadata fields 
+that are used as filters on the Search page.
+
 **BaseActivityTaxonomy**:
-Extends: models.Model
-**ActivityAgeRange**:
-Extends: BaseActivityTaxonomy
-**ActivityBloomsTaxonomyLevel**:
-Extends: BaseActivityTaxonomy
-**ActivityBuildingBlock**:
-Extends: BaseActivityTaxonomy
-**ActivityCouncilForEconEd**:
-Extends: BaseActivityTaxonomy
-**ActivityDuration**:
-Extends: BaseActivityTaxonomy
-**ActivityGradeLevel**:
-Extends: BaseActivityTaxonomy
-**ActivityJumpStartCoalition**:
-Extends: BaseActivityTaxonomy
-**ActivitySchoolSubject**:
-Extends: BaseActivityTaxonomy
-**ActivityStudentCharacteristics**:
-Extends: BaseActivityTaxonomy
-**ActivityTeachingStrategy**:
-Extends: BaseActivityTaxonomy
+
+- **Extends**: models.Model
+- **Description**: This is a base (abstract) Model on which most metadata fields are based (ActivityTopic being the exception).
+You can edit these field options in the Wagtail admin menu by going to "TDP Activity > [Label]"
+- **Fields**:
+  - title: A unique string field that serves as the filter value label
+  - weight: An integer that determines the labels ordering when listed
+
+- **Models that extend BaseActvitityTaxonomy**:
+
+  - **ActivityAgeRange**: e.g: "13-15", "16-19", etc.
+  - **ActivityBloomsTaxonomyLevel**: e.g: "Remember", "Understand", etc.
+  - **ActivityBuildingBlock**: e.g: "Executive function", "Financial habits and norms", etc.
+  - **ActivityCouncilForEconEd**: e.g: "Standard I. Earning income" etc.
+  - **ActivityDuration**:
+  - **ActivityGradeLevel**:
+  - **ActivityJumpStartCoalition**:
+  - **ActivitySchoolSubject**:
+  - **ActivityStudentCharacteristics**:
+  - **ActivityTeachingStrategy**:
+  - **ActivityType**:
+  
 **ActivityTopic**:
-Extends: BaseActivityTaxonomy
-Note: This model is managed in the django
-**ActivityType**:
-Extends: BaseActivityTaxonomy
+
+- **Extends**: [MPTTModel](https://django-mptt.github.io/django-mptt/models.html)
+- **Description**: This model allows us to have nested Topics
+- **Fields**:
+  - title: A unique string field that serves as the filter value label
+  - weight: An integer that determines the labels ordering when listed
+  - parent: A TreeForeignKey to the parent topic.
+
+- **Note**: This model's nested admin ui breaks in the Wagtail admin, so it is managed in the [django admin](https://www.consumerfinance.gov/django-admin/teachers_digital_platform/activitytopic/)
+
+
+
 **TDPActivityIndexPage**:
-Extends: CFGOVPage
+
+- **Extends**: CFGOVPage
+- **Description**: The TDP Activity Search Page is a filterable listing page that displays published TDP Activity Pages. 
+There is logic in the code that limits the site to only have one instance of a TDPActivityIndexPage. This is a Wagtail editable
+page that is powered by Haystack and Elasticsearch. For that reason, results will not display until you run:
+```bash
+python manage.py update-index -r teachers_digital_platform
+```
+- **Fields**:
+  - header: A Streamfield that allows for TextIntroduction molecules
 
 ## Dependencies
 
