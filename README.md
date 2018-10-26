@@ -46,23 +46,53 @@ Further documentation about the CR tool can be found in the [crtool directory](h
 
 ## Search interface
 
-**Description**: Put a meaningful, short, plain-language description of what
-this project is trying to accomplish and why it matters.
-Describe the problem(s) this project solves.
-Describe how this software can improve the lives of its audience.
+**Description**: The goal of the [searchable interface](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/teach/activities/) is to create a repository for financial education activities that teachers can use to easily find and download activities and activity ideas to use in their classroom.
+The searchable interface serves as a end-point for a teacher who has learned more about teaching Financial Education through reviewing the content within the Building Blocks tool section.
+Once they've learned about how to incorporated financial education into their classroom through the [Building Blocks](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/learn/) tool, they can now put those ideas into action through utilizing activities and handouts from this searchable interface.
 
-Other things to include:
 
-  - **Technology stack**: Indicate the technological nature of the software, including primary programming language(s) and whether the software is intended as standalone or as a module in a framework or other ecosystem.
-  - **Status**:  Alpha, Beta, 1.1, etc. It's OK to write a sentence, too. The goal is to let interested people know where this project is at. This is also a good place to link to the [CHANGELOG](CHANGELOG.md).
-  - **Links to production or demo instances**
-  - Describe what sets this apart from related-projects. Linking to another doc or page is OK if this can't be expressed in a sentence or two.
-
+  - **Technology stack**: Python, Django, Wagtail, Jinja2 template, inline SVG images, CSS, and JS.
+  - **Status**: Beta
+  - **Live site**: [searchable interface](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/teach/activities/)
 
 **Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
 
 ![](https://raw.githubusercontent.com/cfpb/open-source-project-template/master/screenshot.png)
 
+
+### Models
+
+**TDPActivityPage**:
+Extends: CFGOVPage
+**BaseActivityTaxonomy**:
+Extends: models.Model
+**ActivityAgeRange**:
+Extends: BaseActivityTaxonomy
+**ActivityBloomsTaxonomyLevel**:
+Extends: BaseActivityTaxonomy
+**ActivityBuildingBlock**:
+Extends: BaseActivityTaxonomy
+**ActivityCouncilForEconEd**:
+Extends: BaseActivityTaxonomy
+**ActivityDuration**:
+Extends: BaseActivityTaxonomy
+**ActivityGradeLevel**:
+Extends: BaseActivityTaxonomy
+**ActivityJumpStartCoalition**:
+Extends: BaseActivityTaxonomy
+**ActivitySchoolSubject**:
+Extends: BaseActivityTaxonomy
+**ActivityStudentCharacteristics**:
+Extends: BaseActivityTaxonomy
+**ActivityTeachingStrategy**:
+Extends: BaseActivityTaxonomy
+**ActivityTopic**:
+Extends: BaseActivityTaxonomy
+Note: This model is managed in the django
+**ActivityType**:
+Extends: BaseActivityTaxonomy
+**TDPActivityIndexPage**:
+Extends: CFGOVPage
 
 ## Dependencies
 
@@ -76,6 +106,15 @@ Detailed instructions on how to install, configure, and get the project running.
 This should be frequently tested to ensure reliability. Alternatively, link to
 a separate [INSTALL](INSTALL.md) document.
 
+- You must first clone and install the [cfgov-refresh repository](https://github.com/cfpb/cfgov-refresh#quickstart)
+- Clone this repository into the `develop-apps` folder of the cfgov-refresh repository located here: `cfgov-refresh/develop-apps`
+- Install third-party dependencies and build frontend assets:
+```sh
+cd develop-apps/teachers-digital-platform/
+./setup.sh
+```
+
+
 ## Configuration
 
 If the software is configurable, describe it in detail, either here or in other documentation to which you link.
@@ -85,6 +124,7 @@ If the software is configurable, describe it in detail, either here or in other 
 Show users how to use the software.
 Be specific.
 Use appropriate formatting when showing code snippets.
+
 
 ## How to test the software
 
