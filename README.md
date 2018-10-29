@@ -83,14 +83,14 @@ You can edit these field options in the Wagtail admin menu by going to "TDP Acti
   - **ActivityAgeRange**: e.g: "13-15", "16-19", etc.
   - **ActivityBloomsTaxonomyLevel**: e.g: "Remember", "Understand", etc.
   - **ActivityBuildingBlock**: e.g: "Executive function", "Financial habits and norms", etc.
-  - **ActivityCouncilForEconEd**: e.g: "Standard I. Earning income" etc.
-  - **ActivityDuration**:
-  - **ActivityGradeLevel**:
-  - **ActivityJumpStartCoalition**:
-  - **ActivitySchoolSubject**:
-  - **ActivityStudentCharacteristics**:
-  - **ActivityTeachingStrategy**:
-  - **ActivityType**:
+  - **ActivityCouncilForEconEd**: e.g: "Standard I. Earning income", etc.
+  - **ActivityDuration**: e.g: "15-20 minutes", etc.
+  - **ActivityGradeLevel**: e.g: "High school (9-10)", etc.
+  - **ActivityJumpStartCoalition**: e.g: "Spending and saving", etc.
+  - **ActivitySchoolSubject**: e.g: "CTE (Career and technical education)", etc.
+  - **ActivityStudentCharacteristics**: e.g: "Rural", "English language learners", etc.
+  - **ActivityTeachingStrategy**: e.g: "Cooperative learning", "Gamification", etc.
+  - **ActivityType**: e.g: "Individual", "Whole class", etc.
   
 **ActivityTopic**:
 
@@ -119,9 +119,10 @@ python manage.py update-index -r teachers_digital_platform
 
 ## Dependencies
 
-Describe any dependencies that must be installed for this software to work.
-This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth.
-If specific versions of other software are required, or known not to work, call that out.
+- **django-haystack**: The search page requires haystack and elasticsearch
+- **django-mptt (0.9.0)**: MPTT is used to provide hierarchical topic metadata via the ActivityTopic model
+- **django-js-asset (1.1.0)**': JS Asset is a dependency of django-mptt
+
 
 ## Installation
 
@@ -138,40 +139,63 @@ cd develop-apps/teachers-digital-platform/
 ```
 
 
-## Configuration
+## CSS and JavaScript
 
-If the software is configurable, describe it in detail, either here or in other documentation to which you link.
+This app uses Gulp to generate a single global CSS and JS files based on individual 
+.less and .js files in "teachers_digital_platform/css" and "teachers_digital_platform/js."
+The generated css and js files can be found "teachers_digital_platform/static/"
 
-## Usage
-
-Show users how to use the software.
-Be specific.
-Use appropriate formatting when showing code snippets.
-
+You can generate all static files running the setup.sh script or running gulp
+```sh
+cd develop-apps/teachers-digital-platform/
+./setup.sh
+```
+or use gulp:
+```sh
+gulp
+gulp scripts
+gulp styles
+```
 
 ## How to test the software
 
-If the software includes automated tests, detail how to run those tests.
+###Testing Javascript code: 
+
+Javascript tests can be fount in "teachers_digital_platform/\_\_tests\_\_"
+
+to only test Search Tool JS, run: 
+```sh 
+npm run test-js
+```
+to test both the Search Tool and CRTool, run:
+
+```sh
+npm run test
+```
+
+
+
+###Testing Python code:
+
+Unit tests can be found in "teachers_digital_platform/tests/"
+
+**The two main files are**:
+- teachers_digital_platform/tests/models/test_activity_index_page.py
+- teachers_digital_platform/tests/models/test_pages_utility_definitions.py
+
+**Shell command**:
+```sh
+tox
+```
 
 ## Known issues
 
-Document any known significant shortcomings with the software.
+Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/search.js#L144). 
+Errors are sent to console log, but is not prominently displayed for end-users.
 
 ## Getting help
 
-Instruct users how to get help with this software; this might include links to an issue tracker, wiki, mailing list, etc.
-
-**Example**
-
 If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
-
-## Getting involved
-
-This section should detail why people should get involved and describe key areas you are
-currently focusing on; e.g., trying to get feedback on features, fixing certain bugs, building
-important pieces, etc.
-
-General instructions on _how_ to contribute should be stated with a link to [CONTRIBUTING](CONTRIBUTING.md).
 
 
 ----
@@ -186,6 +210,5 @@ General instructions on _how_ to contribute should be stated with a link to [CON
 
 ## Credits and references
 
-1. Projects that inspired you
-2. Related projects
-3. Books, papers, talks, or other sources that have meaningful impact or influence on this project
+1. This project was heavily influenced by work done on the [regulations3k project](https://github.com/cfpb/cfgov-refresh/tree/master/cfgov/regulations3k).
+
