@@ -50,79 +50,100 @@ Further documentation about the CR tool can be found in the [crtool directory](h
 The searchable interface serves as a end-point for a teacher who has learned more about teaching Financial Education through reviewing the content within the Building Blocks tool section.
 Once they've learned about how to incorporated financial education into their classroom through the [Building Blocks](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/learn/) tool, they can now put those ideas into action through utilizing activities and handouts from this searchable interface.
 
-
   - **Technology stack**: Python, Django, Wagtail, Elasticsearch, Jinja2 template, inline SVG images, CSS, and JS.
+
   - **Status**: Beta
+
   - **Live site**: [searchable interface](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/teach/activities/)
 
 **Screenshot**:
 
 ![](https://raw.githubusercontent.com/cfpb/teachers-digital-platform/master/screenshot.png)
 
-
 ### Models
 
 **TDPActivityPage**:
 
 - **Extends**: CFGOVPage
-- **Description**: A TDP Activity Page is used to populate search results in the TDPActivityIndexPage 
-and provide detail pages for various classroom activities. This model has many metadata fields 
+
+- **Description**: A TDP Activity Page is used to populate search results in the TDPActivityIndexPage
+and provide detail pages for various classroom activities. This model has many metadata fields
 that are used as filters on the Search page.
 
 **BaseActivityTaxonomy**:
 
 - **Extends**: models.Model
+
 - **Description**: This is a base (abstract) Model on which most metadata fields are based (ActivityTopic being the exception).
 You can edit these field options in the Wagtail admin menu by going to "TDP Activity > [Label]"
+
 - **Fields**:
+
   - title: A unique string field that serves as the filter value label
+
   - weight: An integer that determines the labels ordering when listed
 
 - **Models that extend BaseActvitityTaxonomy**:
 
   - **ActivityAgeRange**: e.g: "13-15", "16-19", etc.
+
   - **ActivityBloomsTaxonomyLevel**: e.g: "Remember", "Understand", etc.
+
   - **ActivityBuildingBlock**: e.g: "Executive function", "Financial habits and norms", etc.
+
   - **ActivityCouncilForEconEd**: e.g: "Standard I. Earning income", etc.
+
   - **ActivityDuration**: e.g: "15-20 minutes", etc.
+
   - **ActivityGradeLevel**: e.g: "High school (9-10)", etc.
+
   - **ActivityJumpStartCoalition**: e.g: "Spending and saving", etc.
+
   - **ActivitySchoolSubject**: e.g: "CTE (Career and technical education)", etc.
+
   - **ActivityStudentCharacteristics**: e.g: "Rural", "English language learners", etc.
+
   - **ActivityTeachingStrategy**: e.g: "Cooperative learning", "Gamification", etc.
+
   - **ActivityType**: e.g: "Individual", "Whole class", etc.
-  
+
 **ActivityTopic**:
 
 - **Extends**: [MPTTModel](https://django-mptt.github.io/django-mptt/models.html)
+
 - **Description**: This model allows us to have nested Topics
+
 - **Fields**:
+
   - title: A unique string field that serves as the filter value label
+
   - weight: An integer that determines the labels ordering when listed
+
   - parent: A TreeForeignKey to the parent topic.
 
 - **Note**: This model's nested admin ui breaks in the Wagtail admin, so it is managed in the [django admin](https://www.consumerfinance.gov/django-admin/teachers_digital_platform/activitytopic/)
 
-
-
 **TDPActivityIndexPage**:
 
 - **Extends**: CFGOVPage
-- **Description**: The TDP Activity Search Page is a filterable listing page that displays published TDP Activity Pages. 
+
+- **Description**: The TDP Activity Search Page is a filterable listing page that displays published TDP Activity Pages.
 There is logic in the code that limits the site to only have one instance of a TDPActivityIndexPage. This is a Wagtail editable
 page that is powered by Haystack and Elasticsearch. For that reason, results will not display until you run:
 ```bash
 python manage.py update-index -r teachers_digital_platform
 ```
 - **Fields**:
+
   - header: A Streamfield that allows for TextIntroduction molecules
 
 ## Dependencies
 
 - **django-haystack**: The search page requires haystack and elasticsearch
-- **django-mptt (0.9.0)**: MPTT is used to provide hierarchical topic metadata via the ActivityTopic model
-- **django-js-asset (1.1.0)**': JS Asset is a dependency of django-mptt
 
+- **django-mptt (0.9.0)**: MPTT is used to provide hierarchical topic metadata via the ActivityTopic model
+
+- **django-js-asset (1.1.0)**': JS Asset is a dependency of django-mptt
 
 ## Installation
 
@@ -131,17 +152,18 @@ This should be frequently tested to ensure reliability. Alternatively, link to
 a separate [INSTALL](INSTALL.md) document.
 
 - You must first clone and install the [cfgov-refresh repository](https://github.com/cfpb/cfgov-refresh#quickstart)
+
 - Clone this repository into the `develop-apps` folder of the cfgov-refresh repository located here: `cfgov-refresh/develop-apps`
+
 - Install third-party dependencies and build frontend assets:
 ```sh
 cd develop-apps/teachers-digital-platform/
 ./setup.sh
 ```
 
-
 ## CSS and JavaScript
 
-This app uses Gulp to generate a single global CSS and JS files based on individual 
+This app uses Gulp to generate a single global CSS and JS files based on individual
 .less and .js files in "teachers_digital_platform/css" and "teachers_digital_platform/js."
 The generated css and js files can be found "teachers_digital_platform/static/"
 
@@ -159,12 +181,12 @@ gulp styles
 
 ## How to test the software
 
-###Testing Javascript code: 
+###Testing Javascript code:
 
 Javascript tests can be fount in "teachers_digital_platform/\_\_tests\_\_"
 
-to only test Search Tool JS, run: 
-```sh 
+to only test Search Tool JS, run:
+```sh
 npm run test-js
 ```
 to test both the Search Tool and CRTool, run:
@@ -173,14 +195,14 @@ to test both the Search Tool and CRTool, run:
 npm run test
 ```
 
-
-
 ###Testing Python code:
 
 Unit tests can be found in "teachers_digital_platform/tests/"
 
 **The two main files are**:
+
 - teachers_digital_platform/tests/models/test_activity_index_page.py
+
 - teachers_digital_platform/tests/models/test_pages_utility_definitions.py
 
 **Shell command**:
@@ -190,13 +212,12 @@ tox
 
 ## Known issues
 
-Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/search.js#L144). 
+Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/search.js#L144).
 Errors are sent to console log, but is not prominently displayed for end-users.
 
 ## Getting help
 
 If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
-
 
 ----
 
@@ -205,10 +226,8 @@ If you have questions, concerns, bug reports, etc, please file an issue in this 
 2. [LICENSE](LICENSE)
 3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
 
-
 ----
 
 ## Credits and references
 
 1. This project was heavily influenced by work done on the [regulations3k project](https://github.com/cfpb/cfgov-refresh/tree/master/cfgov/regulations3k).
-
