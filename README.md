@@ -1,24 +1,44 @@
-#### CFPB Open Source Project Template Instructions
-
-1. Create a new project.
-2. Copy these files into the new project.
-3. Update the README, replacing the contents below as prescribed.
-4. Add any libraries, assets, or hard dependencies whose source code will be included
-   in the project's repository to the _Exceptions_ section in the [TERMS](TERMS.md).
-  - If no exceptions are needed, remove that section from TERMS.
-5. If working with an existing code base, answer the questions on the [open source checklist](opensource-checklist.md)
-6. Delete these instructions and everything up to the _Project Title_ from the README.
-7. Write some great software and tell people about it.
-
-> Keep the README fresh! It's the first thing people see and will make the initial impression.
-
-----
-
 # Teacher Digital Platform
 
 **Description**:  The Teacher Digital Platform (TDP) will be a new section within the existing cf.gov website to promote the CFPBs financial education building blocks research. It will offer teachers resources to assist them with instructing students in K-12 grades on financial education topics.
 
 This platform contains work for three separate projects: Building blocks tool, Curriculum review tool, and Search interface.
+
+
+#### Table of Contents
+[Building blocks tool](#building-blocks-tool)
+
+  - [Implementation details](#bb-implementation-details)
+
+  - [Local testing/development](#bb-local-testing-development)
+
+[Curriculum review tool](#curriculum-review-tool)
+
+[Search interface](#search-interface)
+
+  - [Models](#si-models)
+
+[Dependencies](#dependencies)
+
+[Installation](#installation)
+
+[CSS and JavaScript](#css-and-javascript)
+
+[How to test Software](#how-to-test-the-software)
+
+  - [Testing JavaScript code](#testing-javascript-code)
+
+  - [Testing Python code](#testing-python-code)
+
+[Known Issues](#known-issues)
+
+[Getting help](#getting-help)
+
+[Open source licensing info](#open-source-licensing-info)
+
+[Credits and references](#credits-and-references)
+
+<a name="building-blocks-tool"/>
 
 ## Building blocks tool
 
@@ -30,6 +50,8 @@ This platform contains work for three separate projects: Building blocks tool, C
 
   - **Dependencies**: [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll), [animate on scroll](https://github.com/michalsnik/aos)
 
+<a name="bb-implementation-details"/>
+
 ### Implementation details
 
   - **Jinja2**: A single template file is used ([bb-tool.html](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/jinja2/teachers_digital_platform/bb-tool.html)).
@@ -38,11 +60,22 @@ This platform contains work for three separate projects: Building blocks tool, C
 
   - **JS**: This page pulls in the platform’s global JavaScript file ([tdp.js](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/index.js)). The [scroll.js](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/scroll.js) module handles the smooth scrolling to the different tour stops and depends on the [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll) to work in older browsers. This page also uses the script from the [animate on scroll](https://github.com/michalsnik/aos) library.
 
+<a name="bb-local-testing-development"/>
+
+### Local testing/development
+
+ - The Building blocks tool is accessible at the following path "**practitioner-resources/youth-financial-education/journey**"
+ - The template for this page can be found in: ```teachers_digital_platform/jinja2/teachers_digital_platform/bb-tool.html```
+
+<a name="curriculum-review-tool"/>
+
 ## Curriculum review tool
 
 **Description**: The [Curriculum review tool](https://www.consumerfinance.gov//practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive, online tool for educators to use in place of the [paper-based PDF](https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf) that already exists on the cf.gov website.
 
 Further documentation about the CR tool can be found in the [crtool directory](https://github.com/cfpb/teachers-digital-platform/tree/master/teachers_digital_platform/crtool).
+
+<a name="search-interface"/>
 
 ## Search interface
 
@@ -60,7 +93,17 @@ Once they've learned about how to incorporated financial education into their cl
 
 ![](https://raw.githubusercontent.com/cfpb/teachers-digital-platform/master/screenshot.png)
 
+<a name="si-models"/>
+
 ### Models
+
+The search tool is built using two types of Wagtail pages; TDP Activity page (TDPActivityPage) and TDP Activity search page (TDPActivityIndexPage).
+The TDP Activity search page is a singleton page that serves as the listing page. The path of the TDP Activity search page is determined
+by its position in the Wagtail menu. To add Activities to the TDP Activity search page, you'll need to publish child TDP Activity pages
+under the TDP Activity search page.
+
+**Note**: As a precursor, you'll need to add values for the various Activity metadata fields. This should be done automatically if you run migrations:
+```python manage.py migrate```
 
 **TDPActivityPage**:
 
@@ -137,6 +180,8 @@ python manage.py update-index -r teachers_digital_platform
 
   - header: A Streamfield that allows for TextIntroduction molecules
 
+<a name="dependencies"/>
+
 ## Dependencies
 
 - **django-haystack**: The search page requires haystack and elasticsearch
@@ -145,11 +190,11 @@ python manage.py update-index -r teachers_digital_platform
 
 - **django-js-asset (1.1.0)**': JS Asset is a dependency of django-mptt
 
+<a name="installation"/>
+
 ## Installation
 
-Detailed instructions on how to install, configure, and get the project running.
-This should be frequently tested to ensure reliability. Alternatively, link to
-a separate [INSTALL](INSTALL.md) document.
+The following installation steps installs all three tools (Building blocks tool, Curriculum Review tool, Search interface)
 
 - You must first clone and install the [cfgov-refresh repository](https://github.com/cfpb/cfgov-refresh#quickstart)
 
@@ -160,6 +205,8 @@ a separate [INSTALL](INSTALL.md) document.
 cd develop-apps/teachers-digital-platform/
 ./setup.sh
 ```
+
+<a name="css-and-javascript"/>
 
 ## CSS and JavaScript
 
@@ -179,7 +226,11 @@ gulp scripts
 gulp styles
 ```
 
+<a name="how-to-test-the-software"/>
+
 ## How to test the software
+
+<a name="testing-javascript-code"/>
 
 ###Testing Javascript code:
 
@@ -194,6 +245,8 @@ to test both the Search Tool and CRTool, run:
 ```sh
 npm run test
 ```
+
+<a name="testing-python-code"/>
 
 ###Testing Python code:
 
@@ -210,10 +263,14 @@ Unit tests can be found in "teachers_digital_platform/tests/"
 tox
 ```
 
+<a name="known-issues"/>
+
 ## Known issues
 
 Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/search.js#L144).
 Errors are sent to console log, but is not prominently displayed for end-users.
+
+<a name="getting-help"/>
 
 ## Getting help
 
@@ -221,12 +278,16 @@ If you have questions, concerns, bug reports, etc, please file an issue in this 
 
 ----
 
+<a name="open-source-lincensing-info"/>
+
 ## Open source licensing info
 1. [TERMS](TERMS.md)
 2. [LICENSE](LICENSE)
 3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
 
 ----
+
+<a name="credits-and-references"/>
 
 ## Credits and references
 
