@@ -232,7 +232,7 @@ gulp styles
 
 <a name="testing-javascript-code"/>
 
-###Testing Javascript code:
+### Testing Javascript code:
 
 Javascript tests can be fount in "teachers_digital_platform/\_\_tests\_\_"
 
@@ -248,7 +248,7 @@ npm run test
 
 <a name="testing-python-code"/>
 
-###Testing Python code:
+### Testing Python code:
 
 Unit tests can be found in "teachers_digital_platform/tests/"
 
