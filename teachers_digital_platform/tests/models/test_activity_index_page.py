@@ -1,4 +1,4 @@
-from django.test import RequestFactory, TestCase, override_settings
+from django.test import RequestFactory, TestCase
 
 from wagtail.tests.utils import WagtailPageTests
 from wagtail.wagtailcore.blocks import StreamValue
@@ -20,9 +20,6 @@ from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page
 
 
-@override_settings(
-    FLAGS={'TDP_SEARCH_INTERFACE': {'boolean': True}}
-)
 class ActivityIndexPageTests(WagtailPageTests):
     @classmethod
     def setUpClass(self):
