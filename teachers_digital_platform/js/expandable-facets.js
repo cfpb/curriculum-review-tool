@@ -13,7 +13,7 @@ const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).close
 
 const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
-const ExpandableTransition = require( 'cf-atomic-component/src/utilities/transition/ExpandableTransition' );
+const ExpandableTransition = require( 'cf-expandables/src/ExpandableTransition' );
 
 const ExpandableFacets = Organism.extend( {
   ui: {
