@@ -13,7 +13,7 @@ const closest = require( 'cf-atomic-component/src/utilities/dom-closest' ).close
 
 const Events = require( 'cf-atomic-component/src/mixins/Events.js' );
 const Organism = require( 'cf-atomic-component/src/components/Organism' );
-const ExpandableTransition = require( 'cf-atomic-component/src/utilities/transition/ExpandableTransition' );
+const ExpandableFacetTransition = require( './ExpandableFacetTransition' );
 
 const ExpandableFacets = Organism.extend( {
   ui: {
@@ -56,7 +56,7 @@ function initialize() {
     OPEN_DEFAULT: 'o-expandable-facets_content__onload-open'
   };
 
-  const transition = new ExpandableTransition(
+  const transition = new ExpandableFacetTransition(
     this.ui.content, customClasses
   );
   this.transition = transition.init();
