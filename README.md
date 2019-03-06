@@ -234,7 +234,7 @@ gulp styles
 
 ### Testing Javascript code:
 
-Javascript tests can be fount in "teachers_digital_platform/\_\_tests\_\_"
+Javascript tests can be found in "teachers_digital_platform/\_\_tests\_\_"
 
 to only test Search Tool JS, run:
 ```sh
