@@ -248,7 +248,7 @@ const handleClearAllClick = ( event, sendEventMethod ) => {
  * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
-const handleFetchSearchResults = ( sendEventMethod ) => {
+const handleFetchSearchResults = sendEventMethod => {
 
   const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
 
@@ -259,9 +259,9 @@ const handleFetchSearchResults = ( sendEventMethod ) => {
   const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
 
   const action = 'searchResultCount';
-  const label = resultsCount
+  const label = resultsCount;
   if (sendEventMethod) {
-    return sendEventMethod( action, label )
+    return sendEventMethod( action, label );
   }
   return sendEvent( action, label );
 };
@@ -273,22 +273,23 @@ const handleFetchSearchResults = ( sendEventMethod ) => {
  */
 const bindAnalytics = sendEventMethod => {
   const searchContent = find( '#tdp-search-facets-and-results' );
+  if ( searchContent ) {
+    bindEvent( searchContent, {
+      click: event => handleExpandableClick( event, sendEventMethod )
+    } );
 
-  bindEvent( searchContent, {
-    click: event => handleExpandableClick( event, sendEventMethod )
-  } );
+    bindEvent( searchContent, {
+      click: event => handleFilterClick( event, sendEventMethod )
+    } );
 
-  bindEvent( searchContent, {
-    click: event => handleFilterClick( event, sendEventMethod )
-  } );
+    bindEvent( searchContent, {
+      click: event => handleClearFilterClick( event, sendEventMethod )
+    } );
 
-  bindEvent( searchContent, {
-    click: event => handleClearFilterClick( event, sendEventMethod )
-  } );
-
-  bindEvent( searchContent, {
-    click: event => handlePaginationClick( event, sendEventMethod )
-  } );
+    bindEvent( searchContent, {
+      click: event => handlePaginationClick( event, sendEventMethod )
+    } );
+  }
 };
 
 module.exports = {
