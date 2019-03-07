@@ -63,6 +63,7 @@ const getExpandableState = expandable => {
  * and report to GA if they opened or closed an expandable.
  *
  * @param {event} event Click event
+ * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
 const handleExpandableClick = ( event, sendEventMethod ) => {
@@ -89,6 +90,7 @@ const handleExpandableClick = ( event, sendEventMethod ) => {
  * handleFilterClick - Listen for filter clicks and report to GA.
  *
  * @param {event} event Click event
+ * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
 const handleFilterClick = ( event, sendEventMethod ) => {
@@ -110,6 +112,7 @@ const handleFilterClick = ( event, sendEventMethod ) => {
  * handleClearFilterClick - Listen for clear filter clicks and report to GA.
  *
  * @param {event} event Click event
+ * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
 const handleClearFilterClick = ( event, sendEventMethod ) => {
@@ -152,6 +155,7 @@ const getPaginator = event => {
  * handlePaginationClick - Listen for pagination clicks and report to GA.
  *
  * @param {event} event Click event
+ * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
 const handlePaginationClick = ( event, sendEventMethod ) => {
@@ -206,6 +210,7 @@ const getClearBtn = event => {
  * handleClearAllClick - Listen for clear all filters clicks and report to GA.
  *
  * @param {event} event Click event
+ * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
 const handleClearAllClick = ( event, sendEventMethod ) => {
@@ -238,7 +243,33 @@ const handleClearAllClick = ( event, sendEventMethod ) => {
 };
 
 /**
+ * handleFetchResults - Listen for AJAX fetchSearchResults and report to GA.
+ *
+ * @param {method} sendEventMethod method
+ * @returns {object} Event data
+ */
+const handleFetchSearchResults = ( sendEventMethod ) => {
+
+  const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
+
+  if (!resultsCountBlock) {
+    return;
+  }
+
+  const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
+
+  const action = 'searchResultCount';
+  const label = resultsCount
+  if (sendEventMethod) {
+    return sendEventMethod( action, label )
+  }
+  return sendEvent( action, label );
+};
+
+/**
  * bindAnalytics - Set up analytics reporting.
+ *
+ * @param {method} sendEventMethod method
  */
 const bindAnalytics = sendEventMethod => {
   const searchContent = find( '#tdp-search-facets-and-results' );
@@ -270,6 +301,7 @@ module.exports = {
   handleClearFilterClick,
   handlePaginationClick,
   handleClearAllClick,
+  handleFetchSearchResults,
   sendEvent,
   bindAnalytics
 };

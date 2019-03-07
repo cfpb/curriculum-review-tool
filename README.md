@@ -174,7 +174,7 @@ You can edit these field options in the Wagtail admin menu by going to "TDP Acti
 There is logic in the code that limits the site to only have one instance of a TDPActivityIndexPage. This is a Wagtail editable
 page that is powered by Haystack and Elasticsearch. For that reason, results will not display until you run:
 ```bash
-python manage.py update-index -r teachers_digital_platform
+python manage.py update_index -r teachers_digital_platform
 ```
 - **Fields**:
 
