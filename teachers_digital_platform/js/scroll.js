@@ -11,27 +11,28 @@ const scroll = {
     jumplinks.forEach( function( jumplink ) {
       jumplink.addEventListener( 'click', function( event ) {
         const target = document.querySelector( jumplink.hash );
+        if ( target ) {
+          // Disable default browser behavior.
+          event.preventDefault();
 
-        // Disable default browser behavior.
-        event.preventDefault();
+          // Scroll smoothly to the target.
+          target.scrollIntoView( { behavior: 'smooth', block: 'start' } );
 
-        // Scroll smoothly to the target.
-        target.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+          // Update url hash.
+          if ( history.pushState ) {
+            history.pushState( null, null, jumplink.hash );
+          } else {
+            location.hash = jumplink.hash;
+          }
 
-        // Update url hash.
-        if ( history.pushState ) {
-          history.pushState( null, null, jumplink.hash );
-        } else {
-          location.hash = jumplink.hash;
+          // Wait half a second for scrolling to finish.
+          setTimeout( function() {
+
+            // Make sure focus is set to the target.
+            target.setAttribute( 'tabindex', '-1' );
+            target.focus( { preventScroll: true } );
+          }, 500 );
         }
-
-        // Wait half a second for scrolling to finish.
-        setTimeout( function() {
-
-          // Make sure focus is set to the target.
-          target.setAttribute( 'tabindex', '-1' );
-          target.focus( { preventScroll: true } );
-        }, 500 );
       }, false );
     } );
   }
