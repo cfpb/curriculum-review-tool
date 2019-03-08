@@ -9,7 +9,7 @@
     "core-js": "2.5.6",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
-    "jest-enzyme": "6.0.0",
+    "jest-enzyme": "7.0.0",
     "react": "16.3.1",
     "react-dom": "16.3.1",
     "react-modal": "3.4.4",
