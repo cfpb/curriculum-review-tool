@@ -1,1 +1,1 @@
-from cfgov.settings.test_nomigrations import *  # noqa: F403 F401
+from cfgov.settings.test import *  # noqa: F403 F401

@@ -41,9 +41,6 @@ setup(
             'static/tdp/js/*',
             'static/tdp/img/*',
             'static/tdp/fonts/*',
-            'fixtures/tdp_initial_data.json',
-            'fixtures/tdp_updated_council_for_ed_data.json',
-            'fixtures/tdp_updated_building_blocks.json'
         ],
     },
     install_requires=install_requires,
