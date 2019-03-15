@@ -114,11 +114,9 @@ const HTML_SNIPPET = `
       </div>
     </div>
 
-
-
     <div id="tdp-search-results">
       <div class="results_header">
-        <div class="results_count">
+        <div class="results_count" data-results-count="8">
           <h3>Showing 8 matches out of 26 activities</h3>
         </div>
         <div class="results_filters">

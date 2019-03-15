@@ -1,6 +1,7 @@
 const smoothscroll = require( 'smoothscroll-polyfill' );
+const scrollIntoView = require( './util/scroll' ).scrollIntoView;
 
-const scroll = {
+const tdpScroll = {
   init: () => {
     let jumplinks = document.querySelectorAll( '[data-scroll]' );
 
@@ -11,12 +12,11 @@ const scroll = {
     jumplinks.forEach( function( jumplink ) {
       jumplink.addEventListener( 'click', function( event ) {
         const target = document.querySelector( jumplink.hash );
-
         // Disable default browser behavior.
         event.preventDefault();
 
         // Scroll smoothly to the target.
-        target.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+        scrollIntoView( target, { behavior: 'smooth', block: 'start' } );
 
         // Update url hash.
         if ( history.pushState ) {
@@ -37,4 +37,4 @@ const scroll = {
   }
 };
 
-module.exports = scroll;
+module.exports = tdpScroll;

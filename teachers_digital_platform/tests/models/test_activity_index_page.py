@@ -234,6 +234,6 @@ class TestActivityIndexPageSearch(TestCase):
 
 # print_to_file(response.content, 'response.html')
 def print_to_file(text, filename):
-        handle1 = open(filename, 'w+')
-        handle1.write(text)
-        handle1.close()
+    handle1 = open(filename, 'w+')
+    handle1.write(text)
+    handle1.close()

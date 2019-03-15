@@ -145,10 +145,13 @@ function fetchSearchResults( filters = [] ) {
       return console.error( utils.handleError( err ).msg );
     }
     searchContainer.innerHTML = data;
+
     // Update the query params in the URL
     utils.updateUrl( baseUrl, searchParams );
     // Reattach event handlers after tags are reloaded
     attachHandlers();
+    // Send result count to Analytics.
+    tdpAnalytics.handleFetchSearchResults( );
     return data;
   } );
   return searchUrl;

@@ -33,6 +33,7 @@ _site/
 .DS_Store?
 .Spotlight-V100
 .Trashes
+.idea/
 Icon?
 ehthumbs.db
 Thumbs.db
@@ -66,6 +67,8 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+/coverage
+/cfgov-refresh/
 
 # Front-End #
 #############
@@ -73,3 +76,4 @@ node_modules/
 teachers_digital_platform/static/*
 teachers_digital_platform/tests/unit_test_coverage/
 teachers_digital_platform/crtool/build/*
+teachers_digital_platform/crtool/coverage/
