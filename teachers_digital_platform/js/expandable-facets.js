@@ -58,9 +58,9 @@ function initialize() {
   this.transition = transition.init();
 
   if ( this.ui.content.classList.contains( customClasses.OPEN_DEFAULT ) ) {
-    this.ui.target.classList.addClass( this.classes.targetExpanded );
+    this.ui.target.classList.add( this.classes.targetExpanded );
   } else {
-    this.ui.target.classList.addClass( this.classes.targetCollapsed );
+    this.ui.target.classList.add( this.classes.targetCollapsed );
   }
 
   const expandableGroup = closest(
@@ -118,11 +118,11 @@ function expandableClickHandler() {
  */
 function toggleTargetState( element ) {
   if ( element.classList.contains( this.classes.targetExpanded ) ) {
-    this.ui.target.classList.addClass( this.classes.targetCollapsed );
-    this.ui.target.classList.removeClass( this.classes.targetExpanded );
+    this.ui.target.classList.add( this.classes.targetCollapsed );
+    this.ui.target.classList.remove( this.classes.targetExpanded );
   } else {
-    this.ui.target.classList.addClass( this.classes.targetExpanded );
-    this.ui.target.classList.removeClass( this.classes.targetCollapsed );
+    this.ui.target.classList.add( this.classes.targetExpanded );
+    this.ui.target.classList.remove( this.classes.targetCollapsed );
   }
 }
 
