@@ -397,39 +397,39 @@
     {
         "fields": {
             "weight": 0,
-            "title": "English language learner (ELL)"
+            "title": "English language learners"
         },
         "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 1
     },
     {
         "fields": {
-            "weight": 0,
-            "title": "Free and reduced lunch (FRL)"
+            "weight": 2,
+            "title": "Low income"
         },
         "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 2
     },
     {
         "fields": {
-            "weight": 0,
-            "title": "Rural communities"
+            "weight": 3,
+            "title": "Rural"
         },
         "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 3
     },
     {
         "fields": {
-            "weight": 0,
-            "title": "Special education (SPED)"
+            "weight": 1,
+            "title": "Special education"
         },
         "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 4
     },
     {
         "fields": {
-            "weight": 0,
-            "title": "Urban communities"
+            "weight": 4,
+            "title": "Urban"
         },
         "model": "teachers_digital_platform.activitystudentcharacteristics",
         "pk": 5
@@ -681,5 +681,32 @@
         },
         "model": "teachers_digital_platform.activitycouncilforeconed",
         "pk": 6
+    },
+    {
+        "fields": {
+            "weight": 0,
+            "title": "Executive function",
+            "svg_icon": "settings"
+        },
+        "model": "teachers_digital_platform.activitybuildingblock",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "weight": 1,
+            "title": "Financial habits and norms",
+            "svg_icon": "split"
+        },
+        "model": "teachers_digital_platform.activitybuildingblock",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "weight": 2,
+            "title": "Financial knowledge and decision-making skills",
+            "svg_icon": "piggy-bank-check"
+        },
+        "model": "teachers_digital_platform.activitybuildingblock",
+        "pk": 3
     }
 ]

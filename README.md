@@ -102,8 +102,7 @@ The TDP Activity search page is a singleton page that serves as the listing page
 by its position in the Wagtail menu. To add Activities to the TDP Activity search page, you'll need to publish child TDP Activity pages
 under the TDP Activity search page.
 
-**Note**: As a precursor, you'll need to add values for the various Activity metadata fields. This should be done automatically if you run migrations:
-```python manage.py migrate```
+**Note**: As a precursor, you'll need to add values for the various Activity metadata fields. See installation instructions below.
 
 **TDPActivityPage**:
 
@@ -194,17 +193,7 @@ python manage.py update_index -r teachers_digital_platform
 
 ## Installation
 
-The following installation steps installs all three tools (Building blocks tool, Curriculum Review tool, Search interface)
-
-- You must first clone and install the [cfgov-refresh repository](https://github.com/cfpb/cfgov-refresh#quickstart)
-
-- Clone this repository into the `develop-apps` folder of the cfgov-refresh repository located here: `cfgov-refresh/develop-apps`
-
-- Install third-party dependencies and build frontend assets:
-```sh
-cd develop-apps/teachers-digital-platform/
-./setup.sh
-```
+See [INSTALL.md](./install.md).
 
 <a name="css-and-javascript"/>
 
