@@ -193,7 +193,7 @@ python manage.py update_index -r teachers_digital_platform
 
 ## Installation
 
-See [INSTALL.md](./install.md).
+See [INSTALL.md](https://github.com/cfpb/teachers-digital-platform/blob/master/INSTALL.md).
 
 <a name="css-and-javascript"/>
 
