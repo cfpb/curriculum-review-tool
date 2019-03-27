@@ -243,16 +243,38 @@ const handleClearAllClick = ( event, sendEventMethod ) => {
 };
 
 /**
- * handleFetchResults - Listen for AJAX fetchSearchResults and report to GA.
+ * handleFetchSearchResults - Listen for AJAX fetchSearchResults and report to GA.
+ *
+ * @param {string} searchUrl string
+ * @param {method} sendEventMethod method
+ * @returns {object} Event data
+ */
+const handleFetchSearchResults = ( searchUrl, sendEventMethod ) => {
+
+  if ( searchUrl.length === 0 ) {
+    return;
+  }
+
+  const action = 'AjaxSearchUrl';
+  const label = searchUrl;
+
+  if ( sendEventMethod ) {
+    return sendEventMethod( action, label );
+  }
+  return sendEvent( action, label );
+};
+
+/**
+ * handleFetchSearchResultsCount - Listen for AJAX fetchSearchResults and report to GA.
  *
  * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
-const handleFetchSearchResults = sendEventMethod => {
+const handleFetchSearchResultsCount = sendEventMethod => {
 
   const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
 
-  if (!resultsCountBlock) {
+  if ( !resultsCountBlock ) {
     return;
   }
 
@@ -260,7 +282,7 @@ const handleFetchSearchResults = sendEventMethod => {
 
   const action = 'searchResultCount';
   const label = resultsCount;
-  if (sendEventMethod) {
+  if ( sendEventMethod ) {
     return sendEventMethod( action, label );
   }
   return sendEvent( action, label );
@@ -303,6 +325,7 @@ module.exports = {
   handlePaginationClick,
   handleClearAllClick,
   handleFetchSearchResults,
+  handleFetchSearchResultsCount,
   sendEvent,
   bindAnalytics
 };
