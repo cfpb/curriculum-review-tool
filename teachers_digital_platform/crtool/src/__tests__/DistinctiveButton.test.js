@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import C from '../js/business.logic/constants';
 import DistinctiveButton from '../js/components/distinctives/DistinctiveButton';
@@ -34,7 +33,7 @@ test('Anchor tag with class name exists', () => {
 });
 
 it('DistinctiveButton onHandleClick correctly invokes distinctiveClicked(name)', () => {
-  const onButtonClick = sinon.spy();
+  const onButtonClick = jest.fn();
   const wrapper = shallow(<DistinctiveButton handleOnClick={onButtonClick} {...distinctiveProps} />);
 
   wrapper.find('button').simulate('click');
