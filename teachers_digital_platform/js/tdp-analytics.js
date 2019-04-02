@@ -245,43 +245,33 @@ const handleClearAllClick = ( event, sendEventMethod ) => {
 /**
  * handleFetchSearchResults - Listen for AJAX fetchSearchResults and report to GA.
  *
- * @param {string} searchUrl string
+ * @param {string} searchTerm string
  * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
-const handleFetchSearchResults = ( searchUrl, sendEventMethod ) => {
+const handleFetchSearchResults = ( searchTerm, sendEventMethod ) => {
 
-  if ( searchUrl.length === 0 ) {
+  if ( searchTerm.length === 0 ) {
     return;
   }
 
-  const action = 'AjaxSearchUrl';
-  const label = searchUrl;
-
-  if ( sendEventMethod ) {
-    return sendEventMethod( action, label );
-  }
-  return sendEvent( action, label );
-};
-
-/**
- * handleFetchSearchResultsCount - Listen for AJAX fetchSearchResults and report to GA.
- *
- * @param {method} sendEventMethod method
- * @returns {object} Event data
- */
-const handleFetchSearchResultsCount = sendEventMethod => {
-
+  // Send the result count to Analytics
   const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
+  if ( resultsCountBlock ) {
+    const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
 
-  if ( !resultsCountBlock ) {
-    return;
+    const action = 'searchResultCount';
+    const label = resultsCount;
+    if ( sendEventMethod ) {
+      sendEventMethod( action, label );
+    } else {
+      sendEvent( action, label );
+    }
   }
 
-  const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
-
-  const action = 'searchResultCount';
-  const label = resultsCount;
+  // Send the keyword to Analytics
+  const action = 'search';
+  const label = searchTerm;
   if ( sendEventMethod ) {
     return sendEventMethod( action, label );
   }
@@ -325,7 +315,6 @@ module.exports = {
   handlePaginationClick,
   handleClearAllClick,
   handleFetchSearchResults,
-  handleFetchSearchResultsCount,
   sendEvent,
   bindAnalytics
 };
