@@ -243,24 +243,36 @@ const handleClearAllClick = ( event, sendEventMethod ) => {
 };
 
 /**
- * handleFetchResults - Listen for AJAX fetchSearchResults and report to GA.
+ * handleFetchSearchResults - Listen for AJAX fetchSearchResults and report to GA.
  *
+ * @param {string} searchTerm string
  * @param {method} sendEventMethod method
  * @returns {object} Event data
  */
-const handleFetchSearchResults = sendEventMethod => {
+const handleFetchSearchResults = ( searchTerm, sendEventMethod ) => {
 
-  const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
-
-  if (!resultsCountBlock) {
+  if ( searchTerm.length === 0 ) {
     return;
   }
 
-  const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
+  // Send the result count to Analytics
+  const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
+  if ( resultsCountBlock ) {
+    const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
 
-  const action = 'searchResultCount';
-  const label = resultsCount;
-  if (sendEventMethod) {
+    const action = 'searchResultCount';
+    const label = resultsCount;
+    if ( sendEventMethod ) {
+      sendEventMethod( action, label );
+    } else {
+      sendEvent( action, label );
+    }
+  }
+
+  // Send the keyword to Analytics
+  const action = 'search';
+  const label = searchTerm;
+  if ( sendEventMethod ) {
     return sendEventMethod( action, label );
   }
   return sendEvent( action, label );

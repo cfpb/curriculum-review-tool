@@ -150,8 +150,8 @@ function fetchSearchResults( filters = [] ) {
     utils.updateUrl( baseUrl, searchParams );
     // Reattach event handlers after tags are reloaded
     attachHandlers();
-    // Send result count to Analytics.
-    tdpAnalytics.handleFetchSearchResults( );
+    // Send search query to Analytics.
+    tdpAnalytics.handleFetchSearchResults(searchField.value);
     return data;
   } );
   return searchUrl;
@@ -205,7 +205,7 @@ function handleFilter( event, target = null ) {
 }
 
 /**
- * Traverse parents and update there checkbox values.
+ * Traverse parents and update their checkbox values.
  *
  * @param {DOMElement} element DOM element
  */
@@ -218,9 +218,9 @@ function _updateParentFilter( element ) {
   var children = [];
   var checkedChildren = [];
   for ( var i = 0; i < checkboxes.length; i++ ) {
-    if ( wrapper.contains( checkboxes[i] ) === true) {
+    if ( wrapper.contains( checkboxes[i] ) === true ) {
       children.push( checkboxes[i] );
-      if ( checkboxes[i].checked === true) {
+      if ( checkboxes[i].checked === true ) {
         checkedChildren.push( checkboxes[i] );
       }
     }
@@ -236,7 +236,7 @@ function _updateParentFilter( element ) {
   var parentCheckbox = parentWrapper.querySelector(
     'div>input[type=checkbox]'
   );
-  if ( parentCheckbox && parentCheckbox.parentElement === parentWrapper) {
+  if ( parentCheckbox && parentCheckbox.parentElement === parentWrapper ) {
     _updateParentFilter( parentCheckbox );
   }
 }
