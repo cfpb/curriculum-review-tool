@@ -40,6 +40,8 @@ class ActivityIndexPage(CFGOVPage):
 
     header = StreamField([
         ('text_introduction', molecules.TextIntroduction()),
+        ('image', molecules.ContentImage()),
+        ('notification', molecules.Notification()),
     ], blank=True)
 
     results = {}
