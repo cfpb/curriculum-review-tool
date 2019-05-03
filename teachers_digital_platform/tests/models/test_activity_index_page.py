@@ -45,6 +45,7 @@ class ActivityIndexPageTests(WagtailPageTests):
         self.assertCanCreate(ROOT_PAGE, ActivityIndexPage, {
             'title': 'Search for activities',
             'header-count': '0',
+            'header_sidebar-count': '0',
             'sidefoot-count': '0',
             'categories-TOTAL_FORMS': '0',
             'categories-INITIAL_FORMS': '0',
