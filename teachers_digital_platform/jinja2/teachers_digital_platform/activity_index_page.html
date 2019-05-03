@@ -41,6 +41,13 @@
                     {% endif %}
                 {%- endfor %}
             </div>
+            <div class="m-search-hero_image-wrapper">
+                {% for block in page.header_sidebar -%}
+                    {% if block.block_type != 'hero' %}
+                        {{ render_block.render(block, loop.index) }}
+                    {% endif %}
+                {%- endfor %}
+            </div>
         </section>
         <div class="block block__padded-top block__border-top u-mt0 u-mb30">
             <h2>Search for activities</h2>

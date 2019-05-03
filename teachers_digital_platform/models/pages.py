@@ -40,13 +40,17 @@ class ActivityIndexPage(CFGOVPage):
 
     header = StreamField([
         ('text_introduction', molecules.TextIntroduction()),
-        ('image', molecules.ContentImage()),
         ('notification', molecules.Notification()),
+    ], blank=True)
+
+    header_sidebar = StreamField([
+        ('image', molecules.ContentImage()),
     ], blank=True)
 
     results = {}
     content_panels = CFGOVPage.content_panels + [
         StreamFieldPanel('header'),
+        StreamFieldPanel('header_sidebar'),
     ]
 
     edit_handler = TabbedInterface([
