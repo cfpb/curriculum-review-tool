@@ -1,3 +1,6 @@
+// polyfill for ie9 compatibility
+require( 'classlist-polyfill' );
+
 const behavior = require( './util/behavior' );
 const utils = require( './search-utils' );
 const closest = require( './util/dom-traverse' ).closest;
@@ -24,6 +27,8 @@ function init() {
 function attachHandlers() {
   addDataGtmIgnore();
   behavior.attach( 'submit-search', 'submit', handleSubmit );
+  behavior.attach( 'submit-search', 'change', handleSearchChange );
+  behavior.attach( 'clear-search', 'click', clearSearch );
   behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
@@ -103,6 +108,36 @@ function clearFilters( event ) {
     } );
   } );
   handleFilter( event );
+}
+
+function handleSearchChange( event ) {
+  console.log( 'got here' );
+  const searchField = closest( event.target, 'input[name=q]' );
+  const clearSearchBtn = find( '.clearSearchBtn' );
+  if ( searchField.value.length === 0 && !clearSearchBtn.classList.contains( 'u-hidden' ) ) {
+    clearSearchBtn.classList.add( 'u-hidden' );
+    clearSearchBtn.classList.remove( 'a-btn a-btn__link' );
+  } else {
+    clearSearchBtn.classList.add( 'a-btn a-btn__link' );
+    clearSearchBtn.classList.remove( 'u-hidden' );
+  }
+}
+
+
+function clearSearch( event ) {
+  if ( event instanceof Event ) {
+    event.preventDefault();
+  }
+  const searchField = find( 'input[name=q]' );
+  if (searchField) {
+    searchField.value = '';
+  }
+  handleSubmit( event );
+}
+
+function toggleClearSearchBtn( event ) {
+  const searchField = find( 'input[name=q]' );
+  let target = closest( event.target, '.a-tag[data-js-hook=behavior_clear-filter]' );
 }
 
 /**
