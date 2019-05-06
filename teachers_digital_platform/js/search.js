@@ -40,7 +40,7 @@ function addDataGtmIgnore() {
     'a.m-pagination_btn-prev'
   ];
 
-  for ( var i = 0; i < ignoreBtns.length; i++ ) {
+  for ( let i = 0; i < ignoreBtns.length; i++ ) {
     const btn = document.querySelector( ignoreBtns[i] );
     if ( btn ) {
       btn.setAttribute( 'data-gtm_ignore', 'true' );
@@ -151,7 +151,7 @@ function fetchSearchResults( filters = [] ) {
     // Reattach event handlers after tags are reloaded
     attachHandlers();
     // Send search query to Analytics.
-    tdpAnalytics.handleFetchSearchResults(searchField.value);
+    tdpAnalytics.handleFetchSearchResults( searchField.value );
     return data;
   } );
   return searchUrl;
@@ -181,7 +181,7 @@ function handleFilter( event, target = null ) {
     const checkboxes = wrapperLI.querySelectorAll(
       'ul>li input[type=checkbox]'
     );
-    for ( var i = 0; i < checkboxes.length; i++ ) {
+    for ( let i = 0; i < checkboxes.length; i++ ) {
       if ( wrapperLI.contains( checkboxes[i] ) === true && checkboxes[i] !== target ) {
         checkboxes[i].checked = target.checked;
       }
@@ -211,13 +211,13 @@ function handleFilter( event, target = null ) {
  */
 function _updateParentFilter( element ) {
   const wrapper = element.parentElement.parentElement;
-  var checkboxes = wrapper.querySelectorAll(
+  const checkboxes = wrapper.querySelectorAll(
     'ul>li input[type=checkbox]'
   );
 
-  var children = [];
-  var checkedChildren = [];
-  for ( var i = 0; i < checkboxes.length; i++ ) {
+  const children = [];
+  const checkedChildren = [];
+  for ( let i = 0; i < checkboxes.length; i++ ) {
     if ( wrapper.contains( checkboxes[i] ) === true ) {
       children.push( checkboxes[i] );
       if ( checkboxes[i].checked === true ) {
@@ -233,7 +233,7 @@ function _updateParentFilter( element ) {
   }
   // Loop through ancestors and make sure they are checked or unchecked
   const parentWrapper = wrapper.parentElement.parentElement;
-  var parentCheckbox = parentWrapper.querySelector(
+  const parentCheckbox = parentWrapper.querySelector(
     'div>input[type=checkbox]'
   );
   if ( parentCheckbox && parentCheckbox.parentElement === parentWrapper ) {

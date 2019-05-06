@@ -1,8 +1,5 @@
-'use strict';
-
 const autoprefixer = require( 'autoprefixer' );
 const BROWSER_LIST = require( '../browser-list-config' );
-const browserSync = require( 'browser-sync' );
 const config = require( '../config' );
 const configPkg = config.pkg;
 const configBanner = config.banner;
@@ -37,15 +34,14 @@ function stylesModern() {
     .pipe( gulpHeader( configBanner, { pkg: configPkg } ) )
     .pipe( gulpSourcemaps.write( '.' ) )
     .pipe( gulp.dest( configStyles.dest ) )
-    .pipe( gulpDebug( { title: 'dest:' } ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
+    .pipe( gulpDebug( { title: 'dest:' } ) );
 }
 
 
 gulp.task( 'styles:modern', stylesModern );
 
-gulp.task( 'styles', [
-  'styles:modern'
-] );
+gulp.task( 'styles',
+  gulp.parallel(
+    'styles:modern'
+  )
+);
