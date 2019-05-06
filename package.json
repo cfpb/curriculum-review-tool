@@ -13,7 +13,9 @@
     "test-crtool": "gulp test",
     "test-js": "jest teachers_digital_platform/__tests__ --coverage",
     "watch": "gulp watch",
-    "postinstall": "cd teachers_digital_platform/crtool && npm install"
+    "postinstall": "cd teachers_digital_platform/crtool && npm install",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -94,7 +96,8 @@
     "uglifyjs-webpack-plugin": "1.0.1",
     "vinyl-named": "1.1.0",
     "webpack": "3.8.1",
-    "webpack-stream": "4.0.0"
+    "webpack-stream": "4.0.0",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "chai": "4.1.2",
@@ -113,10 +116,10 @@
     "protractor-cucumber-framework": "4.0.9",
     "selenium-webdriver": "3.5.0",
     "sinon": "4.0.2",
-    "snyk": "1.25.0",
     "wcag": "0.3.0"
   },
   "jest": {
     "testURL": "http://localhost"
-  }
+  },
+  "snyk": true
 }
