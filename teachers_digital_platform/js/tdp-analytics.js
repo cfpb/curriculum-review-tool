@@ -255,23 +255,27 @@ const handleFetchSearchResults = ( searchTerm, sendEventMethod ) => {
     return;
   }
 
-  // Send the result count to Analytics
+  // Send the keywords that return 0 results to Analytics.
   const resultsCountBlock = find( '#tdp-search-facets-and-results .results_count' );
   if ( resultsCountBlock ) {
     const resultsCount = resultsCountBlock.getAttribute( 'data-results-count' );
 
-    const action = 'searchResultCount';
-    const label = resultsCount;
-    if ( sendEventMethod ) {
-      sendEventMethod( action, label );
-    } else {
-      sendEvent( action, label );
+    // Check if result count is 0
+    if ( resultsCount === '0' ) {
+      const action = 'noSearchResults';
+      const label = searchTerm.toLowerCase() + ':0';
+
+      if ( sendEventMethod ) {
+        sendEventMethod( action, label );
+      } else {
+        sendEvent( action, label );
+      }
     }
   }
 
-  // Send the keyword to Analytics
+  // Send the keyword to Analytics.
   const action = 'search';
-  const label = searchTerm;
+  const label = searchTerm.toLowerCase();
   if ( sendEventMethod ) {
     return sendEventMethod( action, label );
   }

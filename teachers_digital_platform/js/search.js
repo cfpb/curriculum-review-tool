@@ -151,7 +151,7 @@ function fetchSearchResults( filters = [] ) {
     // Reattach event handlers after tags are reloaded
     attachHandlers();
     // Send search query to Analytics.
-    tdpAnalytics.handleFetchSearchResults(searchField.value);
+    tdpAnalytics.handleFetchSearchResults( searchField.value );
     return data;
   } );
   return searchUrl;
