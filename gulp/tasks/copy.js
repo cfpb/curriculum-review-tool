@@ -1,12 +1,7 @@
-'use strict';
-
 const gulp = require( 'gulp' );
 const gulpChanged = require( 'gulp-changed' );
-const gulpReplace = require( 'gulp-replace' );
 const configCopy = require( '../config' ).copy;
 const handleErrors = require( '../utils/handle-errors' );
-const browserSync = require( 'browser-sync' );
-const del = require( 'del' );
 
 /**
  * Generic copy files flow from source to destination.
@@ -18,10 +13,7 @@ function _genericCopy( src, dest ) {
   return gulp.src( src )
     .pipe( gulpChanged( dest ) )
     .on( 'error', handleErrors )
-    .pipe( gulp.dest( dest ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
+    .pipe( gulp.dest( dest ) );
 }
 
 gulp.task( 'copy:icons', () => {
@@ -30,7 +22,7 @@ gulp.task( 'copy:icons', () => {
 } );
 
 gulp.task( 'copy',
-  [
+  gulp.parallel(
     'copy:icons'
-  ]
+  )
 );

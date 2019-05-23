@@ -1,5 +1,3 @@
-'use strict';
-
 /* scripts task
    ---------------
    Bundle javascripty things!
@@ -7,7 +5,6 @@
    from different sources, and to use watch when run from the default task.
 */
 
-const browserSync = require( 'browser-sync' );
 const gulp = require( 'gulp' );
 const gulpChanged = require( 'gulp-changed' );
 const handleErrors = require( '../utils/handle-errors' );
@@ -39,11 +36,13 @@ function _processScript( config, src, dest ) {
  */
 function scriptsModern() {
   return _processScript( webpackConfig.modernConf,
-                         configFile.scripts.entrypoint, configFile.scripts.dest );
+    configFile.scripts.entrypoint, configFile.scripts.dest );
 }
 
 gulp.task( 'scripts:modern', scriptsModern );
 
-gulp.task( 'scripts', [
-  'scripts:modern'
-] );
+gulp.task( 'scripts',
+  gulp.parallel(
+    'scripts:modern'
+  )
+);

@@ -8,6 +8,7 @@ let efBody;
 let facets;
 
 const expandableFacets = require( `${ BASE_JS_PATH }expandable-facets.js` );
+let expandableFacet;
 
 const HTML_SNIPPET = `
 

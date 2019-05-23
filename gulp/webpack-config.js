@@ -2,46 +2,48 @@
    Settings for webpack JavaScript bundling system.
    ========================================================================== */
 
-'use strict';
 
 const BROWSER_LIST = require( './browser-list-config' );
 const webpack = require( 'webpack' );
-const UglifyWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
+const TerserWebpackPlugin = require( 'terser-webpack-plugin' );
 
 
-//  Constants
-// const COMMON_BUNDLE_NAME = 'tdp.js';
+/* Constants
+   const COMMON_BUNDLE_NAME = 'tdp.js'; */
 
-// Commmon webpack 'module' option used in each configuration.
-// Runs code through Babel and uses global supported browser list.
+/* Commmon webpack 'module' option used in each configuration.
+   Runs code through Babel and uses global supported browser list. */
 const COMMON_MODULE_CONFIG = {
-  loaders: [ {
+  rules: [ {
     test: /\.js$/,
-    loaders: [ {
+
+    /* The `exclude` rule is a double negative.
+        It excludes all of `node_modules/` but it then un-excludes modules that
+        start with `cf-` and `cfpb-` (CF components and cfpb-chart-builder).
+        Regex test: https://regex101.com/r/zizz3V/5 */
+    exclude: {
+      test: /node_modules/,
+      exclude: /node_modules\/(?:cf\-.+|cfpb\-.+)/
+    },
+    use: {
       loader: 'babel-loader?cacheDirectory=true',
       options: {
-        presets: [ [ 'env', {
+        presets: [ [ '@babel/preset-env', {
           targets: {
             browsers: BROWSER_LIST.LAST_2_IE_8_UP
           },
-          debug: true
+          debug: false
         } ] ]
       }
-    } ],
-    exclude: {
-      test: /node_modules/,
-      // The below regex will capture all node modules that start with `cf`
-      // or atomic-component. Regex test: https://regex101.com/r/zizz3V/1/.
-      exclude: /node_modules\/(?:cf.+|atomic-component)/
     }
   } ]
 };
 
- // Set warnings to true to show linter-style warnings.
- // Set mangle to false and beautify to true to debug the output code.
-const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
+/* Set warnings to true to show linter-style warnings.
+   Set mangle to false and beautify to true to debug the output code. */
+const COMMON_MINIFICATION_CONFIG = new TerserWebpackPlugin( {
   parallel: true,
-  uglifyOptions: {
+  terserOptions: {
     ie8: false,
     ecma: 5,
     warnings: false,
@@ -54,9 +56,9 @@ const COMMON_UGLIFY_CONFIG = new UglifyWebpackPlugin( {
 } );
 
 
-// const COMMON_CHUNK_CONFIG = new webpack.optimize.CommonsChunkPlugin( {
-//   name: COMMON_BUNDLE_NAME
-// } );
+/* const COMMON_CHUNK_CONFIG = new webpack.optimize.CommonsChunkPlugin( {
+   name: COMMON_BUNDLE_NAME
+   } ); */
 
 
 const commonConf = {
@@ -64,21 +66,28 @@ const commonConf = {
   output: {
     filename: '[name]'
   },
-  plugins: [
-    // COMMON_UGLIFY_CONFIG
-  ]
+  optimization: {
+    minimizer: [
+      // COMMON_MINIFICATION_CONFIG
+    ]
+  }
 };
 
 const modernConf = {
   cache: true,
+  mode: 'production',
   module: COMMON_MODULE_CONFIG,
   output: {
     filename: 'tdp.js'
   },
   plugins: [
-    // COMMON_UGLIFY_CONFIG,
     // COMMON_CHUNK_CONFIG
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      // COMMON_MINIFICATION_CONFIG
+    ]
+  }
 };
 
 
