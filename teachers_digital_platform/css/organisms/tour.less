@@ -41,7 +41,6 @@
     .respond-to-min(@bp-med-min, {
         @supports ( display: flex ) {
             display: flex;
-            height: 100vh;
             justify-content: space-between;
             padding: unit( 45px / @base-font-size-px, em ) unit( 0px / @base-font-size-px, em );
         }
@@ -93,7 +92,6 @@
     .respond-to-min(@bp-med-min, {
         @supports ( display: flex ) {
             flex: 0 1 auto; // Fix for IE 10.
-            height: 75vh;
             overflow: auto;
         }
     });
@@ -143,6 +141,8 @@
         .respond-to-min(@bp-med-min, {
             @supports ( display: flex ) {
                 display: flex;
+                height: initial;
+                position: initial;
             }
         });
     }
@@ -212,7 +212,6 @@
     border-top: 0;
 
     .o-tour_content {
-        height: initial;
         min-height: ~'calc( 100vh - 108px )';
 
         .respond-to-min(@bp-med-min, {
