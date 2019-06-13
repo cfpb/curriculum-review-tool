@@ -1,6 +1,7 @@
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
+
 class TdpSearchHeroImage(blocks.StructBlock):
     image = ImageChooserBlock(
         help_text='Should be exactly 390px tall, and up to 940px wide, '

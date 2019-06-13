@@ -16,7 +16,6 @@ from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailsearch import index
 
 from modelcluster.fields import ParentalManyToManyField
-from teachers_digital_platform.molecules import TdpSearchHeroImage
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 from teachers_digital_platform.models import (
     ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
@@ -25,6 +24,7 @@ from teachers_digital_platform.models import (
     ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
     ActivityType
 )
+from teachers_digital_platform.molecules import TdpSearchHeroImage
 
 from v1.atomic_elements import molecules
 from v1.models import CFGOVPage, CFGOVPageManager, HomePage
