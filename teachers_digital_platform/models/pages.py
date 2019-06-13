@@ -16,6 +16,7 @@ from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailsearch import index
 
 from modelcluster.fields import ParentalManyToManyField
+from teachers_digital_platform.molecules import TdpSearchHeroImage
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 from teachers_digital_platform.models import (
     ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
@@ -44,7 +45,7 @@ class ActivityIndexPage(CFGOVPage):
     ], blank=True)
 
     header_sidebar = StreamField([
-        ('image', molecules.ContentImage()),
+        ('image', TdpSearchHeroImage()),
     ], blank=True)
 
     results = {}
