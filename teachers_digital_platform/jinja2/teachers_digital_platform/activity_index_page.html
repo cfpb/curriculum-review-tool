@@ -43,9 +43,7 @@
             </div>
             <div class="m-search-hero_image-wrapper">
                 {% for block in page.header_sidebar -%}
-                    {% if block.block_type == 'image' %}
-                        {{ render_stream_child(block) | safe }}
-                    {% endif %}
+                    {% include_block block %}
                 {%- endfor %}
             </div>
         </section>
