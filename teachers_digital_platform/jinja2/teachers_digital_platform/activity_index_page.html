@@ -40,26 +40,14 @@
                         {{ render_block.render(block, loop.index) }}
                     {% endif %}
                 {%- endfor %}
-                <div class="m-notification m-notification__visible m-notification__warning u-mt30">
-                    <span class="a-icon">{{ svg_icon('warning-round') }}</span>
-                    <div class="m-notification_content">
-                        <div class="m-notification_message">
-                            <h2 class="h4">Currently, there are only activities for high school.</h2>
-                            <p>Activities for elementary and middle school are being developed and will be available at a later time.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="m-search-hero_image-wrapper">
-                <img class="m-search-hero_image"
-                    srcset="{{ static('tdp/img/search-landing-hero.jpg') }},
-                        {{ static('tdp/img/search-landing-hero-2x.jpg') }} 2x"
-                    src="{{ static('tdp/img/search-landing-hero-2x.jpg') }}"
-                    width="498"
-                    alt="">
+                {% for block in page.header_sidebar -%}
+                    {% include_block block %}
+                {%- endfor %}
             </div>
         </section>
-        <div class="block block__padded-top block__border-top u-mt45 u-mb30">
+        <div class="block block__padded-top block__border-top u-mt0 u-mb30">
             <h2>Search for activities</h2>
             <form class="u-mt30" method="get" action="." data-js-hook="behavior_submit-search">
                 <div class="o-form__input-w-btn">

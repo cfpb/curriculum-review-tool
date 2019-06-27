@@ -24,6 +24,7 @@ from teachers_digital_platform.models import (
     ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
     ActivityType
 )
+from teachers_digital_platform.molecules import TdpSearchHeroImage
 
 from v1.atomic_elements import molecules
 from v1.models import CFGOVPage, CFGOVPageManager, HomePage
@@ -40,11 +41,17 @@ class ActivityIndexPage(CFGOVPage):
 
     header = StreamField([
         ('text_introduction', molecules.TextIntroduction()),
+        ('notification', molecules.Notification()),
+    ], blank=True)
+
+    header_sidebar = StreamField([
+        ('image', TdpSearchHeroImage()),
     ], blank=True)
 
     results = {}
     content_panels = CFGOVPage.content_panels + [
         StreamFieldPanel('header'),
+        StreamFieldPanel('header_sidebar'),
     ]
 
     edit_handler = TabbedInterface([
