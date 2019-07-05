@@ -27,7 +27,7 @@ function init() {
 function attachHandlers() {
   addDataGtmIgnore();
   behavior.attach( 'submit-search', 'submit', handleSubmit );
-  behavior.attach( 'submit-search', 'change', handleSearchChange );
+  behavior.attach( 'keyup-search', 'keyup', handleSearchKeyup );
   behavior.attach( 'clear-search', 'click', clearSearch );
   behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
@@ -110,20 +110,31 @@ function clearFilters( event ) {
   handleFilter( event );
 }
 
-function handleSearchChange( event ) {
-  console.log( 'got here' );
-  const searchField = closest( event.target, 'input[name=q]' );
+/**
+ * Show/Hide Clear button on the keyword search form field.
+ *
+ * @param {Event} event Keyup event
+ */
+function handleSearchKeyup( event ) {
+  const searchField = event.target;
   const clearSearchBtn = find( '.clearSearchBtn' );
   if ( searchField.value.length === 0 && !clearSearchBtn.classList.contains( 'u-hidden' ) ) {
     clearSearchBtn.classList.add( 'u-hidden' );
-    clearSearchBtn.classList.remove( 'a-btn a-btn__link' );
+    clearSearchBtn.classList.remove( 'a-btn' );
+    clearSearchBtn.classList.remove( 'a-btn__link' );
+
   } else {
-    clearSearchBtn.classList.add( 'a-btn a-btn__link' );
+    clearSearchBtn.classList.add( 'a-btn' );
+    clearSearchBtn.classList.add( 'a-btn__link' );
     clearSearchBtn.classList.remove( 'u-hidden' );
   }
 }
 
-
+/**
+ * Remove all keywords and filters from the search results page.
+ *
+ * @param {Event} event Click event
+ */
 function clearSearch( event ) {
   if ( event instanceof Event ) {
     event.preventDefault();
@@ -132,12 +143,13 @@ function clearSearch( event ) {
   if (searchField) {
     searchField.value = '';
   }
+  const clearSearchBtn = find( '.clearSearchBtn' );
+  if ( searchField.value.length === 0 && !clearSearchBtn.classList.contains( 'u-hidden' ) ) {
+    clearSearchBtn.classList.add( 'u-hidden' );
+    clearSearchBtn.classList.remove( 'a-btn' );
+    clearSearchBtn.classList.remove( 'a-btn__link' );
+  }
   handleSubmit( event );
-}
-
-function toggleClearSearchBtn( event ) {
-  const searchField = find( 'input[name=q]' );
-  let target = closest( event.target, '.a-tag[data-js-hook=behavior_clear-filter]' );
 }
 
 /**
