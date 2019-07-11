@@ -60,7 +60,7 @@
                             <input id="searchText" type="text" data-js-hook="behavior_keyup-search" autocomplete="off" class="a-text-input" name="q"
                                     placeholder="Enter your search term(s)"
                                     value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
-                            <button type="reset" class="clearSearchBtn u-hidden" data-js-hook="behavior_clear-search"><span class="cf-icon cf-icon-delete"></span>Clear</button>
+                            <button type="reset" class="clearSearchBtn{% if page.results.search_query: %} a-btn a-btn__link{% else%} u-hidden{% endif %}" data-js-hook="behavior_clear-search"><span class="cf-icon cf-icon-delete"></span>Clear</button>
                         </div>
                     </div>
                     <div class="o-form__input-w-btn_btn-container">
