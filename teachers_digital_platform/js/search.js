@@ -117,17 +117,7 @@ function clearFilters( event ) {
  */
 function handleSearchKeyup( event ) {
   const searchField = event.target;
-  const clearSearchBtn = find( '.clearSearchBtn' );
-  if ( searchField.value.length === 0 && !clearSearchBtn.classList.contains( 'u-hidden' ) ) {
-    clearSearchBtn.classList.add( 'u-hidden' );
-    clearSearchBtn.classList.remove( 'a-btn' );
-    clearSearchBtn.classList.remove( 'a-btn__link' );
-
-  } else {
-    clearSearchBtn.classList.add( 'a-btn' );
-    clearSearchBtn.classList.add( 'a-btn__link' );
-    clearSearchBtn.classList.remove( 'u-hidden' );
-  }
+  toggleClearSearchButton( searchField );
 }
 
 /**
@@ -143,13 +133,29 @@ function clearSearch( event ) {
   if (searchField) {
     searchField.value = '';
   }
-  const clearSearchBtn = find( '.clearSearchBtn' );
-  if ( searchField.value.length === 0 && !clearSearchBtn.classList.contains( 'u-hidden' ) ) {
-    clearSearchBtn.classList.add( 'u-hidden' );
-    clearSearchBtn.classList.remove( 'a-btn' );
-    clearSearchBtn.classList.remove( 'a-btn__link' );
-  }
+  toggleClearSearchButton( searchField );
   handleSubmit( event );
+}
+
+/**
+ * Toggle the Clear Search button on Keyword search.
+ *
+ * @param {Node} keyword search field
+ */
+function toggleClearSearchButton( searchField ) {
+  const clearSearchBtn = find( '.clearSearchBtn' );
+  if (searchField) {
+    if (searchField.value.length === 0) {
+      clearSearchBtn.classList.add( 'u-hidden' );
+      clearSearchBtn.classList.remove( 'a-btn' );
+      clearSearchBtn.classList.remove( 'a-btn__link' );
+    }
+    else {
+      clearSearchBtn.classList.add( 'a-btn' );
+      clearSearchBtn.classList.add( 'a-btn__link' );
+      clearSearchBtn.classList.remove( 'u-hidden' );
+    }
+  }
 }
 
 /**
