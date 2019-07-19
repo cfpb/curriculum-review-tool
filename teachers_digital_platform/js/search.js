@@ -1,6 +1,3 @@
-// polyfill for ie9 compatibility
-require( 'classlist-polyfill' );
-
 const behavior = require( './util/behavior' );
 const utils = require( './search-utils' );
 const closest = require( './util/dom-traverse' ).closest;
@@ -9,6 +6,7 @@ const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const tdpAnalytics = require( './tdp-analytics' );
 const fetch = require( './tdp-utils' ).fetch;
+const ClearableInput = require('./util/ClearableInput').ClearableInput;
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
 let searchRequest = {};
@@ -27,13 +25,15 @@ function init() {
 function attachHandlers() {
   addDataGtmIgnore();
   behavior.attach( 'submit-search', 'submit', handleSubmit );
-  behavior.attach( 'keyup-search', 'keyup', handleSearchKeyup );
-  behavior.attach( 'clear-search', 'click', clearSearch );
   behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
+  behavior.attach( 'clear-search', 'clear', clearSearch );
   cfExpandables.init();
   expandableFacets.init();
+  const inputContainsLabel = document.querySelector( '.tdp-activity-search .input-contains-label' );
+  const clearableInput = new ClearableInput( inputContainsLabel );
+  clearableInput.init();
 }
 
 /**
@@ -111,17 +111,7 @@ function clearFilters( event ) {
 }
 
 /**
- * Show/Hide Clear button on the keyword search form field.
- *
- * @param {Event} event Keyup event
- */
-function handleSearchKeyup( event ) {
-  const searchField = event.target;
-  toggleClearSearchButton( searchField );
-}
-
-/**
- * Remove all keywords and filters from the search results page.
+ * Trigger a form submit after Clear Search is clicked.
  *
  * @param {Event} event Click event
  */
@@ -129,33 +119,7 @@ function clearSearch( event ) {
   if ( event instanceof Event ) {
     event.preventDefault();
   }
-  const searchField = find( 'input[name=q]' );
-  if (searchField) {
-    searchField.value = '';
-  }
-  toggleClearSearchButton( searchField );
   handleSubmit( event );
-}
-
-/**
- * Toggle the Clear Search button on Keyword search.
- *
- * @param {Node} keyword search field
- */
-function toggleClearSearchButton( searchField ) {
-  const clearSearchBtn = find( '.clearSearchBtn' );
-  if (searchField) {
-    if (searchField.value.length === 0) {
-      clearSearchBtn.classList.add( 'u-hidden' );
-      clearSearchBtn.classList.remove( 'a-btn' );
-      clearSearchBtn.classList.remove( 'a-btn__link' );
-    }
-    else {
-      clearSearchBtn.classList.add( 'a-btn' );
-      clearSearchBtn.classList.add( 'a-btn__link' );
-      clearSearchBtn.classList.remove( 'u-hidden' );
-    }
-  }
 }
 
 /**

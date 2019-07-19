@@ -101,6 +101,14 @@
         }
     }
 
+    .input-contains-label {
+        &_after:not(.u-hidden) {
+            .respond-to-min( @bp-sm-min, {
+                display: initial;
+            } );
+        }
+    }
+
     .results {
         padding-top: 0;
     }

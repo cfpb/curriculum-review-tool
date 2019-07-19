@@ -57,14 +57,16 @@
                                 {{ svg_icon('search') }}
                                 <span class="u-visually-hidden">The term to search for</span>
                             </label>
-                            <input id="searchText" type="text" data-js-hook="behavior_keyup-search" autocomplete="off" class="a-text-input" name="q"
+                            <input id="searchText" type="text" autocomplete="off" class="a-text-input" name="q"
                                     placeholder="Enter your search term(s)"
                                     value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}">
-                            <button type="reset"
-                                    class="clearSearchBtn{% if page.results.search_query: %} a-btn a-btn__link{% else %} u-hidden{% endif %}"
-                                    data-js-hook="behavior_clear-search">
-                                {{ svg_icon('delete') }} Clear
-                            </button>
+                            <label for="searchText"
+                                  class="input-contains-label_after
+                                         input-contains-label_after__clear
+                                         u-hidden" data-js-hook="behavior_clear-search">
+                                Clear {{ svg_icon('delete') }}
+                                <span class="u-visually-hidden">{{ _('Close') }}</span>
+                            </label>
                         </div>
                     </div>
                     <div class="o-form__input-w-btn_btn-container">
