@@ -90,5 +90,5 @@ function ClearableInput( element ) {
 
 // Expose public methods.
 module.exports = {
-  ClearableInput: ClearableInput,
-}
+  ClearableInput: ClearableInput
+};
