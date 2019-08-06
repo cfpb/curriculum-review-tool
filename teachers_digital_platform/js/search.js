@@ -6,7 +6,7 @@ const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const tdpAnalytics = require( './tdp-analytics' );
 const fetch = require( './tdp-utils' ).fetch;
-const ClearableInput = require('./util/ClearableInput').ClearableInput;
+const ClearableInput = require( './util/ClearableInput' ).ClearableInput;
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
 let searchRequest = {};

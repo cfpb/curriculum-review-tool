@@ -7,13 +7,11 @@ const HTML_SNIPPET = `
 
   <form class="tdp-activity-search" id="search-form" action="." data-js-hook="behavior_submit-search">
     <div class="input-contains-label">
-      <label for="searchText" class="input-contains-label_before input-contains-label_before__search">
+      <label for="search-text" class="input-contains-label_before input-contains-label_before__search">
           <span class="u-visually-hidden">The term to search for</span>
       </label>
-      <input id="searchText" type="text" autocomplete="off" class="a-text-input" name="q" placeholder="Enter your search term(s)" value="executive">
-      <label for="searchText" class="input-contains-label_after input-contains-label_after__clear u-hidden">
-          Clear<span class="u-visually-hidden">Close</span>
-      </label>
+      <input id="search-text" type="text" autocomplete="off" class="a-text-input" name="q" placeholder="Enter your search term(s)" value="executive">
+      <label for="search-text" class="input-contains-label_after input-contains-label_after__clear u-hidden">Clear</label>
     </div>
     <button class="a-btn">Search</button>
   </form>
