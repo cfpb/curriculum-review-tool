@@ -92,7 +92,6 @@
     .respond-to-min(@bp-med-min, {
         @supports ( display: flex ) {
             flex: 0 1 auto; // Fix for IE 10.
-            overflow: auto;
         }
     });
 }
@@ -110,6 +109,7 @@
             height: 100vh;
             margin-bottom: 0;
             order: 2;
+            overflow: hidden;
             padding-bottom: 0;
             position: sticky;
             top: 0;
@@ -185,6 +185,7 @@
 }
 
 .o-tour_screen__intro {
+    background: #dbebfa;
     border-top: 0;
 
     .o-tour_content {
@@ -208,6 +209,26 @@
 
 .o-tour_screen__three::before,
 .o-tour_screen__three .o-tour_content-image::before {
+    background: #70a6a5;
+}
+
+.o-tour_screen__four::before,
+.o-tour_screen__four .o-tour_content-image::before {
+    background: #70a6a5;
+}
+
+.o-tour_screen__five::before,
+.o-tour_screen__five .o-tour_content-image::before {
+    background: #70a6a5;
+}
+
+.o-tour_screen__six::before,
+.o-tour_screen__six .o-tour_content-image::before {
+    background: #70a6a5;
+}
+
+.o-tour_screen__seven::before,
+.o-tour_screen__seven .o-tour_content-image::before {
     background: #70a6a5;
 }
 
