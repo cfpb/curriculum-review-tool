@@ -1,5 +1,5 @@
 // Required modules.
-const checkDom = require('./atomic-helpers').checkDom;
+const checkDom = require( './atomic-helpers' ).checkDom;
 
 /**
  * ClearableInput
@@ -38,8 +38,8 @@ function ClearableInput( element ) {
     _inputDom.value = _setClearBtnState( '' );
     _inputDom.focus();
     // Create custom clear event so we can automatically reset results after clear.
-    const customEvent = document.createEvent('Event');
-    customEvent.initEvent('clear', true, true);
+    const customEvent = document.createEvent( 'Event' );
+    customEvent.initEvent( 'clear', true, true );
     _clearBtnDom.dispatchEvent( customEvent );
     // Prevent event bubbling up to the input, which would blur otherwise.
     event.preventDefault();
