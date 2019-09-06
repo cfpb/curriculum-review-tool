@@ -11,7 +11,7 @@
     "react": "16.3.1",
     "react-dom": "16.3.1",
     "react-modal": "3.4.4",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^3.1.1",
     "react-test-renderer": "16.3.1",
     "resolve-url": "0.2.1"
   },
@@ -25,17 +25,17 @@
     "babel-jest": "22.4.3",
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
-    "jest": "22.4.3",
+    "jest": "^24.9.0",
     "mock-local-storage": "1.0.5"
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "@babel/env",
+      "@babel/react"
     ]
   },
   "jest": {
     "testURL": "http://localhost/",
-    "setupTestFrameworkScriptFile": "./src/jest/setup.js"
+    "setupFilesAfterEnv": ["./src/jest/setup.js"]
   }
 }

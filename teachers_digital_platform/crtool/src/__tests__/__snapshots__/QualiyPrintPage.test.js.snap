@@ -1067,7 +1067,6 @@ Array [
   >
     <h2
       className={false}
-      id={undefined}
     >
       <span
         className="a-icon a-icon__large a-icon__space-after"

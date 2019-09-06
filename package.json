@@ -9,8 +9,8 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "test": "npm run test-crtool && npm run test-js",
-    "test-crtool": "gulp test",
+    "test": "npm run test-js && npm run test-crtool",
+    "test-crtool": "cd teachers_digital_platform/crtool && jest --coverage",
     "test-js": "jest teachers_digital_platform/__tests__ --coverage",
     "postinstall": "cd teachers_digital_platform/crtool && npm install"
   },
