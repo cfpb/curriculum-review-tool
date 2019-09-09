@@ -64,6 +64,7 @@
     "gulp-replace": "^1.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylelint": "^9.0.0",
+    "jest": "24.8.0",
     "minimist": "1.2.0",
     "postcss-unmq": "1.0.2",
     "require-dir": "^1.2.0",
