@@ -318,7 +318,7 @@ const CriterionService = {
     initializeAnswerObjects(component, fields) {
         let alteredCriterionObjects =  component.state.criterionAnswers;
         let foundNewCriterionObject = false;
-
+        // eslint-disable-next-line
         for (const criterionKey in fields) {
             if (alteredCriterionObjects[criterionKey] === undefined) {
                 alteredCriterionObjects[criterionKey] = "";

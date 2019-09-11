@@ -48,7 +48,8 @@ export default class FormLevelErrorMessageComponent extends React.Component {
         let allCriterionObjects = [];
 
         if (this.isEfficacyStudyRequiredIssues()) {
-            //Loop through each study
+            //Loop through each study 
+            // eslint-disable-next-line
             for (let studyKey in this.props.studyAnswers) {
                 // Manually add the Study Name field
                 let criterionKey = {criterionRefId: "efficacy-crt-question-#" + studyKey + "#study", componentText: "Study name" };
@@ -66,9 +67,9 @@ export default class FormLevelErrorMessageComponent extends React.Component {
 
     pushAllCriterionIntoList(content, allCriterionObjects, studyKey) {
         // This looping structure is based on the content_data JSON objects.  They are all the same for each Dimension
-        let isEfficacyStudyIssues = this.isEfficacyStudyRequiredIssues();
-        for (let criterionNumber in content.criterion) {
-            for (let rowIndex in content.criterion[criterionNumber].rows) {
+        let isEfficacyStudyIssues = this.isEfficacyStudyRequiredIssues(); // eslint-disable-next-line
+        for (let criterionNumber in content.criterion) { // eslint-disable-next-line
+            for (let rowIndex in content.criterion[criterionNumber].rows) { // eslint-disable-next-line
                 for (let componentIndex in content.criterion[criterionNumber].rows[rowIndex].components) {
 
                     let cloneMe = content.criterion[criterionNumber].rows[rowIndex].components[componentIndex];
@@ -90,7 +91,7 @@ export default class FormLevelErrorMessageComponent extends React.Component {
         let allCriterionForPage = this.getAllCriterionForCurrentPage();
         let isEfficacyStudyIssues = this.isEfficacyStudyRequiredIssues();
 
-        if (isEfficacyStudyIssues) {
+        if (isEfficacyStudyIssues) { // eslint-disable-next-line
             for (let studyKey in this.props.studyAnswers) {
                 let studyCriterionAnswers = this.props.studyAnswers[studyKey];
                 this.pushMissingRequiredFieldsOnToList(isEfficacyStudyIssues, missingCriterion, currentDimension, allCriterionForPage, studyCriterionAnswers, studyKey);
@@ -103,7 +104,7 @@ export default class FormLevelErrorMessageComponent extends React.Component {
         return missingCriterion;
     }
 
-    pushMissingRequiredFieldsOnToList(isEfficacyStudyIssues, missingCriterion, currentDimension, allCriterionForPage, answers, studyKey) {
+    pushMissingRequiredFieldsOnToList(isEfficacyStudyIssues, missingCriterion, currentDimension, allCriterionForPage, answers, studyKey) { // eslint-disable-next-line
         for (let index in allCriterionForPage) {
             let key = allCriterionForPage[index].criterionRefId;
             let value = answers[key];
