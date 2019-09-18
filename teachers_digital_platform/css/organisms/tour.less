@@ -143,7 +143,6 @@
             order: 2;
             overflow: hidden;
             padding-bottom: 0;
-            position: sticky;
             top: 0;
         }
     });
@@ -317,6 +316,17 @@
 .o-tour_screen__three::before,
 .o-tour_screen__three .o-tour_content-image::before {
     background: #70a6a5;
+}
+
+.o-tour_screen__three {
+    .o-tour_content-image {
+        position: sticky;
+        top: unit( 30px / @base-font-size-px, em );
+
+        .respond-to-min(@bp-med-min, {
+            top: 0;
+        });
+    }
 }
 
 .o-tour_screen__four::before,
