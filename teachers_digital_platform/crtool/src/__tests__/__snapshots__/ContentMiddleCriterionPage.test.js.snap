@@ -365,7 +365,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -771,7 +770,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -1431,7 +1429,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-2"
         onBlur={[Function]}
         rows="6"
@@ -1844,7 +1841,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-3"
         onBlur={[Function]}
         rows="6"
@@ -2411,7 +2407,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-4"
         onBlur={[Function]}
         rows="6"
@@ -2795,7 +2790,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-5"
         onBlur={[Function]}
         rows="6"
@@ -3201,7 +3195,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -3861,7 +3854,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-2"
         onBlur={[Function]}
         rows="6"
@@ -4267,7 +4259,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -4691,7 +4682,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="content-middle-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
