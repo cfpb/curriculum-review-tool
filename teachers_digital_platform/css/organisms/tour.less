@@ -99,6 +99,7 @@
 .o-tour_content-page {
     min-height: 100vh;
     min-height: calc(100vh - unit( 60px / @base-font-size-px, em ));
+    outline: 0;
 
     .respond-to-min(@bp-sm-min, {
         min-height: calc(100vh - unit( 90px / @base-font-size-px, em ));
@@ -112,11 +113,15 @@
     });
 
     & + & {
-        padding-top: unit( 30px / @base-font-size-px, em );
+        padding-top: unit( 186px / @base-font-size-px, em );
 
         .respond-to-min(@bp-sm-min, {
             padding-top: unit( 45px / @base-font-size-px, em );
         });
+    }
+
+    &.is-final {
+        min-height: initial;
     }
 }
 
@@ -288,6 +293,28 @@
 
 .o-tour_screen-target {
     position: absolute;
+}
+
+.o-tour_building-blocks-menu {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin: 0;
+    }
+
+    .a-link__icon {
+        display: inline-block;
+        margin-bottom: unit( 10px / @base-font-size-px, em );
+        padding-top: 2px;
+    }
+
+    .a-icon {
+        display: block;
+        float: left;
+        height: unit( 28px / @base-font-size-px, em );
+        margin: -2px 0.5em 0 0;
+    }
 }
 
 .o-tour_screen__intro {
