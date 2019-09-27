@@ -358,48 +358,68 @@
     display: block;
     height: unit( 28px / @base-font-size-px, em );
     margin-bottom: unit( 10px / @base-font-size-px, em );
-    opacity: 0.25;
+    position: relative;
     text-decoration: none;
 }
 
 .o-tour_building-blocks-jumplink-icon {
     display: block;
+    transition: opacity 0.5s ease;
 }
 
-.o-tour_building-blocks-jumplink__executive-function {
-    opacity: 1;
+.o-tour_building-blocks-jumplink-icon__active {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+
+.o-tour_building-blocks-jumplink__executive {
+    .o-tour_building-blocks-jumplink-icon__active {
+        opacity: 1;
+    }
 }
 
 .is-on-executive-function.aos-animate {
-    .o-tour_building-blocks-jumplink__executive-function {
+    .o-tour_building-blocks-jumplink-icon__active {
         opacity: 1;
     }
 
     .o-tour_building-blocks-jumplink__financial-habits,
     .o-tour_building-blocks-jumplink__financial-knowledge {
-        opacity: 0.25;
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 0;
+        }
     }
 }
 
 .is-on-financial-habits.aos-animate {
     .o-tour_building-blocks-jumplink__financial-habits {
-        opacity: 1;
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 1;
+        }
     }
 
     .o-tour_building-blocks-jumplink__executive-function,
     .o-tour_building-blocks-jumplink__financial-knowledge {
-        opacity: 0.25;
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 0;
+        }
     }
 }
 
 .is-on-financial-knowledge.aos-animate {
     .o-tour_building-blocks-jumplink__financial-knowledge {
-        opacity: 1;
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 1;
+        }
     }
 
     .o-tour_building-blocks-jumplink__executive-function,
     .o-tour_building-blocks-jumplink__financial-habits {
-        opacity: 0.25;
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 0;
+        }
     }
 }
 
