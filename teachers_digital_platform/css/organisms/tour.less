@@ -292,6 +292,16 @@
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .o-tour_illustration {
+        #executive-function,
+        #financial-habits,
+        #financial-knowledge {
+            transition-duration: 1ms;
+        }
+    }
+}
+
 .o-tour_expandable-list {
     border-top: 1px solid @gray-40;
     list-style-type: none;
