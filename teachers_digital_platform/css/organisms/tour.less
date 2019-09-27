@@ -209,35 +209,8 @@
         max-height: 100%;
         max-width: unit( 370px / @base-font-size-px, em );
     });
-}
-
-.o-tour_illustration__intro {
-    fill: #96c4ed;
-    position: relative;
-    top: unit( -70px / @base-font-size-px, em );
-}
 
 
-.building-block-initial() {
-    opacity: 1;
-    transform: scale(1) translate3d(0, 0, 0);
-}
-
-.building-block-inactive() {
-    opacity: 0.25;
-    transform: scale(1) translate3d(0, 0, 0);
-}
-
-.building-block-active() {
-    opacity: 1;
-    transform: scale(1.1) translate3d(0, 0, 0);
-}
-
-.o-tour_building-blocks {
-    transform-style: preserve-3d;
-}
-
-.o-tour_illustration {
     #executive-function,
     #financial-habits,
     #financial-knowledge {
@@ -300,6 +273,32 @@
             transition-duration: 1ms;
         }
     }
+}
+
+.o-tour_illustration__intro {
+    fill: #96c4ed;
+    position: relative;
+    top: unit( -70px / @base-font-size-px, em );
+}
+
+
+.building-block-initial() {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+}
+
+.building-block-inactive() {
+    opacity: 0.25;
+    transform: scale(1) translate3d(0, 0, 0);
+}
+
+.building-block-active() {
+    opacity: 1;
+    transform: scale(1.1) translate3d(0, 0, 0);
+}
+
+.o-tour_building-blocks {
+    transform-style: preserve-3d;
 }
 
 .o-tour_expandable-list {
