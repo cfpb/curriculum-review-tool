@@ -14,7 +14,7 @@ export default class QualitySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabIndex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="star-round"
                         isLarge="true"
@@ -89,7 +89,7 @@ export default class QualitySummaryPage extends React.Component {
                     criterionDoesNotMeetText="One or more essential components scored “no”"
                     {...this.props} />
 
-                <hr class="hr u-mb45 u-mt30" />
+                <hr className="hr u-mb45 u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.QUALITY_PAGE}

@@ -7,13 +7,13 @@ Array [
   />,
   <h1
     id="EfficacyCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -184,7 +184,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -245,7 +245,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -254,7 +254,7 @@ Array [
                     Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -343,7 +343,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -436,7 +436,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -445,7 +445,7 @@ Array [
                     Is the study free of possible alternative explanations other than possible initial differences between groups?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -502,7 +502,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -511,7 +511,7 @@ Array [
                     Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -600,7 +600,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -661,7 +661,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -722,7 +722,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -783,7 +783,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -844,7 +844,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -853,7 +853,7 @@ Array [
                     Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -910,7 +910,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -919,7 +919,7 @@ Array [
                     Does the study collect student outcome data from a source other than (or in addition to) the students?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -1008,7 +1008,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1101,7 +1101,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1197,7 +1197,7 @@ Array [
           className="a-icon a-icon__space-before"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -1231,13 +1231,13 @@ Array [
   />,
   <h1
     id="EfficacyCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -1335,7 +1335,7 @@ Array [
         className="a-icon a-icon__green a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -1346,7 +1346,7 @@ Array [
       </span>
       Criterion 1: Strength of study (inclusion criteria)
       <span
-        class="u-fc-gray"
+        className="u-fc-gray"
       >
          (complete)
       </span>
@@ -1426,7 +1426,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1487,7 +1487,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1496,7 +1496,7 @@ Array [
                     Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -1585,7 +1585,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1678,7 +1678,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1687,7 +1687,7 @@ Array [
                     Is the study free of possible alternative explanations other than possible initial differences between groups?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -1744,7 +1744,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1753,7 +1753,7 @@ Array [
                     Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -1842,7 +1842,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1903,7 +1903,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -1964,7 +1964,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2025,7 +2025,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2086,7 +2086,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2095,7 +2095,7 @@ Array [
                     Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -2152,7 +2152,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2161,7 +2161,7 @@ Array [
                     Does the study collect student outcome data from a source other than (or in addition to) the students?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -2250,7 +2250,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2343,7 +2343,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2439,7 +2439,7 @@ Array [
           className="a-icon a-icon__space-before"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -2513,7 +2513,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2522,7 +2522,7 @@ Array [
                     Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -2611,7 +2611,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2620,7 +2620,7 @@ Array [
                     Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -2715,7 +2715,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -2741,13 +2741,13 @@ Array [
   />,
   <h1
     id="EfficacyCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -2845,7 +2845,7 @@ Array [
         className="a-icon a-icon__green a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -2856,7 +2856,7 @@ Array [
       </span>
       Criterion 1: Strength of study (inclusion criteria)
       <span
-        class="u-fc-gray"
+        className="u-fc-gray"
       >
          (complete)
       </span>
@@ -2936,7 +2936,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -2997,7 +2997,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3006,7 +3006,7 @@ Array [
                     Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -3095,7 +3095,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3188,7 +3188,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3197,7 +3197,7 @@ Array [
                     Is the study free of possible alternative explanations other than possible initial differences between groups?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -3254,7 +3254,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3263,7 +3263,7 @@ Array [
                     Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -3352,7 +3352,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3413,7 +3413,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3474,7 +3474,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3535,7 +3535,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3596,7 +3596,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3605,7 +3605,7 @@ Array [
                     Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -3662,7 +3662,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3671,7 +3671,7 @@ Array [
                     Does the study collect student outcome data from a source other than (or in addition to) the students?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -3760,7 +3760,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3853,7 +3853,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -3949,7 +3949,7 @@ Array [
           className="a-icon a-icon__space-before"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -4023,7 +4023,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4032,7 +4032,7 @@ Array [
                     Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -4121,7 +4121,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4130,7 +4130,7 @@ Array [
                     Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -4266,7 +4266,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4359,7 +4359,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4420,7 +4420,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4429,7 +4429,7 @@ Array [
                     Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -4522,13 +4522,13 @@ Array [
   />,
   <h1
     id="EfficacyCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -4626,7 +4626,7 @@ Array [
         className="a-icon a-icon__green a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -4637,7 +4637,7 @@ Array [
       </span>
       Criterion 1: Strength of study (inclusion criteria)
       <span
-        class="u-fc-gray"
+        className="u-fc-gray"
       >
          (complete)
       </span>
@@ -4717,7 +4717,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4778,7 +4778,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4787,7 +4787,7 @@ Array [
                     Does the study use an RCT design or a quasi-experimental (non-random) design with a comparison group shown to be similar on observable characteristics?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -4876,7 +4876,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4969,7 +4969,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -4978,7 +4978,7 @@ Array [
                     Is the study free of possible alternative explanations other than possible initial differences between groups?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -5035,7 +5035,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5044,7 +5044,7 @@ Array [
                     Are the levels of attrition low, as defined by the What Works Clearinghouse? (e.g., differential attrition below 11%)
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -5133,7 +5133,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5194,7 +5194,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5255,7 +5255,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5316,7 +5316,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5377,7 +5377,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5386,7 +5386,7 @@ Array [
                     Does the study measure student outcomes immediately after the curriculum has been completed and at least three months later?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -5443,7 +5443,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5452,7 +5452,7 @@ Array [
                     Does the study collect student outcome data from a source other than (or in addition to) the students?
                   </p>
                   <p
-                    class="o-survey_question-helper"
+                    className="o-survey_question-helper"
                   >
                     Beneficial, but not essential.
                   </p>
@@ -5541,7 +5541,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5634,7 +5634,7 @@ Array [
               className="o-survey_component"
             >
               <div
-                class="o-survey_question"
+                className="o-survey_question"
               >
                 <legend
                   className="o-survey_legend"
@@ -5730,7 +5730,7 @@ Array [
           className="a-icon a-icon__space-before"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -5754,7 +5754,7 @@ Array [
         className="a-icon"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >

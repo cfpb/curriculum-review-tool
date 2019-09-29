@@ -7,13 +7,13 @@ Array [
   />,
   <h1
     id="Content_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -325,7 +325,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -351,13 +351,13 @@ Array [
   />,
   <h1
     id="Content_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -1919,7 +1919,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -1945,13 +1945,13 @@ Array [
   />,
   <h1
     id="Content_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -2646,7 +2646,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -2672,13 +2672,13 @@ Array [
   />,
   <h1
     id="Content_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -2990,7 +2990,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -3016,13 +3016,13 @@ Array [
   />,
   <h1
     id="Content_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -3099,7 +3099,7 @@ Array [
         className="a-icon a-icon__green a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -3110,7 +3110,7 @@ Array [
       </span>
       Criterion 1: Earning, income, and careers
       <span
-        class="u-fc-gray"
+        className="u-fc-gray"
       >
          (complete)
       </span>
@@ -3352,7 +3352,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >

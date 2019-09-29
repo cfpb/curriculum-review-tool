@@ -162,7 +162,7 @@ Array [
         className="a-icon a-icon__large a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -390,7 +390,7 @@ Array [
         </small>
       </label>
       <p
-        class="o-survey_question-helper"
+        className="o-survey_question-helper"
       >
         No information provided
       </p>
@@ -410,7 +410,7 @@ Array [
         </small>
       </label>
       <p
-        class="o-survey_question-helper"
+        className="o-survey_question-helper"
       >
         No information provided
       </p>
@@ -430,7 +430,7 @@ Array [
         </small>
       </label>
       <p
-        class="o-survey_question-helper"
+        className="o-survey_question-helper"
       >
         No information provided
       </p>
@@ -446,7 +446,7 @@ Array [
         className="a-icon a-icon__large a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >

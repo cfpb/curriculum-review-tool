@@ -29,7 +29,7 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <div
-    class="h5 u-mb30"
+    className="h5 u-mb30"
   >
     You’re reviewing
   </div>
@@ -53,7 +53,7 @@ exports[`renders without crashing 1`] = `
         onClick={[Function]}
       >
         <div
-          class="o-dimension-section-bar_selector"
+          className="o-dimension-section-bar_selector"
         >
           <span
             className="o-dimension-section-bar_selector-title"
@@ -109,7 +109,7 @@ exports[`renders without crashing 1`] = `
             est. time 60 min.
           </span>
           <span
-            class="u-visually-hidden"
+            className="u-visually-hidden"
           >
             estimated time 60 minutes
           </span>
@@ -124,7 +124,7 @@ exports[`renders without crashing 1`] = `
         onClick={[Function]}
       >
         <div
-          class="o-dimension-section-bar_selector"
+          className="o-dimension-section-bar_selector"
         >
           <span
             className="o-dimension-section-bar_selector-title"
@@ -172,7 +172,7 @@ exports[`renders without crashing 1`] = `
             est. time 60 min.
           </span>
           <span
-            class="u-visually-hidden"
+            className="u-visually-hidden"
           >
             estimated time 60 minutes
           </span>
@@ -187,7 +187,7 @@ exports[`renders without crashing 1`] = `
         onClick={[Function]}
       >
         <div
-          class="o-dimension-section-bar_selector"
+          className="o-dimension-section-bar_selector"
         >
           <span
             className="o-dimension-section-bar_selector-title"
@@ -235,7 +235,7 @@ exports[`renders without crashing 1`] = `
             est. time 30 min.
           </span>
           <span
-            class="u-visually-hidden"
+            className="u-visually-hidden"
           >
             estimated time 30 minutes
           </span>
@@ -250,7 +250,7 @@ exports[`renders without crashing 1`] = `
         onClick={[Function]}
       >
         <div
-          class="o-dimension-section-bar_selector"
+          className="o-dimension-section-bar_selector"
         >
           <span
             className="o-dimension-section-bar_selector-title"
@@ -301,7 +301,7 @@ exports[`renders without crashing 1`] = `
             est. time 30 min.
           </span>
           <span
-            class="u-visually-hidden"
+            className="u-visually-hidden"
           >
             estimated time 30 minutes
           </span>

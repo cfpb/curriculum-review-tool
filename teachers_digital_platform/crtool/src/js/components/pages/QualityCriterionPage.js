@@ -35,7 +35,7 @@ export default class QualityCriterionPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabIndex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="star-round"
                         isLarge="true"
@@ -59,7 +59,7 @@ export default class QualityCriterionPage extends React.Component {
                 <div className="o-well
                                 u-mb30
                                 u-mt30">
-                    <h3 class="h4">What’s a beneficial component?</h3>
+                    <h3 className="h4">What’s a beneficial component?</h3>
                     <p>While most components in this dimension are essential to your review (have been shown to positively impact student learning), some are marked as beneficial. These <strong>beneficial components</strong> hold promise for positive impact on student learning, but may only be relevant and useful for some reviewers. Some of the scoring treats essential and beneficial components differently, but you’re still required to answer all beneficial components.</p>
                 </div>
                 <hr className="hr
@@ -73,7 +73,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 1: Accessibility
-                        {this.props.criterionCompletionStatuses["quality-crt-question-1"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
+                        {this.props.criterionCompletionStatuses["quality-crt-question-1"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials physically accessible to teachers and students in a typical school setting?
@@ -573,7 +573,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 2: Accuracy and timeliness
-                        {this.props.criterionCompletionStatuses["quality-crt-question-2"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
+                        {this.props.criterionCompletionStatuses["quality-crt-question-2"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are curriculum materials current and free of error?
@@ -804,7 +804,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 3: Objectivity
-                        {this.props.criterionCompletionStatuses["quality-crt-question-3"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
+                        {this.props.criterionCompletionStatuses["quality-crt-question-3"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Are the curriculum materials objective?
@@ -1156,7 +1156,7 @@ export default class QualityCriterionPage extends React.Component {
                             color="green"
                             hasSpaceAfter="true" />
                         Criterion 4: Visual appearance
-                        {this.props.criterionCompletionStatuses["quality-crt-question-4"] === C.ICON_CHECK_ROUND && <span class="u-fc-gray"> (complete)</span>}
+                        {this.props.criterionCompletionStatuses["quality-crt-question-4"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
                         Is the visual appearance of the student materials conducive to learning?
