@@ -92,7 +92,57 @@
     .respond-to-min(@bp-med-min, {
         @supports ( display: flex ) {
             flex: 0 1 auto; // Fix for IE 10.
-            overflow: auto;
+        }
+    });
+}
+
+.o-tour_content-page {
+    min-height: 100vh;
+    min-height: calc(100vh - unit( 60px / @base-font-size-px, em ));
+    outline: 0;
+
+    .respond-to-min(@bp-sm-min, {
+        min-height: calc(100vh - unit( 90px / @base-font-size-px, em ));
+    });
+
+    .respond-to-min(@bp-med-min, {
+        @supports ( display: flex ) {
+            align-items: center;
+            display: flex;
+        }
+    });
+
+    &.is-start {
+        min-height: initial;
+    }
+
+    &.is-final {
+        min-height: initial;
+        padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
+
+        .respond-to-min(@bp-med-min, {
+            padding-top: unit( 135px / @base-font-size-px, em );
+        });
+    }
+}
+
+.o-tour_content-page__building-block {
+    min-height: initial;
+    padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
+
+    .respond-to-min(@bp-med-min, {
+        padding-top: unit( 135px / @base-font-size-px, em );
+    });
+}
+
+.o-tour_building-blocks-content {
+    padding-left: unit( 44px / @base-font-size-px, em );
+}
+
+.o-tour_content-page-holder {
+    .respond-to-min(@bp-med-min, {
+        @supports ( display: flex ) {
+            flex: 0 1 auto; // Fix for IE 10.
         }
     });
 }
@@ -110,8 +160,8 @@
             height: 100vh;
             margin-bottom: 0;
             order: 2;
+            overflow: hidden;
             padding-bottom: 0;
-            position: sticky;
             top: 0;
         }
     });
@@ -159,12 +209,96 @@
         max-height: 100%;
         max-width: unit( 370px / @base-font-size-px, em );
     });
+
+
+    #executive-function,
+    #financial-habits,
+    #financial-knowledge {
+        transform: perspective(100rem);
+        transition-duration: 1000ms;
+        transition-property: opacity, transform;
+    }
+
+    .is-on-executive-function.aos-animate {
+        #executive-function {
+            opacity: 1;
+            transform: scale(1.1) translate3d(-1.4rem, 0, 0.1rem);
+        }
+        #financial-habits,
+        #financial-knowledge {
+            opacity: 0.25;
+            transform: scale(1) translate3d(0, 0, 0);
+        }
+    }
+
+    .is-on-financial-habits.aos-animate {
+        #financial-habits {
+            opacity: 1;
+            transform: scale(1.1) translate3d(-2.4rem, -2.4rem, 0.1rem);
+        }
+        #executive-function,
+        #financial-knowledge {
+            opacity: 0.25;
+            transform: scale(1) translate3d(0, 0, 0);
+        }
+    }
+
+    .is-on-financial-knowledge.aos-animate {
+        #financial-knowledge {
+            opacity: 1;
+            transform: scale(1.1) translate3d(0, -2.4rem, 0.1rem);
+        }
+        #executive-function,
+        #financial-habits {
+            opacity: 0.25;
+            transform: scale(1) translate3d(0, 0, 0);
+        }
+    }
+
+    .is-on-building-block-final.aos-animate {
+        #financial-habits,
+        #financial-knowledge,
+        #executive-function {
+            opacity: 1;
+            transform: scale(1) translate3d(0, 0, 0);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .o-tour_illustration {
+        #executive-function,
+        #financial-habits,
+        #financial-knowledge {
+            transition-duration: 1ms;
+        }
+    }
 }
 
 .o-tour_illustration__intro {
     fill: #96c4ed;
     position: relative;
     top: unit( -70px / @base-font-size-px, em );
+}
+
+
+.building-block-initial() {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+}
+
+.building-block-inactive() {
+    opacity: 0.25;
+    transform: scale(1) translate3d(0, 0, 0);
+}
+
+.building-block-active() {
+    opacity: 1;
+    transform: scale(1.1) translate3d(0, 0, 0);
+}
+
+.o-tour_building-blocks {
+    transform-style: preserve-3d;
 }
 
 .o-tour_expandable-list {
@@ -180,38 +314,126 @@
     }
 }
 
-.o-tour_line {
-    bottom: 0;
-    display: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-
-    > .wrapper {
-        height: 100%;
-    }
-
-    .respond-to-min(@bp-med-min, {
-        @supports ( display: flex ) {
-            display: block;
-        }
-    });
-}
-
-.o-tour_line-image {
-    height: 50vh;
-    margin-bottom: 24vh;
-    margin-left: ~'calc( 75% - 8px )';
-    position: sticky;
-    top: 25vh;
-    width: 222px;
-}
-
 .o-tour_screen-target {
     position: absolute;
 }
 
+.o-tour_building-blocks-menu {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin: 0;
+    }
+
+    .a-link__icon {
+        display: inline-block;
+        margin-bottom: unit( 10px / @base-font-size-px, em );
+        padding-top: 2px;
+    }
+
+    .a-icon {
+        display: block;
+        float: left;
+        height: unit( 28px / @base-font-size-px, em );
+        margin: -2px 0.5em 0 0;
+    }
+}
+
+.o-tour_building-blocks-jumplinks {
+    float: left;
+    margin: calc(15vh + unit( 90px / @base-font-size-px, em )) 0 0 unit( -44px / @base-font-size-px, em );
+    position: sticky;
+    top: calc(15vh + unit( 90px / @base-font-size-px, em ));
+
+    .respond-to-min(@bp-med-min, {
+        margin-top: unit( 135px / @base-font-size-px, em );
+        max-height: 100%;
+        top: unit( 135px / @base-font-size-px, em );
+    });
+}
+
+.o-tour_building-blocks-jumplinks-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin: 0;
+    }
+}
+
+.o-tour_building-blocks-jumplink {
+    border-bottom: 0;
+    display: block;
+    height: unit( 28px / @base-font-size-px, em );
+    margin-bottom: unit( 10px / @base-font-size-px, em );
+    position: relative;
+    text-decoration: none;
+}
+
+.o-tour_building-blocks-jumplink-icon {
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+.o-tour_building-blocks-jumplink-icon__active {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+
+.o-tour_building-blocks-jumplink__executive {
+    .o-tour_building-blocks-jumplink-icon__active {
+        opacity: 1;
+    }
+}
+
+.is-on-executive-function.aos-animate {
+    .o-tour_building-blocks-jumplink-icon__active {
+        opacity: 1;
+    }
+
+    .o-tour_building-blocks-jumplink__financial-habits,
+    .o-tour_building-blocks-jumplink__financial-knowledge {
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 0;
+        }
+    }
+}
+
+.is-on-financial-habits.aos-animate {
+    .o-tour_building-blocks-jumplink__financial-habits {
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 1;
+        }
+    }
+
+    .o-tour_building-blocks-jumplink__executive-function,
+    .o-tour_building-blocks-jumplink__financial-knowledge {
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 0;
+        }
+    }
+}
+
+.is-on-financial-knowledge.aos-animate {
+    .o-tour_building-blocks-jumplink__financial-knowledge {
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 1;
+        }
+    }
+
+    .o-tour_building-blocks-jumplink__executive-function,
+    .o-tour_building-blocks-jumplink__financial-habits {
+        .o-tour_building-blocks-jumplink-icon__active {
+            opacity: 0;
+        }
+    }
+}
+
 .o-tour_screen__intro {
+    background: #dbebfa;
     border-top: 0;
 
     .o-tour_content {
@@ -228,31 +450,9 @@
     background: #ffc372;
 }
 
-.o-tour_line-intro {
-    fill: #96c4ed;
-}
-
-.o-tour_line-one {
-    .o-tour_line-active {
-        fill: #ff9e1b;
-    }
-    .o-tour_line-inactive {
-        fill: #ffe1b9;
-    }
-}
-
 .o-tour_screen__two::before,
 .o-tour_screen__two .o-tour_content-image::before {
     background: #96c4ed;
-}
-
-.o-tour_line-two {
-    .o-tour_line-active {
-        fill: #4497dc;
-    }
-    .o-tour_line-inactive {
-        fill: #c3ddf6;
-    }
 }
 
 .o-tour_screen__three::before,
@@ -260,25 +460,19 @@
     background: #70a6a5;
 }
 
-.o-tour_line-three {
-    .o-tour_line-active {
-        fill: #3e8685;
-    }
-    .o-tour_line-inactive {
-        fill: #9ec4c3;
+.o-tour_screen__three {
+    .o-tour_content-image {
+        position: sticky;
+        top: unit( 30px / @base-font-size-px, em );
+        z-index: 1;
+
+        .respond-to-min(@bp-med-min, {
+            top: 0;
+        });
     }
 }
 
 .o-tour_screen__four::before,
 .o-tour_screen__four .o-tour_content-image::before {
     background: #e79e8e;
-}
-
-.o-tour_line-four {
-    .o-tour_line-active {
-        fill: #dd735d;
-    }
-    .o-tour_line-inactive {
-        fill: #f3d1c8;
-    }
 }
