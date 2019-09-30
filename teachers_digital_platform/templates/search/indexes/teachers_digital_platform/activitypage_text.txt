@@ -1,5 +1,13 @@
 {{ object.title|striptags|safe }}
 {{ object.summary|striptags|safe }}
+{{ object.big_idea|striptags|safe }}
+{{ object.essential_questions|striptags|safe }}
+{{ object.objectives|striptags|safe }}
+{{ object.what_students_will_do|striptags|safe }}
+{{ object.date }}
+{{ object.activity_file.title|striptags|safe }}
+{{ object.handout_file.title|striptags|safe }}
+{{ object.handout_file_2.title|striptags|safe }}
 
 {% for school_subject in object.school_subject.all %}
 {{ school_subject.title|striptags|safe }}
