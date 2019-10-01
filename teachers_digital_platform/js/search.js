@@ -6,6 +6,7 @@ const expandableFacets = require( './expandable-facets' );
 const cfExpandables = require( 'cf-expandables/src/Expandable' );
 const tdpAnalytics = require( './tdp-analytics' );
 const fetch = require( './tdp-utils' ).fetch;
+const ClearableInput = require( './util/ClearableInput' ).ClearableInput;
 
 // Keep track of the most recent XHR request so that we can cancel it if need be
 let searchRequest = {};
@@ -27,8 +28,12 @@ function attachHandlers() {
   behavior.attach( 'change-filter', 'change', handleFilter );
   behavior.attach( 'clear-filter', 'click', clearFilter );
   behavior.attach( 'clear-all', 'click', clearFilters );
+  behavior.attach( 'clear-search', 'clear', clearSearch );
   cfExpandables.init();
   expandableFacets.init();
+  const inputContainsLabel = document.querySelector( '.tdp-activity-search .input-contains-label' );
+  const clearableInput = new ClearableInput( inputContainsLabel );
+  clearableInput.init();
 }
 
 /**
@@ -103,6 +108,18 @@ function clearFilters( event ) {
     } );
   } );
   handleFilter( event );
+}
+
+/**
+ * Trigger a form submit after Clear Search is clicked.
+ *
+ * @param {Event} event Click event
+ */
+function clearSearch( event ) {
+  if ( event instanceof Event ) {
+    event.preventDefault();
+  }
+  handleSubmit( event );
 }
 
 /**

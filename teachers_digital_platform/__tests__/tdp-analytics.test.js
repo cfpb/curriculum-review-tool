@@ -5,7 +5,7 @@ const tdpAnalytics = require( `${ BASE_JS_PATH }tdp-analytics.js` );
 const HTML_SNIPPET = `
 
   <form id="search-form" action="." data-js-hook="behavior_submit-search">
-    <input id="searchText" type="text" autocomplete="off" class="a-text-input" name="q" placeholder="Enter your search term(s)" value="executive">
+    <input id="search-text" type="text" autocomplete="off" class="a-text-input" name="q" placeholder="Enter your search term(s)" value="executive">
     <button class="a-btn">Search</button>
   </form>
 

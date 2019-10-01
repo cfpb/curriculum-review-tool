@@ -16,7 +16,7 @@ const tdpScroll = {
         event.preventDefault();
 
         // Scroll smoothly to the target.
-        scrollIntoView( target, { behavior: 'smooth', block: 'start' } );
+        scrollIntoView( target, { behavior: 'smooth', block: 'start', offset: 0 } );
 
         // Update url hash.
         if ( history.pushState ) {
