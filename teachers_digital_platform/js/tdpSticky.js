@@ -1,8 +1,10 @@
-const stickybits = require( 'stickybits/dist/stickybits.es.js' );
+const Stickyfill = require( 'stickyfilljs' );
 
 const tdpSticky = {
   init: () => {
-    stickybits( '[data-sticky]' );
+    let stickies = document.querySelectorAll( '[data-sticky]' );
+
+    Stickyfill.add( stickies );
   }
 };
 
