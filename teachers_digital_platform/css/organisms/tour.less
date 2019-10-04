@@ -206,55 +206,54 @@
         max-width: unit( 370px / @base-font-size-px, em );
     });
 
-
-    #executive-function,
-    #financial-habits,
-    #financial-knowledge {
+    #block-executive-function,
+    #block-financial-habits,
+    #block-financial-knowledge {
         transform: perspective(100rem);
         transition-duration: 1000ms;
         transition-property: opacity, transform;
     }
 
     .is-on-executive-function.aos-animate {
-        #executive-function {
+        #block-executive-function {
             opacity: 1;
             transform: scale(1.1) translate3d(-1.4rem, 0, 0.1rem);
         }
-        #financial-habits,
-        #financial-knowledge {
+        #block-financial-habits,
+        #block-financial-knowledge {
             opacity: 0.25;
             transform: scale(1) translate3d(0, 0, 0);
         }
     }
 
     .is-on-financial-habits.aos-animate {
-        #financial-habits {
+        #block-financial-habits {
             opacity: 1;
             transform: scale(1.1) translate3d(-2.4rem, -2.4rem, 0.1rem);
         }
-        #executive-function,
-        #financial-knowledge {
+        #block-executive-function,
+        #block-financial-knowledge {
             opacity: 0.25;
             transform: scale(1) translate3d(0, 0, 0);
         }
     }
 
     .is-on-financial-knowledge.aos-animate {
-        #financial-knowledge {
+        #block-financial-knowledge {
             opacity: 1;
             transform: scale(1.1) translate3d(0, -2.4rem, 0.1rem);
         }
-        #executive-function,
-        #financial-habits {
+        #block-executive-function,
+        #block-financial-habits {
             opacity: 0.25;
             transform: scale(1) translate3d(0, 0, 0);
         }
     }
 
     .is-on-building-block-final.aos-animate {
-        #financial-habits,
-        #financial-knowledge,
-        #executive-function {
+        #block-financial-habits,
+        #block-financial-knowledge,
+        #block-executive-function {
             opacity: 1;
             transform: scale(1) translate3d(0, 0, 0);
         }
@@ -263,9 +262,9 @@
 
 @media (prefers-reduced-motion: reduce) {
     .o-tour_illustration {
-        #executive-function,
-        #financial-habits,
-        #financial-knowledge {
+        #block-executive-function,
+        #block-financial-habits,
+        #block-financial-knowledge {
             transition-duration: 1ms;
         }
     }
