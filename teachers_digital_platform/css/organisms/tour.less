@@ -111,23 +111,32 @@
             display: flex;
         }
     });
+}
 
-    &.is-final {
-        min-height: initial;
-        padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
+.o-tour_content-page__building-block-overview {
+    min-height: 100vh;
+    min-height: calc(85vh - unit( 90px / @base-font-size-px, em ));
 
-        .respond-to-min(@bp-med-min, {
-            padding-top: unit( 135px / @base-font-size-px, em );
-        });
-    }
+    .respond-to-min(@bp-med-min, {
+        @supports ( display: flex ) {
+            min-height: calc(100vh - unit( 60px / @base-font-size-px, em ));
+            padding-bottom: unit( 30px / @base-font-size-px, em );
+            padding-top: unit( 30px / @base-font-size-px, em );
+        }
+    });
 }
 
 .o-tour_content-page__building-block {
-    min-height: initial;
+    min-height: 100vh;
+    min-height: calc(85vh - unit( 90px / @base-font-size-px, em ));
     padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
 
     .respond-to-min(@bp-med-min, {
-        padding-top: unit( 135px / @base-font-size-px, em );
+        @supports ( display: flex ) {
+            min-height: calc(100vh - unit( 60px / @base-font-size-px, em ));
+            padding-bottom: unit( 30px / @base-font-size-px, em );
+            padding-top: unit( 30px / @base-font-size-px, em );
+        }
     });
 }
 
@@ -154,7 +163,8 @@
             display: flex;
             justify-content: center;
             height: 100vh;
-            margin-bottom: 0;
+            margin-bottom: unit( -45px / @base-font-size-px, em );
+            margin-top: unit( -45px / @base-font-size-px, em );
             order: 2;
             overflow: hidden;
             padding-bottom: 0;
