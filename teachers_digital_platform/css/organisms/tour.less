@@ -40,6 +40,11 @@
         display: flex;
         justify-content: space-between;
         padding: unit( 45px / @base-font-size-px, em ) unit( 0px / @base-font-size-px, em );
+
+        // Fix for extra div caused by stickyfilljs fix for IE 11.
+        > div {
+            order: 3;
+        }
     });
 
     .a-link {
@@ -69,7 +74,7 @@
     .respond-to-min(@bp-med-min, {
         align-items: center;
         display: flex;
-        order: 1;
+        order: 1 !important; // !important needed for IE 11 fix.
     });
 
     &__intro {
@@ -153,7 +158,7 @@
         justify-content: center;
         height: 100vh;
         margin-bottom: unit( -45px / @base-font-size-px, em );
-        order: 2;
+        order: 2 !important; // !important needed for IE 11 fix.
         overflow: hidden;
         padding-bottom: 0;
         padding-top: 0;
