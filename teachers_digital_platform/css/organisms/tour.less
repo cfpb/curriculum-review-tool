@@ -13,17 +13,15 @@
     }
 
     &::before {
-        @supports ( display: flex ) {
-            .respond-to-min(@bp-med-min, {
-                bottom: 0;
-                content: '';
-                left: 50%;
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: -1;
-            });
-        }
+        .respond-to-min(@bp-med-min, {
+            bottom: 0;
+            content: '';
+            left: 50%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        });
     }
 }
 
@@ -39,10 +37,13 @@
     });
 
     .respond-to-min(@bp-med-min, {
-        @supports ( display: flex ) {
-            display: flex;
-            justify-content: space-between;
-            padding: unit( 45px / @base-font-size-px, em ) unit( 0px / @base-font-size-px, em );
+        display: flex;
+        justify-content: space-between;
+        padding: unit( 45px / @base-font-size-px, em ) unit( 0px / @base-font-size-px, em );
+
+        // Fix for extra div caused by stickyfilljs fix for IE 11.
+        > div {
+            order: 3;
         }
     });
 
@@ -52,11 +53,8 @@
 }
 
 .o-tour_content-intro {
+    display: flex;
     margin: 0 unit( 15px / @base-font-size-px, em );
-
-    @supports ( display: flex ) {
-        display: flex;
-    }
 }
 
 .o-tour_content-text,
@@ -66,9 +64,7 @@
     padding: 0 unit( 15px / @base-font-size-px, em );
 
     .respond-to-min(@bp-med-min, {
-        @supports ( display: flex ) {
-            flex-basis: 48%;
-        }
+        flex-basis: 48%;
     });
 }
 
@@ -78,7 +74,7 @@
     .respond-to-min(@bp-med-min, {
         align-items: center;
         display: flex;
-        order: 1;
+        order: 1 !important; // !important needed for IE 11 fix.
     });
 
     &__intro {
@@ -90,9 +86,7 @@
 
 .o-tour_content-holder {
     .respond-to-min(@bp-med-min, {
-        @supports ( display: flex ) {
-            flex: 0 1 auto; // Fix for IE 10.
-        }
+        flex: 0 1 auto; // Fix for IE 10.
     });
 }
 
@@ -106,64 +100,69 @@
     });
 
     .respond-to-min(@bp-med-min, {
+        align-items: center;
+
+        // Wrap with @supports() to fix for IE 11.
         @supports ( display: flex ) {
-            align-items: center;
             display: flex;
         }
     });
-
-    &.is-start {
-        min-height: initial;
-    }
-
-    &.is-final {
-        min-height: initial;
-        padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
-
-        .respond-to-min(@bp-med-min, {
-            padding-top: unit( 135px / @base-font-size-px, em );
-        });
-    }
 }
 
-.o-tour_content-page__building-block {
-    min-height: initial;
-    padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
+.o-tour_content-page__building-block-overview {
+    min-height: 100vh;
+    min-height: calc(85vh - unit( 90px / @base-font-size-px, em ));
 
     .respond-to-min(@bp-med-min, {
-        padding-top: unit( 135px / @base-font-size-px, em );
+        min-height: calc(100vh - unit( 60px / @base-font-size-px, em ));
+        padding-bottom: unit( 30px / @base-font-size-px, em );
+        padding-top: unit( 30px / @base-font-size-px, em );
     });
 }
 
-.o-tour_building-blocks-content {
-    padding-left: unit( 44px / @base-font-size-px, em );
+.o-tour_content-page__building-block {
+    min-height: 100vh;
+    min-height: calc(85vh - unit( 90px / @base-font-size-px, em ));
+    padding-top: calc(15vh + unit( 90px / @base-font-size-px, em ));
+
+    .respond-to-min(@bp-med-min, {
+        min-height: calc(100vh - unit( 60px / @base-font-size-px, em ));
+        padding-bottom: unit( 30px / @base-font-size-px, em );
+        padding-top: unit( 30px / @base-font-size-px, em );
+    });
 }
 
 .o-tour_content-page-holder {
     .respond-to-min(@bp-med-min, {
-        @supports ( display: flex ) {
-            flex: 0 1 auto; // Fix for IE 10.
-        }
+        flex: 0 1 auto; // Fix for IE 10.
     });
 }
 
 .o-tour_content-image {
     margin-bottom: unit( 30px / @base-font-size-px, em );
+    margin-top: unit( -30px / @base-font-size-px, em );
     padding-bottom: unit( 30px / @base-font-size-px, em );
+    padding-top: unit( 30px / @base-font-size-px, em );
     position: relative;
 
+    .respond-to-min(@bp-sm-min, {
+        margin-bottom: unit( 45px / @base-font-size-px, em );
+        margin-top: unit( -45px / @base-font-size-px, em );
+        padding-bottom: unit( 45px / @base-font-size-px, em );
+        padding-top: unit( 45px / @base-font-size-px, em );
+    });
+
     .respond-to-min(@bp-med-min, {
-        @supports ( display: flex ) {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            height: 100vh;
-            margin-bottom: 0;
-            order: 2;
-            overflow: hidden;
-            padding-bottom: 0;
-            top: 0;
-        }
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin-bottom: unit( -45px / @base-font-size-px, em );
+        order: 2 !important; // !important needed for IE 11 fix.
+        overflow: hidden;
+        padding-bottom: 0;
+        padding-top: 0;
+        top: 0;
     });
 
     &::before {
@@ -172,19 +171,16 @@
         left: unit( -15px / @base-font-size-px, em );
         position: absolute;
         right: unit( -15px / @base-font-size-px, em );
-        top: unit( -30px / @base-font-size-px, em );
+        top: 0;
         z-index: -1;
 
         .respond-to-min(@bp-sm-min, {
             left: unit( -30px / @base-font-size-px, em );
             right: unit( -30px / @base-font-size-px, em );
-            top: unit( -45px / @base-font-size-px, em );
         });
 
         .respond-to-min(@bp-med-min, {
-            @supports ( display: flex ) {
-                display: none;
-            }
+            display: none;
         });
     }
 
@@ -192,11 +188,9 @@
         display: none;
 
         .respond-to-min(@bp-med-min, {
-            @supports ( display: flex ) {
-                display: flex;
-                height: initial;
-                position: initial;
-            }
+            display: flex;
+            height: initial;
+            position: initial;
         });
     }
 }
@@ -210,55 +204,54 @@
         max-width: unit( 370px / @base-font-size-px, em );
     });
 
-
-    #executive-function,
-    #financial-habits,
-    #financial-knowledge {
+    #block-executive-function,
+    #block-financial-habits,
+    #block-financial-knowledge {
         transform: perspective(100rem);
         transition-duration: 1000ms;
         transition-property: opacity, transform;
     }
 
     .is-on-executive-function.aos-animate {
-        #executive-function {
+        #block-executive-function {
             opacity: 1;
             transform: scale(1.1) translate3d(-1.4rem, 0, 0.1rem);
         }
-        #financial-habits,
-        #financial-knowledge {
+        #block-financial-habits,
+        #block-financial-knowledge {
             opacity: 0.25;
             transform: scale(1) translate3d(0, 0, 0);
         }
     }
 
     .is-on-financial-habits.aos-animate {
-        #financial-habits {
+        #block-financial-habits {
             opacity: 1;
             transform: scale(1.1) translate3d(-2.4rem, -2.4rem, 0.1rem);
         }
-        #executive-function,
-        #financial-knowledge {
+        #block-executive-function,
+        #block-financial-knowledge {
             opacity: 0.25;
             transform: scale(1) translate3d(0, 0, 0);
         }
     }
 
     .is-on-financial-knowledge.aos-animate {
-        #financial-knowledge {
+        #block-financial-knowledge {
             opacity: 1;
             transform: scale(1.1) translate3d(0, -2.4rem, 0.1rem);
         }
-        #executive-function,
-        #financial-habits {
+        #block-executive-function,
+        #block-financial-habits {
             opacity: 0.25;
             transform: scale(1) translate3d(0, 0, 0);
         }
     }
 
     .is-on-building-block-final.aos-animate {
-        #financial-habits,
-        #financial-knowledge,
-        #executive-function {
+        #block-financial-habits,
+        #block-financial-knowledge,
+        #block-executive-function {
             opacity: 1;
             transform: scale(1) translate3d(0, 0, 0);
         }
@@ -267,9 +260,9 @@
 
 @media (prefers-reduced-motion: reduce) {
     .o-tour_illustration {
-        #executive-function,
-        #financial-habits,
-        #financial-knowledge {
+        #block-executive-function,
+        #block-financial-habits,
+        #block-financial-knowledge {
             transition-duration: 1ms;
         }
     }
@@ -340,98 +333,6 @@
     }
 }
 
-.o-tour_building-blocks-jumplinks {
-    float: left;
-    margin: calc(15vh + unit( 90px / @base-font-size-px, em )) 0 0 unit( -44px / @base-font-size-px, em );
-    position: sticky;
-    top: calc(15vh + unit( 90px / @base-font-size-px, em ));
-
-    .respond-to-min(@bp-med-min, {
-        margin-top: unit( 135px / @base-font-size-px, em );
-        max-height: 100%;
-        top: unit( 135px / @base-font-size-px, em );
-    });
-}
-
-.o-tour_building-blocks-jumplinks-list {
-    list-style: none;
-    padding: 0;
-
-    li {
-        margin: 0;
-    }
-}
-
-.o-tour_building-blocks-jumplink {
-    border-bottom: 0;
-    display: block;
-    height: unit( 28px / @base-font-size-px, em );
-    margin-bottom: unit( 10px / @base-font-size-px, em );
-    position: relative;
-    text-decoration: none;
-}
-
-.o-tour_building-blocks-jumplink-icon {
-    display: block;
-    transition: opacity 0.5s ease;
-}
-
-.o-tour_building-blocks-jumplink-icon__active {
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-}
-
-.o-tour_building-blocks-jumplink__executive {
-    .o-tour_building-blocks-jumplink-icon__active {
-        opacity: 1;
-    }
-}
-
-.is-on-executive-function.aos-animate {
-    .o-tour_building-blocks-jumplink-icon__active {
-        opacity: 1;
-    }
-
-    .o-tour_building-blocks-jumplink__financial-habits,
-    .o-tour_building-blocks-jumplink__financial-knowledge {
-        .o-tour_building-blocks-jumplink-icon__active {
-            opacity: 0;
-        }
-    }
-}
-
-.is-on-financial-habits.aos-animate {
-    .o-tour_building-blocks-jumplink__financial-habits {
-        .o-tour_building-blocks-jumplink-icon__active {
-            opacity: 1;
-        }
-    }
-
-    .o-tour_building-blocks-jumplink__executive-function,
-    .o-tour_building-blocks-jumplink__financial-knowledge {
-        .o-tour_building-blocks-jumplink-icon__active {
-            opacity: 0;
-        }
-    }
-}
-
-.is-on-financial-knowledge.aos-animate {
-    .o-tour_building-blocks-jumplink__financial-knowledge {
-        .o-tour_building-blocks-jumplink-icon__active {
-            opacity: 1;
-        }
-    }
-
-    .o-tour_building-blocks-jumplink__executive-function,
-    .o-tour_building-blocks-jumplink__financial-habits {
-        .o-tour_building-blocks-jumplink-icon__active {
-            opacity: 0;
-        }
-    }
-}
-
 .o-tour_screen__intro {
     background: #dbebfa;
     border-top: 0;
@@ -463,13 +364,11 @@
 .o-tour_screen__three {
     .o-tour_content-image {
         position: sticky;
-        top: unit( 30px / @base-font-size-px, em );
+        top: 0;
         z-index: 1;
-
-        .respond-to-min(@bp-med-min, {
-            top: 0;
-        });
     }
+
+    /* Fix for IE11 due to sticky polyfill markup */
 }
 
 .o-tour_screen__four::before,
