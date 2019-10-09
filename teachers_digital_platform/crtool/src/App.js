@@ -5,7 +5,7 @@ import 'core-js/es6/set';
 import React, { Component } from 'react';
 
 import CustomerReviewToolComponent from "./js/components/CustomerReviewToolComponent";
-console.log("DID I GET HERE");
+
 class App extends Component {
   render() {
     return (

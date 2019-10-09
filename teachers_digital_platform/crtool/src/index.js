@@ -6,6 +6,5 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-console.log("GOT HERE");
-console.log("GOT HERE TOO");
+
 ReactDOM.render(<App />, document.getElementById('react'));
