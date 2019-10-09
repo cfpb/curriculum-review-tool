@@ -36,7 +36,6 @@ function attachHandlers() {
     const clearableInput = new ClearableInput( inputContainsLabel );
     clearableInput.init();
   }
-  
 }
 
 /**
