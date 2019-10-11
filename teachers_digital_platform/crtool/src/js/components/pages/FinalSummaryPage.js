@@ -37,7 +37,7 @@ export default class FinalSummaryPage extends React.Component {
                 {
                     this.props.currentPage === C.START_PAGE &&
                     <React.Fragment>
-                        <div class="h5 u-mb30">You’re reviewing</div>
+                        <div className="h5 u-mb30">You’re reviewing</div>
                         <h1>{this.props.curriculumTitle}</h1>
                     </React.Fragment>
                 }

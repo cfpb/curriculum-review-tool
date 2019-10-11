@@ -6,16 +6,16 @@ import CriterionAnswerAreaEfficacyStudy from "./CriterionAnswerAreaEfficacyStudy
 export default class CriterionRow extends React.Component {
     render() {
         return (
-            <li class="o-survey">
-                <div class="o-survey_number">
-                    <h4 class="h3">{this.props.rowData.indicatorNumber}</h4>
+            <li className="o-survey">
+                <div className="o-survey_number">
+                    <h4 className="h3">{this.props.rowData.indicatorNumber}</h4>
                 </div>
-                <div class="o-survey_indicator">
-                    <h5 class="h3">Indicator</h5>
+                <div className="o-survey_indicator">
+                    <h5 className="h3">Indicator</h5>
                     <p>{this.props.rowData.indicatorText}</p>
                 </div>
-                <div class="o-survey_components">
-                    <h5 class="h3">Component</h5>
+                <div className="o-survey_components">
+                    <h5 className="h3">Component</h5>
                     { // Is printing Efficacy Studies
                         this.props.isEfficacyStudy &&
                         <React.Fragment>

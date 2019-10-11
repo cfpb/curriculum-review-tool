@@ -23,8 +23,8 @@ init() {
     CR_TOOL_DEP_CHECKSUM=$(cat teachers_digital_platform/crtool/package.json | shasum -a 256)
   fi
 
-  if [[ "$(node -v)" != 'v8.'* ]]; then
-    printf "\033[1;31mPlease install Node 8.x: 'nvm install 8'\033[0m\n"
+  if [[ "$(node -v)" != 'v10.'* ]] && [[ "$(node -v)" != 'v11.'* ]] && [[ "$(node -v)" != 'v12.'* ]]; then
+    printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
   fi
 
   NODE_DIR=node_modules

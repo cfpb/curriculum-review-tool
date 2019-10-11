@@ -7,13 +7,13 @@ Array [
   />,
   <h1
     id="QualityCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -65,7 +65,7 @@ Array [
     className="o-well u-mb30 u-mt30"
   >
     <h3
-      class="h4"
+      className="h4"
     >
       What’s a beneficial component?
     </h3>
@@ -163,7 +163,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
                     onBlur={[Function]}
                     placeholder="$"
@@ -345,7 +344,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.3"
                     onBlur={[Function]}
                     type="text"
@@ -661,7 +659,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.1"
                     onBlur={[Function]}
                     type="text"
@@ -749,7 +746,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.2"
                     onBlur={[Function]}
                     type="text"
@@ -922,7 +918,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -944,7 +939,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -970,13 +965,13 @@ Array [
   />,
   <h1
     id="QualityCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -1028,7 +1023,7 @@ Array [
     className="o-well u-mb30 u-mt30"
   >
     <h3
-      class="h4"
+      className="h4"
     >
       What’s a beneficial component?
     </h3>
@@ -1126,7 +1121,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
                     onBlur={[Function]}
                     placeholder="$"
@@ -1308,7 +1302,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.3"
                     onBlur={[Function]}
                     type="text"
@@ -1624,7 +1617,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.1"
                     onBlur={[Function]}
                     type="text"
@@ -1712,7 +1704,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.2"
                     onBlur={[Function]}
                     type="text"
@@ -1885,7 +1876,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -2273,7 +2263,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-2"
         onBlur={[Function]}
         rows="6"
@@ -2845,7 +2834,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-3"
         onBlur={[Function]}
         rows="6"
@@ -3485,7 +3473,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-4"
         onBlur={[Function]}
         rows="6"
@@ -3505,13 +3492,13 @@ Array [
   />,
   <h1
     id="QualityCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -3563,7 +3550,7 @@ Array [
     className="o-well u-mb30 u-mt30"
   >
     <h3
-      class="h4"
+      className="h4"
     >
       What’s a beneficial component?
     </h3>
@@ -3661,7 +3648,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
                     onBlur={[Function]}
                     placeholder="$"
@@ -3843,7 +3829,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.3"
                     onBlur={[Function]}
                     type="text"
@@ -4159,7 +4144,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.1"
                     onBlur={[Function]}
                     type="text"
@@ -4247,7 +4231,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.2"
                     onBlur={[Function]}
                     type="text"
@@ -4420,7 +4403,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -4808,7 +4790,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-2"
         onBlur={[Function]}
         rows="6"
@@ -4830,7 +4811,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -4856,13 +4837,13 @@ Array [
   />,
   <h1
     id="QualityCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -4914,7 +4895,7 @@ Array [
     className="o-well u-mb30 u-mt30"
   >
     <h3
-      class="h4"
+      className="h4"
     >
       What’s a beneficial component?
     </h3>
@@ -5012,7 +4993,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
                     onBlur={[Function]}
                     placeholder="$"
@@ -5194,7 +5174,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.3"
                     onBlur={[Function]}
                     type="text"
@@ -5510,7 +5489,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.1"
                     onBlur={[Function]}
                     type="text"
@@ -5598,7 +5576,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.2"
                     onBlur={[Function]}
                     type="text"
@@ -5771,7 +5748,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -5793,7 +5769,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -5819,13 +5795,13 @@ Array [
   />,
   <h1
     id="QualityCriterionPage_dimensionTitle"
-    tabindex="0"
+    tabIndex="0"
   >
     <span
       className="a-icon a-icon__large a-icon__space-after"
     >
       <svg
-        class="cf-icon-svg"
+        className="cf-icon-svg"
         viewBox="0 0 1000 1200"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -5877,7 +5853,7 @@ Array [
     className="o-well u-mb30 u-mt30"
   >
     <h3
-      class="h4"
+      className="h4"
     >
       What’s a beneficial component?
     </h3>
@@ -5901,7 +5877,7 @@ Array [
         className="a-icon a-icon__green a-icon__space-after"
       >
         <svg
-          class="cf-icon-svg"
+          className="cf-icon-svg"
           viewBox="0 0 1000 1200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -5912,7 +5888,7 @@ Array [
       </span>
       Criterion 1: Accessibility
       <span
-        class="u-fc-gray"
+        className="u-fc-gray"
       >
          (complete)
       </span>
@@ -5993,7 +5969,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.1"
                     onBlur={[Function]}
                     placeholder="$"
@@ -6175,7 +6150,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.1.3"
                     onBlur={[Function]}
                     type="text"
@@ -6491,7 +6465,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.1"
                     onBlur={[Function]}
                     type="text"
@@ -6579,7 +6552,6 @@ Array [
                   </label>
                   <input
                     className="a-text-input a-text-input__full"
-                    defaultValue={undefined}
                     id="quality-crt-text-optional-1.3.2"
                     onBlur={[Function]}
                     type="text"
@@ -6752,7 +6724,6 @@ Array [
       </label>
       <textarea
         className="a-text-input a-text-input__full"
-        defaultValue={undefined}
         id="quality-crt-notes-optional-1"
         onBlur={[Function]}
         rows="6"
@@ -6774,7 +6745,7 @@ Array [
           className="a-icon a-icon__space-after"
         >
           <svg
-            class="cf-icon-svg"
+            className="cf-icon-svg"
             viewBox="0 0 1000 1200"
             xmlns="http://www.w3.org/2000/svg"
           >

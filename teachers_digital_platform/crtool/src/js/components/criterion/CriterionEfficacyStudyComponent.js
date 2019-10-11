@@ -10,7 +10,7 @@ export default class CriterionEfficacyStudyComponent extends React.Component {
     renderMyNotes(studyCount) {
         let notes = this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].notesRefId.replace("_study_", studyCount)];
         if (notes === undefined || notes === "") {
-            return (<p class="o-survey_question-helper">No information provided</p>);
+            return (<p className="o-survey_question-helper">No information provided</p>);
         } else {
             return this.props.studyAnswers[studyCount][EfficacyStudyContent.criterion[0].notesRefId.replace("_study_", studyCount)];
         }

@@ -8,7 +8,7 @@ export default class EditableSubComponentRow extends React.Component {
 
     showBeneficialText() {
         if (this.props.showBeneficialText === "true") {
-            return (<p class="o-survey_question-helper">Beneficial, but not essential.</p>);
+            return (<p className="o-survey_question-helper">Beneficial, but not essential.</p>);
         }
         return null;
     }
@@ -17,7 +17,7 @@ export default class EditableSubComponentRow extends React.Component {
         return (
             <fieldset className="o-survey_fieldset">
                 <div className="o-survey_component">
-                    <div class="o-survey_question">
+                    <div className="o-survey_question">
                         <legend className="o-survey_legend">
                             <p>{this.props.componentText}</p>
                             {this.showBeneficialText()}

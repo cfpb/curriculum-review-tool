@@ -11,7 +11,9 @@ export default class DistinctiveButton extends React.Component {
         //HACK: need to scroll to top of screen after we navigate.
         setTimeout(function(){
             let main = document.getElementById("main");
-            main.scrollIntoView();
+            if (main) {
+              main.scrollIntoView();
+            }
 
             let dimensionTitle = document.getElementById(distintiveName + "_dimensionTitle")
             if (dimensionTitle) {
@@ -35,7 +37,7 @@ export default class DistinctiveButton extends React.Component {
       return (
         <li className="o-dimension-section-bar_dimension">
             <button className={statusClassName} onClick={this.handleOnClick.bind(this)}>
-                <div class="o-dimension-section-bar_selector">
+                <div className="o-dimension-section-bar_selector">
                     <span className="o-dimension-section-bar_selector-title">
                         <SvgIcon
                             icon={currentIcon}
@@ -51,7 +53,7 @@ export default class DistinctiveButton extends React.Component {
                 <li className="h6">{this.props.criterionText}</li>
                 <li className="h6">
                     <span aria-hidden="true">{this.props.estimateText}</span>
-                    <span class="u-visually-hidden">{this.props.estimateTextScreenReader}</span>
+                    <span className="u-visually-hidden">{this.props.estimateTextScreenReader}</span>
                 </li>
             </ul>
         </li>

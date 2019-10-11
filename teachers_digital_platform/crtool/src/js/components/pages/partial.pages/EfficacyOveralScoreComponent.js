@@ -22,7 +22,7 @@ export default class EfficacyOveralScoreComponent extends React.Component {
 
     renderNotesPrintVersion(notes) {
         if (notes === undefined || notes === "") {
-            return (<p class="o-survey_question-helper">No information provided</p>);
+            return (<p className="o-survey_question-helper">No information provided</p>);
         } else {
             return notes;
         }

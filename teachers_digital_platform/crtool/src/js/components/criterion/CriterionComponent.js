@@ -7,7 +7,7 @@ export default class CriterionComponent extends React.Component {
     renderMyNotes() {
         let notes = this.props.criterionAnswers[this.props.criterionData.notesRefId];
         if (notes === undefined || notes === "") {
-            return (<p class="o-survey_question-helper">No information provided</p>);
+            return (<p className="o-survey_question-helper">No information provided</p>);
         } else {
             return this.props.criterionAnswers[this.props.criterionData.notesRefId];
         }

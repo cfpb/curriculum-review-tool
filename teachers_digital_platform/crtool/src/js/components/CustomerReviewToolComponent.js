@@ -478,7 +478,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                     {
                         this.state.currentPage === C.START_PAGE &&
                         <React.Fragment>
-                            <div class="h5 u-mb30">You’re reviewing</div>
+                            <div className="h5 u-mb30">You’re reviewing</div>
                             <h1>{this.state.curriculumTitle}</h1>
                         </React.Fragment>
                     }
@@ -503,10 +503,10 @@ export default class CustomerReviewToolComponent extends React.Component {
                             (this.state.currentPage === C.EFFICACY_PAGE && this.state.efficacyIsSummaryView)
                         ) &&
 
-                        <div class="l-full-width">
-                            <div class="o-inner-footer u-mt45">
-                                <div class="wrapper content_wrapper">
-                                    <div class="content_main">
+                        <div className="l-full-width">
+                            <div className="o-inner-footer u-mt45">
+                                <div className="wrapper content_wrapper">
+                                    <div className="content_main">
                                         <h2>Choose another dimension or review the final summary</h2>
                                         <DistinctiveMenuBar {...applicationProps} />
                                     </div>

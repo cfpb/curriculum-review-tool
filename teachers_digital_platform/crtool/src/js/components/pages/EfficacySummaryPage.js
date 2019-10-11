@@ -16,7 +16,7 @@ export default class EfficacySummaryPage extends React.Component {
                 <hr className="hr
                                 u-mb45
                                 u-mt30" />
-                <h1 tabindex="0" id={this.props.currentPage + "_dimensionTitle"}>
+                <h1 tabIndex="0" id={this.props.currentPage + "_dimensionTitle"}>
                     <SvgIcon
                         icon="credit-report-round"
                         isLarge="true"
@@ -36,12 +36,12 @@ export default class EfficacySummaryPage extends React.Component {
 
                 <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
 
-                <hr class="hr u-mb45 u-mt30" />
+                <hr className="hr u-mb45 u-mt30" />
 
                 <ViewEditResponseComponent criterionNumber="1" criterionPage={C.EFFICACY_PAGE} {...this.props} />
                 <EfficacyScopeEvidenceComponent {...this.props} />
 
-                <hr class="hr u-mb45 u-mt30" />
+                <hr className="hr u-mb45 u-mt30" />
 
                 <EfficacyOveralScoreComponent
                     dimensionPage={C.UTILITY_PAGE}

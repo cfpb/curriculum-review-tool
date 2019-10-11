@@ -42,7 +42,7 @@ export default class FinalCurriculumInformation extends React.Component {
                     {
                         this.props.currentPage === C.FINAL_SUMMARY_PAGE &&
                         <React.Fragment>
-                            <hr class="hr u-mb45 u-mt30" />
+                            <hr className="hr u-mb45 u-mt30" />
                             <h2>Curriculum information</h2>
                         </React.Fragment>
                     }

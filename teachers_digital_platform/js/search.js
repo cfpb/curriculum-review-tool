@@ -32,8 +32,10 @@ function attachHandlers() {
   cfExpandables.init();
   expandableFacets.init();
   const inputContainsLabel = document.querySelector( '.tdp-activity-search .input-contains-label' );
-  const clearableInput = new ClearableInput( inputContainsLabel );
-  clearableInput.init();
+  if (inputContainsLabel) {
+    const clearableInput = new ClearableInput( inputContainsLabel );
+    clearableInput.init();
+  }
 }
 
 /**

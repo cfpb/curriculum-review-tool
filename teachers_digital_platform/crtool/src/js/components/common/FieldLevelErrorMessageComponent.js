@@ -15,7 +15,7 @@ export default class FieldLevelErrorMessageComponent extends React.Component {
     render() {
         if (this.props.showErrorsForCurrentPage() && this.fieldMissingValue()) {
             return (
-                <div class="a-error-message" id={this.getFieldId()} role="alert">
+                <div className="a-error-message" id={this.getFieldId()} role="alert">
                     <SvgIcon
                         icon="x-round"
                         hasSpaceAfter="true" />
