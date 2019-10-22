@@ -55,7 +55,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                 <p>
                     <SaveWorkModal
                         buttonText="How can I save my work?"
-                        hasIcon="false"
+                        hasIcon="true"
                         hasUnderline="true" {...this.props} />
                 </p>
                 <hr className="hr
