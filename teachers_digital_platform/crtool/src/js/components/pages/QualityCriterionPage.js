@@ -53,8 +53,7 @@ export default class QualityCriterionPage extends React.Component {
                 <p>
                     <SaveWorkModal
                         buttonText="How can I save my work?"
-                        hasIcon="false"
-                        hasUnderline="true" {...this.props} />
+                        hasIcon="true" {...this.props} />
                 </p>
                 <div className="o-well
                                 u-mb30
