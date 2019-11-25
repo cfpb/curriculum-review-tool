@@ -406,14 +406,19 @@ class ActivityPage(CFGOVPage):
         Get a list of this activity's subtopic ids
         """
         topic_ids = [topic.id for topic in self.topic.all()]
-        root_ids = ActivityTopic.objects.filter(id__in=topic_ids).filter(parent=None).values_list('id', flat=True)
+        root_ids = ActivityTopic.objects\
+            .filter(id__in=topic_ids)\
+            .filter(parent=None)\
+            .values_list('id', flat=True)
         return set(topic_ids) - set(root_ids)
 
     def get_grade_level_ids(self):
         """
         Get a list of this activity's grade_level ids
         """
-        grade_level_ids = [grade_level.id for grade_level in self.grade_level.all()]
+        grade_level_ids = [
+            grade_level.id for grade_level in self.grade_level.all()
+        ]
         return grade_level_ids
 
     def get_topics_list(self, parent=None):
