@@ -63,7 +63,7 @@
             {% endif %}
     </div>
     <div>
-        <h2 class="u-mt45">Explore similar activities</h2>
+        <h2 class="u-mt45">Explore related resources</h2>
         <ul>
             {% set parent_page = page.get_parent().url %}
             <li><a class="a-link a-lnk__icon" href="{{ parent_page }}?q=&topic={{page.get_subtopic_ids() | join('&topic=')}}&grade_level={{ page.get_grade_level_ids() | join('&grade_level=') }}">Search for related CFPB activities</a></li>
