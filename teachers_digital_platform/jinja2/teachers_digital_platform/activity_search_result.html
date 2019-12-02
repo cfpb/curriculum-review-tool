@@ -24,10 +24,6 @@
                 <h5 class="activity_meta-key">Topic:</h5>
                 {{ result.get_topics_list() }}
             </div>
-            <div class="layout-row u-mb15">
-                <h5 class="activity_meta-key">Age range:</h5>
-                {{ result.age_range.all() | join(', ') }}
-            </div>
             <div class="layout-row">
                 <h5 class="activity_meta-key">Activity duration:</h5>
                 {{ result.activity_duration }}
