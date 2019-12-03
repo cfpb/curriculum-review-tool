@@ -28,11 +28,15 @@ class TestActivityPage(TestCase):
 
     def test_get_subtopic_ids_works_with_no_topics(self):
         # Arrange
-        activity_page = self.create_activity_detail_page('Test', 'test', topic_list=[])  # noqa: E501
+        activity_page = self.create_activity_detail_page(
+            'Test',
+            'test',
+            topic_list=[]
+        )
         # Act
         actual_subtopic_ids = activity_page.get_subtopic_ids()
         # Assert
-        self.assertTrue(isinstance(actual_subtopic_ids, (list, set)))
+        self.assertIsInstance(actual_subtopic_ids, set)
         self.assertFalse(actual_subtopic_ids)
 
     def test_get_subtopic_ids_works_with_no_subtopics(self):
@@ -51,7 +55,7 @@ class TestActivityPage(TestCase):
         actual_grade_level_ids = activity_page.get_grade_level_ids()
         # Assert
         self.assertTrue(2 in actual_grade_level_ids)
-        self.assertTrue(1 == len(actual_grade_level_ids))
+        self.assertEqual(len(actual_grade_level_ids), 1)
 
     def test_get_grade_level_ids_works_with_no_grade_levels(self):
         # Arrange
