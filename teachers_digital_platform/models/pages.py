@@ -406,9 +406,8 @@ class ActivityPage(CFGOVPage):
         Get a list of this activity's subtopic ids
         """
         topic_ids = [topic.id for topic in self.topic.all()]
-        root_ids = ActivityTopic.objects\
-            .filter(id__in=topic_ids)\
-            .filter(parent=None)\
+        root_ids = ActivityTopic.objects \
+            .filter(id__in=topic_ids, parent=None) \
             .values_list('id', flat=True)
         return set(topic_ids) - set(root_ids)
 

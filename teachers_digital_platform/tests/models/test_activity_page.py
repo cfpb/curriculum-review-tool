@@ -14,17 +14,14 @@ from teachers_digital_platform.models import (
 class TestActivityPage(TestCase):
     fixtures = ['tdp_initial_data']
 
-    def setUp(self):
-        super(TestActivityPage, self).setUp()
-
     def test_get_subtopic_ids_returns_correct_subtopics(self):
         # Arrange
         activity_page = self.create_activity_detail_page('Test', 'test')
         # Act
         actual_subtopic_ids = activity_page.get_subtopic_ids()
         # Assert
-        self.assertTrue(6 not in actual_subtopic_ids)
-        self.assertTrue(7 in actual_subtopic_ids)
+        self.assertNotIn(6, actual_subtopic_ids)
+        self.assertIn(7, actual_subtopic_ids)
 
     def test_get_subtopic_ids_works_with_no_topics(self):
         # Arrange
@@ -41,11 +38,15 @@ class TestActivityPage(TestCase):
 
     def test_get_subtopic_ids_works_with_no_subtopics(self):
         # Arrange
-        activity_page = self.create_activity_detail_page('Test', 'test', topic_list=[6])  # noqa: E501
+        activity_page = self.create_activity_detail_page(
+            'Test',
+            'test',
+            topic_list=[6]
+        )
         # Act
         actual_subtopic_ids = activity_page.get_subtopic_ids()
         # Assert
-        self.assertTrue(isinstance(actual_subtopic_ids, (list, set)))
+        self.assertIsInstance(actual_subtopic_ids, set)
         self.assertFalse(actual_subtopic_ids)
 
     def test_get_grade_level_ids_returns_correct_grade_levels(self):
@@ -54,16 +55,20 @@ class TestActivityPage(TestCase):
         # Act
         actual_grade_level_ids = activity_page.get_grade_level_ids()
         # Assert
-        self.assertTrue(2 in actual_grade_level_ids)
+        self.assertIn(2, actual_grade_level_ids)
         self.assertEqual(len(actual_grade_level_ids), 1)
 
     def test_get_grade_level_ids_works_with_no_grade_levels(self):
         # Arrange
-        activity_page = self.create_activity_detail_page('Test', 'test', grade_level_list=[])  # noqa: E501
+        activity_page = self.create_activity_detail_page(
+            'Test',
+            'test',
+            grade_level_list=[]
+        )
         # Act
         actual_grade_level_ids = activity_page.get_grade_level_ids()
         # Assert
-        self.assertTrue(isinstance(actual_grade_level_ids, (list, set)))
+        self.assertIsInstance(actual_grade_level_ids, list)
         self.assertFalse(actual_grade_level_ids)
 
     def create_activity_detail_page(self, title='title', slug='slug', topic_list=[6, 7], grade_level_list=[2]):  # noqa: E501
