@@ -420,6 +420,26 @@ class ActivityPage(CFGOVPage):
         ]
         return grade_level_ids
 
+    def get_related_activities_url(self):
+        """
+        Generate a search url for related Activities by
+        subtopic and grade-level
+        """
+        parent_page = self.get_parent()
+        subtopic_ids = [str(x) for x in self.get_subtopic_ids()]
+        grade_level_ids = [str(y) for y in self.get_grade_level_ids()]
+
+        url = parent_page.get_url() + '?q='
+        if subtopic_ids:
+            subtopics = '&topic=' + \
+                        '&topic='.join(subtopic_ids)
+            url += subtopics
+        if grade_level_ids:
+            grade_levels = '&grade_level=' + \
+                           '&grade_level='.join(grade_level_ids)
+            url += grade_levels
+        return url
+
     def get_topics_list(self, parent=None):
         """
         Get a hierarchical list of this activity's topics.

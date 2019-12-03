@@ -6,13 +6,31 @@ from model_mommy import mommy
 from teachers_digital_platform.models import (
     ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
     ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityJumpStartCoalition, ActivityPage, ActivitySchoolSubject,
-    ActivityTeachingStrategy, ActivityTopic, ActivityType
+    ActivityIndexPage, ActivityJumpStartCoalition, ActivityPage,
+    ActivitySchoolSubject, ActivityTeachingStrategy, ActivityTopic,
+    ActivityType
 )
+
+from v1.models import HomePage
+from v1.tests.wagtail_pages.helpers import publish_page, save_new_page
 
 
 class TestActivityPage(TestCase):
     fixtures = ['tdp_initial_data']
+
+    def setUp(self):
+        super(TestActivityPage, self).setUp()
+        self.ROOT_PAGE = HomePage.objects.get(slug='cfgov')
+        self.ROOT_PAGE.save_revision().publish()
+
+        self.index_page = ActivityIndexPage(
+            live=True,
+            depth=1,
+            title='Test Index',
+            slug='test-index',
+            path='test-index'
+        )
+        publish_page(self.index_page)
 
     def test_get_subtopic_ids_returns_correct_subtopics(self):
         # Arrange
@@ -70,6 +88,50 @@ class TestActivityPage(TestCase):
         # Assert
         self.assertIsInstance(actual_grade_level_ids, list)
         self.assertFalse(actual_grade_level_ids)
+
+    def test_get_related_activities_url(self):
+        # Arrange
+        activity_page = self.create_activity_detail_page(
+            'Test',
+            'test',
+        )
+        save_new_page(activity_page, self.index_page)
+        # Act
+        actual_url = activity_page.get_related_activities_url()
+        # Assert
+        self.assertEqual(actual_url, '/test-index/?q=&topic=7&grade_level=2')
+
+    def test_get_related_activities_url_with_multiple_grade_levels(self):
+        # Arrange
+        activity_page = self.create_activity_detail_page(
+            'Test 2',
+            'test-2',
+            grade_level_list=[1, 2]
+        )
+        save_new_page(activity_page, self.index_page)
+        # Act
+        actual_url = activity_page.get_related_activities_url()
+        # Assert
+        self.assertEqual(
+            actual_url,
+            '/test-index/?q=&topic=7&grade_level=1&grade_level=2'
+        )
+
+    def test_get_related_activities_url_with_no_topics(self):
+        # Arrange
+        activity_page = self.create_activity_detail_page(
+            'Test 2',
+            'test-2',
+            topic_list=[]
+        )
+        save_new_page(activity_page, self.index_page)
+        # Act
+        actual_url = activity_page.get_related_activities_url()
+        # Assert
+        self.assertEqual(
+            actual_url,
+            '/test-index/?q=&grade_level=2'
+        )
 
     def create_activity_detail_page(self, title='title', slug='slug', topic_list=[6, 7], grade_level_list=[2]):  # noqa: E501
         activity_page = ActivityPage(
