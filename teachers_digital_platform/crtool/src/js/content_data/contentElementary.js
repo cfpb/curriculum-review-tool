@@ -4,6 +4,7 @@ export const ContentElementaryCriterion = {
             title: "Criterion 1: Earning, income, and careers",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-elementary-crt-notes-optional-1",
+            questionRefId: "content-elementary-crt-question-1",
             rows: [
                 {
                     indicatorNumber: "1.1",
