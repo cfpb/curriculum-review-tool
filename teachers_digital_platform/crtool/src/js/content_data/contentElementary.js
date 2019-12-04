@@ -5,6 +5,7 @@ export const ContentElementaryCriterion = {
             leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-elementary-crt-notes-optional-1",
             questionRefId: "content-elementary-crt-question-1",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",
@@ -36,6 +37,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 2: Saving and investing",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for saving and investing?",
             notesRefId: "content-elementary-crt-notes-optional-2",
+            questionRefId: "content-elementary-crt-question-2",
+            divId: "criterion_2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -83,8 +86,10 @@ export const ContentElementaryCriterion = {
         },
         {
             title: "Criterion 3: Spending",
-            leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
+            leadParagraph: "Does the curriculum address grade-level appropriate topics for spending?",
             notesRefId: "content-elementary-crt-notes-optional-3",
+            questionRefId: "content-elementary-crt-question-3",
+            divId: "criterion_3",
             rows: [
                 {
                     indicatorNumber: "3.1",
@@ -124,7 +129,7 @@ export const ContentElementaryCriterion = {
                             showNaButton: false,
                             showBeneficialText: false,
                             criterionRefId: "content-elementary-crt-question-3.2.3",
-                            componentText: "Making good spending choices involves systematic decision making and planning, including comparing the benefits and costs of spending, asking questions, and comparison shopping.",
+                            componentText: "Making good spending choices involves systematic decision-making and planning, including comparing the benefits and costs of spending, asking questions, and comparison shopping.",
                         },
                         {
                             showNaButton: false,
@@ -140,6 +145,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 4: Borrowing and credit",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for borrowing and credit?",
             notesRefId: "content-elementary-crt-notes-optional-4",
+            questionRefId: "content-elementary-crt-question-4",
+            divId: "criterion_4",
             rows: [
                 {
                     indicatorNumber: "4.1",
@@ -165,6 +172,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 5: Managing financial risk",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?",
             notesRefId: "content-elementary-crt-notes-optional-5",
+            questionRefId: "content-elementary-crt-question-5",
+            divId: "criterion_5",
             rows: [
                 {
                     indicatorNumber: "5.1",
@@ -190,6 +199,8 @@ export const ContentElementaryCriterion = {
             title: "Criterion 6: Financial responsibility and money management",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?",
             notesRefId: "content-elementary-crt-notes-optional-6",
+            questionRefId: "content-elementary-crt-question-6",
+            divId: "criterion_6",
             rows: [
                 {
                     indicatorNumber: "6.1",
