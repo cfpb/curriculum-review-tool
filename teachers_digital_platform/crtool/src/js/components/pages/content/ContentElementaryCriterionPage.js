@@ -217,11 +217,11 @@ export default class ContentElementaryCriterionPage extends React.Component {
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>2.1</h3>
+                                <h3>{ContentElementaryCriterion.criterion[1].rows[0].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>People save for the future, and might have different goals for saving and make different choices about how to save.</p>
+                                <p>{ContentElementaryCriterion.criterion[1].rows[0].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -229,7 +229,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>One can save money in various ways, including at home in a piggy bank or at a commercial bank, credit union, or savings and loan institution.</p>
+                                                <p>{ContentElementaryCriterion.criterion[1].rows[0].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -237,13 +237,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-elementary-crt-question-2.1.1a"
-                                                    name="content-elementary-crt-question-2.1.1"
-                                                    ref="content-elementary-crt-question-2.1.1"
-                                                    checked={this.props.criterionAnswers["content-elementary-crt-question-2.1.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.1.1', 'yes')}} />
+                                                    id={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId + "a"}
+                                                    name={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    ref={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-elementary-crt-question-2.1.1a">
+                                                    htmlFor={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -251,13 +251,13 @@ export default class ContentElementaryCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-elementary-crt-question-2.1.1b"
-                                                    name="content-elementary-crt-question-2.1.1"
-                                                    ref="content-elementary-crt-question-2.1.1"
-                                                    checked={this.props.criterionAnswers["content-elementary-crt-question-2.1.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-elementary-crt-question-2.1.1', 'no')}} />
+                                                    id={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId + "b"}
+                                                    name={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    ref={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-elementary-crt-question-2.1.1b">
+                                                    htmlFor={ContentElementaryCriterion.criterion[1].rows[0].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
