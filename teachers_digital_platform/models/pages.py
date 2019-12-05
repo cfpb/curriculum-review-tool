@@ -401,6 +401,45 @@ class ActivityPage(CFGOVPage):
         index.FilterField('council_for_economic_education'),
     ]
 
+    def get_subtopic_ids(self):
+        """
+        Get a list of this activity's subtopic ids
+        """
+        topic_ids = [topic.id for topic in self.topic.all()]
+        root_ids = ActivityTopic.objects \
+            .filter(id__in=topic_ids, parent=None) \
+            .values_list('id', flat=True)
+        return set(topic_ids) - set(root_ids)
+
+    def get_grade_level_ids(self):
+        """
+        Get a list of this activity's grade_level ids
+        """
+        grade_level_ids = [
+            grade_level.id for grade_level in self.grade_level.all()
+        ]
+        return grade_level_ids
+
+    def get_related_activities_url(self):
+        """
+        Generate a search url for related Activities by
+        subtopic and grade-level
+        """
+        parent_page = self.get_parent()
+        subtopic_ids = [str(x) for x in self.get_subtopic_ids()]
+        grade_level_ids = [str(y) for y in self.get_grade_level_ids()]
+
+        url = parent_page.get_url() + '?q='
+        if subtopic_ids:
+            subtopics = '&topic=' + \
+                        '&topic='.join(subtopic_ids)
+            url += subtopics
+        if grade_level_ids:
+            grade_levels = '&grade_level=' + \
+                           '&grade_level='.join(grade_level_ids)
+            url += grade_levels
+        return url
+
     def get_topics_list(self, parent=None):
         """
         Get a hierarchical list of this activity's topics.

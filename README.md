@@ -241,9 +241,11 @@ npm run test
 
 Unit tests can be found in "teachers_digital_platform/tests/"
 
-**The two main files are**:
+**The three main files are**:
 
 - teachers_digital_platform/tests/models/test_activity_index_page.py
+
+- teachers_digital_platform/tests/models/test_activity_page.py
 
 - teachers_digital_platform/tests/models/test_pages_utility_definitions.py
 
