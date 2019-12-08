@@ -1,6 +1,11 @@
 export const ContentElementaryCriterion = {
     criterion: [
         {
+            criterionNumber: "1",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for earning, income, and careers.",
+            criterionExceedsText: "Both components were addressed",
+            criterionMeetsText: "1 component was addressed",
+            criterionDoesNotMeetText: "0 components were addressed",
             title: "Criterion 1: Earning, income, and careers",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-elementary-crt-notes-optional-1",
@@ -34,6 +39,11 @@ export const ContentElementaryCriterion = {
             ]
         },
         {
+            criterionNumber: "2",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for saving and investing.",
+            criterionExceedsText: "All 4 components were addressed",
+            criterionMeetsText: "3 components were addressed",
+            criterionDoesNotMeetText: "Less than 3 components were addressed",
             title: "Criterion 2: Saving and investing",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for saving and investing?",
             notesRefId: "content-elementary-crt-notes-optional-2",
@@ -85,6 +95,11 @@ export const ContentElementaryCriterion = {
             ]
         },
         {
+            criterionNumber: "3",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for spending.",
+            criterionExceedsText: "5 or more components were addressed",
+            criterionMeetsText: "4 components were addressed",
+            criterionDoesNotMeetText: "Less than 4 components were addressed",
             title: "Criterion 3: Spending",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for spending?",
             notesRefId: "content-elementary-crt-notes-optional-3",
@@ -142,6 +157,11 @@ export const ContentElementaryCriterion = {
             ]
         },
         {
+            criterionNumber: "4",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for borrowing and credit.",
+            criterionExceedsText: "Both components were addressed",
+            criterionMeetsText: "1 component was addressed",
+            criterionDoesNotMeetText: "0 components were addressed",
             title: "Criterion 4: Borrowing and credit",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for borrowing and credit?",
             notesRefId: "content-elementary-crt-notes-optional-4",
@@ -169,6 +189,11 @@ export const ContentElementaryCriterion = {
             ]
         },
         {
+            criterionNumber: "5",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance.",
+            criterionExceedsText: "Both components were addressed",
+            criterionMeetsText: "1 component was addressed",
+            criterionDoesNotMeetText: "0 components were addressed",
             title: "Criterion 5: Managing financial risk",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?",
             notesRefId: "content-elementary-crt-notes-optional-5",
@@ -196,6 +221,10 @@ export const ContentElementaryCriterion = {
             ]
         },
         {
+            criterionNumber: "6",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions.",
+            criterionMeetsText: "1 component was addressed",
+            criterionDoesNotMeetText: "0 components were addressed",
             title: "Criterion 6: Financial responsibility and money management",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?",
             notesRefId: "content-elementary-crt-notes-optional-6",

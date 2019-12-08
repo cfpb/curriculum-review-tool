@@ -29,6 +29,23 @@ const C = {
     QUALITY_IS_DONE: "quality_is_done",
     EFFICACY_IS_DONE: "efficacy_is_done",
 
+    CONTENT_SUMMARY_TEXT: "The content dimension evaluates the supports for using the curriculum. Such supports include guidance for teachers, materials that facilitate strong and effective instruction, and assessments to measure student mastery of skills and knowledge.",
+    UTILITY_SUMMARY_TEXT: "",
+    QUALITY_SUMMARY_TEXT: "",
+    EFFICACY_SUMMARY_TEXT: "",
+
+    CONTENT_ELEMENTARY_KEY: "content-elementary-crt-",
+    CONTENT_HIGH_KEY: "content-high-crt-",
+    CONTENT_MIDDLE_KEY: "content-middle-crt-",
+    UTILITY_KEY: "utility-crt-",
+    QUALITY_KEY: "quality-crt-",
+    EFFICACY_KEY: "efficacy-crt-",
+
+    CONTENT_LEAD_TEXT: "How does this curriculum meet the criteria for content:",
+    CONTENT_STRONG_TEXT: "All 6 criteria were met and at least one was exceeded",
+    CONTENT_MODERATE_TEXT: "All 6 criteria were met",
+    CONTENT_LIMITED_TEXT: "At least one criterion was not met",
+
     CONTENT_SUMMARY_VIEW: "content_summary_view",
     UTILITY_SUMMARY_VIEW: "utility_summary_view",
     QUALITY_SUMMARY_VIEW: "quality_summary_view",
