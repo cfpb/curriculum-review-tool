@@ -309,7 +309,7 @@ export const ContentMiddleCriterion = {
                         {
                             showNaButton: false,
                             showBeneficialText: false,
-                            criterionRefId: "content-middle-crt-question-1.3",
+                            criterionRefId: "content-middle-crt-question-5.3",
                             componentText: "Insurance premiums might vary based on the level of protection, insurer’s assessment of individual risk, deductible, and copayment.",
                         },
                     ]
