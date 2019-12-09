@@ -1,9 +1,16 @@
 export const ContentHighCriterion = {
     criterion: [
         {
+            criterionNumber: "1",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for earning, income, and careers.",
+            criterionExceedsText: "Both components were addressed",
+            criterionMeetsText: "1 component was addressed",
+            criterionDoesNotMeetText: "0 components were addressed",
             title: "Criterion 1: Earning, income, and careers",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-high-crt-notes-optional-1",
+            questionRefId: "content-high-crt-question-1",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",

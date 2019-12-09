@@ -5,6 +5,7 @@ import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
 import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
+import { ContentMiddleCriterion } from "../../../content_data/contentMiddle";
 
 export default class ContentMiddleCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -62,26 +63,26 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 {this.props.renderFormLevelErrorMessage()}
-                <div className="block block__flush-top" id="criterion_1">
+                <div className="block block__flush-top" id={ContentMiddleCriterion.criterion[0].divId}>
                     <h2>
                         <SvgIcon
-                            icon={this.props.criterionCompletionStatuses["content-middle-crt-question-1"]}
+                            icon={this.props.criterionCompletionStatuses[ContentMiddleCriterion.criterion[0].questionRefId]}
                             color="green"
                             hasSpaceAfter="true" />
-                        Criterion 1: Earning, income, and careers
-                        {this.props.criterionCompletionStatuses["content-middle-crt-question-1"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
+                        {ContentMiddleCriterion.criterion[0].title}
+                        {this.props.criterionCompletionStatuses[ContentMiddleCriterion.criterion[0].questionRefId] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
-                        Does the curriculum address grade-level appropriate topics for earning, income, and careers?
+                        {ContentMiddleCriterion.criterion[0].leadParagraph}
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>1.1</h3>
+                                <h3>{ContentMiddleCriterion.criterion[0].rows[0].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>Sources of income include wages, salaries, and benefits, as well as interest, rent, and profits.</p>
+                                <p>{ContentMiddleCriterion.criterion[0].rows[0].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -89,7 +90,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Income can be acquired in a variety of ways, including through wages; salaries; commissions; interest, dividends, and capital appreciation on investments; money gifts; profits; and rental property.</p>
+                                                <p>{ContentMiddleCriterion.criterion[0].rows[0].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -97,13 +98,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-1.1a"
-                                                    name="content-middle-crt-question-1.1"
-                                                    ref="content-middle-crt-question-1.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-1.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -111,29 +112,29 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-1.1b"
-                                                    name="content-middle-crt-question-1.1"
-                                                    ref="content-middle-crt-question-1.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-1.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-1.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[0].rows[0].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>1.2</h3>
+                                <h3>{ContentMiddleCriterion.criterion[0].rows[1].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>People can change their income by acquiring more education, work experience, and skills.</p>
+                                <p>{ContentMiddleCriterion.criterion[0].rows[1].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -141,7 +142,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Building human capital through various types of education and training can have differing opportunity costs.</p>
+                                                <p>{ContentMiddleCriterion.criterion[0].rows[1].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -149,13 +150,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-1.2.1a"
-                                                    name="content-middle-crt-question-1.2.1"
-                                                    ref="content-middle-crt-question-1.2.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-1.2.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -163,25 +164,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-1.2.1b"
-                                                    name="content-middle-crt-question-1.2.1"
-                                                    ref="content-middle-crt-question-1.2.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-1.2.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-1.2.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[0].rows[1].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Changes in the labor market or economic conditions can cause changes in worker’s income or unemployment.</p>
+                                                <p>{ContentMiddleCriterion.criterion[0].rows[1].components[1].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -189,13 +190,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-1.2.2a"
-                                                    name="content-middle-crt-question-1.2.2"
-                                                    ref="content-middle-crt-question-1.2.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.2', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-1.2.2a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -203,25 +204,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-1.2.2b"
-                                                    name="content-middle-crt-question-1.2.2"
-                                                    ref="content-middle-crt-question-1.2.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-1.2.2"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-1.2.2', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-1.2.2b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-1.2.2" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[0].rows[1].components[1].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-middle-crt-notes-optional-1">
+                        <label className="a-label a-label__heading" htmlFor={ContentMiddleCriterion.criterion[0].notesRefId}>
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -230,37 +231,37 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-middle-crt-notes-optional-1"
-                                    ref="content-middle-crt-notes-optional-1"
-                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-1']}
-                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-1', e.target.value)} >
+                                    id={ContentMiddleCriterion.criterion[0].notesRefId}
+                                    ref={ContentMiddleCriterion.criterion[0].notesRefId}
+                                    defaultValue={this.props.criterionAnswers[ContentMiddleCriterion.criterion[0].notesRefId]}
+                                    onBlur={e=>this.criterionAnswerChanged(ContentMiddleCriterion.criterion[0].notesRefId, e.target.value)} >
                         </textarea>
                     </div>
                 </div>
                 <CriterionLinkWrapper
-                    criterionKey="content-middle-crt-question-2"
-                    criterionText="Criterion 2: Saving and investing"
+                    criterionKey={ContentMiddleCriterion.criterion[1].questionRefId}
+                    criterionText={ContentMiddleCriterion.criterion[1].title}
                     {...this.props} >
-                <div className="block block__flush-top" id="criterion_2">
+                <div className="block block__flush-top" id={ContentMiddleCriterion.criterion[1].divId}>
                     <h2>
                         <SvgIcon
-                            icon={this.props.criterionCompletionStatuses["content-middle-crt-question-2"]}
+                            icon={this.props.criterionCompletionStatuses[ContentMiddleCriterion.criterion[1].questionRefId]}
                             color="green"
                             hasSpaceAfter="true" />
-                        Criterion 2: Saving and Investing
-                        {this.props.criterionCompletionStatuses["content-middle-crt-question-2"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
+                        {ContentMiddleCriterion.criterion[1].title}
+                        {this.props.criterionCompletionStatuses[ContentMiddleCriterion.criterion[1].questionRefId] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
-                        Does the curriculum address grade-level appropriate topics for saving and investing?
+                        {ContentMiddleCriterion.criterion[1].leadParagraph}
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>2.1</h3>
+                                <h3>{ContentMiddleCriterion.criterion[1].rows[0].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>People save for the future, and might have different goals for saving and make different choices about how to save.</p>
+                                <p>{ContentMiddleCriterion.criterion[1].rows[0].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -268,7 +269,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Different people save money for different reasons, including large purchases (such as higher education, autos, and homes), retirement, and unexpected events.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[0].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -276,13 +277,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.1.1a"
-                                                    name="content-middle-crt-question-2.1.1"
-                                                    ref="content-middle-crt-question-2.1.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.1.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -290,25 +291,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.1.1b"
-                                                    name="content-middle-crt-question-2.1.1"
-                                                    ref="content-middle-crt-question-2.1.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.1.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.1.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[0].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>People’s choices about how much to save and for what to save are based on their preferences.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[0].components[1].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -316,13 +317,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.1.2a"
-                                                    name="content-middle-crt-question-2.1.2"
-                                                    ref="content-middle-crt-question-2.1.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.2', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.1.2a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -330,29 +331,29 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.1.2b"
-                                                    name="content-middle-crt-question-2.1.2"
-                                                    ref="content-middle-crt-question-2.1.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.1.2"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.1.2', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.1.2b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.1.2" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[0].components[1].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>2.2</h3>
+                                <h3>{ContentMiddleCriterion.criterion[1].rows[1].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>Time, interest rates, and inﬂation all affect the value of savings.</p>
+                                <p>{ContentMiddleCriterion.criterion[1].rows[1].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -360,7 +361,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>The value of savings is affected by interest and compounding over time.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[1].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -368,13 +369,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.2.1a"
-                                                    name="content-middle-crt-question-2.2.1"
-                                                    ref="content-middle-crt-question-2.2.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.2.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -382,25 +383,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.2.1b"
-                                                    name="content-middle-crt-question-2.2.1"
-                                                    ref="content-middle-crt-question-2.2.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.2.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.2.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[1].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Interest can be calculated by multiplying the principal amount, the interest rate, and time of loan/investment.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[1].components[1].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -408,43 +409,43 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.2.2a"
-                                                    name="content-middle-crt-question-2.2.2"
-                                                    ref="content-middle-crt-question-2.2.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.2', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.2.2a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
                                             <div className="m-form-field
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
-                                                <input className="a-radio" type="radio"  value="0"
-                                                    id="content-middle-crt-question-2.2.2b"
-                                                    name="content-middle-crt-question-2.2.2"
-                                                    ref="content-middle-crt-question-2.2.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.2.2"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.2.2', 'no')}} />
+                                                <input className="a-radio" type="radio" value="0"
+                                                    id={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.2.2b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.2.2" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[1].components[1].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>2.3</h3>
+                                <h3>{ContentMiddleCriterion.criterion[1].rows[2].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>Investments involve purchase of financial assets to increase wealth.</p>
+                                <p>{ContentMiddleCriterion.criterion[1].rows[2].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -452,7 +453,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Financial assets in which one might invest include stocks, bonds, mutual funds, real estate, and commodities.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[2].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -460,13 +461,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.3.1a"
-                                                    name="content-middle-crt-question-2.3.1"
-                                                    ref="content-middle-crt-question-2.3.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.3.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -474,25 +475,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.3.1b"
-                                                    name="content-middle-crt-question-2.3.1"
-                                                    ref="content-middle-crt-question-2.3.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.3.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.3.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[2].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>The rate of return on a financial investment consists of interest payments, dividends, and capital appreciation expressed as a percentage of the amount invested.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[2].components[1].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -500,13 +501,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.3.2a"
-                                                    name="content-middle-crt-question-2.3.2"
-                                                    ref="content-middle-crt-question-2.3.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.2', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.3.2a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -514,29 +515,29 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.3.2b"
-                                                    name="content-middle-crt-question-2.3.2"
-                                                    ref="content-middle-crt-question-2.3.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.3.2"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.3.2', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.3.2b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.3.2" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[2].components[1].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>2.4</h3>
+                                <h3>{ContentMiddleCriterion.criterion[1].rows[3].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>Some investment strategies have greater or less risk and corresponding expected rate of return.</p>
+                                <p>{ContentMiddleCriterion.criterion[1].rows[3].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -544,7 +545,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Federal agencies guarantee depositors’ savings in most commercial banks, savings banks, savings associations, and credit unions.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[3].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -552,13 +553,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.4.1a"
-                                                    name="content-middle-crt-question-2.4.1"
-                                                    ref="content-middle-crt-question-2.4.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.4.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -566,25 +567,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.4.1b"
-                                                    name="content-middle-crt-question-2.4.1"
-                                                    ref="content-middle-crt-question-2.4.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.4.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.4.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[3].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Increases or decreases in the rate of return from an investment vary according to the amount of risk. In general, a trade-off exists between the security of an investment and its expected rate of return.</p>
+                                                <p>{ContentMiddleCriterion.criterion[1].rows[3].components[1].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -592,13 +593,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-2.4.2a"
-                                                    name="content-middle-crt-question-2.4.2"
-                                                    ref="content-middle-crt-question-2.4.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.2', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.4.2a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -606,25 +607,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-2.4.2b"
-                                                    name="content-middle-crt-question-2.4.2"
-                                                    ref="content-middle-crt-question-2.4.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-2.4.2"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-2.4.2', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-2.4.2b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-2.4.2" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[1].rows[3].components[1].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-middle-crt-notes-optional-2">
+                        <label className="a-label a-label__heading" htmlFor={ContentMiddleCriterion.criterion[1].notesRefId}>
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -633,37 +634,37 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-middle-crt-notes-optional-2"
-                                    ref="content-middle-crt-notes-optional-2"
-                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-2']}
-                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-2', e.target.value)} >
+                                    id={ContentMiddleCriterion.criterion[1].notesRefId}
+                                    ref={ContentMiddleCriterion.criterion[1].notesRefId}
+                                    defaultValue={this.props.criterionAnswers[ContentMiddleCriterion.criterion[1].notesRefId]}
+                                    onBlur={e=>this.criterionAnswerChanged(ContentMiddleCriterion.criterion[1].notesRefId, e.target.value)} >
                         </textarea>
                     </div>
                 </div>
                 <CriterionLinkWrapper
-                    criterionKey="content-middle-crt-question-3"
-                    criterionText="Criterion 3: Spending"
-                    {...this.props}  >
-                <div className="block block__flush-top" id="criterion_3">
+                    criterionKey={ContentMiddleCriterion.criterion[2].questionRefId}
+                    criterionText={ContentMiddleCriterion.criterion[2].title}
+                    {...this.props} >
+                <div className="block block__flush-top" id={ContentMiddleCriterion.criterion[2].divId}>
                     <h2>
                         <SvgIcon
-                            icon={this.props.criterionCompletionStatuses["content-middle-crt-question-3"]}
+                            icon={this.props.criterionCompletionStatuses[ContentMiddleCriterion.criterion[2].questionRefId]}
                             color="green"
                             hasSpaceAfter="true" />
-                        Criterion 3: Spending
-                        {this.props.criterionCompletionStatuses["content-middle-crt-question-3"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
+                        {ContentMiddleCriterion.criterion[2].title}
+                        {this.props.criterionCompletionStatuses[ContentMiddleCriterion.criterion[2].questionRefId] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
-                        Does the curriculum address grade-level appropriate topics for spending?
+                        {ContentMiddleCriterion.criterion[2].leadParagraph}
                     </p>
                     <ol className="m-list__unstyled">
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>3.1</h3>
+                                <h3>{ContentMiddleCriterion.criterion[2].rows[0].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>People choose to buy some goods or services over others.</p>
+                                <p>{ContentMiddleCriterion.criterion[2].rows[0].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -671,7 +672,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Individuals must make choices about and prioritize the goods and services they buy because they can’t have everything they want.</p>
+                                                <p>{ContentMiddleCriterion.criterion[2].rows[0].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -679,13 +680,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-3.1a"
-                                                    name="content-middle-crt-question-3.1"
-                                                    ref="content-middle-crt-question-3.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -693,29 +694,29 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-3.1b"
-                                                    name="content-middle-crt-question-3.1"
-                                                    ref="content-middle-crt-question-3.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-3.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[2].rows[0].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                         <li className="o-survey">
                             <div className="o-survey_number">
-                                <h3>3.2</h3>
+                                <h3>{ContentMiddleCriterion.criterion[2].rows[1].indicatorNumber}</h3>
                             </div>
                             <div className="o-survey_indicator">
                                 <h4 className="h3">Indicator</h4>
-                                <p>Individuals who are active and aware consumers can make more informed choices.</p>
+                                <p>{ContentMiddleCriterion.criterion[2].rows[1].indicatorText}</p>
                             </div>
                             <div className="o-survey_components">
                                 <h4 className="h3">Component</h4>
@@ -723,7 +724,7 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>A consumer should rely on sources beyond advertising claims to gather information about goods and services.</p>
+                                                <p>{ContentMiddleCriterion.criterion[2].rows[1].components[0].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -731,13 +732,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-3.2.1a"
-                                                    name="content-middle-crt-question-3.2.1"
-                                                    ref="content-middle-crt-question-3.2.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.1', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.1a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -745,25 +746,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-3.2.1b"
-                                                    name="content-middle-crt-question-3.2.1"
-                                                    ref="content-middle-crt-question-3.2.1"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.1"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.1', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.1b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-3.2.1" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[2].rows[1].components[0].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Consumers can use a variety of payment methods to make a purchase, and some payment methods are better than others.</p>
+                                                <p>{ContentMiddleCriterion.criterion[2].rows[1].components[1].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -771,13 +772,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-3.2.2a"
-                                                    name="content-middle-crt-question-3.2.2"
-                                                    ref="content-middle-crt-question-3.2.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.2', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.2a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -785,25 +786,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-3.2.2b"
-                                                    name="content-middle-crt-question-3.2.2"
-                                                    ref="content-middle-crt-question-3.2.2"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.2"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.2', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.2b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-3.2.2" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[2].rows[1].components[1].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>A budget helps one make good spending choices, and a good budget accounts for expenses, income, savings, and taxes.</p>
+                                                <p>{ContentMiddleCriterion.criterion[2].rows[1].components[2].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -811,13 +812,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-3.2.3a"
-                                                    name="content-middle-crt-question-3.2.3"
-                                                    ref="content-middle-crt-question-3.2.3"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.3', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.3a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -825,25 +826,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-3.2.3b"
-                                                    name="content-middle-crt-question-3.2.3"
-                                                    ref="content-middle-crt-question-3.2.3"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.3"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.3', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.3b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-3.2.3" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[2].rows[1].components[2].criterionRefId} {...this.props} />
                                 </fieldset>
                                 <fieldset className="o-survey_fieldset">
                                     <div className="o-survey_component">
                                         <div className="o-survey_question">
                                             <legend className="o-survey_legend">
-                                                <p>Individual spending goals and priorities can inform the creation of a budget.</p>
+                                                <p>{ContentMiddleCriterion.criterion[2].rows[1].components[3].componentText}</p>
                                             </legend>
                                         </div>
                                         <div className="o-survey_answer">
@@ -851,13 +852,13 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="1"
-                                                    id="content-middle-crt-question-3.2.4a"
-                                                    name="content-middle-crt-question-3.2.4"
-                                                    ref="content-middle-crt-question-3.2.4"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'yes'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.4', 'yes')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId + "a"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId] === 'yes'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId, 'yes')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.4a">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId + "a"}>
                                                     Yes
                                                 </label>
                                             </div>
@@ -865,25 +866,25 @@ export default class ContentMiddleCriterionPage extends React.Component {
                                                             m-form-field__radio
                                                             m-form-field__lg-target">
                                                 <input className="a-radio" type="radio" value="0"
-                                                    id="content-middle-crt-question-3.2.4b"
-                                                    name="content-middle-crt-question-3.2.4"
-                                                    ref="content-middle-crt-question-3.2.4"
-                                                    checked={this.props.criterionAnswers["content-middle-crt-question-3.2.4"] === 'no'}
-                                                    onChange={() => {this.criterionAnswerChanged('content-middle-crt-question-3.2.4', 'no')}} />
+                                                    id={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId + "b"}
+                                                    name={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId}
+                                                    ref={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId}
+                                                    checked={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId] === 'no'}
+                                                    onChange={() => {this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId, 'no')}} />
                                                 <label className="a-label"
-                                                    htmlFor="content-middle-crt-question-3.2.4b">
+                                                    htmlFor={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId + "b"}>
                                                     No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <FieldLevelErrorMessageComponent fieldId="content-middle-crt-question-3.2.4" {...this.props} />
+                                    <FieldLevelErrorMessageComponent fieldId={ContentMiddleCriterion.criterion[2].rows[1].components[3].criterionRefId} {...this.props} />
                                 </fieldset>
                             </div>
                         </li>
                     </ol>
                     <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="content-middle-crt-notes-optional-3">
+                        <label className="a-label a-label__heading" htmlFor={ContentMiddleCriterion.criterion[2].notesRefId}>
                             My notes
                             &nbsp;<small className="a-label_helper">(optional)</small>
                             <small className="a-label_helper a-label_helper__block">
@@ -892,10 +893,10 @@ export default class ContentMiddleCriterionPage extends React.Component {
                         </label>
                         <textarea className="a-text-input a-text-input__full"
                                     rows="6"
-                                    id="content-middle-crt-notes-optional-3"
-                                    ref="content-middle-crt-notes-optional-3"
-                                    defaultValue={this.props.criterionAnswers['content-middle-crt-notes-optional-3']}
-                                    onBlur={e=>this.criterionAnswerChanged('content-middle-crt-notes-optional-3', e.target.value)} >
+                                    id={ContentMiddleCriterion.criterion[2].notesRefId}
+                                    ref={ContentMiddleCriterion.criterion[2].notesRefId}
+                                    defaultValue={this.props.criterionAnswers[ContentMiddleCriterion.criterion[2].notesRefId]}
+                                    onBlur={e=>this.criterionAnswerChanged(ContentMiddleCriterion.criterion[2].notesRefId, e.target.value)} >
                         </textarea>
                     </div>
                 </div>

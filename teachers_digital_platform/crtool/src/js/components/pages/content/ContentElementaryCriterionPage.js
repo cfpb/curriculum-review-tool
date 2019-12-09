@@ -199,7 +199,7 @@ export default class ContentElementaryCriterionPage extends React.Component {
                     </div>
                 </div>
                 <CriterionLinkWrapper
-                    criterionKey="content-elementary-crt-question-2"
+                    criterionKey={ContentElementaryCriterion.criterion[1].questionRefId}
                     criterionText={ContentElementaryCriterion.criterion[1].title}
                     {...this.props} >
                 <div className="block block__flush-top" id={ContentElementaryCriterion.criterion[1].divId}>
