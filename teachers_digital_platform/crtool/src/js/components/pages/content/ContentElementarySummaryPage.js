@@ -6,6 +6,7 @@ import CriterionScoreBlock from "../summary/CriterionScoreBlock";
 import DimensionScoreBlock from "../summary/DimensionScoreBlock";
 import DimensionInformation from "../../common/DimensionInformation";
 import SaveWorkInformation from "../../common/SaveWorkInformation";
+import { ContentElementaryCriterion } from "../../../content_data/contentElementary";
 
 export default class ContentElementarySummaryPage extends React.Component {
     render() {
@@ -22,111 +23,111 @@ export default class ContentElementarySummaryPage extends React.Component {
                     Content summary
                 </h1>
                 <p className="lead-paragraph">
-                    Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
+                    {C.CONTENT_SUMMARY_LEAD_TEXT}
                 </p>
                 <p>
-                    Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
+                    {C.CONTENT_SUMMARY_SECOND_PARAGRAPH}
                 </p>
                 <SaveWorkInformation {...this.props} />
                 <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE, true); e.preventDefault();}}>
-                    Print or save summary
+                    {C.CONTENT_PRINT_SUMMARY}
                 </button>
                 <DimensionInformation dimensionName={C.CONTENT_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey="content-elementary-crt-"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber="1"
-                    criterionName="Criterion 1:  Earning, income, and careers"
-                    criterionLead="The curriculum addresses grade-level appropriate topics for earning, income, and careers."
-                    criterionExceedsText="Both components were addressed"
-                    criterionMeetsText="1 component was addressed"
-                    criterionDoesNotMeetText="0 components were addressed"
-                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
+                    criterionNumber={ContentElementaryCriterion.criterion[0].criterionNumber}
+                    criterionName={ContentElementaryCriterion.criterion[0].title}
+                    criterionLead={ContentElementaryCriterion.criterion[0].criterionLead}
+                    criterionExceedsText={ContentElementaryCriterion.criterion[0].criterionExceedsText}
+                    criterionMeetsText={ContentElementaryCriterion.criterion[0].criterionMeetsText}
+                    criterionDoesNotMeetText={ContentElementaryCriterion.criterion[0].criterionDoesNotMeetText}
+                    essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
                     {...this.props} />
 
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey="content-elementary-crt-"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber="2"
-                    criterionName="Criterion 2: Saving and investing"
-                    criterionLead="The curriculum addresses grade-level appropriate topics for saving and investing."
-                    criterionExceedsText="All 4 components were addressed"
-                    criterionMeetsText="3 components were addressed"
-                    criterionDoesNotMeetText="Less than 3 components were addressed"
-                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
+                    criterionNumber={ContentElementaryCriterion.criterion[1].criterionNumber}
+                    criterionName={ContentElementaryCriterion.criterion[1].title}
+                    criterionLead={ContentElementaryCriterion.criterion[1].criterionLead}
+                    criterionExceedsText={ContentElementaryCriterion.criterion[1].criterionExceedsText}
+                    criterionMeetsText={ContentElementaryCriterion.criterion[1].criterionMeetsText}
+                    criterionDoesNotMeetText={ContentElementaryCriterion.criterion[1].criterionDoesNotMeetText}
+                    essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
                     {...this.props} />
 
 
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey="content-elementary-crt-"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber="3"
-                    criterionName="Criterion 3: Spending"
-                    criterionLead="The curriculum addresses grade-level appropriate topics for spending."
-                    criterionExceedsText="5 or more components were addressed"
-                    criterionMeetsText="4 components were addressed"
-                    criterionDoesNotMeetText="Less than 4 components were addressed"
-                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
+                    criterionNumber={ContentElementaryCriterion.criterion[2].criterionNumber}
+                    criterionName={ContentElementaryCriterion.criterion[2].title}
+                    criterionLead={ContentElementaryCriterion.criterion[2].criterionLead}
+                    criterionExceedsText={ContentElementaryCriterion.criterion[2].criterionExceedsText}
+                    criterionMeetsText={ContentElementaryCriterion.criterion[2].criterionMeetsText}
+                    criterionDoesNotMeetText={ContentElementaryCriterion.criterion[2].criterionDoesNotMeetText}
+                    essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
                     {...this.props} />
 
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey="content-elementary-crt-"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber="4"
-                    criterionName="Criterion 4: Borrowing and credit"
-                    criterionLead="The curriculum addresses grade-level appropriate topics for borrowing and credit."
-                    criterionExceedsText="Both components were addressed"
-                    criterionMeetsText="1 component was addressed"
-                    criterionDoesNotMeetText="0 components were addressed"
-                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
+                    criterionNumber={ContentElementaryCriterion.criterion[3].criterionNumber}
+                    criterionName={ContentElementaryCriterion.criterion[3].title}
+                    criterionLead={ContentElementaryCriterion.criterion[3].criterionLead}
+                    criterionExceedsText={ContentElementaryCriterion.criterion[3].criterionExceedsText}
+                    criterionMeetsText={ContentElementaryCriterion.criterion[3].criterionMeetsText}
+                    criterionDoesNotMeetText={ContentElementaryCriterion.criterion[3].criterionDoesNotMeetText}
+                    essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
                     {...this.props} />
 
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey="content-elementary-crt-"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber="5"
-                    criterionName="Criterion 5: Managing financial risk"
-                    criterionLead="The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance."
-                    criterionExceedsText="Both components were addressed"
-                    criterionMeetsText="1 component was addressed"
-                    criterionDoesNotMeetText="0 components were addressed"
-                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
+                    criterionNumber={ContentElementaryCriterion.criterion[4].criterionNumber}
+                    criterionName={ContentElementaryCriterion.criterion[4].title}
+                    criterionLead={ContentElementaryCriterion.criterion[4].criterionLead}
+                    criterionExceedsText={ContentElementaryCriterion.criterion[4].criterionExceedsText}
+                    criterionMeetsText={ContentElementaryCriterion.criterion[4].criterionMeetsText}
+                    criterionDoesNotMeetText={ContentElementaryCriterion.criterion[4].criterionDoesNotMeetText}
+                    essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
                     {...this.props} />
 
                 <CriterionScoreBlock
                     showExceeds={false}
                     showBeneficial={false}
-                    dimensionKey="content-elementary-crt-"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber="6"
-                    criterionName="Criterion 6: Financial responsibility and money management"
-                    criterionLead="The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions."
-                    criterionMeetsText="1 component was addressed"
-                    criterionDoesNotMeetText="0 components were addressed"
-                    essentialAnswerTotalText="<b>Your answers for these components:</b>"
+                    criterionNumber={ContentElementaryCriterion.criterion[5].criterionNumber}
+                    criterionName={ContentElementaryCriterion.criterion[5].title}
+                    criterionLead={ContentElementaryCriterion.criterion[5].criterionLead}
+                    criterionMeetsText={ContentElementaryCriterion.criterion[5].criterionMeetsText}
+                    criterionDoesNotMeetText={ContentElementaryCriterion.criterion[5].criterionDoesNotMeetText}
+                    essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
                     {...this.props} />
 
                 <hr className="hr u-mb45 u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
-                    dimensionKey="content-elementary-crt-"
-                    dimensionName="Content"
-                    dimensionLead="How does this curriculum meet the criteria for content:"
-                    strongText="All 6 criteria were met and at least one was exceeded"
-                    moderateText="All 6 criteria were met"
-                    limitedText="At least one criterion was not met"
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
+                    dimensionName={C.CONTENT_PAGE}
+                    dimensionLead={C.CONTENT_LEAD_TEXT}
+                    strongText={C.CONTENT_STRONG_TEXT}
+                    moderateText={C.CONTENT_MODERATE_TEXT}
+                    limitedText={C.CONTENT_LIMITED_TEXT}
                     {...this.props} />
             </React.Fragment>
         );

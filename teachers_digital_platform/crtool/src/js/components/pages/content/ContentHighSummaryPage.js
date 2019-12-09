@@ -22,10 +22,10 @@ export default class ContentHighSummaryPage extends React.Component {
                     Content summary
                 </h1>
                 <p className="lead-paragraph">
-                    Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
+                    {C.CONTENT_SUMMARY_LEAD_TEXT}
                 </p>
                 <p>
-                    Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.
+                    {C.CONTENT_SUMMARY_SECOND_PARAGRAPH}
                 </p>
                 <SaveWorkInformation {...this.props} />
                 <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE, true); e.preventDefault();}}>

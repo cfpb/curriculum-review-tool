@@ -28,7 +28,7 @@ export default class ContentPrintElementaryPage extends React.Component {
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber={ContentElementaryCriterion.criterion[0].criterionNumber}
                     criterionName={ContentElementaryCriterion.criterion[0].title}
@@ -41,7 +41,7 @@ export default class ContentPrintElementaryPage extends React.Component {
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber={ContentElementaryCriterion.criterion[1].criterionNumber}
                     criterionName={ContentElementaryCriterion.criterion[1].title}
@@ -55,7 +55,7 @@ export default class ContentPrintElementaryPage extends React.Component {
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber={ContentElementaryCriterion.criterion[2].criterionNumber}
                     criterionName={ContentElementaryCriterion.criterion[2].title}
@@ -68,7 +68,7 @@ export default class ContentPrintElementaryPage extends React.Component {
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber={ContentElementaryCriterion.criterion[3].criterionNumber}
                     criterionName={ContentElementaryCriterion.criterion[3].title}
@@ -81,7 +81,7 @@ export default class ContentPrintElementaryPage extends React.Component {
                 <CriterionScoreBlock
                     showExceeds={true}
                     showBeneficial={false}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber={ContentElementaryCriterion.criterion[4].criterionNumber}
                     criterionName={ContentElementaryCriterion.criterion[4].title}
@@ -94,7 +94,7 @@ export default class ContentPrintElementaryPage extends React.Component {
                 <CriterionScoreBlock
                     showExceeds={false}
                     showBeneficial={false}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionPage={C.CONTENT_PAGE}
                     criterionNumber={ContentElementaryCriterion.criterion[5].criterionNumber}
                     criterionName={ContentElementaryCriterion.criterion[5].title}
@@ -109,7 +109,7 @@ export default class ContentPrintElementaryPage extends React.Component {
 
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
-                    dimensionKey={C.CONTENT_ELEM_KEY}
+                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
                     dimensionName={C.CONTENT_PAGE}
                     dimensionLead={C.CONTENT_LEAD_TEXT}
                     strongText={C.CONTENT_STRONG_TEXT}

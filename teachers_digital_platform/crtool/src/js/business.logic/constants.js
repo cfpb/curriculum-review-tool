@@ -18,6 +18,9 @@ const C = {
 
     FINAL_PRINT_ENTIRE_BUTTON_TEXT: "Print or save entire review",
     FINAL_PRINT_BUTTON_TEXT: "Print or save this page",
+    
+    CONTENT_PRINT_SUMMARY: "Print or save summary",
+    ESSENTIAL_ANSWER_TOTAL_TEXT: "<b>Your answers for these components:</b>",
 
     CONTENT_STATUS: "content_status",
     UTILITY_STATUS: "utility_status",
@@ -42,6 +45,8 @@ const C = {
     EFFICACY_KEY: "efficacy-crt-",
 
     CONTENT_LEAD_TEXT: "How does this curriculum meet the criteria for content:",
+    CONTENT_SUMMARY_LEAD_TEXT: "Review the scores and your notes for each content criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.",
+    CONTENT_SUMMARY_SECOND_PARAGRAPH: "Then, review the overall score for the content criteria and enter your thoughts about its strengths and weaknesses.",
     CONTENT_STRONG_TEXT: "All 6 criteria were met and at least one was exceeded",
     CONTENT_MODERATE_TEXT: "All 6 criteria were met",
     CONTENT_LIMITED_TEXT: "At least one criterion was not met",
