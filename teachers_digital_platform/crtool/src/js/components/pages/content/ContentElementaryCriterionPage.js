@@ -68,31 +68,31 @@ export default class ContentElementaryCriterionPage extends React.Component {
                     criterionKey={ContentElementaryCriterion.criterion[1].questionRefId}
                     criterionText={ContentElementaryCriterion.criterion[1].title}
                     {...this.props} >
-                <ContentCriterion criterion={ContentElementaryCriterion.criterion[1]} {...this.props} />
-                <CriterionLinkWrapper
-                    criterionKey={ContentElementaryCriterion.criterion[2].questionRefId}
-                    criterionText={ContentElementaryCriterion.criterion[2].title}
-                    {...this.props} >
-                <ContentCriterion criterion={ContentElementaryCriterion.criterion[2]} {...this.props} />
-                <CriterionLinkWrapper
-                    criterionKey={ContentElementaryCriterion.criterion[3].questionRefId}
-                    criterionText={ContentElementaryCriterion.criterion[3].title}
-                    {...this.props} >
-                <ContentCriterion criterion={ContentElementaryCriterion.criterion[3]} {...this.props} />
-                <CriterionLinkWrapper
-                    criterionKey={ContentElementaryCriterion.criterion[4].questionRefId}
-                    criterionText={ContentElementaryCriterion.criterion[4].title}
-                    {...this.props} >
-                <ContentCriterion criterion={ContentElementaryCriterion.criterion[4]} {...this.props} />
-                <CriterionLinkWrapper
-                    criterionKey={ContentElementaryCriterion.criterion[5].questionRefId}
-                    criterionText={ContentElementaryCriterion.criterion[5].title}
-                    {...this.props} >
-                <ContentCriterion criterion={ContentElementaryCriterion.criterion[5]} {...this.props} />
-                </CriterionLinkWrapper>
-                </CriterionLinkWrapper>
-                </CriterionLinkWrapper>
-                </CriterionLinkWrapper>
+                    <ContentCriterion criterion={ContentElementaryCriterion.criterion[1]} {...this.props} />
+                    <CriterionLinkWrapper
+                        criterionKey={ContentElementaryCriterion.criterion[2].questionRefId}
+                        criterionText={ContentElementaryCriterion.criterion[2].title}
+                        {...this.props} >
+                        <ContentCriterion criterion={ContentElementaryCriterion.criterion[2]} {...this.props} />
+                        <CriterionLinkWrapper
+                            criterionKey={ContentElementaryCriterion.criterion[3].questionRefId}
+                            criterionText={ContentElementaryCriterion.criterion[3].title}
+                            {...this.props} >
+                            <ContentCriterion criterion={ContentElementaryCriterion.criterion[3]} {...this.props} />
+                            <CriterionLinkWrapper
+                                criterionKey={ContentElementaryCriterion.criterion[4].questionRefId}
+                                criterionText={ContentElementaryCriterion.criterion[4].title}
+                                {...this.props} >
+                                <ContentCriterion criterion={ContentElementaryCriterion.criterion[4]} {...this.props} />
+                                <CriterionLinkWrapper
+                                    criterionKey={ContentElementaryCriterion.criterion[5].questionRefId}
+                                    criterionText={ContentElementaryCriterion.criterion[5].title}
+                                    {...this.props} >
+                                    <ContentCriterion criterion={ContentElementaryCriterion.criterion[5]} {...this.props} />
+                                </CriterionLinkWrapper>
+                            </CriterionLinkWrapper>
+                        </CriterionLinkWrapper>
+                    </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
                 {
                     this.summaryButtonIsEnabled() === false &&
