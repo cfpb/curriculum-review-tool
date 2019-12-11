@@ -22,7 +22,7 @@ export default class ContentCriterionComponent extends React.Component {
                             <div className="m-form-field
                                             m-form-field__radio
                                             m-form-field__lg-target">
-                                <input className="a-radio" type="radio" value="0"
+                                <input className="a-radio" type="radio" value="1"
                                     id={this.props.component.criterionRefId + "a"}
                                     name={this.props.component.criterionRefId}
                                     ref={this.props.component.criterionRefId}
