@@ -24,82 +24,21 @@ export default class ContentPrintMiddlePage extends React.Component {
                     {...this.props}
                     reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={false}
-                    dimensionKey={C.CONTENT_MIDDLE_KEY}
-                    dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber={ContentMiddleCriterion.criterion[0].criterionNumber}
-                    criterionName={ContentMiddleCriterion.criterion[0].title}
-                    criterionLead={ContentMiddleCriterion.criterion[0].criterionLead}
-                    criterionExceedsText={ContentMiddleCriterion.criterion[0].criterionExceedsText}
-                    criterionMeetsText={ContentMiddleCriterion.criterion[0].criterionMeetsText}
-                    criterionDoesNotMeetText={ContentMiddleCriterion.criterion[0].criterionDoesNotMeetText}
-                {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={false}
-                    dimensionKey={C.CONTENT_MIDDLE_KEY}
-                    dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber={ContentMiddleCriterion.criterion[1].criterionNumber}
-                    criterionName={ContentMiddleCriterion.criterion[1].title}
-                    criterionLead={ContentMiddleCriterion.criterion[1].criterionLead}
-                    criterionExceedsText={ContentMiddleCriterion.criterion[1].criterionExceedsText}
-                    criterionMeetsText={ContentMiddleCriterion.criterion[1].criterionMeetsText}
-                    criterionDoesNotMeetText={ContentMiddleCriterion.criterion[1].criterionDoesNotMeetText}
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={false}
-                    dimensionKey={C.CONTENT_MIDDLE_KEY}
-                    dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber={ContentMiddleCriterion.criterion[2].criterionNumber}
-                    criterionName={ContentMiddleCriterion.criterion[2].title}
-                    criterionLead={ContentMiddleCriterion.criterion[2].criterionLead}
-                    criterionExceedsText={ContentMiddleCriterion.criterion[2].criterionExceedsText}
-                    criterionMeetsText={ContentMiddleCriterion.criterion[2].criterionMeetsText}
-                    criterionDoesNotMeetText={ContentMiddleCriterion.criterion[2].criterionDoesNotMeetText}
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={false}
-                    dimensionKey={C.CONTENT_MIDDLE_KEY}
-                    dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber={ContentMiddleCriterion.criterion[3].criterionNumber}
-                    criterionName={ContentMiddleCriterion.criterion[3].title}
-                    criterionLead={ContentMiddleCriterion.criterion[3].criterionLead}
-                    criterionExceedsText={ContentMiddleCriterion.criterion[3].criterionExceedsText}
-                    criterionMeetsText={ContentMiddleCriterion.criterion[3].criterionMeetsText}
-                    criterionDoesNotMeetText={ContentMiddleCriterion.criterion[3].criterionDoesNotMeetText}
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={false}
-                    dimensionKey={C.CONTENT_MIDDLE_KEY}
-                    dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber={ContentMiddleCriterion.criterion[4].criterionNumber}
-                    criterionName={ContentMiddleCriterion.criterion[4].title}
-                    criterionLead={ContentMiddleCriterion.criterion[4].criterionLead}
-                    criterionExceedsText={ContentMiddleCriterion.criterion[4].criterionExceedsText}
-                    criterionMeetsText={ContentMiddleCriterion.criterion[4].criterionMeetsText}
-                    criterionDoesNotMeetText={ContentMiddleCriterion.criterion[4].criterionDoesNotMeetText}
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={false}
-                    showBeneficial={false}
-                    dimensionKey={C.CONTENT_MIDDLE_KEY}
-                    dimensionPage={C.CONTENT_PAGE}
-                    criterionNumber={ContentMiddleCriterion.criterion[5].criterionNumber}
-                    criterionName={ContentMiddleCriterion.criterion[5].title}
-                    criterionLead={ContentMiddleCriterion.criterion[5].criterionLead}
-                    criterionMeetsText={ContentMiddleCriterion.criterion[5].criterionMeetsText}
-                    criterionDoesNotMeetText={ContentMiddleCriterion.criterion[5].criterionDoesNotMeetText}
-                    {...this.props} />
+                { ContentMiddleCriterion.criterion.map((criterionData, i) =>
+                    <CriterionScoreBlock
+                        showExceeds={criterionData.showExceeds}
+                        showBeneficial={criterionData.showBeneficial}
+                        hideMeets={criterionData.hideMeets}
+                        dimensionKey={C.CONTENT_MIDDLE_KEY}
+                        dimensionPage={C.CONTENT_PAGE}
+                        criterionNumber={criterionData.criterionNumber}
+                        criterionName={criterionData.title}
+                        criterionLead={criterionData.criterionLead}
+                        criterionExceedsText={criterionData.criterionExceedsText}
+                        criterionMeetsText={criterionData.criterionMeetsText}
+                        criterionDoesNotMeetText={criterionData.criterionDoesNotMeetText}
+                        {...this.props} />
+                )}
 
                 <hr className="hr
                                 u-mb30

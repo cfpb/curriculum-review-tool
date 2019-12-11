@@ -36,8 +36,9 @@ export default class ContentHighSummaryPage extends React.Component {
 
                 { ContentHighCriterion.criterion.map((criterionData, i) =>
                     <CriterionScoreBlock
-                        showExceeds={true}
-                        showBeneficial={false}
+                        showExceeds={criterionData.showExceeds}
+                        showBeneficial={criterionData.showBeneficial}
+                        hideMeets={criterionData.hideMeets}
                         dimensionKey={C.CONTENT_HIGH_KEY}
                         dimensionPage={C.CONTENT_PAGE}
                         criterionNumber={criterionData.criterionNumber}
