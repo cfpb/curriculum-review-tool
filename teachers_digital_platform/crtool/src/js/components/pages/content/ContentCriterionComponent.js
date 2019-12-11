@@ -1,8 +1,19 @@
 import React from "react";
 
+import C from "../../../business.logic/constants";
 import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 
 export default class ContentCriterionComponent extends React.Component {
+
+    criterionAnswerChanged(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
+    }
+
+    initializeAnswerValuesByRefs() {
+        var myObjects = this.refs;
+        this.props.initializeAnswerObjects(myObjects);
+    }
 
     render() {
         return (
@@ -18,7 +29,7 @@ export default class ContentCriterionComponent extends React.Component {
                             <div className="m-form-field
                                             m-form-field__radio
                                             m-form-field__lg-target">
-                                <input className="a-radio" type="radio" value="0"
+                                <input className="a-radio" type="radio" value="1"
                                     id={this.props.component.criterionRefId + "a"}
                                     name={this.props.component.criterionRefId}
                                     ref={this.props.component.criterionRefId}

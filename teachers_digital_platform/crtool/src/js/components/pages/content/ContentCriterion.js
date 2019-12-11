@@ -6,6 +6,16 @@ import ContentCriterionRow from "./ContentCriterionRow";
 
 export default class ContentCriterion extends React.Component {
 
+    criterionAnswerChanged(key, checkedValue) {
+        this.initializeAnswerValuesByRefs();
+        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
+    }
+
+    initializeAnswerValuesByRefs() {
+        var myObjects = this.refs;
+        this.props.initializeAnswerObjects(myObjects);
+    }
+
     render() {
         return (
             <React.Fragment>

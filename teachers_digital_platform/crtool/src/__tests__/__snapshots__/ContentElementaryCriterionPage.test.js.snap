@@ -169,7 +169,7 @@ Array [
                     name="content-elementary-crt-question-1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -262,7 +262,7 @@ Array [
                     name="content-elementary-crt-question-1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -526,7 +526,7 @@ Array [
                     name="content-elementary-crt-question-1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -619,7 +619,7 @@ Array [
                     name="content-elementary-crt-question-1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -755,7 +755,7 @@ Array [
                     name="content-elementary-crt-question-2.1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -816,7 +816,7 @@ Array [
                     name="content-elementary-crt-question-2.1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -909,7 +909,7 @@ Array [
                     name="content-elementary-crt-question-2.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1002,7 +1002,7 @@ Array [
                     name="content-elementary-crt-question-2.3"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1138,7 +1138,7 @@ Array [
                     name="content-elementary-crt-question-3.1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1199,7 +1199,7 @@ Array [
                     name="content-elementary-crt-question-3.1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1292,7 +1292,7 @@ Array [
                     name="content-elementary-crt-question-3.2.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1353,7 +1353,7 @@ Array [
                     name="content-elementary-crt-question-3.2.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1414,7 +1414,7 @@ Array [
                     name="content-elementary-crt-question-3.2.3"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1475,7 +1475,7 @@ Array [
                     name="content-elementary-crt-question-3.2.4"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1611,7 +1611,7 @@ Array [
                     name="content-elementary-crt-question-4.1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1672,7 +1672,7 @@ Array [
                     name="content-elementary-crt-question-4.1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1808,7 +1808,7 @@ Array [
                     name="content-elementary-crt-question-5.1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -1869,7 +1869,7 @@ Array [
                     name="content-elementary-crt-question-5.1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2133,7 +2133,7 @@ Array [
                     name="content-elementary-crt-question-1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2226,7 +2226,7 @@ Array [
                     name="content-elementary-crt-question-1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2362,7 +2362,7 @@ Array [
                     name="content-elementary-crt-question-2.1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2423,7 +2423,7 @@ Array [
                     name="content-elementary-crt-question-2.1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2516,7 +2516,7 @@ Array [
                     name="content-elementary-crt-question-2.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2609,7 +2609,7 @@ Array [
                     name="content-elementary-crt-question-2.3"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2873,7 +2873,7 @@ Array [
                     name="content-elementary-crt-question-1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -2966,7 +2966,7 @@ Array [
                     name="content-elementary-crt-question-1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -3248,7 +3248,7 @@ Array [
                     name="content-elementary-crt-question-1.1"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
@@ -3341,7 +3341,7 @@ Array [
                     name="content-elementary-crt-question-1.2"
                     onChange={[Function]}
                     type="radio"
-                    value="0"
+                    value="1"
                   />
                   <label
                     className="a-label"
