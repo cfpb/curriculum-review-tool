@@ -5,7 +5,6 @@ import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
 import ContentCriterion from "./ContentMiddleCriterion";
-import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 import { ContentMiddleCriterion } from "../../../content_data/contentMiddle";
 
 export default class ContentMiddleCriterionPage extends React.Component {

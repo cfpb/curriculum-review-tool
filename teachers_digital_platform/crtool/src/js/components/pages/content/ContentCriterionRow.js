@@ -1,11 +1,6 @@
 import React from "react";
 
-import C from "../../../business.logic/constants";
-import SvgIcon from "../../svgs/SvgIcon";
-import SaveWorkModal from "../../dialogs/SaveWorkModal";
-import CriterionLinkWrapper from "../CriterionLinkWrapper";
 import ContentCriterionComponent from "./ContentCriterionComponent";
-import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 
 export default class ContentCriterionRow extends React.Component {
 

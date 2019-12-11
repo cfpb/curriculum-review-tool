@@ -5,7 +5,6 @@ import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
 import ContentCriterion from "./ContentCriterion";
-import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 import { ContentElementaryCriterion } from "../../../content_data/contentElementary";
 
 export default class ContentElementaryCriterionPage extends React.Component {
