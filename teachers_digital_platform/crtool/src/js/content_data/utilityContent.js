@@ -282,8 +282,8 @@ export const UtilityContent = {
                     components: [
                         {
                             showNaButton: true,
-                            showBeneficialText: false,
-                            criterionRefId: "utility-crt-question-2.4",
+                            showBeneficialText: true,
+                            criterionRefId: "utility-crt-question-2.4_beneficial",
                             hasInlineHtml: false,
                             componentText: "If technology is used, does the use of technology add value? (e.g., online assessments that direct students to questions at the correct level)",
                         },
@@ -335,7 +335,8 @@ export const UtilityContent = {
                             showBeneficialText: false,
                             criterionRefId: "utility-crt-question-3.1.2",
                             hasInlineHtml: true,
-                            componentText: "<p>Does each lesson include the following:</p><ul><li>Objective</li><li>Description of required prior knowledge (if applicable)</li><li>List of necessary materials</li><li>Lesson plans/teacher notes/recommendations for instruction</li><li>Multiple student activities</li><li>Assessments and/or performance tasks</li><li>Statement of time anticipated for the lesson</li></ul>",
+                            componentText: "Does each lesson include the following:",
+                            componentTextList: "<li>Objective</li><li>Description of required prior knowledge (if applicable)</li><li>List of necessary materials</li><li>Lesson plans/teacher notes/recommendations for instruction</li><li>Multiple student activities</li><li>Assessments and/or performance tasks</li><li>Statement of time anticipated for the lesson</li>",
                         },
                         {
                             showNaButton: false,
