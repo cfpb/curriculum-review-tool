@@ -540,7 +540,7 @@ export const UtilityContent = {
                 },
                 {
                     indicatorNumber: "4.5",
-                    indicatorText: "Includes a variety of assessment tools",
+                    indicatorText: "Assessment methods are accessible, unbiased, and valid.",
                     components: [
                         {
                             showNaButton: false,
