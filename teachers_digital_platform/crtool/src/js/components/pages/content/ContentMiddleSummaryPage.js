@@ -47,7 +47,7 @@ export default class ContentMiddleSummaryPage extends React.Component {
                         criterionExceedsText={criterionData.criterionExceedsText}
                         criterionMeetsText={criterionData.criterionMeetsText}
                         criterionDoesNotMeetText={criterionData.criterionDoesNotMeetText}
-                        essentialAnswerTotalText={C.ESSENTIAL_ANSWER_TOTAL_TEXT}
+                        essentialAnswerTotalText={C.CONTENT_ESSENTIAL_ANSWER_TOTAL_TEXT}
                         {...this.props} />
                 )}
 

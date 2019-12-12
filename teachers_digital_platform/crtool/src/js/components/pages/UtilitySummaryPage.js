@@ -6,6 +6,7 @@ import CriterionScoreBlock from "./summary/CriterionScoreBlock";
 import DimensionScoreBlock from "./summary/DimensionScoreBlock";
 import DimensionInformation from "../common/DimensionInformation";
 import SaveWorkInformation from "../common/SaveWorkInformation";
+import { UtilityContent } from "../../content_data/utilityContent";
 
 export default class UtilitySummaryPage extends React.Component {
     render() {
@@ -22,100 +23,45 @@ export default class UtilitySummaryPage extends React.Component {
                     Utility summary
                 </h1>
                 <p className="lead-paragraph">
-                    Review the scores and your notes for each utility criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
+                    {C.UTILITY_SUMMARY_LEAD_TEXT}
                 </p>
                 <p>
-                    Then, review the overall score for the utility criteria and enter your thoughts about its strengths and weaknesses.
+                    {C.UTILITY_SUMMARY_SECOND_PARAGRAPH}
                 </p>
                 <SaveWorkInformation {...this.props} />
                 <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.UTILITY_PAGE, true); e.preventDefault();}}>
-                    Print or save summary
+                    {C.UTILITY_PRINT_SUMMARY}
                 </button>
                 <DimensionInformation dimensionName={C.UTILITY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.UTILITY_PAGE]} />
 
-                <CriterionScoreBlock
-                    showExceeds={false}
-                    showBeneficial={false}
-                    dimensionKey="utility-crt-"
-                    dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
-                    criterionNumber="1"
-                    criterionName="Criterion 1: Materials to support cognitive development"
-                    criterionLead="Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability."
-                    criterionMeetsText="All essential components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={true}
-                    dimensionKey="utility-crt-"
-                    dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
-                    criterionNumber="2"
-                    criterionName="Criterion 2: Differentiated instruction for diverse populations"
-                    criterionLead="Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={true}
-                    dimensionKey="utility-crt-"
-                    dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
-                    criterionNumber="3"
-                    criterionName="Criterion 3: Quality materials for lesson planning"
-                    criterionLead="Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={true}
-                    dimensionKey="utility-crt-"
-                    dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
-                    criterionNumber="4"
-                    criterionName="Criterion 4: Materials to assess mastery"
-                    criterionLead="Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
-                    {...this.props} />
-
-                <CriterionScoreBlock
-                    showExceeds={true}
-                    showBeneficial={true}
-                    dimensionKey="utility-crt-"
-                    dimensionPage={C.UTILITY_PAGE}
-                    essentialAnswerTotalText="<b>Your answers for essential components:</b>"
-                    beneficialAnswerTotalText="<b>Your answers for beneficial components:</b>"
-                    criterionNumber="5"
-                    criterionName="Criterion 5: Instructional supports"
-                    criterionLead="Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students."
-                    criterionExceedsText="All essential components scored “yes”<br />At least one beneficial component scored “yes”"
-                    criterionMeetsText="All essential components scored “yes”<br />None of the beneficial components scored “yes”"
-                    criterionDoesNotMeetText="One or more essential components scored “no”"
-                    {...this.props} />
+                { UtilityContent.criterion.map((criterionData, i) =>
+                    <CriterionScoreBlock
+                        showExceeds={criterionData.showExceeds}
+                        showBeneficial={criterionData.showBeneficial}
+                        hideMeets={criterionData.hideMeets}
+                        dimensionKey={C.UTILITY_KEY}
+                        dimensionPage={C.UTILITY_PAGE}
+                        criterionNumber={criterionData.criterionNumber}
+                        criterionName={criterionData.title}
+                        criterionLead={criterionData.criterionLead}
+                        criterionExceedsText={criterionData.criterionExceedsText}
+                        criterionMeetsText={criterionData.criterionMeetsText}
+                        criterionDoesNotMeetText={criterionData.criterionDoesNotMeetText}
+                        essentialAnswerTotalText={C.UTILITY_ESSENTIAL_ANSWER_TOTAL_TEXT}
+                        beneficialAnswerTotalText={C.UTILITY_BENEFICIAL_ANSWER_TOTAL_TEXT}
+                        {...this.props} />
+                )}
 
                 <hr className="hr u-mb45 u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.UTILITY_PAGE}
-                    dimensionKey="utility-crt-"
-                    dimensionName="Utility"
-                    dimensionLead="How does this curriculum meet the criteria for utility:"
-                    strongText="All 5 criteria were met, and at least one was exceeded"
-                    moderateText="All 5 criteria were met"
-                    limitedText="At least one of the criteria was not met"
+                    dimensionKey={C.UTILITY_KEY}
+                    dimensionName={C.UTILITY_PAGE}
+                    dimensionLead={C.UTILITY_LEAD_TEXT}
+                    strongText={C.UTILITY_STRONG_TEXT}
+                    moderateText={C.UTILITY_MODERATE_TEXT}
+                    limitedText={C.UTILITY_LIMITED_TEXT}
                     {...this.props} />
             </React.Fragment>
         );
