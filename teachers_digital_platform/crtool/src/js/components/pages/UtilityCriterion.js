@@ -8,7 +8,7 @@ export default class UtilityCriterion extends React.Component {
 
     criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.UTILITY_PAGE, key, checkedValue);
     }
 
     initializeAnswerValuesByRefs() {

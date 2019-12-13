@@ -2,7 +2,7 @@ import React from "react";
 
 import UtilityCriterionComponent from "./UtilityCriterionComponent";
 
-export default class ContentCriterionRow extends React.Component {
+export default class UtilityCriterionRow extends React.Component {
 
     render() {
         return (
