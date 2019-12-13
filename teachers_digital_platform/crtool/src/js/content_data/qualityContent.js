@@ -1,9 +1,19 @@
 export const QualityContent = {
     criterion: [
         {
+            criterionNumber: "1",
+            criterionName: "Criterion 1: Accessibility",
+            criterionLead: "Curriculum materials are physically accessible to teachers and students in a typical school setting.",
+            criterionExceedsText: "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
+            criterionMeetsText: "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: true,
+            showBeneficial: true,
             title: "Criterion 1: Accessibility",
             leadParagraph: "Are curriculum materials physically accessible to teachers and students in a typical school setting?",
             notesRefId: "quality-crt-notes-optional-1",
+            questionRefId: "quality-crt-question-1",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",
@@ -96,9 +106,18 @@ export const QualityContent = {
             ]
         },
         {
+            criterionNumber: "2",
+            criterionName: "Criterion 2: Accuracy and timeliness",
+            criterionLead: "Curriculum materials are current and free of errors.",
+            criterionMeetsText: "All essential components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: false,
+            showBeneficial: false,
             title: "Criterion 2: Accuracy and timeliness",
             leadParagraph: "Are curriculum materials current and free of error?",
             notesRefId: "quality-crt-notes-optional-2",
+            questionRefId: "quality-crt-question-2",
+            divId: "criterion_2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -149,9 +168,19 @@ export const QualityContent = {
             ]
         },
         {
+            criterionNumber: "3",
+            criterionName: "Criterion 3: Objectivity",
+            criterionLead: "Curriculum materials are objective.",
+            criterionExceedsText: "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
+            criterionMeetsText: "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: true,
+            showBeneficial: true,
             title: "Criterion 3: Objectivity",
             leadParagraph: "Are the curriculum materials objective??",
             notesRefId: "quality-crt-notes-optional-3",
+            questionRefId: "qaulity-crt-question-3",
+            divId: "criterion_3",
             rows: [
                 {
                     indicatorNumber: "3.1",
@@ -223,9 +252,18 @@ export const QualityContent = {
             ]
         },
         {
+            criterionNumber: "4",
+            criterionName: "Criterion 4: Visual appearance",
+            criterionLead: "The visual appearance of the student materials is conducive to learning.",
+            criterionMeetsText: "All essential components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: false,
+            showBeneficial: false,
             title: "Criterion 4: Visual appearance",
             leadParagraph: "Is the visual appearance of the student materials conducive to learning?",
             notesRefId: "quality-crt-notes-optional-4",
+            questionRefId: "quality-crt-question-4",
+            divId: "criterion_4",
             rows: [
                 {
                     indicatorNumber: "4.1",
