@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import SvgIcon from "../svgs/SvgIcon";
-import CriterionScoreBlock from "./summary/CriterionScoreBlock";
-import DimensionScoreBlock from "./summary/DimensionScoreBlock";
-import DimensionInformation from "../common/DimensionInformation";
-import SaveWorkInformation from "../common/SaveWorkInformation";
-import { UtilityContent } from "../../content_data/utilityContent";
+import C from "../../../business.logic/constants";
+import SvgIcon from "../../svgs/SvgIcon";
+import CriterionScoreBlock from "../summary/CriterionScoreBlock";
+import DimensionScoreBlock from "../summary/DimensionScoreBlock";
+import DimensionInformation from "../../common/DimensionInformation";
+import SaveWorkInformation from "../../common/SaveWorkInformation";
+import { UtilityContent } from "../../../content_data/utilityContent";
 
 export default class UtilitySummaryPage extends React.Component {
     render() {

@@ -1,7 +1,7 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import SvgIcon from "../svgs/SvgIcon";
+import C from "../../../business.logic/constants";
+import SvgIcon from "../../svgs/SvgIcon";
 import UtilityCriterionRow from "./UtilityCriterionRow";
 
 export default class UtilityCriterion extends React.Component {

@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
-import CriterionScoreBlock from "./summary/CriterionScoreBlock";
-import DimensionScoreBlock from "./summary/DimensionScoreBlock";
-import DimensionInformation from "../common/DimensionInformation";
-import ContentCriterionBlockSummary from "../../components/pages/summary/ContentCriterionBlockSummary";
-import { ContentElementaryCriterion } from "../../content_data/contentElementary";
+import C from "../../../business.logic/constants";
+import PrintIntroComponent from "../partial.pages/PrintIntroComponent";
+import CriterionScoreBlock from "../summary/CriterionScoreBlock";
+import DimensionScoreBlock from "../summary/DimensionScoreBlock";
+import DimensionInformation from "../../common/DimensionInformation";
+import ContentCriterionBlockSummary from "../summary/ContentCriterionBlockSummary";
+import { ContentElementaryCriterion } from "../../../content_data/contentElementary";
 
 
 export default class ContentPrintElementaryPage extends React.Component {

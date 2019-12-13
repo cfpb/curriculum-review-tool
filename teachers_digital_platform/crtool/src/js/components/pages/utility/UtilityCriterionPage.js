@@ -1,11 +1,11 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import SvgIcon from "../svgs/SvgIcon";
-import SaveWorkModal from "../dialogs/SaveWorkModal";
-import CriterionLinkWrapper from "./CriterionLinkWrapper";
+import C from "../../../business.logic/constants";
+import SvgIcon from "../../svgs/SvgIcon";
+import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "../CriterionLinkWrapper";
 import UtilityCriterion from "./UtilityCriterion";
-import { UtilityContent } from "../../content_data/utilityContent";
+import { UtilityContent } from "../../../content_data/utilityContent";
 
 export default class UtilityCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {

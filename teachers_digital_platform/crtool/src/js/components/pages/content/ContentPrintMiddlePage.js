@@ -1,14 +1,14 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
-import CriterionScoreBlock from "./summary/CriterionScoreBlock";
-import DimensionScoreBlock from "./summary/DimensionScoreBlock";
-import DimensionInformation from "../common/DimensionInformation";
-import ContentCriterionBlockSummary from "../../components/pages/summary/ContentCriterionBlockSummary";
-import { ContentHighCriterion } from "../../content_data/contentHigh";
+import C from "../../../business.logic/constants";
+import PrintIntroComponent from "../partial.pages/PrintIntroComponent";
+import CriterionScoreBlock from "../summary/CriterionScoreBlock";
+import DimensionScoreBlock from "../summary/DimensionScoreBlock";
+import DimensionInformation from "../../common/DimensionInformation";
+import ContentCriterionBlockSummary from "../summary/ContentCriterionBlockSummary";
+import { ContentMiddleCriterion } from "../../../content_data/contentMiddle";
 
-export default class ContentPrintHighPage extends React.Component {
+export default class ContentPrintMiddlePage extends React.Component {
     componentDidMount() {
         this.props.resetPrintButtonState(C.CONTENT_PAGE);
     }
@@ -24,12 +24,12 @@ export default class ContentPrintHighPage extends React.Component {
                     {...this.props}
                     reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
-                { ContentHighCriterion.criterion.map((criterionData, i) =>
+                { ContentMiddleCriterion.criterion.map((criterionData, i) =>
                     <CriterionScoreBlock
                         showExceeds={criterionData.showExceeds}
                         showBeneficial={criterionData.showBeneficial}
                         hideMeets={criterionData.hideMeets}
-                        dimensionKey={C.CONTENT_HIGH_KEY}
+                        dimensionKey={C.CONTENT_MIDDLE_KEY}
                         dimensionPage={C.CONTENT_PAGE}
                         criterionNumber={criterionData.criterionNumber}
                         criterionName={criterionData.title}
@@ -46,7 +46,7 @@ export default class ContentPrintHighPage extends React.Component {
 
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
-                    dimensionKey={C.CONTENT_HIGH_KEY}
+                    dimensionKey={C.CONTENT_MIDDLE_KEY}
                     dimensionName={C.CONTENT_PAGE}
                     dimensionLead={C.CONTENT_LEAD_TEXT}
                     strongText={C.CONTENT_STRONG_TEXT}

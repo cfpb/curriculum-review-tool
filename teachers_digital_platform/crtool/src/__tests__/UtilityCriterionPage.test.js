@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/business.logic/constants';
-import UtilityCriterionPage from '../js/components/pages/UtilityCriterionPage';
+import UtilityCriterionPage from '../js/components/pages/utility/UtilityCriterionPage';
 import renderer from 'react-test-renderer';
 
 let result;

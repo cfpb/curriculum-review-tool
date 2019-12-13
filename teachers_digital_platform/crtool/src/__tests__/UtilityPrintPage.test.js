@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/business.logic/constants';
-import UtilityPrintPage from '../js/components/pages/UtilityPrintPage';
+import UtilityPrintPage from '../js/components/pages/utility/UtilityPrintPage';
 import renderer from 'react-test-renderer';
 
 let result;

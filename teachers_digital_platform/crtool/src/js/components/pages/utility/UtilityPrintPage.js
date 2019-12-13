@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import PrintIntroComponent from "../pages/partial.pages/PrintIntroComponent";
-import CriterionScoreBlock from "./summary/CriterionScoreBlock";
-import DimensionScoreBlock from "./summary/DimensionScoreBlock";
-import DimensionInformation from "../common/DimensionInformation";
-import UtilityCriterionBlockSummary from "../../components/pages/summary/UtilityCriterionBlockSummary";
-import { UtilityContent } from "../../content_data/utilityContent";
+import C from "../../../business.logic/constants";
+import PrintIntroComponent from "../partial.pages/PrintIntroComponent";
+import CriterionScoreBlock from "../summary/CriterionScoreBlock";
+import DimensionScoreBlock from "../summary/DimensionScoreBlock";
+import DimensionInformation from "../../common/DimensionInformation";
+import UtilityCriterionBlockSummary from "../summary/UtilityCriterionBlockSummary";
+import { UtilityContent } from "../../../content_data/utilityContent";
 
 export default class UtilityPrintPage extends React.Component {
     componentDidMount() {

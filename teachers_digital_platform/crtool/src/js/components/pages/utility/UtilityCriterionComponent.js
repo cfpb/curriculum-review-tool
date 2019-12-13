@@ -1,7 +1,7 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import FieldLevelErrorMessageComponent from "../common/FieldLevelErrorMessageComponent";
+import C from "../../../business.logic/constants";
+import FieldLevelErrorMessageComponent from "../../common/FieldLevelErrorMessageComponent";
 
 export default class UtilityCriterionComponent extends React.Component {
 
