@@ -150,15 +150,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      paper-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Are paper-based materials available at no cost or for a clearly stated price?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
+                      }
+                    }
+                  />
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -167,7 +166,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.1"
                   >
-                    Cost of materials per student  
+                    Cost of materials per student
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -239,16 +239,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      links
-                    </strong>
-                    :
-                  </p>
-                  <p>
-                    Do the links take the user to the appropriate, live website?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -326,15 +324,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      web-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Can web-based material be accessed without purchasing specialized software?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
+                      }
+                    }
+                  />
                   <p
                     className="o-survey_question-helper"
                   >
@@ -348,7 +345,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.3"
                   >
-                    Specialized software  
+                    Specialized software
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -470,13 +468,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are limitations on use, are 
-                    <strong>
-                      limitations clearly specified
-                    </strong>
-                    ? (e.g., materials are copyrighted or must be purchased)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -663,7 +662,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.1"
                   >
-                    Special needs formats include  
+                    Special needs formats include
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -750,7 +750,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.2"
                   >
-                    Languages included  
+                    Languages included
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -1121,15 +1122,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      paper-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Are paper-based materials available at no cost or for a clearly stated price?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
+                      }
+                    }
+                  />
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -1138,7 +1138,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.1"
                   >
-                    Cost of materials per student  
+                    Cost of materials per student
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -1210,16 +1211,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      links
-                    </strong>
-                    :
-                  </p>
-                  <p>
-                    Do the links take the user to the appropriate, live website?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -1297,15 +1296,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      web-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Can web-based material be accessed without purchasing specialized software?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
+                      }
+                    }
+                  />
                   <p
                     className="o-survey_question-helper"
                   >
@@ -1319,7 +1317,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.3"
                   >
-                    Specialized software  
+                    Specialized software
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -1441,13 +1440,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are limitations on use, are 
-                    <strong>
-                      limitations clearly specified
-                    </strong>
-                    ? (e.g., materials are copyrighted or must be purchased)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -1634,7 +1634,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.1"
                   >
-                    Special needs formats include  
+                    Special needs formats include
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -1721,7 +1722,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.2"
                   >
-                    Languages included  
+                    Languages included
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -1965,13 +1967,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Have some or all of the materials been published or updated within the 
-                    <strong>
-                      last three years
-                    </strong>
-                    ?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Have some or all of the materials been published or updated within the <strong>last three years</strong>?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -2923,17 +2926,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Are the visuals 
-                    <strong>
-                      informative
-                    </strong>
-                     and 
-                    <strong>
-                      related to the text
-                    </strong>
-                    ?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Are the visuals <strong>informative</strong> and <strong>related to the text</strong>?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -2992,13 +2992,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Do the visuals focus on 
-                    <strong>
-                      core concepts
-                    </strong>
-                    ? (e.g., not prioritizing unimportant information because it is easier to display)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Do the visuals focus on <strong>core concepts</strong>? (e.g., not prioritizing unimportant information because it is easier to display)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3057,17 +3058,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Are visual displays clearly 
-                    <strong>
-                      labeled
-                    </strong>
-                     and in 
-                    <strong>
-                      close proximity to related text
-                    </strong>
-                    ?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Are visual displays clearly <strong>labeled</strong> and in <strong>close proximity to related text</strong>?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3126,17 +3124,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Is the content organized 
-                    <strong>
-                      logically
-                    </strong>
-                     and 
-                    <strong>
-                      consistently
-                    </strong>
-                    ?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Is the content organized <strong>logically</strong> and <strong>consistently</strong>?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3227,13 +3222,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Is the text 
-                    <strong>
-                      easy to read
-                    </strong>
-                    ? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Is the text <strong>easy to read</strong>? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3292,13 +3288,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Are web-based materials organized in 
-                    <strong>
-                      logical
-                    </strong>
-                     and manageable sections?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Are web-based materials organized in <strong>logical</strong> and manageable sections?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3357,13 +3354,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Is the web-based presentation 
-                    <strong>
-                      readable
-                    </strong>
-                    ? (e.g., maximum of 60 characters per line, use of full screen)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Is the web-based presentation <strong>readable</strong>? (e.g., maximum of 60 characters per line, use of full screen)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3422,13 +3420,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Are web-based materials 
-                    <strong>
-                      easy to navigate
-                    </strong>
-                    ? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Are web-based materials <strong>easy to navigate</strong>? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3661,15 +3660,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      paper-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Are paper-based materials available at no cost or for a clearly stated price?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
+                      }
+                    }
+                  />
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -3678,7 +3676,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.1"
                   >
-                    Cost of materials per student  
+                    Cost of materials per student
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -3750,16 +3749,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      links
-                    </strong>
-                    :
-                  </p>
-                  <p>
-                    Do the links take the user to the appropriate, live website?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -3837,15 +3834,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      web-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Can web-based material be accessed without purchasing specialized software?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
+                      }
+                    }
+                  />
                   <p
                     className="o-survey_question-helper"
                   >
@@ -3859,7 +3855,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.3"
                   >
-                    Specialized software  
+                    Specialized software
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -3981,13 +3978,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are limitations on use, are 
-                    <strong>
-                      limitations clearly specified
-                    </strong>
-                    ? (e.g., materials are copyrighted or must be purchased)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -4174,7 +4172,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.1"
                   >
-                    Special needs formats include  
+                    Special needs formats include
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -4261,7 +4260,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.2"
                   >
-                    Languages included  
+                    Languages included
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -4505,13 +4505,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    Have some or all of the materials been published or updated within the 
-                    <strong>
-                      last three years
-                    </strong>
-                    ?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>Have some or all of the materials been published or updated within the <strong>last three years</strong>?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -5019,15 +5020,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      paper-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Are paper-based materials available at no cost or for a clearly stated price?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
+                      }
+                    }
+                  />
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -5036,7 +5036,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.1"
                   >
-                    Cost of materials per student  
+                    Cost of materials per student
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -5108,16 +5109,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      links
-                    </strong>
-                    :
-                  </p>
-                  <p>
-                    Do the links take the user to the appropriate, live website?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -5195,15 +5194,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      web-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Can web-based material be accessed without purchasing specialized software?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
+                      }
+                    }
+                  />
                   <p
                     className="o-survey_question-helper"
                   >
@@ -5217,7 +5215,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.3"
                   >
-                    Specialized software  
+                    Specialized software
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -5339,13 +5338,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are limitations on use, are 
-                    <strong>
-                      limitations clearly specified
-                    </strong>
-                    ? (e.g., materials are copyrighted or must be purchased)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -5532,7 +5532,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.1"
                   >
-                    Special needs formats include  
+                    Special needs formats include
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -5619,7 +5620,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.2"
                   >
-                    Languages included  
+                    Languages included
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -6008,15 +6010,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      paper-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Are paper-based materials available at no cost or for a clearly stated price?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
+                      }
+                    }
+                  />
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -6025,7 +6026,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.1"
                   >
-                    Cost of materials per student  
+                    Cost of materials per student
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -6097,16 +6099,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      links
-                    </strong>
-                    :
-                  </p>
-                  <p>
-                    Do the links take the user to the appropriate, live website?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -6184,15 +6184,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are 
-                    <strong>
-                      web-based materials:
-                    </strong>
-                  </p>
-                  <p>
-                    Can web-based material be accessed without purchasing specialized software?
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
+                      }
+                    }
+                  />
                   <p
                     className="o-survey_question-helper"
                   >
@@ -6206,7 +6205,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.1.3"
                   >
-                    Specialized software  
+                    Specialized software
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -6328,13 +6328,14 @@ Array [
                 <legend
                   className="o-survey_legend"
                 >
-                  <p>
-                    If there are limitations on use, are 
-                    <strong>
-                      limitations clearly specified
-                    </strong>
-                    ? (e.g., materials are copyrighted or must be purchased)
-                  </p>
+                  <div
+                    className="u-mb15"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
+                      }
+                    }
+                  />
                 </legend>
               </div>
               <div
@@ -6521,7 +6522,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.1"
                   >
-                    Special needs formats include  
+                    Special needs formats include
+                     
                     <small
                       className="a-label_helper"
                     >
@@ -6608,7 +6610,8 @@ Array [
                     className="a-label a-label__heading"
                     for="quality-crt-text-optional-1.3.2"
                   >
-                    Languages included  
+                    Languages included
+                     
                     <small
                       className="a-label_helper"
                     >
