@@ -11,8 +11,8 @@ import UtilityCriterionPage from "./utility/UtilityCriterionPage";
 import UtilitySummaryPage from "./utility/UtilitySummaryPage";
 import QualityCriterionPage from "./quality/QualityCriterionPage";
 import QualitySummaryPage from "./quality/QualitySummaryPage";
-import EfficacyCriterionPage from "./EfficacyCriterionPage";
-import EfficacySummaryPage from "./EfficacySummaryPage";
+import EfficacyCriterionPage from "./efficacy/EfficacyCriterionPage";
+import EfficacySummaryPage from "./efficacy/EfficacySummaryPage";
 import StartCriterionPage from "./StartCriterionPage";
 import FormLevelErrorMessageComponent from "../common/FormLevelErrrorMessageComponent";
 

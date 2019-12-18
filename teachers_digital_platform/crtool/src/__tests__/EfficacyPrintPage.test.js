@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/business.logic/constants';
-import EfficacyPrintPage from '../js/components/pages/EfficacyPrintPage';
+import EfficacyPrintPage from '../js/components/pages/efficacy/EfficacyPrintPage';
 import renderer from 'react-test-renderer';
 
 let result;

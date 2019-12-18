@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import SvgIcon from "../svgs/SvgIcon";
-import SaveWorkModal from "../dialogs/SaveWorkModal";
-import CriterionLinkWrapper from "./CriterionLinkWrapper";
-import EfficacyStudyComponent from "./partial.pages/EfficacyStudyComponent";
-import EditableSubComponentRow from "./partial.pages/EditableSubComponentRow";
-import EditableCriterionRowWrapper from "./partial.pages/EditableCriterionRowWrapper";
+import C from "../../../business.logic/constants";
+import SvgIcon from "../../svgs/SvgIcon";
+import SaveWorkModal from "../../dialogs/SaveWorkModal";
+import CriterionLinkWrapper from "../CriterionLinkWrapper";
+import EfficacyStudyComponent from "../partial.pages/EfficacyStudyComponent";
+import EditableSubComponentRow from "../partial.pages/EditableSubComponentRow";
+import EditableCriterionRowWrapper from "../partial.pages/EditableCriterionRowWrapper";
 
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {

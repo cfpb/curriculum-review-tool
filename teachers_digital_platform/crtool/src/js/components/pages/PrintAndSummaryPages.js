@@ -3,7 +3,7 @@ import React from "react";
 import C from "../../business.logic/constants";
 import QualityPrintPage from "./quality/QualityPrintPage";
 import UtilityPrintPage from "./utility/UtilityPrintPage";
-import EfficacyPrintPage from "./EfficacyPrintPage";
+import EfficacyPrintPage from "./efficacy/EfficacyPrintPage";
 import FinalSummaryPage from "../pages/FinalSummaryPage";
 
 

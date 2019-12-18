@@ -1,12 +1,12 @@
 import React from "react";
 
-import C from "../../business.logic/constants";
-import SvgIcon from "../svgs/SvgIcon";
-import ViewEditResponseComponent from "../common/ViewEditResponseComponent";
-import EfficacyOveralScoreComponent from "../pages/partial.pages/EfficacyOveralScoreComponent";
-import EfficacyScopeEvidenceComponent from "../pages/partial.pages/EfficacyScopeEvidenceComponent";
-import DimensionInformation from "../common/DimensionInformation";
-import SaveWorkInformation from "../common/SaveWorkInformation";
+import C from "../../../business.logic/constants";
+import SvgIcon from "../../svgs/SvgIcon";
+import ViewEditResponseComponent from "../../common/ViewEditResponseComponent";
+import EfficacyOveralScoreComponent from "../partial.pages/EfficacyOveralScoreComponent";
+import EfficacyScopeEvidenceComponent from "../partial.pages/EfficacyScopeEvidenceComponent";
+import DimensionInformation from "../../common/DimensionInformation";
+import SaveWorkInformation from "../../common/SaveWorkInformation";
 
 export default class EfficacySummaryPage extends React.Component {
 
@@ -24,14 +24,14 @@ export default class EfficacySummaryPage extends React.Component {
                     Efficacy summary
                 </h1>
                 <p className="lead-paragraph">
-                    Review the scores and your notes for each efficacy criterion. Use the “View or edit responses” link to review or make changes to your answers, if needed.
+                    {C.EFFICACY_SUMMARY_LEAD_TEXT}
                 </p>
                 <p>
-                    Then, review the overall score for the efficacy criteria and enter your thoughts about its strengths and weaknesses.
+                    {C.EFFICACY_SUMMARY_SECOND_PARAGRAPH}
                 </p>
                 <SaveWorkInformation {...this.props} />
                 <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.EFFICACY_PAGE, true); e.preventDefault();}}>
-                    Print or save summary
+                    {C.EFFICACY_PRINT_SUMMARY}
                 </button>
 
                 <DimensionInformation dimensionName={C.EFFICACY_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.EFFICACY_PAGE]} />
@@ -45,9 +45,9 @@ export default class EfficacySummaryPage extends React.Component {
 
                 <EfficacyOveralScoreComponent
                     dimensionPage={C.UTILITY_PAGE}
-                    dimensionName="Efficacy"
-                    dimensionKey="efficacy-crt-"
-                    dimensionLead="How does this curriculum meet the criteria for efficacy:"
+                    dimensionName={C.EFFICACY_PAGE}
+                    dimensionKey={C.EFFICACY_KEY}
+                    dimensionLead={C.EFFICACY_LEAD_TEXT}
                     {...this.props} />
             </React.Fragment>
         );

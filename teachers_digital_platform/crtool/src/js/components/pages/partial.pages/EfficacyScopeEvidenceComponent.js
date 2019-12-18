@@ -5,7 +5,7 @@ import SvgIcon from "../../svgs/SvgIcon";
 
 export default class EfficacyScopeEvidenceComponent extends React.Component {
 
-    scopOfEvidenceScore(level, type) {
+    scopeOfEvidenceScore(level, type) {
         let className = "m-form-field_radio-icon";
         if (type === "text") className = "m-form-field_radio-text";
 
@@ -35,11 +35,11 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.scopOfEvidenceScore("large")} viewBox="0 0 22 22">
+                                    <svg className={this.scopeOfEvidenceScore("large")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.scopOfEvidenceScore("large", "text")}>
+                                    <div className={this.scopeOfEvidenceScore("large", "text")}>
                                         Large body of evidence
                                     </div>
                                 </div>
@@ -50,11 +50,11 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.scopOfEvidenceScore("moderate")} viewBox="0 0 22 22">
+                                    <svg className={this.scopeOfEvidenceScore("moderate")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.scopOfEvidenceScore("moderate", "text")}>
+                                    <div className={this.scopeOfEvidenceScore("moderate", "text")}>
                                         Moderate body of evidence
                                     </div>
                                 </div>
@@ -65,11 +65,11 @@ export default class EfficacyScopeEvidenceComponent extends React.Component {
                                             m-form-field__radio
                                             m-form-field__display">
                                 <div className="a-label">
-                                    <svg className={this.scopOfEvidenceScore("small")} viewBox="0 0 22 22">
+                                    <svg className={this.scopeOfEvidenceScore("small")} viewBox="0 0 22 22">
                                         <circle cx="11" cy="11" r="10" className="m-form-field_radio-icon-stroke"></circle>
                                         <circle cx="11" cy="11" r="7" className="m-form-field_radio-icon-fill"></circle>
                                     </svg>
-                                    <div className={this.scopOfEvidenceScore("small", "text")}>
+                                    <div className={this.scopeOfEvidenceScore("small", "text")}>
                                         Small body of evidence
                                     </div>
                                 </div>

@@ -23,7 +23,7 @@ export default class QualityPrintPage extends React.Component {
 
                 <DimensionInformation
                     dimensionName={C.QUALITY_PAGE}
-                    dimensionSummary="The quality dimension assesses whether curriculum materials are clear, accurate, and objective and how easy the materials are for teachers and students to access."
+                    dimensionSummary={C.QUALITY_SUMMARY_TEXT}
                     {...this.props}
                     reviewedOnDate={this.props.distinctiveCompletedDate[C.QUALITY_PAGE]} />
 
