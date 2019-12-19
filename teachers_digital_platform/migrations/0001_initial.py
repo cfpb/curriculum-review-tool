@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('wagtaildocs', '0007_merge'),
-        ('v1', '0196_recreated'),
+        ('v1', '0198_recreated'),
         ('wagtailimages', '0019_delete_filter'),
     ]
 
