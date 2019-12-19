@@ -5,8 +5,9 @@ import SvgIcon from "../../svgs/SvgIcon";
 import SaveWorkModal from "../../dialogs/SaveWorkModal";
 import CriterionLinkWrapper from "../CriterionLinkWrapper";
 import EfficacyStudyComponent from "../partial.pages/EfficacyStudyComponent";
-import EditableSubComponentRow from "../partial.pages/EditableSubComponentRow";
-import EditableCriterionRowWrapper from "../partial.pages/EditableCriterionRowWrapper";
+import { EfficacyStudyContent } from "../../../content_data/efficacyStudyContent";
+import EfficacyCriterion from "./EfficacyCriterion";
+import { EfficacyContent } from "../../../content_data/efficacyContent";
 
 export default class EfficacyCriterionPage extends React.Component {
     criterionAnswerChanged(key, checkedValue) {
@@ -154,17 +155,17 @@ export default class EfficacyCriterionPage extends React.Component {
                                 u-mb30
                                 u-mt30" />
                 {this.props.renderFormLevelErrorMessage()}
-                <div className="block block__flush-top" id="criterion_1">
+                <div className="block block__flush-top" id={EfficacyStudyContent.criterion[0].divId}>
                     <h2>
                         <SvgIcon
                             icon={this.props.finishAddingEfficacyStudies && C.ICON_CHECK_ROUND}
                             color="green"
                             hasSpaceAfter="true" />
-                        Criterion 1: Strength of study (inclusion criteria)
+                        {EfficacyStudyContent.criterion[0].title}
                         {this.props.finishAddingEfficacyStudies && <span className="u-fc-gray"> (complete)</span>}
                     </h2>
                     <p className="lead-paragraph u-mb45 u-mt15">
-                        Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.
+                        {EfficacyStudyContent.criterion[0].leadParagraph}
                     </p>
                     <p>
                         <b>You will answer these questions for each study individually.</b>
@@ -193,146 +194,18 @@ export default class EfficacyCriterionPage extends React.Component {
                     {this.renderWarningContinueWithout2and3()}
                 </div>
                 <CriterionLinkWrapper
-                    criterionKey="efficacy-crt-question-2"
-                    criterionText="Criterion 2: Saving and investing"
+                    criterionKey={EfficacyContent.criterion[0].questionRefId}
+                    criterionText={EfficacyContent.criterion[0].title}
                     hideCriterion={!this.twoStrongStudiesExist() || !this.props.finishAddingEfficacyStudies}
                     {...this.props}  >
-                <div className="block block__flush-top">
-                    <h2>
-                        <SvgIcon
-                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-2"]}
-                            color="green"
-                            hasSpaceAfter="true" />
-                        Criterion 2: Scope of evidence
-                        {this.props.criterionCompletionStatuses["efficacy-crt-question-2"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
-                    </h2>
-                    <p className="lead-paragraph u-mb45 u-mt15">
-                        Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?
-                    </p>
-                    <p>
-                        <b>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</b>
-                    </p>
-                    <ol className="m-list__unstyled">
-                        <EditableCriterionRowWrapper
-                            {...this.props}
-                            criterionNumber="2.1"
-                            indicatorText="There is sufficient research to judge efficacy." >
-                            <EditableSubComponentRow
-                                componentText="Do the evaluations, collectively or individually, include at least 350 students or 14 classrooms?"
-                                showBeneficialText="true"
-                                showNaButton="false"
-                                ref={this.generateStudyRefId("2.1", "_beneficial")}
-                                currentCriterionRefId={this.generateStudyRefId("2.1", "_beneficial")}
-                                {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
-                        </EditableCriterionRowWrapper>
-                        <EditableCriterionRowWrapper
-                            {...this.props}
-                            criterionNumber="2.2"
-                            indicatorText="The studies examine the range of participants and settings for which the curriculum was designed." >
-                            <EditableSubComponentRow
-                                    componentText="Do the evaluations, collectively or individually, span the range of participants (e.g., grade levels) and settings (e.g., in class instruction) for which the curriculum was designed?"
-                                    showBeneficialText="true"
-                                    showNaButton="false"
-                                    ref={this.generateStudyRefId("2.2", "_beneficial")}
-                                    currentCriterionRefId={this.generateStudyRefId("2.2", "_beneficial")}
-                                    {...this.props}
-                                    criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
-                        </EditableCriterionRowWrapper>
-                    </ol>
-                    <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-2">
-                            My notes
-                            &nbsp;<small className="a-label_helper">(optional)</small>
-                            <small className="a-label_helper a-label_helper__block">
-                                Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                            </small>
-                        </label>
-                        <textarea className="a-text-input a-text-input__full"
-                            rows="6"
-                            id="efficacy-crt-notes-optional-2"
-                            ref="efficacy-crt-notes-optional-2"
-                            defaultValue={this.props.criterionAnswers['efficacy-crt-notes-optional-2']}
-                            onBlur={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-2', e.target.value)} >
-                        </textarea>
-                    </div>
-                </div>
-                <CriterionLinkWrapper
-                    criterionKey="efficacy-crt-question-3"
-                    criterionText="Criterion 3: Impact"
-                    {...this.props} >
-                <div className="block block__flush-top">
-                    <h2>
-                        <SvgIcon
-                            icon={this.props.criterionCompletionStatuses["efficacy-crt-question-3"]}
-                            color="green"
-                            hasSpaceAfter="true" />
-                        Criterion 3: Impact
-                        {this.props.criterionCompletionStatuses["efficacy-crt-question-3"] === C.ICON_CHECK_ROUND && <span className="u-fc-gray"> (complete)</span>}
-                    </h2>
-                    <p className="lead-paragraph u-mb45 u-mt15">
-                        Is there enough evidence to support conclusions of consistent, strong, positive impact?
-                    </p>
-                    <p>
-                        <b>Consider all the strong studies together as you answer the remaining questions. Don’t include studies that were not rated strong in Criteria 1.</b>
-                    </p>
-                    <ol className="m-list__unstyled">
+                    <EfficacyCriterion criterion={EfficacyContent.criterion[0]} {...this.props} />
 
-                        <EditableCriterionRowWrapper
-                            {...this.props}
-                            criterionNumber="3.1"
-                            indicatorText="Positive impacts are statistically significant and substantively important." >
-
-                            <EditableSubComponentRow
-                                componentText="Does at least one evaluation indicate positive effects significant at the 10% level?"
-                                showBeneficialText="false"
-                                showNaButton="false"
-                                ref={this.generateStudyRefId("3.1", "")}
-                                currentCriterionRefId={this.generateStudyRefId("3.1", "")}
-                                {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
-                        </EditableCriterionRowWrapper>
-                        <EditableCriterionRowWrapper
-                            {...this.props}
-                            criterionNumber="3.2"
-                            indicatorText="Findings are consistent across studies and context; there is evidence of positive effects with no overriding contrary evidence." >
-                            <EditableSubComponentRow
-                                componentText="Do all evaluations indicate either a positive effect or no effect? (i.e., not a statistically significant negative effect)"
-                                showBeneficialText="false"
-                                showNaButton="false"
-                                ref={this.generateStudyRefId("3.2.1", "")}
-                                currentCriterionRefId={this.generateStudyRefId("3.2.1", "")}
-                                {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
-                            <EditableSubComponentRow
-                                componentText="Do at least two evaluations indicate statistically significant positive effects with no evaluation indicating statistically significant negative effects?"
-                                showBeneficialText="true"
-                                showNaButton="false"
-                                ref={this.generateStudyRefId("3.2.2", "_beneficial")}
-                                currentCriterionRefId={this.generateStudyRefId("3.2.2", "_beneficial")}
-                                {...this.props}
-                                criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
-                        </EditableCriterionRowWrapper>
-
-                    </ol>
-                    <div className="m-form-field m-form-field__textarea">
-                        <label className="a-label a-label__heading" htmlFor="efficacy-crt-notes-optional-3">
-                            My notes
-                            &nbsp;<small className="a-label_helper">(optional)</small>
-                            <small className="a-label_helper a-label_helper__block">
-                                Anything you want to note about this criterion? Please do not share any Personally Identifiable Information (PII), including, but not limited to, your name, address, phone number, email address, Social Security number, etc.
-                            </small>
-                        </label>
-                        <textarea className="a-text-input a-text-input__full"
-                            rows="6"
-                            id="efficacy-crt-notes-optional-3"
-                            ref="efficacy-crt-notes-optional-3"
-                            defaultValue={this.props.criterionAnswers['efficacy-crt-notes-optional-3']}
-                            onBlur={e=>this.criterionAnswerChanged('efficacy-crt-notes-optional-3', e.target.value)} >
-                        </textarea>
-                    </div>
-                </div>
-                </CriterionLinkWrapper>
+                    <CriterionLinkWrapper
+                        criterionKey={EfficacyContent.criterion[1].questionRefId}
+                        criterionText={EfficacyContent.criterion[1].title}
+                        {...this.props} >
+                        <EfficacyCriterion criterion={EfficacyContent.criterion[1]} {...this.props} />
+                    </CriterionLinkWrapper>
                 </CriterionLinkWrapper>
                 {
                     this.summaryButtonIsEnabled() === false &&

@@ -1,9 +1,10 @@
 export const EfficacyContent = {
     criterion: [
         {
-            title: "Criterion 2: Saving and investing",
+            title: "Criterion 2: Scope of evidence",
             leadParagraph: "Is there enough evidence (when looking at all the strong studies as a whole) to support the research that this is an effective curriculum?",
             notesRefId: "efficacy-crt-notes-optional-2",
+            questionRefId: "efficacy-crt-question-2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -37,6 +38,7 @@ export const EfficacyContent = {
             title: "Criterion 3: Impact",
             leadParagraph: "Is there enough evidence to support conclusions of consistent, strong, positive impact?",
             notesRefId: "efficacy-crt-notes-optional-3",
+            questionRefId: "efficacy-crt-question-3",
             rows: [
                 {
                     indicatorNumber: "3.1",
