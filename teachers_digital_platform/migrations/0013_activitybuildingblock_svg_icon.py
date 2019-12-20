@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='activitybuildingblock',
             name='svg_icon',
-            field=models.CharField(blank=True, max_length=60, null=True, choices=[(b'settings', b'Executive function'), (b'split', b'Financial habits and norms'), (b'piggy-bank-check', b'Financial knowledge and decision making')]),
+            field=models.CharField(blank=True, max_length=60, null=True, choices=[('settings', 'Executive function'), ('split', 'Financial habits and norms'), ('piggy-bank-check', 'Financial knowledge and decision making')]),
         ),
     ]

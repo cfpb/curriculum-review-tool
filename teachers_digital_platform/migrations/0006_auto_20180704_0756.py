@@ -16,12 +16,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='activitypage',
             name='council_for_economic_education',
-            field=modelcluster.fields.ParentalManyToManyField(to='teachers_digital_platform.ActivityCouncilForEconEd', verbose_name=b'Council for Economic Education', blank=True),
+            field=modelcluster.fields.ParentalManyToManyField(to='teachers_digital_platform.ActivityCouncilForEconEd', verbose_name='Council for Economic Education', blank=True),
         ),
         migrations.AlterField(
             model_name='activitypage',
             name='jump_start_coalition',
-            field=modelcluster.fields.ParentalManyToManyField(to='teachers_digital_platform.ActivityJumpStartCoalition', verbose_name=b'Jump$tart Coalition', blank=True),
+            field=modelcluster.fields.ParentalManyToManyField(to='teachers_digital_platform.ActivityJumpStartCoalition', verbose_name='Jump$tart Coalition', blank=True),
         ),
         migrations.AlterField(
             model_name='activitypage',
