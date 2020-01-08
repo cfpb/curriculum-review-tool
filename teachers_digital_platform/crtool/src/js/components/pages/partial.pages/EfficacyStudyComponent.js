@@ -81,7 +81,7 @@ export default class EfficacyStudyComponent extends React.Component {
                 <ol className="m-list__unstyled">
                     { EfficacyStudyContent.criterion[0].rows.map(
                         (rowData, i) =>
-                        <li className="o-survey">
+                        <li key={i} className="o-survey">
                             <div className="o-survey_number">
                                 <h3>{rowData.indicatorNumber}</h3>
                             </div>
@@ -94,6 +94,7 @@ export default class EfficacyStudyComponent extends React.Component {
                                 {rowData.components.map(
                                     (componentData, j) =>
                                     <EditableSubComponentRow
+                                        key={j}
                                         componentText={componentData.componentText}
                                         showBeneficialText={componentData.showBeneficialText.toString()}
                                         showNaButton={componentData.showNaButton.toString()}

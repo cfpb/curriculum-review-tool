@@ -72,6 +72,7 @@ export default class EfficacyCriterionRow extends React.Component {
                     {this.props.row.components.map(
                         (component, i) =>
                         <EditableSubComponentRow
+                            key={i}
                             componentText={component.componentText}
                             showBeneficialText={component.showBeneficialText.toString()}
                             showNaButton={component.showNaButton.toString()}
