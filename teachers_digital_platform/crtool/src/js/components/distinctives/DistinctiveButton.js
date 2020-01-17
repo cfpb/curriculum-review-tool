@@ -7,7 +7,7 @@ export default class DistinctiveButton extends React.Component {
     handleOnClick() {
         this.props.distinctiveClicked(this.props.distinctive);
 
-        let distintiveName = this.props.distinctive;
+        let distinctiveName = this.props.distinctive;
         //HACK: need to scroll to top of screen after we navigate.
         setTimeout(function(){
             let main = document.getElementById("main");
@@ -15,11 +15,11 @@ export default class DistinctiveButton extends React.Component {
               main.scrollIntoView();
             }
 
-            let dimensionTitle = document.getElementById(distintiveName + "_dimensionTitle")
+            let dimensionTitle = document.getElementById(distinctiveName + "_dimensionTitle")
             if (dimensionTitle) {
                 dimensionTitle.focus();
             }
-        }, 100, distintiveName);
+        }, 100, distinctiveName);
     }
 
     render() {

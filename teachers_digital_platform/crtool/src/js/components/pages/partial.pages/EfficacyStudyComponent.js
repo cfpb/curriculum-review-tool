@@ -65,7 +65,7 @@ export default class EfficacyStudyComponent extends React.Component {
         studyRefIds["efficacy-crt-question-1.6#" + this.props.studyCount + "#"] = "";
         studyRefIds["efficacy-crt-question-#" + this.props.studyCount + "#study"] = "";
 
-        this.props.initializeStudyAnsers(this.props.studyCount, studyRefIds);;
+        this.props.initializeStudyAnswers(this.props.studyCount, studyRefIds);;
     }
 
     render() {

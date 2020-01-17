@@ -21,7 +21,7 @@ const efficacyProps = {
     criterionScores:(() => {}),
     setCriterionStatusToInStart:(() => {}),
     setCriterionTitleLinkClicked:(() => {}),
-    initializeStudyAnsers:(() => {}),
+    initializeStudyAnswers:(() => {}),
     renderFormLevelErrorMessage:(() => {}),
     showErrorsForCurrentPage:(() => {}),
 }

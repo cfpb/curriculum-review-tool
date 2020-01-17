@@ -44,7 +44,7 @@ const CriterionCalculationService = {
     },
 
     /*
-     * Method that determins if the current Criterion for the given dimension is complete
+     * Method that determines if the current Criterion for the given dimension is complete
      */
     calculateCriterionGroupCompletion(component, alteredCriterionObjects, changedDistinctive, changedQuestion) {
         let criterionKey = UtilityService.getCriterionQuestionKey(changedQuestion);

@@ -11,6 +11,10 @@ export default class ContentCriterion extends React.Component {
         this.props.criterionAnswerChanged(C.CONTENT_PAGE, key, checkedValue);
     }
 
+    componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
     initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);

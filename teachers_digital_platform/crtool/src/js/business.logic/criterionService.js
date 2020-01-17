@@ -35,7 +35,7 @@ const CriterionService = {
 
         Repository.setDistinctiveStatus(component, C.EFFICACY_PAGE, C.STATUS_IN_PROGRESS);
 
-        Repository.saveStudyAnsers(component, alteredStudyAnswers);
+        Repository.saveStudyAnswers(component, alteredStudyAnswers);
         EfficacyCalculationService.calculateStudyAnswerChanged(component, studyKey, alteredStudyAnswers, changedQuestion);
 
         //Analytics dimension is in progress
@@ -244,7 +244,7 @@ const CriterionService = {
         let existingStudyAnswers = component.state.studyAnswers;
 
         delete existingStudyAnswers[efficacyStudyNumber];
-        Repository.saveStudyAnsers(component, existingStudyAnswers);
+        Repository.saveStudyAnswers(component, existingStudyAnswers);
     },
 
     removeCriterionScoresForStudy(component, efficacyStudyNumber) {
@@ -270,7 +270,7 @@ const CriterionService = {
 
      /*
      * Need the ability to remove all all Criterion Scores
-     * related to Efficacy criteroin 2 or 3
+     * related to Efficacy criterion 2 or 3
      */
     removeCriterionCompletionStatusForCriterion2and3(component) {
         let statuses = component.state.criterionCompletionStatuses;
@@ -331,11 +331,11 @@ const CriterionService = {
         }
     },
 
-    initializeStudyAnsers(component, key, studyRefIds) {
+    initializeStudyAnswers(component, key, studyRefIds) {
         let existingStudies = component.state.studyAnswers;
         if (existingStudies[key] === undefined) {
             existingStudies[key] = studyRefIds;
-            Repository.saveStudyAnsers(component, existingStudies);
+            Repository.saveStudyAnswers(component, existingStudies);
         }
     },
 }

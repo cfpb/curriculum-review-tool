@@ -135,7 +135,7 @@ const Repository = {
         return JSON.parse(localStorage.getItem("dimensionOverallScores")) || {};
     },
 
-    getCriterionCompletionSatuses() {
+    getCriterionCompletionStatuses() {
         return JSON.parse(localStorage.getItem("criterionCompletionStatuses")) || {};
     },
 
@@ -168,7 +168,7 @@ const Repository = {
         component.setState({criterionScores: alteredCriterionScores});
     },
 
-    saveStudyAnsers(component, alteredStudies) {
+    saveStudyAnswers(component, alteredStudies) {
         localStorage.setItem("studyAnswers", JSON.stringify(alteredStudies));
         component.setState({studyAnswers: alteredStudies});
     },
@@ -233,9 +233,9 @@ const Repository = {
     /*
      * Set state values for all criterion completion statuses
      */
-    saveCriterionGroupCompletionStatuses(component, alteredCriterionCompletionStatues) {
-        localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredCriterionCompletionStatues));
-        component.setState({criterionCompletionStatuses: alteredCriterionCompletionStatues});
+    saveCriterionGroupCompletionStatuses(component, alteredCriterionCompletionStatuses) {
+        localStorage.setItem("criterionCompletionStatuses", JSON.stringify(alteredCriterionCompletionStatuses));
+        component.setState({criterionCompletionStatuses: alteredCriterionCompletionStatuses});
     },
 
     /*
