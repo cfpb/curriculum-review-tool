@@ -16,21 +16,21 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='activitypage',
             name='handout_file_3',
-            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name=b'Student file 3', blank=True, to='wagtaildocs.Document', null=True),
+            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Student file 3', blank=True, to='wagtaildocs.Document', null=True),
         ),
         migrations.AlterField(
             model_name='activitypage',
             name='activity_file',
-            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name=b'Teacher guide', to='wagtaildocs.Document', null=True),
+            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Teacher guide', to='wagtaildocs.Document', null=True),
         ),
         migrations.AlterField(
             model_name='activitypage',
             name='handout_file',
-            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name=b'Student file 1', blank=True, to='wagtaildocs.Document', null=True),
+            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Student file 1', blank=True, to='wagtaildocs.Document', null=True),
         ),
         migrations.AlterField(
             model_name='activitypage',
             name='handout_file_2',
-            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name=b'Student file 2', blank=True, to='wagtaildocs.Document', null=True),
+            field=models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Student file 2', blank=True, to='wagtaildocs.Document', null=True),
         ),
     ]
