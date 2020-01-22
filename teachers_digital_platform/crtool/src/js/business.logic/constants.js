@@ -125,6 +125,8 @@ const C = {
     LEARN_MORE_PDF_LINK: "https://files.consumerfinance.gov/f/documents/cfpb_youth-financialeducation-curriculum-review.pdf",
     LEARN_MORE_LINK_TEXT: "Learn more about how the review was developed",
 
+    APP_TITLE: "CFPB curriculum review tool",
+
     ANALYTICS_DEBUG_ON: false,
 };
 
