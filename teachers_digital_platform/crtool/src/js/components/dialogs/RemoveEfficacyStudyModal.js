@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 
-import C from "../../business.logic/constants";
 import Analytics from "../../business.logic/analytics";
 import SvgIcon from "../svgs/SvgIcon";
 
@@ -47,7 +46,7 @@ export default class RemoveEfficacyStudyModal extends React.Component {
         this.setState({modalIsOpen: true});
 
         //Analytics opened start over with a new review
-        Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: Remove efficacy study", "Remove study"));
+        Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: Remove efficacy study", "Remove"));
     }
 
     /* Modal specific close dialog */

@@ -3,7 +3,6 @@ import React from "react";
 import EfficacyStudyScoreComponent from "./EfficacyStudyScoreComponent";
 import EditableSubComponentRow from "./EditableSubComponentRow";
 import EfficacyStudyNameComponent from "../../common/EfficacyStudyNameComponent";
-import SvgIcon from "../../svgs/SvgIcon";
 import { EfficacyStudyContent } from "../../../content_data/efficacyStudyContent";
 import RemoveEfficacyStudyModal from "../../dialogs/RemoveEfficacyStudyModal";
 
