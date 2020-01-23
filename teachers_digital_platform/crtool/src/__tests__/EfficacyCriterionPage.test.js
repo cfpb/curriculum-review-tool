@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/business.logic/constants';
-import EfficacyCriterionPage from '../js/components/pages/EfficacyCriterionPage';
+import EfficacyCriterionPage from '../js/components/pages/efficacy/EfficacyCriterionPage';
 import renderer from 'react-test-renderer';
 
 let result;
@@ -21,7 +21,7 @@ const efficacyProps = {
     criterionScores:(() => {}),
     setCriterionStatusToInStart:(() => {}),
     setCriterionTitleLinkClicked:(() => {}),
-    initializeStudyAnsers:(() => {}),
+    initializeStudyAnswers:(() => {}),
     renderFormLevelErrorMessage:(() => {}),
     showErrorsForCurrentPage:(() => {}),
 }

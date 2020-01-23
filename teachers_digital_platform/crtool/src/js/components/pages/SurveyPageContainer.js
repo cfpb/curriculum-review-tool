@@ -7,12 +7,12 @@ import ContentHighCriterionPage from "./content/ContentHighCriterionPage";
 import ContentElementarySummaryPage from "./content/ContentElementarySummaryPage";
 import ContentHighSummaryPage from "./content/ContentHighSummaryPage";
 import ContentMiddleSummaryPage from "./content/ContentMiddleSummaryPage";
-import UtilityCriterionPage from "./UtilityCriterionPage";
-import UtilitySummaryPage from "./UtilitySummaryPage";
-import QualityCriterionPage from "./QualityCriterionPage";
-import QualitySummaryPage from "./QualitySummaryPage";
-import EfficacyCriterionPage from "./EfficacyCriterionPage";
-import EfficacySummaryPage from "./EfficacySummaryPage";
+import UtilityCriterionPage from "./utility/UtilityCriterionPage";
+import UtilitySummaryPage from "./utility/UtilitySummaryPage";
+import QualityCriterionPage from "./quality/QualityCriterionPage";
+import QualitySummaryPage from "./quality/QualitySummaryPage";
+import EfficacyCriterionPage from "./efficacy/EfficacyCriterionPage";
+import EfficacySummaryPage from "./efficacy/EfficacySummaryPage";
 import StartCriterionPage from "./StartCriterionPage";
 import FormLevelErrorMessageComponent from "../common/FormLevelErrrorMessageComponent";
 

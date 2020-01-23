@@ -1,38 +1,28 @@
 import React from "react";
 
 import C from "../../../business.logic/constants";
-import SvgIcon from "../../svgs/SvgIcon";
+import PrintIntroComponent from "../partial.pages/PrintIntroComponent";
 import CriterionScoreBlock from "../summary/CriterionScoreBlock";
 import DimensionScoreBlock from "../summary/DimensionScoreBlock";
 import DimensionInformation from "../../common/DimensionInformation";
-import SaveWorkInformation from "../../common/SaveWorkInformation";
+import ContentCriterionBlockSummary from "../summary/ContentCriterionBlockSummary";
 import { ContentMiddleCriterion } from "../../../content_data/contentMiddle";
 
-export default class ContentMiddleSummaryPage extends React.Component {
+export default class ContentPrintMiddlePage extends React.Component {
+    componentDidMount() {
+        this.props.resetPrintButtonState(C.CONTENT_PAGE);
+    }
+
     render() {
         return (
             <React.Fragment>
-                <hr className="hr
-                                u-mb45
-                                u-mt30" />
-                <h1 tabIndex="0" id={this.props.currentPage + "_dimensionTitle"}>
-                    <SvgIcon
-                        icon="settings-round"
-                        isLarge="true"
-                        hasSpaceAfter="true" />
-                    Content summary
-                </h1>
-                <p className="lead-paragraph">
-                    {C.CONTENT_SUMMARY_LEAD_TEXT}
-                </p>
-                <p>
-                    {C.CONTENT_SUMMARY_SECOND_PARAGRAPH}
-                </p>
-                <SaveWorkInformation {...this.props} />
-                <button className="a-btn" data-gtm_ignore="true" onClick={(e) => {this.props.printButtonClicked(C.CONTENT_PAGE, true); e.preventDefault();}}>
-                    {C.CONTENT_PRINT_SUMMARY}
-                </button>
-                <DimensionInformation dimensionName={C.CONTENT_PAGE} {...this.props} reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
+                {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
+
+                <DimensionInformation
+                    dimensionName={C.CONTENT_PAGE}
+                    dimensionSummary={C.CONTENT_SUMMARY_TEXT}
+                    {...this.props}
+                    reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
                 { ContentMiddleCriterion.criterion.map((criterionData, i) =>
                     <CriterionScoreBlock
@@ -47,11 +37,12 @@ export default class ContentMiddleSummaryPage extends React.Component {
                         criterionExceedsText={criterionData.criterionExceedsText}
                         criterionMeetsText={criterionData.criterionMeetsText}
                         criterionDoesNotMeetText={criterionData.criterionDoesNotMeetText}
-                        essentialAnswerTotalText={C.CONTENT_ESSENTIAL_ANSWER_TOTAL_TEXT}
                         {...this.props} />
                 )}
 
-                <hr className="hr u-mb45 u-mt30" />
+                <hr className="hr
+                                u-mb30
+                                u-mt30" />
 
                 <DimensionScoreBlock
                     dimensionPage={C.CONTENT_PAGE}
@@ -62,6 +53,8 @@ export default class ContentMiddleSummaryPage extends React.Component {
                     moderateText={C.CONTENT_MODERATE_TEXT}
                     limitedText={C.CONTENT_LIMITED_TEXT}
                     {...this.props} />
+
+                <ContentCriterionBlockSummary {...this.props} />
             </React.Fragment>
         );
     }

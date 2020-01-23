@@ -1,9 +1,18 @@
 export const ContentMiddleCriterion = {
     criterion: [
         {
+            criterionNumber: "1",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for earning, income, and careers.",
+            criterionExceedsText: "All 3 components were addressed",
+            criterionMeetsText: "2 components were addressed",
+            criterionDoesNotMeetText: "Less than 2 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 1: Earning, income, and careers",
-            leadParagraph: "Does the curriculum address grade-level appropriate topics for saving and investing?",
+            leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-middle-crt-notes-optional-1",
+            questionRefId: "content-middle-crt-question-1",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",
@@ -31,16 +40,25 @@ export const ContentMiddleCriterion = {
                             showNaButton: false,
                             showBeneficialText: false,
                             criterionRefId: "content-middle-crt-question-1.2.2",
-                            componentText: "Changes in the labor market or economic conditions can causes changes in worker’s income or unemployment.",
+                            componentText: "Changes in the labor market or economic conditions can cause changes in worker’s income or unemployment.",
                         },
                     ]
                 },
             ]
         },
         {
-            title: "Criterion 2: Saving and Investing",
+            criterionNumber: "2",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for saving and investing.",
+            criterionExceedsText: "7 or more components were addressed",
+            criterionMeetsText: "5 or 6 components were addressed",
+            criterionDoesNotMeetText: "Less than 5 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
+            title: "Criterion 2: Saving and investing",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for saving and investing?",
             notesRefId: "content-middle-crt-notes-optional-2",
+            questionRefId: "content-middle-crt-question-2",
+            divId: "criterion_2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -117,9 +135,18 @@ export const ContentMiddleCriterion = {
             ]
         },
         {
+            criterionNumber: "3",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for spending.",
+            criterionExceedsText: "All 5 components were addressed",
+            criterionMeetsText: "4 components were addressed",
+            criterionDoesNotMeetText: "Less than 4 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 3: Spending",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for spending?",
             notesRefId: "content-middle-crt-notes-optional-3",
+            questionRefId: "content-middle-crt-question-3",
+            divId: "criterion_3",
             rows: [
                 {
                     indicatorNumber: "3.1",
@@ -166,9 +193,18 @@ export const ContentMiddleCriterion = {
             ]
         },
         {
+            criterionNumber: "4",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for borrowing and credit.",
+            criterionExceedsText: "6 or more components were addressed",
+            criterionMeetsText: "5 components were addressed",
+            criterionDoesNotMeetText: "Less than 5 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 4: Borrowing and credit",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for borrowing and credit?",
             notesRefId: "content-middle-crt-notes-optional-4",
+            questionRefId: "content-middle-crt-question-4",
+            divId: "criterion_4",
             rows: [
                 {
                     indicatorNumber: "4.1",
@@ -233,9 +269,18 @@ export const ContentMiddleCriterion = {
             ]
         },
         {
+            criterionNumber: "5",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance.",
+            criterionExceedsText: "All 4 components were addressed",
+            criterionMeetsText: "3 components were addressed",
+            criterionDoesNotMeetText: "Less than 3 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 5: Managing financial risk",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?",
             notesRefId: "content-middle-crt-notes-optional-5",
+            questionRefId: "content-middle-crt-question-5",
+            divId: "criterion_5",
             rows: [
                 {
                     indicatorNumber: "5.1",
@@ -274,7 +319,7 @@ export const ContentMiddleCriterion = {
                         {
                             showNaButton: false,
                             showBeneficialText: false,
-                            criterionRefId: "content-middle-crt-question-1.3",
+                            criterionRefId: "content-middle-crt-question-5.3",
                             componentText: "Insurance premiums might vary based on the level of protection, insurer’s assessment of individual risk, deductible, and copayment.",
                         },
                     ]
@@ -282,9 +327,18 @@ export const ContentMiddleCriterion = {
             ]
         },
         {
+            criterionNumber: "6",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions.",
+            criterionExceedsText: "1 component was addressed",
+            criterionDoesNotMeetText: "0 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
+            hideMeets: "true",
             title: "Criterion 6: Financial responsibility and money management",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?",
             notesRefId: "content-middle-crt-notes-optional-6",
+            questionRefId: "content-middle-crt-question-6",
+            divId: "criterion_6",
             rows: [
                 {
                     indicatorNumber: "6.1",

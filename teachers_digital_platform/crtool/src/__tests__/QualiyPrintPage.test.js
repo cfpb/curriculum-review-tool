@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/business.logic/constants';
-import QualityPrintPage from '../js/components/pages/QualityPrintPage';
+import QualityPrintPage from '../js/components/pages/quality/QualityPrintPage';
 import renderer from 'react-test-renderer';
 
 let result;

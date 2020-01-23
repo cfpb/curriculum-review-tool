@@ -1,15 +1,15 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
-import QualityPrintPage from "./QualityPrintPage";
-import UtilityPrintPage from "./UtilityPrintPage";
-import EfficacyPrintPage from "./EfficacyPrintPage";
+import QualityPrintPage from "./quality/QualityPrintPage";
+import UtilityPrintPage from "./utility/UtilityPrintPage";
+import EfficacyPrintPage from "./efficacy/EfficacyPrintPage";
 import FinalSummaryPage from "../pages/FinalSummaryPage";
 
 
-import ContentPrintElemenataryPage from "./ContentPrintElementaryPage";
-import ContentPrintMiddlePage from "./ContentPrintMiddlePage";
-import ContentPrintHighPage from "./ContentPrintHighPage";
+import ContentPrintElemenataryPage from "./content/ContentPrintElementaryPage";
+import ContentPrintMiddlePage from "./content/ContentPrintMiddlePage";
+import ContentPrintHighPage from "./content/ContentPrintHighPage";
 
 export default class PrintAndSummaryPages extends React.Component {
 

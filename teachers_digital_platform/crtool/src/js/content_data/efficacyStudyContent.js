@@ -5,6 +5,7 @@ export const EfficacyStudyContent = {
             leadParagraph: "Is the study strong? Only strong studies (those that meet rigorous standards) can be used to determine the efficacy of a curriculum. The inclusion criteria will help you determine whether or not a study meets these standards of a strong study.",
             notesRefId: "efficacy-crt-question-1#_study_#_notes_optional",
             studyNameRefId: "efficacy-crt-question-#_study_#study",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",

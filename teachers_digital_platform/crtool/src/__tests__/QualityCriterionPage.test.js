@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import C from '../js/business.logic/constants';
-import QualityCriterionPage from '../js/components/pages/QualityCriterionPage';
+import QualityCriterionPage from '../js/components/pages/quality/QualityCriterionPage';
 import renderer from 'react-test-renderer';
 
 let result;

@@ -1,9 +1,18 @@
 export const ContentHighCriterion = {
     criterion: [
         {
+            criterionNumber: "1",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for earning, income, and careers.",
+            criterionExceedsText: "5 or more components were addressed",
+            criterionMeetsText: "4 components were addressed",
+            criterionDoesNotMeetText: "Less than 4 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 1: Earning, income, and careers",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for earning, income, and careers?",
             notesRefId: "content-high-crt-notes-optional-1",
+            questionRefId: "content-high-crt-question-1",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",
@@ -56,9 +65,18 @@ export const ContentHighCriterion = {
             ]
         },
         {
+            criterionNumber: "2",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for saving and investing.",
+            criterionExceedsText: "8 or more components were addressed",
+            criterionMeetsText: "6 or 7 components were addressed",
+            criterionDoesNotMeetText: "Less than 6 components were addressed", 
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 2: Saving and investing",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for saving and investing?",
             notesRefId: "content-high-crt-notes-optional-2",
+            questionRefId: "content-high-crt-question-2",
+            divId: "criterion_2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -141,9 +159,18 @@ export const ContentHighCriterion = {
             ]
         },
         {
-            title: "Criterion 3: Spendings",
+            criterionNumber: "3",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for spending.",
+            criterionExceedsText: "All 4 components were addressed",
+            criterionMeetsText: "3 components were addressed",
+            criterionDoesNotMeetText: "Less than 3 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
+            title: "Criterion 3: Spending",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for spending?",
             notesRefId: "content-high-crt-notes-optional-3",
+            questionRefId: "content-high-crt-question-3",
+            divId: "criterion_3",
             rows: [
                 {
                     indicatorNumber: "3.1",
@@ -184,9 +211,18 @@ export const ContentHighCriterion = {
             ]
         },
         {
+            criterionNumber: "4",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for borrowing and credit.",
+            criterionExceedsText: "9 or more components were addressed",
+            criterionMeetsText: "7 or 8 components were addressed",
+            criterionDoesNotMeetText: "Less than 7 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 4: Borrowing and credit",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for borrowing and credit?",
             notesRefId: "content-high-crt-notes-optional-4",
+            questionRefId: "content-high-crt-question-4",
+            divId: "criterion_4",
             rows: [
                 {
                     indicatorNumber: "4.1",
@@ -220,13 +256,13 @@ export const ContentHighCriterion = {
                             showNaButton: false,
                             showBeneficialText: false,
                             criterionRefId: "content-high-crt-question-4.2.3",
-                            componentText: "Laws in place to protect consumers who use credit include requirements to provide full disclosure of credit terms, such the APR and fees, as well as protection against discrimination and limits on abusive marketing or collection practices.",
+                            componentText: "Laws in place to protect consumers who use credit include requirements to provide full disclosure of credit terms, such as the APR and fees, as well as protection against discrimination and limits on abusive marketing or collection practices.",
                         },
                         {
                             showNaButton: false,
                             showBeneficialText: false,
                             criterionRefId: "content-high-crt-question-4.2.4",
-                            componentText: "There are important considerations in taking financial aid for education, including underlying mechanics such as grants versus loans, amount of loans necessary to complete one’s education, loan forgiveness, and repayment schedules, and expected future income.",
+                            componentText: "There are important considerations in taking financial aid for education, including underlying mechanics such as grants versus loans, amount of loans necessary to complete one’s education, loan forgiveness repayment schedules, and expected future income.",
                         },
                     ]
                 },
@@ -269,9 +305,18 @@ export const ContentHighCriterion = {
             ]
         },
         {
+            criterionNumber: "5",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for managing potential financial risk, including insurance.",
+            criterionExceedsText: "6 or more components were addressed",
+            criterionMeetsText: "5 components were addressed",
+            criterionDoesNotMeetText: "Less than 5 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 5: Managing financial risk",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for managing potential financial risk, including insurance?",
             notesRefId: "content-high-crt-notes-optional-5",
+            questionRefId: "content-high-crt-question-5",
+            divId: "criterion_5",
             rows: [
                 {
                     indicatorNumber: "5.1",
@@ -336,9 +381,18 @@ export const ContentHighCriterion = {
             ]
         },
         {
+            criterionNumber: "6",
+            criterionLead: "The curriculum addresses grade-level appropriate topics for financial responsibility, money management, and financial decisions.",
+            criterionExceedsText: "All 3 components were addressed",
+            criterionMeetsText: "2 components were addressed",
+            criterionDoesNotMeetText: "Less than 2 components were addressed",
+            showExceeds: true,
+            showBeneficial: false,
             title: "Criterion 6: Financial responsibility and money management",
             leadParagraph: "Does the curriculum address grade-level appropriate topics for financial responsibility, money management, and financial decisions?",
             notesRefId: "content-high-crt-notes-optional-6",
+            questionRefId: "content-high-crt-question-6",
+            divId: "criterion_6",
             rows: [
                 {
                     indicatorNumber: "6.1",

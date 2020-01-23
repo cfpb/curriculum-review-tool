@@ -55,7 +55,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             numberFinalSummaryViews: Repository.getNumberFinalSummaryViews(),
             criterionEfficacyStudies: Repository.getCriterionEfficacyStudies(),
             distinctiveCompletedDate: Repository.getDistinctiveCompletedDate(),
-            criterionCompletionStatuses: Repository.getCriterionCompletionSatuses(),
+            criterionCompletionStatuses: Repository.getCriterionCompletionStatuses(),
             finalSummaryShowEntireReview: Repository.getFinalSummaryShowEntireReview(),
         };
     }
@@ -270,8 +270,8 @@ export default class CustomerReviewToolComponent extends React.Component {
         }, 100);
     }
 
-    initializeStudyAnsers(key, study) {
-        CriterionService.initializeStudyAnsers(this, key, study);
+    initializeStudyAnswers(key, study) {
+        CriterionService.initializeStudyAnswers(this, key, study);
     }
 
     initializeAnswerObjects(fields) {
@@ -447,7 +447,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             studyAnswerChanged:this.studyAnswerChanged.bind(this),
             criterionAnswerChanged:this.criterionAnswerChanged.bind(this),
             clearLocalStorage:this.clearLocalStorage.bind(this),
-            initializeStudyAnsers:this.initializeStudyAnsers.bind(this),
+            initializeStudyAnswers:this.initializeStudyAnswers.bind(this),
             initializeAnswerObjects:this.initializeAnswerObjects.bind(this),
             initializeEfficacyStudies:this.initializeEfficacyStudies.bind(this),
             handleFinishAddingEfficacyStudies:this.handleFinishAddingEfficacyStudies.bind(this),

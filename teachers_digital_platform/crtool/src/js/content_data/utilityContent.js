@@ -1,9 +1,18 @@
 export const UtilityContent = {
     criterion: [
         {
+            criterionNumber: "1",
+            criterionName: "Criterion 1: Materials to support cognitive development",
+            criterionLead: "Materials provide instructional suggestions designed to support the cognitive development of students’ financial capability.",
+            criterionMeetsText: "All essential components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: false,
+            showBeneficial: false,
             title: "Criterion 1: Materials to support cognitive development",
             leadParagraph: "Do the materials provide instructional suggestions designed to support the cognitive development of students’ financial capability?",
             notesRefId: "utility-crt-notes-optional-1",
+            questionRefId: "utility-crt-question-1",
+            divId: "criterion_1",
             rows: [
                 {
                     indicatorNumber: "1.1",
@@ -102,9 +111,19 @@ export const UtilityContent = {
             ]
         },
         {
+            criterionNumber: "2",
+            criterionName: "Criterion 2: Differentiated instruction for diverse populations",
+            criterionLead: "Materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities. Consider students’ race, ethnicity, gender, income, special education status, and English language proficiency.",
+            criterionExceedsText: "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
+            criterionMeetsText: "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: true,
+            showBeneficial: true,
             title: "Criterion 2: Differentiated instruction for diverse populations",
             leadParagraph: "Do materials support engagement among a diverse population of students by providing suggestions to differentiate instruction, exercises, and activities? Consider students’ socioeconomic circumstances, special education needs, and English language proficiency.",
             notesRefId: "utility-crt-notes-optional-2",
+            questionRefId: "utility-crt-question-2",
+            divId: "criterion_2",
             rows: [
                 {
                     indicatorNumber: "2.1",
@@ -263,8 +282,8 @@ export const UtilityContent = {
                     components: [
                         {
                             showNaButton: true,
-                            showBeneficialText: false,
-                            criterionRefId: "utility-crt-question-2.4",
+                            showBeneficialText: true,
+                            criterionRefId: "utility-crt-question-2.4_beneficial",
                             hasInlineHtml: false,
                             componentText: "If technology is used, does the use of technology add value? (e.g., online assessments that direct students to questions at the correct level)",
                         },
@@ -286,9 +305,19 @@ export const UtilityContent = {
             ]
         },
         {
+            criterionNumber: "3",
+            criterionName: "Criterion 3: Quality materials for lesson planning",
+            criterionLead: "Materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects.",
+            criterionExceedsText: "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
+            criterionMeetsText: "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: true,
+            showBeneficial: true,
             title: "Criterion 3: Quality materials for lesson planning",
             leadParagraph: "Do materials allow teachers to easily plan and deliver financial education instruction to students and integrate lessons into other subjects?",
             notesRefId: "utility-crt-notes-optional-3",
+            questionRefId: "utility-crt-question-3",
+            divId: "criterion_3",
             rows: [
                 {
                     indicatorNumber: "3.1",
@@ -306,7 +335,8 @@ export const UtilityContent = {
                             showBeneficialText: false,
                             criterionRefId: "utility-crt-question-3.1.2",
                             hasInlineHtml: true,
-                            componentText: "<p>Does each lesson include the following:</p><ul><li>Objective</li><li>Description of required prior knowledge (if applicable)</li><li>List of necessary materials</li><li>Lesson plans/teacher notes/recommendations for instruction</li><li>Multiple student activities</li><li>Assessments and/or performance tasks</li><li>Statement of time anticipated for the lesson</li></ul>",
+                            componentText: "Does each lesson include the following:",
+                            componentTextList: "<li>Objective</li><li>Description of required prior knowledge (if applicable)</li><li>List of necessary materials</li><li>Lesson plans/teacher notes/recommendations for instruction</li><li>Multiple student activities</li><li>Assessments and/or performance tasks</li><li>Statement of time anticipated for the lesson</li>",
                         },
                         {
                             showNaButton: false,
@@ -414,9 +444,19 @@ export const UtilityContent = {
             ]
         },
         {
+            criterionNumber: "4",
+            criterionName: "Criterion 4: Materials to assess mastery",
+            criterionLead: "Materials include a range of formative and summative assessments to support teaching and help teachers assess mastery.",
+            criterionExceedsText: "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
+            criterionMeetsText: "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: true,
+            showBeneficial: true,
             title: "Criterion 4: Materials to assess mastery",
             leadParagraph: "Do materials include a range of formative and summative assessments to support teaching and help teachers assess mastery?",
             notesRefId: "utility-crt-notes-optional-4",
+            questionRefId: "utility-crt-question-4",
+            divId: "criterion_4",
             rows: [
                 {
                     indicatorNumber: "4.1",
@@ -500,7 +540,7 @@ export const UtilityContent = {
                 },
                 {
                     indicatorNumber: "4.5",
-                    indicatorText: "Includes a variety of assessment tools",
+                    indicatorText: "Assessment methods are accessible, unbiased, and valid.",
                     components: [
                         {
                             showNaButton: false,
@@ -541,9 +581,19 @@ export const UtilityContent = {
             ]
         },
         {
+            criterionNumber: "5",
+            criterionName: "Criterion 5: Instructional supports",
+            criterionLead: "Curriculum materials are instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students.",
+            criterionExceedsText: "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
+            criterionMeetsText: "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
+            criterionDoesNotMeetText: "One or more essential components scored “no”",
+            showExceeds: true,
+            showBeneficial: true,
             title: "Criterion 5: Instructional supports",
             leadParagraph: "Are curriculum materials instructional for teachers, in terms of helping them provide clear and accurate financial education instruction to students?",
             notesRefId: "utility-crt-notes-optional-5",
+            questionRefId: "utility-crt-question-5",
+            divId: "criterion_5",
             rows: [
                 {
                     indicatorNumber: "5.1",
