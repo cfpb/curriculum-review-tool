@@ -5,6 +5,7 @@ import EditableSubComponentRow from "./EditableSubComponentRow";
 import EfficacyStudyNameComponent from "../../common/EfficacyStudyNameComponent";
 import SvgIcon from "../../svgs/SvgIcon";
 import { EfficacyStudyContent } from "../../../content_data/efficacyStudyContent";
+import RemoveEfficacyStudyModal from "../../dialogs/RemoveEfficacyStudyModal";
 
 export default class EfficacyStudyComponent extends React.Component {
 
@@ -12,15 +13,7 @@ export default class EfficacyStudyComponent extends React.Component {
         if (this.props.showRemoveButton) {
             return (
                 <div className="l-survey-top">
-                    <button className="a-btn a-btn__link a-btn__no-line"
-                        data-gtm_ignore="true"
-                        onClick={() => this.removeEfficacyStudy(this.props.studyCount)} >
-                        Remove
-                        <SvgIcon
-                            icon="x-round"
-                            islarge="true"
-                            hasSpaceBefore="true" />
-                    </button>
+                    <RemoveEfficacyStudyModal {...this.props} />
                 </div>
             );
         }
