@@ -15,6 +15,10 @@ export default class EfficacyCriterionPage extends React.Component {
         this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
     }
 
+    componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
     initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);
@@ -175,7 +179,7 @@ export default class EfficacyCriterionPage extends React.Component {
                         <EfficacyStudyComponent key={i}
                             {...this.props}
                             studyCount={i}
-                            showRemoveButton={i>0}
+                            showRemoveButton={this.getEfficacyStudyItems().length > 1}
                             criterionAnswerChanged={this.criterionAnswerChanged.bind(this)} />
                     )}
 
