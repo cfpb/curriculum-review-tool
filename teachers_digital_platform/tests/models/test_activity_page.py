@@ -1,6 +1,9 @@
 from django.test import TestCase
 
-from wagtail.wagtaildocs.models import Document
+try:
+    from wagtail.documents.models import Document
+except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+    from wagtail.wagtaildocs.models import Document
 
 from model_mommy import mommy
 from teachers_digital_platform.models import (

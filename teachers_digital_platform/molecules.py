@@ -1,6 +1,9 @@
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailimages.blocks import ImageChooserBlock
-
+try:
+    from wagtail.core import blocks
+    from wagtail.images.blocks import ImageChooserBlock
+except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+    from wagtail.wagtailcore import blocks
+    from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 class TdpSearchHeroImage(blocks.StructBlock):
     image = ImageChooserBlock(

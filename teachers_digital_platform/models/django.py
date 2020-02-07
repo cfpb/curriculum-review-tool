@@ -3,7 +3,10 @@ from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+try:
+    from wagtail.admin.edit_handlers import FieldPanel
+except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+    from wagtail.wagtailadmin.edit_handlers import FieldPanel
 
 from mptt.models import MPTTModel, TreeForeignKey
 

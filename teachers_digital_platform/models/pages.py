@@ -7,13 +7,24 @@ from django.db import models
 from django.utils import timezone
 from haystack.query import SearchQuerySet
 
-from wagtail.wagtailadmin.edit_handlers import (
-    FieldPanel, MultiFieldPanel, ObjectList, StreamFieldPanel, TabbedInterface
-)
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
-from wagtail.wagtailsearch import index
+try:
+    from wagtail.admin.edit_handlers import (
+        FieldPanel, MultiFieldPanel, ObjectList,
+        StreamFieldPanel, TabbedInterface
+    )
+    from wagtail.core.fields import RichTextField, StreamField
+    from wagtail.core.models import Page
+    from wagtail.documents.edit_handlers import DocumentChooserPanel
+    from wagtail.search import index
+except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+    from wagtail.wagtailadmin.edit_handlers import (
+        FieldPanel, MultiFieldPanel, ObjectList,
+        StreamFieldPanel, TabbedInterface
+    )
+    from wagtail.wagtailcore.fields import RichTextField, StreamField
+    from wagtail.wagtailcore.models import Page
+    from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
+    from wagtail.wagtailsearch import index
 
 from modelcluster.fields import ParentalManyToManyField
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
