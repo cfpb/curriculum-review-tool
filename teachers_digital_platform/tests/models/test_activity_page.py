@@ -1,10 +1,5 @@
 from django.test import TestCase
 
-try:
-    from wagtail.documents.models import Document
-except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
-    from wagtail.wagtaildocs.models import Document
-
 from model_mommy import mommy
 from teachers_digital_platform.models import (
     ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
@@ -16,6 +11,12 @@ from teachers_digital_platform.models import (
 
 from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page, save_new_page
+
+
+try:
+    from wagtail.documents.models import Document
+except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+    from wagtail.wagtaildocs.models import Document
 
 
 class TestActivityPage(TestCase):

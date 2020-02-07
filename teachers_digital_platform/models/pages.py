@@ -7,6 +7,21 @@ from django.db import models
 from django.utils import timezone
 from haystack.query import SearchQuerySet
 
+from modelcluster.fields import ParentalManyToManyField
+from teachers_digital_platform.fields import ParentalTreeManyToManyField
+from teachers_digital_platform.models import (
+    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
+    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
+    ActivityJumpStartCoalition, ActivitySchoolSubject,
+    ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
+    ActivityType
+)
+from teachers_digital_platform.molecules import TdpSearchHeroImage
+
+from v1.atomic_elements import molecules
+from v1.models import CFGOVPage, CFGOVPageManager, HomePage
+
+
 try:
     from wagtail.admin.edit_handlers import (
         FieldPanel, MultiFieldPanel, ObjectList,
@@ -25,20 +40,6 @@ except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
     from wagtail.wagtailcore.models import Page
     from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
     from wagtail.wagtailsearch import index
-
-from modelcluster.fields import ParentalManyToManyField
-from teachers_digital_platform.fields import ParentalTreeManyToManyField
-from teachers_digital_platform.models import (
-    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
-    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityJumpStartCoalition, ActivitySchoolSubject,
-    ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
-    ActivityType
-)
-from teachers_digital_platform.molecules import TdpSearchHeroImage
-
-from v1.atomic_elements import molecules
-from v1.models import CFGOVPage, CFGOVPageManager, HomePage
 
 
 class ActivityIndexPage(CFGOVPage):

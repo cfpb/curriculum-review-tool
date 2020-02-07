@@ -1,14 +1,6 @@
 from django.test import RequestFactory, TestCase
 
 from wagtail.tests.utils import WagtailPageTests
-try:
-    from wagtail.core.blocks import StreamValue
-    from wagtail.core.models import Site
-    from wagtail.documents.models import Document
-except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
-    from wagtail.wagtailcore.blocks import StreamValue
-    from wagtail.wagtailcore.models import Site
-    from wagtail.wagtaildocs.models import Document
 
 import mock
 from model_mommy import mommy
@@ -23,6 +15,16 @@ from teachers_digital_platform.models import (
 
 from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page
+
+
+try:
+    from wagtail.core.blocks import StreamValue
+    from wagtail.core.models import Site
+    from wagtail.documents.models import Document
+except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+    from wagtail.wagtailcore.blocks import StreamValue
+    from wagtail.wagtailcore.models import Site
+    from wagtail.wagtaildocs.models import Document
 
 
 class ActivityIndexPageTests(WagtailPageTests):
