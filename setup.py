@@ -8,6 +8,7 @@ except (IOError, ImportError):
 
 
 install_requires = [
+    'wagtail>=1.13,<2.9',
     'Django>=1.11,<1.12',
     'django-haystack',
     'django-mptt==0.9.0',
@@ -50,11 +51,16 @@ setup(
     classifiers=[
         'Framework :: Django',
         'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
+        'Framework :: Wagtail',
+        'Framework :: Wagtail :: 1',
+        'Framework :: Wagtail :: 2',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'License :: Public Domain',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
     ],
     setup_requires=['cfgov-setup==1.2', 'setuptools-git-version==1.0.3'],
     frontend_build_script='setup.sh'
