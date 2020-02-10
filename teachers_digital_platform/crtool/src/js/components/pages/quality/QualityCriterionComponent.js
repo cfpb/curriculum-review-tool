@@ -10,6 +10,10 @@ export default class QualityCriterionComponent extends React.Component {
         this.props.criterionAnswerChanged(C.QUALITY_PAGE, key, checkedValue);
     }
 
+    componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
     initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);

@@ -10,6 +10,10 @@ export default class UtilityCriterionComponent extends React.Component {
         this.props.criterionAnswerChanged(C.UTILITY_PAGE, key, checkedValue);
     }
 
+    componentDidMount() {
+        this.initializeAnswerValuesByRefs();
+    }
+
     initializeAnswerValuesByRefs() {
         var myObjects = this.refs;
         this.props.initializeAnswerObjects(myObjects);

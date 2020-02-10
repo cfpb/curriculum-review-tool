@@ -8,7 +8,11 @@ export default class EfficacyCriterion extends React.Component {
 
     criterionAnswerChanged(key, checkedValue) {
         this.initializeAnswerValuesByRefs();
-        this.props.criterionAnswerChanged(C.QUALITY_PAGE, key, checkedValue);
+        this.props.criterionAnswerChanged(C.EFFICACY_PAGE, key, checkedValue);
+    }
+
+    componentDidMount() {
+        this.initializeAnswerValuesByRefs();
     }
 
     initializeAnswerValuesByRefs() {
