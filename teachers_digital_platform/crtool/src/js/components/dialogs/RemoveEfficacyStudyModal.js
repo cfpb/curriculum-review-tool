@@ -101,15 +101,15 @@ export default class RemoveEfficacyStudyModal extends React.Component {
                                         isLarge="true"
                                         hasSpaceBefore="true" />
                                 </button>
-                                <h2 id="modal-start-over_title" className="h3">Remove this study</h2>
+                                <h2 id="modal-start-over_title" className="h3">Remove this study?</h2>
                                 <div id="modal-start-over_desc">
-                                    <p>Are you sure you want to remove this study?</p>
+                                    <p>This will permanently erase all information related to this study.</p>
                                 </div>
                             </div>
                             <div className="o-modal_footer">
                                 <div className="m-btn-group m-btn-group__wide">
-                                    <button className="a-btn" onClick={(e) => {this.props.removeEfficacyStudy(this.props.studyCount);}}>Yes</button>
-                                    <button className="a-btn a-btn__link" onClick={(e) => {this.closeRemoveEfficacyStudyModalDialog("No, keep this study"); e.preventDefault();}}>No, keep this study</button>
+                                    <button className="a-btn" onClick={(e) => {this.props.removeEfficacyStudy(this.props.studyCount);}}>Yes, remove it</button>
+                                    <button className="a-btn a-btn__link" onClick={(e) => {this.closeRemoveEfficacyStudyModalDialog("No, keep it"); e.preventDefault();}}>No, keep it</button>
                                 </div>
                             </div>
                         </form>
