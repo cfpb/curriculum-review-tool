@@ -1,5 +1,6 @@
 from django.test import RequestFactory, TestCase
 
+import wagtail
 from wagtail.tests.utils import WagtailPageTests
 
 import mock
@@ -17,11 +18,11 @@ from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page
 
 
-try:
+if wagtail.VERSION >= (2, 0):
     from wagtail.core.blocks import StreamValue
     from wagtail.core.models import Site
     from wagtail.documents.models import Document
-except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+else:
     from wagtail.wagtailcore.blocks import StreamValue
     from wagtail.wagtailcore.models import Site
     from wagtail.wagtaildocs.models import Document

@@ -1,7 +1,10 @@
-try:
+import wagtail
+
+
+if wagtail.VERSION >= (2, 0):
     from wagtail.core import blocks
     from wagtail.images.blocks import ImageChooserBlock
-except ImportError:  # pragma: no cover; fallback for Wagtail < 2.0
+else:
     from wagtail.wagtailcore import blocks
     from wagtail.wagtailimages.blocks import ImageChooserBlock
 
