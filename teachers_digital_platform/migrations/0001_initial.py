@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import migrations, models
-import wagtail.wagtailcore.fields
+import wagtail
 import modelcluster.fields
 import django.db.models.deletion
 import django.utils.timezone
+
+
+if wagtail.VERSION >= (2, 0):
+    from wagtail.core import fields as core_fields
+else:
+    from wagtail.wagtailcore import fields as core_fields
 
 
 class Migration(migrations.Migration):
@@ -88,7 +92,7 @@ class Migration(migrations.Migration):
             name='ActivityIndexPage',
             fields=[
                 ('cfgovpage_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='v1.CFGOVPage')),
-                ('intro', wagtail.wagtailcore.fields.RichTextField(blank=True)),
+                ('intro', core_fields.RichTextField(blank=True)),
             ],
             options={
                 'abstract': False,
@@ -112,10 +116,10 @@ class Migration(migrations.Migration):
                 ('cfgovpage_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='v1.CFGOVPage')),
                 ('date', models.DateField(default=django.utils.timezone.now, verbose_name='Updated')),
                 ('summary', models.TextField(verbose_name='Summary')),
-                ('big_idea', wagtail.wagtailcore.fields.RichTextField(verbose_name='Big idea')),
-                ('essential_questions', wagtail.wagtailcore.fields.RichTextField(verbose_name='Essential questions')),
-                ('objectives', wagtail.wagtailcore.fields.RichTextField(verbose_name='Objectives')),
-                ('what_students_will_do', wagtail.wagtailcore.fields.RichTextField(verbose_name='What students will do')),
+                ('big_idea', core_fields.RichTextField(verbose_name='Big idea')),
+                ('essential_questions', core_fields.RichTextField(verbose_name='Essential questions')),
+                ('objectives', core_fields.RichTextField(verbose_name='Objectives')),
+                ('what_students_will_do', core_fields.RichTextField(verbose_name='What students will do')),
                 ('activity_duration', models.ForeignKey(to='teachers_digital_platform.ActivityDuration', on_delete=django.db.models.deletion.PROTECT)),
                 ('activity_file', models.ForeignKey(related_name='+', on_delete=django.db.models.deletion.SET_NULL, to='wagtaildocs.Document', null=True)),
             ],

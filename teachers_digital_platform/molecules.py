@@ -1,5 +1,9 @@
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailimages.blocks import ImageChooserBlock
+try:
+    from wagtail.wagtailcore import blocks
+    from wagtail.wagtailimages.blocks import ImageChooserBlock
+except ImportError:
+    from wagtail.core import blocks
+    from wagtail.images.blocks import ImageChooserBlock
 
 
 class TdpSearchHeroImage(blocks.StructBlock):

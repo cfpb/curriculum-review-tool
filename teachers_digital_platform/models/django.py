@@ -3,9 +3,13 @@ from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
-
 from mptt.models import MPTTModel, TreeForeignKey
+
+
+try:
+    from wagtail.wagtailadmin.edit_handlers import FieldPanel
+except ImportError:
+    from wagtail.admin.edit_handlers import FieldPanel
 
 
 class BaseActivityTaxonomy(models.Model):
