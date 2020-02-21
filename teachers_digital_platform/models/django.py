@@ -3,15 +3,13 @@ from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 
-import wagtail
-
 from mptt.models import MPTTModel, TreeForeignKey
 
 
-if wagtail.VERSION >= (2, 0):
-    from wagtail.admin.edit_handlers import FieldPanel
-else:
+try:
     from wagtail.wagtailadmin.edit_handlers import FieldPanel
+except ImportError:
+    from wagtail.admin.edit_handlers import FieldPanel
 
 
 class BaseActivityTaxonomy(models.Model):

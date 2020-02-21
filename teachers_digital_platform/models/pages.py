@@ -7,8 +7,6 @@ from django.db import models
 from django.utils import timezone
 from haystack.query import SearchQuerySet
 
-import wagtail
-
 from modelcluster.fields import ParentalManyToManyField
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 from teachers_digital_platform.models import (
@@ -24,16 +22,7 @@ from v1.atomic_elements import molecules
 from v1.models import CFGOVPage, CFGOVPageManager, HomePage
 
 
-if wagtail.VERSION >= (2, 0):
-    from wagtail.admin.edit_handlers import (
-        FieldPanel, MultiFieldPanel, ObjectList,
-        StreamFieldPanel, TabbedInterface
-    )
-    from wagtail.core.fields import RichTextField, StreamField
-    from wagtail.core.models import Page
-    from wagtail.documents.edit_handlers import DocumentChooserPanel
-    from wagtail.search import index
-else:
+try:
     from wagtail.wagtailadmin.edit_handlers import (
         FieldPanel, MultiFieldPanel, ObjectList,
         StreamFieldPanel, TabbedInterface
@@ -42,6 +31,15 @@ else:
     from wagtail.wagtailcore.models import Page
     from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
     from wagtail.wagtailsearch import index
+except ImportError:
+    from wagtail.admin.edit_handlers import (
+        FieldPanel, MultiFieldPanel, ObjectList,
+        StreamFieldPanel, TabbedInterface
+    )
+    from wagtail.core.fields import RichTextField, StreamField
+    from wagtail.core.models import Page
+    from wagtail.documents.edit_handlers import DocumentChooserPanel
+    from wagtail.search import index
 
 
 class ActivityIndexPage(CFGOVPage):

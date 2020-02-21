@@ -8,7 +8,7 @@ except (IOError, ImportError):
 
 
 install_requires = [
-    'wagtail>=1.13,<2.9',
+    'wagtail>=2.3,<2.4',
     'Django>=1.11,<1.12',
     'django-haystack',
     'django-mptt==0.9.0',
@@ -52,7 +52,6 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.0',
-        'Framework :: Django :: 2.1',
         'Framework :: Django :: 2.2',
         'Framework :: Wagtail',
         'Framework :: Wagtail :: 1',
