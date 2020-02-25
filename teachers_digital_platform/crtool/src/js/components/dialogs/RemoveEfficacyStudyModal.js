@@ -108,7 +108,7 @@ export default class RemoveEfficacyStudyModal extends React.Component {
                             </div>
                             <div className="o-modal_footer">
                                 <div className="m-btn-group m-btn-group__wide">
-                                    <button className="a-btn" onClick={(e) => {this.props.removeEfficacyStudy(this.props.studyCount);}}>Yes, remove it</button>
+                                    <button className="a-btn a-btn__warning" onClick={(e) => {this.props.removeEfficacyStudy(this.props.studyCount);}}>Yes, remove it</button>
                                     <button className="a-btn a-btn__link" onClick={(e) => {this.closeRemoveEfficacyStudyModalDialog("No, keep it"); e.preventDefault();}}>No, keep it</button>
                                 </div>
                             </div>
