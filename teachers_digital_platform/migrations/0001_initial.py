@@ -1,15 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.db import migrations, models
-import wagtail
+from wagtail.core import fields as core_fields
 import modelcluster.fields
 import django.db.models.deletion
 import django.utils.timezone
-
-
-if wagtail.VERSION >= (2, 0):
-    from wagtail.core import fields as core_fields
-else:
-    from wagtail.wagtailcore import fields as core_fields
 
 
 class Migration(migrations.Migration):
