@@ -4,7 +4,7 @@ omit =
     */admin/*
     */teachers_digital_platform/migrations/*
     */site-packages*
-    */python2.7/*
+    */python3.6/*
     */teachers_digital_platform/static/*
     */teachers_digital_platform/search_indexes*
 data_file = ../.coverage
