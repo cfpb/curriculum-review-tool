@@ -46,7 +46,7 @@ export default class RemoveEfficacyStudyModal extends React.Component {
         this.setState({modalIsOpen: true});
 
         //Analytics opened start over with a new review
-        Analytics.sendEvent(Analytics.getDataLayerOptions("link clicked: Remove efficacy study", "Remove"));
+        Analytics.sendEvent(Analytics.getDataLayerOptions("link click", "remove efficacy study"));
     }
 
     /* Modal specific close dialog */
@@ -56,7 +56,7 @@ export default class RemoveEfficacyStudyModal extends React.Component {
 
         //Analytics close start over with a new review
         if (linkText !== undefined) {
-            Analytics.sendEvent(Analytics.getDataLayerOptions("Remove efficacy study modal", linkText));
+            Analytics.sendEvent(Analytics.getDataLayerOptions("efficacy modal", linkText));
         }
     }
 
