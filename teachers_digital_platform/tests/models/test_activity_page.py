@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-import wagtail
+from wagtail.documents.models import Document
 
 from model_mommy import mommy
 from teachers_digital_platform.models import (
@@ -13,12 +13,6 @@ from teachers_digital_platform.models import (
 
 from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page, save_new_page
-
-
-if wagtail.VERSION >= (2, 0):
-    from wagtail.documents.models import Document
-else:
-    from wagtail.wagtaildocs.models import Document
 
 
 class TestActivityPage(TestCase):

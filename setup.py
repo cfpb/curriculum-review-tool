@@ -9,7 +9,7 @@ except (IOError, ImportError):
 
 install_requires = [
     'wagtail>=2.3,<2.4',
-    'Django>=1.11,<1.12',
+    'Django>=1.11,<2.1',
     'django-haystack',
     'django-mptt==0.9.0',
     'django-js-asset==1.1.0',
