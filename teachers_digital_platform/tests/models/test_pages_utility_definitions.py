@@ -3,9 +3,8 @@ from unittest import TestCase
 from django.http import HttpRequest
 from django.test.client import RequestFactory
 
-from wagtail.tests.utils import WagtailTestUtils
-
 from teachers_digital_platform.models.pages import validate_results_per_page
+from wagtail.tests.utils import WagtailTestUtils
 
 
 class PagingTestCases(TestCase, WagtailTestUtils):

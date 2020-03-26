@@ -3,26 +3,36 @@ from django import forms
 from django.core.paginator import InvalidPage, Paginator
 from django.db import models
 from django.utils import timezone
-from haystack.query import SearchQuerySet
 
+from haystack.query import SearchQuerySet
+from modelcluster.fields import ParentalManyToManyField
+from teachers_digital_platform.fields import ParentalTreeManyToManyField
+from teachers_digital_platform.models import (
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityJumpStartCoalition,
+    ActivitySchoolSubject,
+    ActivityStudentCharacteristics,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
+)
+from teachers_digital_platform.molecules import TdpSearchHeroImage
 from wagtail.admin.edit_handlers import (
-    FieldPanel, MultiFieldPanel, ObjectList, StreamFieldPanel, TabbedInterface
+    FieldPanel,
+    MultiFieldPanel,
+    ObjectList,
+    StreamFieldPanel,
+    TabbedInterface,
 )
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
 from wagtail.documents.edit_handlers import DocumentChooserPanel
 from wagtail.search import index
-
-from modelcluster.fields import ParentalManyToManyField
-from teachers_digital_platform.fields import ParentalTreeManyToManyField
-from teachers_digital_platform.models import (
-    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
-    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityJumpStartCoalition, ActivitySchoolSubject,
-    ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
-    ActivityType
-)
-from teachers_digital_platform.molecules import TdpSearchHeroImage
 
 from v1.atomic_elements import molecules
 from v1.models import CFGOVPage, CFGOVPageManager, HomePage
