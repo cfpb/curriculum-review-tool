@@ -72,5 +72,5 @@ setup(
     install_requires=install_requires,
     setup_requires=setup_requires,
     extras_require={"testing": testing_extras},
-    frontend_build_script="setup.sh"
+    frontend_build_script="setup.sh",
 )
