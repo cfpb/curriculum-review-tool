@@ -85,7 +85,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ActivityIndexPage',
             fields=[
-                ('cfgovpage_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='v1.CFGOVPage'i, on_delete=django.db.models.deletion.SET_NULL)),
+                ('cfgovpage_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='v1.CFGOVPage', on_delete=django.db.models.deletion.SET_NULL)),
                 ('intro', core_fields.RichTextField(blank=True)),
             ],
             options={
