@@ -1,7 +1,5 @@
 from django.test import TestCase
 
-import wagtail
-
 from model_bakery import baker
 from teachers_digital_platform.models import (
     ActivityAgeRange,
