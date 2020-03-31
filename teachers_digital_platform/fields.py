@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from modelcluster.fields import ParentalManyToManyField
 from mptt.forms import TreeNodeMultipleChoiceField
 from mptt.models import TreeManyToManyField
