@@ -1,72 +1,53 @@
 from haystack import indexes
-
 from teachers_digital_platform.models import ActivityIndexPage, ActivityPage
 
 
 class ActivityPageIndex(indexes.SearchIndex, indexes.Indexable):
 
-    text = indexes.CharField(
-        document=True, use_template=True
-    )
-    date = indexes.DateTimeField(
-        model_attr='date'
-    )
-    summary = indexes.CharField(
-        model_attr='summary'
-    )
-    live = indexes.BooleanField(
-        model_attr='live'
-    )
-    big_idea = indexes.CharField(
-        model_attr='big_idea'
-    )
-    essential_questions = indexes.CharField(
-        model_attr='essential_questions'
-    )
-    objectives = indexes.CharField(
-        model_attr='objectives'
-    )
+    text = indexes.CharField(document=True, use_template=True)
+    date = indexes.DateTimeField(model_attr="date")
+    summary = indexes.CharField(model_attr="summary")
+    live = indexes.BooleanField(model_attr="live")
+    big_idea = indexes.CharField(model_attr="big_idea")
+    essential_questions = indexes.CharField(model_attr="essential_questions")
+    objectives = indexes.CharField(model_attr="objectives")
     what_students_will_do = indexes.CharField(
-        model_attr='what_students_will_do'
+        model_attr="what_students_will_do"
     )
     building_block = indexes.MultiValueField(
-        model_attr='building_block', faceted=True
+        model_attr="building_block", faceted=True
     )
     school_subject = indexes.MultiValueField(
-        model_attr='school_subject', faceted=True
+        model_attr="school_subject", faceted=True
     )
-    topic = indexes.MultiValueField(
-        model_attr='topic', faceted=True
-    )
+    topic = indexes.MultiValueField(model_attr="topic", faceted=True)
     # Audience
     grade_level = indexes.MultiValueField(
-        model_attr='grade_level', faceted=True
+        model_attr="grade_level", faceted=True
     )
-    age_range = indexes.MultiValueField(
-        model_attr='age_range', faceted=True
-    )
+    age_range = indexes.MultiValueField(model_attr="age_range", faceted=True)
     student_characteristics = indexes.MultiValueField(
-        model_attr='student_characteristics', faceted=True
+        model_attr="student_characteristics", faceted=True
     )
     # Activity Characteristics
     activity_type = indexes.MultiValueField(
-        model_attr='activity_type', faceted=True
+        model_attr="activity_type", faceted=True
     )
     teaching_strategy = indexes.MultiValueField(
-        model_attr='teaching_strategy', faceted=True
+        model_attr="teaching_strategy", faceted=True
     )
     blooms_taxonomy_level = indexes.MultiValueField(
-        model_attr='blooms_taxonomy_level', faceted=True
+        model_attr="blooms_taxonomy_level", faceted=True
     )
     activity_duration = indexes.CharField(
-        model_attr='activity_duration', faceted=True
+        model_attr="activity_duration", faceted=True
     )
     # Standards taught
     jump_start_coalition = indexes.MultiValueField(
-        model_attr='jump_start_coalition', faceted=True
+        model_attr="jump_start_coalition", faceted=True
     )
     council_for_economic_education = indexes.MultiValueField(
-        model_attr='council_for_economic_education', faceted=True
+        model_attr="council_for_economic_education", faceted=True
     )
 
     def prepare_building_block(self, obj):
