@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-from mptt.models import MPTTModel, TreeForeignKey
 from wagtail.admin.edit_handlers import FieldPanel
+
+from mptt.models import MPTTModel, TreeForeignKey
 
 
 class BaseActivityTaxonomy(models.Model):

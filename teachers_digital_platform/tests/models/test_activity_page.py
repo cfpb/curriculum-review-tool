@@ -1,5 +1,7 @@
 from django.test import TestCase
 
+from wagtail.documents.models import Document
+
 from model_bakery import baker
 from teachers_digital_platform.models import (
     ActivityAgeRange,
@@ -16,7 +18,6 @@ from teachers_digital_platform.models import (
     ActivityTopic,
     ActivityType,
 )
-from wagtail.documents.models import Document
 
 from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page, save_new_page

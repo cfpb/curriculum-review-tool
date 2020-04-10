@@ -1,5 +1,10 @@
 from django.test import RequestFactory, TestCase
 
+from wagtail.core.blocks import StreamValue
+from wagtail.core.models import Site
+from wagtail.documents.models import Document
+from wagtail.tests.utils import WagtailPageTests
+
 import mock
 from model_bakery import baker
 from scripts import _atomic_helpers as atomic
@@ -19,10 +24,6 @@ from teachers_digital_platform.models import (
     ActivityTopic,
     ActivityType,
 )
-from wagtail.core.blocks import StreamValue
-from wagtail.core.models import Site
-from wagtail.documents.models import Document
-from wagtail.tests.utils import WagtailPageTests
 
 from v1.models import HomePage
 from v1.tests.wagtail_pages.helpers import publish_page
