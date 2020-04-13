@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import migrations, models
+import django.db.models.deletion
 import mptt.fields
 
 
@@ -35,7 +34,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='activitytopic',
             name='parent',
-            field=mptt.fields.TreeForeignKey(related_name='children', blank=True, to='teachers_digital_platform.ActivityTopic', null=True),
+            field=mptt.fields.TreeForeignKey(related_name='children', on_delete=django.db.models.deletion.SET_NULL, blank=True, to='teachers_digital_platform.ActivityTopic', null=True),
         ),
         migrations.AddField(
             model_name='activitytopic',
