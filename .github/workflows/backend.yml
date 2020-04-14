@@ -39,14 +39,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          ./install_cfgov_refresh.sh
+          pip install -r requirements/ci.txt
 
       - name: Run tox -e ${{ matrix.toxenv }}
         run: |
           tox -e ${{ matrix.toxenv }}
         env:
           DJANGO_SETTINGS_MODULE=teachers_digital_platform.tests.settings
-          PYTHONPATH=cfgov-refresh/cfgov:{env:PYTHONPATH:}
 
       - name: Prepare test coverage
         if: matrix.toxenv == 'py36-dj111-wag23'
@@ -78,7 +77,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          ./install_cfgov_refresh.sh
+          pip install -r requirements/ci.txt
 
       - name: Retrieve backend coverage
         uses: actions/download-artifact@v1

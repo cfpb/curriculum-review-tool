@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r cfgov-refresh/requirements/ci.txt
+          pip install -r requirements/ci.txt
 
       - name: Run ${{ matrix.gulp_cmd }}
         run: yarn run gulp ${{ matrix.gulp_cmd }}
@@ -60,7 +60,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r cfgov-refresh/requirements/ci.txt
+          pip install -r requirements/ci.txt
 
       - name: Retrieve frontend coverage
         uses: actions/download-artifact@v1
