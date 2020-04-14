@@ -1,10 +1,8 @@
 language: python
 python:
-- '3.6'
-install:
-- pip install tox-travis
+- 3.6
 script:
-- nvm install 8 && nvm use 8
+- nvm install 10 && nvm use 10
 - npm install -g gulp-cli
 - npm config set package-lock false
 - npm install
