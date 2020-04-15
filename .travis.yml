@@ -1,6 +1,8 @@
 language: python
 python:
 - 3.6
+install:
+- pip install tox-travis
 script:
 - nvm install 8 && nvm use 8
 - npm install -g gulp-cli
