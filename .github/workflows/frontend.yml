@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         gulp_cmd:
-          - lint-py36
+          - lint
           - test:unit --ci --headless
 
     steps:
@@ -29,6 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install gulp
           pip install -r requirements/ci.txt
 
       - name: Run ${{ matrix.gulp_cmd }}
