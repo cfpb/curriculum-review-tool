@@ -1,12 +1,5 @@
 from setuptools import find_packages, setup
 
-try:
-    import pypandoc
-
-    long_description = pypandoc.convert("README.md", "rst")
-except (IOError, ImportError):
-    long_description = open("README.md", "r").read()
-
 
 install_requires = [
     "wagtail>=2.3,<2.4",
@@ -35,7 +28,7 @@ setup(
     author="CFPB",
     author_email="tech@cfpb.gov",
     description="Teachers digital platform",
-    long_description=long_description,
+    long_description=open("README.md", "r").read(),
     license="CC0",
     version_format="{tag}.dev{commitcount}+{gitsha}",
     include_package_data=True,
