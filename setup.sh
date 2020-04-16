@@ -23,9 +23,10 @@ init() {
     CR_TOOL_DEP_CHECKSUM=$(cat teachers_digital_platform/crtool/package.json | shasum -a 256)
   fi
 
-  if [[ "$(node -v)" != 'v10.'* ]] && [[ "$(node -v)" != 'v11.'* ]] && [[ "$(node -v)" != 'v12.'* ]]; then
-    printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
-  fi
+  # if [[ "$(node -v)" != 'v10.'* ]] && [[ "$(node -v)" != 'v11.'* ]] && [[ "$(node -v)" != 'v12.'* ]]; then
+  # if [[ "$(node -v)" != 'v10.'* -a "$(node -v)" != 'v11.'* -a "$(node -v)" != 'v12.'* ]]; then
+  #   printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
+  # fi
 
   NODE_DIR=node_modules
   echo "npm components directory: $NODE_DIR"
@@ -40,22 +41,22 @@ clean() {
   # clear it so we know we're working with a clean
   # slate of the dependencies listed in package.json.
   if [ -d $NODE_DIR ]; then
-    echo 'Removing project dependency directories… $NODE_DIR'
+    echo "Removing project dependency directory $NODE_DIR"
     rm -rf $NODE_DIR
-    echo 'Project dependencies have been removed.'
+    echo "Project dependencies have been removed."
   fi
 
   if [ -d $CRTOOL_NODE_DIR ]; then
-    echo 'Removing project dependency directories… $CRTOOL_NODE_DIR'
+    echo "Removing project dependency directory $CRTOOL_NODE_DIR"
     rm -rf $CRTOOL_NODE_DIR
-    echo 'Project dependencies have been removed.'
+    echo "Project dependencies have been removed."
   fi
 }
 
 # Install project dependencies.
 install() {
-  echo 'Installing front-end dependencies…'
-  npm install -d --loglevel warn
+  echo "Installing front-end dependencies."
+  npm install -d --loglevel warn --unsafe-perm
 }
 
 # Add a checksum file
@@ -77,31 +78,31 @@ clean_and_install() {
     install
     checksum
   else
-    echo 'Dependencies are up to date.'
+    echo "Dependencies are up to date."
   fi
 }
 
 # Run tasks to build the project for distribution.
 build() {
-  echo 'Building project…'
+  echo "Building project."
   gulp build
 }
 
 # Execute requested (or all) functions.
-if [ "$1" == "init" ]; then
+if [ "$1" = "init" ]; then
   init ""
   clean_and_install
-elif [ "$1" == "clean" ]; then
-  echo 'Clean'
+elif [ "$1" = "clean" ]; then
+  echo "Clean"
   init ""
   clean
   clean_and_install
   build
-elif [ "$1" == "build" ]; then
+elif [ "$1" = "build" ]; then
   build
 else
   init "$1"
-  echo 'Clean & Install'
+  echo "Clean & Install"
   clean_and_install
   build
 fi

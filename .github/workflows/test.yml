@@ -23,12 +23,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: git fetch --prune --unshallow
 
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 8.x
+          node-version: 10.x
         env:
           RUNNER_TEMP: /tmp
 
