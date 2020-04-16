@@ -28,7 +28,7 @@ setup(
     author="CFPB",
     author_email="tech@cfpb.gov",
     description="Teachers digital platform",
-    long_description=open("README.md", "r").read(),
+    long_description=open("README.md", "r", encoding="utf-8").read(),
     license="CC0",
     version_format="{tag}.dev{commitcount}+{gitsha}",
     include_package_data=True,
