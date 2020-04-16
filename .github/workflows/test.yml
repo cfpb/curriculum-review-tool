@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: git fetch --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Set up Node
         uses: actions/setup-node@v1
