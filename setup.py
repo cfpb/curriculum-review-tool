@@ -1,10 +1,7 @@
 from setuptools import find_packages, setup
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
-except (IOError, ImportError):
-    long_description = open('README.md', 'r').read()
+
+long_description = open('README.md', 'r', encoding="utf-8").read()
 
 
 install_requires = [
@@ -29,6 +26,7 @@ setup(
     author_email='tech@cfpb.gov',
     description='Teachers digital platform',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     license='CC0',
     version_format='{tag}.dev{commitcount}+{gitsha}',
     include_package_data=True,
