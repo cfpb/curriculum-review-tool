@@ -1,9 +1,6 @@
 from setuptools import find_packages, setup
 
 
-long_description = open('README.md', 'r', encoding='utf-8').read()
-
-
 install_requires = [
     'wagtail>=2.3,<2.4',
     'Django>=1.11,<1.12',
@@ -25,7 +22,7 @@ setup(
     author='CFPB',
     author_email='tech@cfpb.gov',
     description='Teachers digital platform',
-    long_description=long_description,
+    long_description=open('README.md', 'r', encoding='utf-8').read(),
     long_description_content_type="text/markdown",
     license='CC0',
     version_format='{tag}.dev{commitcount}+{gitsha}',
