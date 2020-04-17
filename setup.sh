@@ -93,7 +93,7 @@ if [ "$1" = "init" ]; then
   init ""
   clean_and_install
 elif [ "$1" = "clean" ]; then
-  echo "Clean"
+  echo "Clean project dependencies."
   init ""
   clean
   clean_and_install
@@ -102,7 +102,7 @@ elif [ "$1" = "build" ]; then
   build
 else
   init "$1"
-  echo "Clean & Install"
+  echo "Clean and install project dependencies."
   clean_and_install
   build
 fi
