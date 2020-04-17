@@ -23,8 +23,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}  # Check out HEAD of the PR, not a theoretical merge commit.
       # - run: git fetch --prune --unshallow  # Fetch all history for all tags and branches. Works on GH, doesn't work locally.
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*  # Fetch all tags. # Doesn't fetch the necessary intermediate commits.
       - run: git fetch origin master  # Fetch the entire master branch. Hopefully this combined with the fetching of tags will be sufficient.
