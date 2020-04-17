@@ -23,7 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      # - run: git fetch --prune --unshallow
+      # - run: git fetch --prune --unshallow  # Fetch all history for all tags and branches. Works on GH, doesn't work locally.
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*  # Fetch all tags
       - run: git describe --tags --long --dirty
 
       - name: Set up Node
