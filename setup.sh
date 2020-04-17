@@ -40,13 +40,13 @@ clean() {
   # clear it so we know we're working with a clean
   # slate of the dependencies listed in package.json.
   if [ -d $NODE_DIR ]; then
-    echo "Removing project dependency directories… $NODE_DIR"
+    echo "Removing project dependency directory $NODE_DIR"
     rm -rf $NODE_DIR
     echo "Project dependencies have been removed."
   fi
 
   if [ -d $CRTOOL_NODE_DIR ]; then
-    echo "Removing project dependency directories… $CRTOOL_NODE_DIR"
+    echo "Removing project dependency directory $CRTOOL_NODE_DIR"
     rm -rf $CRTOOL_NODE_DIR
     echo "Project dependencies have been removed."
   fi
@@ -54,8 +54,8 @@ clean() {
 
 # Install project dependencies.
 install() {
-  echo "Installing front-end dependencies…"
-  npm install -d --loglevel warn
+  echo "Installing front-end dependencies."
+  npm install -d --loglevel warn --unsafe-perm
 }
 
 # Add a checksum file
@@ -83,7 +83,7 @@ clean_and_install() {
 
 # Run tasks to build the project for distribution.
 build() {
-  echo "Building project…"
+  echo "Building project."
   gulp build
 }
 
@@ -92,7 +92,7 @@ if [ "$1" == "init" ]; then
   init ""
   clean_and_install
 elif [ "$1" == "clean" ]; then
-  echo "Clean"
+  echo "Clean project dependencies."
   init ""
   clean
   clean_and_install
@@ -101,7 +101,7 @@ elif [ "$1" == "build" ]; then
   build
 else
   init "$1"
-  echo "Clean & Install"
+  echo "Clean and install project dependencies."
   clean_and_install
   build
 fi
