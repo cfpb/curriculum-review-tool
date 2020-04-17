@@ -23,6 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      # - run: git fetch --prune --unshallow
+      - run: git describe --tags --long --dirty
 
       - name: Set up Node
         uses: actions/setup-node@v1
@@ -51,4 +53,6 @@ jobs:
           pip install tox
 
       - name: Run back-end tests
-        run: tox
+        run: |
+          rm -rf /github/workspace/.tox/
+          tox
