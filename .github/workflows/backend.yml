@@ -1,35 +1,10 @@
-name: unittest
+name: backend
 
 on: pull_request
 
 jobs:
 
-  front-end:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-        env:
-          RUNNER_TEMP: /tmp
-
-      - name: Install Node dependencies
-        run: |
-          npm install -g gulp-cli jest
-          npm config set package-lock false
-          npm install
-
-      - name: Lint front-end code
-        run: gulp lint
-
-      - name: Run front-end unit tests
-        run: npm test
-
-  back-end:
+  backend:
     runs-on: ubuntu-latest
 
     services:
