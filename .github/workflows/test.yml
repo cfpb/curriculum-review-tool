@@ -25,7 +25,8 @@ jobs:
       - uses: actions/checkout@v2
       # - run: git fetch --prune --unshallow  # Fetch all history for all tags and branches. Works on GH, doesn't work locally.
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*  # Fetch all tags. # Doesn't fetch the necessary intermediate commits.
-      - run: git fetch origin master  # Fetch the entire master branch. Hopefully this combined with the fetching of tags will be sufficient.
+      # - run: git fetch origin master  # Fetch the entire master branch. Hopefully this combined with the fetching of tags will be sufficient.
+      - run: git fetch origin {{ github.ref }} && git checkout {{ github.ref }}  # Fetch and checkout the PR branch
       - run: git describe --tags --long --dirty
 
       - name: Set up Node
