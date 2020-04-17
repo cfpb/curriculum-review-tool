@@ -23,12 +23,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      # - run: git fetch --prune --unshallow  # Fetch all history for all tags and branches. Works on GH, doesn't work locally.
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*  # Fetch all tags. # Doesn't fetch the necessary intermediate commits.
-      # - run: git fetch origin master  # Fetch the entire master branch. Hopefully this combined with the fetching of tags will be sufficient.
-      - run: git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}  # Fetch and checkout the PR branch
 
-      - run: git describe --tags --long --dirty  # This has to run successfully for setuptools-git-version to eventually work
+      - name: Fetch tags and commits needed for setuptools-git-version
+        run: |
+          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+          git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
+          git describe --tags --long --dirty
+        # If the above git describe command doesn't work,
+        # then setuptools-git-version will also fail
 
       - name: Set up Node
         uses: actions/setup-node@v1
