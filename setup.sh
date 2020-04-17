@@ -23,9 +23,9 @@ init() {
     CR_TOOL_DEP_CHECKSUM=$(cat teachers_digital_platform/crtool/package.json | shasum -a 256)
   fi
 
-  # if [[ "$(node -v)" != 'v10.'* ]] && [[ "$(node -v)" != 'v11.'* ]] && [[ "$(node -v)" != 'v12.'* ]]; then
-  #  printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
-  # fi
+  if [[ "$(node -v)" != 'v10.'* -a "$(node -v)" != 'v11.'* -a "$(node -v)" != 'v12.'* -a "$(node -v)" != 'v13.'* ]]; then
+    printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
+  fi
 
   NODE_DIR=node_modules
   echo "npm components directory: $NODE_DIR"
