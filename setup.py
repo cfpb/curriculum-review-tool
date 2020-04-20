@@ -23,7 +23,7 @@ setup(
     author_email='tech@cfpb.gov',
     description='Teachers digital platform',
     long_description=open('README.md', 'r', encoding='utf-8').read(),
-    long_description_content_type="text/markdown",
+    long_description_content_type='text/markdown',
     license='CC0',
     version_format='{tag}.dev{commitcount}+{gitsha}',
     include_package_data=True,
