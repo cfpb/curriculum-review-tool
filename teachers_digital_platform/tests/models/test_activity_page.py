@@ -4,11 +4,19 @@ from wagtail.documents.models import Document
 
 from model_bakery import baker
 from teachers_digital_platform.models import (
-    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
-    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityIndexPage, ActivityJumpStartCoalition, ActivityPage,
-    ActivitySchoolSubject, ActivityTeachingStrategy, ActivityTopic,
-    ActivityType
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityIndexPage,
+    ActivityJumpStartCoalition,
+    ActivityPage,
+    ActivitySchoolSubject,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
 )
 
 from v1.models import HomePage

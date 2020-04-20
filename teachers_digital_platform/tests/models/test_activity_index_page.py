@@ -9,11 +9,20 @@ import mock
 from model_bakery import baker
 from scripts import _atomic_helpers as atomic
 from teachers_digital_platform.models import (
-    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
-    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityIndexPage, ActivityJumpStartCoalition, ActivityPage,
-    ActivitySchoolSubject, ActivityStudentCharacteristics,
-    ActivityTeachingStrategy, ActivityTopic, ActivityType
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityIndexPage,
+    ActivityJumpStartCoalition,
+    ActivityPage,
+    ActivitySchoolSubject,
+    ActivityStudentCharacteristics,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
 )
 
 from v1.models import HomePage
