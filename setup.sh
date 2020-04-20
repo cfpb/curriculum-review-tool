@@ -30,11 +30,11 @@ init() {
     printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
   fi
 
-  NODE_DIR=node_modules
-  echo "npm components directory: ${NODE_DIR}"
+  NODE_DIR=node_modules/
+  echo "Main project Node modules directory: ${NODE_DIR}"
 
-  CRTOOL_NODE_DIR=teachers_digital_platform/crtool/node_modules
-  echo "crtool npm components directory: ${CRTOOL_NODE_DIR}"
+  CRTOOL_NODE_DIR=teachers_digital_platform/crtool/node_modules/
+  echo "crtool Node modules directory: ${CRTOOL_NODE_DIR}"
 }
 
 # Clean project dependencies.
@@ -43,15 +43,15 @@ clean() {
   # clear it so we know we're working with a clean
   # slate of the dependencies listed in package.json.
   if [ -d ${NODE_DIR} ]; then
-    echo "Removing project dependency directory ${NODE_DIR}"
+    echo "Removing main project Node modules directory."
     rm -rf ${NODE_DIR}
-    echo "Project dependencies have been removed."
+    echo "Main project Node modules have been removed."
   fi
 
   if [ -d ${CRTOOL_NODE_DIR} ]; then
-    echo "Removing project dependency directory ${CRTOOL_NODE_DIR}"
+    echo "Removing crtool Node Modules directory."
     rm -rf ${CRTOOL_NODE_DIR}
-    echo "Project dependencies have been removed."
+    echo "crtool Node modules have been removed."
   fi
 }
 
@@ -87,7 +87,7 @@ clean_and_install() {
 # Run tasks to build the project for distribution.
 build() {
   echo "Building project."
-  gulp build
+  npx gulp build
 }
 
 # Execute requested (or all) functions.
