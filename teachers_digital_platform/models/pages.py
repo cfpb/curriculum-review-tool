@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import, unicode_literals
-
 from django import forms
 from django.core.paginator import InvalidPage, Paginator
 from django.db import models
@@ -8,7 +6,11 @@ from django.utils import timezone
 from haystack.query import SearchQuerySet
 
 from wagtail.admin.edit_handlers import (
-    FieldPanel, MultiFieldPanel, ObjectList, StreamFieldPanel, TabbedInterface
+    FieldPanel,
+    MultiFieldPanel,
+    ObjectList,
+    StreamFieldPanel,
+    TabbedInterface,
 )
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
@@ -18,11 +20,18 @@ from wagtail.search import index
 from modelcluster.fields import ParentalManyToManyField
 from teachers_digital_platform.fields import ParentalTreeManyToManyField
 from teachers_digital_platform.models import (
-    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
-    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityJumpStartCoalition, ActivitySchoolSubject,
-    ActivityStudentCharacteristics, ActivityTeachingStrategy, ActivityTopic,
-    ActivityType
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityJumpStartCoalition,
+    ActivitySchoolSubject,
+    ActivityStudentCharacteristics,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
 )
 from teachers_digital_platform.molecules import TdpSearchHeroImage
 

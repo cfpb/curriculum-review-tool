@@ -6,14 +6,23 @@ from wagtail.documents.models import Document
 from wagtail.tests.utils import WagtailPageTests
 
 import mock
-from model_mommy import mommy
+from model_bakery import baker
 from scripts import _atomic_helpers as atomic
 from teachers_digital_platform.models import (
-    ActivityAgeRange, ActivityBloomsTaxonomyLevel, ActivityBuildingBlock,
-    ActivityCouncilForEconEd, ActivityDuration, ActivityGradeLevel,
-    ActivityIndexPage, ActivityJumpStartCoalition, ActivityPage,
-    ActivitySchoolSubject, ActivityStudentCharacteristics,
-    ActivityTeachingStrategy, ActivityTopic, ActivityType
+    ActivityAgeRange,
+    ActivityBloomsTaxonomyLevel,
+    ActivityBuildingBlock,
+    ActivityCouncilForEconEd,
+    ActivityDuration,
+    ActivityGradeLevel,
+    ActivityIndexPage,
+    ActivityJumpStartCoalition,
+    ActivityPage,
+    ActivitySchoolSubject,
+    ActivityStudentCharacteristics,
+    ActivityTeachingStrategy,
+    ActivityTopic,
+    ActivityType,
 )
 
 from v1.models import HomePage
@@ -210,7 +219,7 @@ class TestActivityIndexPageSearch(TestCase):
             title=title,
             slug=slug,
             path=slug,
-            activity_file=mommy.make(Document),
+            activity_file=baker.make(Document),
             date="2018-07-31",
             summary="Students will discuss short-term and long-term goals and what\r\nmakes a goal SMART. They\u2019ll then create a short-term savings goal\r\nand make a plan to meet that goal.",  # noqa: E501
             big_idea="<p>Saving money is essential to a positive\u00a0financial future.</p>",           # noqa: E501
