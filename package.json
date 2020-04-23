@@ -65,7 +65,7 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-stylelint": "9.0.0",
     "jest": "24.9.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "postcss-unmq": "1.0.2",
     "require-dir": "1.2.0",
     "smoothscroll-polyfill": "0.4.4",
