@@ -330,7 +330,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         CriterionService.removeEfficacyStudy(this, efficacyStudyNumber);
 
         //Analytics use clicked remove efficacy study
-        Analytics.sendEvent(Analytics.getDataLayerOptions("button clicked", "Remove"));
+        Analytics.sendEvent(Analytics.getDataLayerOptions("efficacy modal", "Yes, remove it"));
     }
 
     studyAnswerChanged(studyKey, changedQuestion, newValue) {
