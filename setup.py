@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "wagtail>=2.3,<2.4",
+    "wagtail>=2.3,<2.6",
     "Django>=1.11,<2.3",
     "django-haystack",
     "django-mptt==0.9.0",
