@@ -484,22 +484,21 @@
             </div>
         {% endif %}
     </div>
-    <div class="results_list">
-        {% if activities %}
-        <ul class="m-list__unstyled">
-            {% for result in activities %}
-                {% if result %}
-                <li class="u-mb30">{% include "activity_search_result.html" %}</li>
-                {% endif %}
-            {% endfor %}
-
-        </ul>
-        {% endif %}
-    </div>
-    <div class="results_footer">
-        {{ pagination.render( paginator.num_pages, current_page, 'tdp-search-facets-and-results', '', 'Previous', 'Next' ) }}
-        <div class="o-well">
-            Activities align with the My Money Five principles introduced by the statutorily created federal Financial Literacy and Education Commission.
+    {% if activities %}
+        <div class="results_list">
+            <ul class="m-list__unstyled">
+                {% for result in activities %}
+                    {% if result %}
+                    <li class="u-mb30">{% include "activity_search_result.html" %}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         </div>
-    </div>
+        <div class="results_footer">
+            {{ pagination.render( paginator.num_pages, current_page, 'tdp-search-facets-and-results', '', 'Previous', 'Next' ) }}
+            <div class="o-well">
+                Activities align with the My Money Five principles introduced by the statutorily created federal Financial Literacy and Education Commission.
+            </div>
+        </div>
+    {% endif %}
 </section>
