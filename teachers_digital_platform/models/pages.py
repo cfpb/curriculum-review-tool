@@ -217,20 +217,20 @@ class ActivityIndexPage(CFGOVPage):
                 'selected': result['id'] in selected_facets,
                 'id': result['id'],
                 'title': result['title'],
-             } for result in class_object.objects.filter(pk__in=narrowed_facets).values('id', 'title')]  # noqa: E501
+            } for result in class_object.objects.filter(pk__in=narrowed_facets).values('id', 'title')]  # noqa: E501
         return final_facets
 
     def get_nested_facets(self, class_object, narrowed_facets, selected_facets, parent=None):  # noqa: E501
         if not parent:
             flat_final_facets = [
-               {
-                   'selected': result['id'] in selected_facets,
-                   'id': result['id'],
-                   'title': result['title'],
-                   'parent': result['parent'],
-               } for result in class_object.objects.filter(pk__in=narrowed_facets).get_ancestors(True).values('id', 'title', 'parent')]  # noqa: E501
+                {
+                    'selected': result['id'] in selected_facets,
+                    'id': result['id'],
+                    'title': result['title'],
+                    'parent': result['parent'],
+                } for result in class_object.objects.filter(pk__in=narrowed_facets).get_ancestors(True).values('id', 'title', 'parent')]  # noqa: E501
             final_facets = []
-            root_facets = [root_facet for root_facet in flat_final_facets if root_facet['parent'] == None]  # noqa: E501
+            root_facets = [root_facet for root_facet in flat_final_facets if root_facet['parent'] is None]  # noqa: E501
             for root_facet in root_facets:
                 children_list = self.get_nested_facets(class_object, narrowed_facets, selected_facets, root_facet['id'])  # noqa: E501
                 child_selected = any(
