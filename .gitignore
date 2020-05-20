@@ -73,7 +73,7 @@ coverage.xml
 # Front-End #
 #############
 node_modules/
-teachers_digital_platform/static/*
-teachers_digital_platform/tests/unit_test_coverage/
-teachers_digital_platform/crtool/build/*
-teachers_digital_platform/crtool/coverage/
+crtool/static/*
+crtool/tests/unit_test_coverage/
+crtool/crtool/build/*
+crtool/crtool/coverage/
