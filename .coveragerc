@@ -5,8 +5,8 @@ omit =
     */teachers_digital_platform/migrations/*
     */site-packages*
     */python3.6/*
-    */teachers_digital_platform/static/*
-    */teachers_digital_platform/search_indexes*
+    */crtool/static/*
+    */crtool/search_indexes*
 data_file = ../.coverage
 
 [report]
