@@ -18,9 +18,9 @@ init() {
   fi
 
   if [ -f "package-lock.json" ]; then
-    CR_TOOL_DEP_CHECKSUM=$(cat teachers_digital_platform/crtool/package*.json | shasum -a 256)
+    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package*.json | shasum -a 256)
   else
-    CR_TOOL_DEP_CHECKSUM=$(cat teachers_digital_platform/crtool/package.json | shasum -a 256)
+    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package.json | shasum -a 256)
   fi
 
   if [[ "$(node -v)" != 'v10.'* ]] &&
@@ -33,7 +33,7 @@ init() {
   NODE_DIR=node_modules/
   echo "Main project Node modules directory: ${NODE_DIR}"
 
-  CRTOOL_NODE_DIR=teachers_digital_platform/crtool/node_modules/
+  CRTOOL_NODE_DIR=crtool/crtool/node_modules/
   echo "crtool Node modules directory: ${CRTOOL_NODE_DIR}"
 }
 

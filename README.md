@@ -1,8 +1,8 @@
 # Teacher Digital Platform
 
-**Description**:  The Teacher Digital Platform (TDP) will be a new section within the existing cf.gov website to promote the CFPBs financial education building blocks research. It will offer teachers resources to assist them with instructing students in K-12 grades on financial education topics.
+**Description**:  The Teacher Digital Platform (TDP) will be a section within the existing cf.gov website to promote the CFPBs financial education building blocks research. It will offer teachers resources to assist them with instructing students in K-12 grades on financial education topics.
 
-This platform contains work for three separate projects: Building blocks tool, Curriculum review tool, and Search interface.
+This platform contains work for three separate projects: Building blocks tool, Curriculum Review tool, and Search interface.
 
 
 #### Table of Contents
@@ -12,7 +12,7 @@ This platform contains work for three separate projects: Building blocks tool, C
 
   - [Local testing/development](#bb-local-testing-development)
 
-[Curriculum review tool](#curriculum-review-tool)
+[Curriculum Review tool](#curriculum-review-tool)
 
 [Search interface](#search-interface)
 
@@ -54,26 +54,26 @@ This platform contains work for three separate projects: Building blocks tool, C
 
 ### Implementation details
 
-  - **Jinja2**: A single template file is used ([bb-tool.html](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/jinja2/teachers_digital_platform/bb-tool.html)).
+  - **Jinja2**: A single template file is used ([bb-tool.html](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/jinja2/crtool/bb-tool.html)).
 
-  - **CSS**: This page pulls in the platform’s global style sheet ([tdp.less](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/css/tdp.less)). The [tour molecule](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/css/organisms/tour.less) contains most of the styles specific to this page. This page also uses the styles from the [animate on scroll](https://github.com/michalsnik/aos) library.
+  - **CSS**: This page pulls in the platform’s global style sheet ([tdp.less](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/css/tdp.less)). The [tour molecule](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/css/organisms/tour.less) contains most of the styles specific to this page. This page also uses the styles from the [animate on scroll](https://github.com/michalsnik/aos) library.
 
-  - **JS**: This page pulls in the platform’s global JavaScript file ([tdp.js](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/index.js)). The [scroll.js](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/scroll.js) module handles the smooth scrolling to the different tour stops and depends on the [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll) to work in older browsers. This page also uses the script from the [animate on scroll](https://github.com/michalsnik/aos) library.
+  - **JS**: This page pulls in the platform’s global JavaScript file ([tdp.js](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/js/index.js)). The [scroll.js](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/js/scroll.js) module handles the smooth scrolling to the different tour stops and depends on the [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll) to work in older browsers. This page also uses the script from the [animate on scroll](https://github.com/michalsnik/aos) library.
 
 <a name="bb-local-testing-development"/>
 
 ### Local testing/development
 
  - The Building blocks tool is accessible at the following path "**practitioner-resources/youth-financial-education/journey**"
- - The template for this page can be found in: ```teachers_digital_platform/jinja2/teachers_digital_platform/bb-tool.html```
+ - The template for this page can be found in: ```crtool/jinja2/crtool/bb-tool.html```
 
 <a name="curriculum-review-tool"/>
 
-## Curriculum review tool
+## Curriculum Review tool
 
-**Description**: The [Curriculum review tool](https://www.consumerfinance.gov//practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive, online tool for educators to use in place of the [paper-based PDF](https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf) that already exists on the cf.gov website.
+**Description**: The [Curriculum Review tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive, online tool for educators to use in place of the [paper-based PDF](https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf) that already exists on the cf.gov website.
 
-Further documentation about the CR tool can be found in the [crtool directory](https://github.com/cfpb/teachers-digital-platform/tree/master/teachers_digital_platform/crtool).
+Further documentation about the CR tool can be found in the [crtool directory](https://github.com/cfpb/teachers-digital-platform/tree/master/crtool).
 
 <a name="search-interface"/>
 
@@ -200,8 +200,8 @@ See [INSTALL.md](https://github.com/cfpb/teachers-digital-platform/blob/master/I
 ## CSS and JavaScript
 
 This app uses Gulp to generate a single global CSS and JS files based on individual
-.less and .js files in "teachers_digital_platform/css" and "teachers_digital_platform/js."
-The generated css and js files can be found "teachers_digital_platform/static/"
+.less and .js files in "crtool/css" and "crtool/js."
+The generated css and js files can be found "crtool/static/"
 
 You can generate all static files running the setup.sh script or running gulp
 ```sh
@@ -223,7 +223,7 @@ gulp styles
 
 ### Testing Javascript code:
 
-Javascript tests can be found in "teachers_digital_platform/\_\_tests\_\_"
+Javascript tests can be found in "crtool/\_\_tests\_\_"
 
 to only test Search Tool JS, run:
 ```sh
@@ -258,7 +258,7 @@ tox
 
 ## Known issues
 
-Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/teachers_digital_platform/js/search.js#L144).
+Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/js/search.js#L144).
 Errors are sent to console log, but is not prominently displayed for end-users.
 
 <a name="getting-help"/>

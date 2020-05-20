@@ -23,25 +23,30 @@ testing_extras = [
 
 
 setup(
-    name="teachers_digital_platform",
+    name="crtool",
     url="https://github.com/cfpb/teachers-digital-platform",
     author="CFPB",
     author_email="tech@cfpb.gov",
-    description="Teachers digital platform",
+    description="Teachers Curriculum Review tool",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     license="CC0",
     version_format="{tag}.dev{commitcount}+{gitsha}",
     include_package_data=True,
     packages=find_packages(),
     package_data={
-        "teachers_digital_platform": [
-            "jinja2/teachers_digital_platform/*",
-            "jinja2/teachers_digital_platform/prototypes/*",
-            "templates/search/indexes/teachers_digital_platform/*",
+        "crtool": [
+            "jinja2/crtool/*",
+            "jinja2/crtool/prototypes/*",
+            "templates/search/indexes/crtool/*",
             "static/tdp/css/*",
             "static/tdp/js/*",
             "static/tdp/img/*",
             "static/tdp/fonts/*",
+        ],
+        "teachers_digital_platform": [
+            "jinja2/teachers_digital_platform/*",
+            "jinja2/teachers_digital_platform/prototypes/*",
+            "templates/search/indexes/teachers_digital_platform/*",
         ],
     },
     classifiers=[
