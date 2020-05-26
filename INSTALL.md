@@ -9,8 +9,8 @@ and so that repository must be installed before installing this one.
 
 cfgov-refresh can be run in two ways: as part of a standard Python
 virtual environment or as a Docker Compose application. Regardless of
-which method you use, the `teachers_digital_platform` app must be
-installed in your Python environment.
+which method you use, the `crtool` application must be installed in
+your Python environment.
 
 - If using a standard virtual environment, install the app with:
 
