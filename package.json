@@ -11,7 +11,7 @@
     "build": "gulp build",
     "test": "npm run test-crtool && npm run test-js",
     "test-crtool": "gulp test",
-    "test-js": "jest crtool/__tests__ --coverage",
+    "test-js": "jest teachers_digital_platform/__tests__ --coverage",
     "postinstall": "cd crtool/crtool && npm install"
   },
   "repository": {
