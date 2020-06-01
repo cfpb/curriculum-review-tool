@@ -37,7 +37,6 @@ setup(
         "crtool": [
             "jinja2/crtool/*",
             "jinja2/crtool/prototypes/*",
-            "templates/search/indexes/crtool/*",
             "static/tdp/css/*",
             "static/tdp/js/*",
             "static/tdp/img/*",
