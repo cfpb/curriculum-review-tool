@@ -7,7 +7,7 @@ from wagtailsharing.views import ServeView
 urlpatterns = [
     re_path(
         r'^journey',
-        TemplateView.as_view(template_name='crtool/bb-tool.html')
+        TemplateView.as_view(template_name='teachers_digital_platform/bb-tool.html')
     ),
 
     re_path(
