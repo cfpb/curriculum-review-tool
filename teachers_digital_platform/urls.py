@@ -6,16 +6,6 @@ from wagtailsharing.views import ServeView
 
 urlpatterns = [
     re_path(
-        r'^curriculum-review/tool/$',
-        TemplateView.as_view(template_name='crtool/crt-survey.html')
-    ),
-
-    re_path(
-        r'^curriculum-review/before-you-begin/$',
-        TemplateView.as_view(template_name='crtool/crt-start.html')
-    ),
-
-    re_path(
         r'^journey',
         TemplateView.as_view(template_name='crtool/bb-tool.html')
     ),
