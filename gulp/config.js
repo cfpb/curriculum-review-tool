@@ -8,6 +8,7 @@ const loc = {
   src:  './crtool/',
   dist: './crtool/static/tdp/',
   lib:  './node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
+  tdp:  './teachers_digital_platform/',
   test: './teachers_digital_platform/tests/'
 };
 
@@ -33,7 +34,7 @@ module.exports = {
       ' */\n',
   lint: {
     js: [
-      loc.src + '/js/**/*.js'
+      loc.tdp + '/js/**/*.js'
     ],
     build: [
       'gulpfile.js',
@@ -48,7 +49,7 @@ module.exports = {
     ]
   },
   test: {
-    src:   loc.src + '/js/**/*.js',
+    src:   loc.tdp + '/js/**/*.js',
     tests: loc.test
   },
   clean: {
@@ -72,9 +73,9 @@ module.exports = {
     ]
   },
   scripts: {
-    entrypoint: loc.src + '/js/index.js',
+    entrypoint: loc.tdp + '/js/index.js',
     src: [
-      loc.src + '/js/**/*.js'
+      loc.tdp + '/js/**/*.js'
     ],
     dest: loc.dist + '/js/',
     name: 'main.js'
