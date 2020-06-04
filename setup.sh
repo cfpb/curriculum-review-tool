@@ -11,16 +11,23 @@ set -e
 
 # Initialize project dependency directories.
 init() {
-  if [ -f "package-lock.json" ]; then
-    DEP_CHECKSUM=$(cat package*.json | shasum -a 256)
-  else
-    DEP_CHECKSUM=$(cat package.json | shasum -a 256)
+  if [ "$(uname -s)" == 'Darwin' ]; then
+    SHA_CMD="shasum -a 256"
+  fi
+  if [ "$(uname -s)" == 'Linux' ]; then
+    SHA_CMD="sha256sum"
   fi
 
   if [ -f "package-lock.json" ]; then
-    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package*.json | shasum -a 256)
+    DEP_CHECKSUM=$(cat package*.json | ${SHA_CMD})
   else
-    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package.json | shasum -a 256)
+    DEP_CHECKSUM=$(cat package.json | ${SHA_CMD})
+  fi
+
+  if [ -f "package-lock.json" ]; then
+    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package*.json | ${SHA_CMD})
+  else
+    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package.json | ${SHA_CMD})
   fi
 
   if [[ "$(node -v)" != 'v10.'* ]] &&
