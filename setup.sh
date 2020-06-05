@@ -11,23 +11,16 @@ set -e
 
 # Initialize project dependency directories.
 init() {
-  if [ "$(uname -s)" == 'Darwin' ]; then
-    SHA_CMD="shasum -a 256"
-  fi
-  if [ "$(uname -s)" == 'Linux' ]; then
-    SHA_CMD="sha256sum"
+  if [ -f "package-lock.json" ]; then
+    DEP_CHECKSUM=$(cat package*.json | shasum -a 256)
+  else
+    DEP_CHECKSUM=$(cat package.json | shasum -a 256)
   fi
 
   if [ -f "package-lock.json" ]; then
-    DEP_CHECKSUM=$(cat package*.json | ${SHA_CMD})
+    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package*.json | shasum -a 256)
   else
-    DEP_CHECKSUM=$(cat package.json | ${SHA_CMD})
-  fi
-
-  if [ -f "package-lock.json" ]; then
-    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package*.json | ${SHA_CMD})
-  else
-    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package.json | ${SHA_CMD})
+    CR_TOOL_DEP_CHECKSUM=$(cat crtool/crtool/package.json | shasum -a 256)
   fi
 
   if [[ "$(node -v)" != 'v10.'* ]] &&
@@ -64,6 +57,9 @@ clean() {
 
 # Install project dependencies.
 install() {
+  echo "Installing nvm"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
   echo "Installing front-end dependencies."
   npm install -d --loglevel warn --unsafe-perm
 }
