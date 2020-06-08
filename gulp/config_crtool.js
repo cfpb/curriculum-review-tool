@@ -5,14 +5,14 @@ const globAll = require( 'glob-all' );
  * Set up file paths
  */
 const loc = {
-  src:  './teachers_digital_platform/',
-  dist: './teachers_digital_platform/static/tdp/',
-  lib:  './node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
-  test: './teachers_digital_platform/tests/'
+  src:  './crtool/',
+  dist: './crtool/static/tdp/',
+  lib:  './crtool/crtool/node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
+  test: './crtool/crtool/src/__tests__/'
 };
 
 module.exports = {
-  pkg:    JSON.parse( fs.readFileSync( 'package.json' ) ), // eslint-disable-line no-sync, no-inline-comments, max-len
+  pkg:    JSON.parse( fs.readFileSync( 'crtool/crtool/package.json' ) ), // eslint-disable-line no-sync, no-inline-comments, max-len
   banner:
       '/*!\n' +
       ' *               ad$$               $$\n' +
@@ -56,7 +56,7 @@ module.exports = {
   },
   styles: {
     cwd:      loc.src + '/css',
-    src:      '/tdp.less',
+    src:      '/crtool.less',
     dest:     loc.dist + '/css',
     settings: {
       paths: globAll.sync( [
