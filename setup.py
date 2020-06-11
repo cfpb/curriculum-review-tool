@@ -23,7 +23,7 @@ testing_extras = [
 
 
 setup(
-    name="crtool",
+    name="teachers_digital_platform",
     url="https://github.com/cfpb/teachers-digital-platform",
     author="CFPB",
     author_email="tech@cfpb.gov",
