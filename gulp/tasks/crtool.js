@@ -6,7 +6,7 @@ gulp.task( 'crtool', done => {
     'npm',
     [ 'run', 'build' ],
     {
-      cwd: 'teachers_digital_platform/crtool/',
+      cwd: 'crtool/crtool/',
       stdio: 'inherit'
     }
   )

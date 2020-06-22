@@ -13,9 +13,9 @@
 ### Development Notes
 - **Application Break Down**:
   - There are two web forms to this application:
-    - [../teachers_digital_platform/jinja2/teachers_digital_platform/crt-start.html](../jinja2/teachers_digital_platform/crt-start.html)
+    - [../crtool/jinja2/crtool/crt-start.html](../jinja2/crtool/crt-start.html)
         - This page is a jinja2 template that uses JavaScript to store values in localStorage before redirecting you to the other page.
-    - [../teachers_digital_platform/jinja2/teachers_digital_platform/crt-survey.html](../jinja2/teachers_digital_platform/crt-survey.html)
+    - [../crtool/jinja2/crtool/crt-survey.html](../jinja2/crtool/crt-survey.html)
         - This page is an empty template that initates the REACT application that handles the rest of the application.
     - Information is shared between the above two pages via localStorage.
 
@@ -25,7 +25,7 @@
         - https://github.com/facebook/create-react-app/blob/master/README.md#getting-started
     - This is important because it will now have a webpack.config.js.  Instead we have a package.json and the node_modules folder has defaults set up for us.
     - It should be known we did not use `REDUX` for this application
-    - `Uses localStorage`: All localStorage has been implemented in the [teachers_digital_platform/crtool/src/js/business.logic/repository.js](src/js/business.logic/repository.js) file. This abstraction allows the backend to be changed in the future by editing one file.
+    - `Uses localStorage`: All localStorage has been implemented in the [crtool/crtool/src/js/business.logic/repository.js](src/js/business.logic/repository.js) file. This abstraction allows the backend to be changed in the future by editing one file.
     - **Setup**: All the code for this tool has been implemented in the  [crtool](../crtool/) folder. (Except for the 2 jina2 templates files)
         - This tool even has its own node modules and scripts 
 

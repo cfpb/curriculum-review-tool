@@ -2,8 +2,8 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "wagtail>=2.3,<2.6",
-    "Django>=1.11,<2.3",
+    "wagtail>=2.5,<2.6",
+    "Django>=2.2,<2.3",
     "django-haystack",
     "django-mptt==0.9.0",
     "django-js-asset==1.1.0",
@@ -27,27 +27,30 @@ setup(
     url="https://github.com/cfpb/teachers-digital-platform",
     author="CFPB",
     author_email="tech@cfpb.gov",
-    description="Teachers digital platform",
+    description="Teachers Curriculum Review tool",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     license="CC0",
     version_format="{tag}.dev{commitcount}+{gitsha}",
     include_package_data=True,
     packages=find_packages(),
     package_data={
-        "teachers_digital_platform": [
-            "jinja2/teachers_digital_platform/*",
-            "jinja2/teachers_digital_platform/prototypes/*",
-            "templates/search/indexes/teachers_digital_platform/*",
+        "crtool": [
+            "jinja2/crtool/*",
+            "jinja2/crtool/prototypes/*",
             "static/tdp/css/*",
             "static/tdp/js/*",
             "static/tdp/img/*",
             "static/tdp/fonts/*",
         ],
+        "teachers_digital_platform": [
+            "jinja2/teachers_digital_platform/*",
+            "jinja2/teachers_digital_platform/prototypes/*",
+            "templates/search/indexes/teachers_digital_platform/*",
+        ],
     },
     classifiers=[
         "Framework :: Django",
-        "Framework :: Django :: 1.11",
-        "Framework :: Django :: 2.2",
+        "Framework :: Django :: 2",
         "Framework :: Wagtail",
         "Framework :: Wagtail :: 2",
         "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
