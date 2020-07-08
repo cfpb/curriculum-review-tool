@@ -62,7 +62,7 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
     ],
-    python_requires=">=3",
+    python_requires=">=3.6",
     install_requires=install_requires,
     setup_requires=setup_requires,
     extras_require={"testing": testing_extras},
