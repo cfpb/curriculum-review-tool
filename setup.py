@@ -23,7 +23,7 @@ testing_extras = [
 
 
 setup(
-    name="teachers_digital_platform",
+    name="crtool",
     url="https://github.com/cfpb/teachers-digital-platform",
     author="CFPB",
     author_email="tech@cfpb.gov",
@@ -41,15 +41,6 @@ setup(
             "static/tdp/fonts/*",
             "static/tdp/img/*",
             "static/tdp/js/*",
-        ],
-        "teachers_digital_platform": [
-            "jinja2/teachers_digital_platform/*",
-            "jinja2/teachers_digital_platform/prototypes/*",
-            "static/tdp/css/*",
-            "static/tdp/fonts/*",
-            "static/tdp/img/*",
-            "static/tdp/js/*",
-            "templates/search/indexes/teachers_digital_platform/*",
         ],
     },
     classifiers=[

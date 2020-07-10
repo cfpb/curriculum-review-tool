@@ -76,5 +76,3 @@ node_modules/
 crtool/crtool/build/
 crtool/crtool/coverage/
 crtool/static/*
-teachers_digital_platform/static/*
-teachers_digital_platform/tests/unit_test_coverage/

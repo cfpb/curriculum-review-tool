@@ -55,13 +55,8 @@ function requireAllDefaultTasks() {
 
   // Define top-level tasks.
   gulp.task( 'build',
-    gulp.series(
-      gulp.parallel(
-        'styles',
-        'scripts',
-        'crtool'
-      ),
-      'copy'
+    gulp.parallel(
+      'styles'
     )
   );
   console.log( 'defining test task' );
