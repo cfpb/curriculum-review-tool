@@ -119,7 +119,7 @@
             <h2>Curriculum information</h2>
             <p>Enter the information for the curriculum you’re reviewing.</p>
         </div>
-        <form class="o-form" method="GET" action="../tool">
+        <form class="o-form" method="GET" action="../create-review">
             <div class="o-form_group">
                 <div class="m-form-field
                             m-form-field__text">
@@ -189,7 +189,7 @@
                 </div>
             </div>
             <div class="m-btn-group m-btn-group__wide">
-                <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../tool">
+                <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../create-review">
                     Start review
                 </button>
                 <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
@@ -444,7 +444,7 @@
         }
 
         /*
-         * When user starts a new reveiw we need to send analytics for
+         * When user starts a new review we need to send analytics for
          * Curriculum Title, Publication Date, & Grade Range
          */
         function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
