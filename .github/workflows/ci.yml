@@ -55,17 +55,6 @@ jobs:
         # If the above git describe command doesn't work,
         # then setuptools-git-version will also fail.
 
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-        env:
-          RUNNER_TEMP: /tmp
-
-      - name: Install Node dependencies
-        run: |
-          npm install -g gulp-cli
-
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
