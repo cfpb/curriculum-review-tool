@@ -15,6 +15,12 @@ setup_requires = [
     "setuptools-git-version==1.0.3",
 ]
 
+testing_extras = [
+    "mock>=2.0.0",
+    "coverage>=3.7.0",
+]
+
+
 setup(
     name="crtool",
     url="https://github.com/cfpb/teachers-digital-platform",
@@ -48,5 +54,6 @@ setup(
     ],
     install_requires=install_requires,
     setup_requires=setup_requires,
+    extras_require={"testing": testing_extras},
     frontend_build_script="setup.sh",
 )
