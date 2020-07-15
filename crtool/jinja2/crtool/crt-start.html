@@ -119,7 +119,7 @@
             <h2>Curriculum information</h2>
             <p>Enter the information for the curriculum you’re reviewing.</p>
         </div>
-        <form class="o-form" method="GET" action="../create-review">
+        <form class="o-form" method="GET" action="../tool" onsubmit="beginReviewButtonClick(event);return false;">
             <div class="o-form_group">
                 <div class="m-form-field
                             m-form-field__text">
@@ -132,6 +132,7 @@
                                 a-text-input__full"
                         type="text"
                         id="tdp-crt_title"
+                        name="tdp-crt_title"
                         oninput="onValuesChanged();">
                 </div>
             </div>
@@ -149,7 +150,8 @@
                             <input class="a-text-input
                                           a-text-input__full"
                                     type="text"
-                                    id="tdp-crt_pubdate">
+                                    id="tdp-crt_pubdate"
+                                    name="tdp-crt_pubdate">
                         </div>
                     </li>
                     <li class="content-l_col content-l_col-1-2">
@@ -161,7 +163,7 @@
                                 Grade range
                             </label>
                             <div class="a-select">
-                                <select id="tdp-crt_grade" onchange="onValuesChanged();">
+                                <select id="tdp-crt_grade" name="tdp-crt_grade" onchange="onValuesChanged();">
                                     <option value="">Select grade range</option>
                                     <option value="Elementary school">Elementary school</option>
                                     <option value="Middle school">Middle school</option>
@@ -189,11 +191,13 @@
                 </div>
             </div>
             <div class="m-btn-group m-btn-group__wide">
-                <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" onclick="beginReviewButtonClick();return true;" formaction="../create-review">
+                <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" bonclick="beginReviewButtonClick();return false;" formaction="../tool">
                     Start review
                 </button>
                 <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" data-gtm_ignore="true" onclick="openNewReviewModalWindow();return false;">Start over with a new review</button>
             </div>
+            <input type="hidden" id="tdp-crt_id" name="tdp-crt_id" value="">
+            <input type="hidden" id="tdp-crt_pass_code" name="tdp-crt_pass_code" value="">
         </form>
         <!--<![endif]-->
     </div>
@@ -389,9 +393,14 @@
          * Set the values based on localStorage
          */
         function setInitialFormValues() {
-            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle') || "";
-            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate') || "";
-            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange') || "";
+            var review = getCurrentReview();
+            if (review) {
+                document.getElementById('tdp-crt_title').value = review.curriculumTitle || "";
+                document.getElementById('tdp-crt_pubdate').value = review.publicationDate || "";
+                document.getElementById('tdp-crt_grade').value = review.gradeRange || "";
+                document.getElementById('tdp-crt_id').value = review.id || "";
+                document.getElementById('tdp-crt_pass_code').value = review.pass_code || "";
+            }
 
             setBeginReviewButtonEnabling();
 
@@ -430,15 +439,37 @@
         /*
          * Method that actually saves values (Title, Date, & Grad Range)
          */
-        function beginReviewButtonClick() {
+        function beginReviewButtonClick(e) {
+            e.preventDefault();
             var curriculumTitle = document.getElementById('tdp-crt_title').value;
-            localStorage.setItem('curriculumTitle', curriculumTitle);
-
             var publicationDate = document.getElementById('tdp-crt_pubdate').value;
-            localStorage.setItem('publicationDate', publicationDate);
-
             var gradeRange = document.getElementById('tdp-crt_grade').value;
-            localStorage.setItem('gradeRange', gradeRange);
+            var curriculumReviewId = document.getElementById('tdp-crt_id').value;
+            var curriculumPassCode = document.getElementById('tdp-crt_pass_code').value;
+            console.log('got here');
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log('got here too');
+                    console.log(this.responseText);
+                    const review = JSON.parse(this.responseText);
+                    console.log(review);
+                    localStorage.setItem('curriculumReviewId', review.id);
+                    localStorage.setItem('crtool.'+review.id, JSON.stringify(review));
+                    window.location.href = '../tool?token='+ review.id;
+                }
+            };
+            var requestUrl = '../create-review?tdp-crt_title=' +
+                    curriculumTitle +
+                    '&tdp-crt_pubdate=' + publicationDate +
+                    '&tdp-crt_grade=' + gradeRange +
+                    '&tdp-crt_pass_code=' + curriculumPassCode;
+            if (curriculumReviewId) {
+                requestUrl = '../get-review?tdp-crt_id=' + curriculumReviewId;
+            }
+            xhttp.open("GET", requestUrl);
+            xhttp.send();
 
             recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange);
         }
@@ -464,11 +495,14 @@
          * User has choosen to clear all values and start over
          */
         function clearLocalStorage() {
-            localStorage.clear();
+            var review = getCurrentReview();
+            if (review) {
+                localStorage.removeItem('curriculumReviewId');
+            }
 
-            document.getElementById('tdp-crt_title').value = localStorage.getItem('curriculumTitle') || "";
-            document.getElementById('tdp-crt_pubdate').value = localStorage.getItem('publicationDate') || "";
-            document.getElementById('tdp-crt_grade').value = localStorage.getItem('gradeRange') || "";
+            document.getElementById('tdp-crt_title').value = "";
+            document.getElementById('tdp-crt_pubdate').value = "";
+            document.getElementById('tdp-crt_grade').value = "";
 
             closeNewReviewModalWindow();
             setBeginReviewButtonEnabling();
@@ -564,6 +598,20 @@
             if (openingSaveWorkModal) {
               openingSaveWorkModal = false;
             }
+        }
+
+        /*
+         *
+         */
+        function getCurrentReview() {
+            review = false;
+            var reviewId = localStorage.getItem('curriculumReviewId') || "";
+            if (reviewId) {
+                if (review = localStorage.getItem('crtool.' + reviewId)) {
+                    review = JSON.parse(review);
+                }
+            }
+            return review;
         }
     </script>
 {%- endblock javascript %}

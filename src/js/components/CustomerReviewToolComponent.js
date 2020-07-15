@@ -14,6 +14,7 @@ import DateTimeFormater from "../business.logic/dateTimeFormatter";
 import Repository from "../business.logic/repository";
 import CriterionService from "../business.logic/criterionService";
 import EfficacyCalculationService from "../business.logic/summary/efficacyCalculationService";
+import crtoolLocalStorage from "../business.logic/crtoolLocalStorage";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -77,7 +78,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     /*
-     * Remove all values frmo localStorage.
+     * Remove all values from localStorage.
      * Used for starting a new review
      */
     clearLocalStorage() {
@@ -173,9 +174,9 @@ export default class CustomerReviewToolComponent extends React.Component {
             this.setState({finalSummaryShowEntireReview: "false"});
 
             setTimeout(function(){
-                localStorage.setItem(C.START_PAGE, distinctiveName);
-                localStorage.setItem("currentPrintButton", "");
-                localStorage.setItem("finalSummaryShowEntireReview", "false");
+                crtoolLocalStorage.setItem(C.START_PAGE, distinctiveName);
+                crtoolLocalStorage.setItem("currentPrintButton", "");
+                crtoolLocalStorage.setItem("finalSummaryShowEntireReview", "false");
           },3000);
         }
     }
