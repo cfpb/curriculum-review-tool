@@ -76,3 +76,4 @@ node_modules/
 crtool/crtool/build/
 crtool/crtool/coverage/
 crtool/static/*
+build/*
