@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from pprint import pprint
+from datetime import datetime
 
 
 from crtool.models import CurriculumReviewSession
@@ -23,7 +24,7 @@ def create_review(request):
 
         data['id'] = str(review_id)
         data['pass_code'] = pass_code
-        data['last_updated'] = str(last_updated)
+        data['last_updated'] = str(datetime.isoformat(last_updated))
         data['curriculumTitle'] = title
         data['publicationDate'] = pub_date
         data['gradeRange'] = grade_range
@@ -56,8 +57,11 @@ def update_review(request):
         if "id" in data:
             review = CurriculumReviewSession.objects.get(id=data["id"])
             if review:
+                # Update last_updated date
+                last_updated = timezone.now()
+                data['last_updated'] = str(datetime.isoformat(last_updated))
                 review.data = data
-                review.last_updated = timezone.now()
+                review.last_updated = last_updated
                 review.save()
                 return JsonResponse(review.data)
 
