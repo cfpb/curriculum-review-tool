@@ -1,115 +1,108 @@
 # Curriculum Review Tool
 
-**Description**:  
-- The Curriculum Review Tool is a web application that allows a teacher to assess the merits of a financial education curriculum.  The assesment is made accross 4 dimensions "Content", "Quality", "Utility", & "Efficacy".  Once they are done responding to the questions in those dimensions they can print or save as PDF.
-- Below is a view of the 4 Dimensions used
-![](Documentation/DimensionButtons.png)
-- Let it be known of the 4 Dimensions above the Content Dimension has 3 different views based on grade range. Depending the user selection on the start page the Content Dimension will present a different set of questions.
+The [Curriculum Review Tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive tool for educators to use as an alternative to the existing [paper-based tool](https://files.consumerfinance.gov/f/documents/cfpb_youth-financial-education-curriculum-review-tool.pdf) that allows a teacher to assess the merits of a financial education curriculum.  The assessment is made across four dimensions: content, quality, utility, and efficacy. After responding to questions in each of those dimensions, users can print or save a PDF the results of the assessment.
 
-    - Elementary School Content
-    - Middle School Content
-    - High School Content
+![Screenshot of the tool's navigation bar showing the four dimensions](DimensionButtons.png)
 
-### Development Notes
-- **Application Break Down**:
-  - There are two web forms to this application:
-    - [../crtool/jinja2/crtool/crt-start.html](../jinja2/crtool/crt-start.html)
-        - This page is a jinja2 template that uses JavaScript to store values in localStorage before redirecting you to the other page.
-    - [../crtool/jinja2/crtool/crt-survey.html](../jinja2/crtool/crt-survey.html)
-        - This page is an empty template that initates the REACT application that handles the rest of the application.
-    - Information is shared between the above two pages via localStorage.
-
-- **Technology stack**: Implemented using REACT with webpack.
-    - The Curriculum Review Tool is one of the 3 applications this repository represents, and it has been implemented entirely using REACT.
-    - Used the `create react app` when creating the initial app
-        - https://github.com/facebook/create-react-app/blob/master/README.md#getting-started
-    - This is important because it will now have a webpack.config.js.  Instead we have a package.json and the node_modules folder has defaults set up for us.
-    - It should be known we did not use `REDUX` for this application
-    - `Uses localStorage`: All localStorage has been implemented in the [crtool/crtool/src/js/business.logic/repository.js](src/js/business.logic/repository.js) file. This abstraction allows the backend to be changed in the future by editing one file.
-    - **Setup**: All the code for this tool has been implemented in the  [crtool](../crtool/) folder. (Except for the 2 jina2 templates files)
-        - This tool even has its own node modules and scripts 
-
-## Installing the REACT CRTool
-- Clone the repository inside the `develop-apps` folder of the cfgov-refresh repository located here: `cfgov-refresh/develop-apps`
-- Execute the following script file at the root of the teachers-digital-platform repository
-```console
-root:~$ ./setup.sh
-```
-
-- The build will generate a new crtool.main.js file that is copied to the static/tdp/js folder
-
-## Running Unit Tests for REACT CRTool
-- First rebuild the project
-    ```console
-    root:~$ npm run build
-    ``` 
-- Execute the jest tests
-    ```console
-    root:~$ npm test
-    ``` 
-- Reconstruct snapshot data for the tests
-    - This will be needed if the content ever changes and the snapshot test fail for that reason.  You will also need this while writing new tests for any new pages where the non functional screen is in flux.
-    ```console
-    root:~$ npm test -- -u
-    ``` 
-
-## Viewing the app in the local development server:
-- The Curriculum Review Tool has been implemented behind a Feature Flag.  You will need to login to the admin and set the flag ```TDP_CRTOOL``` to ```True```
-- After you turn the feature flag on navigate here:
- - Actual URL: http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
-    - Ensure you always start with the "before-you-begin" page.  It allows you to get the initial title and grade assignments set before you start the actual tool. (NOTE: The only way to get to the tool is by clicking the begin option from the before-you-begin page unless you know the exact link.)
-    - Again since this uses localstorage any time you get to this page you should have the values already in your localstorage
+The content dimension has three different views based on the grade range (elementary, middle, or high school) selected when beginning a review. The other dimensions are the same for each grade range.
 
 
-## Development Code Break Down 
-- Unit Test can be found under the [../src/__tests__](src/__tests__) folder
-  - They are using jest and enzyme
-- [../src/js/CustomerReviewToolComponent.js](src/js/components/CustomerReviewToolComponent.js): Is the main entry point for the Survey tool
-  - This is where you will find the state properites for the entire app.
-  - This is where the flow of the application starts
-- All the business logic for the app is in the [../crtool/src/js/business.logic](src/js/business.logic) folder
-- There are many react components that make up different parts of the app. Located in the [../crtool/src/js/components](src/js/components) folder. That are organized in different folders (not as organized as I would like).
-- There are 3 major parts of a Dimension to be aware of (Remember the Content Dimension has 3 differnet sets of questions based on grade range):
-    1) Dimension Survey pages
-        - These pages/components are where all the questions are presented to the user
-    2) Dimension Summary pages
-        - These pages/components are where all results of the survey's are presented to the user with note fields
-    3) Final Print/Summary pages
-        - These pages are where every thing in the tool is presented in a NON editable fasion for printing or saving as PDF from the print menu.
+## Technology stack
 
-## Content Overview
-- Content is any text that is unique to a given Dimension showing up after you click a Dimension button.
-- Master content can be found here:
-  - [../src/js/content_data/](src/js/content_data)
-- To better understand what the content is, take a moment to look at the JavaScript files located in the above linked content_data folder.
-- REACT code imports a JavaScript file from the content_data folder (i.e. [utilityContent.js](src/js/content_data/utilityContent.js)) and loops through the objects passing the content down to the REACT components to display to the screen.
-    - NOTE: unfortunately time got away from us and the ...CriterionPage.js & ...PrintPage.js files did not pull the content from the master location since they were developed before the master content_data folder was created. We look forward to refactoring this out so every thing pulls from the json files in the content_data folder.
-    - The ...PrintPage.js files are a step closer to pulling data from the content_data folder in that they already reuse other REACT components (this makes more sense when you look at the actual file)
-    - The ...CriterionPage.js files are rather large and have all the content and html located in the same file.
+- The CR Tool is primarily a **React app**.
+- It is packaged up in the form of a basic **Django app** for ease of integration with the [cfgov-refresh](https://github.com/cfpb/cfgov-refresh) Django project.
+- **Jinja2** [is used](crtool/jinja2/crtool/) for HTML templating.
+- [**create-react-app**](https://github.com/facebook/create-react-app) was used for initial setup
+- `localStorage` [is used](src/js/business.logic/repository.js) to save a user's progress across multiple sessions.
+- The app's [JavaScript](src/) is built with basic [**npm scripts**](package.json#L18-L23), but **Gulp** is used to compile the [Less](crtool/css/) into CSS.
+- JavaScript is tested with **Jest**.
 
-### How to edit `Content`
-- The easiest way to change content is do a Find in Files for the text you want to change, change it in all locations it shows up and submit a PR.
-    - The functionality of this tool is not affected by the content changing.
-- Before starting the steps below it is important to understand there are 3 different types of content for each Dimension
-    - Dimension Criterion
-    - Dimension Print
-    - Dimension Summary
-        - Only the Summary/Print have content in one location
-#### Steps
-1. Start by editing the JavaScript files in the [../src/js/content_data/](src/js/content_data) folder. (Find in Files the text you want to change and take note where it shows up)
-2. Both Criterion & Print pages have content in TWO different locations. The content_data folder & in their repective location below
-    - Criterion Pages:
-    (../src/js/components/pages/**/*CriterionPage.js)
-        - ContentElementaryCriterionPage.js
-        - ContentMiddleCriterionPage.js
-        - ContentHighCriterionPage.js
-        - QualityCriterionPage.js
-        - UtilityCriterionPage.js
-        - EfficacyCriterionPage.js
-    - Print Pages (../src/js/components/pages/**/*PrintPage.js)
-        - ContentElementaryPrintPage.js
-        - ContentMiddlePrintPage.js
-        - ContentHighPrintPage.js
-        - QualityPrintPage.js
-        - UtilityPrintPage.js
-        - EfficacyPrintPage.js
+
+## Installation for development
+
+The CR Tool will only work fully in the context of cfgov-refresh.
+
+1. Clone this repository and install it locally into your cfgov-refresh environment, following [the cfgov-refresh docs for working on satellite apps](https://cfpb.github.io/cfgov-refresh/related-projects/#developing-python-packages-with-cfgov-refresh).
+1. In this repository's root, run `./setup.sh` to install front-end dependencies and do an initial build.
+1. Start your development server
+1. Go to http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
+
+If this page doesn't come up, you may need to set the `TDP_CRTOOL` flag to `True` in the Flags section of your local Wagtail admin.
+
+
+## Running the tests
+
+Run `npm test` to have Jest run the JavaScript unit test suite, which is found in the [`src/__tests__`](src/__tests__) folder.
+
+To reconstruct snapshot data for the tests, run `npm test -- -u`. This will be needed if the content ever changes and the snapshot test fails for that reason. You will also need this while writing new tests for any new pages.
+
+
+## Development notes
+
+### Templates
+
+The application ultimately serves two Jinja templates at particular URLs:
+
+1. [`crt-start.html`](crtool/jinja2/crtool/crt-start.html)
+
+   This template is served by the `before-you-begin` URL. It contains a small form for setting options for a review in localStorage before starting it.
+2. [`crt-survey.html`](crtool/jinja2/crtool/crt-survey.html)
+
+   This template serves the React application for the review interface itself at the `tool` URL. It is nothing more than an empty `<div id="react">` that serves at the hook for the React app initialization.
+   This templates extends the [`crt-base.html`](crtool/jinja2/crtool/crt-base.html) template, which extends the `layout-full` template from cfgov-refresh, overrides a few things to enforce focusing on the tool, adds in the tool-specific CSS and JS.
+
+### JavaScript
+
+- [`CustomerReviewToolComponent.js`](src/js/components/CustomerReviewToolComponent.js) is the main entry point for the tool.
+  - This is where you will find the state properties for the entire app.
+  - This is where the flow of the application starts.
+  - _TODO:_ Rename this file to correct the "Customer" typo.
+- All the business logic for the app is in the [src/js/business.logic/](src/js/business.logic/) folder.
+- There are many React components that make up different parts of the app, which are located in the [src/js/components/](src/js/components/) folder.
+- There are three major parts of a dimension to be aware of (and remember that the content dimension has three different sets of questions based on grade range):
+  1. **Dimension survey pages** – Where the questions about a dimension are presented to the user.
+  2. **Dimension summary pages** – Where results of a dimension survey are presented to the user.
+  3. **Dimension print page** – Where results of a dimension survey are presented in a non-editable fashion for printing or saving as a PDF.
+
+### Content overview
+
+"Content" refers to any text that is unique to a given dimension that shows up after you click a dimension button.
+
+- Most content can be found in the [src/js/content_data/](src/js/content_data/) folder.
+- React code imports a JavaScript file from the `content_data` folder (e.g., [`utilityContent.js`](src/js/content_data/utilityContent.js)) and loops through the objects, passing the content down to the React components to display on the page.
+  - Due to time constraints, the `…CriterionPage.js` and `…PrintPage.js` files do not pull the content from the main `content_data` folder, because they were developed before that folder was created. The `…PrintPage.js` files are a step closer to pulling data from the `content_data` folder in that they already reuse other React components. (This makes more sense when you look at the actual file.) The `…CriterionPage.js` files are rather large and have all the content and HTML located in the same file.
+
+#### How to edit content
+
+The easiest way to change content is to search in your editor or filesystem for the text you want to change, change it in all locations it shows up, and submit a PR.
+
+The functionality of this tool is not affected by the content changing.
+
+Both Criterion & Print pages have content in TWO different locations: the `content_data` folder and in their respective locations below.
+- Criterion pages (`src/js/components/pages/**/*CriterionPage.js`):
+  - ContentElementaryCriterionPage.js
+  - ContentMiddleCriterionPage.js
+  - ContentHighCriterionPage.js
+  - QualityCriterionPage.js
+  - UtilityCriterionPage.js
+  - EfficacyCriterionPage.js
+- Print pages (`src/js/components/pages/**/*PrintPage.js`):
+  - ContentElementaryPrintPage.js
+  - ContentMiddlePrintPage.js
+  - ContentHighPrintPage.js
+  - QualityPrintPage.js
+  - UtilityPrintPage.js
+  - EfficacyPrintPage.js
+
+
+## Getting help
+
+If you have questions, concerns, bug reports, etc., please file an issue in this repository's issue tracker.
+
+
+----
+
+## Open source licensing info
+1. [TERMS](TERMS.md)
+2. [LICENSE](LICENSE)
+3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
