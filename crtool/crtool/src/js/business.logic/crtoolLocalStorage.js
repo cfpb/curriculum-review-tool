@@ -1,3 +1,5 @@
+import C from "./constants";
+
 const crtoolLocalStorage = {
 
     getCurrentReview() {
@@ -13,6 +15,9 @@ const crtoolLocalStorage = {
         }
         review = this.loadReviewFromDatabase(review_id);
         console.log(review);
+        if (JSON.stringify(review) === '{}') {
+            window.location.href = C.START_PAGE_RELATIVE_URL;
+        }
         return review;
     },
 
@@ -30,9 +35,9 @@ const crtoolLocalStorage = {
         if (review_id) {
             review = localStorage.getItem('crtool.' + review_id) || "{}";
             console.log('review: line 35');
-            if (review) {
-                localStorage.setItem('curriculumReviewId', review_id)
-                review = JSON.parse(review);
+            review = JSON.parse(review);
+            if ("id" in review) {
+                localStorage.setItem('curriculumReviewId', review_id);
                 console.log('review: line 40');
                 console.log(review);
             }
@@ -108,7 +113,7 @@ const crtoolLocalStorage = {
         console.log('crtoolLocalStorage setItem: line 111');
         console.log(key + ': ' + value);
         const review = this.getCurrentReview();
-        if (review) {
+        if ("id" in review) {
             console.log('setItem review: line 115');
             review[key] = value;
             return this.updateDatabaseReview(review);
@@ -138,7 +143,7 @@ const crtoolLocalStorage = {
 
     clear() {
         const review = this.getCurrentReview();
-        if (review) {
+        if ("id" in review) {
             localStorage.removeItem('curriculumReviewId');
         }
     },

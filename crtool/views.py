@@ -1,5 +1,6 @@
 # from django.shortcuts import render
-from django.http import JsonResponse
+from django.core.exceptions import ValidationError
+from django.http import JsonResponse, Http404
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from pprint import pprint
@@ -41,9 +42,12 @@ def get_review(request):
     data = {}
     if request.method == 'GET':
         review_id = request.GET.get('tdp-crt_id')
-        review = CurriculumReviewSession.objects.get(id=review_id)
-        if review:
-            data = review.data
+        try:
+            review = CurriculumReviewSession.objects.get(id=review_id)
+            if review:
+                data = review.data
+        except (CurriculumReviewSession.DoesNotExist, ValidationError):
+            raise Http404("Review not found.")
     return JsonResponse(data)
 
 @csrf_exempt
