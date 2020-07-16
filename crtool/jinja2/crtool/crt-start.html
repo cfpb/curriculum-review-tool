@@ -446,15 +446,11 @@
             var gradeRange = document.getElementById('tdp-crt_grade').value;
             var curriculumReviewId = document.getElementById('tdp-crt_id').value;
             var curriculumPassCode = document.getElementById('tdp-crt_pass_code').value;
-            console.log('got here');
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log('got here too');
-                    console.log(this.responseText);
                     const review = JSON.parse(this.responseText);
-                    console.log(review);
                     localStorage.setItem('curriculumReviewId', review.id);
                     localStorage.setItem('crtool.'+review.id, JSON.stringify(review));
                     window.location.href = '../tool?token='+ review.id;

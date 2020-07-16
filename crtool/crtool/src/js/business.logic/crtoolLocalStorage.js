@@ -2,18 +2,15 @@ const crtoolLocalStorage = {
 
     getCurrentReview() {
         let review = false;
-        let review_id = this.getUrlParameter('token') || localStorage.getItem('curriculumReviewId') || '';
+        const token = this.getUrlParameter('token');
+        let review_id = token || localStorage.getItem('curriculumReviewId') || '';
         console.log('getCurrentReview: line 6');
         console.log(review_id);
-//        if (!review_id) {
-//            review = this.getReviewFromLocalStorage();
-//            review_id = "id" in review ? review.id : null;
-//            console.log(review_id);
-//        }
-//        else {
-//            review = this.getReviewFromLocalStorage(review_id);
-//        }
-//        console.log(review)
+        if (!token && review_id) {
+            console.log('redirect to URL with token: line 10');
+            const new_url = this.updateUrlParameter(window.location.href, 'token', review_id);
+            window.history.pushState({path:new_url}, '', new_url);
+        }
         review = this.loadReviewFromDatabase(review_id);
         console.log(review);
         return review;
@@ -146,11 +143,31 @@ const crtoolLocalStorage = {
         }
     },
 
+    // IE compatible method for getting a querystring parameter from a URL
+    // Credit: https://stackoverflow.com/a/901144
     getUrlParameter(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
         const results = regex.exec(window.location.search);
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    },
+
+    // Add / Update a key-value pair in the URL query parameters
+    // Credit: https://gist.github.com/niyazpk/f8ac616f181f6042d1e0
+    updateUrlParameter(uri, key, value) {
+        // remove the hash part before operating on the uri
+        const i = uri.indexOf('#');
+        const hash = i === -1 ? ''  : uri.substr(i);
+             uri = i === -1 ? uri : uri.substr(0, i);
+
+        const re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        const separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            uri = uri.replace(re, '$1' + key + "=" + value + '$2');
+        } else {
+            uri = uri + separator + key + "=" + value;
+        }
+        return uri + hash;  // finally append the hash as well
     },
 
 };

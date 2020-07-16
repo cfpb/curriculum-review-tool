@@ -11,4 +11,4 @@ class CurriculumReviewSession(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     pass_code = models.CharField(max_length=50, null=True, blank=True)
     data = JSONField()
-    last_updated = models.DateField('Updated', default=timezone.now)
+    last_updated = models.DateTimeField('Updated', default=timezone.now)

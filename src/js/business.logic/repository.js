@@ -14,7 +14,6 @@ const Repository = {
      */
     resetApplicationData() {
         this.clearAllData();
-        crtoolLocalStorage.setItem(C.START_PAGE, C.START_PAGE);
     },
 
     /*
