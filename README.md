@@ -1,6 +1,6 @@
 # Curriculum Review Tool
 
-The [Curriculum Review Tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive tool for educators to use as an alternative to the existing [paper-based tool](https://files.consumerfinance.gov/f/documents/cfpb_youth-financial-education-curriculum-review-tool.pdf) that allows a teacher to assess the merits of a financial education curriculum.  The assessment is made across four dimensions: content, quality, utility, and efficacy. After responding to questions in each of those dimensions, users can print or save a PDF the results of the assessment.
+The [Curriculum Review Tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive tool that allows a teacher to assess the merits of a financial education curriculum. It is an alternative to the existing [paper-based tool](https://files.consumerfinance.gov/f/documents/cfpb_youth-financial-education-curriculum-review-tool.pdf). The assessment is made across four dimensions: content, quality, utility, and efficacy. After responding to questions in each of those dimensions, users can print or save a PDF the results of the assessment.
 
 ![Screenshot of the tool's navigation bar showing the four dimensions](DimensionButtons.png)
 

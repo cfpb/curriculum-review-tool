@@ -1,8 +1,33 @@
 {
-  "name": "tdp-prototype",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": ".",
+  "name": "crtool",
+  "version": "1.0.0",
+  "description": "The Curriculum Review Tool is an interactive tool that allows a teacher to assess the merits of a financial education curriculum.",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
+  "bugs": "https://github.com/cfpb/curriculum-review-tool/issues",
   "dependencies": {
     "core-js": "2.5.6",
     "enzyme": "3.3.0",
@@ -14,12 +39,6 @@
     "react-scripts": "3.1.2",
     "react-test-renderer": "16.3.1",
     "resolve-url": "0.2.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build --debug && mkdir -p ./crtool/static/tdp/js && awk '{ print $0 \"\\n\" }' build/static/**/*.js > ./crtool/static/tdp/js/crtool.react.v1.js && mv build/static/js/*.map ./crtool/static/tdp/js/ && npx gulp",
-    "test": "jest --coverage",
-    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "autoprefixer": "8.6.5",
@@ -58,30 +77,23 @@
     "stylelint": "10.0.1",
     "stylelint-config-standard": "18.3.0"
   },
-  "babel": {
-    "presets": [
-      "@babel/env",
-      "@babel/react"
-    ]
-  },
+  "homepage": "https://www.consumerfinance.gov/",
   "jest": {
-    "testURL": "http://localhost/",
     "setupFilesAfterEnv": [
       "./src/jest/setup.js"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "ie 9"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "ie 9"
-    ]
+  "license": "SEE LICENSE IN TERMS.md",
+  "main": "src/index.js",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cfpb/curriculum-review-tool.git"
+  },
+  "scripts": {
+    "build": "react-scripts build --debug && mkdir -p ./crtool/static/tdp/js && awk '{ print $0 \"\\n\" }' build/static/**/*.js > ./crtool/static/tdp/js/crtool.react.v1.js && mv build/static/js/*.map ./crtool/static/tdp/js/ && npx gulp",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "jest --coverage"
   }
 }

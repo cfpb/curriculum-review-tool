@@ -52,7 +52,6 @@ Thumbs.db
 *.egg-info/
 __pycache__/
 *.py[cod]
-.env
 .eggs/
 
 # Django #
