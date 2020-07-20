@@ -67,4 +67,4 @@ jobs:
 
       - name: Run back-end tests
         run: |
-          tox -e lint,py36-dj22,dj36-dj30
+          tox -e lint,py36-dj22,py36-dj30
