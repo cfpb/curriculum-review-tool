@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "Django>=2.2,<2.3",
+    "Django>=2.2,<3.1",
     "django-js-asset==1.1.0",
 ]
 
