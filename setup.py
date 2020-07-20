@@ -2,10 +2,7 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "wagtail>=2.5,<2.6",
     "Django>=2.2,<2.3",
-    "django-haystack",
-    "django-mptt==0.9.0",
     "django-js-asset==1.1.0",
 ]
 
@@ -15,7 +12,6 @@ setup_requires = [
     "setuptools-git-version==1.0.3",
 ]
 
-
 testing_extras = [
     "mock>=2.0.0",
     "coverage>=3.7.0",
@@ -23,7 +19,7 @@ testing_extras = [
 
 
 setup(
-    name="teachers_digital_platform",
+    name="crtool",
     url="https://github.com/cfpb/teachers-digital-platform",
     author="CFPB",
     author_email="tech@cfpb.gov",
@@ -41,15 +37,6 @@ setup(
             "static/tdp/fonts/*",
             "static/tdp/img/*",
             "static/tdp/js/*",
-        ],
-        "teachers_digital_platform": [
-            "jinja2/teachers_digital_platform/*",
-            "jinja2/teachers_digital_platform/prototypes/*",
-            "static/tdp/css/*",
-            "static/tdp/fonts/*",
-            "static/tdp/img/*",
-            "static/tdp/js/*",
-            "templates/search/indexes/teachers_digital_platform/*",
         ],
     },
     classifiers=[

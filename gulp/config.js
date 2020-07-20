@@ -5,10 +5,10 @@ const globAll = require( 'glob-all' );
  * Set up file paths
  */
 const loc = {
-  src:  './teachers_digital_platform/',
-  dist: './teachers_digital_platform/static/tdp/',
+  src:  './crtool/',
+  dist: './crtool/static/tdp/',
   lib:  './node_modules/', // eslint-disable-line no-sync, no-inline-comments, max-len
-  test: './teachers_digital_platform/tests/'
+  test: './src/__tests__/'
 };
 
 module.exports = {
@@ -56,7 +56,7 @@ module.exports = {
   },
   styles: {
     cwd:      loc.src + '/css',
-    src:      '/tdp.less',
+    src:      '/crtool.less',
     dest:     loc.dist + '/css',
     settings: {
       paths: globAll.sync( [

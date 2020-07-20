@@ -1,39 +1,50 @@
 {
-  "name": "django-satellite-app",
+  "name": "crtool",
   "version": "1.0.0",
-  "description": "Django satellite app for CFPB projects",
-  "main": "satellite/js/index.js",
-  "directories": {
-    "test": "test"
+  "description": "The Curriculum Review Tool is an interactive tool that allows a teacher to assess the merits of a financial education curriculum.",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
   },
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "test": "npm run test-crtool && npm run test-js",
-    "test-crtool": "gulp test",
-    "test-js": "jest teachers_digital_platform/__tests__ --coverage",
-    "postinstall": "cd crtool/crtool && npm install"
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cfpb/django-satellite-app.git"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
   },
-  "keywords": [
-    "cfpb",
-    "django"
-  ],
-  "author": "Consumer Financial Protection Bureau",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/cfpb/django-satellite-app/issues"
+  "bugs": "https://github.com/cfpb/curriculum-review-tool/issues",
+  "dependencies": {
+    "core-js": "2.5.6",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "react": "16.3.1",
+    "react-app-polyfill": "^1.0.3",
+    "react-dom": "16.3.3",
+    "react-modal": "3.4.4",
+    "react-scripts": "3.1.2",
+    "react-test-renderer": "16.3.1",
+    "resolve-url": "0.2.1"
   },
-  "homepage": "https://github.com/cfpb/django-satellite-app#readme",
   "devDependencies": {
-    "@babel/core": "7.6.2",
-    "@babel/preset-env": "7.4.4",
-    "aos": "3.0.0-beta.6",
     "autoprefixer": "8.6.5",
-    "babel-loader": "8.0.6",
+    "babel-jest": "24.9.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
     "cf-atomic-component": "8.0.1",
     "cf-buttons": "8.0.1",
     "cf-core": "8.0.1",
@@ -46,9 +57,6 @@
     "cf-pagination": "8.0.1",
     "cf-tables": "8.0.1",
     "cf-typography": "8.0.1",
-    "classlist-polyfill": "1.2.0",
-    "del": "4.1.1",
-    "es5-shim": "4.5.13",
     "glob-all": "3.1.0",
     "gulp": "4.0.2",
     "gulp-changed": "3.2.0",
@@ -65,21 +73,27 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-stylelint": "9.0.0",
     "jest": "24.9.0",
-    "minimist": "1.2.0",
-    "postcss-unmq": "1.0.2",
-    "require-dir": "1.2.0",
-    "smoothscroll-polyfill": "0.4.4",
-    "snyk": "1.161.1",
-    "stickyfilljs": "2.1.0",
+    "mock-local-storage": "1.0.5",
     "stylelint": "10.0.1",
-    "stylelint-config-standard": "18.3.0",
-    "terser-webpack-plugin": "1.2.3",
-    "through2": "3.0.1",
-    "vinyl-named": "1.1.0",
-    "webpack": "4.40.2",
-    "webpack-stream": "4.0.0"
+    "stylelint-config-standard": "18.3.0"
   },
+  "homepage": "https://www.consumerfinance.gov/",
   "jest": {
-    "testURL": "http://localhost"
+    "setupFilesAfterEnv": [
+      "./src/jest/setup.js"
+    ]
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "main": "src/index.js",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cfpb/curriculum-review-tool.git"
+  },
+  "scripts": {
+    "build": "react-scripts build --debug && mkdir -p ./crtool/static/tdp/js && awk '{ print $0 \"\\n\" }' build/static/**/*.js > ./crtool/static/tdp/js/crtool.react.v1.js && mv build/static/js/*.map ./crtool/static/tdp/js/ && npx gulp",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "jest --coverage"
   }
 }

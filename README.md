@@ -1,285 +1,108 @@
-# Teacher Digital Platform
+# Curriculum Review Tool
 
-**Description**:  The Teacher Digital Platform (TDP) will be a section within the existing cf.gov website to promote the CFPBs financial education building blocks research. It will offer teachers resources to assist them with instructing students in K-12 grades on financial education topics.
+The [Curriculum Review Tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive tool that allows a teacher to assess the merits of a financial education curriculum. It is an alternative to the existing [paper-based tool](https://files.consumerfinance.gov/f/documents/cfpb_youth-financial-education-curriculum-review-tool.pdf). The assessment is made across four dimensions: content, quality, utility, and efficacy. After responding to questions in each of those dimensions, users can print or save a PDF the results of the assessment.
 
-This platform contains work for three separate projects: Building blocks tool, Curriculum Review tool, and Search interface.
+![Screenshot of the tool's navigation bar showing the four dimensions](DimensionButtons.png)
 
+The content dimension has three different views based on the grade range (elementary, middle, or high school) selected when beginning a review. The other dimensions are the same for each grade range.
 
-#### Table of Contents
-[Building blocks tool](#building-blocks-tool)
 
-  - [Implementation details](#bb-implementation-details)
+## Technology stack
 
-  - [Local testing/development](#bb-local-testing-development)
+- The CR Tool is primarily a **React app**.
+- It is packaged up in the form of a basic **Django app** for ease of integration with the [cfgov-refresh](https://github.com/cfpb/cfgov-refresh) Django project.
+- **Jinja2** [is used](crtool/jinja2/crtool/) for HTML templating.
+- [**create-react-app**](https://github.com/facebook/create-react-app) was used for initial setup
+- `localStorage` [is used](src/js/business.logic/repository.js) to save a user's progress across multiple sessions.
+- The app's [JavaScript](src/) is built with basic [**npm scripts**](package.json#L18-L23), but **Gulp** is used to compile the [Less](crtool/css/) into CSS.
+- JavaScript is tested with **Jest**.
 
-[Curriculum Review tool](#curriculum-review-tool)
 
-[Search interface](#search-interface)
+## Installation for development
 
-  - [Models](#si-models)
+The CR Tool will only work fully in the context of cfgov-refresh.
 
-[Dependencies](#dependencies)
+1. Clone this repository and install it locally into your cfgov-refresh environment, following [the cfgov-refresh docs for working on satellite apps](https://cfpb.github.io/cfgov-refresh/related-projects/#developing-python-packages-with-cfgov-refresh).
+1. In this repository's root, run `./setup.sh` to install front-end dependencies and do an initial build.
+1. Start your development server
+1. Go to http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
 
-[Installation](#installation)
+If this page doesn't come up, you may need to set the `TDP_CRTOOL` flag to `True` in the Flags section of your local Wagtail admin.
 
-[CSS and JavaScript](#css-and-javascript)
 
-[How to test Software](#how-to-test-the-software)
+## Running the tests
 
-  - [Testing JavaScript code](#testing-javascript-code)
+Run `npm test` to have Jest run the JavaScript unit test suite, which is found in the [`src/__tests__`](src/__tests__) folder.
 
-  - [Testing Python code](#testing-python-code)
+To reconstruct snapshot data for the tests, run `npm test -- -u`. This will be needed if the content ever changes and the snapshot test fails for that reason. You will also need this while writing new tests for any new pages.
 
-[Known Issues](#known-issues)
 
-[Getting help](#getting-help)
+## Development notes
 
-[Open source licensing info](#open-source-licensing-info)
+### Templates
 
-[Credits and references](#credits-and-references)
+The application ultimately serves two Jinja templates at particular URLs:
 
-<a name="building-blocks-tool"/>
+1. [`crt-start.html`](crtool/jinja2/crtool/crt-start.html)
 
-## Building blocks tool
+   This template is served by the `before-you-begin` URL. It contains a small form for setting options for a review in localStorage before starting it.
+2. [`crt-survey.html`](crtool/jinja2/crtool/crt-survey.html)
 
-**Description**: [The journey to adult financial well-being](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/journey) - A single page that will take users on a journey from adult financial well-being, to financial capability in youth, to the building blocks, and ending on a call to action. The call to action will focus on telling educators how they can easily incorporate the building blocks in their classroom.
+   This template serves the React application for the review interface itself at the `tool` URL. It is nothing more than an empty `<div id="react">` that serves at the hook for the React app initialization.
+   This templates extends the [`crt-base.html`](crtool/jinja2/crtool/crt-base.html) template, which extends the `layout-full` template from cfgov-refresh, overrides a few things to enforce focusing on the tool, adds in the tool-specific CSS and JS.
 
-  - **Technology stack**: Jinja2 template, inline SVG images, CSS, and JS.
+### JavaScript
 
-  - **Live site**: [The journey to adult financial well-being](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/journey)
+- [`CustomerReviewToolComponent.js`](src/js/components/CustomerReviewToolComponent.js) is the main entry point for the tool.
+  - This is where you will find the state properties for the entire app.
+  - This is where the flow of the application starts.
+  - _TODO:_ Rename this file to correct the "Customer" typo.
+- All the business logic for the app is in the [src/js/business.logic/](src/js/business.logic/) folder.
+- There are many React components that make up different parts of the app, which are located in the [src/js/components/](src/js/components/) folder.
+- There are three major parts of a dimension to be aware of (and remember that the content dimension has three different sets of questions based on grade range):
+  1. **Dimension survey pages** – Where the questions about a dimension are presented to the user.
+  2. **Dimension summary pages** – Where results of a dimension survey are presented to the user.
+  3. **Dimension print page** – Where results of a dimension survey are presented in a non-editable fashion for printing or saving as a PDF.
 
-  - **Dependencies**: [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll), [animate on scroll](https://github.com/michalsnik/aos)
+### Content overview
 
-<a name="bb-implementation-details"/>
+"Content" refers to any text that is unique to a given dimension that shows up after you click a dimension button.
 
-### Implementation details
+- Most content can be found in the [src/js/content_data/](src/js/content_data/) folder.
+- React code imports a JavaScript file from the `content_data` folder (e.g., [`utilityContent.js`](src/js/content_data/utilityContent.js)) and loops through the objects, passing the content down to the React components to display on the page.
+  - Due to time constraints, the `…CriterionPage.js` and `…PrintPage.js` files do not pull the content from the main `content_data` folder, because they were developed before that folder was created. The `…PrintPage.js` files are a step closer to pulling data from the `content_data` folder in that they already reuse other React components. (This makes more sense when you look at the actual file.) The `…CriterionPage.js` files are rather large and have all the content and HTML located in the same file.
 
-  - **Jinja2**: A single template file is used ([bb-tool.html](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/jinja2/crtool/bb-tool.html)).
+#### How to edit content
 
-  - **CSS**: This page pulls in the platform’s global style sheet ([tdp.less](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/css/tdp.less)). The [tour molecule](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/css/organisms/tour.less) contains most of the styles specific to this page. This page also uses the styles from the [animate on scroll](https://github.com/michalsnik/aos) library.
+The easiest way to change content is to search in your editor or filesystem for the text you want to change, change it in all locations it shows up, and submit a PR.
 
-  - **JS**: This page pulls in the platform’s global JavaScript file ([tdp.js](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/js/index.js)). The [scroll.js](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/js/scroll.js) module handles the smooth scrolling to the different tour stops and depends on the [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll) to work in older browsers. This page also uses the script from the [animate on scroll](https://github.com/michalsnik/aos) library.
+The functionality of this tool is not affected by the content changing.
 
-<a name="bb-local-testing-development"/>
+Both Criterion & Print pages have content in TWO different locations: the `content_data` folder and in their respective locations below.
+- Criterion pages (`src/js/components/pages/**/*CriterionPage.js`):
+  - ContentElementaryCriterionPage.js
+  - ContentMiddleCriterionPage.js
+  - ContentHighCriterionPage.js
+  - QualityCriterionPage.js
+  - UtilityCriterionPage.js
+  - EfficacyCriterionPage.js
+- Print pages (`src/js/components/pages/**/*PrintPage.js`):
+  - ContentElementaryPrintPage.js
+  - ContentMiddlePrintPage.js
+  - ContentHighPrintPage.js
+  - QualityPrintPage.js
+  - UtilityPrintPage.js
+  - EfficacyPrintPage.js
 
-### Local testing/development
-
- - The Building blocks tool is accessible at the following path "**practitioner-resources/youth-financial-education/journey**"
- - The template for this page can be found in: ```crtool/jinja2/crtool/bb-tool.html```
-
-<a name="curriculum-review-tool"/>
-
-## Curriculum Review tool
-
-**Description**: The [Curriculum Review tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive, online tool for educators to use in place of the [paper-based PDF](https://s3.amazonaws.com/files.consumerfinance.gov/f/201509_cfpb_youth-financialeducation-curriculum-review.pdf) that already exists on the cf.gov website.
-
-Further documentation about the CR tool can be found in the [crtool directory](https://github.com/cfpb/teachers-digital-platform/tree/master/crtool).
-
-<a name="search-interface"/>
-
-## Search interface
-
-**Description**: The goal of the [searchable interface](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/teach/activities/) is to create a repository for financial education activities that teachers can use to easily find and download activities and activity ideas to use in their classroom.
-The searchable interface serves as a end-point for a teacher who has learned more about teaching Financial Education through reviewing the content within the Building Blocks tool section.
-Once they've learned about how to incorporated financial education into their classroom through the [Building Blocks](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/learn/) tool, they can now put those ideas into action through utilizing activities and handouts from this searchable interface.
-
-  - **Technology stack**: Python, Django, Wagtail, Elasticsearch, Jinja2 template, inline SVG images, CSS, and JS.
-
-  - **Status**: Beta
-
-  - **Live site**: [searchable interface](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/teach/activities/)
-
-**Screenshot**:
-
-![](https://raw.githubusercontent.com/cfpb/teachers-digital-platform/master/screenshot.png)
-
-<a name="si-models"/>
-
-### Models
-
-The search tool is built using two types of Wagtail pages; TDP Activity page (TDPActivityPage) and TDP Activity search page (TDPActivityIndexPage).
-The TDP Activity search page is a singleton page that serves as the listing page. The path of the TDP Activity search page is determined
-by its position in the Wagtail menu. To add Activities to the TDP Activity search page, you'll need to publish child TDP Activity pages
-under the TDP Activity search page.
-
-**Note**: As a precursor, you'll need to add values for the various Activity metadata fields. See installation instructions below.
-
-**TDPActivityPage**:
-
-- **Extends**: CFGOVPage
-
-- **Description**: A TDP Activity Page is used to populate search results in the TDPActivityIndexPage
-and provide detail pages for various classroom activities. This model has many metadata fields
-that are used as filters on the Search page.
-
-**BaseActivityTaxonomy**:
-
-- **Extends**: models.Model
-
-- **Description**: This is a base (abstract) Model on which most metadata fields are based (ActivityTopic being the exception).
-You can edit these field options in the Wagtail admin menu by going to "TDP Activity > [Label]"
-
-- **Fields**:
-
-  - title: A unique string field that serves as the filter value label
-
-  - weight: An integer that determines the labels ordering when listed
-
-- **Models that extend BaseActvitityTaxonomy**:
-
-  - **ActivityAgeRange**: e.g: "13-15", "16-19", etc.
-
-  - **ActivityBloomsTaxonomyLevel**: e.g: "Remember", "Understand", etc.
-
-  - **ActivityBuildingBlock**: e.g: "Executive function", "Financial habits and norms", etc.
-
-  - **ActivityCouncilForEconEd**: e.g: "Standard I. Earning income", etc.
-
-  - **ActivityDuration**: e.g: "15-20 minutes", etc.
-
-  - **ActivityGradeLevel**: e.g: "High school (9-10)", etc.
-
-  - **ActivityJumpStartCoalition**: e.g: "Spending and saving", etc.
-
-  - **ActivitySchoolSubject**: e.g: "CTE (Career and technical education)", etc.
-
-  - **ActivityStudentCharacteristics**: e.g: "Rural", "English language learners", etc.
-
-  - **ActivityTeachingStrategy**: e.g: "Cooperative learning", "Gamification", etc.
-
-  - **ActivityType**: e.g: "Individual", "Whole class", etc.
-
-**ActivityTopic**:
-
-- **Extends**: [MPTTModel](https://django-mptt.github.io/django-mptt/models.html)
-
-- **Description**: This model allows us to have nested Topics
-
-- **Fields**:
-
-  - title: A unique string field that serves as the filter value label
-
-  - weight: An integer that determines the labels ordering when listed
-
-  - parent: A TreeForeignKey to the parent topic.
-
-- **Note**: This model's nested admin ui breaks in the Wagtail admin, so it is managed in the [django admin](https://www.consumerfinance.gov/django-admin/teachers_digital_platform/activitytopic/)
-
-**TDPActivityIndexPage**:
-
-- **Extends**: CFGOVPage
-
-- **Description**: The TDP Activity Search Page is a filterable listing page that displays published TDP Activity Pages.
-There is logic in the code that limits the site to only have one instance of a TDPActivityIndexPage. This is a Wagtail editable
-page that is powered by Haystack and Elasticsearch. For that reason, results will not display until you run:
-```bash
-python manage.py update_index -r teachers_digital_platform
-```
-- **Fields**:
-
-  - header: A Streamfield that allows for TextIntroduction molecules
-
-<a name="dependencies"/>
-
-## Dependencies
-
-- **django-haystack**: The search page requires haystack and elasticsearch
-
-- **django-mptt (0.9.0)**: MPTT is used to provide hierarchical topic metadata via the ActivityTopic model
-
-- **django-js-asset (1.1.0)**': JS Asset is a dependency of django-mptt
-
-<a name="installation"/>
-
-## Installation
-
-See [INSTALL.md](https://github.com/cfpb/teachers-digital-platform/blob/master/INSTALL.md).
-
-<a name="css-and-javascript"/>
-
-## CSS and JavaScript
-
-This app uses Gulp to generate a single global CSS and JS files based on individual
-.less and .js files in "crtool/css" and "crtool/js."
-The generated css and js files can be found "crtool/static/"
-
-You can generate all static files running the setup.sh script or running gulp
-```sh
-cd develop-apps/teachers-digital-platform/
-./setup.sh
-```
-or use gulp:
-```sh
-gulp
-gulp scripts
-gulp styles
-```
-
-<a name="how-to-test-the-software"/>
-
-## How to test the software
-
-<a name="testing-javascript-code"/>
-
-### Testing Javascript code:
-
-Javascript tests can be found in "crtool/\_\_tests\_\_"
-
-to only test Search Tool JS, run:
-```sh
-npm run test-js
-```
-to test both the Search Tool and CRTool, run:
-
-```sh
-npm run test
-```
-
-<a name="testing-python-code"/>
-
-### Testing Python code:
-
-Unit tests can be found in "teachers_digital_platform/tests/"
-
-**The three main files are**:
-
-- teachers_digital_platform/tests/models/test_activity_index_page.py
-
-- teachers_digital_platform/tests/models/test_activity_page.py
-
-- teachers_digital_platform/tests/models/test_pages_utility_definitions.py
-
-**Shell command**:
-```sh
-tox
-```
-
-<a name="known-issues"/>
-
-## Known issues
-
-Currently, [there are no error notifications when the Elasticsearch server is down](https://github.com/cfpb/teachers-digital-platform/blob/master/crtool/js/search.js#L144).
-Errors are sent to console log, but is not prominently displayed for end-users.
-
-<a name="getting-help"/>
 
 ## Getting help
 
-If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
+If you have questions, concerns, bug reports, etc., please file an issue in this repository's issue tracker.
+
 
 ----
-
-<a name="open-source-lincensing-info"/>
 
 ## Open source licensing info
 1. [TERMS](TERMS.md)
 2. [LICENSE](LICENSE)
 3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
-
-----
-
-<a name="credits-and-references"/>
-
-## Credits and references
-
-1. This project was heavily influenced by work done on the [regulations3k project](https://github.com/cfpb/cfgov-refresh/tree/master/cfgov/regulations3k).
