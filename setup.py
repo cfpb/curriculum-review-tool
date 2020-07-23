@@ -3,7 +3,6 @@ from setuptools import find_packages, setup
 
 install_requires = [
     "Django>=2.2,<2.3",
-    "django-js-asset==1.1.0",
 ]
 
 
@@ -20,7 +19,7 @@ testing_extras = [
 
 setup(
     name="crtool",
-    url="https://github.com/cfpb/teachers-digital-platform",
+    url="https://github.com/cfpb/curriculum-review-tool",
     author="CFPB",
     author_email="tech@cfpb.gov",
     description="Teachers Curriculum Review tool",
