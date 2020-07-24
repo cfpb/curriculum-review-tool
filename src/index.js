@@ -7,4 +7,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+// TODO: Initialize Token HERE instead of in React App.
+
 ReactDOM.render(<App />, document.getElementById('react'));

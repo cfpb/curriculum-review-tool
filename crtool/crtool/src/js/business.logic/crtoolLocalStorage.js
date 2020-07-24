@@ -2,6 +2,17 @@ import C from "./constants";
 
 const crtoolLocalStorage = {
 
+    init(review_id) {
+        // Get review
+        let review = {};
+        review = this.loadReview(review_id);
+        console.log(review);
+        if (JSON.stringify(review) === '{}') {
+            window.location.href = C.START_PAGE_RELATIVE_URL;
+        }
+        return review;
+    },
+
     getCurrentReview() {
         let review = false;
         const token = this.getUrlParameter('token');
@@ -13,12 +24,7 @@ const crtoolLocalStorage = {
             const new_url = this.updateUrlParameter(window.location.href, 'token', review_id);
             window.history.pushState({path:new_url}, '', new_url);
         }
-        review = this.loadReviewFromDatabase(review_id);
-        console.log(review);
-        if (JSON.stringify(review) === '{}') {
-            window.location.href = C.START_PAGE_RELATIVE_URL;
-        }
-        return review;
+
     },
 
     /*
@@ -48,8 +54,8 @@ const crtoolLocalStorage = {
     /*
      * load review state from Database
      */
-    loadReviewFromDatabase(review_id) {
-        console.log('loadReviewFromDatabase: line 52');
+    loadReview(review_id) {
+        console.log('loadReview: line 52');
         let review = this.getReviewFromLocalStorage(review_id);
         const xhttp = new XMLHttpRequest();
         xhttp.open("GET", "../get-review?tdp-crt_id=" + review_id, false);
