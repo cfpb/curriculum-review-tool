@@ -1,6 +1,7 @@
 import C from "./constants";
 
 const crtoolLocalStorage = {
+    review: {},
 
     init(review_id) {
         // Get review
@@ -10,21 +11,24 @@ const crtoolLocalStorage = {
         if (JSON.stringify(review) === '{}') {
             window.location.href = C.START_PAGE_RELATIVE_URL;
         }
-        return review;
+        this.review = review;
     },
 
     getCurrentReview() {
-        let review = false;
+        console.log('GETTING CURRENT REVIEW');
         const token = this.getUrlParameter('token');
         let review_id = token || localStorage.getItem('curriculumReviewId') || '';
-        console.log('getCurrentReview: line 6');
+        console.log('getCurrentReview: line 20');
         console.log(review_id);
         if (!token && review_id) {
             console.log('redirect to URL with token: line 10');
             const new_url = this.updateUrlParameter(window.location.href, 'token', review_id);
             window.history.pushState({path:new_url}, '', new_url);
         }
-
+        else if (!'id' in this.review) {
+            this.init();
+        }
+        return this.review;
     },
 
     /*
@@ -131,6 +135,7 @@ const crtoolLocalStorage = {
         console.log('crtoolLocalStorage getItem: line 123');
         console.log(key);
         const review = this.getCurrentReview();
+        console.log(review);
         if (key in review) {
             console.log('getItem: line 127');
             return review[key];

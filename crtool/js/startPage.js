@@ -4,18 +4,30 @@
  * Also manages the saving and setting of the Title, Date, & Grade Range
  */
 
-var newReviewModalWindow = document.getElementById('modal-start-over');
-var saveWorkModalWindow = document.getElementById('modal-save-work');
-var gradeRange = document.getElementById('tdp-crt_grade');
+const newReviewModalWindow = document.getElementById('modal-start-over');
+const saveWorkModalWindow = document.getElementById('modal-save-work');
+const gradeRange = document.getElementById('tdp-crt_grade');
+let openingNewReviewModal = false;
+let openingSaveWorkModal = false;
+
 
 // Call to get things initialized
-setInitialFormValues();
+const init = () => {
+    setInitialFormValues();
+    openingNewReviewModal = false;
+    openingSaveWorkModal = false;
+    bindEvents();
+    console.log('startPage.init()');
+};
 
 /*
  * Set the values based on localStorage
  */
-function setInitialFormValues() {
+const setInitialFormValues = () => {
+    console.log('setInitialFormValue line 26: GOT HERE');
     var review = getCurrentReview();
+    console.log('review:');
+    console.log(review);
     if (review) {
         document.getElementById('tdp-crt_title').value = review.curriculumTitle || "";
         document.getElementById('tdp-crt_pubdate').value = review.publicationDate || "";
@@ -34,19 +46,19 @@ function setInitialFormValues() {
             closeNewReviewModalWindow();
         }
     };
-}
+};
 
 /*
  * Add this function to any required field so we can monitor changed values
  */
-function onValuesChanged(value) {
+const onValuesChanged = (value) => {
     setBeginReviewButtonEnabling();
-}
+};
 
 /*
  * Method to manage enabling or dissabling begin button based on form values
  */
-function setBeginReviewButtonEnabling() {
+const setBeginReviewButtonEnabling = () => {
     var selectedGradeValue = gradeRange.value;
 
     //check required fields have values
@@ -56,12 +68,12 @@ function setBeginReviewButtonEnabling() {
     var isEnabled = isValidGradeSelected && document.getElementById('tdp-crt_title').value;
 
     document.getElementById('tdp-crt-begin-review-btn').disabled = !isEnabled;
-}
+};
 
 /*
  * Method that actually saves values (Title, Date, & Grad Range)
  */
-function beginReviewButtonClick(e) {
+const beginReviewButtonClick = (e) => {
     e.preventDefault();
     var curriculumTitle = document.getElementById('tdp-crt_title').value;
     var publicationDate = document.getElementById('tdp-crt_pubdate').value;
@@ -90,13 +102,13 @@ function beginReviewButtonClick(e) {
     xhttp.send();
 
     recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange);
-}
+};
 
 /*
  * When user starts a new review we need to send analytics for
  * Curriculum Title, Publication Date, & Grade Range
  */
-function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
+const recordAnalyticsForPage = (curriculumTitle, publicationDate, gradeRange) => {
     var category="curriculum review tool interaction";
     // Analytics curriculum title
     sendAnalytics("curriculum title", curriculumTitle.trim(), category);
@@ -107,12 +119,14 @@ function recordAnalyticsForPage(curriculumTitle, publicationDate, gradeRange) {
 
     // Analytics grade range
     sendAnalytics("grade range", gradeRange, category);
-}
+};
 
 /*
  * User has choosen to clear all values and start over
  */
-function clearLocalStorage() {
+const clearLocalStorage = (e) => {
+    e.preventDefault();
+    console.log('startPage.js ln 124: GOT HERE');
     var review = getCurrentReview();
     if (review) {
         localStorage.removeItem('curriculumReviewId');
@@ -124,13 +138,12 @@ function clearLocalStorage() {
 
     closeNewReviewModalWindow();
     setBeginReviewButtonEnabling();
-}
+};
 
 /*
  * Open New Review Warning Modal Dialog
  */
-var openingNewReviewModal = false;
-function openNewReviewModalWindow() {
+const openNewReviewModalWindow = () => {
     //Allow screen readers to see dialog
     document.getElementById("modal-start-over").setAttribute("aria-hidden", "false");
 
@@ -141,23 +154,22 @@ function openNewReviewModalWindow() {
 
     // Analytics Send start over with new review modal opened
     sendAnalytics("link clicked: Start over with a new review", "Starting over");
-}
+};
 
 /*
  * Close New Review Warning Modal Dialog
  */
-function closeNewReviewModalWindow() {
+const closeNewReviewModalWindow = (e) => {
     //Hide from screen readers
     document.getElementById("modal-start-over").setAttribute("aria-hidden", "false");
     removeClassFromElement(newReviewModalWindow, 'o-modal__visible');
     document.removeEventListener('click', newReviewOutsideClickListener);
-}
+};
 
 /*
  * Open Save Work Warning Modal Dialog
  */
-var openingSaveWorkModal = false;
-function openSaveWorkModalWindow() {
+const openSaveWorkModalWindow = () => {
     //Allow screen readers to see dialog
     document.getElementById("modal-save-work").setAttribute("aria-hidden", "false");
 
@@ -165,33 +177,33 @@ function openSaveWorkModalWindow() {
     saveWorkModalWindow.className += ' o-modal__visible';
     saveWorkModalWindow.focus();
     document.addEventListener('click', saveWorkOutsideClickListener);
-}
+};
 
 /*
  * Close Save Work Warning Modal Dialog
  */
-function closeSaveWorkModalWindow() {
+const closeSaveWorkModalWindow = (e) => {
     //Hide from screen readers
     document.getElementById("modal-save-work").setAttribute("aria-hidden", "true");
     removeClassFromElement(saveWorkModalWindow, 'o-modal__visible');
     document.removeEventListener('click', saveWorkOutsideClickListener);
-}
+};
 
 /*
  * Some versions of IE do not support standard functionality when it
  * comes to removing classnames.  So we need to split remove then join
  */
-function removeClassFromElement(element, classNameToRemove) {
+const removeClassFromElement = (element, classNameToRemove) => {
     var classes = element.className.split(' ')
     var idx = classes.indexOf(classNameToRemove)
     if (idx !== -1) classes.splice(idx,1)
     element.className = classes.join(' ')
-}
+};
 
 /*
  * Method to close New Review daialog if click outside
  */
-function newReviewOutsideClickListener(event) {
+const newReviewOutsideClickListener = (event) => {
     var startOverModal = document.querySelector("#modal-start-over .o-modal_content");
     if (!openingNewReviewModal && !startOverModal.contains(event.target)) {
       closeNewReviewModalWindow();
@@ -201,12 +213,12 @@ function newReviewOutsideClickListener(event) {
     if (openingNewReviewModal) {
       openingNewReviewModal = false;
     }
-}
+};
 
 /*
  * Method to close Save Work daialog if click outside
  */
-function saveWorkOutsideClickListener(event) {
+const saveWorkOutsideClickListener = (event) => {
     var startOverModal = document.querySelector("#modal-save-work .o-modal_content");
     if (!openingSaveWorkModal && !startOverModal.contains(event.target)) {
       closeSaveWorkModalWindow();
@@ -216,18 +228,56 @@ function saveWorkOutsideClickListener(event) {
     if (openingSaveWorkModal) {
       openingSaveWorkModal = false;
     }
-}
+};
 
 /*
  *
  */
-function getCurrentReview() {
-    review = false;
+const getCurrentReview = () => {
+    console.log('getCurrentReview line 237');
+    let review = false;
     var reviewId = localStorage.getItem('curriculumReviewId') || "";
+    console.log(reviewId);
     if (reviewId) {
+        console.log('reviewId exists');
         if (review = localStorage.getItem('crtool.' + reviewId)) {
+            console.log('review exists');
             review = JSON.parse(review);
         }
     }
+    console.log('review is:');
+    console.log(review);
     return review;
-}
+};
+
+const bindEvents = () => {
+    console.log('GOT HERE');
+    $('#modal-save-work .save-work-push-analytics').click(function (e) { closeSaveWorkModalWindow(e); });
+    $('#modal-start-over .start-over-close-push-analytics').click(function (e) { closeNewReviewModalWindow(e); });
+    $('#modal-start-over .start-over-push-analytics').click(function (e) { clearLocalStorage(e); });
+    $('form#begin-review-form').submit(function(e) { beginReviewButtonClick(e); });
+    $('form#begin-review-form #tdp-crt_title').change(function(e) { onValuesChanged(); });
+    $('form#begin-review-form #tdp-crt_grade').change(function(e) { onValuesChanged(); });
+};
+
+export {
+    newReviewModalWindow,
+    saveWorkModalWindow,
+    gradeRange,
+    openingNewReviewModal,
+    openingSaveWorkModal,
+    init,
+    setInitialFormValues,
+    onValuesChanged,
+    setBeginReviewButtonEnabling,
+    beginReviewButtonClick,
+    recordAnalyticsForPage,
+    clearLocalStorage,
+    openNewReviewModalWindow,
+    closeSaveWorkModalWindow,
+    removeClassFromElement,
+    newReviewOutsideClickListener,
+    saveWorkOutsideClickListener,
+    getCurrentReview,
+    bindEvents
+};
