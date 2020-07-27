@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-// TODO: Initialize Token HERE instead of in React App.
+import crtoolSession from './crtoolSession';
+
+// Initialize Token HERE instead of in React App.
+crtoolSession.init();
 
 ReactDOM.render(<App />, document.getElementById('react'));

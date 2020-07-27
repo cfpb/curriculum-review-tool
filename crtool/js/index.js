@@ -1,13 +1,12 @@
-import './analytics.js';
 const startPage = require( './startPage' );
-const crtoolSession = require( './crtoolSession' );
+import './analytics.js';
 
 const app = {
   init: () => {
-    console.log('app init: GOT HERE');
+    console.log('crtool.js index.js app init: GOT HERE');
     startPage.init();
   }
 };
 
 window.addEventListener( 'load', app.init );
-console.log('test line 15: GOT HERE');
+console.log('crtoo.js index.js test line 12: GOT HERE');
