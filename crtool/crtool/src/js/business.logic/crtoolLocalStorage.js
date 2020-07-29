@@ -2,7 +2,7 @@ import C from "./constants";
 import crtoolSession from "../../crtoolSession";
 
 const crtoolLocalStorage = {
-    review: crtoolSession.getReview(),
+    review: crtoolSession.getReview(true),
 
     setItem(key, value) {
         console.log('crtoolLocalStorage setItem: line 111');
@@ -11,7 +11,7 @@ const crtoolLocalStorage = {
             console.log('setItem review: line 115');
             this.review[key] = value;
             crtoolSession.setReview(this.review);
-            this.saveToDatabase(); // TODO: Move this to a dedicated action so it's not run on every save.
+            // this.saveToDatabase(); // TODO: Move this to a dedicated action so it's not run on every save.
             return this.review;
         }
         return false;

@@ -2,9 +2,12 @@ import C from "./js/business.logic/constants";
 
 const crtoolSession = {
     review: {},
+    autoSave: false,
     initialized: false,
+    dirty: false,
+    time: '',
 
-    init() {
+    init(autoSave=false) {
         console.log('GETTING CURRENT REVIEW');
         // Check for review_id as url token or check localStorage.
         const token = this.getUrlParameter('token');
@@ -24,19 +27,27 @@ const crtoolSession = {
         if (JSON.stringify(review) === '{}') {
             window.location.href = C.START_PAGE_RELATIVE_URL;
         }
+        this.autoSave = Boolean(autoSave);
+
+        if (this.autoSave) {
+            console.log('crtoolSession line 32: initAutoSaveReview');
+            this.initAutoSaveReview();
+        }
+
         this.initialized = true;
         this.review = review;
     },
 
-    getReview() {
+    getReview(autoSave=false) {
         if (!this.initialized) {
-            this.init();
+            this.init(autoSave);
         }
         return this.review;
     },
 
     setReview(review) {
         this.review = review;
+        this.dirty = true;
     },
 
     /*
@@ -45,6 +56,7 @@ const crtoolSession = {
     loadReview(review_id) {
         console.log('loadReview: line 52');
         let review = this.loadReviewFromLocalStorage(review_id);
+        let dirty = false;
         const xhttp = new XMLHttpRequest();
         xhttp.open("GET", "../get-review?tdp-crt_id=" + review_id, false);
         xhttp.send();
@@ -54,15 +66,16 @@ const crtoolSession = {
             console.log(db_review);
             console.log('review: line 61');
             console.log(review);
-            const is_review_valid = ("last_updated" in review) && ("id" in review)
-            const is_db_review_valid = ("last_updated" in db_review) && ("id" in db_review)
-            if (is_review_valid && is_db_review_valid) {
+            const is_review_valid = ("last_updated" in review) && ("id" in review);
+            const is_db_review_valid = ("last_updated" in db_review) && ("id" in db_review);
+            if (is_review_valid && is_db_review_valid && db_review !== review ) {
                 console.log('db_review.last_updated: line 66');
                 console.log(db_review.last_updated);
                 console.log(new Date(db_review.last_updated));
                 console.log('review.last_updated: line 68');
                 console.log(review.last_updated);
                 console.log(new Date(review.last_updated));
+                dirty = true;
             }
             if (!is_review_valid ||
                 (
@@ -74,10 +87,14 @@ const crtoolSession = {
                 console.log('crtoolLocalStorage.js: line 78');
                 review = db_review;
                 localStorage.setItem('crtool.' + db_review.id, JSON.stringify(db_review));
-                localStorage.setItem('curriculumReviewId', db_review.id)
+                localStorage.setItem('curriculumReviewId', db_review.id);
+                dirty = false;
             }
         }
         this.review = review;
+        this.dirty = dirty;
+        console.log('Dirty flag:');
+        console.log(dirty);
         return this.review;
     },
 
@@ -122,6 +139,38 @@ const crtoolSession = {
             }
         }
         return this.review;
+    },
+
+    initAutoSaveReview() {
+        this.time = new Date().getTime();
+        window.addEventListener("click", this.resetTime, false);
+        window.addEventListener("mousemove", this.resetTime, false);
+        window.addEventListener("keypress", this.resetTime, false);
+        window.addEventListener("scroll", this.resetTime, false);
+        document.addEventListener("touchMove", this.resetTime, false);
+        document.addEventListener("touchEnd", this.resetTime, false);
+        console.log('call autoSaveReview in 1000 ms');
+        setTimeout(this.autoSaveReview, 5000);
+    },
+
+    resetTime() {
+        this.time = new Date().getTime();
+        console.log('line 157: resetTime from: ' + this.time);
+    },
+
+    autoSaveReview() {
+        console.log('autoSaveReview line 162');
+        console.log(this);
+        console.log(this.dirty);
+        console.log(this.time);
+        if((new Date().getTime() - this.time >= 60000) && this.dirty) {
+            console.log('auto saving to database now');
+            this.updateDatabaseReview(this.review);
+        }
+        else {
+            console.log('recursively call autoSaveReview in 1000 ms');
+            setTimeout(this.autoSaveReview, 5000);
+        }
     },
 
     // IE compatible method for getting a querystring parameter from a URL
