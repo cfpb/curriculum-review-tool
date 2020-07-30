@@ -6,6 +6,8 @@ const crtoolSession = {
     initialized: false,
     dirty: false,
     time: '',
+    idleTime: 60e3,
+    checkFrequency: 20e3,
 
     init(autoSave=false) {
         console.log('GETTING CURRENT REVIEW');
@@ -45,9 +47,10 @@ const crtoolSession = {
         return this.review;
     },
 
-    setReview(review) {
+    setReviewFromUserInput(review) {
         this.review = review;
         this.dirty = true;
+        localStorage.setItem('crtool.' + review.id, JSON.stringify(this.review));
     },
 
     /*
@@ -66,9 +69,9 @@ const crtoolSession = {
             console.log(db_review);
             console.log('review: line 61');
             console.log(review);
-            const is_review_valid = ("last_updated" in review) && ("id" in review);
+            const is_review_valid = (review.hasOwnProperty('last_updated')) && (review.hasOwnProperty('id'));
             const is_db_review_valid = ("last_updated" in db_review) && ("id" in db_review);
-            if (is_review_valid && is_db_review_valid && db_review !== review ) {
+            if (is_review_valid && is_db_review_valid && JSON.stringify(db_review) !== JSON.stringify(review) ) {
                 console.log('db_review.last_updated: line 66');
                 console.log(db_review.last_updated);
                 console.log(new Date(db_review.last_updated));
@@ -81,7 +84,7 @@ const crtoolSession = {
                 (
                     is_review_valid &&
                     is_db_review_valid &&
-                    new Date(db_review.last_updated) > new Date(review.last_updated)
+                    new Date(db_review.last_updated) > new Date(review.last_updated)// TODO: Make sure Date() is necessary.
                 )
             ) {
                 console.log('crtoolLocalStorage.js: line 78');
@@ -108,10 +111,13 @@ const crtoolSession = {
         review = localStorage.getItem('crtool.' + review_id) || "{}";
         console.log('review: line 35');
         review = JSON.parse(review);
-        if (JSON.stringify(review) !== '{}' && "id" in review) {
+        if (review.id) {
             localStorage.setItem('curriculumReviewId', review_id);
             console.log('review: line 40');
             console.log(review);
+        }
+        else {
+            review = {};
         }
 
         return review;
@@ -123,37 +129,45 @@ const crtoolSession = {
     updateDatabaseReview(review) {
         console.log('updateDatabaseReview: line 91');
         const xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "../update-review/", false);
+        xhttp.open("POST", "../update-review/");
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         console.log('review: line 95');
         console.log(review);
         xhttp.send(JSON.stringify(review));
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
-            review = JSON.parse(xhttp.responseText);
-            console.log('review: line 100')
-            console.log(review);
-            if ("id" in review) {
-                console.log('update localStorage: line 103');
-                this.review = review;
-                localStorage.setItem('crtool.' + review.id, JSON.stringify(this.review));
+
+        xhttp.onreadystatechange = () => {
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+                review = JSON.parse(xhttp.responseText);
+                console.log('review: line 135')
+                console.log(review);
+                if (review.hasOwnProperty('id')) {
+                    console.log('update localStorage: line 138');
+                    this.review = review;
+                    this.dirty = false;
+                    localStorage.setItem('crtool.' + review.id, JSON.stringify(this.review));
+                }
             }
-        }
+        };
         return this.review;
     },
 
     initAutoSaveReview() {
+        console.log('initAutoSaveRevie line 167');
+        console.log(this);
         this.time = new Date().getTime();
-        window.addEventListener("click", this.resetTime, false);
-        window.addEventListener("mousemove", this.resetTime, false);
-        window.addEventListener("keypress", this.resetTime, false);
-        window.addEventListener("scroll", this.resetTime, false);
-        document.addEventListener("touchMove", this.resetTime, false);
-        document.addEventListener("touchEnd", this.resetTime, false);
+        window.addEventListener("click", this.resetTime.bind(this), false);
+        window.addEventListener("mousemove", this.resetTime.bind(this), false);
+        window.addEventListener("keypress", this.resetTime.bind(this), false);
+        window.addEventListener("scroll", this.resetTime.bind(this), false);
+        document.addEventListener("touchMove", this.resetTime.bind(this), false);
+        document.addEventListener("touchEnd", this.resetTime.bind(this), false);
         console.log('call autoSaveReview in 1000 ms');
-        setTimeout(this.autoSaveReview, 5000);
+        setTimeout(this.autoSaveReview.bind(this), this.checkFrequency);
     },
 
     resetTime() {
+        console.log('resetTime line 167');
+        console.log(this);
         this.time = new Date().getTime();
         console.log('line 157: resetTime from: ' + this.time);
     },
@@ -163,14 +177,12 @@ const crtoolSession = {
         console.log(this);
         console.log(this.dirty);
         console.log(this.time);
-        if((new Date().getTime() - this.time >= 60000) && this.dirty) {
+        if((new Date().getTime() - this.time >= this.idleTime) && this.dirty) {
             console.log('auto saving to database now');
             this.updateDatabaseReview(this.review);
         }
-        else {
-            console.log('recursively call autoSaveReview in 1000 ms');
-            setTimeout(this.autoSaveReview, 5000);
-        }
+        console.log('recursively call autoSaveReview in 1000 ms');
+        setTimeout(this.autoSaveReview.bind(this), this.checkFrequency);
     },
 
     // IE compatible method for getting a querystring parameter from a URL

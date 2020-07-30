@@ -10,7 +10,7 @@ const crtoolLocalStorage = {
         if ("id" in this.review) {
             console.log('setItem review: line 115');
             this.review[key] = value;
-            crtoolSession.setReview(this.review);
+            crtoolSession.setReviewFromUserInput(this.review);
             // this.saveToDatabase(); // TODO: Move this to a dedicated action so it's not run on every save.
             return this.review;
         }
@@ -31,7 +31,7 @@ const crtoolLocalStorage = {
     removeItem(key) {
         if (key in this.review) {
             delete this.review[key];
-            crtoolSession.setReview(this.review);
+            crtoolSession.setReviewFromUserInput(this.review);
             return true;
         }
         return false;
