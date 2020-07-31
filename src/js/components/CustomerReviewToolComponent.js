@@ -14,7 +14,7 @@ import DateTimeFormater from "../business.logic/dateTimeFormatter";
 import Repository from "../business.logic/repository";
 import CriterionService from "../business.logic/criterionService";
 import EfficacyCalculationService from "../business.logic/summary/efficacyCalculationService";
-import crtoolLocalStorage from "../business.logic/crtoolLocalStorage";
+import crtoolLocalStorage from "../../crtoolLocalStorage";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -177,7 +177,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                 crtoolLocalStorage.setItem(C.START_PAGE, distinctiveName);
                 crtoolLocalStorage.setItem("currentPrintButton", "");
                 crtoolLocalStorage.setItem("finalSummaryShowEntireReview", "false");
-          },3000);
+            },3000);
         }
     }
 

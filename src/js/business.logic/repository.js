@@ -1,5 +1,5 @@
 import C from "./constants";
-import crtoolLocalStorage from "./crtoolLocalStorage";
+import crtoolLocalStorage from "../../crtoolLocalStorage";
 
 const Repository = {
     /*
