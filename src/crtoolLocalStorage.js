@@ -2,23 +2,45 @@ import C from "./js/business.logic/constants";
 
 const CHECK_FREQUENCY = 60e3;
 
-function redirectHome() {
-    window.location.href = C.START_PAGE_RELATIVE_URL;
-}
-
 /**
  * A proxy for the localStorage API which periodically saves to the DB and
  * can synchronize itself when the page loads.
  */
 const ls = {
+    // Use DOM LocalStorage, but allow swapping
+    localStorage: localStorage,
+
     review: {},
     dirty: false,
+    timeoutHandle: 0,
+    testing: false,
+
+    redirectHome() {
+        if (ls.testing) {
+            return;
+        }
+
+        window.location.href = C.START_PAGE_RELATIVE_URL;
+    },
+
+    /**
+     * Set up for testing, injecting mock localStorage
+     *
+     * @param {WindowLocalStorage} localStorage
+     */
+    initForTesting(localStorage) {
+        ls.localStorage = localStorage;
+        ls.testing = true;
+        ls.review = {
+            id: 'testing',
+        };
+    },
 
     async init() {
         const token = ls.getUrlParameter('token');
-        let review_id = token || localStorage.getItem('curriculumReviewId') || '';
+        let review_id = token || ls.localStorage.getItem('curriculumReviewId') || '';
         if (!review_id) {
-            return redirectHome();
+            return ls.redirectHome();
         }
 
         // If review_id found but a token is not set, update the URL
@@ -27,34 +49,42 @@ const ls = {
             window.history.pushState({ path: new_url }, '', new_url);
         }
 
+        const ls_review = ls.loadReviewFromLocalStorage(review_id);
+
         let db_review;
         try {
             db_review = await ls.fetchReviewFromServer(review_id);
+            if (!db_review) {
+                // Do not allow end users to set their own ID via the URL or localStorage.
+                ls.localStorage.removeItem('crtool.' + review_id);
+                ls.localStorage.removeItem('curriculumReviewId');
+                ls.redirectHome();
+                return;
+            }
         } catch (e) {
             console.error(e);
-            // Do not allow end users to set their own ID via the URL or localStorage.
-            localStorage.removeItem('crtool.' + review_id);
-            localStorage.removeItem('curriculumReviewId');
-            redirectHome();
-            return;
+            // Request failed, just try to carry on with local storage
         }
 
-        const ls_review = ls.loadReviewFromLocalStorage(review_id);
+        if (!ls_review && !db_review) {
+            ls.redirectHome();
+            return;
+        }
 
         if (ls_review && ls_review.ls_modified_time > db_review.ls_modified_time) {
             // Trust that newer local time means more up-to-date data
             ls.review = ls_review;
             ls.dirty = true;
-            localStorage.setItem('curriculumReviewId', review_id)
+            ls.localStorage.setItem('curriculumReviewId', review_id)
         } else {
             ls.review = db_review;
             ls.dirty = false;
             // Just bring local storage up to speed
-            localStorage.setItem('crtool.' + db_review.id, JSON.stringify(db_review));
-            localStorage.setItem('curriculumReviewId', db_review.id);
+            ls.localStorage.setItem('crtool.' + db_review.id, JSON.stringify(db_review));
+            ls.localStorage.setItem('curriculumReviewId', db_review.id);
         }
 
-        setTimeout(ls.saveIfDirty, ls.dirty ? 0 : CHECK_FREQUENCY);
+        ls.timeoutHandle = setTimeout(ls.saveIfDirty, ls.dirty ? 0 : CHECK_FREQUENCY);
     },
 
     isReady() {
@@ -64,7 +94,7 @@ const ls = {
     saveReviewToLocalStorage() {
         ls.dirty = true;
         ls.review.ls_modified_time = (new Date()).toUTCString();
-        localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
+        ls.localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
     },
 
     isValidReview(review) {
@@ -82,11 +112,18 @@ const ls = {
     },
 
     /**
-     * Returns a Promise with a valid review, or rejects.
+     * Returns a Promise with a valid review or undefined.
+     *
+     * Rejects if request fails. Invalid response resolves to undefined.
      */
     async fetchReviewFromServer(review_id) {
+        if (ls.testing) {
+            return;
+        }
+
         const xhttp = new XMLHttpRequest();
         xhttp.open("GET", "../get-review?tdp-crt_id=" + review_id, true);
+        xhttp.timeout = 5e3;
 
         return new Promise((resolve, reject) => {
             xhttp.onreadystatechange = () => {
@@ -101,15 +138,10 @@ const ls = {
 
                 try {
                     const review = JSON.parse(xhttp.responseText);
-                    if (!ls.isValidReview(review)) {
-                        throw new Error('Fetched review invalid');
-                    }
-
-                    resolve(review);
+                    resolve(ls.isValidReview(review) ? review : undefined);
                 } catch (e) {
                     console.error(e);
-                    reject();
-                    return;
+                    resolve(undefined);
                 }
             };
 
@@ -121,7 +153,7 @@ const ls = {
     * Returns a valid review from LocalStorage or undefined
     */
     loadReviewFromLocalStorage(review_id) {
-        let review = localStorage.getItem('crtool.' + review_id) || "{}";
+        let review = ls.localStorage.getItem('crtool.' + review_id) || "{}";
         try {
             review = JSON.parse(review);
             if (!ls.isValidReview(review)) {
@@ -136,10 +168,19 @@ const ls = {
 
     /*
      * Overwrite Database review state with state in LocalStorage
+     *
+     * Rejects anytime a valid response was not received
      */
     async saveReviewToServer() {
+        if (ls.testing) {
+            ls.dirty = false;
+            ls.localStorage.setItem('crtool.' + review.id, JSON.stringify(ls.review));
+            return;
+        }
+
         const xhttp = new XMLHttpRequest();
         xhttp.open("POST", "../update-review/", true);
+        xhttp.timeout = 5e3;
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
         return new Promise((resolve, reject) => {
@@ -158,7 +199,7 @@ const ls = {
                 if (ls.isValidReview(review)) {
                     ls.review = review;
                     ls.dirty = false;
-                    localStorage.setItem('crtool.' + review.id, JSON.stringify(ls.review));
+                    ls.localStorage.setItem('crtool.' + review.id, JSON.stringify(ls.review));
                     resolve();
                     return;
                 }
@@ -171,12 +212,17 @@ const ls = {
     },
 
     saveIfDirty() {
+        // If called from an imperative action, we don't want to clear the existing schedule
+        if (ls.timeoutHandle) {
+            clearTimeout(ls.timeoutHandle);
+        }
+
         if (ls.dirty) {
-            console.log('auto saving to database now');
+            // console.log('auto saving to database now');
             ls.saveReviewToServer();
         }
 
-        setTimeout(ls.saveIfDirty, CHECK_FREQUENCY);
+        ls.timeoutHandle = setTimeout(ls.saveIfDirty, CHECK_FREQUENCY);
     },
 
     // IE compatible method for getting a querystring parameter from a URL
@@ -251,7 +297,7 @@ const ls = {
             throw new Error('Use before init');
         }
 
-        localStorage.removeItem('curriculumReviewId');
+        ls.localStorage.removeItem('curriculumReviewId');
     },
 };
 
