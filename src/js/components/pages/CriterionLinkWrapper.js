@@ -1,6 +1,7 @@
 import React from "react";
 
 import SvgIcon from "../svgs/SvgIcon";
+import crtoolLocalStorage from "../../../crtoolLocalStorage";
 
 export default class CriterionLinkWrapper extends React.Component {
 
@@ -10,6 +11,7 @@ export default class CriterionLinkWrapper extends React.Component {
 
     handleCriterionTitleClick(criterionKey) {
         this.props.setCriterionTitleLinkClicked(criterionKey);
+        crtoolLocalStorage.saveIfDirty();
     }
 
     componentWillMount() {

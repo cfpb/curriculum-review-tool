@@ -11,7 +11,7 @@ const ls = {
     localStorage: localStorage,
 
     review: {},
-    dirty: false,
+    lastTimeSaved: '',
     timeoutHandle: 0,
     testing: false,
 
@@ -61,6 +61,10 @@ const ls = {
                 ls.redirectHome();
                 return;
             }
+            if (!db_review.ls_modified_time) {
+                // A fresh review. Let's set a local time on it
+                db_review.ls_modified_time = (new Date()).toISOString();
+            }
         } catch (e) {
             console.error(e);
             // Request failed, just try to carry on with local storage
@@ -74,17 +78,17 @@ const ls = {
         if (ls_review && ls_review.ls_modified_time > db_review.ls_modified_time) {
             // Trust that newer local time means more up-to-date data
             ls.review = ls_review;
-            ls.dirty = true;
-            ls.localStorage.setItem('curriculumReviewId', review_id)
+            ls.localStorage.setItem('curriculumReviewId', review_id);
+            ls.timeoutHandle = setTimeout(ls.saveIfDirty, 0);
         } else {
             ls.review = db_review;
-            ls.dirty = false;
             // Just bring local storage up to speed
             ls.localStorage.setItem('crtool.' + db_review.id, JSON.stringify(db_review));
             ls.localStorage.setItem('curriculumReviewId', db_review.id);
+            // Don't need to sync immediately after load
+            ls.lastTimeSaved = ls.review.ls_modified_time;
+            ls.timeoutHandle = setTimeout(ls.saveIfDirty, CHECK_FREQUENCY);
         }
-
-        ls.timeoutHandle = setTimeout(ls.saveIfDirty, ls.dirty ? 0 : CHECK_FREQUENCY);
     },
 
     isReady() {
@@ -92,8 +96,7 @@ const ls = {
     },
 
     saveReviewToLocalStorage() {
-        ls.dirty = true;
-        ls.review.ls_modified_time = (new Date()).toUTCString();
+        ls.review.ls_modified_time = (new Date()).toISOString();
         ls.localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
     },
 
@@ -102,7 +105,7 @@ const ls = {
             return false;
         }
 
-        for (const prop of ['id', 'last_updated', 'ls_modified_time']) {
+        for (const prop of ['id', 'last_updated']) {
             if (!review.hasOwnProperty(prop)) {
                 return false;
             }
@@ -141,7 +144,7 @@ const ls = {
                     resolve(ls.isValidReview(review) ? review : undefined);
                 } catch (e) {
                     console.error(e);
-                    resolve(undefined);
+                    reject();
                 }
             };
 
@@ -173,8 +176,7 @@ const ls = {
      */
     async saveReviewToServer() {
         if (ls.testing) {
-            ls.dirty = false;
-            ls.localStorage.setItem('crtool.' + review.id, JSON.stringify(ls.review));
+            ls.localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
             return;
         }
 
@@ -197,9 +199,16 @@ const ls = {
 
                 const review = JSON.parse(xhttp.responseText);
                 if (ls.isValidReview(review)) {
-                    ls.review = review;
-                    ls.dirty = false;
-                    ls.localStorage.setItem('crtool.' + review.id, JSON.stringify(ls.review));
+                    console.info('Received response', ls);
+
+                    if (ls.review.ls_modified_time > ls.lastTimeSaved) {
+                        console.info('Scheduling re-save...');
+                        // Leave dirty and don't overwrite local storage
+                    } else {
+                        ls.review = review;
+                        ls.localStorage.setItem('crtool.' + review.id, JSON.stringify(ls.review));
+                    }
+
                     resolve();
                     return;
                 }
@@ -207,6 +216,9 @@ const ls = {
                 console.error('Invalid server response');
                 reject();
             };
+
+            ls.lastTimeSaved = ls.review.ls_modified_time;
+            console.info(`Saving version ${ls.lastTimeSaved}`);
             xhttp.send(JSON.stringify(ls.review));
         });
     },
@@ -217,7 +229,7 @@ const ls = {
             clearTimeout(ls.timeoutHandle);
         }
 
-        if (ls.dirty) {
+        if (ls.review.ls_modified_time > ls.lastTimeSaved) {
             // console.log('auto saving to database now');
             ls.saveReviewToServer();
         }
@@ -260,8 +272,7 @@ const ls = {
         // console.log('crtoolLocalStorage setItem: line 111');
         // console.log(key + ': ' + value);
         // Only setItem value if it's different than what's already there.
-        if (!key in ls.review || ls.review[key] !== value) {
-            // console.log('setItem review: line 115');
+        if (ls.review[key] !== value) {
             ls.review[key] = value;
             ls.saveReviewToLocalStorage();
         }

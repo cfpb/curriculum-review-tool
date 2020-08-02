@@ -252,6 +252,7 @@ const Repository = {
      */
     saveCurrentPage(component, clickedDistinctive) {
         crtoolLocalStorage.setItem(C.START_PAGE, clickedDistinctive);
+        crtoolLocalStorage.saveIfDirty();
         component.setState({currentPage: clickedDistinctive});
     },
 
