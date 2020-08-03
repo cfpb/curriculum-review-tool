@@ -1,65 +1,66 @@
-var category="curriculum review tool interaction";
+const category = 'curriculum review tool interaction';
 
-// Tracks analytics for links on page clicked
-$('button.link-push-analytics').click(function() {
-    var link_text = $(this).text().trim();
-    var action="link clicked: " + link_text;
-    buttonLinkClicked(action, link_text);
-});
+( function ( $ ) {
+  // Tracks analytics for links on page clicked
+  $( 'button.link-push-analytics' ).click( function () {
+    const linkText  = $( this ).text().trim();
+    const action = 'link clicked: ' + linkText ;
+    buttonLinkClicked( action, linkText  );
+  });
 
-$('button.button-push-analytics').click(function() {
-    var link_text = $(this).text().trim();
-    var action="button clicked";
-    buttonLinkClicked(action, link_text);
-});
+  $( 'button.button-push-analytics' ).click( function () {
+    const linkText  = $( this ).text().trim();
+    const action = 'button clicked';
+    buttonLinkClicked( action, linkText  );
+  });
 
-$('button.save-work-push-analytics').click(function() {
-    var action = "save work modal"
-    var label = $(this).text().trim();
-    modelButtonClicked(action, label);
-});
+  $( 'button.save-work-push-analytics' ).click( function () {
+    const action = 'save work modal';
+    const label = $( this ).text().trim();
+    modelButtonClicked( action, label );
+  });
 
-$('button.start-over-push-analytics').click(function() {
-    var action = "Starting over modal"
-    var label = $(this).text().trim();
-    modelButtonClicked(action, label);
-});
+  $( 'button.start-over-push-analytics' ).click( function () {
+    const action = 'Starting over modal';
+    const label = $( this ).text().trim();
+    modelButtonClicked( action, label );
+  } );
 
-$('button.start-over-close-push-analytics').click(function() {
-    var action = "Starting over modal"
-    var label = $(this).text().trim();
-    modelButtonClicked(action, label);
-});
+  $( 'button.start-over-close-push-analytics' ).click( function () {
+    const action = 'Starting over modal';
+    const label = $( this ).text().trim();
+    modelButtonClicked( action, label );
+  } );
 
-$('a.push-download-analytics').click(function() {
-    var link_text = $(this).text().trim();
-    var link_url = $(this).attr('href');
-    sendAnalytics(link_text, link_url, "Downloads");
-});
+  $( 'a.push-download-analytics' ).click(function () {
+    const linkText  = $( this ).text().trim();
+    const linkUrl = $( this ).attr('href');
+    sendAnalytics( linkText , linkUrl, 'Downloads' );
+  } );
+} )( jQuery );
 
-function buttonLinkClicked(action, link_text) {
-    var label=link_text;
-    sendAnalytics(action, link_text, category);
+function buttonLinkClicked( action, linkText  ) {
+  sendAnalytics( action, linkText , category );
 }
 
-function modelButtonClicked(action, label) {
-    sendAnalytics(action, label, category);
+function modelButtonClicked( action, label ) {
+  sendAnalytics( action, label, category );
 }
 
-function sendAnalytics(action, label, category) {
-    var data = {
-        event:         category || "curriculum review tool interaction",
-        action:        action.trim(),
-        label:         label || ""
-    }
+function sendAnalytics( action, label, category ) {
+  const data = {
+    event:         category || 'curriculum review tool interaction',
+    action:        action.trim(),
+    label:         label || ''
+  };
 
-    track(data.event, data.action, data.label);
+  track(data.event, data.action, data.label);
 }
 
 function track( event, action, label ) {
-    window.dataLayer.push( {
-        event: event,
-        action: action,
-        label: label
-    } );
+  window.dataLayer.push( {
+    event: event,
+    action: action,
+    label: label
+  } );
 }
