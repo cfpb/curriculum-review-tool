@@ -1,4 +1,4 @@
-const category = 'curriculum review tool interaction';
+jQuery = window.jQuery;
 
 ( function( $ ) {
   // Tracks analytics for links on page clicked
@@ -34,19 +34,28 @@ const category = 'curriculum review tool interaction';
 
   $( 'a.push-download-analytics' ).click( function() {
     const linkText = $( this ).text().trim();
-    const linkUrl = $( this ).attr('href');
+    const linkUrl = $( this ).attr( 'href' );
     sendAnalytics( linkText, linkUrl, 'Downloads' );
   } );
 } )( jQuery );
 
+/**
+ * A button link has been clicked.
+ */
 function buttonLinkClicked( action, linkText ) {
-  sendAnalytics( action, linkText, category );
+  sendAnalytics( action, linkText );
 }
 
+/**
+ * A model button has been clicked.
+ */
 function modelButtonClicked( action, label ) {
-  sendAnalytics( action, label, category );
+  sendAnalytics( action, label );
 }
 
+/**
+ * Send Analytics with default crool category.
+ */
 function sendAnalytics( action, label, category ) {
   const data = {
     event:         category || 'curriculum review tool interaction',
@@ -57,6 +66,9 @@ function sendAnalytics( action, label, category ) {
   track(data.event, data.action, data.label);
 }
 
+/**
+ * Push to GA.
+ */
 function track( event, action, label ) {
   window.dataLayer.push( {
     event: event,
