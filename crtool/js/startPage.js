@@ -17,17 +17,13 @@ const init = () => {
     openingNewReviewModal = false;
     openingSaveWorkModal = false;
     bindEvents();
-    console.log('startPage.init()');
 };
 
 /*
  * Set the values based on localStorage
  */
 const setInitialFormValues = () => {
-    console.log('setInitialFormValue line 26: GOT HERE');
     var review = getCurrentReview();
-    console.log('review:');
-    console.log(review);
     if (review) {
         document.getElementById('tdp-crt_title').value = review.curriculumTitle || "";
         document.getElementById('tdp-crt_pubdate').value = review.publicationDate || "";
@@ -126,7 +122,6 @@ const recordAnalyticsForPage = (curriculumTitle, publicationDate, gradeRange) =>
  */
 const clearLocalStorage = (e) => {
     e.preventDefault();
-    console.log('startPage.js ln 124: GOT HERE');
     var review = getCurrentReview();
     if (review) {
         localStorage.removeItem('curriculumReviewId');
@@ -234,24 +229,17 @@ const saveWorkOutsideClickListener = (event) => {
  *
  */
 const getCurrentReview = () => {
-    console.log('getCurrentReview line 237');
     let review = false;
     var reviewId = localStorage.getItem('curriculumReviewId') || "";
-    console.log(reviewId);
     if (reviewId) {
-        console.log('reviewId exists');
         if (review = localStorage.getItem('crtool.' + reviewId)) {
-            console.log('review exists');
             review = JSON.parse(review);
         }
     }
-    console.log('review is:');
-    console.log(review);
     return review;
 };
 
 const bindEvents = () => {
-    console.log('GOT HERE');
     $('#modal-save-work .save-work-push-analytics').click(function (e) { closeSaveWorkModalWindow(e); });
     $('#modal-start-over .start-over-close-push-analytics').click(function (e) { closeNewReviewModalWindow(e); });
     $('#modal-start-over .start-over-push-analytics').click(function (e) { clearLocalStorage(e); });

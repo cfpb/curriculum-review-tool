@@ -230,7 +230,6 @@ const ls = {
         }
 
         if (ls.review.ls_modified_time > ls.lastTimeSaved) {
-            // console.log('auto saving to database now');
             ls.saveReviewToServer();
         }
 
@@ -269,8 +268,6 @@ const ls = {
             throw new Error('Use before init');
         }
 
-        // console.log('crtoolLocalStorage setItem: line 111');
-        // console.log(key + ': ' + value);
         // Only setItem value if it's different than what's already there.
         if (ls.review[key] !== value) {
             ls.review[key] = value;
@@ -284,10 +281,8 @@ const ls = {
         }
 
         if (ls.review.hasOwnProperty(key)) {
-            // console.log('getItem: HIT');
             return ls.review[key];
         } else {
-            // console.log('getItem: MISS');
             return null;
         }
     },
