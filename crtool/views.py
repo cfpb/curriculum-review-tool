@@ -30,7 +30,12 @@ def create_review(request):
         data['publicationDate'] = pub_date
         data['gradeRange'] = grade_range
 
-        review = CurriculumReviewSession.objects.create(id=review_id, pass_code=pass_code, last_updated=last_updated, data=data)
+        review = CurriculumReviewSession.objects.create(
+            id=review_id,
+            pass_code=pass_code,
+            last_updated=last_updated,
+            data=data
+        )
 
         if review:
             return JsonResponse(review.data)
@@ -49,6 +54,7 @@ def get_review(request):
         except (CurriculumReviewSession.DoesNotExist, ValidationError):
             raise Http404("Review not found.")
     return JsonResponse(data)
+
 
 @csrf_exempt
 def update_review(request):
