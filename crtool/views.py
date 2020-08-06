@@ -1,8 +1,6 @@
-# from django.shortcuts import render
 import json
 import uuid
 from datetime import datetime
-from pprint import pprint
 
 from django.core.exceptions import ValidationError
 from django.http import Http404, JsonResponse
@@ -12,13 +10,16 @@ from django.views.decorators.csrf import csrf_exempt
 from crtool.models import CurriculumReviewSession
 
 
+@csrf_exempt
 def create_review(request):
     data = {}
-    if request.method == 'GET':
-        title = request.GET.get('tdp-crt_title')
-        pub_date = request.GET.get('tdp-crt_pubdate')
-        grade_range = request.GET.get('tdp-crt_grade')
-        pass_code = request.GET.get('tdp-crt_pass_code')
+    if request.method == 'POST':
+        form_data = json.loads(request.body.decode("utf-8"))
+
+        title = form_data['tdp-crt_title'] if ('tdp-crt_title' in form_data) else ''
+        pub_date = form_data['tdp-crt_pubdate'] if ('tdp-crt_pubdate' in form_data) else ''
+        grade_range = form_data['tdp-crt_grade'] if ('tdp-crt_grade' in form_data) else ''
+        pass_code = form_data['tdp-crt_pass_code'] if ('tdp-crt_pass_code' in form_data) else ''
         review_id = uuid.uuid4()
         last_updated = timezone.now()
 
@@ -61,8 +62,6 @@ def update_review(request):
     if request.method == 'POST':
         # data = request.POST.get('data')
         data = json.loads(request.body.decode("utf-8"))
-        pprint("NSB TEST")
-        pprint(data)
         if "id" in data:
             review = CurriculumReviewSession.objects.get(id=data["id"])
             if review:

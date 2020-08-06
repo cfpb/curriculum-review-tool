@@ -63,7 +63,7 @@ function modalButtonClicked( action, label ) {
  * @param {string} label - The label associated with the action
  * @param {string} category - Optional category if it's not crtool related
  */
-function sendAnalytics( action, label, category ) {
+export default function sendAnalytics( action, label, category ) {
   const data = {
     event:         category || 'curriculum review tool interaction',
     action:        action.trim(),

@@ -119,7 +119,7 @@
             <h2>Curriculum information</h2>
             <p>Enter the information for the curriculum you’re reviewing.</p>
         </div>
-        <form id="begin-review-form" class="o-form" method="GET" action="../tool">
+        <form id="begin-review-form" class="o-form" method="POST" action="../tool">
             <div class="o-form_group">
                 <div class="m-form-field
                             m-form-field__text">
@@ -193,7 +193,7 @@
                 <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" formaction="../tool">
                     Start review
                 </button>
-                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" data-gtm_ignore="true">Start over with a new review</button>
+                <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" type="button" data-gtm_ignore="true">Start over with a new review</button>
             </div>
             <input type="hidden" id="tdp-crt_id" name="tdp-crt_id" value="">
             <input type="hidden" id="tdp-crt_pass_code" name="tdp-crt_pass_code" value="">
