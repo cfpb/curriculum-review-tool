@@ -1,16 +1,15 @@
 # from django.shortcuts import render
-from django.core.exceptions import ValidationError
-from django.http import JsonResponse, Http404
-from django.utils import timezone
-from django.views.decorators.csrf import csrf_exempt
-from pprint import pprint
-from datetime import datetime
-
-
-from crtool.models import CurriculumReviewSession
-
 import json
 import uuid
+from datetime import datetime
+from pprint import pprint
+
+from django.core.exceptions import ValidationError
+from django.http import Http404, JsonResponse
+from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
+
+from crtool.models import CurriculumReviewSession
 
 
 def create_review(request):
