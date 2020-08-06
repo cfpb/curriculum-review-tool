@@ -19,30 +19,30 @@ const handleErrors = require( '../utils/handle-errors' );
  * @returns {PassThrough} A source stream.
  */
 function stylesModern() {
-    return gulp.src( configStyles.cwd + configStyles.src )
-      .pipe( gulpNewer( {
-        dest:  configStyles.dest + '/crtool.css',
-        extra: configStyles.otherBuildTriggerFiles
-      } ) )
-      .pipe( gulpDebug( { title: 'src:' } ) )
-      .pipe( gulpSourcemaps.init() )
-      .pipe( gulpLess( configStyles.settings ) )
-      .on( 'error', handleErrors.bind( this, { exitProcess: true } ) )
-      .pipe( gulpPostcss( [
-        autoprefixer( { browsers: BROWSER_LIST.LAST_2 } )
-      ] ) )
-      .pipe( gulpDebug( { title: 'prefixed:' } ) )
-      .pipe( gulpHeader( configBanner, { pkg: configPkg } ) )
-      .pipe( gulpSourcemaps.write( '.' ) )
-      .pipe( gulp.dest( configStyles.dest ) )
-      .pipe( gulpDebug( { title: 'dest:' } ) );
-  }
-  
-  
-  gulp.task( 'styles:modern', stylesModern );
-  
-  gulp.task( 'styles',
-    gulp.parallel(
-      'styles:modern'
-    )
-  );
+  return gulp.src( configStyles.cwd + configStyles.src )
+    .pipe( gulpNewer( {
+      dest:  configStyles.dest + '/crtool.css',
+      extra: configStyles.otherBuildTriggerFiles
+    } ) )
+    .pipe( gulpDebug( { title: 'src:' } ) )
+    .pipe( gulpSourcemaps.init() )
+    .pipe( gulpLess( configStyles.settings ) )
+    .on( 'error', handleErrors.bind( this, { exitProcess: true } ) )
+    .pipe( gulpPostcss( [
+      autoprefixer( { browsers: BROWSER_LIST.LAST_2 } )
+    ] ) )
+    .pipe( gulpDebug( { title: 'prefixed:' } ) )
+    .pipe( gulpHeader( configBanner, { pkg: configPkg } ) )
+    .pipe( gulpSourcemaps.write( '.' ) )
+    .pipe( gulp.dest( configStyles.dest ) )
+    .pipe( gulpDebug( { title: 'dest:' } ) );
+}
+
+
+gulp.task( 'styles:modern', stylesModern );
+
+gulp.task( 'styles',
+  gulp.parallel(
+    'styles:modern'
+  )
+);

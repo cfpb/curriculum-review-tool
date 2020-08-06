@@ -41,6 +41,8 @@ gulp.task( 'lint:tests', () => _genericLintJS( config.lint.tests ) );
 
 /**
  * Lints the source js files for errors.
+ *
+ * Add `.pipe(gulpEslint({fix:true}))` to automatically fix errors.
  */
 gulp.task( 'lint:scripts', () => _genericLintJS( config.lint.js ) );
 
