@@ -1,4 +1,3 @@
-# from django.shortcuts import render
 import json
 import uuid
 from datetime import datetime
@@ -15,10 +14,12 @@ from crtool.models import CurriculumReviewSession
 def create_review(request):
     data = {}
     if request.method == 'POST':
-        title = request.POST.get('tdp-crt_title')
-        pub_date = request.POST.get('tdp-crt_pubdate')
-        grade_range = request.POST.get('tdp-crt_grade')
-        pass_code = request.POST.get('tdp-crt_pass_code')
+        form_data = json.loads(request.body.decode("utf-8"))
+
+        title = form_data['tdp-crt_title'] if ('tdp-crt_title' in form_data) else ''
+        pub_date = form_data['tdp-crt_pubdate'] if ('tdp-crt_pubdate' in form_data) else ''
+        grade_range = form_data['tdp-crt_grade'] if ('tdp-crt_grade' in form_data) else ''
+        pass_code = form_data['tdp-crt_pass_code'] if ('tdp-crt_pass_code' in form_data) else ''
         review_id = uuid.uuid4()
         last_updated = timezone.now()
 

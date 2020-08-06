@@ -1,10 +1,3 @@
-const startPage = require( './startPage' );
-import './analytics.js';
+import init from './startPage';
 
-const app = {
-  init: () => {
-    startPage.init();
-  }
-};
-
-window.addEventListener( 'load', app.init );
+window.addEventListener( 'load', init );

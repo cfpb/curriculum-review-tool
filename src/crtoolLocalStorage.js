@@ -1,6 +1,6 @@
 import C from "./js/business.logic/constants";
 
-const CHECK_FREQUENCY = 60e3;
+const CHECK_FREQUENCY = 10e3;
 
 /**
  * A proxy for the localStorage API which periodically saves to the DB and
