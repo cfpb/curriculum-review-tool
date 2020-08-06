@@ -2,7 +2,6 @@
 import json
 import uuid
 from datetime import datetime
-from pprint import pprint
 
 from django.core.exceptions import ValidationError
 from django.http import Http404, JsonResponse
@@ -12,13 +11,14 @@ from django.views.decorators.csrf import csrf_exempt
 from crtool.models import CurriculumReviewSession
 
 
+@csrf_exempt
 def create_review(request):
     data = {}
-    if request.method == 'GET':
-        title = request.GET.get('tdp-crt_title')
-        pub_date = request.GET.get('tdp-crt_pubdate')
-        grade_range = request.GET.get('tdp-crt_grade')
-        pass_code = request.GET.get('tdp-crt_pass_code')
+    if request.method == 'POST':
+        title = request.POST.get('tdp-crt_title')
+        pub_date = request.POST.get('tdp-crt_pubdate')
+        grade_range = request.POST.get('tdp-crt_grade')
+        pass_code = request.POST.get('tdp-crt_pass_code')
         review_id = uuid.uuid4()
         last_updated = timezone.now()
 
@@ -61,8 +61,6 @@ def update_review(request):
     if request.method == 'POST':
         # data = request.POST.get('data')
         data = json.loads(request.body.decode("utf-8"))
-        pprint("NSB TEST")
-        pprint(data)
         if "id" in data:
             review = CurriculumReviewSession.objects.get(id=data["id"])
             if review:

@@ -86,3 +86,10 @@ function track( event, action, label ) {
     label: label
   } );
 }
+
+export default {
+  buttonLinkClicked,
+  modalButtonClicked,
+  sendAnalytics,
+  track
+};
