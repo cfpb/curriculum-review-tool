@@ -17,14 +17,14 @@ def create_review(request):
         fd = json.loads(request.body.decode("utf-8"))
 
         title = fd['tdp-crt_title']
-        pub_date = fd['tdp-crt_pubdate'] if ('tdp-crt_pubdate' in fd) else ''
-        grade_range = fd['tdp-crt_grade'] if ('tdp-crt_grade' in fd) else ''
-        pass_code = fd['tdp-crt_pass_code'] if ('tdp-crt_pass_code' in fd) else ''
+        pub_date = fd['tdp-crt_pubdate'] if 'tdp-crt_pubdate' in fd else ''
+        grade_range = fd['tdp-crt_grade'] if 'tdp-crt_grade' in fd else ''
+        passcode = fd['tdp-crt_pass_code'] if 'tdp-crt_pass_code' in fd else ''
         review_id = uuid.uuid4()
         last_updated = timezone.now()
 
         data['id'] = str(review_id)
-        data['pass_code'] = pass_code
+        data['pass_code'] = passcode
         data['last_updated'] = str(datetime.isoformat(last_updated))
         data['curriculumTitle'] = title
         data['publicationDate'] = pub_date
@@ -32,7 +32,7 @@ def create_review(request):
 
         review = CurriculumReviewSession.objects.create(
             id=review_id,
-            pass_code=pass_code,
+            pass_code=passcode,
             last_updated=last_updated,
             data=data
         )
