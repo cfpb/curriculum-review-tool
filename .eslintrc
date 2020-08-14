@@ -1,6 +1,6 @@
 # Do not look up into parent directories.
 # Prevents ESLint version conflicts when cloned into
-# cfgov-refresh's develop-apps folder.
+# consumerfinance.gov's develop-apps folder.
 root: true
 
 # Environments.
