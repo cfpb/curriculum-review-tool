@@ -1,9 +1,10 @@
 import json
 import uuid
 from datetime import datetime
+from pprint import pprint
 
 from django.core.exceptions import ValidationError
-from django.http import Http404, JsonResponse
+from django.http import Http404, JsonResponse, HttpResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
@@ -12,23 +13,26 @@ from crtool.models import CurriculumReviewSession
 
 @csrf_exempt
 def create_review(request):
-    data = {}
     if request.method == 'POST':
         fd = json.loads(request.body.decode("utf-8"))
 
-        title = fd['tdp-crt_title']
+        title = fd['tdp-crt_title'] if 'tdp-crt_title' in fd else ''
         pub_date = fd['tdp-crt_pubdate'] if 'tdp-crt_pubdate' in fd else ''
         grade_range = fd['tdp-crt_grade'] if 'tdp-crt_grade' in fd else ''
         passcode = fd['tdp-crt_pass_code'] if 'tdp-crt_pass_code' in fd else ''
         review_id = uuid.uuid4()
         last_updated = timezone.now()
 
-        data['id'] = str(review_id)
-        data['pass_code'] = passcode
-        data['last_updated'] = str(datetime.isoformat(last_updated))
-        data['curriculumTitle'] = title
-        data['publicationDate'] = pub_date
-        data['gradeRange'] = grade_range
+        if not title or not grade_range:
+            return HttpResponse(status=400)
+        data = {
+            'id': str(review_id),
+            'pass_code': passcode,
+            'last_updated': str(datetime.isoformat(last_updated)),
+            'curriculumTitle': title,
+            'publicationDate': pub_date,
+            'gradeRange': grade_range
+        }
 
         review = CurriculumReviewSession.objects.create(
             id=review_id,
@@ -40,7 +44,8 @@ def create_review(request):
         if review:
             return JsonResponse(review.data)
 
-    return JsonResponse(data)
+    else:
+        return HttpResponse(status=400)
 
 
 def get_review(request):
@@ -51,26 +56,27 @@ def get_review(request):
             review = CurriculumReviewSession.objects.get(id=review_id)
             if review:
                 data = review.data
-        except (CurriculumReviewSession.DoesNotExist, ValidationError):
-            raise Http404("Review not found.")
+        except (CurriculumReviewSession.DoesNotExist, ValueError, ValidationError):
+            return HttpResponse(status=404)
     return JsonResponse(data)
 
 
 @csrf_exempt
 def update_review(request):
-    data = {}
     if request.method == 'POST':
-        # data = request.POST.get('data')
         data = json.loads(request.body.decode("utf-8"))
         if "id" in data:
-            review = CurriculumReviewSession.objects.get(id=data["id"])
-            if review:
-                # Update last_updated date
-                last_updated = timezone.now()
-                data['last_updated'] = str(datetime.isoformat(last_updated))
-                review.data = data
-                review.last_updated = last_updated
-                review.save()
-                return JsonResponse(review.data)
+            try:
+                review = CurriculumReviewSession.objects.get(id=data["id"])
+                if review:
+                    # Update last_updated date
+                    last_updated = timezone.now()
+                    data['last_updated'] = str(datetime.isoformat(last_updated))
+                    review.data = data
+                    review.last_updated = last_updated
+                    review.save()
+                    return JsonResponse(review.data)
+            except (CurriculumReviewSession.DoesNotExist, ValueError, ValidationError):
+                return HttpResponse(status=404)
 
-    return JsonResponse(data)
+    return HttpResponse(status=404)
