@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "Django>=2.2,<3.1",
+    "Django>=2.2,<3.2",
 ]
 
 
