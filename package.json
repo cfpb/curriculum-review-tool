@@ -75,7 +75,8 @@
     "jest": "24.9.0",
     "mock-local-storage": "1.0.5",
     "stylelint": "10.0.1",
-    "stylelint-config-standard": "18.3.0"
+    "stylelint-config-standard": "18.3.0",
+    "webpack-stream": "5.2.1"
   },
   "homepage": "https://www.consumerfinance.gov/",
   "jest": {
