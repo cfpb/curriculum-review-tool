@@ -1,13 +1,9 @@
 # from django.test import TestCase
-import copy
 import json
 
-from pprint import pprint
-from django.http import HttpRequest
-from django.test import RequestFactory, TestCase, override_settings
+from django.test import RequestFactory, TestCase
 from django.urls import reverse
 
-from crtool.models import CurriculumReviewSession
 from crtool.views import (
     create_review, update_review, get_review
 )
@@ -165,7 +161,7 @@ class CreateReviewTest(TestCase):
             "gradeRange": "Elementary school",
             "pass_code": "P455W0RD"
         }
-        self.check_post(post, self.assertCreateSuccess, ajax=True, compare=compare)
+        self.check_post(post, self.assertCreateSuccess, ajax=True, compare=compare)  # noqa 501
 
     def test_missing_pubdate_and_passcode_ajax(self):
         post = {
@@ -178,7 +174,7 @@ class CreateReviewTest(TestCase):
             "publicationDate": "",
             "pass_code": ""
         }
-        self.check_post(post, self.assertCreateSuccess, compare=compare, ajax=True)
+        self.check_post(post, self.assertCreateSuccess, compare=compare, ajax=True)  # noqa 501
 
     def test_empty_pubdate_and_passcode_ajax(self):
         post = {
@@ -193,7 +189,7 @@ class CreateReviewTest(TestCase):
             "publicationDate": "",
             "pass_code": ""
         }
-        self.check_post(post, self.assertCreateSuccess, compare=compare, ajax=True)
+        self.check_post(post, self.assertCreateSuccess, compare=compare, ajax=True)  # noqa 501
 
 
 class GetReviewTest(TestCase):
@@ -236,7 +232,7 @@ class GetReviewTest(TestCase):
             "curriculumTitle": "Test",
             "publicationDate": "",
             "ls_modified_time": "2020-08-06T00:58:28.817Z",
-            "criterionClickedTitles": "{\"quality-crt-question-2\":\"clicked\"}",
+            "criterionClickedTitles": "{\"quality-crt-question-2\":\"clicked\"}",  # noqa 501
             "dimensionOverallScores": "{\"Quality\":\"limited\"}",
         }
         self.check_get(get, self.assertGetSuccess, compare=compare)
@@ -287,7 +283,7 @@ class UpdateReviewTest(TestCase):
             if not self.assertEqual(data[k], compare[k]):
                 return False
         # Return False if the last_updated date isn't updated.
-        if not self.assertGreater(data['last_updated'], compare['last_updated']):
+        if not self.assertGreater(data['last_updated'], compare['last_updated']):  # noqa 501
             return False
         return True
 
