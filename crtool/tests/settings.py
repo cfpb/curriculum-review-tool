@@ -3,6 +3,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'crtool'
 ]
 SECRET_KEY = "not-secret-key-for-testing"
