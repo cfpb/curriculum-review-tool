@@ -15,6 +15,7 @@ setup_requires = [
 testing_extras = [
     "mock>=2.0.0",
     "coverage>=3.7.0",
+    "dj-database-url==0.5.0"
 ]
 
 
