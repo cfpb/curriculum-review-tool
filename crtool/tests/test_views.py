@@ -4,9 +4,7 @@ import json
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
 
-from crtool.views import (
-    create_review, update_review, get_review
-)
+from crtool.views import create_review, get_review, update_review
 
 
 class CreateReviewTest(TestCase):

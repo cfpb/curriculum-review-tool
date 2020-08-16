@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime
 
 from django.core.exceptions import ValidationError
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
