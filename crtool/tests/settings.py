@@ -9,3 +9,6 @@ INSTALLED_APPS = [
 SECRET_KEY = "not-secret-key-for-testing"
 
 ROOT_URLCONF = "crtool.urls"
+
+# Databases
+DATABASES = {}
