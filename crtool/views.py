@@ -1,10 +1,9 @@
 import json
 import uuid
 from datetime import datetime
-from pprint import pprint
 
 from django.core.exceptions import ValidationError
-from django.http import Http404, JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
@@ -56,7 +55,11 @@ def get_review(request):
             review = CurriculumReviewSession.objects.get(id=review_id)
             if review:
                 data = review.data
-        except (CurriculumReviewSession.DoesNotExist, ValueError, ValidationError):
+        except (
+            CurriculumReviewSession.DoesNotExist,
+            ValueError,
+            ValidationError
+        ):
             return HttpResponse(status=404)
     return JsonResponse(data)
 
@@ -71,12 +74,17 @@ def update_review(request):
                 if review:
                     # Update last_updated date
                     last_updated = timezone.now()
-                    data['last_updated'] = str(datetime.isoformat(last_updated))
+                    iso_last_updated = str(datetime.isoformat(last_updated))
+                    data['last_updated'] = iso_last_updated
                     review.data = data
                     review.last_updated = last_updated
                     review.save()
                     return JsonResponse(review.data)
-            except (CurriculumReviewSession.DoesNotExist, ValueError, ValidationError):
+            except (
+                CurriculumReviewSession.DoesNotExist,
+                ValueError,
+                ValidationError
+            ):
                 return HttpResponse(status=404)
 
     return HttpResponse(status=404)
