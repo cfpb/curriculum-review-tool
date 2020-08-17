@@ -1,14 +1,27 @@
 import C from "./js/business.logic/constants";
 
-const CHECK_FREQUENCY = 10e3;
+export const CHECK_FREQUENCY = 10e3;
 
 /**
  * A proxy for the localStorage API which periodically saves to the DB and
  * can synchronize itself when the page loads.
+ *
+ * TODO use https://jestjs.io/docs/en/24.x/getting-started.html
  */
 const ls = {
     // Use DOM LocalStorage, but allow swapping
     localStorage: localStorage,
+    pushState: window.history.pushState,
+    locationSearch: window.location.search,
+    setHref(url) {
+        window.location.href = url;
+    },
+    getHref() {
+        return window.location.href;
+    },
+    getISODate() {
+        return (new Date()).toISOString();
+    },
 
     review: {},
     lastTimeSaved: '',
@@ -20,20 +33,22 @@ const ls = {
             return;
         }
 
-        window.location.href = C.START_PAGE_RELATIVE_URL;
+        ls.setHref(C.START_PAGE_RELATIVE_URL);
     },
 
-    /**
-     * Set up for testing, injecting mock localStorage
-     *
-     * @param {WindowLocalStorage} localStorage
-     */
-    initForTesting(localStorage) {
-        ls.localStorage = localStorage;
-        ls.testing = true;
-        ls.review = {
-            id: 'testing',
-        };
+    updateUrl(review_id) {
+        const new_url = ls.updateUrlParameter(ls.getHref(), 'token', review_id);
+        ls.pushState({ path: new_url }, '', new_url);
+    },
+
+    scheduleSaveIfDirty(delay) {
+        ls.timeoutHandle = setTimeout(ls.saveIfDirty, delay);
+    },
+
+    cancelSaveIfDirty() {
+        if (ls.timeoutHandle) {
+            clearTimeout(ls.timeoutHandle);
+        }
     },
 
     async init() {
@@ -45,13 +60,13 @@ const ls = {
 
         // If review_id found but a token is not set, update the URL
         if (!token && review_id) {
-            const new_url = ls.updateUrlParameter(window.location.href, 'token', review_id);
-            window.history.pushState({ path: new_url }, '', new_url);
+            ls.updateUrl(review_id);
         }
 
         const ls_review = ls.loadReviewFromLocalStorage(review_id);
 
         let db_review;
+        let db_fresh = false;
         try {
             db_review = await ls.fetchReviewFromServer(review_id);
             if (!db_review) {
@@ -63,7 +78,8 @@ const ls = {
             }
             if (!db_review.ls_modified_time) {
                 // A fresh review. Let's set a local time on it
-                db_review.ls_modified_time = (new Date()).toISOString();
+                db_review.ls_modified_time = ls.getISODate();
+                db_fresh = true;
             }
         } catch (e) {
             console.error(e);
@@ -75,11 +91,14 @@ const ls = {
             return;
         }
 
-        if (ls_review && ls_review.ls_modified_time > db_review.ls_modified_time) {
+        const useLocal = ls_review && (
+          !db_review || (ls_review.ls_modified_time > db_review.ls_modified_time)
+        );
+        if (useLocal) {
             // Trust that newer local time means more up-to-date data
             ls.review = ls_review;
             ls.localStorage.setItem('curriculumReviewId', review_id);
-            ls.timeoutHandle = setTimeout(ls.saveIfDirty, 0);
+            ls.timeoutHandle = ls.scheduleSaveIfDirty(0);
         } else {
             ls.review = db_review;
             // Just bring local storage up to speed
@@ -87,7 +106,7 @@ const ls = {
             ls.localStorage.setItem('curriculumReviewId', db_review.id);
             // Don't need to sync immediately after load
             ls.lastTimeSaved = ls.review.ls_modified_time;
-            ls.timeoutHandle = setTimeout(ls.saveIfDirty, CHECK_FREQUENCY);
+            ls.timeoutHandle = ls.scheduleSaveIfDirty(db_fresh ? 0 : CHECK_FREQUENCY);
         }
     },
 
@@ -96,7 +115,7 @@ const ls = {
     },
 
     saveReviewToLocalStorage() {
-        ls.review.ls_modified_time = (new Date()).toISOString();
+        ls.review.ls_modified_time = ls.getISODate();
         ls.localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
     },
 
@@ -118,6 +137,8 @@ const ls = {
      * Returns a Promise with a valid review or undefined.
      *
      * Rejects if request fails. Invalid response resolves to undefined.
+     *
+     * TODO use https://www.npmjs.com/package/xhr-mock to mock XHR
      */
     async fetchReviewFromServer(review_id) {
         if (ls.testing) {
@@ -157,6 +178,10 @@ const ls = {
     */
     loadReviewFromLocalStorage(review_id) {
         let review = ls.localStorage.getItem('crtool.' + review_id) || "{}";
+        if (review === '{}') {
+            return;
+        }
+
         try {
             review = JSON.parse(review);
             if (!ls.isValidReview(review)) {
@@ -223,25 +248,24 @@ const ls = {
         });
     },
 
+    // TODO see https://jestjs.io/docs/en/24.x/timer-mocks#run-pending-timers
     saveIfDirty() {
         // If called from an imperative action, we don't want to clear the existing schedule
-        if (ls.timeoutHandle) {
-            clearTimeout(ls.timeoutHandle);
-        }
+        ls.cancelSaveIfDirty();
 
         if (ls.review.ls_modified_time > ls.lastTimeSaved) {
             ls.saveReviewToServer();
         }
 
-        ls.timeoutHandle = setTimeout(ls.saveIfDirty, CHECK_FREQUENCY);
+        ls.scheduleSaveIfDirty(CHECK_FREQUENCY);
     },
 
     // IE compatible method for getting a querystring parameter from a URL
     // Credit: https://stackoverflow.com/a/901144
     getUrlParameter(name) {
-        name = name.replace(/\[/, '\\[').replace(/\]/, '\\]');
+        name = name.replace(/\[/, '\\[').replace(/]/, '\\]');
         const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        const results = regex.exec(window.location.search);
+        const results = regex.exec(ls.locationSearch);
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     },
 
@@ -263,6 +287,9 @@ const ls = {
         return uri + hash;  // finally append the hash as well
     },
 
+    // TODO test that setting a novel item updates ls_modified_time on the
+    // review in local storage.
+    // TODO test that setting the same value, does not.
     setItem(key, value) {
         if (!ls.isReady()) {
             throw new Error('Use before init');
@@ -275,6 +302,7 @@ const ls = {
         }
     },
 
+    // TODO test pulling values from the review
     getItem(key) {
         if (!ls.isReady()) {
             throw new Error('Use before init');
@@ -287,6 +315,7 @@ const ls = {
         }
     },
 
+    // TODO test updates ls_modified_time on the review in local storage.
     removeItem(key) {
         if (!ls.isReady()) {
             throw new Error('Use before init');
