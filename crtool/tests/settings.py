@@ -2,6 +2,7 @@ import os
 
 import dj_database_url
 
+
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
