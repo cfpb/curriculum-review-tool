@@ -3,6 +3,7 @@ from setuptools import find_packages, setup
 
 install_requires = [
     "Django>=2.2,<2.3",
+    "psycopg2==2.7.3.2"
 ]
 
 
@@ -14,6 +15,7 @@ setup_requires = [
 testing_extras = [
     "mock>=2.0.0",
     "coverage>=3.7.0",
+    "dj-database-url==0.5.0"
 ]
 
 
