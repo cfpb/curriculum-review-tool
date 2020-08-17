@@ -1,4 +1,4 @@
-# credit: @philamersune https://medium.com/@philamersune/using-postgresql-jsonfield-in-sqlite-95ad4ad2e5f1 #noqa 501
+# credit: @philamersune https://medium.com/@philamersune/using-postgresql-jsonfield-in-sqlite-95ad4ad2e5f1  # noqa 501
 import json
 
 from django.conf import settings
@@ -18,7 +18,7 @@ class ArrayField(DjangoArrayField):
 
 
 if 'sqlite' in settings.DATABASES['default']['ENGINE']:
-    class JSONField(Field):
+    class JSONField(Field):   # noqa 811
         def db_type(self, connection):
             return 'text'
 
@@ -43,8 +43,7 @@ if 'sqlite' in settings.DATABASES['default']['ENGINE']:
         def value_to_string(self, obj):
             return self.value_from_object(obj)
 
-
-    class ArrayField(JSONField):
+    class ArrayField(JSONField):    # noqa 811
         def __init__(self, base_field, size=None, **kwargs):
             """Care for DjanroArrayField's kwargs."""
             self.base_field = base_field

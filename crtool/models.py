@@ -6,6 +6,7 @@ from django.utils import timezone
 
 from crtool.fields import JSONField
 
+
 class CurriculumReviewSession(models.Model):
     """Session state of a Curriculum Review"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
