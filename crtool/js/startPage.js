@@ -3,7 +3,7 @@ import sendAnalytics from './analytics.js';
 
 /**
  * The below code manages the enabling/disabling of the submit button
- * Also manages the saving and setting of the Title, Date, & Grade Range
+ * Also manages the saving and setting of the Title, Date, & Grade Range.
  */
 
 const newReviewModalWindow = document.getElementById( 'modal-start-over' );
@@ -11,7 +11,11 @@ const saveWorkModalWindow = document.getElementById( 'modal-save-work' );
 let openingNewReviewModal = false;
 let openingSaveWorkModal = false;
 
-/*  */
+/**
+ * Get current review from localStorage.
+ *
+ * @returns {boolean|object} review
+ */
 function getCurrentReview() {
   let review = false;
   const reviewId = localStorage.getItem( 'curriculumReviewId' ) || '';
@@ -24,7 +28,9 @@ function getCurrentReview() {
   return review;
 }
 
-/* Method to manage enabling or dissabling begin button based on form values */
+/***
+ *  Method to manage enabling or dissabling begin button based on form values.
+ */
 function setBeginReviewButtonEnabling() {
   const selectedGradeValue = document.getElementById( 'tdp-crt_grade' ).value;
 
@@ -37,8 +43,13 @@ function setBeginReviewButtonEnabling() {
   document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = !isEnabled;
 }
 
-/* Some versions of IE do not support standard functionality when it
-   comes to removing classnames.  So we need to split remove then join */
+/**
+ * Some versions of IE do not support standard functionality when it
+ * comes to removing classnames.  So we need to split remove then join.
+ *
+ * @param {element} element - DOM Element
+ * @param {string} classNameToRemove - The class to remove
+ */
 function removeClassFromElement( element, classNameToRemove ) {
   const classes = element.className.split( ' ' );
   const idx = classes.indexOf( classNameToRemove );
@@ -46,7 +57,9 @@ function removeClassFromElement( element, classNameToRemove ) {
   element.className = classes.join( ' ' );
 }
 
-/* Close New Review Warning Modal Dialog */
+/**
+ * Close New Review Warning Modal Dialog.
+ */
 function closeNewReviewModalWindow() {
   // Hide from screen readers
   document.getElementById( 'modal-start-over' ).setAttribute( 'aria-hidden', 'false' );
@@ -54,7 +67,11 @@ function closeNewReviewModalWindow() {
   document.removeEventListener( 'click', newReviewOutsideClickListener );
 }
 
-/* Method to close New Review daialog if click outside */
+/**
+ * Method to close New Review daialog if click outside.
+ *
+ * @param {event} event - Click event
+ */
 function newReviewOutsideClickListener( event ) {
   const startOverModal = document.querySelector( '#modal-start-over .o-modal_content' );
   if ( !openingNewReviewModal && !startOverModal.contains( event.target ) ) {
@@ -67,7 +84,9 @@ function newReviewOutsideClickListener( event ) {
   }
 }
 
-/* Open New Review Warning Modal Dialog */
+/**
+ * Open New Review Warning Modal Dialog.
+ */
 function openNewReviewModalWindow() {
   // Allow screen readers to see dialog
   document.getElementById( 'modal-start-over' ).setAttribute( 'aria-hidden', 'false' );
@@ -81,7 +100,9 @@ function openNewReviewModalWindow() {
   sendAnalytics( 'link clicked: Start over with a new review', 'Starting over' );
 }
 
-/* Close Save Work Warning Modal Dialog */
+/**
+ * Close Save Work Warning Modal Dialog.
+ */
 function closeSaveWorkModalWindow() {
   // Hide from screen readers
   document.getElementById( 'modal-save-work' ).setAttribute( 'aria-hidden', 'true' );
@@ -89,7 +110,11 @@ function closeSaveWorkModalWindow() {
   document.removeEventListener( 'click', saveWorkOutsideClickListener );
 }
 
-/* Method to close Save Work daialog if click outside */
+/**
+ * Method to close Save Work daialog if click outside.
+ *
+ * @param {event} event - Click event
+ */
 function saveWorkOutsideClickListener( event ) {
   const startOverModal = document.querySelector( '#modal-save-work .o-modal_content' );
   if ( !openingSaveWorkModal && !startOverModal.contains( event.target ) ) {
@@ -102,7 +127,9 @@ function saveWorkOutsideClickListener( event ) {
   }
 }
 
-/* Set the values based on localStorage */
+/**
+ * Set the values based on localStorage.
+ */
 function setInitialFormValues() {
   const review = getCurrentReview();
   if ( review ) {
@@ -125,13 +152,21 @@ function setInitialFormValues() {
   };
 }
 
-/* Add this function to any required field so we can monitor changed values */
+/**
+ * Add this function to any required field so we can monitor changed values.
+ */
 function onValuesChanged() {
   setBeginReviewButtonEnabling();
 }
 
-/* When user starts a new review we need to send analytics for
-   Curriculum Title, Publication Date, & Grade Range */
+/**
+ * When user starts a new review we need to send analytics for
+ * Curriculum Title, Publication Date, & Grade Range.
+ *
+ * @param {string} curriculumTitle - The title of curriculum review
+ * @param {string} publicationDate - The date of curriculum review
+ * @param {string} gradeRange - The grade level of curriculum review
+ */
 function recordAnalytics( curriculumTitle, publicationDate, gradeRange ) {
   const category = 'curriculum review tool interaction';
   // Analytics curriculum title
@@ -145,7 +180,11 @@ function recordAnalytics( curriculumTitle, publicationDate, gradeRange ) {
   sendAnalytics( 'grade range', gradeRange, category );
 }
 
-/* Method that actually saves values (Title, Date, & Grad Range) */
+/**
+ * Method that actually saves values (Title, Date, & Grad Range).
+ *
+ * @param {event} event - Click event
+ */
 function beginReviewButtonClick( event ) {
   event.preventDefault();
   const curriculumTitle = document.getElementById( 'tdp-crt_title' ).value;
@@ -183,7 +222,11 @@ function beginReviewButtonClick( event ) {
   recordAnalytics( curriculumTitle, publicationDate, gradeRange );
 }
 
-/* User has chosen to clear all values and start over */
+/**
+ * User has chosen to clear all values and start over.
+ *
+ * @param {event} event - Click event
+ */
 function clearLocalStorage( event ) {
   event.preventDefault();
   const review = getCurrentReview();
@@ -201,6 +244,9 @@ function clearLocalStorage( event ) {
   setBeginReviewButtonEnabling();
 }
 
+/**
+ * Bind events.
+ */
 function bindEvents() {
   ( function( $ ) {
     $( '#modal-save-work .save-work-push-analytics' ).click( function( event ) { closeSaveWorkModalWindow( event ); } );
@@ -213,7 +259,9 @@ function bindEvents() {
   } )( jQuery );
 }
 
-// Call to get things initialized
+/**
+ * Call to get things initialized.
+ */
 export default function init() {
   setInitialFormValues();
   openingNewReviewModal = false;
