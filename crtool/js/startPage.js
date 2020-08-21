@@ -1,4 +1,6 @@
-const jQuery = window.jQuery;
+import 'select2';
+import 'select2/dist/css/select2.min.css';
+import $ from 'jquery';
 import sendAnalytics from './analytics.js';
 
 /**
@@ -128,15 +130,65 @@ function saveWorkOutsideClickListener( event ) {
 }
 
 /**
+ * Get available tokens from localStorage.
+ *
+ * @returns {Array} - List of available tokens
+ */
+function getAvailableTokens() {
+  const tokens = [];
+  let key;
+  let token;
+  for ( let i = 0; i < localStorage.length; i++ ) {
+    key = localStorage.key( i );
+    if ( key.search( /^crtool\./i ) !== -1 ) {
+      token = key.replace( 'crtool.', '' );
+      tokens.push( token );
+    }
+  }
+  return tokens;
+}
+
+/**
+ *
+ */
+function setUpTokenDropdown() {
+  const tokens = getAvailableTokens();
+  const review = getCurrentReview();
+
+  for ( const token of tokens ) {
+    let markup;
+    if ( review && review.id === token ) {
+      markup = '<option value="' + token + '" selected="selected">' + token + '</option>';
+    } else {
+      markup = '<option value="' + token + '">' + token + '</option>';
+    }
+    $( '#token--continue' ).append( markup );
+  }
+  $( '#token--continue' ).select2( {
+    tags: true,
+    tokenSeparators: [ ',', ' ' ],
+    multiple: false
+  } );
+}
+
+/**
  * Set the values based on localStorage.
  */
 function setInitialFormValues() {
   const review = getCurrentReview();
   if ( review ) {
-    document.getElementById( 'tdp-crt_title' ).value = review.curriculumTitle || '';
-    document.getElementById( 'tdp-crt_pubdate' ).value = review.publicationDate || '';
-    document.getElementById( 'tdp-crt_grade' ).value = review.gradeRange || '';
-    document.getElementById( 'tdp-crt_id' ).value = review.id || '';
+    const titleEl = document.getElementById( 'tdp-crt_title' );
+    const pubDateEl = document.getElementById( 'tdp-crt_pubdate' );
+    const gradeEl = document.getElementById( 'tdp-crt_grade' );
+
+    titleEl.value = review.curriculumTitle || '';
+    titleEl.disabled = true;
+    pubDateEl.value = review.publicationDate || '';
+    pubDateEl.disabled = true;
+    gradeEl.value = review.gradeRange || '';
+    gradeEl.disabled = true;
+
+    document.getElementById( 'token--continue' ).value = review.id || '';
     document.getElementById( 'tdp-crt_pass_code' ).value = review.pass_code || '';
   }
 
@@ -190,7 +242,7 @@ function beginReviewButtonClick( event ) {
   const curriculumTitle = document.getElementById( 'tdp-crt_title' ).value;
   const publicationDate = document.getElementById( 'tdp-crt_pubdate' ).value;
   const gradeRange = document.getElementById( 'tdp-crt_grade' ).value;
-  const curriculumReviewId = document.getElementById( 'tdp-crt_id' ).value;
+  const curriculumReviewId = document.getElementById( 'token--continue' ).value;
   const curriculumPassCode = document.getElementById( 'tdp-crt_pass_code' ).value;
 
   const xhttp = new XMLHttpRequest();
@@ -204,7 +256,7 @@ function beginReviewButtonClick( event ) {
   };
   let requestUrl = '../create-review/';
   if ( curriculumReviewId ) {
-    requestUrl = '../get-review?tdp-crt_id=' + curriculumReviewId;
+    requestUrl = '../get-review?token=' + curriculumReviewId;
     xhttp.open( 'GET', requestUrl );
     xhttp.send();
   } else {
@@ -237,7 +289,7 @@ function clearLocalStorage( event ) {
   document.getElementById( 'tdp-crt_title' ).value = '';
   document.getElementById( 'tdp-crt_pubdate' ).value = '';
   document.getElementById( 'tdp-crt_grade' ).value = '';
-  document.getElementById( 'tdp-crt_id' ).value = '';
+  document.getElementById( 'token--continue' ).value = '';
   document.getElementById( 'tdp-crt_pass_code' ).value = '';
 
   closeNewReviewModalWindow();
@@ -248,21 +300,20 @@ function clearLocalStorage( event ) {
  * Bind events.
  */
 function bindEvents() {
-  ( function( $ ) {
-    $( '#modal-save-work .save-work-push-analytics' ).click( function( event ) { closeSaveWorkModalWindow( event ); } );
-    $( '#modal-start-over .start-over-close-push-analytics' ).click( function( event ) { closeNewReviewModalWindow( event ); } );
-    $( '#modal-start-over .start-over-push-analytics' ).click( function( event ) { clearLocalStorage( event ); } );
-    $( 'form#begin-review-form' ).submit( function( event ) { beginReviewButtonClick( event ); } );
-    $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
-    $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
-    $( 'form#begin-review-form #tdp-crt_grade' ).change( function() { onValuesChanged(); } );
-  } )( jQuery );
+  $( '#modal-save-work .save-work-push-analytics' ).click( function( event ) { closeSaveWorkModalWindow( event ); } );
+  $( '#modal-start-over .start-over-close-push-analytics' ).click( function( event ) { closeNewReviewModalWindow( event ); } );
+  $( '#modal-start-over .start-over-push-analytics' ).click( function( event ) { clearLocalStorage( event ); } );
+  $( 'form#begin-review-form' ).submit( function( event ) { beginReviewButtonClick( event ); } );
+  $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
+  $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
+  $( 'form#begin-review-form #tdp-crt_grade' ).change( function() { onValuesChanged(); } );
 }
 
 /**
  * Call to get things initialized.
  */
 export default function init() {
+  setUpTokenDropdown();
   setInitialFormValues();
   openingNewReviewModal = false;
   openingSaveWorkModal = false;

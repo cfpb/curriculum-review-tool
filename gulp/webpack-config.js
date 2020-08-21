@@ -45,6 +45,12 @@ const COMMON_MODULE_CONFIG = {
         } ] ]
       }
     }
+  },
+  {
+    test: /\.css$/,
+    include: /node_modules/,
+    exclude: /node_modules\/(?:cf-.+|cfpb-.+)/,
+    loaders: [ 'style-loader', 'css-loader' ]
   } ]
 };
 

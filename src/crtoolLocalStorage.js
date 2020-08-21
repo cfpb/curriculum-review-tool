@@ -146,7 +146,7 @@ const ls = {
         }
 
         const xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "../get-review?tdp-crt_id=" + review_id, true);
+        xhttp.open("GET", "../get-review?token=" + review_id, true);
         xhttp.timeout = 5e3;
 
         return new Promise((resolve, reject) => {

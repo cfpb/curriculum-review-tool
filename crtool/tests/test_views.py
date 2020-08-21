@@ -219,7 +219,7 @@ class GetReviewTest(TestCase):
 
     # Test with hex token id that exists
     def test_existing_id(self):
-        get = '?tdp-crt_id=02d19cc1-3147-47ef-8aac-b37101c66a10'
+        get = '?token=02d19cc1-3147-47ef-8aac-b37101c66a10'
         compare = {
             "id": "02d19cc1-3147-47ef-8aac-b37101c66a10",
             "START": "Quality",
@@ -237,7 +237,7 @@ class GetReviewTest(TestCase):
 
     # Test with hex token id that doesn't exist
     def test_non_existent_id(self):
-        get = '?tdp-crt_id=02d19cc1-3147-47ef-8aac-b37101c66a11'
+        get = '?token=02d19cc1-3147-47ef-8aac-b37101c66a11'
         self.check_get(get, self.assertPageNotFound)
 
     # Test with null
@@ -247,12 +247,12 @@ class GetReviewTest(TestCase):
 
     # Test with empty string
     def test_empty_id(self):
-        get = '?tdp-crt_id='
+        get = '?token='
         self.check_get(get, self.assertPageNotFound)
 
     # Test with non-hex fake token id
     def test_invalid_id(self):
-        get = '?tdp-crt_id=apple'
+        get = '?token=apple'
         self.check_get(get, self.assertPageNotFound)
 
 

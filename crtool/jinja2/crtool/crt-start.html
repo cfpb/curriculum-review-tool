@@ -195,11 +195,20 @@
                 </button>
                 <button id="new-review-modal-dialog-btn" class="a-btn a-btn__link" type="button" data-gtm_ignore="true">Start over with a new review</button>
             </div>
-            <input type="hidden" id="tdp-crt_id" name="tdp-crt_id" value="">
             <input type="hidden" id="tdp-crt_pass_code" name="tdp-crt_pass_code" value="">
         </form>
         <!--<![endif]-->
     </div>
+    <!--[if gte IE 9]><!-->
+    <div class="o-well">
+        <form id="form__continue-review" class="o-form" method="GET" action="../tool">
+            <select id="token--continue" name="token" value=""></select>
+            <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
+                    Continue review
+            </button>
+        </form>
+    </div>
+    <!--<![endif]-->
 {% endblock content_main %}
 
 {% block content_sidebar_modifiers -%}
