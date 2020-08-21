@@ -201,8 +201,12 @@
     </div>
     <!--[if gte IE 9]><!-->
     <div class="o-well">
+        <h2>Continue Curriculum Review</h2>
         <form id="form__continue-review" class="o-form" method="GET" action="../tool">
-            <select id="token--continue" name="token" value=""></select>
+            <label class="a-label a-label__heading" for="token--continue">Token</label>
+            <select id="token--continue" name="token" value="">
+                <option value="">Enter your token key</option>
+            </select>
             <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
                     Continue review
             </button>

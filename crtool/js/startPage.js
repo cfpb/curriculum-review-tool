@@ -40,7 +40,12 @@ function setBeginReviewButtonEnabling() {
   const isValidGradeSelected = selectedGradeValue === 'Elementary school' ||
                              selectedGradeValue === 'Middle school' ||
                              selectedGradeValue === 'High school';
-  const isEnabled = isValidGradeSelected && document.getElementById( 'tdp-crt_title' ).value;
+  const gradeElDisabled = document.getElementById( 'tdp-crt_grade' ).disabled;
+  const titleEleDisabled = document.getElementById( 'tdp-crt_title' ).disabled;
+
+  const isEnabled = isValidGradeSelected &&
+    document.getElementById( 'tdp-crt_title' ).value &&
+    !gradeElDisabled && !titleEleDisabled;
 
   document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = !isEnabled;
 }
@@ -190,6 +195,7 @@ function setInitialFormValues() {
 
     document.getElementById( 'token--continue' ).value = review.id || '';
     document.getElementById( 'tdp-crt_pass_code' ).value = review.pass_code || '';
+    document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = true;
   }
 
   setBeginReviewButtonEnabling();
@@ -285,10 +291,17 @@ function clearLocalStorage( event ) {
   if ( review ) {
     localStorage.removeItem( 'curriculumReviewId' );
   }
+  const titleEl = document.getElementById( 'tdp-crt_title' );
+  const pubdateEl = document.getElementById( 'tdp-crt_pubdate' );
+  const gradeEl = document.getElementById( 'tdp-crt_grade' );
 
-  document.getElementById( 'tdp-crt_title' ).value = '';
-  document.getElementById( 'tdp-crt_pubdate' ).value = '';
-  document.getElementById( 'tdp-crt_grade' ).value = '';
+  titleEl.value = '';
+  titleEl.disabled = false;
+  pubdateEl.value = '';
+  pubdateEl.disabled = false;
+  gradeEl.value = '';
+  gradeEl.disabled = false;
+
   document.getElementById( 'token--continue' ).value = '';
   document.getElementById( 'tdp-crt_pass_code' ).value = '';
 
