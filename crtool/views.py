@@ -50,7 +50,7 @@ def create_review(request):
 def get_review(request):
     data = {}
     if request.method == 'GET':
-        review_id = request.GET.get('tdp-crt_id')
+        review_id = request.GET.get('token')
         try:
             review = CurriculumReviewSession.objects.get(id=review_id)
             if review:
