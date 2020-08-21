@@ -68,7 +68,7 @@
 
 {% block content_main scoped %}
     <div class="block block__flush-top">
-        <h1>Before you begin your review</h1>
+        <h1>Preparing for a review</h1>
         <div class="lead-paragraph">
             <p>It’s helpful to do a few things before starting the curriculum review.</p>
         </div>
@@ -94,6 +94,22 @@
                     <span class="a-link_text">Download our curriculum review checklist</span>
                     <span class="a-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.7 1200" class="cf-icon-svg"><path d="M507.1 692.8c-15.6-15.6-40.9-15.6-56.6 0l-85.1 85.1V466.6c0-22.1-17.9-40-40-40s-40 17.9-40 40V778l-85.1-85.1c-15.6-15.6-40.9-15.6-56.6 0-15.6 15.6-15.6 40.9 0 56.6L297 902.9c7.5 7.5 17.7 11.7 28.3 11.7s20.8-4.2 28.3-11.7l153.3-153.4c15.8-15.7 15.8-41 .2-56.7z"></path><path d="M30 161c-16.5 0-30 13.5-30 30v827.8c0 16.5 13.5 30 30 30h591.7c16.5 0 30-13.5 30-30V343.7L469 161H30zm389.6 60v134.8c0 19.9 16.3 36.2 36.2 36.2h135.9V988.8H60V221h359.6z"></path></svg></span></a>.
         </p>
+        <p>&nbsp;</p>
+        <div class="m-notification
+                    m-notification__visible
+                    m-notification__warning">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
+            <div class="m-notification_content">
+                <div class="h4 m-notification_message">
+                    Collaborating on a review
+                </div>
+                <p class="m-notification_explanation">
+                    We don't recommend sharing a review i.d to collaborate on a review.<br>
+                    More than one person on a review simultaneously may result in information
+                    being overwritten or lost.
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="o-well">
@@ -116,7 +132,7 @@
 
         <!--[if gte IE 9]><!-->
         <div class="u-mb30">
-            <h2>Curriculum information</h2>
+            <h2>Start a review</h2>
             <p>Enter the information for the curriculum you’re reviewing.</p>
         </div>
         <form id="begin-review-form" class="o-form" method="POST" action="../tool">
@@ -180,11 +196,14 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
                     <div class="m-notification_content">
                         <div class="h4 m-notification_message">
-                            Limitations around saving your work
+                            How to save your work
                         </div>
                         <p class="m-notification_explanation">
+                            When you start a review, the review will be assigned an ID.
+                            Please save this number so that you can return to your review later.
+                            You will not be able to access an existing review without an ID.
                             After you finish each dimension, we recommend you print the summary or save it as a PDF.
-                            <button class="a-btn a-btn__link link-push-analytics">Learn more about how to save your work</button>
+                            Learn more about <button class="a-btn a-btn__link link-push-analytics">how to save your work</button>
                         </p>
                     </div>
                 </div>
@@ -200,16 +219,45 @@
         <!--<![endif]-->
     </div>
     <!--[if gte IE 9]><!-->
+    <p>&nbsp;</p>
     <div class="o-well">
-        <h2>Continue Curriculum Review</h2>
+        <h2>Continue a review</h2>
+        <p>Enter your review i.d. to return to a review in progress</p>
         <form id="form__continue-review" class="o-form" method="GET" action="../tool">
-            <label class="a-label a-label__heading" for="token--continue">Token</label>
-            <select id="token--continue" name="token" value="">
-                <option value="">Enter your token key</option>
-            </select>
-            <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
-                    Continue review
-            </button>
+            <div class="o-form_group">
+                <div class="m-form-field m-form-field__select">
+                <label class="a-label a-label__heading" for="token--continue">Curriculum i.d.</label>
+                <div class="a-select">
+                    <select id="token--continue" name="token" value="">
+                        <option value="">Enter your curriculum i.d.</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="o-form_group">
+                <div class="m-notification
+                            m-notification__visible
+                            m-notification__warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
+                    <div class="m-notification_content">
+                        <div class="h4 m-notification_message">
+                            How to save your work
+                        </div>
+                        <p class="m-notification_explanation">
+                            When you start a review, the review will be assigned an ID.
+                            Please save this number so that you can return to your review later.
+                            You will not be able to access an existing review without an ID.
+                            After you finish each dimension, we recommend you print the summary or save it as a PDF.
+                            Learn more about <button class="a-btn a-btn__link link-push-analytics">how to save your work</button>
+                        </p>
+                    </div>
+                </div>
+            </div>-->
+            <div class="m-btn-group m-btn-group__wide">
+                <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
+                        Continue review
+                </button>
+            </div>
         </form>
     </div>
     <!--<![endif]-->
