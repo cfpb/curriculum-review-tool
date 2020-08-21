@@ -14,6 +14,23 @@ let openingNewReviewModal = false;
 let openingSaveWorkModal = false;
 
 /**
+ * Load a review from localStorage
+ *
+ * @param {string} reviewId  - id of the review to load
+ * @returns {boolean|object} review - JSON review object
+ */
+function getReviewFromLocalStorage( reviewId ) {
+  let review = false;
+  if ( localStorage.hasOwnProperty( 'crtool.' + reviewId ) ) {
+    const lsReview = localStorage.getItem( 'crtool.' + reviewId );
+    if ( JSON.stringify( lsReview ) !== '{}' ) {
+      review = JSON.parse( lsReview );
+    }
+  }
+  return review;
+}
+
+/**
  * Get current review from localStorage.
  *
  * @returns {boolean|object} review
@@ -22,10 +39,7 @@ function getCurrentReview() {
   let review = false;
   const reviewId = localStorage.getItem( 'curriculumReviewId' ) || '';
   if ( reviewId ) {
-    review = localStorage.getItem( 'crtool.' + reviewId );
-    if ( JSON.stringify( review ) !== '{}' ) {
-      review = JSON.parse( review );
-    }
+    review = getReviewFromLocalStorage( reviewId );
   }
   return review;
 }
@@ -140,14 +154,16 @@ function saveWorkOutsideClickListener( event ) {
  * @returns {Array} - List of available tokens
  */
 function getAvailableTokens() {
-  const tokens = [];
+  const tokens = {};
   let key;
   let token;
   for ( let i = 0; i < localStorage.length; i++ ) {
     key = localStorage.key( i );
     if ( key.search( /^crtool\./i ) !== -1 ) {
       token = key.replace( 'crtool.', '' );
-      tokens.push( token );
+      const review = getReviewFromLocalStorage( token );
+      const reviewTitle = review.curriculumTitle ? token + ' (' + review.curriculumTitle + ')' : token;
+      tokens[token] = reviewTitle;
     }
   }
   return tokens;
@@ -160,12 +176,12 @@ function setUpTokenDropdown() {
   const tokens = getAvailableTokens();
   const review = getCurrentReview();
 
-  for ( const token of tokens ) {
+  for ( const token in tokens ) {
     let markup;
     if ( review && review.id === token ) {
-      markup = '<option value="' + token + '" selected="selected">' + token + '</option>';
+      markup = '<option value="' + token + '" selected="selected">' + tokens[token] + '</option>';
     } else {
-      markup = '<option value="' + token + '">' + token + '</option>';
+      markup = '<option value="' + token + '">' + tokens[token] + '</option>';
     }
     $( '#token--continue' ).append( markup );
   }
