@@ -2,6 +2,7 @@ import 'select2';
 import 'select2/dist/css/select2.min.css';
 import $ from 'jquery';
 import sendAnalytics from './analytics.js';
+import tabsInit from './tabs.js';
 
 /**
  * The below code manages the enabling/disabling of the submit button
@@ -321,5 +322,6 @@ export default function init() {
   openingNewReviewModal = false;
   openingSaveWorkModal = false;
   bindEvents();
+  tabsInit();
 }
 

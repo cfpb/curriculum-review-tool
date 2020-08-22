@@ -111,8 +111,22 @@
             </div>
         </div>
     </div>
+    <!--[if gte IE 9]><!-->
+    <ul class="tabs crtool_tabs">
+        <li class="tab-list active-tab">
+            <button class="tab-link tab-link__start-review" data-target="start-review" tabindex="0">
+                <span class="tab-label">Start a review</span>
+            </button>
+        </li>
+        <li class="tab-list">
+            <button class="tab-link tab-link__continue-review" data-target="continue-review" tabindex="0">
+                <span class="tab-label">Continue a review</span>
+            </button>
+        </li>
+    </ul>
+    <!--<![endif]-->
 
-    <div class="o-well">
+    <div class="o-well tab-content tab-content--start-review is-active">
         <!--[if lt IE 9]>
         <div class="u-mb30">
             <h2>Curriculum information</h2>
@@ -217,8 +231,7 @@
         <!--<![endif]-->
     </div>
     <!--[if gte IE 9]><!-->
-    <p>&nbsp;</p>
-    <div class="o-well">
+    <div class="o-well tab-content tab-content--continue-review" style="display:none;">
         <h2>Continue a review</h2>
         <p>Enter your review i.d. to return to a review in progress</p>
         <form id="form__continue-review" class="o-form" method="GET" action="../tool">
@@ -232,7 +245,7 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="o-form_group">
+            <div class="o-form_group">
                 <div class="m-notification
                             m-notification__visible
                             m-notification__warning">
@@ -250,7 +263,7 @@
                         </p>
                     </div>
                 </div>
-            </div>-->
+            </div>
             <div class="m-btn-group m-btn-group__wide">
                 <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
                         Continue review
