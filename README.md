@@ -22,7 +22,7 @@ The content dimension has three different views based on the grade range (elemen
 
 The CR Tool will only work fully in the context of consumerfinance.gov.
 
-1. Clone this repository and install it locally into your consumerfinance.gov environment, following [the consumerfinance.gov docs for working on satellite apps](https://cfpb.github.io/consumerfinance.gov/related-projects/#developing-python-packages-with-consumerfinance.gov).
+1. Clone this repository and install it locally into your consumerfinance.gov environment, following [the consumerfinance.gov docs for working on satellite apps](https://cfpb.github.io/consumerfinance.gov/related-projects/#developing-python-packages-with-consumerfinancegov).
 1. In this repository's root, run `./setup.sh` to install front-end dependencies and do an initial build.
 1. Start your development server
 1. Go to http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
