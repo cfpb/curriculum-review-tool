@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "Django>=2.2,<2.3",
+    "Django>=2.2,<3.2",
 ]
 
 
@@ -41,6 +41,7 @@ setup(
     classifiers=[
         "Framework :: Django",
         "Framework :: Django :: 2",
+        "Framework :: Django :: 3",
         "Framework :: Wagtail",
         "Framework :: Wagtail :: 2",
         "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",

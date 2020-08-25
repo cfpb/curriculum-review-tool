@@ -10,7 +10,7 @@ The content dimension has three different views based on the grade range (elemen
 ## Technology stack
 
 - The CR Tool is primarily a **React app**.
-- It is packaged up in the form of a basic **Django app** for ease of integration with the [cfgov-refresh](https://github.com/cfpb/cfgov-refresh) Django project.
+- It is packaged up in the form of a basic **Django app** for ease of integration with the [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov) Django project.
 - **Jinja2** [is used](crtool/jinja2/crtool/) for HTML templating.
 - [**create-react-app**](https://github.com/facebook/create-react-app) was used for initial setup
 - `localStorage` [is used](src/js/business.logic/repository.js) to save a user's progress across multiple sessions.
@@ -20,9 +20,9 @@ The content dimension has three different views based on the grade range (elemen
 
 ## Installation for development
 
-The CR Tool will only work fully in the context of cfgov-refresh.
+The CR Tool will only work fully in the context of consumerfinance.gov.
 
-1. Clone this repository and install it locally into your cfgov-refresh environment, following [the cfgov-refresh docs for working on satellite apps](https://cfpb.github.io/cfgov-refresh/related-projects/#developing-python-packages-with-cfgov-refresh).
+1. Clone this repository and install it locally into your consumerfinance.gov environment, following [the consumerfinance.gov docs for working on satellite apps](https://cfpb.github.io/consumerfinance.gov/related-projects/#developing-python-packages-with-consumerfinancegov).
 1. In this repository's root, run `./setup.sh` to install front-end dependencies and do an initial build.
 1. Start your development server
 1. Go to http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
@@ -49,7 +49,7 @@ The application ultimately serves two Jinja templates at particular URLs:
 2. [`crt-survey.html`](crtool/jinja2/crtool/crt-survey.html)
 
    This template serves the React application for the review interface itself at the `tool` URL. It is nothing more than an empty `<div id="react">` that serves at the hook for the React app initialization.
-   This templates extends the [`crt-base.html`](crtool/jinja2/crtool/crt-base.html) template, which extends the `layout-full` template from cfgov-refresh, overrides a few things to enforce focusing on the tool, adds in the tool-specific CSS and JS.
+   This templates extends the [`crt-base.html`](crtool/jinja2/crtool/crt-base.html) template, which extends the `layout-full` template from consumerfinance.gov, overrides a few things to enforce focusing on the tool, adds in the tool-specific CSS and JS.
 
 ### JavaScript
 
