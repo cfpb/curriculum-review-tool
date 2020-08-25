@@ -40,6 +40,7 @@ setup(
     },
     classifiers=[
         "Framework :: Django",
+        "Framework :: Django :: 2",
         "Framework :: Django :: 3",
         "Framework :: Wagtail",
         "Framework :: Wagtail :: 2",
