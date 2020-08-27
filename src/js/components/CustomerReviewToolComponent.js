@@ -44,6 +44,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             efficacyIsSummaryView: Repository.getEfficacyViewSummary(),
 
             curriculumTitle: Repository.getCurriculumTitle(),
+            curriculumId: Repository.getCurriculumId(),
             publicationDate: Repository.getPublicationDate(),
             gradeRange: Repository.getGradeRange(),
 
@@ -401,6 +402,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         const applicationProps = {
             currentPage:this.state.currentPage,
             curriculumTitle:this.state.curriculumTitle,
+            curriculumId:this.state.curriculumId,
             publicationDate:this.state.publicationDate,
             dimensionOverallScores:this.state.dimensionOverallScores,
             distinctiveCompletedDate:this.state.distinctiveCompletedDate,
@@ -481,12 +483,24 @@ export default class CustomerReviewToolComponent extends React.Component {
                         <React.Fragment>
                             <div className="h5 u-mb30">You’re reviewing</div>
                             <h1>{this.state.curriculumTitle}</h1>
+                            <div className="h2 u-mb30">
+                                Access code: {this.state.curriculumId} <div className="u-inline-block u-ml15"><SaveWorkModal
+                                    buttonText="What is this?"
+                                    hasIcon="false"
+                                    {...applicationProps}/></div>
+                            </div>
                         </React.Fragment>
                     }
                     {
                         this.state.currentPage !== C.START_PAGE &&
                         <React.Fragment>
                             <div className="h4">You’re reviewing: <strong>{this.state.curriculumTitle}</strong></div>
+                            <div className="h4">
+                                    Access code: <strong>{this.state.curriculumId}</strong> <div className="u-inline-block u-ml15"><SaveWorkModal
+                                        buttonText="What is this?"
+                                        hasIcon="false"
+                                        {...applicationProps}/></div>
+                            </div>
                         </React.Fragment>
                     }
 

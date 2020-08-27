@@ -34,6 +34,23 @@ exports[`renders without crashing 1`] = `
     You’re reviewing
   </div>
   <h1 />
+  <div
+    className="h2 u-mb30"
+  >
+    Access code: 
+     
+    <div
+      className="u-inline-block u-ml15"
+    >
+      <button
+        className="a-btn a-btn__link a-btn__no-line"
+        data-gtm_ignore="true"
+        onClick={[Function]}
+      >
+        What is this?
+      </button>
+    </div>
+  </div>
   <p
     className="lead-paragraph"
   >
