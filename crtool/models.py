@@ -17,7 +17,7 @@ class CurriculumReviewSession(models.Model):
     def id_generator(size=7, chars=string.ascii_lowercase + string.digits):
         temp_id = ''.join(random.choice(chars) for _ in range(size))
         while CurriculumReviewSession.objects.filter(id=temp_id).exists():
-            temp_id = id_generator(size, chars)
+            temp_id = ''.join(random.choice(chars) for _ in range(size))
         return temp_id
 
     def save(self, **kwargs):
