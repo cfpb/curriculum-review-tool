@@ -217,11 +217,11 @@ class GetReviewTest(TestCase):
                 return False
         return True
 
-    # Test with hex token id that exists
+    # Test with token id that exists
     def test_existing_id(self):
-        get = '?token=02d19cc1-3147-47ef-8aac-b37101c66a10'
+        get = '?token=02d19cc'
         compare = {
-            "id": "02d19cc1-3147-47ef-8aac-b37101c66a10",
+            "id": "02d19cc",
             "START": "Quality",
             "pass_code": "",
             "gradeRange": "High school",
@@ -235,9 +235,9 @@ class GetReviewTest(TestCase):
         }
         self.check_get(get, self.assertGetSuccess, compare=compare)
 
-    # Test with hex token id that doesn't exist
+    # Test with token id that doesn't exist
     def test_non_existent_id(self):
-        get = '?token=02d19cc1-3147-47ef-8aac-b37101c66a11'
+        get = '?token=02d19cz'
         self.check_get(get, self.assertPageNotFound)
 
     # Test with null
@@ -250,7 +250,7 @@ class GetReviewTest(TestCase):
         get = '?token='
         self.check_get(get, self.assertPageNotFound)
 
-    # Test with non-hex fake token id
+    # Test with short fake token id
     def test_invalid_id(self):
         get = '?token=apple'
         self.check_get(get, self.assertPageNotFound)
@@ -294,7 +294,7 @@ class UpdateReviewTest(TestCase):
     # Test with hex token id that exists
     def test_update_title(self):
         post = {
-            "id": "242449c9-2512-43c1-b512-d21744407d2a",
+            "id": "242449c",
             "pass_code": None,
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
@@ -302,7 +302,7 @@ class UpdateReviewTest(TestCase):
             "publicationDate": ""
         }
         compare = {
-            "id": "242449c9-2512-43c1-b512-d21744407d2a",
+            "id": "242449c",
             "pass_code": None,
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
@@ -314,7 +314,7 @@ class UpdateReviewTest(TestCase):
     # Test with hex token id that doesn't exist
     def test_non_existent_id(self):
         post = {
-            "id": "fd28d4e6-cf83-4742-bad8-5f2c9a4b549e",
+            "id": "fd28d4e",
             "pass_code": None,
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
