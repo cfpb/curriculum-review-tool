@@ -28,12 +28,7 @@ SECRET_KEY = "django_tests_secret_key"
 DEBUG = True
 TEMPLATE_DEBUG = False
 ROOT_URLCONF = 'crtool.urls'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'crtool.sqlite3',
-    }
-}
+DATABASES = {}
 
 # If DATABASE_URL is defined in the environment, use it to set the Django DB
 if os.getenv("DATABASE_URL"):

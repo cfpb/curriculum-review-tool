@@ -1,5 +1,4 @@
 import json
-import uuid
 from datetime import datetime
 
 from django.core.exceptions import ValidationError
@@ -19,7 +18,7 @@ def create_review(request):
         pub_date = fd['tdp-crt_pubdate'] if 'tdp-crt_pubdate' in fd else ''
         grade_range = fd['tdp-crt_grade'] if 'tdp-crt_grade' in fd else ''
         passcode = fd['tdp-crt_pass_code'] if 'tdp-crt_pass_code' in fd else ''
-        review_id = uuid.uuid4()
+        review_id = CurriculumReviewSession.id_generator()
         last_updated = timezone.now()
 
         if not title or not grade_range:

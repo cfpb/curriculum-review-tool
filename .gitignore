@@ -67,7 +67,6 @@ htmlcov/
 nosetests.xml
 coverage.xml
 /coverage
-/cfgov-refresh/
 
 # Front-End #
 #############
