@@ -95,6 +95,10 @@ const Repository = {
         return crtoolLocalStorage.getItem("curriculumTitle");
     },
 
+    getCurriculumId() {
+        return crtoolLocalStorage.getItem("id");
+    },
+
     getPublicationDate() {
         return crtoolLocalStorage.getItem("publicationDate");
     },

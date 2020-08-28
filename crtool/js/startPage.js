@@ -2,6 +2,7 @@ import 'select2';
 import 'select2/dist/css/select2.min.css';
 import $ from 'jquery';
 import sendAnalytics from './analytics.js';
+import tabsInit from './tabs.js';
 
 /**
  * The below code manages the enabling/disabling of the submit button
@@ -54,14 +55,16 @@ function setBeginReviewButtonEnabling() {
   const isValidGradeSelected = selectedGradeValue === 'Elementary school' ||
                              selectedGradeValue === 'Middle school' ||
                              selectedGradeValue === 'High school';
-  const gradeElDisabled = document.getElementById( 'tdp-crt_grade' ).disabled;
-  const titleEleDisabled = document.getElementById( 'tdp-crt_title' ).disabled;
 
-  const isEnabled = isValidGradeSelected &&
-    document.getElementById( 'tdp-crt_title' ).value &&
-    !gradeElDisabled && !titleEleDisabled;
+  const isEnabled = isValidGradeSelected && document.getElementById( 'tdp-crt_title' ).value;
 
   document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = !isEnabled;
+
+  // only enable continue button if token is set
+  const curiculumIdValue = document.getElementById( 'token--continue' ).value;
+
+  document.getElementById( 'continue-review' ).disabled = curiculumIdValue ? false : true;
+
 }
 
 /**
@@ -197,21 +200,11 @@ function setUpTokenDropdown() {
  */
 function setInitialFormValues() {
   const review = getCurrentReview();
+  document.getElementById( 'tdp-crt_title' ).value = '';
+  document.getElementById( 'tdp-crt_pubdate' ).value = '';
+  document.getElementById( 'tdp-crt_grade' ).value = '';
   if ( review ) {
-    const titleEl = document.getElementById( 'tdp-crt_title' );
-    const pubDateEl = document.getElementById( 'tdp-crt_pubdate' );
-    const gradeEl = document.getElementById( 'tdp-crt_grade' );
-
-    titleEl.value = review.curriculumTitle || '';
-    titleEl.disabled = true;
-    pubDateEl.value = review.publicationDate || '';
-    pubDateEl.disabled = true;
-    gradeEl.value = review.gradeRange || '';
-    gradeEl.disabled = true;
-
     document.getElementById( 'token--continue' ).value = review.id || '';
-    document.getElementById( 'tdp-crt_pass_code' ).value = review.pass_code || '';
-    document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = true;
   }
 
   setBeginReviewButtonEnabling();
@@ -264,8 +257,6 @@ function beginReviewButtonClick( event ) {
   const curriculumTitle = document.getElementById( 'tdp-crt_title' ).value;
   const publicationDate = document.getElementById( 'tdp-crt_pubdate' ).value;
   const gradeRange = document.getElementById( 'tdp-crt_grade' ).value;
-  const curriculumReviewId = document.getElementById( 'token--continue' ).value;
-  const curriculumPassCode = document.getElementById( 'tdp-crt_pass_code' ).value;
 
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -276,22 +267,15 @@ function beginReviewButtonClick( event ) {
       window.location.href = '../tool?token=' + review.id;
     }
   };
-  let requestUrl = '../create-review/';
-  if ( curriculumReviewId ) {
-    requestUrl = '../get-review?token=' + curriculumReviewId;
-    xhttp.open( 'GET', requestUrl );
-    xhttp.send();
-  } else {
-    xhttp.open( 'POST', requestUrl );
-    xhttp.send(
-      JSON.stringify( {
-        'tdp-crt_title': curriculumTitle,
-        'tdp-crt_pubdate': publicationDate,
-        'tdp-crt_grade': gradeRange,
-        'tdp-crt_pass_code': curriculumPassCode
-      } )
-    );
-  }
+  const requestUrl = '../create-review/';
+  xhttp.open( 'POST', requestUrl );
+  xhttp.send(
+    JSON.stringify( {
+      'tdp-crt_title': curriculumTitle,
+      'tdp-crt_pubdate': publicationDate,
+      'tdp-crt_grade': gradeRange
+    } )
+  );
 
   recordAnalytics( curriculumTitle, publicationDate, gradeRange );
 }
@@ -307,19 +291,8 @@ function clearLocalStorage( event ) {
   if ( review ) {
     localStorage.removeItem( 'curriculumReviewId' );
   }
-  const titleEl = document.getElementById( 'tdp-crt_title' );
-  const pubdateEl = document.getElementById( 'tdp-crt_pubdate' );
-  const gradeEl = document.getElementById( 'tdp-crt_grade' );
-
-  titleEl.value = '';
-  titleEl.disabled = false;
-  pubdateEl.value = '';
-  pubdateEl.disabled = false;
-  gradeEl.value = '';
-  gradeEl.disabled = false;
 
   document.getElementById( 'token--continue' ).value = '';
-  document.getElementById( 'tdp-crt_pass_code' ).value = '';
 
   closeNewReviewModalWindow();
   setBeginReviewButtonEnabling();
@@ -336,6 +309,8 @@ function bindEvents() {
   $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
   $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
   $( 'form#begin-review-form #tdp-crt_grade' ).change( function() { onValuesChanged(); } );
+  $( 'form#form__continue-review #token--continue' ).change( function() { onValuesChanged(); } );
+
 }
 
 /**
@@ -347,5 +322,6 @@ export default function init() {
   openingNewReviewModal = false;
   openingSaveWorkModal = false;
   bindEvents();
+  tabsInit();
 }
 
