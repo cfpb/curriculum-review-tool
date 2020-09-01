@@ -111,167 +111,169 @@
             </div>
         </div>
     </div>
-    <!--[if gte IE 9]><!-->
-    <ul class="tabs crtool_tabs">
-        <li class="tab-list active-tab">
-            <button class="tab-link tab-link__start-review" data-target="start-review" tabindex="0">
-                <span class="tab-label">Start a review</span>
-            </button>
-        </li>
-        <li class="tab-list">
-            <button class="tab-link tab-link__continue-review" data-target="continue-review" tabindex="0">
-                <span class="tab-label">Continue a review</span>
-            </button>
-        </li>
-    </ul>
-    <!--<![endif]-->
-
-    <div class="o-well tab-content tab-content--start-review is-active">
-        <!--[if lt IE 9]>
-        <div class="u-mb30">
-            <h2>Curriculum information</h2>
-        </div>
-        <div class="m-notification
-                    m-notification__visible
-                    m-notification__warning">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
-            <div class="m-notification_content">
-                <div class="m-notification_message">
-                    <p>You are running an older browser that is not fully supported. Please update your browser to use the online Curriculum Review Tool or
-                        <a class="a-link a-link__icon-after-text" target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/201509_cfpb_youth-financial-education-curriculum-review.pdf">use the PDF version</a>.</p>
-                </div>
-            </div>
-        </div>
-        <![endif]-->
-
+    <div class="o-tabs">
         <!--[if gte IE 9]><!-->
-        <div class="u-mb30">
-            <h2>Start a review</h2>
-            <p>Enter the information for the curriculum you’re reviewing.</p>
-        </div>
-        <form id="begin-review-form" class="o-form" method="POST" action="../tool">
-            <div class="o-form_group">
-                <div class="m-form-field
-                            m-form-field__text">
-                    <label class="a-label
-                                    a-label__heading"
-                            for="tdp-crt_title">
-                        Curriculum title
-                    </label>
-                    <input class="a-text-input
-                                a-text-input__full"
-                        type="text"
-                        id="tdp-crt_title"
-                        name="tdp-crt_title">
-                </div>
+        <ul class="o-tabs_list">
+            <li class="o-tabs_list-item">
+                <button class="o-tabs_button o-tabs_button__start-review is-active" data-target="start-review">
+                    Start a review
+                </button>
+            </li>
+            <li class="o-tabs_list-item">
+                <button class="o-tabs_button o-tabs_button__continue-review" data-target="continue-review">
+                    Continue a review
+                </button>
+            </li>
+        </ul>
+        <!--<![endif]-->
+
+        <div class="o-tabs_tab o-tabs_tab__start-review is-active">
+            <!--[if lt IE 9]>
+            <div class="u-mb30">
+                <h2>Curriculum information</h2>
             </div>
-            <div class="o-form_group">
-                <ul class="content-l m-list m-list__unstyled">
-                    <li class="content-l_col content-l_col-1-2">
-                        <div class="m-form-field
-                                    m-form-field__text">
-                            <label class="a-label
-                                          a-label__heading"
-                                    for="tdp-crt_pubdate">
-                                Date of publication
-                                <small class="a-label_helper">(optional)</small>
-                            </label>
-                            <input class="a-text-input
-                                          a-text-input__full"
-                                    type="text"
-                                    id="tdp-crt_pubdate"
-                                    name="tdp-crt_pubdate">
-                        </div>
-                    </li>
-                    <li class="content-l_col content-l_col-1-2">
-                        <div class="m-form-field
-                                    m-form-field__select">
-                            <label class="a-label
-                                        a-label__heading"
-                                for="tdp-crt_grade">
-                                Grade range
-                            </label>
-                            <div class="a-select">
-                                <select id="tdp-crt_grade" name="tdp-crt_grade">
-                                    <option value="">Select grade range</option>
-                                    <option value="Elementary school">Elementary school</option>
-                                    <option value="Middle school">Middle school</option>
-                                    <option value="High school">High school</option>
-                                </select>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="o-form_group">
-                <div class="m-notification
-                            m-notification__visible
-                            m-notification__warning">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
-                    <div class="m-notification_content">
-                        <div class="h4 m-notification_message">
-                            How to save your work
-                        </div>
-                        <p class="m-notification_explanation">
-                            When you start a new review, the review will be assigned an access code.
-                            Please save this code so that you can return to your review later.
-                            You will not be able to access an existing review without an access code.
-                            After you finish each dimension, we recommend you print the summary or save it as a PDF.
-                            Learn more about <button class="a-btn a-btn__link link-push-analytics">how to save your work</button>
-                        </p>
+            <div class="m-notification
+                        m-notification__visible
+                        m-notification__warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
+                <div class="m-notification_content">
+                    <div class="m-notification_message">
+                        <p>You are running an older browser that is not fully supported. Please update your browser to use the online Curriculum Review Tool or
+                            <a class="a-link a-link__icon-after-text" target="_blank" rel="noopener noreferrer" href="https://files.consumerfinance.gov/f/201509_cfpb_youth-financial-education-curriculum-review.pdf">use the PDF version</a>.</p>
                     </div>
                 </div>
             </div>
-            <div class="m-btn-group m-btn-group__wide">
-                <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" formaction="../tool">
-                    Start review
-                </button>
+            <![endif]-->
+
+            <!--[if gte IE 9]><!-->
+            <div class="u-mb30">
+                <h2>Start a review</h2>
+                <p>Enter the information for the curriculum you’re reviewing.</p>
             </div>
-        </form>
+            <form id="begin-review-form" class="o-form" method="POST" action="../tool">
+                <div class="o-form_group">
+                    <div class="m-form-field
+                                m-form-field__text">
+                        <label class="a-label
+                                        a-label__heading"
+                                for="tdp-crt_title">
+                            Curriculum title
+                        </label>
+                        <input class="a-text-input
+                                    a-text-input__full"
+                            type="text"
+                            id="tdp-crt_title"
+                            name="tdp-crt_title">
+                    </div>
+                </div>
+                <div class="o-form_group">
+                    <ul class="content-l m-list m-list__unstyled">
+                        <li class="content-l_col content-l_col-1-2">
+                            <div class="m-form-field
+                                        m-form-field__text">
+                                <label class="a-label
+                                            a-label__heading"
+                                        for="tdp-crt_pubdate">
+                                    Date of publication
+                                    <small class="a-label_helper">(optional)</small>
+                                </label>
+                                <input class="a-text-input
+                                            a-text-input__full"
+                                        type="text"
+                                        id="tdp-crt_pubdate"
+                                        name="tdp-crt_pubdate">
+                            </div>
+                        </li>
+                        <li class="content-l_col content-l_col-1-2">
+                            <div class="m-form-field
+                                        m-form-field__select">
+                                <label class="a-label
+                                            a-label__heading"
+                                    for="tdp-crt_grade">
+                                    Grade range
+                                </label>
+                                <div class="a-select">
+                                    <select id="tdp-crt_grade" name="tdp-crt_grade">
+                                        <option value="">Select grade range</option>
+                                        <option value="Elementary school">Elementary school</option>
+                                        <option value="Middle school">Middle school</option>
+                                        <option value="High school">High school</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="o-form_group">
+                    <div class="m-notification
+                                m-notification__visible
+                                m-notification__warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
+                        <div class="m-notification_content">
+                            <div class="h4 m-notification_message">
+                                How to save your work
+                            </div>
+                            <p class="m-notification_explanation">
+                                When you start a new review, the review will be assigned an access code.
+                                Please save this code so that you can return to your review later.
+                                You will not be able to access an existing review without an access code.
+                                After you finish each dimension, we recommend you print the summary or save it as a PDF.
+                                Learn more about <button class="a-btn a-btn__link link-push-analytics">how to save your work</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-btn-group m-btn-group__wide">
+                    <button id="tdp-crt-begin-review-btn" class="a-btn button-push-analytics" type="submit" formaction="../tool">
+                        Start review
+                    </button>
+                </div>
+            </form>
+            <!--<![endif]-->
+        </div>
+        <!--[if gte IE 9]><!-->
+        <div class="o-tabs_tab o-tabs_tab__continue-review">
+            <h2>Continue a review</h2>
+            <p>Enter your access code to return to a review in progress</p>
+            <form id="form__continue-review" class="o-form" method="GET" action="../tool">
+                <div class="o-form_group">
+                    <div class="m-form-field m-form-field__select">
+                    <label class="a-label a-label__heading" for="token--continue">Access code</label>
+                    <div class="a-select">
+                        <select id="token--continue" name="token" value="">
+                            <option value="">Enter your access code</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-form_group">
+                    <div class="m-notification
+                                m-notification__visible
+                                m-notification__warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
+                        <div class="m-notification_content">
+                            <div class="h4 m-notification_message">
+                                How to save your work
+                            </div>
+                            <p class="m-notification_explanation">
+                                When you start a new review, the review will be assigned an access code.
+                                Please save this code so that you can return to your review later.
+                                You will not be able to access an existing review without an access code.
+                                After you finish each dimension, we recommend you print the summary or save it as a PDF.
+                                Learn more about <button class="a-btn a-btn__link link-push-analytics">how to save your work</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-btn-group m-btn-group__wide">
+                    <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
+                            Continue review
+                    </button>
+                </div>
+            </form>
+        </div>
         <!--<![endif]-->
     </div>
-    <!--[if gte IE 9]><!-->
-    <div class="o-well tab-content tab-content--continue-review" style="display:none;">
-        <h2>Continue a review</h2>
-        <p>Enter your access code to return to a review in progress</p>
-        <form id="form__continue-review" class="o-form" method="GET" action="../tool">
-            <div class="o-form_group">
-                <div class="m-form-field m-form-field__select">
-                <label class="a-label a-label__heading" for="token--continue">Access code</label>
-                <div class="a-select">
-                    <select id="token--continue" name="token" value="">
-                        <option value="">Enter your access code</option>
-                    </select>
-                    </div>
-                </div>
-            </div>
-            <div class="o-form_group">
-                <div class="m-notification
-                            m-notification__visible
-                            m-notification__warning">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" class="cf-icon-svg"><path d="M500 105.2c-276.1 0-500 223.9-500 500s223.9 500 500 500 500-223.9 500-500-223.9-500-500-500zm-49.7 234.6c0-27.6 22.4-50 50-50s50 22.4 50 50v328.6c0 27.6-22.4 50-50 50s-50-22.4-50-50V339.8zm50 582.5c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7S572 811 572 850.6s-32.1 71.7-71.7 71.7z"></path></svg>
-                    <div class="m-notification_content">
-                        <div class="h4 m-notification_message">
-                            How to save your work
-                        </div>
-                        <p class="m-notification_explanation">
-                            When you start a new review, the review will be assigned an access code.
-                            Please save this code so that you can return to your review later.
-                            You will not be able to access an existing review without an access code.
-                            After you finish each dimension, we recommend you print the summary or save it as a PDF.
-                            Learn more about <button class="a-btn a-btn__link link-push-analytics">how to save your work</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="m-btn-group m-btn-group__wide">
-                <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
-                        Continue review
-                </button>
-            </div>
-        </form>
-    </div>
-    <!--<![endif]-->
 {% endblock content_main %}
 
 {% block content_sidebar_modifiers -%}
