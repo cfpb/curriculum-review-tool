@@ -125,7 +125,22 @@ function openNewReviewModalWindow() {
 }
 
 /**
+ * Open Save Work Warning Modal Dialog
+ */
+function openSaveWorkModalWindow() {
+  // Allow screen readers to see dialog
+  document.getElementById( 'modal-save-work' ).setAttribute( 'aria-hidden', 'false' );
+
+  openingSaveWorkModal = true;
+  saveWorkModalWindow.className += ' o-modal__visible';
+  saveWorkModalWindow.focus();
+  document.addEventListener( 'click', saveWorkOutsideClickListener );
+}
+
+/**
  * Close Save Work Warning Modal Dialog.
+ *
+ * @param {event} event - Click event
  */
 function closeSaveWorkModalWindow() {
   // Hide from screen readers
@@ -302,9 +317,11 @@ function clearLocalStorage( event ) {
  * Bind events.
  */
 function bindEvents() {
-  $( '#modal-save-work .save-work-push-analytics' ).click( function( event ) { closeSaveWorkModalWindow( event ); } );
-  $( '#modal-start-over .start-over-close-push-analytics' ).click( function( event ) { closeNewReviewModalWindow( event ); } );
+  $( '#modal-save-work .save-work-push-analytics' ).click( function() { closeSaveWorkModalWindow(); } );
+  $( '#modal-start-over .start-over-close-push-analytics' ).click( function() { closeNewReviewModalWindow(); } );
   $( '#modal-start-over .start-over-push-analytics' ).click( function( event ) { clearLocalStorage( event ); } );
+  $( 'form#begin-review-form .link-push-analytics' ).click( function( event ) { openSaveWorkModalWindow( event ); } );
+  $( 'form#form__continue-review .link-push-analytics' ).click( function( event ) { openSaveWorkModalWindow( event ); } );
   $( 'form#begin-review-form' ).submit( function( event ) { beginReviewButtonClick( event ); } );
   $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
   $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
