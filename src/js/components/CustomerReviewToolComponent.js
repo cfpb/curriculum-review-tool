@@ -472,22 +472,19 @@ export default class CustomerReviewToolComponent extends React.Component {
         } else {
             return (
                 <React.Fragment>
-                    <div className="l-survey-top">
-                        <SaveWorkModal
-                            buttonText="How can I save my work?"
-                            hasIcon="true"
-                            {...applicationProps}/>
-                    </div>
                     {
                         this.state.currentPage === C.START_PAGE &&
                         <React.Fragment>
                             <div className="h5 u-mb30">You’re reviewing</div>
                             <h1>{this.state.curriculumTitle}</h1>
-                            <div className="h2 u-mb30">
-                                Access code: {this.state.curriculumId} <div className="u-inline-block u-ml15"><SaveWorkModal
-                                    buttonText="What is this?"
-                                    hasIcon="false"
-                                    {...applicationProps}/></div>
+                            <div className="h4 u-mb30">
+                                Access code: <strong>{this.state.curriculumId}</strong>
+                                <div className="u-inline-block u-ml15">
+                                    <SaveWorkModal
+                                        buttonText="What’s this?"
+                                        hasIcon="true"
+                                        {...applicationProps}/>
+                                </div>
                             </div>
                         </React.Fragment>
                     }
@@ -496,10 +493,13 @@ export default class CustomerReviewToolComponent extends React.Component {
                         <React.Fragment>
                             <div className="h4">You’re reviewing: <strong>{this.state.curriculumTitle}</strong></div>
                             <div className="h4">
-                                    Access code: <strong>{this.state.curriculumId}</strong> <div className="u-inline-block u-ml15"><SaveWorkModal
-                                        buttonText="What is this?"
-                                        hasIcon="false"
-                                        {...applicationProps}/></div>
+                                Access code: <strong>{this.state.curriculumId}</strong>
+                                <div className="u-inline-block u-ml15">
+                                    <SaveWorkModal
+                                        buttonText="What’s this?"
+                                        hasIcon="true"
+                                        {...applicationProps}/>
+                                </div>
                             </div>
                         </React.Fragment>
                     }
