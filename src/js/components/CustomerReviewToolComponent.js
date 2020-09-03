@@ -3,7 +3,7 @@ import resolveUrl from "resolve-url";
 
 import C from "../business.logic/constants";
 import Analytics from "../business.logic/analytics";
-import SaveWorkModal from "./dialogs/SaveWorkModal";
+import AccessCodeModal from "./dialogs/AccessCodeModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import FooterButtonAreaComponent from "./pages/partial.pages/FooterButtonAreaComponent";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
@@ -480,7 +480,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                             <div className="h4 u-mb30">
                                 Access code: <strong>{this.state.curriculumId}</strong>
                                 <div className="u-inline-block u-ml15">
-                                    <SaveWorkModal
+                                    <AccessCodeModal
                                         buttonText="What’s this?"
                                         hasIcon="true"
                                         {...applicationProps}/>
@@ -495,7 +495,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                             <div className="h4">
                                 Access code: <strong>{this.state.curriculumId}</strong>
                                 <div className="u-inline-block u-ml15">
-                                    <SaveWorkModal
+                                    <AccessCodeModal
                                         buttonText="What’s this?"
                                         hasIcon="true"
                                         {...applicationProps}/>
