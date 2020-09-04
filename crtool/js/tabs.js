@@ -1,9 +1,9 @@
 import $ from 'jquery';
 
-const tabStart = $( '.tab-link__start-review' );
-const tabContinue = $( '.tab-link__continue-review' );
-const contentStart = $( '.tab-content--start-review' );
-const contentContinue = $( '.tab-content--continue-review' );
+const tabStart = $( '.o-tabs_button__start-review' );
+const tabContinue = $( '.o-tabs_button__continue-review' );
+const contentStart = $( '.o-tabs_tab__start-review' );
+const contentContinue = $( '.o-tabs_tab__continue-review' );
 const curriculumIdField = $( '#token--continue' );
 
 /**
@@ -12,14 +12,14 @@ const curriculumIdField = $( '#token--continue' );
  */
 function setActiveTab( tab ) {
   if ( tab === tabContinue ) {
-    tabContinue.parent().addClass( 'active-tab' );
-    tabStart.parent().removeClass( 'active-tab' );
+    tabContinue.addClass( 'is-active' );
+    tabStart.removeClass( 'is-active' );
     contentStart.removeClass( 'is-active' ).hide();
     contentContinue.addClass( 'is-active' ).show();
 
   } else {
-    tabContinue.parent().removeClass( 'active-tab' );
-    tabStart.parent().addClass( 'active-tab' );
+    tabContinue.removeClass( 'is-active' );
+    tabStart.addClass( 'is-active' );
     contentStart.addClass( 'is-active' ).show();
     contentContinue.removeClass( 'is-active' ).hide();
   }
