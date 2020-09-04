@@ -36,7 +36,7 @@ exports[`renders without crashing 1`] = `
             />
           </svg>
         </span>
-        What’s this?
+        Use this to save your work
       </button>
     </div>
   </div>

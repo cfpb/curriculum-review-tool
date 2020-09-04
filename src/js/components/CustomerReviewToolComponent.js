@@ -481,7 +481,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                                 Access code: <strong>{this.state.curriculumId}</strong>
                                 <div className="u-inline-block u-ml15">
                                     <AccessCodeModal
-                                        buttonText="What’s this?"
+                                        buttonText="Use this to save your work"
                                         hasIcon="true"
                                         {...applicationProps}/>
                                 </div>
@@ -496,7 +496,7 @@ export default class CustomerReviewToolComponent extends React.Component {
                                 Access code: <strong>{this.state.curriculumId}</strong>
                                 <div className="u-inline-block u-ml15">
                                     <AccessCodeModal
-                                        buttonText="What’s this?"
+                                        buttonText="Use this to save your work"
                                         hasIcon="true"
                                         {...applicationProps}/>
                                 </div>
