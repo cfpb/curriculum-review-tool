@@ -65,7 +65,7 @@ const conf = {
   module: COMMON_MODULE_CONFIG,
   mode: 'production',
   output: {
-    filename: 'crtool.js'
+    filename: 'crt-start.js'
   },
   optimization: {
     minimize: true,

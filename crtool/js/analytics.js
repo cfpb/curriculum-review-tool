@@ -1,43 +1,43 @@
-const jQuery = window.jQuery;
+import $ from 'jquery';
 
-( function( $ ) {
-  // Tracks analytics for links on page clicked
-  $( 'button.link-push-analytics' ).click( function() {
-    const linkText = $( this ).text().trim();
-    const action = 'link clicked: ' + linkText;
-    buttonLinkClicked( action, linkText );
-  } );
 
-  $( 'button.button-push-analytics' ).click( function() {
-    const linkText = $( this ).text().trim();
-    const action = 'button clicked';
-    buttonLinkClicked( action, linkText );
-  } );
+// Tracks analytics for links on page clicked
+$( 'button.link-push-analytics' ).click( function() {
+  const linkText = $( this ).text().trim();
+  const action = 'link clicked: ' + linkText;
+  buttonLinkClicked( action, linkText );
+} );
 
-  $( 'button.save-work-push-analytics' ).click( function() {
-    const action = 'save work modal';
-    const label = $( this ).text().trim();
-    modalButtonClicked( action, label );
-  } );
+$( 'button.button-push-analytics' ).click( function() {
+  const linkText = $( this ).text().trim();
+  const action = 'button clicked';
+  buttonLinkClicked( action, linkText );
+} );
 
-  $( 'button.start-over-push-analytics' ).click( function() {
-    const action = 'Starting over modal';
-    const label = $( this ).text().trim();
-    modalButtonClicked( action, label );
-  } );
+$( 'button.save-work-push-analytics' ).click( function() {
+  const action = 'save work modal';
+  const label = $( this ).text().trim();
+  modalButtonClicked( action, label );
+} );
 
-  $( 'button.start-over-close-push-analytics' ).click( function() {
-    const action = 'Starting over modal';
-    const label = $( this ).text().trim();
-    modalButtonClicked( action, label );
-  } );
+$( 'button.start-over-push-analytics' ).click( function() {
+  const action = 'Starting over modal';
+  const label = $( this ).text().trim();
+  modalButtonClicked( action, label );
+} );
 
-  $( 'a.push-download-analytics' ).click( function() {
-    const linkText = $( this ).text().trim();
-    const linkUrl = $( this ).attr( 'href' );
-    sendAnalytics( linkText, linkUrl, 'Downloads' );
-  } );
-} )( jQuery );
+$( 'button.start-over-close-push-analytics' ).click( function() {
+  const action = 'Starting over modal';
+  const label = $( this ).text().trim();
+  modalButtonClicked( action, label );
+} );
+
+$( 'a.push-download-analytics' ).click( function() {
+  const linkText = $( this ).text().trim();
+  const linkUrl = $( this ).attr( 'href' );
+  sendAnalytics( linkText, linkUrl, 'Downloads' );
+} );
+
 
 /**
  * A button link has been clicked.
