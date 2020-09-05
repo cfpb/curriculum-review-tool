@@ -45,6 +45,12 @@ const COMMON_MODULE_CONFIG = {
         } ] ]
       }
     }
+  },
+  {
+    test: /\.css$/,
+    include: /node_modules/,
+    exclude: /node_modules\/(?:cf-.+|cfpb-.+)/,
+    loaders: [ 'style-loader', 'css-loader' ]
   } ]
 };
 
@@ -59,7 +65,7 @@ const conf = {
   module: COMMON_MODULE_CONFIG,
   mode: 'production',
   output: {
-    filename: 'crtool.js'
+    filename: 'crt-start.js'
   },
   optimization: {
     minimize: true,
