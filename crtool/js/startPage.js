@@ -1,9 +1,12 @@
-const jQuery = window.jQuery;
+import 'select2';
+import 'select2/dist/css/select2.min.css';
+import $ from 'jquery';
 import sendAnalytics from './analytics.js';
+import tabsInit from './tabs.js';
 
 /**
  * The below code manages the enabling/disabling of the submit button
- * Also manages the saving and setting of the Title, Date, & Grade Range
+ * Also manages the saving and setting of the Title, Date, & Grade Range.
  */
 
 const newReviewModalWindow = document.getElementById( 'modal-start-over' );
@@ -11,20 +14,40 @@ const saveWorkModalWindow = document.getElementById( 'modal-save-work' );
 let openingNewReviewModal = false;
 let openingSaveWorkModal = false;
 
-/*  */
-function getCurrentReview() {
+/**
+ * Load a review from localStorage
+ *
+ * @param {string} reviewId  - id of the review to load
+ * @returns {boolean|object} review - JSON review object
+ */
+function getReviewFromLocalStorage( reviewId ) {
   let review = false;
-  const reviewId = localStorage.getItem( 'curriculumReviewId' ) || '';
-  if ( reviewId ) {
-    review = localStorage.getItem( 'crtool.' + reviewId );
-    if ( JSON.stringify( review ) !== '{}' ) {
-      review = JSON.parse( review );
+  if ( localStorage.hasOwnProperty( 'crtool.' + reviewId ) ) {
+    const lsReview = localStorage.getItem( 'crtool.' + reviewId );
+    if ( JSON.stringify( lsReview ) !== '{}' ) {
+      review = JSON.parse( lsReview );
     }
   }
   return review;
 }
 
-/* Method to manage enabling or dissabling begin button based on form values */
+/**
+ * Get current review from localStorage.
+ *
+ * @returns {boolean|object} review
+ */
+function getCurrentReview() {
+  let review = false;
+  const reviewId = localStorage.getItem( 'curriculumReviewId' ) || '';
+  if ( reviewId ) {
+    review = getReviewFromLocalStorage( reviewId );
+  }
+  return review;
+}
+
+/***
+ *  Method to manage enabling or dissabling begin button based on form values.
+ */
 function setBeginReviewButtonEnabling() {
   const selectedGradeValue = document.getElementById( 'tdp-crt_grade' ).value;
 
@@ -32,13 +55,25 @@ function setBeginReviewButtonEnabling() {
   const isValidGradeSelected = selectedGradeValue === 'Elementary school' ||
                              selectedGradeValue === 'Middle school' ||
                              selectedGradeValue === 'High school';
+
   const isEnabled = isValidGradeSelected && document.getElementById( 'tdp-crt_title' ).value;
 
   document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = !isEnabled;
+
+  // only enable continue button if token is set
+  const curiculumIdValue = document.getElementById( 'token--continue' ).value;
+
+  document.getElementById( 'continue-review' ).disabled = curiculumIdValue ? false : true;
+
 }
 
-/* Some versions of IE do not support standard functionality when it
-   comes to removing classnames.  So we need to split remove then join */
+/**
+ * Some versions of IE do not support standard functionality when it
+ * comes to removing classnames.  So we need to split remove then join.
+ *
+ * @param {element} element - DOM Element
+ * @param {string} classNameToRemove - The class to remove
+ */
 function removeClassFromElement( element, classNameToRemove ) {
   const classes = element.className.split( ' ' );
   const idx = classes.indexOf( classNameToRemove );
@@ -46,7 +81,9 @@ function removeClassFromElement( element, classNameToRemove ) {
   element.className = classes.join( ' ' );
 }
 
-/* Close New Review Warning Modal Dialog */
+/**
+ * Close New Review Warning Modal Dialog.
+ */
 function closeNewReviewModalWindow() {
   // Hide from screen readers
   document.getElementById( 'modal-start-over' ).setAttribute( 'aria-hidden', 'false' );
@@ -54,7 +91,11 @@ function closeNewReviewModalWindow() {
   document.removeEventListener( 'click', newReviewOutsideClickListener );
 }
 
-/* Method to close New Review daialog if click outside */
+/**
+ * Method to close New Review daialog if click outside.
+ *
+ * @param {event} event - Click event
+ */
 function newReviewOutsideClickListener( event ) {
   const startOverModal = document.querySelector( '#modal-start-over .o-modal_content' );
   if ( !openingNewReviewModal && !startOverModal.contains( event.target ) ) {
@@ -67,7 +108,9 @@ function newReviewOutsideClickListener( event ) {
   }
 }
 
-/* Open New Review Warning Modal Dialog */
+/**
+ * Open New Review Warning Modal Dialog.
+ */
 function openNewReviewModalWindow() {
   // Allow screen readers to see dialog
   document.getElementById( 'modal-start-over' ).setAttribute( 'aria-hidden', 'false' );
@@ -81,7 +124,24 @@ function openNewReviewModalWindow() {
   sendAnalytics( 'link clicked: Start over with a new review', 'Starting over' );
 }
 
-/* Close Save Work Warning Modal Dialog */
+/**
+ * Open Save Work Warning Modal Dialog
+ */
+function openSaveWorkModalWindow() {
+  // Allow screen readers to see dialog
+  document.getElementById( 'modal-save-work' ).setAttribute( 'aria-hidden', 'false' );
+
+  openingSaveWorkModal = true;
+  saveWorkModalWindow.className += ' o-modal__visible';
+  saveWorkModalWindow.focus();
+  document.addEventListener( 'click', saveWorkOutsideClickListener );
+}
+
+/**
+ * Close Save Work Warning Modal Dialog.
+ *
+ * @param {event} event - Click event
+ */
 function closeSaveWorkModalWindow() {
   // Hide from screen readers
   document.getElementById( 'modal-save-work' ).setAttribute( 'aria-hidden', 'true' );
@@ -89,7 +149,11 @@ function closeSaveWorkModalWindow() {
   document.removeEventListener( 'click', saveWorkOutsideClickListener );
 }
 
-/* Method to close Save Work daialog if click outside */
+/**
+ * Method to close Save Work daialog if click outside.
+ *
+ * @param {event} event - Click event
+ */
 function saveWorkOutsideClickListener( event ) {
   const startOverModal = document.querySelector( '#modal-save-work .o-modal_content' );
   if ( !openingSaveWorkModal && !startOverModal.contains( event.target ) ) {
@@ -102,15 +166,60 @@ function saveWorkOutsideClickListener( event ) {
   }
 }
 
-/* Set the values based on localStorage */
+/**
+ * Get available tokens from localStorage.
+ *
+ * @returns {Array} - List of available tokens
+ */
+function getAvailableTokens() {
+  const tokens = {};
+  let key;
+  let token;
+  for ( let i = 0; i < localStorage.length; i++ ) {
+    key = localStorage.key( i );
+    if ( key.search( /^crtool\./i ) !== -1 ) {
+      token = key.replace( 'crtool.', '' );
+      const review = getReviewFromLocalStorage( token );
+      const reviewTitle = review.curriculumTitle ? token + ' (' + review.curriculumTitle + ')' : token;
+      tokens[token] = reviewTitle;
+    }
+  }
+  return tokens;
+}
+
+/**
+ *
+ */
+function setUpTokenDropdown() {
+  const tokens = getAvailableTokens();
+  const review = getCurrentReview();
+
+  for ( const token in tokens ) {
+    let markup;
+    if ( review && review.id === token ) {
+      markup = '<option value="' + token + '" selected="selected">' + tokens[token] + '</option>';
+    } else {
+      markup = '<option value="' + token + '">' + tokens[token] + '</option>';
+    }
+    $( '#token--continue' ).append( markup );
+  }
+  $( '#token--continue' ).select2( {
+    tags: true,
+    tokenSeparators: [ ',', ' ' ],
+    multiple: false
+  } );
+}
+
+/**
+ * Set the values based on localStorage.
+ */
 function setInitialFormValues() {
   const review = getCurrentReview();
+  document.getElementById( 'tdp-crt_title' ).value = '';
+  document.getElementById( 'tdp-crt_pubdate' ).value = '';
+  document.getElementById( 'tdp-crt_grade' ).value = '';
   if ( review ) {
-    document.getElementById( 'tdp-crt_title' ).value = review.curriculumTitle || '';
-    document.getElementById( 'tdp-crt_pubdate' ).value = review.publicationDate || '';
-    document.getElementById( 'tdp-crt_grade' ).value = review.gradeRange || '';
-    document.getElementById( 'tdp-crt_id' ).value = review.id || '';
-    document.getElementById( 'tdp-crt_pass_code' ).value = review.pass_code || '';
+    document.getElementById( 'token--continue' ).value = review.id || '';
   }
 
   setBeginReviewButtonEnabling();
@@ -125,13 +234,21 @@ function setInitialFormValues() {
   };
 }
 
-/* Add this function to any required field so we can monitor changed values */
+/**
+ * Add this function to any required field so we can monitor changed values.
+ */
 function onValuesChanged() {
   setBeginReviewButtonEnabling();
 }
 
-/* When user starts a new review we need to send analytics for
-   Curriculum Title, Publication Date, & Grade Range */
+/**
+ * When user starts a new review we need to send analytics for
+ * Curriculum Title, Publication Date, & Grade Range.
+ *
+ * @param {string} curriculumTitle - The title of curriculum review
+ * @param {string} publicationDate - The date of curriculum review
+ * @param {string} gradeRange - The grade level of curriculum review
+ */
 function recordAnalytics( curriculumTitle, publicationDate, gradeRange ) {
   const category = 'curriculum review tool interaction';
   // Analytics curriculum title
@@ -145,14 +262,16 @@ function recordAnalytics( curriculumTitle, publicationDate, gradeRange ) {
   sendAnalytics( 'grade range', gradeRange, category );
 }
 
-/* Method that actually saves values (Title, Date, & Grad Range) */
+/**
+ * Method that actually saves values (Title, Date, & Grad Range).
+ *
+ * @param {event} event - Click event
+ */
 function beginReviewButtonClick( event ) {
   event.preventDefault();
   const curriculumTitle = document.getElementById( 'tdp-crt_title' ).value;
   const publicationDate = document.getElementById( 'tdp-crt_pubdate' ).value;
   const gradeRange = document.getElementById( 'tdp-crt_grade' ).value;
-  const curriculumReviewId = document.getElementById( 'tdp-crt_id' ).value;
-  const curriculumPassCode = document.getElementById( 'tdp-crt_pass_code' ).value;
 
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -163,27 +282,24 @@ function beginReviewButtonClick( event ) {
       window.location.href = '../tool?token=' + review.id;
     }
   };
-  let requestUrl = '../create-review/';
-  if ( curriculumReviewId ) {
-    requestUrl = '../get-review?tdp-crt_id=' + curriculumReviewId;
-    xhttp.open( 'GET', requestUrl );
-    xhttp.send();
-  } else {
-    xhttp.open( 'POST', requestUrl );
-    xhttp.send(
-      JSON.stringify( {
-        'tdp-crt_title': curriculumTitle,
-        'tdp-crt_pubdate': publicationDate,
-        'tdp-crt_grade': gradeRange,
-        'tdp-crt_pass_code': curriculumPassCode
-      } )
-    );
-  }
+  const requestUrl = '../create-review/';
+  xhttp.open( 'POST', requestUrl );
+  xhttp.send(
+    JSON.stringify( {
+      'tdp-crt_title': curriculumTitle,
+      'tdp-crt_pubdate': publicationDate,
+      'tdp-crt_grade': gradeRange
+    } )
+  );
 
   recordAnalytics( curriculumTitle, publicationDate, gradeRange );
 }
 
-/* User has chosen to clear all values and start over */
+/**
+ * User has chosen to clear all values and start over.
+ *
+ * @param {event} event - Click event
+ */
 function clearLocalStorage( event ) {
   event.preventDefault();
   const review = getCurrentReview();
@@ -191,33 +307,38 @@ function clearLocalStorage( event ) {
     localStorage.removeItem( 'curriculumReviewId' );
   }
 
-  document.getElementById( 'tdp-crt_title' ).value = '';
-  document.getElementById( 'tdp-crt_pubdate' ).value = '';
-  document.getElementById( 'tdp-crt_grade' ).value = '';
-  document.getElementById( 'tdp-crt_id' ).value = '';
-  document.getElementById( 'tdp-crt_pass_code' ).value = '';
+  document.getElementById( 'token--continue' ).value = '';
 
   closeNewReviewModalWindow();
   setBeginReviewButtonEnabling();
 }
 
+/**
+ * Bind events.
+ */
 function bindEvents() {
-  ( function( $ ) {
-    $( '#modal-save-work .save-work-push-analytics' ).click( function( event ) { closeSaveWorkModalWindow( event ); } );
-    $( '#modal-start-over .start-over-close-push-analytics' ).click( function( event ) { closeNewReviewModalWindow( event ); } );
-    $( '#modal-start-over .start-over-push-analytics' ).click( function( event ) { clearLocalStorage( event ); } );
-    $( 'form#begin-review-form' ).submit( function( event ) { beginReviewButtonClick( event ); } );
-    $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
-    $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
-    $( 'form#begin-review-form #tdp-crt_grade' ).change( function() { onValuesChanged(); } );
-  } )( jQuery );
+  $( '#modal-save-work .save-work-push-analytics' ).click( function() { closeSaveWorkModalWindow(); } );
+  $( '#modal-start-over .start-over-close-push-analytics' ).click( function() { closeNewReviewModalWindow(); } );
+  $( '#modal-start-over .start-over-push-analytics' ).click( function( event ) { clearLocalStorage( event ); } );
+  $( 'form#begin-review-form .link-push-analytics' ).click( function( event ) { openSaveWorkModalWindow( event ); } );
+  $( 'form#form__continue-review .link-push-analytics' ).click( function( event ) { openSaveWorkModalWindow( event ); } );
+  $( 'form#begin-review-form' ).submit( function( event ) { beginReviewButtonClick( event ); } );
+  $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
+  $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
+  $( 'form#begin-review-form #tdp-crt_grade' ).change( function() { onValuesChanged(); } );
+  $( 'form#form__continue-review #token--continue' ).change( function() { onValuesChanged(); } );
+
 }
 
-// Call to get things initialized
+/**
+ * Call to get things initialized.
+ */
 export default function init() {
+  setUpTokenDropdown();
   setInitialFormValues();
   openingNewReviewModal = false;
   openingSaveWorkModal = false;
   bindEvents();
+  tabsInit();
 }
 
