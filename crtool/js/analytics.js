@@ -1,6 +1,5 @@
 import $ from 'jquery';
 
-
 // Tracks analytics for links on page clicked
 $( 'button.link-push-analytics' ).click( function() {
   const linkText = $( this ).text().trim();
@@ -37,7 +36,6 @@ $( 'a.push-download-analytics' ).click( function() {
   const linkUrl = $( this ).attr( 'href' );
   sendAnalytics( linkText, linkUrl, 'Downloads' );
 } );
-
 
 /**
  * A button link has been clicked.
