@@ -9,12 +9,12 @@ from django.utils import timezone
 
 class CurriculumReviewSession(models.Model):
     """Session state of a Curriculum Review"""
-    id = models.CharField(primary_key=True, max_length=7, editable=False)
+    id = models.CharField(primary_key=True, max_length=50, editable=False)
     pass_code = models.CharField(max_length=50, null=True, blank=True)
     data = JSONField()
     last_updated = models.DateTimeField('Updated', default=timezone.now)
 
-    def id_generator(size=7, chars=string.ascii_lowercase + string.digits):
+    def id_generator(size=22, chars=string.ascii_letters + string.digits):
         temp_id = ''.join(random.choice(chars) for _ in range(size))
         while CurriculumReviewSession.objects.filter(id=temp_id).exists():
             temp_id = ''.join(random.choice(chars) for _ in range(size))
