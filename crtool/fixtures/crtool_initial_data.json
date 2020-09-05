@@ -1,11 +1,11 @@
 [
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "02d19cc",
+    "pk": "02d19cc1314747ef8aacb3",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "02d19cc",
+            "id": "02d19cc1314747ef8aacb3",
             "START": "Quality",
             "pass_code": "",
             "gradeRange": "High school",
@@ -25,11 +25,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "1da8305",
+    "pk": "1da8305db6774e46970ec3",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "1da8305",
+            "id": "1da8305db6774e46970ec3",
             "START": "Utility",
             "pass_code": "",
             "gradeRange": "High school",
@@ -46,11 +46,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "242449c",
+    "pk": "242449c9251243c1b512d2",
     "fields": {
         "pass_code": null,
         "data": {
-            "id": "242449c",
+            "id": "242449c9251243c1b512d2",
             "pass_code": null,
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
@@ -62,11 +62,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "6893d3a",
+    "pk": "6893d3af8eb54e74a27882",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "6893d3a",
+            "id": "6893d3af8eb54e74a27882",
             "pass_code": "",
             "gradeRange": "Elementary school",
             "last_updated": "2020-07-14 03:56:52.402982+00:00",
@@ -79,11 +79,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "76fa6ef",
+    "pk": "76fa6efe1cdd44989ce6a3",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "76fa6ef",
+            "id": "76fa6efe1cdd44989ce6a3",
             "START": "Quality",
             "pass_code": "",
             "gradeRange": "Elementary school",
@@ -104,11 +104,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "99a3f24",
+    "pk": "99a3f2491f3546dd85c874",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "99a3f24",
+            "id": "99a3f2491f3546dd85c874",
             "START": "Quality",
             "pass_code": "",
             "gradeRange": "Middle school",
@@ -135,11 +135,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "9e88876",
+    "pk": "9e88876a7530462497d311",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "9e88876",
+            "id": "9e88876a7530462497d311",
             "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 19:24:34.353929+00:00",
@@ -151,11 +151,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "ab4070b",
+    "pk": "ab4070b203c54eae9618a8",
     "fields": {
         "pass_code": null,
         "data": {
-            "id": "ab4070b",
+            "id": "ab4070b203c54eae9618a8",
             "pass_code": null,
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 19:14:45.018366+00:00",
@@ -167,11 +167,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "bef8b72",
+    "pk": "bef8b726860c4d4e96097e",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "bef8b72",
+            "id": "bef8b726860c4d4e96097e",
             "pass_code": "",
             "gradeRange": "High school",
             "last_updated": "2020-08-06T22:17:11.977685+00:00",
@@ -183,11 +183,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "c193380",
+    "pk": "c193380d5e3c4d198daa81",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "c193380",
+            "id": "c193380d5e3c4d198daa81",
             "START": "Content",
             "pass_code": "",
             "gradeRange": "Elementary school",
@@ -206,11 +206,11 @@
 },
 {
     "model": "crtool.curriculumreviewsession",
-    "pk": "fc07513",
+    "pk": "fc0751322722457c8ba3fc",
     "fields": {
         "pass_code": "",
         "data": {
-            "id": "fc07513",
+            "id": "fc0751322722457c8ba3fc",
             "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 19:32:55.165041+00:00",
