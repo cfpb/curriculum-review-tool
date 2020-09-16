@@ -1,0 +1,223 @@
+[
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "02d19cc1314747ef8aacb3",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "02d19cc1314747ef8aacb3",
+            "START": "Quality",
+            "pass_code": "",
+            "gradeRange": "High school",
+            "last_updated": "2020-08-06T00:59:22.576547+00:00",
+            "quality_status": "in progress",
+            "criterionScores": "{\"quality-crt-1\":{\"criterionName\":\"quality-crt-1\",\"has_beneficial\":true,\"all_essential_yes\":false,\"essential_total_yes\":2,\"essential_total_no\":2,\"beneficial_total_yes\":2,\"beneficial_total_no\":2,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true},\"quality-crt-2\":{\"criterionName\":\"quality-crt-2\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":3,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true}}",
+            "curriculumTitle": "Test",
+            "publicationDate": "",
+            "criterionAnswers": "{\"quality-crt-text-optional-1.1.1\":\"\",\"quality-crt-question-1.1.1\":\"yes\",\"quality-crt-question-1.1.2\":\"no\",\"quality-crt-text-optional-1.1.3\":\"\",\"quality-crt-question-1.1.3_beneficial\":\"yes\",\"quality-crt-question-1.2.1\":\"yes\",\"quality-crt-question-1.2.2\":\"no\",\"quality-crt-text-optional-1.3.1\":\"\",\"quality-crt-question-1.3.1_beneficial\":\"no\",\"quality-crt-text-optional-1.3.2\":\"\",\"quality-crt-question-1.3.2_beneficial\":\"yes\",\"quality-crt-question-1.4_beneficial\":\"no\",\"quality-crt-notes-optional-1\":\"\",\"quality-crt-question-2.1\":\"yes\",\"quality-crt-question-2.2.1\":\"no\",\"quality-crt-question-2.2.2\":\"yes\",\"quality-crt-question-2.3\":\"yes\",\"quality-crt-notes-optional-2\":\"\"}",
+            "ls_modified_time": "2020-08-06T00:58:28.817Z",
+            "criterionClickedTitles": "{\"quality-crt-question-2\":\"clicked\"}",
+            "dimensionOverallScores": "{\"Quality\":\"limited\"}",
+            "criterionCompletionStatuses": "{\"quality-crt-question-2\":\"check-round\",\"quality-crt-question-1\":\"check-round\",\"quality-crt-question-3\":\"\"}"
+        },
+        "last_updated": "2020-08-06T00:59:22.576Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "1da8305db6774e46970ec3",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "1da8305db6774e46970ec3",
+            "START": "Utility",
+            "pass_code": "",
+            "gradeRange": "High school",
+            "last_updated": "2020-07-23T00:49:15.837096+00:00",
+            "utility_status": "in progress",
+            "criterionScores": "{\"utility-crt-1\":{\"criterionName\":\"utility-crt-1\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":5,\"essential_total_no\":4,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":false,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true}}",
+            "curriculumTitle": "A new Review",
+            "publicationDate": "",
+            "criterionAnswers": "{\"utility-crt-question-1.1.1\":\"yes\",\"utility-crt-question-1.1.2\":\"no\",\"utility-crt-question-1.1.3\":\"yes\",\"utility-crt-question-1.2.1\":\"no\",\"utility-crt-question-1.2.2\":\"yes\",\"utility-crt-question-1.2.3\":\"no\",\"utility-crt-question-1.2.4\":\"yes\",\"utility-crt-question-1.3.1\":\"no\",\"utility-crt-question-1.3.2\":\"yes\",\"utility-crt-question-1.4\":\"\",\"utility-crt-notes-optional-1\":\"\"}",
+            "criterionCompletionStatuses": "{\"utility-crt-question-2\":\"\",\"utility-crt-question-1\":\"in progress\"}"
+        },
+        "last_updated": "2020-07-23T00:49:15.837Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "242449c9251243c1b512d2",
+    "fields": {
+        "pass_code": null,
+        "data": {
+            "id": "242449c9251243c1b512d2",
+            "pass_code": null,
+            "gradeRange": "Middle school",
+            "last_updated": "2020-07-12 04:52:56.858970+00:00",
+            "curriculumTitle": "test",
+            "publicationDate": ""
+        },
+        "last_updated": "2020-07-12T00:00:00Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "6893d3af8eb54e74a27882",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "6893d3af8eb54e74a27882",
+            "pass_code": "",
+            "gradeRange": "Elementary school",
+            "last_updated": "2020-07-14 03:56:52.402982+00:00",
+            "curriculumTitle": "test",
+            "publicationDate": "",
+            "criterionAnswers": "{\"content-elementary-crt-question-1.1\":\"\",\"content-elementary-crt-question-1.2\":\"\"}"
+        },
+        "last_updated": "2020-07-13T00:00:00Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "76fa6efe1cdd44989ce6a3",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "76fa6efe1cdd44989ce6a3",
+            "START": "Quality",
+            "pass_code": "",
+            "gradeRange": "Elementary school",
+            "last_updated": "2020-08-06T23:43:42.257127+00:00",
+            "content_status": "in progress",
+            "quality_status": "in progress",
+            "criterionScores": "{\"content-elementary-crt-1\":{\"criterionName\":\"content-elementary-crt-1\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":1,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false},\"content-elementary-crt-2\":{\"criterionName\":\"content-elementary-crt-2\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":2,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":false,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true},\"quality-crt-1\":{\"criterionName\":\"quality-crt-1\",\"has_beneficial\":true,\"all_essential_yes\":false,\"essential_total_yes\":1,\"essential_total_no\":0,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":false,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false}}",
+            "curriculumTitle": "New test",
+            "publicationDate": "",
+            "criterionAnswers": "{\"content-elementary-crt-question-1.1\":\"yes\",\"content-elementary-crt-question-1.2\":\"no\",\"content-elementary-crt-notes-optional-1\":\"\",\"content-elementary-crt-question-2.1.1\":\"yes\",\"content-elementary-crt-question-2.1.2\":\"no\",\"content-elementary-crt-question-2.2\":\"yes\",\"content-elementary-crt-question-2.3\":\"\",\"content-elementary-crt-notes-optional-2\":\"\",\"quality-crt-text-optional-1.1.1\":\"\",\"quality-crt-question-1.1.1\":\"yes\",\"quality-crt-question-1.1.2\":\"\",\"quality-crt-text-optional-1.1.3\":\"\",\"quality-crt-question-1.1.3_beneficial\":\"\",\"quality-crt-question-1.2.1\":\"\",\"quality-crt-question-1.2.2\":\"\",\"quality-crt-text-optional-1.3.1\":\"\",\"quality-crt-question-1.3.1_beneficial\":\"\",\"quality-crt-text-optional-1.3.2\":\"\",\"quality-crt-question-1.3.2_beneficial\":\"\",\"quality-crt-question-1.4_beneficial\":\"\",\"quality-crt-notes-optional-1\":\"\"}",
+            "ls_modified_time": "2020-08-06T23:43:41.152Z",
+            "criterionClickedTitles": "{\"content-elementary-crt-question-2\":\"clicked\"}",
+            "dimensionOverallScores": "{\"Content\":\"limited\"}",
+            "criterionCompletionStatuses": "{\"content-elementary-crt-question-2\":\"in progress\",\"content-elementary-crt-question-1\":\"check-round\",\"content-elementary-crt-question-3\":\"\",\"quality-crt-question-2\":\"\",\"quality-crt-question-1\":\"in progress\"}"
+        },
+        "last_updated": "2020-08-06T23:43:42.257Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "99a3f2491f3546dd85c874",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "99a3f2491f3546dd85c874",
+            "START": "Quality",
+            "pass_code": "",
+            "gradeRange": "Middle school",
+            "last_updated": "2020-07-23T00:49:42.626091+00:00",
+            "content_status": "complete",
+            "quality_status": "in progress",
+            "utility_status": "complete",
+            "content_is_done": true,
+            "criterionScores": "{\"content-middle-crt-1\":{\"criterionName\":\"content-middle-crt-1\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":2,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false},\"content-middle-crt-2\":{\"criterionName\":\"content-middle-crt-2\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":5,\"essential_total_no\":3,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false},\"content-middle-crt-3\":{\"criterionName\":\"content-middle-crt-3\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":4,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false},\"content-middle-crt-4\":{\"criterionName\":\"content-middle-crt-4\",\"has_beneficial\":false,\"all_essential_yes\":true,\"essential_total_yes\":7,\"essential_total_no\":0,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":true,\"meets\":false,\"doesnotmeet\":false},\"content-middle-crt-5\":{\"criterionName\":\"content-middle-crt-5\",\"has_beneficial\":false,\"all_essential_yes\":true,\"essential_total_yes\":4,\"essential_total_no\":0,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":true,\"meets\":false,\"doesnotmeet\":false},\"content-middle-crt-6\":{\"criterionName\":\"content-middle-crt-6\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":1,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false},\"utility-crt-1\":{\"criterionName\":\"utility-crt-1\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":5,\"essential_total_no\":5,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true},\"utility-crt-2\":{\"criterionName\":\"utility-crt-2\",\"has_beneficial\":true,\"all_essential_yes\":false,\"essential_total_yes\":9,\"essential_total_no\":3,\"beneficial_total_yes\":8,\"beneficial_total_no\":1,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true},\"utility-crt-3\":{\"criterionName\":\"utility-crt-3\",\"has_beneficial\":true,\"all_essential_yes\":false,\"essential_total_yes\":4,\"essential_total_no\":4,\"beneficial_total_yes\":3,\"beneficial_total_no\":2,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true},\"utility-crt-4\":{\"criterionName\":\"utility-crt-4\",\"has_beneficial\":true,\"all_essential_yes\":false,\"essential_total_yes\":5,\"essential_total_no\":3,\"beneficial_total_yes\":3,\"beneficial_total_no\":1,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true},\"utility-crt-5\":{\"criterionName\":\"utility-crt-5\",\"has_beneficial\":true,\"all_essential_yes\":true,\"essential_total_yes\":2,\"essential_total_no\":0,\"beneficial_total_yes\":1,\"beneficial_total_no\":2,\"answered_all_complete\":true,\"exceeds\":true,\"meets\":false,\"doesnotmeet\":false},\"quality-crt-1\":{\"criterionName\":\"quality-crt-1\",\"has_beneficial\":true,\"all_essential_yes\":false,\"essential_total_yes\":2,\"essential_total_no\":2,\"beneficial_total_yes\":2,\"beneficial_total_no\":2,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true}}",
+            "curriculumTitle": "Yet Another Review",
+            "publicationDate": "",
+            "utility_is_done": true,
+            "criterionAnswers": "{\"content-middle-crt-question-1.1\":\"yes\",\"content-middle-crt-question-1.2.1\":\"no\",\"content-middle-crt-question-1.2.2\":\"yes\",\"content-middle-crt-notes-optional-1\":\"Another Test\",\"content-middle-crt-question-2.1.1\":\"yes\",\"content-middle-crt-question-2.1.2\":\"no\",\"content-middle-crt-question-2.2.1\":\"yes\",\"content-middle-crt-question-2.2.2\":\"no\",\"content-middle-crt-question-2.3.1\":\"yes\",\"content-middle-crt-question-2.3.2\":\"no\",\"content-middle-crt-question-2.4.1\":\"yes\",\"content-middle-crt-question-2.4.2\":\"yes\",\"content-middle-crt-notes-optional-2\":\"\",\"content-middle-crt-question-3.1\":\"yes\",\"content-middle-crt-question-3.2.1\":\"no\",\"content-middle-crt-question-3.2.2\":\"yes\",\"content-middle-crt-question-3.2.3\":\"yes\",\"content-middle-crt-question-3.2.4\":\"yes\",\"content-middle-crt-notes-optional-3\":\"\",\"content-middle-crt-question-4.1\":\"yes\",\"content-middle-crt-question-4.2.1\":\"yes\",\"content-middle-crt-question-4.2.2\":\"yes\",\"content-middle-crt-question-4.2.3\":\"yes\",\"content-middle-crt-question-4.2.4\":\"yes\",\"content-middle-crt-question-4.3.1\":\"yes\",\"content-middle-crt-question-4.3.2\":\"yes\",\"content-middle-crt-notes-optional-4\":\"\",\"content-middle-crt-question-5.1\":\"yes\",\"content-middle-crt-question-5.2.1\":\"yes\",\"content-middle-crt-question-5.2.2\":\"yes\",\"content-middle-crt-question-5.3\":\"yes\",\"content-middle-crt-notes-optional-5\":\"\",\"content-middle-crt-question-6.1.1\":\"yes\",\"content-middle-crt-question-6.1.2\":\"no\",\"content-middle-crt-notes-optional-6\":\"\",\"utility-crt-question-1.1.1\":\"yes\",\"utility-crt-question-1.1.2\":\"yes\",\"utility-crt-question-1.1.3\":\"no\",\"utility-crt-question-1.2.1\":\"yes\",\"utility-crt-question-1.2.2\":\"no\",\"utility-crt-question-1.2.3\":\"yes\",\"utility-crt-question-1.2.4\":\"yes\",\"utility-crt-question-1.3.1\":\"no\",\"utility-crt-question-1.3.2\":\"no\",\"utility-crt-question-1.4\":\"no\",\"utility-crt-notes-optional-1\":\"\",\"utility-crt-question-2.1.1\":\"yes\",\"utility-crt-question-2.1.2\":\"no\",\"utility-crt-question-2.1.3\":\"yes\",\"utility-crt-question-2.1.4\":\"no\",\"utility-crt-question-2.1.5\":\"yes\",\"utility-crt-question-2.1.6\":\"no\",\"utility-crt-question-2.1.7_beneficial\":\"yes\",\"utility-crt-question-2.1.8_beneficial\":\"no\",\"utility-crt-question-2.1.9_beneficial\":\"yes\",\"utility-crt-question-2.1.10\":\"yes\",\"utility-crt-question-2.2.1\":\"yes\",\"utility-crt-question-2.2.2\":\"yes\",\"utility-crt-question-2.2.3_beneficial\":\"yes\",\"utility-crt-question-2.3.1\":\"yes\",\"utility-crt-question-2.3.2\":\"yes\",\"utility-crt-question-2.3.3_beneficial\":\"yes\",\"utility-crt-question-2.3.4_beneficial\":\"yes\",\"utility-crt-question-2.3.5_beneficial\":\"yes\",\"utility-crt-question-2.3.6_beneficial\":\"yes\",\"utility-crt-question-2.4_beneficial\":\"yes\",\"utility-crt-question-2.5\":\"yes\",\"utility-crt-notes-optional-2\":\"\",\"utility-crt-question-3.1.1\":\"no\",\"utility-crt-question-3.1.2\":\"yes\",\"utility-crt-question-3.1.3\":\"no\",\"utility-crt-question-3.1.4\":\"yes\",\"utility-crt-question-3.1.5\":\"no\",\"utility-crt-question-3.1.6\":\"yes\",\"utility-crt-question-3.1.7_beneficial\":\"no\",\"utility-crt-question-3.2\":\"yes\",\"utility-crt-question-3.3.1\":\"no\",\"utility-crt-question-3.3.2_beneficial\":\"yes\",\"utility-crt-question-3.3.3_beneficial\":\"yes\",\"utility-crt-question-3.4_beneficial\":\"yes\",\"utility-crt-question-3.5_beneficial\":\"no\",\"utility-crt-notes-optional-3\":\"\",\"utility-crt-question-4.1.1\":\"yes\",\"utility-crt-question-4.1.2\":\"yes\",\"utility-crt-question-4.1.3_beneficial\":\"yes\",\"utility-crt-question-4.2.1\":\"yes\",\"utility-crt-question-4.2.2\":\"no\",\"utility-crt-question-4.3_beneficial\":\"yes\",\"utility-crt-question-4.4.1\":\"no\",\"utility-crt-question-4.4.2_beneficial\":\"yes\",\"utility-crt-question-4.5.1\":\"no\",\"utility-crt-question-4.5.2\":\"yes\",\"utility-crt-question-4.5.3_beneficial\":\"no\",\"utility-crt-question-4.6\":\"yes\",\"utility-crt-notes-optional-4\":\"\",\"utility-crt-question-5.1.1\":\"yes\",\"utility-crt-question-5.1.2_beneficial\":\"no\",\"utility-crt-question-5.2.1\":\"yes\",\"utility-crt-question-5.2.2_beneficial\":\"yes\",\"utility-crt-question-5.2.3_beneficial\":\"no\",\"utility-crt-notes-optional-5\":\"\",\"quality-crt-text-optional-1.1.1\":\"\",\"quality-crt-question-1.1.1\":\"yes\",\"quality-crt-question-1.1.2\":\"yes\",\"quality-crt-text-optional-1.1.3\":\"\",\"quality-crt-question-1.1.3_beneficial\":\"no\",\"quality-crt-question-1.2.1\":\"no\",\"quality-crt-question-1.2.2\":\"no\",\"quality-crt-text-optional-1.3.1\":\"\",\"quality-crt-question-1.3.1_beneficial\":\"yes\",\"quality-crt-text-optional-1.3.2\":\"\",\"quality-crt-question-1.3.2_beneficial\":\"no\",\"quality-crt-question-1.4_beneficial\":\"yes\",\"quality-crt-notes-optional-1\":\"\"}",
+            "contentShowErrors": false,
+            "utilityShowErrors": false,
+            "utility_summary_view": true,
+            "criterionClickedTitles": "{\"content-middle-crt-question-2\":\"clicked\",\"content-middle-crt-question-3\":\"clicked\",\"content-middle-crt-question-4\":\"clicked\",\"content-middle-crt-question-5\":\"clicked\",\"content-middle-crt-question-6\":\"clicked\",\"utility-crt-question-2\":\"clicked\",\"utility-crt-question-3\":\"clicked\",\"utility-crt-question-4\":\"clicked\",\"utility-crt-question-5\":\"clicked\"}",
+            "dimensionOverallScores": "{\"Content\":\"strong\",\"Utility\":\"limited\",\"Quality\":\"limited\"}",
+            "distinctiveCompletedDate": "{\"Utility\":\"July 14,  2020\"}",
+            "criterionCompletionStatuses": "{\"content-middle-crt-question-2\":\"check-round\",\"content-middle-crt-question-1\":\"check-round\",\"content-middle-crt-question-3\":\"check-round\",\"content-middle-crt-question-4\":\"check-round\",\"content-middle-crt-question-5\":\"check-round\",\"content-middle-crt-question-6\":\"check-round\",\"utility-crt-question-2\":\"check-round\",\"utility-crt-question-1\":\"check-round\",\"utility-crt-question-3\":\"check-round\",\"utility-crt-question-4\":\"check-round\",\"utility-crt-question-5\":\"check-round\",\"quality-crt-question-2\":\"\",\"quality-crt-question-1\":\"check-round\"}"
+        },
+        "last_updated": "2020-07-23T00:49:42.626Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "9e88876a7530462497d311",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "9e88876a7530462497d311",
+            "pass_code": "",
+            "gradeRange": "Middle school",
+            "last_updated": "2020-07-12 19:24:34.353929+00:00",
+            "curriculumTitle": "test",
+            "publicationDate": ""
+        },
+        "last_updated": "2020-07-12T00:00:00Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "ab4070b203c54eae9618a8",
+    "fields": {
+        "pass_code": null,
+        "data": {
+            "id": "ab4070b203c54eae9618a8",
+            "pass_code": null,
+            "gradeRange": "Middle school",
+            "last_updated": "2020-07-12 19:14:45.018366+00:00",
+            "curriculumTitle": "test",
+            "publicationDate": ""
+        },
+        "last_updated": "2020-07-12T00:00:00Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "bef8b726860c4d4e96097e",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "bef8b726860c4d4e96097e",
+            "pass_code": "",
+            "gradeRange": "High school",
+            "last_updated": "2020-08-06T22:17:11.977685+00:00",
+            "curriculumTitle": "Yet Another Review",
+            "publicationDate": ""
+        },
+        "last_updated": "2020-08-06T22:17:11.977Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "c193380d5e3c4d198daa81",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "c193380d5e3c4d198daa81",
+            "START": "Content",
+            "pass_code": "",
+            "gradeRange": "Elementary school",
+            "last_updated": "2020-07-16T17:48:00.245613+00:00",
+            "content_status": "in progress",
+            "utility_status": "in progress",
+            "criterionScores": "{\"content-elementary-crt-1\":{\"criterionName\":\"content-elementary-crt-1\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":1,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":true,\"exceeds\":false,\"meets\":true,\"doesnotmeet\":false},\"utility-crt-1\":{\"criterionName\":\"utility-crt-1\",\"has_beneficial\":false,\"all_essential_yes\":false,\"essential_total_yes\":2,\"essential_total_no\":1,\"beneficial_total_yes\":0,\"beneficial_total_no\":0,\"answered_all_complete\":false,\"exceeds\":false,\"meets\":false,\"doesnotmeet\":true}}",
+            "curriculumTitle": "Another review",
+            "publicationDate": "",
+            "criterionAnswers": "{\"content-elementary-crt-question-1.1\":\"yes\",\"content-elementary-crt-question-1.2\":\"no\",\"content-elementary-crt-notes-optional-1\":\"\",\"utility-crt-question-1.1.1\":\"yes\",\"utility-crt-question-1.1.2\":\"yes\",\"utility-crt-question-1.1.3\":\"no\",\"utility-crt-question-1.2.1\":\"\",\"utility-crt-question-1.2.2\":\"\",\"utility-crt-question-1.2.3\":\"\",\"utility-crt-question-1.2.4\":\"\",\"utility-crt-question-1.3.1\":\"\",\"utility-crt-question-1.3.2\":\"\",\"utility-crt-question-1.4\":\"\",\"utility-crt-notes-optional-1\":\"\"}",
+            "dimensionOverallScores": "{\"Content\":\"limited\"}",
+            "criterionCompletionStatuses": "{\"content-elementary-crt-question-2\":\"\",\"content-elementary-crt-question-1\":\"check-round\",\"utility-crt-question-2\":\"\",\"utility-crt-question-1\":\"in progress\"}"
+        },
+        "last_updated": "2020-07-16T17:48:00.245Z"
+    }
+},
+{
+    "model": "crtool.curriculumreviewsession",
+    "pk": "fc0751322722457c8ba3fc",
+    "fields": {
+        "pass_code": "",
+        "data": {
+            "id": "fc0751322722457c8ba3fc",
+            "pass_code": "",
+            "gradeRange": "Middle school",
+            "last_updated": "2020-07-12 19:32:55.165041+00:00",
+            "curriculumTitle": "test",
+            "publicationDate": ""
+        },
+        "last_updated": "2020-07-12T00:00:00Z"
+    }
+}
+]
