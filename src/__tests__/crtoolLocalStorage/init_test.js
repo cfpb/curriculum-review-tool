@@ -7,10 +7,10 @@ const testToken = 'abcd';
 const consoleError = console.error;
 
 beforeEach(() => {
-  ls.locationSearch = '';
   global.localStorage.clear();
   ls.localStorage = global.localStorage;
-  ls.pushState = jest.fn();
+  ls.getLocationHash = jest.fn();
+  ls.setLocationHash = jest.fn();
   ls.setHref = jest.fn();
   ls.getHref = () => 'http://example.com/page';
   console.error = jest.fn();
@@ -33,7 +33,6 @@ it('init() gets token from LS, but LS nor server has it', async () => {
   await ls.init();
 
   expect(console.error.mock.calls.length).toBe(0);
-  expect(ls.pushState.mock.calls[0][2]).toBe('http://example.com/page?token=' + testToken);
   expect(ls.setHref.mock.calls[0][0]).toBe(C.START_PAGE_RELATIVE_URL);
   expect(ls.localStorage.getItem('crtool.' + testToken)).toBe(null);
   expect(ls.localStorage.getItem('curriculumReviewId')).toBe(null);
@@ -47,7 +46,6 @@ it('init() gets token from LS, but LS is invalid', async () => {
   await ls.init();
 
   expect(console.error.mock.calls[0][0].message).toBe('invalid review');
-  expect(ls.pushState.mock.calls[0][2]).toBe('http://example.com/page?token=' + testToken);
   expect(ls.setHref.mock.calls[0][0]).toBe(C.START_PAGE_RELATIVE_URL);
   expect(ls.localStorage.getItem('crtool.' + testToken)).toBe(null);
   expect(ls.localStorage.getItem('curriculumReviewId')).toBe(null);
@@ -74,7 +72,7 @@ it('init() finds DB review, but LS has older', async () => {
   await ls.init();
 
   expect(console.error.mock.calls.length).toBe(0);
-  expect(ls.pushState.mock.calls[0][2]).toBe('http://example.com/page?token=' + testToken);
+  expect(ls.setLocationHash.mock.calls[0][0]).toBe('#id=' + testToken);
   expect(ls.setHref.mock.calls.length).toBe(0);
   expect(ls.review).toMatchObject(dbReview);
   expect(ls.localStorage.getItem('crtool.' + testToken)).toContain('"value":"db"');
@@ -84,7 +82,7 @@ it('init() finds DB review, but LS has older', async () => {
 
 it('init() finds DB review and URL has token', async () => {
   const oldDate = new Date(new Date().getTime() - 1000e3);
-  ls.locationSearch = '?token=' + testToken;
+  ls.getLocationHash = () => '#id=' + testToken;
   ls.localStorage.setItem('curriculumReviewId', testToken);
   ls.localStorage.setItem('crtool.' + testToken, JSON.stringify({
     id: testToken,
@@ -104,7 +102,7 @@ it('init() finds DB review and URL has token', async () => {
   await ls.init();
 
   expect(console.error.mock.calls.length).toBe(0);
-  expect(ls.pushState.mock.calls.length).toBe(0);
+  expect(ls.setLocationHash.mock.calls.length).toBe(0);
   expect(ls.setHref.mock.calls.length).toBe(0);
   expect(ls.review).toMatchObject(dbReview);
   expect(ls.localStorage.getItem('crtool.' + testToken)).toContain('"value":"db"');
@@ -114,7 +112,7 @@ it('init() finds DB review and URL has token', async () => {
 
 it('init() finds DB review and LS has newer', async () => {
   const oldDate = new Date(new Date().getTime() - 1000e3);
-  ls.locationSearch = '?token=' + testToken;
+  ls.getLocationHash = () => '#id=' + testToken;
   ls.localStorage.setItem('curriculumReviewId', testToken);
   const lsReview = {
     id: testToken,
@@ -135,7 +133,7 @@ it('init() finds DB review and LS has newer', async () => {
   await ls.init();
 
   expect(console.error.mock.calls.length).toBe(0);
-  expect(ls.pushState.mock.calls.length).toBe(0);
+  expect(ls.setLocationHash.mock.calls.length).toBe(0);
   expect(ls.setHref.mock.calls.length).toBe(0);
   expect(ls.review).toMatchObject(lsReview);
   expect(ls.localStorage.getItem('crtool.' + testToken)).toContain('"value":"local"');
@@ -145,7 +143,7 @@ it('init() finds DB review and LS has newer', async () => {
 
 it('init() finds fresh review, sets local time', async () => {
   const oldDate = new Date(new Date().getTime() - 1000e3);
-  ls.locationSearch = '?token=' + testToken;
+  ls.getLocationHash = () => '#id=' + testToken;
   ls.getISODate = () => oldDate.toISOString();
   const dbReview = {
     id: testToken,
@@ -158,7 +156,7 @@ it('init() finds fresh review, sets local time', async () => {
   await ls.init();
 
   expect(console.error.mock.calls.length).toBe(0);
-  expect(ls.pushState.mock.calls.length).toBe(0);
+  expect(ls.setLocationHash.mock.calls.length).toBe(0);
   expect(ls.setHref.mock.calls.length).toBe(0);
   expect(ls.review).toMatchObject({
     ...dbReview,
