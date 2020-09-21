@@ -235,12 +235,12 @@
         <div class="o-tabs_tab o-tabs_tab__continue-review">
             <h2>Continue a review</h2>
             <p>Enter your access code to return to a review in progress.</p>
-            <form id="form__continue-review" class="o-form" method="GET" action="../tool">
+            <form id="form__continue-review" class="o-form" method="POST" action="../continue-review/">
                 <div class="o-form_group">
                     <div class="m-form-field m-form-field__select">
                     <label class="a-label a-label__heading" for="token--continue">Access code</label>
                     <div class="a-select">
-                        <select id="token--continue" name="token" value="">
+                        <select id="token--continue" name="access_code" value="">
                             <option value="">Enter your access code</option>
                         </select>
                         </div>
@@ -266,7 +266,7 @@
                     </div>
                 </div>
                 <div class="m-btn-group m-btn-group__wide">
-                    <button id="continue-review" class="a-btn button-push-analytics" type="submit" formaction="../tool">
+                    <button id="continue-review" class="a-btn button-push-analytics" type="submit">
                             Continue review
                     </button>
                 </div>

@@ -4,7 +4,12 @@ import json
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
 
-from crtool.views import create_review, get_review, update_review
+from crtool.views import (
+    continue_review,
+    create_review,
+    get_review,
+    update_review,
+)
 
 
 class CreateReviewTest(TestCase):
@@ -196,16 +201,16 @@ class GetReviewTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
 
-    def get(self, get, ajax=False):
+    def post(self, post, ajax=False):
         kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"} if ajax else {}
-        request = self.factory.get(reverse("get_review") + get, **kwargs)
+        request = self.factory.post(reverse("get_review"), post, **kwargs)
         return get_review(request)
 
-    def check_get(self, get, response_check, ajax=False, compare={}):
+    def check_post(self, post, response_check, compare={}):
         if compare:
-            response_check(self.get(get, ajax=ajax), compare=compare)
+            response_check(self.post(post), compare=compare)
         else:
-            response_check(self.get(get, ajax=ajax))
+            response_check(self.post(post))
 
     def assertPageNotFound(self, response):
         self.assertEqual(response.status_code, 404)
@@ -219,7 +224,9 @@ class GetReviewTest(TestCase):
 
     # Test with token id that exists
     def test_existing_id(self):
-        get = '?token=02d19cc1314747ef8aacb3'
+        post = {
+            "token": "02d19cc1314747ef8aacb3",
+        }
         compare = {
             "id": "02d19cc1314747ef8aacb3",
             "START": "Quality",
@@ -233,27 +240,34 @@ class GetReviewTest(TestCase):
             "criterionClickedTitles": "{\"quality-crt-question-2\":\"clicked\"}",  # noqa 501
             "dimensionOverallScores": "{\"Quality\":\"limited\"}",
         }
-        self.check_get(get, self.assertGetSuccess, compare=compare)
+        self.check_post(post, self.assertGetSuccess, compare=compare)
 
     # Test with token id that doesn't exist
     def test_non_existent_id(self):
-        get = '?token=02d19cc1314747ef8aacbz'
-        self.check_get(get, self.assertPageNotFound)
+        post = {
+            "token": "02d19cc1314747ef8aacbz"
+        }
+        self.check_post(post, self.assertPageNotFound)
 
     # Test with null
     def test_null(self):
-        get = ''
-        self.check_get(get, self.assertPageNotFound)
+        post = {
+        }
+        self.check_post(post, self.assertPageNotFound)
 
     # Test with empty string
     def test_empty_id(self):
-        get = '?token='
-        self.check_get(get, self.assertPageNotFound)
+        post = {
+            "token": ""
+        }
+        self.check_post(post, self.assertPageNotFound)
 
     # Test with short fake token id
     def test_invalid_id(self):
-        get = '?token=apple'
-        self.check_get(get, self.assertPageNotFound)
+        post = {
+            "token": "apple"
+        }
+        self.check_post(post, self.assertPageNotFound)
 
 
 class UpdateReviewTest(TestCase):
@@ -379,3 +393,30 @@ class UpdateReviewTest(TestCase):
     def test_null_post(self):
         post = None
         self.check_post(post, self.assertPageNotFound)
+
+
+class ContinueReviewTest(TestCase):
+    fixtures = ['crtool_initial_data']
+
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    def post(self, post):
+        kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"}
+        request = self.factory.post(reverse("continue_review"), post, **kwargs)
+        return continue_review(request)
+
+    def test_non_existent_pass_code(self):
+        post = {
+            "access_code": "fakefake",
+        }
+        response = self.post(post)
+        self.assertEqual(response.status_code, 404)
+
+    def test_found_pass_code(self):
+        post = {
+            "access_code": "1da8305db6774e46970ec3",
+        }
+        response = self.post(post)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.url, "../tool/#id=1da8305db6774e46970ec3")
