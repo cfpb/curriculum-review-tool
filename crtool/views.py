@@ -18,7 +18,8 @@ def create_review(request):
         title = fd['tdp-crt_title'] if 'tdp-crt_title' in fd else ''
         pub_date = fd['tdp-crt_pubdate'] if 'tdp-crt_pubdate' in fd else ''
         grade_range = fd['tdp-crt_grade'] if 'tdp-crt_grade' in fd else ''
-        pass_code = fd['tdp-crt_pass_code'] if 'tdp-crt_pass_code' in fd else ''
+        pass_code = fd['tdp-crt_pass_code'] \
+            if 'tdp-crt_pass_code' in fd else ''
         review_id = CurriculumReviewSession.id_generator()
         last_updated = timezone.now()
 
