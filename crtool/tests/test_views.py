@@ -8,7 +8,7 @@ from crtool.views import (
     continue_review,
     create_review,
     get_review,
-    update_review,
+    update_review
 )
 
 
