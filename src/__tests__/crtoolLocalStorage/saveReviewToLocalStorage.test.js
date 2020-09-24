@@ -43,6 +43,6 @@ it('saveReviewToLocalStorage() increases last_modified_time,preserves id, ', asy
   expect(lsReview.value).toBe('db_updated');
   expect(lsReview.value_2).toBe('new value');
   expect(newDate).toBeGreaterThan(oldDate);
-  expect(newDate).toBeLessThanOrEqual(Date());
+  expect(newDate).toBeLessThanOrEqual( new Date().getTime() );
 
 });

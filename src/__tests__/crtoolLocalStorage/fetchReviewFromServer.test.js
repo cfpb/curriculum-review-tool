@@ -16,7 +16,6 @@ beforeEach(() => {
   ls.getHref = () => 'http://example.com/page';
   console.error = jest.fn();
   mock.setup();
-  ls.init = jest.fn();
 });
 
 afterAll(() => {
@@ -24,28 +23,10 @@ afterAll(() => {
   mock.teardown();
 });
 
-//it('fetchReviewFromServer() with existing record returns object', async () => {
-//  const dbReview = {
-//    id: testToken,
-//    last_updated: 'something',
-//    ls_modified_time: new Date().toISOString(),
-//    value: 'db',
-//  };
-//
-//  // expect.assertions(2);
-//
-//  mock.post('/api/user', (req, res) => {
-//    expect(req.header('Content-Type')).toEqual('application/json');
-//    expect(req.body()).toEqual('{"token":' + testToken + '}');
-//    return res.status(201).body(JSON.stringify(dbReview));
-//  });
-//
-//  await ls.init();
-//  await ls.fetchReviewFromServer(testToken);
-//
-//});
-
 it('fetchReviewFromServer() with existing record returns object', async () => {
+
+  expect.assertions(4);
+
   const dbReview = {
     id: testToken,
     last_updated: 'something',
@@ -60,15 +41,17 @@ it('fetchReviewFromServer() with existing record returns object', async () => {
     ls_modified_time: new Date().toISOString(),
     value: 'local',
   }));
+  ls.review = dbReview;
 
   mock.post('../get-review/', (req, res) => {
-    expect(req.header('Content-Type')).toEqual('application/json');
-    expect(req.body()).toEqual('{"token":' + testToken + '}');
-    return res.status(201).body(JSON.stringify({}));
+    expect(req.header('Content-Type')).toEqual('application/x-www-form-urlencoded');
+    expect(req.body()).toEqual( 'token=' + testToken );
+    return res.status(200).body( JSON.stringify( dbReview ) );
   });
 
-  ls.init();
-  await ls.fetchReviewFromServer(testToken);
+  const fetchedReview = await ls.fetchReviewFromServer( testToken );
 
-  expect( ls.setHref.mock.calls[0][0] ).toBe( C.START_PAGE_RELATIVE_URL );
+  expect( ls.review ).toEqual( dbReview );
+  expect( fetchedReview ).toEqual( dbReview );
+
 });
