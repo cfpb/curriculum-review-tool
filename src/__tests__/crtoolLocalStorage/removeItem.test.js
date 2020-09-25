@@ -21,7 +21,7 @@ afterAll(() => {
 });
 
 it('removeItem() throws error if used before init', async () => {
-  expect(ls.setItem).toThrow('Use before init');
+  expect(ls.removeItem).toThrow('Use before init');
 });
 
 it('removeItem() removes an item given its key', async () => {

@@ -25,7 +25,7 @@ it('saveReviewToLocalStorage() increases last_modified_time,preserves id, ', asy
   const dbReview = {
     id: testToken,
     last_updated: 'something',
-    ls_modified_time: new Date().toISOString(),
+    ls_modified_time: new Date('2019-01-01').toISOString(),
     value: 'db',
   };
   ls.fetchReviewFromServer = async () => dbReview;
@@ -33,8 +33,8 @@ it('saveReviewToLocalStorage() increases last_modified_time,preserves id, ', asy
   await ls.init();
 
   const oldDate = Date.parse(ls.review.ls_modified_time);
-  ls.review['value'] = 'db_updated';
-  ls.review['value_2'] = 'new value';
+  ls.review.value = 'db_updated';
+  ls.review.value_2 = 'new value';
   ls.saveReviewToLocalStorage();
   const lsReview = ls.loadReviewFromLocalStorage(testToken);
   const newDate = Date.parse(lsReview.ls_modified_time);

@@ -30,13 +30,8 @@ const ls = {
     review: {},
     lastTimeSaved: '',
     timeoutHandle: 0,
-    testing: false,
 
     redirectHome() {
-        if (ls.testing) {
-            return;
-        }
-
         ls.setHref(C.START_PAGE_RELATIVE_URL);
     },
 
@@ -140,14 +135,8 @@ const ls = {
      * Returns a Promise with a valid review or undefined.
      *
      * Rejects if request fails. Invalid response resolves to undefined.
-     *
-     * TODO use https://www.npmjs.com/package/xhr-mock to mock XHR
      */
     async fetchReviewFromServer(review_id) {
-        if (ls.testing) {
-            return;
-        }
-
         const xhttp = new XMLHttpRequest();
         xhttp.open("POST", "../get-review/", true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -204,11 +193,6 @@ const ls = {
      * Rejects anytime a valid response was not received
      */
     async saveReviewToServer() {
-        if (ls.testing) {
-            ls.localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
-            return;
-        }
-
         const xhttp = new XMLHttpRequest();
         xhttp.open("POST", "../update-review/", true);
         xhttp.timeout = 5e3;
