@@ -34,8 +34,8 @@ it('init() gets token from LS, but LS nor server has it', async () => {
 
   expect(console.error.mock.calls.length).toBe(0);
   expect(ls.setHref.mock.calls[0][0]).toBe(C.START_PAGE_RELATIVE_URL);
-  expect(ls.localStorage.getItem('crtool.' + testToken)).toBe(null);
-  expect(ls.localStorage.getItem('curriculumReviewId')).toBe(null);
+  expect(ls.localStorage.getItem('crtool.' + testToken)).toBeNull();
+  expect(ls.localStorage.getItem('curriculumReviewId')).toBeNull();
 });
 
 it('init() gets token from LS, but LS is invalid', async () => {
@@ -47,8 +47,8 @@ it('init() gets token from LS, but LS is invalid', async () => {
 
   expect(console.error.mock.calls[0][0].message).toBe('invalid review');
   expect(ls.setHref.mock.calls[0][0]).toBe(C.START_PAGE_RELATIVE_URL);
-  expect(ls.localStorage.getItem('crtool.' + testToken)).toBe(null);
-  expect(ls.localStorage.getItem('curriculumReviewId')).toBe(null);
+  expect(ls.localStorage.getItem('crtool.' + testToken)).toBeNull();
+  expect(ls.localStorage.getItem('curriculumReviewId')).toBeNull();
 });
 
 it('init() finds DB review, but LS has older', async () => {

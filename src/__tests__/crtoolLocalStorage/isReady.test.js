@@ -25,7 +25,7 @@ it('isReady() is false if init() is not called', async () => {
   ls.fetchReviewFromServer = async () => dbReview;
 
   expect(ls.isReady()).toBe(false);
-  expect(ls.review.id).toBe(undefined);
+  expect(ls.review.id).toBeUndefined();
 
 });
 
@@ -37,7 +37,7 @@ it('isReady() is false after init with non-existing db review is set', async () 
   await ls.init();
 
   expect(ls.isReady()).toBe(false);
-  expect(ls.review.id).toBe(undefined);
+  expect(ls.review.id).toBeUndefined();
 
 });
 
