@@ -29,15 +29,17 @@ it('removeItem() removes an item given its key', async () => {
   const dbReview = {
     id: testToken,
     last_updated: 'something',
-    ls_modified_time: new Date().toISOString(),
+    ls_modified_time: new Date('2019-01-01').toISOString(),
     value: 'db',
   };
   ls.fetchReviewFromServer = async () => dbReview;
+  const oldDate = dbReview.ls_modified_time;
 
   await ls.init();
   expect(ls.getItem('value')).toBe('db');
   ls.removeItem('value');
   expect(ls.getItem('value')).toBeNull();
+  expect(Date.parse(ls.review.ls_modified_time)).toBeGreaterThan(Date.parse(oldDate));
 });
 
 it('removeItem() remove non-existent item', async () => {
@@ -45,13 +47,15 @@ it('removeItem() remove non-existent item', async () => {
   const dbReview = {
     id: testToken,
     last_updated: 'something',
-    ls_modified_time: new Date().toISOString(),
+    ls_modified_time: new Date('2019-01-01').toISOString(),
     value: 'db',
   };
   ls.fetchReviewFromServer = async () => dbReview;
+  const oldDate = dbReview.ls_modified_time;
 
   await ls.init();
   expect(ls.getItem('value2')).toBeNull();
   ls.removeItem('value2');
   expect(ls.getItem('value2')).toBeNull();
+  expect(ls.review.ls_modified_time).toBe(oldDate);
 });

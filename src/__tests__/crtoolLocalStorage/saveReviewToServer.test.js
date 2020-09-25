@@ -4,7 +4,6 @@ import xhrMock from 'xhr-mock';
 import C from "../../js/business.logic/constants";
 import ls, { CHECK_FREQUENCY } from '../../crtoolLocalStorage';
 
-console.log(xhrMock);
 const testToken = 'abcd';
 const consoleError = console.error;
 
@@ -24,8 +23,7 @@ afterAll(() => {
   xhrMock.teardown();
 });
 
-it('saveReviewToServer() triggers xhr request to ../update-review/', async () => {
-
+it('saveReviewToServer() with valid review', async () => {
   const dbReview = {
     id: testToken,
     last_updated: 'something',
@@ -55,7 +53,34 @@ it('saveReviewToServer() triggers xhr request to ../update-review/', async () =>
   expect( Date.parse(ls.review.ls_modified_time) ).toBeGreaterThanOrEqual( Date.parse(oldDate) );
 });
 
-it('saveReviewToServer() with 500 error does nothing', async () => {
+it('saveReviewToServer() with invalid review', async () => {
+
+  const dbReview = {
+    id: testToken,
+    ls_modified_time: new Date().toISOString(),
+    value: 'db',
+  };
+
+  ls.review = dbReview;
+  const oldDate = ls.review.ls_modified_time;
+  ls.review.value2 = 'something else';
+
+  xhrMock.post('../update-review/', (req, res) => {
+    expect(req.header('Content-Type')).toEqual('application/json;charset=UTF-8');
+    expect(req.body()).toEqual( JSON.stringify( ls.review ));
+    return res.status(200).body( JSON.stringify( {
+      id: testToken,
+      ls_modified_time: new Date().toISOString(),
+      value: 'db',
+      value2: 'something else',
+    } ) );
+  });
+
+  await expect(ls.saveReviewToServer()).rejects.toBeUndefined();
+  expect(console.error.mock.calls[0][0]).toEqual('Invalid server response');
+});
+
+it('saveReviewToServer() with 500 status code response', async () => {
 
   const dbReview = {
     id: testToken,
@@ -75,8 +100,4 @@ it('saveReviewToServer() with 500 error does nothing', async () => {
 
   await expect(ls.saveReviewToServer()).rejects.toBeUndefined();
   expect(console.error.mock.calls[1][0]).toEqual('DB save failed.');
-  // expect ls.review to be unchanged
-  console.log(dbReview);
-  console.log(ls.review);
-  expect( dbReview ).toEqual(ls.review);
 });

@@ -55,3 +55,28 @@ it('fetchReviewFromServer() with existing record returns object', async () => {
   expect( fetchedReview ).toEqual( dbReview );
 
 });
+
+it('fetchReviewFromServer() with fails if 500 status code', async () => {
+
+  expect.assertions(4);
+
+  const dbReview = {
+    id: testToken,
+    last_updated: 'something',
+    ls_modified_time: new Date().toISOString(),
+    value: 'db',
+  };
+
+  ls.review = dbReview;
+
+  mock.post('../get-review/', (req, res) => {
+    expect(req.header('Content-Type')).toEqual('application/x-www-form-urlencoded');
+    expect(req.body()).toEqual( 'token=' + testToken );
+    return res.status(500).body();
+  });
+
+  await expect(ls.fetchReviewFromServer( testToken )).rejects.toBeUndefined();
+  expect(console.error.mock.calls[1][0]).toEqual('Review fetch failed.');
+
+
+});
