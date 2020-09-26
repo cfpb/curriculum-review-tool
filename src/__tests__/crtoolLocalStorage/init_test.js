@@ -34,8 +34,8 @@ it('init() gets token from LS, but LS nor server has it', async () => {
 
   expect(console.error.mock.calls.length).toBe(0);
   expect(ls.setHref.mock.calls[0][0]).toBe(C.START_PAGE_RELATIVE_URL);
-  expect(ls.localStorage.getItem('crtool.' + testToken)).toBe(null);
-  expect(ls.localStorage.getItem('curriculumReviewId')).toBe(null);
+  expect(ls.localStorage.getItem('crtool.' + testToken)).toBeNull();
+  expect(ls.localStorage.getItem('curriculumReviewId')).toBeNull();
 });
 
 it('init() gets token from LS, but LS is invalid', async () => {
@@ -47,8 +47,8 @@ it('init() gets token from LS, but LS is invalid', async () => {
 
   expect(console.error.mock.calls[0][0].message).toBe('invalid review');
   expect(ls.setHref.mock.calls[0][0]).toBe(C.START_PAGE_RELATIVE_URL);
-  expect(ls.localStorage.getItem('crtool.' + testToken)).toBe(null);
-  expect(ls.localStorage.getItem('curriculumReviewId')).toBe(null);
+  expect(ls.localStorage.getItem('crtool.' + testToken)).toBeNull();
+  expect(ls.localStorage.getItem('curriculumReviewId')).toBeNull();
 });
 
 it('init() finds DB review, but LS has older', async () => {
@@ -165,4 +165,21 @@ it('init() finds fresh review, sets local time', async () => {
   expect(ls.localStorage.getItem('crtool.' + testToken)).toContain('"value":"db"');
   expect(ls.localStorage.getItem('curriculumReviewId')).toBe(testToken);
   expect(ls.scheduleSaveIfDirty.mock.calls[0][0]).toBe(0);
+});
+
+it('init() with failed fetch from server and localStorage', async () => {
+  const dbReview = {
+    id: testToken,
+    last_updated: 'something',
+    ls_modified_time: new Date().toISOString(),
+    value: 'db',
+  };
+  ls.fetchReviewFromServer = () => { throw new Error('Test Error'); };
+  ls.redirectHome = jest.fn();
+
+  ls.localStorage.setItem('curriculumReviewId', testToken);
+
+  await expect(ls.init()).rejects.toBeUndefined;
+  expect(console.error.mock.calls[0][0].message).toBe('Test Error');
+  expect(ls.redirectHome.mock.calls.length).toBe(1);
 });
