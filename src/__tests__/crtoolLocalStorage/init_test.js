@@ -166,3 +166,20 @@ it('init() finds fresh review, sets local time', async () => {
   expect(ls.localStorage.getItem('curriculumReviewId')).toBe(testToken);
   expect(ls.scheduleSaveIfDirty.mock.calls[0][0]).toBe(0);
 });
+
+it('init() with failed fetch from server and localStorage', async () => {
+  const dbReview = {
+    id: testToken,
+    last_updated: 'something',
+    ls_modified_time: new Date().toISOString(),
+    value: 'db',
+  };
+  ls.fetchReviewFromServer = () => { throw new Error('Test Error'); };
+  ls.redirectHome = jest.fn();
+
+  ls.localStorage.setItem('curriculumReviewId', testToken);
+
+  await expect(ls.init()).rejects.toBeUndefined;
+  expect(console.error.mock.calls[0][0].message).toBe('Test Error');
+  expect(ls.redirectHome.mock.calls.length).toBe(1);
+});
