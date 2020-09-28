@@ -77,7 +77,7 @@ module.exports = {
       loc.src + '/js/**/*.js'
     ],
     dest: loc.dist + '/js/',
-    name: 'main.js'
+    name: 'crt-start.js'
   },
   images: {
     src:  loc.src + '/img/**',
