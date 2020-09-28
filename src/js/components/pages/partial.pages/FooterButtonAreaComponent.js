@@ -1,6 +1,7 @@
 import React from "react";
 
 import C from "../../../business.logic/constants";
+import SaveButton from "../../buttons/SaveButton";
 import SummaryButton from "../../buttons/SummaryButton";
 import StartOverModal from "../../dialogs/StartOverModal";
 
@@ -15,6 +16,7 @@ export default class FooterButtonAreaComponent extends React.Component {
             return (
                 <div className="m-btn-group
                                 m-btn-group__wide">
+                    <SaveButton {...this.props} />
                     <SummaryButton {...this.props} />
                     <StartOverModal clearLocalStorage={this.props.clearLocalStorage}/>
                 </div>

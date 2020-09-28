@@ -3,7 +3,7 @@ import resolveUrl from "resolve-url";
 
 import C from "../business.logic/constants";
 import Analytics from "../business.logic/analytics";
-import SaveWorkModal from "./dialogs/SaveWorkModal";
+import AccessCodeModal from "./dialogs/AccessCodeModal";
 import DistinctiveMenuBar from "./distinctives/DistinctiveMenuBar";
 import FooterButtonAreaComponent from "./pages/partial.pages/FooterButtonAreaComponent";
 import SurveyPageContainer from "./pages/SurveyPageContainer";
@@ -14,6 +14,7 @@ import DateTimeFormater from "../business.logic/dateTimeFormatter";
 import Repository from "../business.logic/repository";
 import CriterionService from "../business.logic/criterionService";
 import EfficacyCalculationService from "../business.logic/summary/efficacyCalculationService";
+import crtoolLocalStorage from "../../crtoolLocalStorage";
 
 export default class CustomerReviewToolComponent extends React.Component {
     constructor() {
@@ -43,6 +44,7 @@ export default class CustomerReviewToolComponent extends React.Component {
             efficacyIsSummaryView: Repository.getEfficacyViewSummary(),
 
             curriculumTitle: Repository.getCurriculumTitle(),
+            curriculumId: Repository.getCurriculumId(),
             publicationDate: Repository.getPublicationDate(),
             gradeRange: Repository.getGradeRange(),
 
@@ -77,7 +79,7 @@ export default class CustomerReviewToolComponent extends React.Component {
     }
 
     /*
-     * Remove all values frmo localStorage.
+     * Remove all values from localStorage.
      * Used for starting a new review
      */
     clearLocalStorage() {
@@ -173,10 +175,10 @@ export default class CustomerReviewToolComponent extends React.Component {
             this.setState({finalSummaryShowEntireReview: "false"});
 
             setTimeout(function(){
-                localStorage.setItem(C.START_PAGE, distinctiveName);
-                localStorage.setItem("currentPrintButton", "");
-                localStorage.setItem("finalSummaryShowEntireReview", "false");
-          },3000);
+                crtoolLocalStorage.setItem(C.START_PAGE, distinctiveName);
+                crtoolLocalStorage.setItem("currentPrintButton", "");
+                crtoolLocalStorage.setItem("finalSummaryShowEntireReview", "false");
+            },3000);
         }
     }
 
@@ -400,6 +402,7 @@ export default class CustomerReviewToolComponent extends React.Component {
         const applicationProps = {
             currentPage:this.state.currentPage,
             curriculumTitle:this.state.curriculumTitle,
+            curriculumId:this.state.curriculumId,
             publicationDate:this.state.publicationDate,
             dimensionOverallScores:this.state.dimensionOverallScores,
             distinctiveCompletedDate:this.state.distinctiveCompletedDate,
@@ -469,23 +472,35 @@ export default class CustomerReviewToolComponent extends React.Component {
         } else {
             return (
                 <React.Fragment>
-                    <div className="l-survey-top">
-                        <SaveWorkModal
-                            buttonText="How can I save my work?"
-                            hasIcon="true"
-                            {...applicationProps}/>
-                    </div>
                     {
                         this.state.currentPage === C.START_PAGE &&
                         <React.Fragment>
                             <div className="h5 u-mb30">You’re reviewing</div>
                             <h1>{this.state.curriculumTitle}</h1>
+                            <div className="h4 u-mb30">
+                                Access code: <strong>{this.state.curriculumId}</strong>
+                                <div className="u-inline-block u-ml15">
+                                    <AccessCodeModal
+                                        buttonText="Use this to save your work"
+                                        hasIcon="true"
+                                        {...applicationProps}/>
+                                </div>
+                            </div>
                         </React.Fragment>
                     }
                     {
                         this.state.currentPage !== C.START_PAGE &&
                         <React.Fragment>
                             <div className="h4">You’re reviewing: <strong>{this.state.curriculumTitle}</strong></div>
+                            <div className="h4">
+                                Access code: <strong>{this.state.curriculumId}</strong>
+                                <div className="u-inline-block u-ml15">
+                                    <AccessCodeModal
+                                        buttonText="Use this to save your work"
+                                        hasIcon="true"
+                                        {...applicationProps}/>
+                                </div>
+                            </div>
                         </React.Fragment>
                     }
 

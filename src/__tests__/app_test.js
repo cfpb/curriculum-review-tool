@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import localStorage from 'mock-local-storage';
+import 'mock-local-storage';
 import renderer from 'react-test-renderer';
-import jest from 'jest';
 
+import crtoolLocalStorage from '../crtoolLocalStorage';
 import App from '../App';
+
+crtoolLocalStorage.isReady = () => true;
+crtoolLocalStorage.saveIfDirty = () => 1;
 
 it('renders without crashing', () => {
   const component = renderer.create(

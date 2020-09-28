@@ -61,10 +61,9 @@ function setBeginReviewButtonEnabling() {
   document.getElementById( 'tdp-crt-begin-review-btn' ).disabled = !isEnabled;
 
   // only enable continue button if token is set
-  const curiculumIdValue = document.getElementById( 'token--continue' ).value;
+  const curriculumIdValue = document.getElementById( 'token--continue' ).value;
 
-  document.getElementById( 'continue-review' ).disabled = curiculumIdValue ? false : true;
-
+  document.getElementById( 'continue-review' ).disabled = !curriculumIdValue;
 }
 
 /**
@@ -167,9 +166,9 @@ function saveWorkOutsideClickListener( event ) {
 }
 
 /**
- * Get available tokens from localStorage.
+ * Get available reviews from localStorage.
  *
- * @returns {Array} - List of available tokens
+ * @returns {Array} - List of available reviews
  */
 function getAvailableTokens() {
   const tokens = {};
@@ -279,7 +278,7 @@ function beginReviewButtonClick( event ) {
       const review = JSON.parse( this.responseText );
       localStorage.setItem( 'curriculumReviewId', review.id );
       localStorage.setItem( 'crtool.' + review.id, JSON.stringify( review ) );
-      window.location.href = '../tool?token=' + review.id;
+      location.href = '../tool/#id=' + review.id;
     }
   };
   const requestUrl = '../create-review/';
@@ -317,17 +316,16 @@ function clearLocalStorage( event ) {
  * Bind events.
  */
 function bindEvents() {
-  $( '#modal-save-work .save-work-push-analytics' ).click( function() { closeSaveWorkModalWindow(); } );
-  $( '#modal-start-over .start-over-close-push-analytics' ).click( function() { closeNewReviewModalWindow(); } );
-  $( '#modal-start-over .start-over-push-analytics' ).click( function( event ) { clearLocalStorage( event ); } );
-  $( 'form#begin-review-form .link-push-analytics' ).click( function( event ) { openSaveWorkModalWindow( event ); } );
-  $( 'form#form__continue-review .link-push-analytics' ).click( function( event ) { openSaveWorkModalWindow( event ); } );
-  $( 'form#begin-review-form' ).submit( function( event ) { beginReviewButtonClick( event ); } );
-  $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( function( event ) { openNewReviewModalWindow( event ); } );
-  $( 'form#begin-review-form #tdp-crt_title' ).change( function() { onValuesChanged(); } );
-  $( 'form#begin-review-form #tdp-crt_grade' ).change( function() { onValuesChanged(); } );
-  $( 'form#form__continue-review #token--continue' ).change( function() { onValuesChanged(); } );
-
+  $( '#modal-save-work .save-work-push-analytics' ).click( closeSaveWorkModalWindow );
+  $( '#modal-start-over .start-over-close-push-analytics' ).click( closeNewReviewModalWindow );
+  $( '#modal-start-over .start-over-push-analytics' ).click( clearLocalStorage );
+  $( 'form#begin-review-form .link-push-analytics' ).click( openSaveWorkModalWindow );
+  $( 'form#form__continue-review .link-push-analytics' ).click( openSaveWorkModalWindow );
+  $( 'form#begin-review-form' ).submit( beginReviewButtonClick );
+  $( 'form#begin-review-form #new-review-modal-dialog-btn' ).click( openNewReviewModalWindow );
+  $( 'form#begin-review-form #tdp-crt_title' ).change( onValuesChanged );
+  $( 'form#begin-review-form #tdp-crt_grade' ).change( onValuesChanged );
+  $( 'form#form__continue-review #token--continue' ).change( onValuesChanged );
 }
 
 /**

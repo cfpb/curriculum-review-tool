@@ -1,6 +1,5 @@
 const configFile = require( '../config.js' );
 const gulp = require( 'gulp' );
-const handleErrors = require( '../utils/handle-errors' );
 const webpack = require( 'webpack' );
 const webpackConfig = require( '../webpack-config.js' );
 const webpackStream = require( 'webpack-stream' );

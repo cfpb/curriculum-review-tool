@@ -1,11 +1,13 @@
 import React from "react";
 
 import C from "../../business.logic/constants";
+import crtoolLocalStorage from "../../../crtoolLocalStorage";
 
 export default class SummaryButton extends React.Component {
 
     handleSummaryButtonClick() {
         this.props.handleSummaryButtonClick();
+        crtoolLocalStorage.saveIfDirty();
     }
 
     render() {
