@@ -24,6 +24,11 @@ urlpatterns = [
         name='get_review'
     ),
     re_path(
+        r'^continue-review/$',
+        views.continue_review,
+        name='continue_review'
+    ),
+    re_path(
         r'^update-review/$',
         views.update_review,
         name='update_review'

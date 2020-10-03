@@ -11,8 +11,12 @@ export const CHECK_FREQUENCY = 10e3;
 const ls = {
     // Use DOM LocalStorage, but allow swapping
     localStorage: localStorage,
-    pushState: window.history.pushState,
-    locationSearch: window.location.search,
+    getLocationHash() {
+      return window.location.hash;
+    },
+    setLocationHash(hash) {
+        window.location.hash = hash;
+    },
     setHref(url) {
         window.location.href = url;
     },
@@ -26,19 +30,13 @@ const ls = {
     review: {},
     lastTimeSaved: '',
     timeoutHandle: 0,
-    testing: false,
 
     redirectHome() {
-        if (ls.testing) {
-            return;
-        }
-
         ls.setHref(C.START_PAGE_RELATIVE_URL);
     },
 
     updateUrl(review_id) {
-        const new_url = ls.updateUrlParameter(ls.getHref(), 'token', review_id);
-        ls.pushState({ path: new_url }, '', new_url);
+        ls.setLocationHash('#id=' + review_id);
     },
 
     scheduleSaveIfDirty(delay) {
@@ -52,7 +50,7 @@ const ls = {
     },
 
     async init() {
-        const token = ls.getUrlParameter('token');
+        const token = ls.getUrlToken();
         let review_id = token || ls.localStorage.getItem('curriculumReviewId') || '';
         if (!review_id) {
             return ls.redirectHome();
@@ -137,16 +135,11 @@ const ls = {
      * Returns a Promise with a valid review or undefined.
      *
      * Rejects if request fails. Invalid response resolves to undefined.
-     *
-     * TODO use https://www.npmjs.com/package/xhr-mock to mock XHR
      */
     async fetchReviewFromServer(review_id) {
-        if (ls.testing) {
-            return;
-        }
-
         const xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "../get-review?token=" + review_id, true);
+        xhttp.open("POST", "../get-review/", true);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp.timeout = 5e3;
 
         return new Promise((resolve, reject) => {
@@ -169,7 +162,7 @@ const ls = {
                 }
             };
 
-            xhttp.send();
+            xhttp.send("token=" + review_id);
         });
     },
 
@@ -200,11 +193,6 @@ const ls = {
      * Rejects anytime a valid response was not received
      */
     async saveReviewToServer() {
-        if (ls.testing) {
-            ls.localStorage.setItem('crtool.' + ls.review.id, JSON.stringify(ls.review));
-            return;
-        }
-
         const xhttp = new XMLHttpRequest();
         xhttp.open("POST", "../update-review/", true);
         xhttp.timeout = 5e3;
@@ -261,31 +249,12 @@ const ls = {
         return ls.saveReviewToServer();
     },
 
-    // IE compatible method for getting a querystring parameter from a URL
-    // Credit: https://stackoverflow.com/a/901144
-    getUrlParameter(name) {
-        name = name.replace(/\[/, '\\[').replace(/]/, '\\]');
-        const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        const results = regex.exec(ls.locationSearch);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    getUrlToken() {
+        return /id=(\w+)/.test(ls.getLocationHash()) ? RegExp.$1 : '';
     },
 
-    // Add / Update a key-value pair in the URL query parameters
-    // Credit: https://gist.github.com/niyazpk/f8ac616f181f6042d1e0
-    updateUrlParameter(uri, key, value) {
-        // remove the hash part before operating on the uri
-        const i = uri.indexOf('#');
-        const hash = i === -1 ? ''  : uri.substr(i);
-        uri = i === -1 ? uri : uri.substr(0, i);
-
-        const re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-        const separator = uri.indexOf('?') !== -1 ? "&" : "?";
-        if (uri.match(re)) {
-            uri = uri.replace(re, '$1' + key + "=" + value + '$2');
-        } else {
-            uri = uri + separator + key + "=" + value;
-        }
-        return uri + hash;  // finally append the hash as well
+    setUrlToken(uri, token) {
+        return uri.replace(/#.*/, '') + '#id=' + token;
     },
 
     // TODO test that setting a novel item updates ls_modified_time on the
