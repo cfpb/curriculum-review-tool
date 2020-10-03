@@ -29,7 +29,7 @@ it('saveDirty() with changes', async () => {
   ls.saveIfDirty();
   expect(ls.cancelSaveIfDirty.mock.calls.length).toBe(1);
   expect(ls.saveReviewToServer.mock.calls.length).toBe(1);
-  expect(ls.scheduleSaveIfDirty.mock.calls.length).toBe(1);
+  expect(ls.scheduleSaveIfDirty.mock.calls.length).toBe(0);
 });
 
 it('saveDirty() without changes', async () => {
