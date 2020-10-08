@@ -2,6 +2,7 @@ import React from "react";
 
 import C from "../../business.logic/constants";
 import crtoolLocalStorage from "../../../crtoolLocalStorage";
+import SvgIcon from "../svgs/SvgIcon";
 
 const SaveStateEnum = {
     INIT: 1,
@@ -70,8 +71,13 @@ export default class SaveButton extends React.Component {
         }
 
         return (
-            <button className="a-btn" onClick={this.handleSaveButtonClick} >
-                Save my work {saveState === SaveStateEnum.WAITING && ('\u23F3')}
+            <button class="a-btn" onClick={this.handleSaveButtonClick} >
+                Save my work
+                {saveState === SaveStateEnum.WAITING && (
+                    <SvgIcon
+                        icon="updating"
+                        hasSpaceBefore="true" />)
+                }
             </button>
         );
     }

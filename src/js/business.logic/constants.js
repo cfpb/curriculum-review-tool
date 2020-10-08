@@ -109,6 +109,7 @@ const C = {
     ICON_STAR: "star",
     ICON_STAR_ROUND: "star-round",
     ICON_X_ROUND: "x-round",
+    ICON_UPDATING: "updating",
 
     STATUS_IN_START: "",
     STATUS_IN_PROGRESS: "in progress",
