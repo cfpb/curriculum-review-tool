@@ -237,15 +237,16 @@ const ls = {
     },
 
     // TODO see https://jestjs.io/docs/en/24.x/timer-mocks#run-pending-timers
-    saveIfDirty() {
+    async saveIfDirty(force = false) {
         // If called from an imperative action, we don't want to clear the existing schedule
         ls.cancelSaveIfDirty();
 
-        if (ls.review.ls_modified_time > ls.lastTimeSaved) {
-            ls.saveReviewToServer();
+        if (!force && ls.review.ls_modified_time <= ls.lastTimeSaved) {
+            ls.scheduleSaveIfDirty(CHECK_FREQUENCY);
+            return;
         }
 
-        ls.scheduleSaveIfDirty(CHECK_FREQUENCY);
+        return ls.saveReviewToServer();
     },
 
     getUrlToken() {
