@@ -65,7 +65,7 @@ export default class SaveButton extends React.Component {
         if (saveState === SaveStateEnum.SAVED) {
             return (
                 <button className="a-btn" disabled={true}>
-                    Saved {'\u2714'}
+                    Saved <SvgIcon icon="check-round" />
                 </button>
             );
         }
