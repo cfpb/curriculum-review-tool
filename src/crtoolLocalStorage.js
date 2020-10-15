@@ -212,10 +212,10 @@ const ls = {
 
                 const review = JSON.parse(xhttp.responseText);
                 if (ls.isValidReview(review)) {
-                    console.info('Received response', ls);
+                    // console.info('Received response', ls);
 
                     if (ls.review.ls_modified_time > ls.lastTimeSaved) {
-                        console.info('Scheduling re-save...');
+                        // console.info('Scheduling re-save...');
                         // Leave dirty and don't overwrite local storage
                     } else {
                         ls.review = review;
@@ -231,7 +231,7 @@ const ls = {
             };
 
             ls.lastTimeSaved = ls.review.ls_modified_time;
-            console.info(`Saving version ${ls.lastTimeSaved}`);
+            // console.info(`Saving version ${ls.lastTimeSaved}`);
             xhttp.send(JSON.stringify(ls.review));
         });
     },
