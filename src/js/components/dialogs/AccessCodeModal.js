@@ -113,7 +113,10 @@ export default class AccessCodeModal extends React.Component {
                                     </button>
                                     <h2 id="modal-access-code_title" className="h3">Access code</h2>
                                     <div id="modal-access-code_desc">
-                                        <p>The access code is unique to this review. To return to a review you have already started, you need to save this code.</p>
+                                        <p>
+                                            The access code is unique to this review. To return to a review you have already started, you will need this code.
+                                            Please either bookmark this page, or copy and save the code in your personal files.
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="o-modal_footer">
