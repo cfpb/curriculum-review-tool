@@ -1,6 +1,6 @@
 # Curriculum Review Tool
 
-The [Curriculum Review Tool](https://www.consumerfinance.gov/practitioner-resources/youth-financial-education/curriculum-review/tool/) is an interactive tool that allows a teacher to assess the merits of a financial education curriculum. It is an alternative to the existing [paper-based tool](https://files.consumerfinance.gov/f/documents/cfpb_youth-financial-education-curriculum-review-tool.pdf). The assessment is made across four dimensions: content, quality, utility, and efficacy. After responding to questions in each of those dimensions, users can print or save a PDF the results of the assessment.
+The [Curriculum Review Tool](https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/curriculum-review/before-you-begin/) is an interactive tool that allows a teacher to assess the merits of a financial education curriculum. It is an alternative to the existing [paper-based tool](https://files.consumerfinance.gov/f/documents/cfpb_youth-financial-education-curriculum-review-tool.pdf). The assessment is made across four dimensions: content, quality, utility, and efficacy. After responding to questions in each of those dimensions, users can print or save a PDF the results of the assessment.
 
 ![Screenshot of the tool's navigation bar showing the four dimensions](DimensionButtons.png)
 
@@ -25,7 +25,7 @@ The CR Tool will only work fully in the context of consumerfinance.gov.
 1. Clone this repository and install it locally into your consumerfinance.gov environment, following [the consumerfinance.gov docs for working on satellite apps](https://cfpb.github.io/consumerfinance.gov/related-projects/#developing-python-packages-with-consumerfinancegov).
 1. In this repository's root, run `./setup.sh` to install front-end dependencies and do an initial build.
 1. Start your development server
-1. Go to http://localhost:8000/practitioner-resources/youth-financial-education/curriculum-review/before-you-begin/
+1. Go to http://localhost:8000/consumer-tools/educator-tools/youth-financial-education/curriculum-review/before-you-begin/
 
 If this page doesn't come up, you may need to set the `TDP_CRTOOL` flag to `True` in the Flags section of your local Wagtail admin.
 
