@@ -11,7 +11,15 @@ from crtool.models import CurriculumReviewSession
 
 def create_review(request):
     if request.method == 'POST':
-        fd = json.loads(request.body.decode("utf-8"))
+        body_str = request.body.decode("utf-8")
+        # Allow 200 for title, 50 for date, and 30 for JSON wrapper
+        if len(body_str) > (200 + 50 + 30):
+            return HttpResponse(status=400)
+
+        try:
+            fd = json.loads(body_str)
+        except:
+            return HttpResponse(status=400)
 
         title = fd['tdp-crt_title'] if 'tdp-crt_title' in fd else ''
         pub_date = fd['tdp-crt_pubdate'] if 'tdp-crt_pubdate' in fd else ''
@@ -83,7 +91,17 @@ def continue_review(request):
 
 def update_review(request):
     if request.method == 'POST':
-        data = json.loads(request.body.decode("utf-8"))
+        body_str = request.body.decode("utf-8")
+        # Pasting in tons of lorem ipsum content (1,280 words 8,660 characters) everywhere
+        # brought total body bytes to 295360, so this is more than generous.
+        if len(body_str) > 500000:
+            return HttpResponse(status=400)
+
+        try:
+            data = json.loads(body_str)
+        except:
+            return HttpResponse(status=400)
+
         if "id" in data:
             try:
                 review = CurriculumReviewSession.objects.get(id=data["id"])
