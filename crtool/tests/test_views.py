@@ -350,15 +350,7 @@ class UpdateReviewTest(TestCase):
             "curriculumTitle": "Updated title",
             "publicationDate": ""
         }
-        compare = {
-            "id": "242449c9251243c1b512d2",
-            "pass_code": None,
-            "gradeRange": "Middle school",
-            "last_updated": "2020-07-12 04:52:56.858970+00:00",
-            "curriculumTitle": "Updated title",
-            "publicationDate": ""
-        }
-        self.check_post(post, self.assertUpdateSuccess, compare=compare)
+        self.check_post(post, self.assertUpdateSuccess, compare=post)
 
     # Test with token id that doesn't exist
     def test_non_existent_id(self):
@@ -427,8 +419,11 @@ class UpdateReviewTest(TestCase):
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
             "publicationDate": "",
-            "junk": "0123456789" * 60000,
+            "junk": "0123456789" * 49000,
         }
+        self.check_post(post, self.assertUpdateSuccess, compare=post)
+
+        post["junk"] = "0123456789" * 50000
         self.check_post(post, self.assertBadRequest, content=b"Too Large")
 
     # Test empty post
