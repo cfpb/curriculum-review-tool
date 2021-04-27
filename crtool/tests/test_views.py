@@ -1,7 +1,7 @@
 # from django.test import TestCase
 import json
 
-from django.test import Client, RequestFactory, TestCase
+from django.test import RequestFactory, TestCase
 from django.urls import reverse
 
 from crtool.views import (
@@ -35,9 +35,9 @@ class CreateReviewTest(TestCase):
                 return False
         return True
 
-    def check_post(self, post, response_check, ajax=False, compare={}, content=None):
+    def check_post(self, post, response_check, ajax=False, compare={}, content=None):  # noqa 501
         if compare:
-            response_check(self.post(post, ajax=ajax), compare=compare, content=content)
+            response_check(self.post(post, ajax=ajax), compare=compare, content=content)  # noqa 501
         else:
             response_check(self.post(post, ajax=ajax), content=content)
 
@@ -46,7 +46,10 @@ class CreateReviewTest(TestCase):
             "HTTP_X_REQUESTED_WITH": "XMLHttpRequest",
             "content_type": "application/json",
         }
-        request = self.factory.post(reverse("create_review"), "invalid:json}", **kwargs)
+        request = self.factory.post(
+            reverse("create_review"),
+            "invalid:json}",
+            **kwargs)
         self.assertBadRequest(create_review(request), b"Invalid JSON")
 
     def test_missing_title(self):
@@ -320,9 +323,9 @@ class UpdateReviewTest(TestCase):
             return False
         return True
 
-    def check_post(self, post, response_check, ajax=False, compare={}, content=None):
+    def check_post(self, post, response_check, ajax=False, compare={}, content=None):  # noqa 501
         if compare:
-            response_check(self.post(post, ajax=ajax), compare=compare, content=content)
+            response_check(self.post(post, ajax=ajax), compare=compare, content=content)  # noqa 501
         else:
             response_check(self.post(post, ajax=ajax), content=content)
 
@@ -331,7 +334,10 @@ class UpdateReviewTest(TestCase):
             "HTTP_X_REQUESTED_WITH": "XMLHttpRequest",
             "content_type": "application/json",
         }
-        request = self.factory.post(reverse("update_review"), "invalid:json}", **kwargs)
+        request = self.factory.post(
+            reverse("update_review"),
+            "invalid:json}",
+            **kwargs)
         self.assertBadRequest(update_review(request), b"Invalid JSON")
 
     # Test with token id that exists
@@ -444,7 +450,7 @@ class ContinueReviewTest(TestCase):
 
     def post(self, post):
         kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"}
-        request = self.factory.post(reverse("continue_review"), post, **kwargs)
+        request = self.factory.post(reverse("continue_review"), post, **kwargs)  # noqa 501
         return continue_review(request)
 
     def test_non_existent_pass_code(self):
