@@ -194,7 +194,7 @@ function setUpTokenDropdown() {
   const review = getCurrentReview();
 
   for ( const token in tokens ) {
-    if (tokens.hasOwnProperty( token )) {
+    if ( tokens.hasOwnProperty( token ) ) {
       const option = document.createElement( 'option' );
       option.text = tokens[token];
       option.value = token;
