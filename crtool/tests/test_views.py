@@ -1,4 +1,3 @@
-# from django.test import TestCase
 import json
 
 from django.test import RequestFactory, TestCase
@@ -23,21 +22,34 @@ class CreateReviewTest(TestCase):
         request = self.factory.post(reverse("create_review"), post, **kwargs)
         return create_review(request)
 
-    def assertBadRequest(self, response):
+    def assertBadRequest(self, response, content=None):
         self.assertEqual(response.status_code, 400)
+        if content:
+            self.assertEqual(response.content, content)
 
-    def assertCreateSuccess(self, response, compare={}):
+    def assertCreateSuccess(self, response, compare={}, content=None):
         data = json.loads(response.content.decode("utf-8"))
         for k, v in compare.items():
             if not self.assertEqual(data[k], compare[k]):
                 return False
         return True
 
-    def check_post(self, post, response_check, ajax=False, compare={}):
+    def check_post(self, post, response_check, ajax=False, compare={}, content=None):  # noqa 501
         if compare:
-            response_check(self.post(post, ajax=ajax), compare=compare)
+            response_check(self.post(post, ajax=ajax), compare=compare, content=content)  # noqa 501
         else:
-            response_check(self.post(post, ajax=ajax))
+            response_check(self.post(post, ajax=ajax), content=content)
+
+    def test_invalid_json(self):
+        kwargs = {
+            "HTTP_X_REQUESTED_WITH": "XMLHttpRequest",
+            "content_type": "application/json",
+        }
+        request = self.factory.post(
+            reverse("create_review"),
+            "invalid:json}",
+            **kwargs)
+        self.assertBadRequest(create_review(request), b"Invalid JSON")
 
     def test_missing_title(self):
         post = {
@@ -55,6 +67,15 @@ class CreateReviewTest(TestCase):
             "tdp-crt_pass_code": "P455W0RD"
         }
         self.check_post(post, self.assertBadRequest)
+
+    def test_long_title(self):
+        post = {
+            "tdp-crt_title": "Test title" * 100,
+            "tdp-crt_pubdate": "Jan 1, 2001",
+            "tdp-crt_grade": "Elementary school",
+            "tdp-crt_pass_code": "P455W0RD"
+        }
+        self.check_post(post, self.assertBadRequest, content=b"Too Large")
 
     def test_missing_grade_level(self):
         post = {
@@ -282,13 +303,15 @@ class UpdateReviewTest(TestCase):
         request = self.factory.post(reverse("update_review"), post, **kwargs)
         return update_review(request)
 
-    def assertBadRequest(self, response):
+    def assertBadRequest(self, response, content=None):
         self.assertEqual(response.status_code, 400)
+        if content:
+            self.assertEqual(response.content, content)
 
-    def assertPageNotFound(self, response):
+    def assertPageNotFound(self, response, content=None):
         self.assertEqual(response.status_code, 404)
 
-    def assertUpdateSuccess(self, response, compare={}):
+    def assertUpdateSuccess(self, response, compare={}, content=None):
         data = json.loads(response.content.decode("utf-8"))
         # Return False if updated review doesn't match comparison.
         for k, v in compare.items():
@@ -299,11 +322,22 @@ class UpdateReviewTest(TestCase):
             return False
         return True
 
-    def check_post(self, post, response_check, ajax=False, compare={}):
+    def check_post(self, post, response_check, ajax=False, compare={}, content=None):  # noqa 501
         if compare:
-            response_check(self.post(post, ajax=ajax), compare=compare)
+            response_check(self.post(post, ajax=ajax), compare=compare, content=content)  # noqa 501
         else:
-            response_check(self.post(post, ajax=ajax))
+            response_check(self.post(post, ajax=ajax), content=content)
+
+    def test_invalid_json(self):
+        kwargs = {
+            "HTTP_X_REQUESTED_WITH": "XMLHttpRequest",
+            "content_type": "application/json",
+        }
+        request = self.factory.post(
+            reverse("update_review"),
+            "invalid:json}",
+            **kwargs)
+        self.assertBadRequest(update_review(request), b"Invalid JSON")
 
     # Test with token id that exists
     def test_update_title(self):
@@ -315,15 +349,7 @@ class UpdateReviewTest(TestCase):
             "curriculumTitle": "Updated title",
             "publicationDate": ""
         }
-        compare = {
-            "id": "242449c9251243c1b512d2",
-            "pass_code": None,
-            "gradeRange": "Middle school",
-            "last_updated": "2020-07-12 04:52:56.858970+00:00",
-            "curriculumTitle": "Updated title",
-            "publicationDate": ""
-        }
-        self.check_post(post, self.assertUpdateSuccess, compare=compare)
+        self.check_post(post, self.assertUpdateSuccess, compare=post)
 
     # Test with token id that doesn't exist
     def test_non_existent_id(self):
@@ -384,6 +410,21 @@ class UpdateReviewTest(TestCase):
         }
         self.check_post(post, self.assertPageNotFound)
 
+    def test_overly_large_body(self):
+        post = {
+            "id": "242449c9251243c1b512d2",
+            "pass_code": None,
+            "gradeRange": "Middle school",
+            "last_updated": "2020-07-12 04:52:56.858970+00:00",
+            "curriculumTitle": "Updated title",
+            "publicationDate": "",
+            "junk": "0123456789" * 49000,
+        }
+        self.check_post(post, self.assertUpdateSuccess, compare=post)
+
+        post["junk"] = "0123456789" * 50000
+        self.check_post(post, self.assertBadRequest, content=b"Too Large")
+
     # Test empty post
     def test_empty_post(self):
         post = {}
@@ -403,7 +444,7 @@ class ContinueReviewTest(TestCase):
 
     def post(self, post):
         kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"}
-        request = self.factory.post(reverse("continue_review"), post, **kwargs)
+        request = self.factory.post(reverse("continue_review"), post, **kwargs)  # noqa 501
         return continue_review(request)
 
     def test_non_existent_pass_code(self):

@@ -194,13 +194,15 @@ function setUpTokenDropdown() {
   const review = getCurrentReview();
 
   for ( const token in tokens ) {
-    let markup;
-    if ( review && review.id === token ) {
-      markup = '<option value="' + token + '" selected="selected">' + tokens[token] + '</option>';
-    } else {
-      markup = '<option value="' + token + '">' + tokens[token] + '</option>';
+    if ( tokens.hasOwnProperty( token ) ) {
+      const option = document.createElement( 'option' );
+      option.text = tokens[token];
+      option.value = token;
+      if ( review && review.id === token ) {
+        option.selected = true;
+      }
+      $( '#token--continue' ).append( option );
     }
-    $( '#token--continue' ).append( markup );
   }
   $( '#token--continue' ).select2( {
     tags: true,
