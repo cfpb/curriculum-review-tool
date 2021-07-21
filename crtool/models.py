@@ -2,7 +2,6 @@
 import random
 import string
 
-from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.utils import timezone
 
@@ -11,7 +10,7 @@ class CurriculumReviewSession(models.Model):
     """Session state of a Curriculum Review"""
     id = models.CharField(primary_key=True, max_length=50, editable=False)
     pass_code = models.CharField(max_length=50, null=True, blank=True)
-    data = JSONField()
+    data = models.JSONField()
     last_updated = models.DateTimeField('Updated', default=timezone.now)
 
     def id_generator(size=22, chars=string.ascii_letters + string.digits):
