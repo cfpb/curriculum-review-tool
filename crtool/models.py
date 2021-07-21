@@ -2,15 +2,21 @@
 import random
 import string
 
+from django import VERSION as DJANGO_VERSION
 from django.db import models
 from django.utils import timezone
+
+if DJANGO_VERSION[0] < 3:
+    from django.contrib.postgres.fields import JSONField
+else:
+    from django.db.models import JSONField
 
 
 class CurriculumReviewSession(models.Model):
     """Session state of a Curriculum Review"""
     id = models.CharField(primary_key=True, max_length=50, editable=False)
     pass_code = models.CharField(max_length=50, null=True, blank=True)
-    data = models.JSONField()
+    data = JSONField()
     last_updated = models.DateTimeField('Updated', default=timezone.now)
 
     def id_generator(size=22, chars=string.ascii_letters + string.digits):
