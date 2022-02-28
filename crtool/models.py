@@ -6,6 +6,7 @@ from django import VERSION as DJANGO_VERSION
 from django.db import models
 from django.utils import timezone
 
+
 if DJANGO_VERSION[0] < 3:
     from django.contrib.postgres.fields import JSONField
 else:
