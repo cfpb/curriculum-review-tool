@@ -1,3 +1,5 @@
+import React from "react";
+
 /*
 This file contains all constants in the app.
 */
@@ -24,12 +26,12 @@ const C = {
     QUALITY_PRINT_SUMMARY: "Print or save summary",
     EFFICACY_PRINT_SUMMARY: "Print or save summary",
     
-    CONTENT_ESSENTIAL_ANSWER_TOTAL_TEXT: "<b>Your answers for these components:</b>",
-    UTILITY_ESSENTIAL_ANSWER_TOTAL_TEXT: "<b>Your answers for essential components:</b>",
-    QUALITY_ESSENTIAL_ANSWER_TOTAL_TEXT: "<b>Your answers for essential components:</b>",
+    CONTENT_ESSENTIAL_ANSWER_TOTAL_TEXT: (<b>Your answers for these components:</b>),
+    UTILITY_ESSENTIAL_ANSWER_TOTAL_TEXT: (<b>Your answers for essential components:</b>),
+    QUALITY_ESSENTIAL_ANSWER_TOTAL_TEXT: (<b>Your answers for essential components:</b>),
     
-    UTILITY_BENEFICIAL_ANSWER_TOTAL_TEXT: "<b>Your answers for beneficial components:</b>",
-    QUALITY_BENEFICIAL_ANSWER_TOTAL_TEXT: "<b>Your answers for beneficial components:</b>",
+    UTILITY_BENEFICIAL_ANSWER_TOTAL_TEXT: (<b>Your answers for beneficial components:</b>),
+    QUALITY_BENEFICIAL_ANSWER_TOTAL_TEXT: (<b>Your answers for beneficial components:</b>),
 
     CONTENT_STATUS: "content_status",
     UTILITY_STATUS: "utility_status",

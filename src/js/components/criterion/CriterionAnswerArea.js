@@ -17,7 +17,7 @@ export default class CriterionAnswerArea extends React.Component {
             text = <p className="o-survey_question-helper">No information provided</p>;
         }
         if (this.props.componentData.hasInlineHtml && text !== undefined) {
-            return (<div className="u-mb15" dangerouslySetInnerHTML={{__html: text}} />);
+            return (<div className="u-mb15">{text}</div>);
         } else {
             return (<p>{text}</p>);
         }
