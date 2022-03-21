@@ -27,13 +27,13 @@ export default class QualityCriterionComponent extends React.Component {
                         <div className="o-survey_question">
                             <legend className="o-survey_legend">
                                 { this.props.component.hasInlineHtml === true && 
-                                    <div className="u-mb15" dangerouslySetInnerHTML={{__html: this.props.component.componentText}} />
+                                    <div className="u-mb15">{this.props.component.componentText}</div>
                                 }
                                 { this.props.component.hasInlineHtml !== true && 
                                     <p>{this.props.component.componentText}</p>
                                 }
                                 {this.props.component.componentTextList &&
-                                    <ul dangerouslySetInnerHTML={{__html: this.props.component.componentTextList}} />
+                                    <ul>{this.props.component.componentTextList}</ul>
                                 }
                                 {this.props.component.showBeneficialText === true && 
                                     <p className="o-survey_question-helper">Beneficial, but not essential.</p>

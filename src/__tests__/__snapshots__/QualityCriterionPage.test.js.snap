@@ -152,12 +152,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        paper-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Are paper-based materials available at no cost or for a clearly stated price?
+                    </p>
+                  </div>
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -241,12 +246,18 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        links
+                      </strong>
+                      :
+                    </p>
+                    <p>
+                      Do the links take the user to the appropriate, live website?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -326,12 +337,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        web-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Can web-based material be accessed without purchasing specialized software?
+                    </p>
+                  </div>
                   <p
                     className="o-survey_question-helper"
                   >
@@ -470,12 +486,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are limitations on use, are 
+                      <strong>
+                        limitations clearly specified
+                      </strong>
+                      ? (e.g., materials are copyrighted or must be purchased)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -1124,12 +1143,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        paper-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Are paper-based materials available at no cost or for a clearly stated price?
+                    </p>
+                  </div>
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -1213,12 +1237,18 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        links
+                      </strong>
+                      :
+                    </p>
+                    <p>
+                      Do the links take the user to the appropriate, live website?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -1298,12 +1328,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        web-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Can web-based material be accessed without purchasing specialized software?
+                    </p>
+                  </div>
                   <p
                     className="o-survey_question-helper"
                   >
@@ -1442,12 +1477,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are limitations on use, are 
+                      <strong>
+                        limitations clearly specified
+                      </strong>
+                      ? (e.g., materials are copyrighted or must be purchased)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -1969,12 +2007,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Have some or all of the materials been published or updated within the <strong>last three years</strong>?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Have some or all of the materials been published or updated within the 
+                      <strong>
+                        last three years
+                      </strong>
+                      ?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -2928,12 +2969,19 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Are the visuals <strong>informative</strong> and <strong>related to the text</strong>?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Are the visuals 
+                      <strong>
+                        informative
+                      </strong>
+                       and 
+                      <strong>
+                        related to the text
+                      </strong>
+                      ?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -2994,12 +3042,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Do the visuals focus on <strong>core concepts</strong>? (e.g., not prioritizing unimportant information because it is easier to display)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Do the visuals focus on 
+                      <strong>
+                        core concepts
+                      </strong>
+                      ? (e.g., not prioritizing unimportant information because it is easier to display)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3060,12 +3111,19 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Are visual displays clearly <strong>labeled</strong> and in <strong>close proximity to related text</strong>?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Are visual displays clearly 
+                      <strong>
+                        labeled
+                      </strong>
+                       and in 
+                      <strong>
+                        close proximity to related text
+                      </strong>
+                      ?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3126,12 +3184,19 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Is the content organized <strong>logically</strong> and <strong>consistently</strong>?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Is the content organized 
+                      <strong>
+                        logically
+                      </strong>
+                       and 
+                      <strong>
+                        consistently
+                      </strong>
+                      ?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3224,12 +3289,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Is the text <strong>easy to read</strong>? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Is the text 
+                      <strong>
+                        easy to read
+                      </strong>
+                      ? (e.g., simple fonts, serif, large enough type, normal spacing, unjustified paragraphs, white spaces between columns, capitalization consistent with normal use)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3290,12 +3358,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Are web-based materials organized in <strong>logical</strong> and manageable sections?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Are web-based materials organized in 
+                      <strong>
+                        logical
+                      </strong>
+                       and manageable sections?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3356,12 +3427,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Is the web-based presentation <strong>readable</strong>? (e.g., maximum of 60 characters per line, use of full screen)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Is the web-based presentation 
+                      <strong>
+                        readable
+                      </strong>
+                      ? (e.g., maximum of 60 characters per line, use of full screen)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3422,12 +3496,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Are web-based materials <strong>easy to navigate</strong>? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Are web-based materials 
+                      <strong>
+                        easy to navigate
+                      </strong>
+                      ? (e.g., organized with a menu, easy to switch between lessons/sections, able to resume where last left off)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3662,12 +3739,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        paper-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Are paper-based materials available at no cost or for a clearly stated price?
+                    </p>
+                  </div>
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -3751,12 +3833,18 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        links
+                      </strong>
+                      :
+                    </p>
+                    <p>
+                      Do the links take the user to the appropriate, live website?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -3836,12 +3924,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        web-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Can web-based material be accessed without purchasing specialized software?
+                    </p>
+                  </div>
                   <p
                     className="o-survey_question-helper"
                   >
@@ -3980,12 +4073,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are limitations on use, are 
+                      <strong>
+                        limitations clearly specified
+                      </strong>
+                      ? (e.g., materials are copyrighted or must be purchased)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -4507,12 +4603,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>Have some or all of the materials been published or updated within the <strong>last three years</strong>?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      Have some or all of the materials been published or updated within the 
+                      <strong>
+                        last three years
+                      </strong>
+                      ?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -5022,12 +5121,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        paper-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Are paper-based materials available at no cost or for a clearly stated price?
+                    </p>
+                  </div>
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -5111,12 +5215,18 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        links
+                      </strong>
+                      :
+                    </p>
+                    <p>
+                      Do the links take the user to the appropriate, live website?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -5196,12 +5306,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        web-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Can web-based material be accessed without purchasing specialized software?
+                    </p>
+                  </div>
                   <p
                     className="o-survey_question-helper"
                   >
@@ -5340,12 +5455,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are limitations on use, are 
+                      <strong>
+                        limitations clearly specified
+                      </strong>
+                      ? (e.g., materials are copyrighted or must be purchased)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -6012,12 +6130,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>paper-based materials:</strong></p><p>Are paper-based materials available at no cost or for a clearly stated price?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        paper-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Are paper-based materials available at no cost or for a clearly stated price?
+                    </p>
+                  </div>
                 </legend>
                 <div
                   className="m-form-field m-form-field__text u-mt30"
@@ -6101,12 +6224,18 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>links</strong>:</p><p>Do the links take the user to the appropriate, live website?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        links
+                      </strong>
+                      :
+                    </p>
+                    <p>
+                      Do the links take the user to the appropriate, live website?
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div
@@ -6186,12 +6315,17 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are <strong>web-based materials:</strong></p><p>Can web-based material be accessed without purchasing specialized software?</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are 
+                      <strong>
+                        web-based materials:
+                      </strong>
+                    </p>
+                    <p>
+                      Can web-based material be accessed without purchasing specialized software?
+                    </p>
+                  </div>
                   <p
                     className="o-survey_question-helper"
                   >
@@ -6330,12 +6464,15 @@ Array [
                 >
                   <div
                     className="u-mb15"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<p>If there are limitations on use, are <strong>limitations clearly specified</strong>? (e.g., materials are copyrighted or must be purchased)</p>",
-                      }
-                    }
-                  />
+                  >
+                    <p>
+                      If there are limitations on use, are 
+                      <strong>
+                        limitations clearly specified
+                      </strong>
+                      ? (e.g., materials are copyrighted or must be purchased)
+                    </p>
+                  </div>
                 </legend>
               </div>
               <div

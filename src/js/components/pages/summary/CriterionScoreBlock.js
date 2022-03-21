@@ -60,7 +60,7 @@ export default class CriterionScoreBlock extends React.Component {
 
     renderExceedsText() {
         if (this.props.criterionExceedsText) {
-            return (<div dangerouslySetInnerHTML={{__html: this.props.criterionExceedsText}} />);
+            return (<div>{this.props.criterionExceedsText}</div>);
         } else {
             return null;
         }
@@ -68,7 +68,7 @@ export default class CriterionScoreBlock extends React.Component {
 
     renderMeetsText() {
         if (this.props.criterionMeetsText) {
-            return (<div dangerouslySetInnerHTML={{__html: this.props.criterionMeetsText}} />);
+            return (<div>{this.props.criterionMeetsText}</div>);
         } else {
             return null;
         }
@@ -76,7 +76,7 @@ export default class CriterionScoreBlock extends React.Component {
 
     renderDoesNotMeetText() {
         if (this.props.criterionDoesNotMeetText) {
-            return (<div dangerouslySetInnerHTML={{__html: this.props.criterionDoesNotMeetText}} />);
+            return (<div>{this.props.criterionDoesNotMeetText}</div>);
         } else {
             return null;
         }
@@ -112,14 +112,14 @@ export default class CriterionScoreBlock extends React.Component {
     }
 
     renderEssential() {
-        let essentialAnswerTotalText = "<b>Your answers for essential components:</b>";
+        let essentialAnswerTotalText = (<b>Your answers for essential components:</b>);
         if (this.props.essentialAnswerTotalText !== undefined && this.props.essentialAnswerTotalText !== "") {
             essentialAnswerTotalText = this.props.essentialAnswerTotalText;
         }
 
         return (
             <React.Fragment>
-                <p dangerouslySetInnerHTML={{__html: essentialAnswerTotalText}} />
+                <p>{essentialAnswerTotalText}</p>
                 <ul className="m-component-list">
                     <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_yes}</b> Yes</li>
                     <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].essential_total_no}</b> No</li>
@@ -129,14 +129,14 @@ export default class CriterionScoreBlock extends React.Component {
     }
 
     renderBeneficial() {
-        let beneficialAnswerTotalText = "<b>Your answers for beneficial components:</b>";
+        let beneficialAnswerTotalText = (<b>Your answers for beneficial components:</b>);
         if (this.props.beneficialAnswerTotalText !== undefined && this.props.beneficialAnswerTotalText !== "") {
             beneficialAnswerTotalText = this.props.beneficialAnswerTotalText;
         }
         if (this.props.showBeneficial) {
             return (
                 <React.Fragment>
-                    <p dangerouslySetInnerHTML={{__html: beneficialAnswerTotalText}} />
+                    <p>{beneficialAnswerTotalText}</p>
                     <ul className="m-component-list">
                         <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_yes}</b> Yes</li>
                         <li><b>{this.props.criterionScores[this.props.dimensionKey + this.props.criterionNumber].beneficial_total_no}</b> No</li>

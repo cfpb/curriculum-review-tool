@@ -26,9 +26,9 @@ export default class UtilityCriterionComponent extends React.Component {
                     <div className="o-survey_component">
                         <div className="o-survey_question">
                             <legend className="o-survey_legend">
-                                <p dangerouslySetInnerHTML={{__html: this.props.component.componentText}} />
+                                <p>{this.props.component.componentText}</p>
                                 {this.props.component.componentTextList &&
-                                    <ul dangerouslySetInnerHTML={{__html: this.props.component.componentTextList}} />
+                                    <ul>{this.props.component.componentTextList}</ul>
                                 }
                                 {this.props.component.showBeneficialText === true && 
                                     <p className="o-survey_question-helper">Beneficial, but not essential.</p>

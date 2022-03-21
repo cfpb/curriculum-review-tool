@@ -92,13 +92,11 @@ Array [
                   Exceeds
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
-                  }
-                }
-              />
+              <div>
+                All essential components scored “yes”
+                <br />
+                At least one beneficial component scored “yes”
+              </div>
             </div>
           </div>
         </div>
@@ -140,13 +138,11 @@ Array [
                   Meets
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
-                  }
-                }
-              />
+              <div>
+                All essential components scored “yes”
+                <br />
+                None of the beneficial components scored “yes”
+              </div>
             </div>
           </div>
         </div>
@@ -188,13 +184,9 @@ Array [
                   Does not meet
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "One or more essential components scored “no”",
-                  }
-                }
-              />
+              <div>
+                One or more essential components scored “no”
+              </div>
             </div>
           </div>
         </div>
@@ -203,13 +195,11 @@ Array [
     <div
       className="m-curriculum-status_components"
     >
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Your answers for essential components:</b>",
-          }
-        }
-      />
+      <p>
+        <b>
+          Your answers for essential components:
+        </b>
+      </p>
       <ul
         className="m-component-list"
       >
@@ -226,13 +216,11 @@ Array [
            No
         </li>
       </ul>
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Your answers for beneficial components:</b>",
-          }
-        }
-      />
+      <p>
+        <b>
+          Your answers for beneficial components:
+        </b>
+      </p>
       <ul
         className="m-component-list"
       >
@@ -328,13 +316,9 @@ Array [
                   Meets
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "All essential components scored “yes”",
-                  }
-                }
-              />
+              <div>
+                All essential components scored “yes”
+              </div>
             </div>
           </div>
         </div>
@@ -376,13 +360,9 @@ Array [
                   Does not meet
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "One or more essential components scored “no”",
-                  }
-                }
-              />
+              <div>
+                One or more essential components scored “no”
+              </div>
             </div>
           </div>
         </div>
@@ -391,13 +371,11 @@ Array [
     <div
       className="m-curriculum-status_components"
     >
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Your answers for essential components:</b>",
-          }
-        }
-      />
+      <p>
+        <b>
+          Your answers for essential components:
+        </b>
+      </p>
       <ul
         className="m-component-list"
       >
@@ -493,13 +471,11 @@ Array [
                   Exceeds
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "All essential components scored “yes”<br />At least one beneficial component scored “yes”",
-                  }
-                }
-              />
+              <div>
+                All essential components scored “yes”
+                <br />
+                At least one beneficial component scored “yes”
+              </div>
             </div>
           </div>
         </div>
@@ -541,13 +517,11 @@ Array [
                   Meets
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "All essential components scored “yes”<br />None of the beneficial components scored “yes”",
-                  }
-                }
-              />
+              <div>
+                All essential components scored “yes”
+                <br />
+                None of the beneficial components scored “yes”
+              </div>
             </div>
           </div>
         </div>
@@ -589,13 +563,9 @@ Array [
                   Does not meet
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "One or more essential components scored “no”",
-                  }
-                }
-              />
+              <div>
+                One or more essential components scored “no”
+              </div>
             </div>
           </div>
         </div>
@@ -604,13 +574,11 @@ Array [
     <div
       className="m-curriculum-status_components"
     >
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Your answers for essential components:</b>",
-          }
-        }
-      />
+      <p>
+        <b>
+          Your answers for essential components:
+        </b>
+      </p>
       <ul
         className="m-component-list"
       >
@@ -627,13 +595,11 @@ Array [
            No
         </li>
       </ul>
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Your answers for beneficial components:</b>",
-          }
-        }
-      />
+      <p>
+        <b>
+          Your answers for beneficial components:
+        </b>
+      </p>
       <ul
         className="m-component-list"
       >
@@ -729,13 +695,9 @@ Array [
                   Meets
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "All essential components scored “yes”",
-                  }
-                }
-              />
+              <div>
+                All essential components scored “yes”
+              </div>
             </div>
           </div>
         </div>
@@ -777,13 +739,9 @@ Array [
                   Does not meet
                 </strong>
               </div>
-              <div
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "One or more essential components scored “no”",
-                  }
-                }
-              />
+              <div>
+                One or more essential components scored “no”
+              </div>
             </div>
           </div>
         </div>
@@ -792,13 +750,11 @@ Array [
     <div
       className="m-curriculum-status_components"
     >
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Your answers for essential components:</b>",
-          }
-        }
-      />
+      <p>
+        <b>
+          Your answers for essential components:
+        </b>
+      </p>
       <ul
         className="m-component-list"
       >

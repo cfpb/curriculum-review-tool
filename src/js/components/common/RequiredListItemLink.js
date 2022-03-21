@@ -44,7 +44,7 @@ export default class RequiredListItemLink extends React.Component {
     }
 
     getComponentText() {
-        return (<div dangerouslySetInnerHTML={{__html: this.props.criterion.componentText}} />);
+        return (<div>{this.props.criterion.componentText}</div>);
     }
 
     render() {
