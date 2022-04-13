@@ -12,13 +12,12 @@ from crtool.views import (
 
 
 class CreateReviewTest(TestCase):
-
     def setUp(self):
         self.factory = RequestFactory()
 
     def post(self, post, ajax=False):
         kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"} if ajax else {}
-        kwargs['content_type'] = "application/json"
+        kwargs["content_type"] = "application/json"
         request = self.factory.post(reverse("create_review"), post, **kwargs)
         return create_review(request)
 
@@ -27,16 +26,24 @@ class CreateReviewTest(TestCase):
         if content:
             self.assertEqual(response.content, content)
 
-    def assertCreateSuccess(self, response, compare={}, content=None):
+    def assertCreateSuccess(self, response, compare=None, content=None):
+        if compare is None:
+            compare = {}
         data = json.loads(response.content.decode("utf-8"))
-        for k, v in compare.items():
+        for k in compare.keys():
             if not self.assertEqual(data[k], compare[k]):
                 return False
         return True
 
-    def check_post(self, post, response_check, ajax=False, compare={}, content=None):  # noqa 501
+    def check_post(
+        self, post, response_check, ajax=False, compare=None, content=None
+    ):
+        if compare is None:
+            compare = {}
         if compare:
-            response_check(self.post(post, ajax=ajax), compare=compare, content=content)  # noqa 501
+            response_check(
+                self.post(post, ajax=ajax), compare=compare, content=content
+            )  # noqa 501
         else:
             response_check(self.post(post, ajax=ajax), content=content)
 
@@ -46,16 +53,15 @@ class CreateReviewTest(TestCase):
             "content_type": "application/json",
         }
         request = self.factory.post(
-            reverse("create_review"),
-            "invalid:json}",
-            **kwargs)
+            reverse("create_review"), "invalid:json}", **kwargs
+        )
         self.assertBadRequest(create_review(request), b"Invalid JSON")
 
     def test_missing_title(self):
         post = {
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -64,7 +70,7 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -73,7 +79,7 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title" * 100,
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, content=b"Too Large")
 
@@ -81,7 +87,7 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -90,7 +96,7 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -99,13 +105,13 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         compare = {
             "curriculumTitle": "Test title",
             "publicationDate": "Jan 1, 2001",
             "gradeRange": "Elementary school",
-            "pass_code": "P455W0RD"
+            "pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertCreateSuccess, compare=compare)
 
@@ -118,7 +124,7 @@ class CreateReviewTest(TestCase):
             "curriculumTitle": "Test title",
             "gradeRange": "Elementary school",
             "publicationDate": "",
-            "pass_code": ""
+            "pass_code": "",
         }
         self.check_post(post, self.assertCreateSuccess, compare=compare)
 
@@ -127,13 +133,13 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_grade": "Elementary school",
             "tdp-crt_pubdate": "",
-            "tdp-crt_pass_code": ""
+            "tdp-crt_pass_code": "",
         }
         compare = {
             "curriculumTitle": "Test title",
             "gradeRange": "Elementary school",
             "publicationDate": "",
-            "pass_code": ""
+            "pass_code": "",
         }
         self.check_post(post, self.assertCreateSuccess, compare=compare)
 
@@ -141,7 +147,7 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -150,7 +156,7 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -158,7 +164,7 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -167,7 +173,7 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -176,16 +182,18 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD"
+            "tdp-crt_pass_code": "P455W0RD",
         }
 
         compare = {
             "curriculumTitle": "Test title",
             "publicationDate": "Jan 1, 2001",
             "gradeRange": "Elementary school",
-            "pass_code": "P455W0RD"
+            "pass_code": "P455W0RD",
         }
-        self.check_post(post, self.assertCreateSuccess, ajax=True, compare=compare)  # noqa 501
+        self.check_post(
+            post, self.assertCreateSuccess, ajax=True, compare=compare
+        )  # noqa 501
 
     def test_missing_pubdate_and_passcode_ajax(self):
         post = {
@@ -196,28 +204,32 @@ class CreateReviewTest(TestCase):
             "curriculumTitle": "Test title",
             "gradeRange": "Elementary school",
             "publicationDate": "",
-            "pass_code": ""
+            "pass_code": "",
         }
-        self.check_post(post, self.assertCreateSuccess, compare=compare, ajax=True)  # noqa 501
+        self.check_post(
+            post, self.assertCreateSuccess, compare=compare, ajax=True
+        )  # noqa 501
 
     def test_empty_pubdate_and_passcode_ajax(self):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_grade": "Elementary school",
             "tdp-crt_pubdate": "",
-            "tdp-crt_pass_code": ""
+            "tdp-crt_pass_code": "",
         }
         compare = {
             "curriculumTitle": "Test title",
             "gradeRange": "Elementary school",
             "publicationDate": "",
-            "pass_code": ""
+            "pass_code": "",
         }
-        self.check_post(post, self.assertCreateSuccess, compare=compare, ajax=True)  # noqa 501
+        self.check_post(
+            post, self.assertCreateSuccess, compare=compare, ajax=True
+        )  # noqa 501
 
 
 class GetReviewTest(TestCase):
-    fixtures = ['crtool_initial_data']
+    fixtures = ["crtool_initial_data"]
 
     def setUp(self):
         self.factory = RequestFactory()
@@ -227,7 +239,9 @@ class GetReviewTest(TestCase):
         request = self.factory.post(reverse("get_review"), post, **kwargs)
         return get_review(request)
 
-    def check_post(self, post, response_check, compare={}):
+    def check_post(self, post, response_check, compare=None):
+        if compare is None:
+            compare = {}
         if compare:
             response_check(self.post(post), compare=compare)
         else:
@@ -236,9 +250,11 @@ class GetReviewTest(TestCase):
     def assertPageNotFound(self, response):
         self.assertEqual(response.status_code, 404)
 
-    def assertGetSuccess(self, response, compare={}):
+    def assertGetSuccess(self, response, compare=None):
+        if compare is None:
+            compare = {}
         data = json.loads(response.content.decode("utf-8"))
-        for k, v in compare.items():
+        for k in compare.keys():
             if not self.assertEqual(data[k], compare[k]):
                 return False
         return True
@@ -258,48 +274,41 @@ class GetReviewTest(TestCase):
             "curriculumTitle": "Test",
             "publicationDate": "",
             "ls_modified_time": "2020-08-06T00:58:28.817Z",
-            "criterionClickedTitles": "{\"quality-crt-question-2\":\"clicked\"}",  # noqa 501
-            "dimensionOverallScores": "{\"Quality\":\"limited\"}",
+            "criterionClickedTitles": '{"quality-crt-question-2":"clicked"}',  # noqa 501
+            "dimensionOverallScores": '{"Quality":"limited"}',
         }
         self.check_post(post, self.assertGetSuccess, compare=compare)
 
     # Test with token id that doesn't exist
     def test_non_existent_id(self):
-        post = {
-            "token": "02d19cc1314747ef8aacbz"
-        }
+        post = {"token": "02d19cc1314747ef8aacbz"}
         self.check_post(post, self.assertPageNotFound)
 
     # Test with null
     def test_null(self):
-        post = {
-        }
+        post = {}
         self.check_post(post, self.assertPageNotFound)
 
     # Test with empty string
     def test_empty_id(self):
-        post = {
-            "token": ""
-        }
+        post = {"token": ""}
         self.check_post(post, self.assertPageNotFound)
 
     # Test with short fake token id
     def test_invalid_id(self):
-        post = {
-            "token": "apple"
-        }
+        post = {"token": "apple"}
         self.check_post(post, self.assertPageNotFound)
 
 
 class UpdateReviewTest(TestCase):
-    fixtures = ['crtool_initial_data']
+    fixtures = ["crtool_initial_data"]
 
     def setUp(self):
         self.factory = RequestFactory()
 
     def post(self, post, ajax=False):
         kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"} if ajax else {}
-        kwargs['content_type'] = "application/json"
+        kwargs["content_type"] = "application/json"
         request = self.factory.post(reverse("update_review"), post, **kwargs)
         return update_review(request)
 
@@ -311,20 +320,30 @@ class UpdateReviewTest(TestCase):
     def assertPageNotFound(self, response, content=None):
         self.assertEqual(response.status_code, 404)
 
-    def assertUpdateSuccess(self, response, compare={}, content=None):
+    def assertUpdateSuccess(self, response, compare=None, content=None):
+        if compare is None:
+            compare = {}
         data = json.loads(response.content.decode("utf-8"))
         # Return False if updated review doesn't match comparison.
-        for k, v in compare.items():
+        for k in compare.keys():
             if not self.assertEqual(data[k], compare[k]):
                 return False
         # Return False if the last_updated date isn't updated.
-        if not self.assertGreater(data['last_updated'], compare['last_updated']):  # noqa 501
+        if not self.assertGreater(
+            data["last_updated"], compare["last_updated"]
+        ):  # noqa 501
             return False
         return True
 
-    def check_post(self, post, response_check, ajax=False, compare={}, content=None):  # noqa 501
+    def check_post(
+        self, post, response_check, ajax=False, compare=None, content=None
+    ):
+        if compare is None:
+            compare = {}
         if compare:
-            response_check(self.post(post, ajax=ajax), compare=compare, content=content)  # noqa 501
+            response_check(
+                self.post(post, ajax=ajax), compare=compare, content=content
+            )
         else:
             response_check(self.post(post, ajax=ajax), content=content)
 
@@ -334,9 +353,8 @@ class UpdateReviewTest(TestCase):
             "content_type": "application/json",
         }
         request = self.factory.post(
-            reverse("update_review"),
-            "invalid:json}",
-            **kwargs)
+            reverse("update_review"), "invalid:json}", **kwargs
+        )
         self.assertBadRequest(update_review(request), b"Invalid JSON")
 
     # Test with token id that exists
@@ -347,7 +365,7 @@ class UpdateReviewTest(TestCase):
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
-            "publicationDate": ""
+            "publicationDate": "",
         }
         self.check_post(post, self.assertUpdateSuccess, compare=post)
 
@@ -359,7 +377,7 @@ class UpdateReviewTest(TestCase):
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
-            "publicationDate": ""
+            "publicationDate": "",
         }
         self.check_post(post, self.assertPageNotFound)
 
@@ -371,7 +389,7 @@ class UpdateReviewTest(TestCase):
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
-            "publicationDate": ""
+            "publicationDate": "",
         }
         self.check_post(post, self.assertPageNotFound)
 
@@ -382,7 +400,7 @@ class UpdateReviewTest(TestCase):
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
-            "publicationDate": ""
+            "publicationDate": "",
         }
         self.check_post(post, self.assertPageNotFound)
 
@@ -394,7 +412,7 @@ class UpdateReviewTest(TestCase):
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
-            "publicationDate": ""
+            "publicationDate": "",
         }
         self.check_post(post, self.assertPageNotFound)
 
@@ -406,7 +424,7 @@ class UpdateReviewTest(TestCase):
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
-            "publicationDate": ""
+            "publicationDate": "",
         }
         self.check_post(post, self.assertPageNotFound)
 
@@ -437,14 +455,16 @@ class UpdateReviewTest(TestCase):
 
 
 class ContinueReviewTest(TestCase):
-    fixtures = ['crtool_initial_data']
+    fixtures = ["crtool_initial_data"]
 
     def setUp(self):
         self.factory = RequestFactory()
 
     def post(self, post):
         kwargs = {"HTTP_X_REQUESTED_WITH": "XMLHttpRequest"}
-        request = self.factory.post(reverse("continue_review"), post, **kwargs)  # noqa 501
+        request = self.factory.post(
+            reverse("continue_review"), post, **kwargs
+        )  # noqa 501
         return continue_review(request)
 
     def test_non_existent_pass_code(self):

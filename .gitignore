@@ -75,3 +75,9 @@ crtool/crtool/build/
 crtool/crtool/coverage/
 crtool/static/*
 build/*
+
+# IDEs
+.idea/
+
+# In-Directory Venvs
+*venv/
