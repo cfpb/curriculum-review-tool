@@ -27,18 +27,16 @@ def create_review(request):
     title = fd["tdp-crt_title"] if "tdp-crt_title" in fd else ""
     pub_date = fd["tdp-crt_pubdate"] if "tdp-crt_pubdate" in fd else ""
     grade_range = fd["tdp-crt_grade"] if "tdp-crt_grade" in fd else ""
-    pass_code = (
-        fd["tdp-crt_pass_code"] if "tdp-crt_pass_code" in fd else ""
-    )
     review_id = CurriculumReviewSession.id_generator()
     last_updated = timezone.now()
 
     if not title or not grade_range:
         return HttpResponse(status=400)
 
+    # pass_code is a legacy value no longer used.
     data = {
         "id": str(review_id),
-        "pass_code": pass_code,
+        "pass_code": "",
         "last_updated": str(datetime.isoformat(last_updated)),
         "curriculumTitle": title,
         "publicationDate": pub_date,
@@ -47,7 +45,7 @@ def create_review(request):
 
     review = CurriculumReviewSession.objects.create(
         id=review_id,
-        pass_code=pass_code,
+        pass_code="",
         last_updated=last_updated,
         data=data,
     )
@@ -82,7 +80,7 @@ def continue_review(request):
         return HttpResponse(status=404)
 
     review_id = request.POST.get("access_code")
-    # Critical pause to prevent brute-forcing the shorter pass_code values
+    # Critical pause to prevent brute-forcing review_id's
     time.sleep(1)
     try:
         review = CurriculumReviewSession.objects.get(id=review_id)

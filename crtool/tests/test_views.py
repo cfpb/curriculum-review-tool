@@ -61,7 +61,6 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -70,7 +69,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -79,7 +77,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title" * 100,
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, content=b"Too Large")
 
@@ -87,7 +84,6 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -96,7 +92,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest)
 
@@ -105,13 +100,12 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         compare = {
             "curriculumTitle": "Test title",
             "publicationDate": "Jan 1, 2001",
             "gradeRange": "Elementary school",
-            "pass_code": "P455W0RD",
+            "pass_code": "",
         }
         self.check_post(post, self.assertCreateSuccess, compare=compare)
 
@@ -133,7 +127,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_grade": "Elementary school",
             "tdp-crt_pubdate": "",
-            "tdp-crt_pass_code": "",
         }
         compare = {
             "curriculumTitle": "Test title",
@@ -147,7 +140,6 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -156,7 +148,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -164,7 +155,6 @@ class CreateReviewTest(TestCase):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -173,7 +163,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "",
-            "tdp-crt_pass_code": "P455W0RD",
         }
         self.check_post(post, self.assertBadRequest, ajax=True)
 
@@ -182,14 +171,13 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
-            "tdp-crt_pass_code": "P455W0RD",
         }
 
         compare = {
             "curriculumTitle": "Test title",
             "publicationDate": "Jan 1, 2001",
             "gradeRange": "Elementary school",
-            "pass_code": "P455W0RD",
+            "pass_code": "",
         }
         self.check_post(
             post, self.assertCreateSuccess, ajax=True, compare=compare
@@ -215,7 +203,6 @@ class CreateReviewTest(TestCase):
             "tdp-crt_title": "Test title",
             "tdp-crt_grade": "Elementary school",
             "tdp-crt_pubdate": "",
-            "tdp-crt_pass_code": "",
         }
         compare = {
             "curriculumTitle": "Test title",
@@ -361,7 +348,7 @@ class UpdateReviewTest(TestCase):
     def test_update_title(self):
         post = {
             "id": "242449c9251243c1b512d2",
-            "pass_code": None,
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
@@ -373,7 +360,7 @@ class UpdateReviewTest(TestCase):
     def test_non_existent_id(self):
         post = {
             "id": "6893d3af8eb54e74a27883",
-            "pass_code": None,
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
@@ -384,8 +371,8 @@ class UpdateReviewTest(TestCase):
     # Test with null token id
     def test_null_id(self):
         post = {
-            "id": None,
-            "pass_code": None,
+            "id": "",
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
@@ -396,7 +383,7 @@ class UpdateReviewTest(TestCase):
     # Test with missing token id
     def test_missing_id(self):
         post = {
-            "pass_code": None,
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
@@ -408,7 +395,7 @@ class UpdateReviewTest(TestCase):
     def test_empty_id(self):
         post = {
             "id": "",
-            "pass_code": None,
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
@@ -420,7 +407,7 @@ class UpdateReviewTest(TestCase):
     def test_invalid_id(self):
         post = {
             "id": "apple",
-            "pass_code": None,
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
@@ -431,7 +418,7 @@ class UpdateReviewTest(TestCase):
     def test_overly_large_body(self):
         post = {
             "id": "242449c9251243c1b512d2",
-            "pass_code": None,
+            "pass_code": "",
             "gradeRange": "Middle school",
             "last_updated": "2020-07-12 04:52:56.858970+00:00",
             "curriculumTitle": "Updated title",
