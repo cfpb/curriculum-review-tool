@@ -62,7 +62,7 @@ class CreateReviewTest(TestCase):
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
         }
-        self.check_post(post, self.assertBadRequest)
+        self.check_post(post, self.assertBadRequest, content=b"Invalid Input")
 
     def test_empty_title(self):
         post = {
@@ -72,13 +72,13 @@ class CreateReviewTest(TestCase):
         }
         self.check_post(post, self.assertBadRequest)
 
-    def test_long_title(self):
+    def test_title_not_string(self):
         post = {
-            "tdp-crt_title": "Test title" * 100,
+            "tdp-crt_title": ["Hello", "World"],
             "tdp-crt_pubdate": "Jan 1, 2001",
             "tdp-crt_grade": "Elementary school",
         }
-        self.check_post(post, self.assertBadRequest, content=b"Too Large")
+        self.check_post(post, self.assertBadRequest, content=b"Invalid Input")
 
     def test_missing_grade_level(self):
         post = {
@@ -105,22 +105,31 @@ class CreateReviewTest(TestCase):
             "curriculumTitle": "Test title",
             "publicationDate": "Jan 1, 2001",
             "gradeRange": "Elementary school",
-            "pass_code": "",
         }
         self.check_post(post, self.assertCreateSuccess, compare=compare)
 
-    def test_missing_pubdate_and_passcode(self):
+    def test_appropriate_title(self):
+        post = {
+            "tdp-crt_title": "T" * 150,
+            "tdp-crt_pubdate": "Jan 1, 2001",
+            "tdp-crt_grade": "Elementary school",
+        }
+        self.check_post(post, self.assertCreateSuccess)
+
+    def test_title_too_long(self):
+        post = {
+            "tdp-crt_title": "T" * 151,
+            "tdp-crt_pubdate": "Jan 1, 2001",
+            "tdp-crt_grade": "Elementary school",
+        }
+        self.check_post(post, self.assertBadRequest, content=b"Too Large")
+
+    def test_missing_pubdate(self):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_grade": "Elementary school",
         }
-        compare = {
-            "curriculumTitle": "Test title",
-            "gradeRange": "Elementary school",
-            "publicationDate": "",
-            "pass_code": "",
-        }
-        self.check_post(post, self.assertCreateSuccess, compare=compare)
+        self.check_post(post, self.assertBadRequest, content=b"Invalid Input")
 
     def test_empty_pubdate_and_passcode(self):
         post = {
@@ -183,19 +192,13 @@ class CreateReviewTest(TestCase):
             post, self.assertCreateSuccess, ajax=True, compare=compare
         )  # noqa 501
 
-    def test_missing_pubdate_and_passcode_ajax(self):
+    def test_missing_pubdate_ajax(self):
         post = {
             "tdp-crt_title": "Test title",
             "tdp-crt_grade": "Elementary school",
         }
-        compare = {
-            "curriculumTitle": "Test title",
-            "gradeRange": "Elementary school",
-            "publicationDate": "",
-            "pass_code": "",
-        }
         self.check_post(
-            post, self.assertCreateSuccess, compare=compare, ajax=True
+            post, self.assertBadRequest, ajax=True, content=b"Invalid Input"
         )  # noqa 501
 
     def test_empty_pubdate_and_passcode_ajax(self):

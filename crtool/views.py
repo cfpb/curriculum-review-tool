@@ -15,23 +15,33 @@ def create_review(request):
         return HttpResponse(status=400)
 
     body_str = request.body.decode("utf-8")
-    # Allow 200 for title, 50 for date, and 30 for JSON wrapper
-    if len(body_str) > (200 + 50 + 30):
-        return HttpResponse(content="Too Large", status=400)
-
     try:
         fd = json.loads(body_str)
     except JSONDecodeError:
         return HttpResponse(content="Invalid JSON", status=400)
 
-    title = fd["tdp-crt_title"] if "tdp-crt_title" in fd else ""
-    pub_date = fd["tdp-crt_pubdate"] if "tdp-crt_pubdate" in fd else ""
-    grade_range = fd["tdp-crt_grade"] if "tdp-crt_grade" in fd else ""
-    review_id = CurriculumReviewSession.id_generator()
-    last_updated = timezone.now()
+    if "tdp-crt_title" not in fd \
+            or "tdp-crt_pubdate" not in fd \
+            or "tdp-crt_grade" not in fd:
+        return HttpResponse(content="Invalid Input", status=400)
+
+    title = fd["tdp-crt_title"]
+    pub_date = fd["tdp-crt_pubdate"]
+    grade_range = fd["tdp-crt_grade"]
+    if not isinstance(title, str) \
+            or not isinstance(pub_date, str) \
+            or not isinstance(grade_range, str):
+        return HttpResponse(content="Invalid Input", status=400)
 
     if not title or not grade_range:
         return HttpResponse(status=400)
+    if len(title) > 150:
+        return HttpResponse(content="Too Large", status=400)
+    if len(pub_date) > 50:
+        return HttpResponse(content="Too Large", status=400)
+
+    review_id = CurriculumReviewSession.id_generator()
+    last_updated = timezone.now()
 
     # pass_code is a legacy value no longer used.
     data = {
@@ -64,7 +74,7 @@ def get_review(request):
     try:
         review = CurriculumReviewSession.objects.get(id=review_id)
         if not review:
-            return JsonResponse({})
+            return HttpResponse(status=404)
 
         return JsonResponse(review.data)
     except (
