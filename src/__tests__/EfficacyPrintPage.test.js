@@ -7,27 +7,27 @@ import renderer from 'react-test-renderer';
 let result;
 
 const efficacyProps = {
-    currentPage:"EfficacyPrintPage",
-    criterionAnswers: {},
-    criterionClickedTitles: {},
-    criterionCompletionStatuses: {},
-    criterionEfficacyStudies: {},
-    criterionScores: {},
-    currentPrintButton: {},
-    curriculumTitle: "",
-    dimensionOverallScores: {},
-    distinctiveCompletedDate: {},
-    resetPrintButtonState: (() => {}),
-}
+  currentPage: 'EfficacyPrintPage',
+  criterionAnswers: {},
+  criterionClickedTitles: {},
+  criterionCompletionStatuses: {},
+  criterionEfficacyStudies: {},
+  criterionScores: {},
+  currentPrintButton: {},
+  curriculumTitle: '',
+  dimensionOverallScores: {},
+  distinctiveCompletedDate: {},
+  resetPrintButtonState: () => {}
+};
 
-afterAll(() => {
-    result.unmount();
-});
+afterAll( () => {
+  result.unmount();
+} );
 
-test("Efficacy Print Page renders correctly", () => {
-    result = renderer.create(
-        <EfficacyPrintPage {...efficacyProps}/>
-    );
-    let tree = result.toJSON();
-    expect(tree).toMatchSnapshot();   
-});
+test( 'Efficacy Print Page renders correctly', () => {
+  result = renderer.create(
+    <EfficacyPrintPage {...efficacyProps}/>
+  );
+  let tree = result.toJSON();
+  expect( tree ).toMatchSnapshot();
+} );

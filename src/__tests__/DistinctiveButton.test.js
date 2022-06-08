@@ -7,36 +7,36 @@ import renderer from 'react-test-renderer';
 import { listeners } from 'cluster';
 
 let wrapper;
-let distinctiveAnchorClickedValue = "false";
+let distinctiveAnchorClickedValue = 'false';
 let distinctiveProps = {
-  title:"Quality",
-  criteria:"5 criteria",
-  estimatedtime:"Est. time 30 min",
-  description:"Accurate and well presented",
-  distinctive:"some distinctive value",
-  inProgress:"",
-  distinctiveClicked:((clickedName) => { distinctiveAnchorClickedValue = clickedName; }),
+  title: 'Quality',
+  criteria: '5 criteria',
+  estimatedtime: 'Est. time 30 min',
+  description: 'Accurate and well presented',
+  distinctive: 'some distinctive value',
+  inProgress: '',
+  distinctiveClicked:  clickedName => { distinctiveAnchorClickedValue = clickedName; }
 };
 
-beforeAll(() => {
+beforeAll( () => {
   wrapper = shallow(
-    <DistinctiveButton {...distinctiveProps} />,
+    <DistinctiveButton {...distinctiveProps} />
   );
-});
+} );
 
-afterAll(() => {
+afterAll( () => {
   wrapper.unmount();
-});
+} );
 
-test('Anchor tag with class name exists', () => {
-  expect(wrapper.find('button.o-dimension-section-bar_button').length).toBe(1);
-});
+test( 'Anchor tag with class name exists', () => {
+  expect( wrapper.find( 'button.o-dimension-section-bar_button' ).length ).toBe( 1 );
+} );
 
-it('DistinctiveButton onHandleClick correctly invokes distinctiveClicked(name)', () => {
+it( 'DistinctiveButton onHandleClick correctly invokes distinctiveClicked(name)', () => {
   const onButtonClick = jest.fn();
-  const wrapper = shallow(<DistinctiveButton handleOnClick={onButtonClick} {...distinctiveProps} />);
+  const wrapper = shallow( <DistinctiveButton handleOnClick={onButtonClick} {...distinctiveProps} /> );
 
-  wrapper.find('button').simulate('click');
+  wrapper.find( 'button' ).simulate( 'click' );
 
-  expect("some distinctive value").toBe(distinctiveAnchorClickedValue);
-});
+  expect( 'some distinctive value' ).toBe( distinctiveAnchorClickedValue );
+} );
