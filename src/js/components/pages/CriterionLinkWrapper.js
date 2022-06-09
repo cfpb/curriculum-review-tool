@@ -14,7 +14,7 @@ export default class CriterionLinkWrapper extends React.Component {
     crtoolLocalStorage.saveIfDirty();
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.setCriterionStatusToInStart( this.props.criterionKey );
   }
 

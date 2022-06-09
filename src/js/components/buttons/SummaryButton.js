@@ -36,25 +36,23 @@ export default class SummaryButton extends React.Component {
                     Continue to {this.props.currentPage.toLowerCase()} summary
         </button>
       );
-    } else {
       // Efficacy page will actually disable untill the "I'm done reviewing studies" is clicked
-      if ( this.props.currentPage === C.EFFICACY_PAGE &&
-                (
-                  this.props.finishAddingEfficacyStudies !== true ||
-                    this.props.finishAddingEfficacyStudies === null
-                ) ) {
-        return (
-          <button className='a-btn' disabled>
-                        Continue to {this.props.currentPage.toLowerCase()} summary
-          </button>
-        );
-      } else {
-        return (
-          <button className='a-btn' onClick={e => { this.handleSummaryButtonClick(); }} >
-                        Continue to {this.props.currentPage.toLowerCase()} summary
-          </button>
-        );
-      }
+    } else if ( this.props.currentPage === C.EFFICACY_PAGE &&
+      (
+        this.props.finishAddingEfficacyStudies !== true ||
+        this.props.finishAddingEfficacyStudies === null
+      ) ) {
+      return (
+        <button className='a-btn' disabled>
+          Continue to {this.props.currentPage.toLowerCase()} summary
+        </button>
+      );
+    } else {
+      return (
+        <button className='a-btn' onClick={e => { this.handleSummaryButtonClick(); }} >
+          Continue to {this.props.currentPage.toLowerCase()} summary
+        </button>
+      );
     }
   }
 }

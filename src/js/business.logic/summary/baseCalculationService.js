@@ -40,13 +40,11 @@ const BaseCalculationService = {
             criterionScore.has_beneficial = true;
             criterionScore.beneficial_total_no += 1;
           }
+        } else if ( UtilityService.isEssential( key ) ) {
+          criterionScore.essential_total_yes += 1;
         } else {
-          if ( UtilityService.isEssential( key ) ) {
-            criterionScore.essential_total_yes += 1;
-          } else {
-            criterionScore.has_beneficial = true;
-            criterionScore.beneficial_total_yes += 1;
-          }
+          criterionScore.has_beneficial = true;
+          criterionScore.beneficial_total_yes += 1;
         }
       }
     }

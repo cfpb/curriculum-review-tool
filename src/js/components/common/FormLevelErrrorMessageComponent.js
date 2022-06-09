@@ -113,10 +113,8 @@ export default class FormLevelErrorMessageComponent extends React.Component {
         if ( key.indexOf( currentDimension ) >= 0 && key.indexOf( 'optional' ) < 0 && key.indexOf( '#' + studyKey + '#' ) > 0 ) {
           this.addToMissingList( missingCriterion, value, index, allCriterionForPage );
         }
-      } else {
-        if ( key.indexOf( currentDimension ) >= 0 && key.indexOf( 'optional' ) < 0 ) {
-          this.addToMissingList( missingCriterion, value, index, allCriterionForPage );
-        }
+      } else if ( key.indexOf( currentDimension ) >= 0 && key.indexOf( 'optional' ) < 0 ) {
+        this.addToMissingList( missingCriterion, value, index, allCriterionForPage );
       }
     }
   }

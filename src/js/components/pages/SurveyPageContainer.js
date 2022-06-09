@@ -44,14 +44,12 @@ export default class SurveyPageContainer extends React.Component {
         } else {
           return <ContentHighSummaryPage {...applicationProps} />;
         }
+      } else if ( this.props.gradeRange === C.GRADE_ELEMENTARY ) {
+        return <ContentElementaryCriterionPage {...applicationProps} />;
+      } else if ( this.props.gradeRange === C.GRADE_MIDDLE ) {
+        return <ContentMiddleCriterionPage {...applicationProps} />;
       } else {
-        if ( this.props.gradeRange === C.GRADE_ELEMENTARY ) {
-          return <ContentElementaryCriterionPage {...applicationProps} />;
-        } else if ( this.props.gradeRange === C.GRADE_MIDDLE ) {
-          return <ContentMiddleCriterionPage {...applicationProps} />;
-        } else {
-          return <ContentHighCriterionPage {...applicationProps} />;
-        }
+        return <ContentHighCriterionPage {...applicationProps} />;
       }
     } else if ( this.props.currentPage === C.UTILITY_PAGE ) {
       if ( this.props.utilityIsSummaryView === true ) {

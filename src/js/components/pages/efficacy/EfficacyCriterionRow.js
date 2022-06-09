@@ -20,7 +20,7 @@ export default class EfficacyCriterionRow extends React.Component {
     this.props.initializeAnswerObjects( myObjects );
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // This will force criterion 2 to always show with out the link title
     this.props.setCriterionTitleLinkClicked( 'efficacy-crt-question-2' );
   }

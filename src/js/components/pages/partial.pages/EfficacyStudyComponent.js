@@ -28,7 +28,7 @@ export default class EfficacyStudyComponent extends React.Component {
     return newCriterionRefId;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.initializeAnswerObjects();
   }
 

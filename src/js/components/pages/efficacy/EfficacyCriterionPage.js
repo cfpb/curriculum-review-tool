@@ -24,7 +24,7 @@ export default class EfficacyCriterionPage extends React.Component {
     this.props.initializeAnswerObjects( myObjects );
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // This will force criterion 2 to always show with out the link title
     this.props.setCriterionTitleLinkClicked( 'efficacy-crt-question-2' );
   }
@@ -52,7 +52,7 @@ export default class EfficacyCriterionPage extends React.Component {
     return studyComponents;
   }
 
-  AddEfficacyStudy() {
+  addEfficacyStudy() {
     let maxValue = this.getMaxValueFromEfficacyItems() + 1;
     this.props.initializeEfficacyStudies( maxValue );
   }
@@ -184,7 +184,7 @@ export default class EfficacyCriterionPage extends React.Component {
           <div className='u-mt15 u-mb30'>
             <button className='a-btn a-btn__link a-btn__no-line'
               data-gtm_ignore='true'
-              onClick={() => this.AddEfficacyStudy()}>
+              onClick={() => this.addEfficacyStudy()}>
                             Review another study
               <SvgIcon
                 icon='plus-round'
