@@ -1,6 +1,6 @@
-name: Publish 
+name: Publish
 
-on: 
+on:
   release:
     types: [published]
 
@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
+          node-version: 16.x
 
       - name: Install Node dependencies
         run: |
@@ -32,7 +32,7 @@ jobs:
         id: build
         run: |
             python setup.py sdist bdist_wheel
-            # Get the name of the .whl and .tar.gz files and set them as 
+            # Get the name of the .whl and .tar.gz files and set them as
             # "outputs" of this step so we can upload them
             echo "::set-output name=bdist_wheel::$(cd dist && ls *.whl)"
             echo "::set-output name=sdist::$(cd dist && ls *.tar.gz)"
