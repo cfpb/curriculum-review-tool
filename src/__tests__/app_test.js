@@ -9,11 +9,11 @@ import App from '../App';
 crtoolLocalStorage.isReady = () => true;
 crtoolLocalStorage.saveIfDirty = () => 1;
 
-it('renders without crashing', () => {
+it( 'renders without crashing', () => {
   const component = renderer.create(
-    <App />,
+    <App />
   );
 
   let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+  expect( tree ).toMatchSnapshot();
+} );

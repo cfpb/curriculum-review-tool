@@ -1,62 +1,61 @@
-import React from "react";
+import React from 'react';
 
-import C from "../../../business.logic/constants";
-import PrintIntroComponent from "../partial.pages/PrintIntroComponent";
-import CriterionScoreBlock from "../summary/CriterionScoreBlock";
-import DimensionScoreBlock from "../summary/DimensionScoreBlock";
-import DimensionInformation from "../../common/DimensionInformation";
-import ContentCriterionBlockSummary from "../summary/ContentCriterionBlockSummary";
-import { ContentElementaryCriterion } from "../../../content_data/contentElementary";
+import C from '../../../business.logic/constants';
+import PrintIntroComponent from '../partial.pages/PrintIntroComponent';
+import CriterionScoreBlock from '../summary/CriterionScoreBlock';
+import DimensionScoreBlock from '../summary/DimensionScoreBlock';
+import DimensionInformation from '../../common/DimensionInformation';
+import ContentCriterionBlockSummary from '../summary/ContentCriterionBlockSummary';
+import { ContentElementaryCriterion } from '../../../content_data/contentElementary';
 
 
 export default class ContentPrintElementaryPage extends React.Component {
-    componentDidMount() {
-        this.props.resetPrintButtonState(C.CONTENT_PAGE);
-    }
+  componentDidMount() {
+    this.props.resetPrintButtonState( C.CONTENT_PAGE );
+  }
 
-    render() {
-        return (
-            <React.Fragment>
-                {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
+  render() {
+    return (
+      <React.Fragment>
+        {this.props.showPrintIntro && <PrintIntroComponent {...this.props} />}
 
-                <DimensionInformation
-                    dimensionName={C.CONTENT_PAGE}
-                    dimensionSummary={C.CONTENT_SUMMARY_TEXT}
-                    {...this.props}
-                    reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
+        <DimensionInformation
+          dimensionName={C.CONTENT_PAGE}
+          dimensionSummary={C.CONTENT_SUMMARY_TEXT}
+          {...this.props}
+          reviewedOnDate={this.props.distinctiveCompletedDate[C.CONTENT_PAGE]} />
 
-                { ContentElementaryCriterion.criterion.map((criterionData, i) =>
-                    <CriterionScoreBlock
-                        showExceeds={criterionData.showExceeds}
-                        showBeneficial={criterionData.showBeneficial}
-                        hideMeets={criterionData.hideMeets}
-                        dimensionKey={C.CONTENT_ELEMENTARY_KEY}
-                        dimensionPage={C.CONTENT_PAGE}
-                        criterionNumber={criterionData.criterionNumber}
-                        criterionName={criterionData.title}
-                        criterionLead={criterionData.criterionLead}
-                        criterionExceedsText={criterionData.criterionExceedsText}
-                        criterionMeetsText={criterionData.criterionMeetsText}
-                        criterionDoesNotMeetText={criterionData.criterionDoesNotMeetText}
-                        {...this.props} />
-                )}
+        { ContentElementaryCriterion.criterion.map( ( criterionData, i ) => <CriterionScoreBlock
+          showExceeds={criterionData.showExceeds}
+          showBeneficial={criterionData.showBeneficial}
+          hideMeets={criterionData.hideMeets}
+          dimensionKey={C.CONTENT_ELEMENTARY_KEY}
+          dimensionPage={C.CONTENT_PAGE}
+          criterionNumber={criterionData.criterionNumber}
+          criterionName={criterionData.title}
+          criterionLead={criterionData.criterionLead}
+          criterionExceedsText={criterionData.criterionExceedsText}
+          criterionMeetsText={criterionData.criterionMeetsText}
+          criterionDoesNotMeetText={criterionData.criterionDoesNotMeetText}
+          {...this.props} />
+        )}
 
-                <hr className="hr
+        <hr className='hr
                                 u-mb30
-                                u-mt30" />
+                                u-mt30' />
 
-                <DimensionScoreBlock
-                    dimensionPage={C.CONTENT_PAGE}
-                    dimensionKey={C.CONTENT_ELEMENTARY_KEY}
-                    dimensionName={C.CONTENT_PAGE}
-                    dimensionLead={C.CONTENT_LEAD_TEXT}
-                    strongText={C.CONTENT_STRONG_TEXT}
-                    moderateText={C.CONTENT_MODERATE_TEXT}
-                    limitedText={C.CONTENT_LIMITED_TEXT}
-                    {...this.props} />
+        <DimensionScoreBlock
+          dimensionPage={C.CONTENT_PAGE}
+          dimensionKey={C.CONTENT_ELEMENTARY_KEY}
+          dimensionName={C.CONTENT_PAGE}
+          dimensionLead={C.CONTENT_LEAD_TEXT}
+          strongText={C.CONTENT_STRONG_TEXT}
+          moderateText={C.CONTENT_MODERATE_TEXT}
+          limitedText={C.CONTENT_LIMITED_TEXT}
+          {...this.props} />
 
-                <ContentCriterionBlockSummary {...this.props} />
-            </React.Fragment>
-        );
-    }
+        <ContentCriterionBlockSummary {...this.props} />
+      </React.Fragment>
+    );
+  }
 }

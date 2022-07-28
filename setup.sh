@@ -21,7 +21,11 @@ init() {
      [[ "$(node -v)" != 'v11.'* ]] &&
      [[ "$(node -v)" != 'v12.'* ]] &&
      [[ "$(node -v)" != 'v13.'* ]] &&
-     [[ "$(node -v)" != 'v14.'* ]]; then
+     [[ "$(node -v)" != 'v14.'* ]] &&
+     [[ "$(node -v)" != 'v15.'* ]] &&
+     [[ "$(node -v)" != 'v16.'* ]] &&
+     [[ "$(node -v)" != 'v17.'* ]] &&
+     [[ "$(node -v)" != 'v18.'* ]]; then
     printf "\033[1;31mPlease install Node 10.x or higher: 'nvm install 10'\033[0m\n"
   fi
 
@@ -71,7 +75,7 @@ clean_and_install() {
 # Run tasks to build the project for distribution.
 build() {
   echo "Building project."
-  npm run build
+  CI='' npm run build
 }
 
 # Execute requested (or all) functions.

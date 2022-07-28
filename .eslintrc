@@ -119,7 +119,7 @@ rules:
       enforceForArrowConditionals: false
 
   # Disallows unnecessary semicolons.
-  no-extra-semi: 2
+  no-extra-semi: 1
 
   # Disallows overwriting functions written as declarations.
   no-func-assign: 2
@@ -168,7 +168,7 @@ rules:
 
   # Enforces valid JSDoc parameters and return types comments.
   valid-jsdoc:
-    - 2
+    - 1
     -
       prefer:
         return: returns
@@ -211,7 +211,7 @@ rules:
     - 4
 
   # Enforces return statements to either always or never specify values.
-  consistent-return: 2
+  consistent-return: 1
 
   # Enforces curly brace conventions for all control statements.
   curly:
@@ -262,7 +262,7 @@ rules:
 
   # Disallows else after a return in an if.
   no-else-return:
-    - 2
+    - 1
     - allowElseIf: true
 
   # Disallow use of empty functions.
@@ -443,14 +443,14 @@ rules:
 
   # Require using Error objects as Promise rejection reasons.
   prefer-promise-reject-errors:
-    - 2
+    - 1
     - allowEmptyReject: false
 
   # Require use of the second argument for parseInt().
   radix: 2
 
   # Disallow async functions which have no await expression
-  require-await: 2
+  require-await: 1
 
   # Require all vars on top of their containing scope.
   vars-on-top: 0
@@ -517,7 +517,7 @@ rules:
     - typeof: true
 
   # Disallows use of undefined variable.
-  no-undefined: 2
+  no-undefined: 1
 
   # Disallows declaration of variables that are not used in the code.
   no-unused-vars:
@@ -903,7 +903,7 @@ rules:
       maxBOF: 0
 
   # Disallows negated conditions.
-  no-negated-condition: 2
+  no-negated-condition: 1
 
   # Disallows nested ternary expressions.
   no-nested-ternary: 2
@@ -989,7 +989,7 @@ rules:
 
   # Requires assignment operator shorthand or prohibit it entirely.
   operator-assignment:
-    - 2
+    - 1
     - always
 
   # Enforce operators to be placed before or after line breaks.
@@ -1011,7 +1011,7 @@ rules:
       next: return
 
   # Prefer the use of object spread when using Object.assign.
-  prefer-object-spread: 2
+  prefer-object-spread: 1
 
   # Requires quotes around object literal property names.
   quote-props:
@@ -1104,7 +1104,7 @@ rules:
 
   # Require or disallow a space immediately following // or /* in a comment.
   spaced-comment:
-    - 2
+    - 1
     - always
     -
       line:
@@ -1217,7 +1217,7 @@ rules:
       ignoreDestructuring: false
 
   # Requires using let or const instead of var.
-  no-var: 2
+  no-var: 1
 
   # Require method and property shorthand syntax for object literals.
   object-shorthand:

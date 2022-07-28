@@ -1,5 +1,4 @@
 const autoprefixer = require( 'autoprefixer' );
-const BROWSER_LIST = require( '../browser-list-config' );
 const config = require( '../config' );
 const configPkg = config.pkg;
 const configBanner = config.banner;
@@ -28,9 +27,7 @@ function stylesModern() {
     .pipe( gulpSourcemaps.init() )
     .pipe( gulpLess( configStyles.settings ) )
     .on( 'error', handleErrors.bind( this, { exitProcess: true } ) )
-    .pipe( gulpPostcss( [
-      autoprefixer( { browsers: BROWSER_LIST.LAST_2 } )
-    ] ) )
+    .pipe( gulpPostcss( [ autoprefixer() ] ) )
     .pipe( gulpDebug( { title: 'prefixed:' } ) )
     .pipe( gulpHeader( configBanner, { pkg: configPkg } ) )
     .pipe( gulpSourcemaps.write( '.' ) )

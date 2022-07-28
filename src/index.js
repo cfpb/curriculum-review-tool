@@ -13,9 +13,9 @@ import crtoolLocalStorage from './crtoolLocalStorage';
 // Initialize Token HERE instead of in React App.
 crtoolLocalStorage.init().then(
   () => {
-    ReactDOM.render(<App />, document.getElementById('react'));
+    ReactDOM.render( <App />, document.getElementById( 'react' ) );
   },
   () => {
     // TODO handle initial failed DB get
-  },
+  }
 );
